@@ -9,7 +9,6 @@
 // @grant        none
 // @license      MIT
 // ==/UserScript==
-import ICONS from './base64.js';
 (function () {
     'use strict';
     // =======================================================================================
@@ -34,44 +33,44 @@ import ICONS from './base64.js';
 
     // =======================================================================================
     // 下面这两个函数不用管+体型的  看见折叠就好了
-    function luzi上半身(name, args) { 
+    function luzi上半身(name, args) {
         if (args && args.length > 0 && args[0].indexOf("Luzi_") > -1) {
             const modifiedArgs = [...args]; // 复制原始的 args，创建一个新的数组
             for (let i = 0; i < 4; i++) {
                 if (modifiedArgs[0].includes(`Yoked/Luzi_${name}_White`)) {
-                    modifiedArgs[0] = ICONS[`${name}_Yoked`];
+                    modifiedArgs[0] = ICONS2[`${name}_Yoked`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`OverTheHead/Luzi_${name}_White`)) {
-                    modifiedArgs[0] = ICONS[`${name}_OverTheHead`];
+                    modifiedArgs[0] = ICONS2[`${name}_OverTheHead`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackBoxTie/Luzi_${name}_White`)) {
-                    modifiedArgs[0] = ICONS[`${name}_BackBoxTie`];
+                    modifiedArgs[0] = ICONS2[`${name}_BackBoxTie`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackElbowTouch/Luzi_${name}_White`)) {
-                    modifiedArgs[0] = ICONS[`${name}_BackElbowTouch`];
+                    modifiedArgs[0] = ICONS2[`${name}_BackElbowTouch`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackCuffs/Luzi_${name}_White`)) {
-                    modifiedArgs[0] = ICONS[`${name}_BackCuffs`];
+                    modifiedArgs[0] = ICONS2[`${name}_BackCuffs`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BodyUpper/Luzi_${name}_White`)) {
-                    modifiedArgs[0] = ICONS[`${name}_`];
+                    modifiedArgs[0] = ICONS2[`${name}_`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
             }
             args[0] = modifiedArgs[0];
             args[2] = modifiedArgs[2];
-            args[3] = modifiedArgs[3]; 
+            args[3] = modifiedArgs[3];
         }
         return args; // 如果没有匹配，返回原始 args
     }
@@ -82,27 +81,27 @@ import ICONS from './base64.js';
 
             for (let i = 0; i < 4; i++) {
                 if (args[0].includes(`Kneel/Luzi_${name}`)) {
-                    args[0] = ICONS[`${name}_Kneel`];
+                    args[0] = ICONS2[`${name}_Kneel`];
                     args[2] = 0;
                     args[3] = 700;
                 }
                 if (args[0].includes(`KneelingSpread/Luzi_${name}`)) {
-                    args[0] = ICONS[`${name}_KneelingSpread`];
+                    args[0] = ICONS2[`${name}_KneelingSpread`];
                     args[2] = 0;
                     args[3] = 700;
                 }
                 if (args[0].includes(`LegsClosed/Luzi_${name}`)) {
-                    args[0] = ICONS[`${name}_LegsClosed`];
+                    args[0] = ICONS2[`${name}_LegsClosed`];
                     args[2] = 0;
                     args[3] = 700;
                 }
                 if (args[0].includes(`Spread/Luzi_${name}`)) {
-                    args[0] = ICONS[`${name}_Spread`];
+                    args[0] = ICONS2[`${name}_Spread`];
                     args[2] = 0;
                     args[3] = 700;
                 }
                 if (args[0].includes(`Luzi_${name}`)) {
-                    args[0] = ICONS[`${name}_`];
+                    args[0] = ICONS2[`${name}_`];
                     args[2] = 0;
                     args[3] = 700;
                 }
@@ -130,7 +129,7 @@ import ICONS from './base64.js';
      * @param {*} name --  这个是 "Cloth.Asset.push" 里面 "Luzi_xxx" 的名字
      * @param {*} n图层 -- 这个图层就是 Cloth.Asset.Layer 里面的东西
      * @param {*} args --  这个就填 "args" 就行
-     * @param {*} _特殊1 -- 这个特殊的意思就是    例 "ICONS" 里面 "女仆装1_Small" + 后缀命名  "_露手"
+     * @param {*} _特殊1 -- 这个特殊的意思就是    例 "ICONS2" 里面 "女仆装1_Small" + 后缀命名  "_露手"
      * @param {*} _特殊2 
      * @param {*} _特殊3 // 例 luzi衣服(`女仆装1`, `Dress`, args, `_露手`);
      * @param {*} _特殊4 
@@ -143,41 +142,41 @@ import ICONS from './base64.js';
             const modifiedArgs = [...args]; // 复制原始的 args，创建一个新的数组
             const 体型 = ['Small', 'Normal', 'Large', 'XLarge', 'Luzi_没手臂'];
             for (let i = 0; i < 5; i++) {
-                if (modifiedArgs[0].includes(`Yoked/Luzi_${name}_${体型[i]}_${n图层}`)) {  
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊2}`];
-                    modifiedArgs[2] = 0; 
-                    modifiedArgs[3] = 700; 
+                if (modifiedArgs[0].includes(`Yoked/Luzi_${name}_${体型[i]}_${n图层}`)) {
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊2}`];
+                    modifiedArgs[2] = 0;
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`OverTheHead/Luzi_${name}_${体型[i]}_${n图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊3}`];
-                    modifiedArgs[2] = 0; 
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊3}`];
+                    modifiedArgs[2] = 0;
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackBoxTie/Luzi_${name}_${体型[i]}_${n图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊4}`];
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊4}`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackElbowTouch/Luzi_${name}_${体型[i]}_${n图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊5}`];
-                    modifiedArgs[2] = 0; 
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊5}`];
+                    modifiedArgs[2] = 0;
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackCuffs/Luzi_${name}_${体型[i]}_${n图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊6}`];
-                    modifiedArgs[2] = 0; 
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊6}`];
+                    modifiedArgs[2] = 0;
+                    modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`Luzi_${name}_${体型[i]}_${n图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊1}`];
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊1}`];
                     modifiedArgs[2] = 0;
-                    modifiedArgs[3] = 700; 
+                    modifiedArgs[3] = 700;
                 }
             }
             // 直接修改args[0]的值
             args[0] = modifiedArgs[0];
-            args[2] = modifiedArgs[2]; 
-            args[3] = modifiedArgs[3]; 
+            args[2] = modifiedArgs[2];
+            args[3] = modifiedArgs[3];
         }
         return args; // 返回修改后的参数
     }
@@ -189,22 +188,22 @@ import ICONS from './base64.js';
 
             for (let i = 0; i < 4; i++) {
                 if (modifiedArgs[0].includes(`Kneel/Luzi_${name}_${体型[i]}_${图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊2}`];
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊2}`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`KneelingSpread/Luzi_${name}_${体型[i]}_${图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊3}`];
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊3}`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`LegsClosed/Luzi_${name}_${体型[i]}_${图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊4}`];
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊4}`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`Luzi_${name}_${体型[i]}_${图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_${体型[i]}${_特殊1}`];
+                    modifiedArgs[0] = ICONS2[`${name}_${体型[i]}${_特殊1}`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
@@ -212,7 +211,7 @@ import ICONS from './base64.js';
             // 直接修改args[0]的值
             args[0] = modifiedArgs[0];
             args[2] = modifiedArgs[2];
-            args[3] = modifiedArgs[3]; 
+            args[3] = modifiedArgs[3];
         }
         return args; // 如果没有匹配，返回原始 args
     }
@@ -229,7 +228,7 @@ import ICONS from './base64.js';
                     // 直接修改args[0]的值
                     args[0] = modifiedArgs[0];
                     args[2] = modifiedArgs[2];
-                    args[3] = modifiedArgs[3]; 
+                    args[3] = modifiedArgs[3];
                 }
             }
         }
@@ -241,22 +240,22 @@ import ICONS from './base64.js';
             const modifiedArgs = [...args]; // 复制原始的 args，创建一个新的数组
 
             if (modifiedArgs[0].includes(`Yoked/Luzi_${name}_${图层}`)) {
-                modifiedArgs[0] = ICONS[`${name}_${_特殊2}`];
+                modifiedArgs[0] = ICONS2[`${name}_${_特殊2}`];
             }
             if (modifiedArgs[0].includes(`OverTheHead/Luzi_${name}_${图层}`)) {
-                modifiedArgs[0] = ICONS[`${name}_${_特殊3}`];
+                modifiedArgs[0] = ICONS2[`${name}_${_特殊3}`];
             }
             if (modifiedArgs[0].includes(`BackBoxTie/Luzi_${name}_${图层}`)) {
-                modifiedArgs[0] = ICONS[`${name}_${_特殊4}`];
+                modifiedArgs[0] = ICONS2[`${name}_${_特殊4}`];
             }
             if (modifiedArgs[0].includes(`BackElbowTouch/Luzi_${name}_${图层}`)) {
-                modifiedArgs[0] = ICONS[`${name}_${_特殊5}`];
+                modifiedArgs[0] = ICONS2[`${name}_${_特殊5}`];
             }
             if (modifiedArgs[0].includes(`BackCuffs/Luzi_${name}_${图层}`)) {
-                modifiedArgs[0] = ICONS[`${name}_${_特殊6}`];
+                modifiedArgs[0] = ICONS2[`${name}_${_特殊6}`];
             }
             if (modifiedArgs[0].includes(`Luzi_${name}_${图层}`)) {
-                modifiedArgs[0] = ICONS[`${name}_${_特殊1}`];
+                modifiedArgs[0] = ICONS2[`${name}_${_特殊1}`];
             }
 
             modifiedArgs[2] = 0;
@@ -265,7 +264,7 @@ import ICONS from './base64.js';
             // 直接修改args[0]的值
             args[0] = modifiedArgs[0];
             args[2] = modifiedArgs[2];
-            args[3] = modifiedArgs[3]; 
+            args[3] = modifiedArgs[3];
         }
         return args; // 如果没有匹配，返回原始 args
     }
@@ -283,7 +282,7 @@ import ICONS from './base64.js';
             // 直接修改args[0]的值
             args[0] = modifiedArgs[0];
             args[2] = modifiedArgs[2];
-            args[3] = modifiedArgs[3]; 
+            args[3] = modifiedArgs[3];
         }
         return args; // 如果没有匹配，返回原始 args
     }
@@ -293,27 +292,27 @@ import ICONS from './base64.js';
             const modifiedArgs = [...args]; // 复制原始的 args，创建一个新的数组
             for (let i = 0; i < 2; i++) {
                 if (modifiedArgs[0].includes(`Yoked/${name}_Luzi_没手臂${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_Yoked`];
+                    modifiedArgs[0] = ICONS2[`${name}_Yoked`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`OverTheHead/${name}_Luzi_没手臂${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_OverTheHead`];
+                    modifiedArgs[0] = ICONS2[`${name}_OverTheHead`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackElbowTouch/${name}_Luzi_没手臂${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_BackElbowTouch`];
+                    modifiedArgs[0] = ICONS2[`${name}_BackElbowTouch`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackCuffs/${name}_Luzi_没手臂${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_BackElbowTouch`];
+                    modifiedArgs[0] = ICONS2[`${name}_BackElbowTouch`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`BackBoxTie/${name}_Luzi_没手臂${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_BackBoxTie`];
+                    modifiedArgs[0] = ICONS2[`${name}_BackBoxTie`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
@@ -331,12 +330,12 @@ import ICONS from './base64.js';
             const modifiedArgs = [...args]; // 复制原始的 args，创建一个新的数组
             for (let i = 0; i < 2; i++) {
                 if (modifiedArgs[0].includes(`KneelingSpread/${name}_Luzi_没腿${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_KneelingSpread`];
+                    modifiedArgs[0] = ICONS2[`${name}_KneelingSpread`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
                 if (modifiedArgs[0].includes(`Kneel/${name}_Luzi_没腿${_图层}`)) {
-                    modifiedArgs[0] = ICONS[`${name}_Kneel`];
+                    modifiedArgs[0] = ICONS2[`${name}_Kneel`];
                     modifiedArgs[2] = 0;
                     modifiedArgs[3] = 700;
                 }
@@ -446,12 +445,12 @@ import ICONS from './base64.js';
                 item.Description = newDescriptions[newName];
             }
         });
-    // =======================================================================================
+        // =======================================================================================
         // 'Assets/Female3DCG/BodyUpper/BackBoxTie/Luzi_没手臂_White.png'
 
         // 'Assets/Female3DCG/Nipples/Nipples1_Luzi_没手臂.png'
-    // =======================================================================================
-    // 下面这些是调用图片的
+        // =======================================================================================
+        // 下面这些是调用图片的
         var data = args[0];
 
         // 定义要保留不替换的字符串的数组
@@ -480,22 +479,22 @@ import ICONS from './base64.js';
 
         if (!!data && data.indexOf("Luzi_") > -1) {
             if (args && args.length > 0) {
-            luzi衣服(`女仆装1`, `Dress`, args, `_露手`);
+                luzi衣服(`女仆装1`, `Dress`, args, `_露手`);
 
-            luzi衣服(`修女下身1`, `Dress`, args, `_露手`);
-            luzi简单道具(`修女下身1`, "Back2", ICONS.修女下身1_Back2, args);
-            luzi简单道具(`修女下身1`, "Back", ICONS.修女下身1_Back, args);
+                luzi衣服(`修女下身1`, `Dress`, args, `_露手`);
+                luzi简单道具(`修女下身1`, "Back2", ICONS2.修女下身1_Back2, args);
+                luzi简单道具(`修女下身1`, "Back", ICONS2.修女下身1_Back, args);
 
-            帽子(`修女头饰1`, `Front`, args, "", `抬手`, `举手`);
-            luzi简单道具2(`修女头饰1`, "Back2", ICONS.修女头饰1_Back2, args);
-            luzi简单道具2(`修女头饰1`, "Back", ICONS.修女头饰1_Back, args);
+                帽子(`修女头饰1`, `Front`, args, "", `抬手`, `举手`);
+                luzi简单道具2(`修女头饰1`, "Back2", ICONS2.修女头饰1_Back2, args);
+                luzi简单道具2(`修女头饰1`, "Back", ICONS2.修女头饰1_Back, args);
 
-            luzi人棍上身(`SeethroughSuit`, args, `_Suit`)
-            luzi人棍下身(`SeethroughSuit`, args)
-            // ---------------------
-            luzi上半身(`没手臂`, args);
-            luzi下半身(`没腿`, args);
-            ServerPlayerInventorySync();
+                luzi人棍上身(`SeethroughSuit`, args, `_Suit`)
+                luzi人棍下身(`SeethroughSuit`, args)
+                // ---------------------
+                luzi上半身(`没手臂`, args);
+                luzi下半身(`没腿`, args);
+                ServerPlayerInventorySync();
             }
         }
         return next(args);
