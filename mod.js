@@ -579,7 +579,7 @@
             }
         }
         if (args[0].includes(`乳胶衣`)) {  // 括号里面改要找的关键词 写Luzi_就只会显示含有Luzi_的数组 // 测试的话 可以在 F12 直接修改值不用刷新
-            console.log(args) // <-- 要弄懂主要看这个
+            //console.log(args) // <-- 要弄懂主要看这个
         }
 
         if (!!data && data.indexOf("Luzi_") > -1) {
