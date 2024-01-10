@@ -559,6 +559,7 @@
         if (data.Sender === Player.MemberNumber && poseMapping.hasOwnProperty(content)) {
             const poseName = poseMapping[content];
             PoseSetActive(Player, poseName);
+            ChatRoomCharacterUpdate(Player)
         }
 
         next(args);
@@ -3640,6 +3641,15 @@
     });
     // ========================================================================
     // ========================================================================
+
+
+
+})();
+// ↩️星涟: OrgasmResist也会计数呀
+// 悄悄话 星涟: 0 0
+// ↩️星涟: OrgasmFailSurrender 喵~
+// ↩️星涟: 高潮忍住,拒绝模式都包括Orgasm
+
 
 
 
