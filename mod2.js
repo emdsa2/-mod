@@ -3533,7 +3533,6 @@
     mod.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
         var data = args
         const CustomBG = !args ? DrawGetCustomBackground() : "";
-        const Background = CustomBG || ChatRoomData.Background;
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
         // 用于存储找到的角色的数组
         const foundCharacters = [];
@@ -3570,7 +3569,6 @@
             if (args) {
 
             } else {
-                if (C === 5) ChatRoomDrawBackground(Background, 500, Zoom, DarkFactor, InvertRoom);
                 // 绘制角色、状态气泡和覆盖层
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
                 DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
@@ -3587,7 +3585,6 @@
             const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
             if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
             if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
-                if (C === 5) ChatRoomDrawBackground(Background, 500, Zoom, DarkFactor, InvertRoom);
                 // 如果在数组中，可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
                 DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
