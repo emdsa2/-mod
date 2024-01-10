@@ -337,7 +337,7 @@
         InventoryWear(Player, "Luzi_缰绳", "ItemTorso", "", 1, 1, halter);
         ChatRoomCharacterUpdate(Player)
     }
-    
+
     mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemTorso-Act_骑上去' && data.Type === 'Activity' && data.Dictionary) {
@@ -346,7 +346,7 @@
             for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
                 const characterName = ChatRoomCharacterDrawlist[i].Name;
                 const memberNumber = ChatRoomCharacterDrawlist[i].MemberNumber;
-                
+
                 if (memberNumber === targetCharacter) {
                     缰绳(`${characterName}`) // 检查是否符合玩家ID
                 }
@@ -510,7 +510,7 @@
 
         [Activitypng + "Act_骑上去.png", Activitypng + "SistersHug.png"],
 
-        
+
     ]);
 
     // 图片加载队列
@@ -1347,8 +1347,8 @@
 
     // ========================================================================
     // ========================================================================
-    // DrawCheckbox 
-    // DrawText 
+    // DrawCheckbox
+    // DrawText
     // DrawTextFit
     const w = window;
     var loginSuccess = false;
