@@ -3532,31 +3532,42 @@
 
     mod.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
         var data = args
-        const CustomBG = !args ? DrawGetCustomBackground() : "";
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
         // 用于存储找到的角色的数组
-        const foundCharacters = [];
-        // 使用嵌套的 for 循环进行查找
+        // 用于存储找到的角色的数组
+        w.foundCharacters = [];
+        w.foundCharacters2 = [];
         for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
-            // 获取当前数组项的 Appearance 数组
             const appearanceArray = ChatRoomCharacterDrawlist[i].Appearance;
             // 使用内层的 for 循环遍历当前数组项的 Appearance 数组
             for (let j = 0; j < appearanceArray.length; j++) {
                 // 获取当前数组项的 Asset 对象
                 const currentAsset = appearanceArray[j].Asset;
+
                 // 检查 Asset.Name 是否等于 "Luzi_鞍"
                 if (currentAsset.Name === "Luzi_鞍") {
+                    // 先从 foundCharacters 数组中移除相同的角色
+                    const index = foundCharacters.findIndex(char => char.Name === ChatRoomCharacterDrawlist[i].Name);
+                    if (index !== -1) {
+                        foundCharacters.splice(index, 1);
+                    }
+                    // 将找到的角色添加到数组中（排在最后）
+                    foundCharacters2.push(ChatRoomCharacterDrawlist[i]);
+                } else if (currentAsset.Name === "Luzi_缰绳") {
                     // 将找到的角色添加到数组中
                     foundCharacters.push(ChatRoomCharacterDrawlist[i]);
                 }
             }
         }
+
+        // 合并两个数组
+        w.mergedCharacters = foundCharacters.concat(foundCharacters2);
+
         // 绘制角色（在点击模式下，我们可以打开角色菜单或开始对其耳语）
         // 根据玩家数量调整缩放和绘制坐标
         const Zoom = ChatRoomCharacterZoom;
         const X = ChatRoomCharacterCount >= 3 ? (Space - 500 * Zoom) / 2 : 0;
         const Y = ChatRoomCharacterCount <= 5 ? 1000 * (1 - Zoom) / 2 : 0;
-        const InvertRoom = Player.GraphicsSettings.InvertRoom && Player.IsInverted();
         // 绘制所有角色
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
             // 根据角色在房间中的位置找到角色的 X 和 Y 坐标
@@ -3576,7 +3587,8 @@
             }
         }
         next(args);
-        // 按照原有的顺序绘制找到的角色
+
+        // 先绘制缰绳角色的数组
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
             let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
             if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
@@ -3591,10 +3603,35 @@
                 if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
             }
         }
+
+        // 再绘制鞍角色的数组
+        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+            const Zoom = ChatRoomCharacterZoom;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+            if (foundCharacters2.includes(ChatRoomCharacterDrawlist[C])) {
+                // 如果在数组中，可以在这里执行额外的操作
+                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
+            }
+        }
+
     });
 
 
     mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+        let data = args;
+        if (data) {
+            w.saddleMapping.clear();
+        }
+        next(args);
+    });
+    
+    mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
         let data = args;
         if (data) {
             w.saddleMapping.clear();
