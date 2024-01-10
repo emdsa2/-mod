@@ -244,6 +244,7 @@
         Act_剪刀剪掉内裤: { A: createActivity("剪刀剪掉内裤", "ItemVulvaPiercings", "ItemVulvaPiercings", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉内裤", "SourceCharacter用剪刀剪掉了TargetCharacter的内裤.", "SourceCharacter用剪刀剪掉了自己的内裤.") },
         Act_剪刀剪掉袜子: { A: createActivity("剪刀剪掉袜子", "ItemBoots", "ItemBoots", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉袜子", "SourceCharacter用剪刀剪掉了TargetCharacter的袜子.", "SourceCharacter用剪刀剪掉了自己的袜子.") },
 
+        Act_骑上去: { A: createActivity("骑上去", "ItemTorso", "", 50, 50, ["Hassaddle"], []), B: ActivityDictionaryadd("Act_骑上去", "SourceCharacter骑在TargetCharacter的背上.", "") },
     };
 
     //============================================================
@@ -280,6 +281,10 @@
         "HasBra": (acting, acted, group) => !!InventoryGet(acting, "Bra"), // 有胸罩
         "HasPanties": (acting, acted, group) => !!InventoryGet(acting, "Panties"), // 有内裤
         "HasSocks": (acting, acted, group) => !!InventoryGet(acting, "Socks"), // 有袜子
+
+
+        "Hassaddle": (acting, acted, group) => // 鞍
+            !!InventoryIsItemInList(acting, "ItemTorso", "Luzi_缰绳"),
 
     }));
 
@@ -322,9 +327,31 @@
             }
         }
     }
+    function 缰绳(name) {
+        const halter =
+        {
+            Name: "缰绳",
+            Description: name,
+            Property: name,
+        };
+        InventoryWear(Player, "Luzi_缰绳", "ItemTorso", "", 1, 1, halter);
+        ChatRoomCharacterUpdate(Player)
+    }
 
     mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
+        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemTorso-Act_骑上去' && data.Type === 'Activity' && data.Dictionary) {
+            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
+            // 遍历ChatRoomCharacterDrawlist中的所有角色的Name和MemberNumber
+            for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
+                const characterName = ChatRoomCharacterDrawlist[i].Name;
+                const memberNumber = ChatRoomCharacterDrawlist[i].MemberNumber;
+
+                if (memberNumber === targetCharacter) {
+                    缰绳(`${characterName}`) // 检查是否符合玩家ID
+                }
+            }
+        }
         removeActivityItems(data, "ItemTorso", "Act_剪刀剪掉上衣", "Cloth");
         removeActivityItems(data, "ItemPelvis", "Act_剪刀剪掉下衣", "ClothLower");
         removeActivityItems(data, "ItemBreast", "Act_剪刀剪掉胸罩", "Bra");
@@ -481,6 +508,9 @@
         [Activitypng + "Act_剪刀剪掉内裤.png", Scissorspng],
         [Activitypng + "Act_剪刀剪掉袜子.png", Scissorspng],
 
+        [Activitypng + "Act_骑上去.png", Activitypng + "SistersHug.png"],
+
+
     ]);
 
     // 图片加载队列
@@ -519,7 +549,8 @@
         "ChatSelf-ItemLegs-Act_站起来": null,
         "ChatSelf-ItemArms-Act_手放身前": null,
         "ChatSelf-ItemLegs-Act_宠物服立起来": "Hogtied",
-        "ChatSelf-ItemLegs-Act_宠物服趴下": "AllFours"
+        "ChatSelf-ItemLegs-Act_宠物服趴下": "AllFours",
+        "ChatOther-ItemTorso-Act_骑上去": "Kneel",
     };
 
     mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
@@ -1316,8 +1347,8 @@
 
     // ========================================================================
     // ========================================================================
-    // DrawCheckbox 
-    // DrawText 
+    // DrawCheckbox
+    // DrawText
     // DrawTextFit
     const w = window;
     var loginSuccess = false;
@@ -3453,37 +3484,135 @@
     });
 
 
+    // ========================================================================
+    // ========================================================================
+    function getMountArray(name, data) {
+        let characterInventories = [];
+        const character = name;
+        const mountData = InventoryGet(data, "ItemTorso");
+        if (mountData) {
+            characterInventories.push({
+                characterName: character,
+                itemName: mountData.Asset ? mountData.Asset.Name : "",
+                playerWithReins: mountData.Craft?.Description,
+            });
+        }
+        return characterInventories;
+    }
+    w.saddleMapping = new Map();
+    var saddleData;
 
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         let data = args;
-        let 角色名字 = args[0].Name
-        let 房间人数 = ChatRoomCharacterCount
-        let 房间内角色 = ChatRoomCharacter.map(character => character.Name);
+        w.mountCharacterArray = getMountArray(data[0].Name, data[0]);
+        // 鞍
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "Luzi_鞍") {
+            saddleData = data[0];
+            saddleMapping.set(saddleData.Name, {
+                saddleData1: data[0],
+                saddleDataX: data[1],
+                saddleDataY: data[2],
+                saddleDataZ: data[3],
+            });
 
-        if (房间人数 === 2) {
-            if (房间内角色[0] === 'tonic' && 角色名字 === 'tonic') {
-                args[1] = 500
-                ChatRoomCharacterDrawlist.sort((a, b) => {
-                    if (a.Name === 'tonic') return 1;
-                    if (b.Name === 'tonic') return -1;
-                    return 0;
-                });
-
-                //console.log(data);
-
+        }
+        // 缰绳
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "Luzi_缰绳" && ChatRoomChatHidden === false) {
+            if (saddleMapping.has(mountCharacterArray[0].playerWithReins)) {
+                args[1] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataX;
+                args[2] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataY;
+                args[3] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataZ;
             }
         }
-        
-
+        if (ChatRoomChatHidden === true) {
+            w.saddleMapping.clear();
+        }
         next(args);
     });
-    mod.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
-        DrawCharacter(ChatRoomCharacter[0], 500, 0, 1)
+
+    mod.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
+        var data = args
+        const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
+        // 用于存储找到的角色的数组
+        const foundCharacters = [];
+        // 使用嵌套的 for 循环进行查找
+        for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
+            // 获取当前数组项的 Appearance 数组
+            const appearanceArray = ChatRoomCharacterDrawlist[i].Appearance;
+            // 使用内层的 for 循环遍历当前数组项的 Appearance 数组
+            for (let j = 0; j < appearanceArray.length; j++) {
+                // 获取当前数组项的 Asset 对象
+                const currentAsset = appearanceArray[j].Asset;
+                // 检查 Asset.Name 是否等于 "Luzi_鞍"
+                if (currentAsset.Name === "Luzi_鞍") {
+                    // 将找到的角色添加到数组中
+                    foundCharacters.push(ChatRoomCharacterDrawlist[i]);
+                }
+            }
+        }
+        // 绘制角色（在点击模式下，我们可以打开角色菜单或开始对其耳语）
+        // 根据玩家数量调整缩放和绘制坐标
+        const Zoom = ChatRoomCharacterZoom;
+        const X = ChatRoomCharacterCount >= 3 ? (Space - 500 * Zoom) / 2 : 0;
+        const Y = ChatRoomCharacterCount <= 5 ? 1000 * (1 - Zoom) / 2 : 0;
+        const InvertRoom = Player.GraphicsSettings.InvertRoom && Player.IsInverted();
+        // 绘制所有角色
+        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+            // 根据角色在房间中的位置找到角色的 X 和 Y 坐标
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+
+            if (args) {
+
+            } else {
+                if (C === 5) ChatRoomDrawBackground(Background, 500, Zoom, DarkFactor, InvertRoom);
+                // 绘制角色、状态气泡和覆盖层
+                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
+            }
+        }
+        next(args);
+        // 按照原有的顺序绘制找到的角色
+        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+            const Zoom = ChatRoomCharacterZoom;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+            if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
+                if (C === 5) ChatRoomDrawBackground(Background, 500, Zoom, DarkFactor, InvertRoom);
+                // 如果在数组中，可以在这里执行额外的操作
+                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
+            }
+        }
+    });
+
+
+    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+        let data = args;
+        if (data) {
+            w.saddleMapping.clear();
+        }
         next(args);
     });
-    
-
+    // ========================================================================
+    // ========================================================================
 
 
 
 })();
+// ↩️星涟: OrgasmResist也会计数呀
+// 悄悄话 星涟: 0 0
+// ↩️星涟: OrgasmFailSurrender 喵~
+// ↩️星涟: 高潮忍住,拒绝模式都包括Orgasm
+
+
+
+
