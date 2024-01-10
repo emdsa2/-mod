@@ -3532,6 +3532,8 @@
 
     mod.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
         var data = args
+        const CustomBG = !args ? DrawGetCustomBackground() : "";
+        const Background = CustomBG || ChatRoomData.Background;
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
         // 用于存储找到的角色的数组
         const foundCharacters = [];
