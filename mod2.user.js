@@ -3457,60 +3457,124 @@
 
     // ========================================================================
     // ========================================================================
-
-
-    function 获取乘骑数组(name, data) {
+    function getMountArray(name, data) {
         let characterInventories = [];
         const character = name;
-        const 乘骑数据 = InventoryGet(data, "ItemDevices");
-        if (乘骑数据) {
+        const mountData = InventoryGet(data, "ItemDevices");
+        if (mountData) {
             characterInventories.push({
-                角色名字: character,
-                道具名字: 乘骑数据.Asset ? 乘骑数据.Asset.Name : "无道具名称",
-                缰绳套住的玩家: 乘骑数据.Craft?.Description,
+                characterName: character,
+                itemName: mountData.Asset ? mountData.Asset.Name : "",
+                playerWithReins: mountData.Craft?.Description,
             });
         }
         return characterInventories;
     }
+    w.saddleMapping = new Map();
+    var saddleData;
 
-    var 鞍数据映射 = new Map();
-    var 鞍数据;
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         let data = args;
-        if (data[0] && data[1] && data[2] && data[3]) {
-            let 乘骑角色数组 = 获取乘骑数组(data[0].Name, data[0]);
+        w.mountCharacterArray = getMountArray(data[0].Name, data[0]);
+        // 鞍
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "Luzi_鞍") {
+            saddleData = data[0];
+            saddleMapping.set(saddleData.Name, {
+                saddleData1: data[0],
+                saddleDataX: data[1],
+                saddleDataY: data[2],
+                saddleDataZ: data[3],
+            });
 
-            // 鞍
-            if (乘骑角色数组.length > 0 && 乘骑角色数组[0].道具名字 === "Luzi_鞍") {
-                鞍数据 = data[0];
-                鞍数据映射.set(鞍数据.Name, {
-                    鞍数据1: data[0],
-                    鞍数据X: data[1],
-                    鞍数据Y: data[2],
-                    鞍数据Z: data[3],
-                });
+        }
+        // 缰绳
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "Luzi_缰绳" && ChatRoomChatHidden === false) {
+            if (saddleMapping.has(mountCharacterArray[0].playerWithReins)) {
+                args[1] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataX;
+                args[2] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataY;
+                args[3] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataZ;
             }
-            // 缰绳
-            if (乘骑角色数组.length > 0 && 乘骑角色数组[0].道具名字 === "Luzi_缰绳") {
-                if (鞍数据映射.has(乘骑角色数组[0].缰绳套住的玩家)) {
-                    args[1] = 鞍数据映射.get(乘骑角色数组[0].缰绳套住的玩家).鞍数据X;
+        }
+        if (ChatRoomChatHidden === true) {
+            w.saddleMapping.clear();
+        }
+        next(args);
+    });
+
+    mod.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
+        var data = args
+        const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
+        // 用于存储找到的角色的数组
+        const foundCharacters = [];
+        // 使用嵌套的 for 循环进行查找
+        for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
+            // 获取当前数组项的 Appearance 数组
+            const appearanceArray = ChatRoomCharacterDrawlist[i].Appearance;
+            // 使用内层的 for 循环遍历当前数组项的 Appearance 数组
+            for (let j = 0; j < appearanceArray.length; j++) {
+                // 获取当前数组项的 Asset 对象
+                const currentAsset = appearanceArray[j].Asset;
+                // 检查 Asset.Name 是否等于 "Luzi_鞍"
+                if (currentAsset.Name === "Luzi_鞍") {
+                    // 将找到的角色添加到数组中
+                    foundCharacters.push(ChatRoomCharacterDrawlist[i]);
                 }
             }
         }
-        next(args);
-    });
+        // 绘制角色（在点击模式下，我们可以打开角色菜单或开始对其耳语）
+        // 根据玩家数量调整缩放和绘制坐标
+        const Zoom = ChatRoomCharacterZoom;
+        const X = ChatRoomCharacterCount >= 3 ? (Space - 500 * Zoom) / 2 : 0;
+        const Y = ChatRoomCharacterCount <= 5 ? 1000 * (1 - Zoom) / 2 : 0;
+        const InvertRoom = Player.GraphicsSettings.InvertRoom && Player.IsInverted();
+        // 绘制所有角色
+        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+            // 根据角色在房间中的位置找到角色的 X 和 Y 坐标
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
 
-    mod.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
-        if (鞍数据映射.has(args[0].Name)) {
-            let 鞍数据Entry = 鞍数据映射.get(args[0].Name);
-            DrawCharacter(鞍数据Entry.鞍数据1, 鞍数据Entry.鞍数据X, 鞍数据Entry.鞍数据Y, 鞍数据Entry.鞍数据Z);
+            if (args) {
+
+            } else {
+                if (C === 5) ChatRoomDrawBackground(Background, 500, Zoom, DarkFactor, InvertRoom);
+                // 绘制角色、状态气泡和覆盖层
+                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
+            }
         }
-
         next(args);
+        // 按照原有的顺序绘制找到的角色
+        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+            const Zoom = ChatRoomCharacterZoom;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+            if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
+                if (C === 5) ChatRoomDrawBackground(Background, 500, Zoom, DarkFactor, InvertRoom);
+                // 如果在数组中，可以在这里执行额外的操作
+                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
+            }
+        }
     });
 
 
-
+    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+        let data = args;
+        if (data){
+            w.saddleMapping.clear();
+        }
+        next(args);
+    });
+    // ========================================================================
+    // ========================================================================
 
 
 
