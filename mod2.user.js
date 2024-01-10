@@ -3460,7 +3460,7 @@
     function getMountArray(name, data) {
         let characterInventories = [];
         const character = name;
-        const mountData = InventoryGet(data, "ItemDevices");
+        const mountData = InventoryGet(data, "ItemTorso");
         if (mountData) {
             characterInventories.push({
                 characterName: character,
