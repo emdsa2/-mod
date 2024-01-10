@@ -559,6 +559,7 @@
         if (data.Sender === Player.MemberNumber && poseMapping.hasOwnProperty(content)) {
             const poseName = poseMapping[content];
             PoseSetActive(Player, poseName);
+            ChatRoomCharacterUpdate(Player)
         }
 
         next(args);
