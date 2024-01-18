@@ -211,8 +211,8 @@
         Act_蠕动手指: { A: createActivity("蠕动手指", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "ZoneNaked", "TargetZoneNaked"], []), B: ActivityDictionaryadd("Act_蠕动手指", "SourceCharacter在TargetCharacter的阴道内蠕动手指.", "SourceCharacter在PronounPossessive的阴道内蠕动手指.") },
         Act_快速抽插: { A: createActivity("快速抽插", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "ZoneNaked", "TargetZoneNaked"], []), B: ActivityDictionaryadd("Act_快速抽插", "SourceCharacter的手在TargetCharacter的阴道内快速抽插,开始揉搓.", "SourceCharacter的手在PronounPossessive的阴道内快速抽插,开始揉搓.") },
 
-        Act_钩住阴蒂环: { A: createActivity("钩住阴蒂环", "ItemVulvaPiercings", "ItemVulvaPiercings", 50, 50, ["UseHands", "HasItemVulvaPiercings"], []), B: ActivityDictionaryadd("Act_钩住阴蒂环", "SourceCharacter钩住TargetCharacter的阴蒂环.", "SourceCharacter钩住自己的阴蒂环.") }, Act_拉扯阴蒂环: { A: createActivity("拉扯阴蒂环", "ItemVulvaPiercings", "ItemVUlvaPiercings", 50, 50, ["UseHands"], []), B: ActivityDictionaryadd("Act_拉扯阴蒂环", "SourceCharacter拉了一下TargetCharacter的阴蒂环又松开了.", "SourceCharacter拉了一下自己的阴蒂环又松开了.") },
-        Act_拉扯阴蒂环: { A: createActivity("拉扯阴蒂环", "ItemVulvaPiercings", "ItemVUlvaPiercings", 50, 50, ["UseHands", "HasItemVulvaPiercings"], []), B: ActivityDictionaryadd("Act_拉扯阴蒂环", "SourceCharacter拉了一下TargetCharacter的阴蒂环又松开了.", "SourceCharacter拉了一下自己的阴蒂环又松开了.") },
+        Act_钩住阴蒂环: { A: createActivity("钩住阴蒂环", "ItemVulvaPiercings", "ItemVulvaPiercings", 50, 50, ["UseHands", "HasItemVulvaPiercings"], []), B: ActivityDictionaryadd("Act_钩住阴蒂环", "SourceCharacter钩住TargetCharacter的阴蒂环.", "SourceCharacter钩住自己的阴蒂环.") }, 
+        Act_拉扯阴蒂环: { A: createActivity("拉扯阴蒂环", "ItemVulvaPiercings", "ItemVUlvaPiercings", 50, 50, ["UseHands", "HasItemVulvaPiercings"], []), B: ActivityDictionaryadd("Act_拉扯阴蒂环", "SourceCharacter拉了一下TargetCharacter的阴蒂环.", "SourceCharacter拉了一下自己的阴蒂环.") },
         //宠物服
         Act_宠物服爬到脚边: { A: createActivity("宠物服爬到脚边", "ItemBoots", "", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服爬到脚边", "SourceCharacter爬到TargetCharacter脚边.", "") },
         Act_宠物服蹭腿: { A: createActivity("宠物服蹭腿", ["ItemLegs", "ItemFeet"], "", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服蹭腿", "SourceCharacter蹭TargetCharacter的腿.", "") },
@@ -284,7 +284,7 @@
 
 
         "Hassaddle": (acting, acted, group) => // 鞍
-            !!InventoryIsItemInList(acting, "ItemTorso", "Luzi_缰绳"),
+            !!InventoryIsItemInList(acting, "ItemTorso", "缰绳_Luzi"),
 
     }));
 
@@ -334,7 +334,7 @@
             Description: name,
             Property: name,
         };
-        InventoryWear(Player, "Luzi_缰绳", "ItemTorso", "", 1, 1, halter);
+        InventoryWear(Player, "缰绳_Luzi", "ItemTorso", "", 1, 1, halter);
         ChatRoomCharacterUpdate(Player)
     }
 
@@ -1278,7 +1278,7 @@
         Player.OnlineSettings.ECHO.高潮次数 = num;
         ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
     }
-
+    
     // 处理聊天室消息
     mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
@@ -1287,7 +1287,8 @@
 
         if (data.Sender === Player.MemberNumber && data.Content.includes("Orgasm") && data.Type === "Activity") {
             // 如果消息包含"Orgasm"且类型为"Activity",增加历史高潮次数
-            saveOrgasmSettings(true, 历史次数 + 1);
+            saveOrgasmSettings(true, Player.ArousalSettings.OrgasmCount);
+            
         }
 
         if (data.Content === 'ServerEnter') {
@@ -3507,7 +3508,7 @@
         let data = args;
         w.mountCharacterArray = getMountArray(data[0].Name, data[0]);
         // 鞍
-        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "Luzi_鞍") {
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "鞍_Luzi") {
             saddleData = data[0];
             saddleMapping.set(saddleData.Name, {
                 saddleData1: data[0],
@@ -3518,7 +3519,7 @@
 
         }
         // 缰绳
-        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "Luzi_缰绳" && ChatRoomChatHidden === false) {
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "缰绳_Luzi" && ChatRoomChatHidden === false) {
             if (saddleMapping.has(mountCharacterArray[0].playerWithReins)) {
                 args[1] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataX;
                 args[2] = saddleMapping.get(mountCharacterArray[0].playerWithReins).saddleDataY;
@@ -3545,8 +3546,8 @@
                 // 获取当前数组项的 Asset 对象
                 const currentAsset = appearanceArray[j].Asset;
 
-                // 检查 Asset.Name 是否等于 "Luzi_鞍"
-                if (currentAsset.Name === "Luzi_鞍") {
+                // 检查 Asset.Name 是否等于 "鞍_Luzi"
+                if (currentAsset.Name === "鞍_Luzi") {
                     // 先从 foundCharacters 数组中移除相同的角色
                     const index = foundCharacters.findIndex(char => char.Name === ChatRoomCharacterDrawlist[i].Name);
                     if (index !== -1) {
@@ -3554,7 +3555,7 @@
                     }
                     // 将找到的角色添加到数组中（排在最后）
                     foundCharacters2.push(ChatRoomCharacterDrawlist[i]);
-                } else if (currentAsset.Name === "Luzi_缰绳") {
+                } else if (currentAsset.Name === "缰绳_Luzi") {
                     // 将找到的角色添加到数组中
                     foundCharacters.push(ChatRoomCharacterDrawlist[i]);
                 }
@@ -3645,11 +3646,3 @@
 
 
 })();
-// ↩️星涟: OrgasmResist也会计数呀
-// 悄悄话 星涟: 0 0
-// ↩️星涟: OrgasmFailSurrender 喵~
-// ↩️星涟: 高潮忍住,拒绝模式都包括Orgasm
-
-
-
-
