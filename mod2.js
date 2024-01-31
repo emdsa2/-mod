@@ -247,7 +247,7 @@
         Act_骑上去: { A: createActivity("骑上去", "ItemTorso", "", 50, 50, ["Hassaddle"], []), B: ActivityDictionaryadd("Act_骑上去", "SourceCharacter骑在TargetCharacter的背上.", "") },
         Act_躺上去: { A: createActivity("躺上去", "ItemDevices", "", 50, 50, ["Hasbed"], []), B: ActivityDictionaryadd("Act_躺上去", "SourceCharacter躺到TargetCharacter的身边.", "") },
     };
-    
+
     //============================================================
     //============================================================
     const CustomPrerequisiteFuncs = new Map(Object.entries({
@@ -3573,7 +3573,7 @@
         // 乘骑 ------------------------------------------
         w.mountCharacterArray = getMountArray(args[0].Name, args[0], "ItemTorso");
         // 鞍
-        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "鞍_Luzi" && ChatRoomChatHidden === false) {
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "鞍_Luzi") {
             saddleData = args[0];
             saddleMapping.set(saddleData.Name, {
                 saddleData1: args[0],
@@ -3597,7 +3597,7 @@
         // 床 ------------------------------------------
         w.bedCharacterArray = getMountArray(args[0].Name, args[0], "ItemDevices");
         // 鞍 前面玩家
-        if (bedCharacterArray.length > 0 && bedCharacterArray[0].itemName === "床左边_Luzi" && ChatRoomChatHidden === false) {
+        if (bedCharacterArray.length > 0 && bedCharacterArray[0].itemName === "床左边_Luzi") {
             if (ChatRoomCharacterCount == 2) {
                 const newXValue = args[1] - 80; // 这里加运算符可以修改位置
                 args[1] = newXValue;
