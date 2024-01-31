@@ -247,7 +247,7 @@
         Act_骑上去: { A: createActivity("骑上去", "ItemTorso", "", 50, 50, ["Hassaddle"], []), B: ActivityDictionaryadd("Act_骑上去", "SourceCharacter骑在TargetCharacter的背上.", "") },
         Act_躺上去: { A: createActivity("躺上去", "ItemDevices", "", 50, 50, ["Hasbed"], []), B: ActivityDictionaryadd("Act_躺上去", "SourceCharacter躺到TargetCharacter的身边.", "") },
     };
-
+    
     //============================================================
     //============================================================
     const CustomPrerequisiteFuncs = new Map(Object.entries({
@@ -3573,7 +3573,7 @@
         // 乘骑 ------------------------------------------
         w.mountCharacterArray = getMountArray(args[0].Name, args[0], "ItemTorso");
         // 鞍
-        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "鞍_Luzi") {
+        if (mountCharacterArray.length > 0 && mountCharacterArray[0].itemName === "鞍_Luzi" && ChatRoomChatHidden === false) {
             saddleData = args[0];
             saddleMapping.set(saddleData.Name, {
                 saddleData1: args[0],
@@ -3597,13 +3597,13 @@
         // 床 ------------------------------------------
         w.bedCharacterArray = getMountArray(args[0].Name, args[0], "ItemDevices");
         // 鞍 前面玩家
-        if (bedCharacterArray.length > 0 && bedCharacterArray[0].itemName === "床左边_Luzi") {
+        if (bedCharacterArray.length > 0 && bedCharacterArray[0].itemName === "床左边_Luzi" && ChatRoomChatHidden === false) {
             if (ChatRoomCharacterCount == 2) {
                 const newXValue = args[1] - 80; // 这里加运算符可以修改位置
                 args[1] = newXValue;
             }
             if (ChatRoomCharacterCount == 3) {
-                const newXValue = args[1] - 56; // 这里加运算符可以修改位置
+                const newXValue = args[1] - 83; // 这里加运算符可以修改位置
                 args[1] = newXValue;
             }
             if (ChatRoomCharacterCount == 4) {
@@ -3819,6 +3819,58 @@
     // ========================================================================
     // ========================================================================
 
+    function Hidden(text) {
+        ServerSend("ChatRoomChat", {
+            Content: `${text}`,
+            Type: "Hidden",
+        })
+    };
 
+    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+        Hidden("(。_。)");
+        next(args);
+
+    });
+    mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
+        Hidden("(。_。)");
+        next(args);
+    });
+    mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
+        let data = args[0]
+        if (data.Content === 'ServerEnter') {
+            Hidden("(。_。)");
+        }
+        next(args)
+    });
+
+    let CRCharacter;
+    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+        const data = args[0];
+        if (data.Content === '(。_。)' && data.Type === 'Hidden') {
+            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
+            console.log(CRCharacter)
+            if (CRCharacter) {
+                CRCharacter.ECHO2 = true;
+            }
+        }
+        next(args);
+    });
+
+    mod.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
+        if (ChatRoomHideIconState == 0) {
+            let C = args[0];
+            let CharX = args[1];
+            let CharY = args[2];
+            let Zoom = args[3];
+            if (C.ECHO2) {
+                DrawImageResize("data:image/png;base64,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",
+                    CharX + 420 * Zoom, CharY + 5, 35 * Zoom, 35 * Zoom);
+            }
+        }
+        next(args);
+    });
+
+    // ========================================================================
+    // ========================================================================
 
 })();
