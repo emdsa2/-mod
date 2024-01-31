@@ -3827,18 +3827,24 @@
     };
 
     mod.hookFunction("ChatRoomSync", 10, (args, next) => {
-        Hidden("(。_。)");
+        setTimeout(() => {
+            Hidden("(。_。)");
+        }, 1000);
         next(args);
 
     });
     mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
-        Hidden("(。_。)");
+        setTimeout(() => {
+            Hidden("(。_。)");
+        }, 1000);
         next(args);
     });
     mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
         let data = args[0]
         if (data.Content === 'ServerEnter') {
-            Hidden("(。_。)");
+            setTimeout(() => {
+                Hidden("(。_。)");
+            }, 1000);
         }
         next(args)
     });
