@@ -3829,14 +3829,14 @@
     mod.hookFunction("ChatRoomSync", 10, (args, next) => {
         setTimeout(() => {
             Hidden("(。_。)");
-        }, 1000);
+        }, 2000);
         next(args);
 
     });
     mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
         setTimeout(() => {
             Hidden("(。_。)");
-        }, 1000);
+        }, 2000);
         next(args);
     });
     mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
@@ -3844,7 +3844,7 @@
         if (data.Content === 'ServerEnter') {
             setTimeout(() => {
                 Hidden("(。_。)");
-            }, 1000);
+            }, 2000);
         }
         next(args)
     });
