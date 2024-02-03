@@ -3202,14 +3202,11 @@
             { regex: /This rule forbids (.+) to enter all rooms, that are not on an editable whitelist of still allowed ones\. NOTE\: As safety measure this rule is not in effect while the list is empty\. TIP\: This rule can be combined with the rule \"Forbid creating new rooms\"\./, replacement: "此规则禁 $1 进入未在可编辑的白名单上的所有房间. 注意: 作为安全措施, 此规则在列表为空时不生效. 提示: 此规则可以与规则 '禁止创建新房间' 结合使用." },
             { regex: /Here you switch the rule on\/off\, set a timer for activating\/deactivating \/ deleting the rule and define when it can trigger, such as either always or based on where the player is and with whom\.The small green\/red bars next to the checkboxes indicate whether a condition is true at present or not and the big bar whether this means that the rule is in effect\, if active\. Depending on the rule\, you can either enforce its effect\, log all violations\, or both at the same time\. Lastly on the bottom right\, you can set whether the trigger conditions of this rule should follow the global rules config or not\./, replacement: "在此, 您可以切换规则的开/关状态, 设置激活/停用/删除规则的计时器, 并定义它何时触发, 例如始终或基于玩家的位置和与谁在一起. 复选框旁边的小绿色/红色条指示条件当前是否为真, 大条指示是否在生效(如果激活). 具体取决于规则, 您可以强制执行其效果、记录所有违规行为或同时执行两者. 最后, 在右下角, 您可以设置此规则的触发条件是否应遵循全局规则配置." },
             { regex: /This rule forces (.+) to talk as if they were gagged\, automatically garbling all of their speech\. This rule does not affect OOC\. This rule only affects whispers if the rule \"Garble whispers while gagged\" is also in effect\./, replacement: "此规则强制 $1 以口球的方式交谈, 自动压制她的所有言论. 此规则不影响 OOC. 仅当规则 '口球时扭曲私语' 也生效时, 此规则才会影响私语." },
-
             { regex: /(.+) has too much willpower to let you in\.\.\./, replacement: "$1 拥有太多意志力不让你进入..." },
             { regex: /You must be the owner to purchase this module for (.+)\.\.\./, replacement: "你必须是 $1 的所有者才能购买此模块..." },
-
             { regex: /Your BCX version\: (.+)/, replacement: "您的BCX版本: $1" },
             { regex: /(.+)\'s BCX version\: (.+)/, replacement: "$1 的BCX版本: $2" },
-            { regex: /MBS: Show new (.+) items/, replacement: "MBS:显示新的$1项目" },
-            { regex: /Buy new (.+) items: Page (.+)/, replacement: "购买新的 $1 项：第 $2 页" },
+
 
             // { regex: /-/, replacement: "" },
 
@@ -3248,12 +3245,20 @@
                 if (args[0].indexOf("Your BCX version") !== -1) {
                     args[0] = args[0].replace(/Your BCX version\: (.+)/, "您的BCX版本: $1");
                 }
-
-                // 检查是否已经打印过这个文本
-                if (!printedTextMap.has(args[0])) {
-                    console.log(args[0]);
-                    printedTextMap.set(args[0], true);
+                if (args[0].indexOf("MBS: Show new") !== -1) {
+                    args[0] = args[0].replace(/MBS\: Show new (.+) items/, "MBS:显示新的$1项目");
                 }
+                if (args[0].indexOf("Buy new ") !== -1) {
+                    args[0] = args[0].replace(/Buy new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
+                }
+                if (args[0].indexOf("Preview new ") !== -1) {
+                    args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
+                }
+                // 检查是否已经打印过这个文本
+                // if (!printedTextMap.has(args[0])) {
+                //     console.log(args[0]);
+                //     printedTextMap.set(args[0], true);
+                // }
             }
         };
 
@@ -3570,7 +3575,7 @@
                     if (filteredObject.Text.indexOf("net") !== -1) {
                         filteredObject.Text = filteredObject.Text.replace(/net/g, "网");
                     }
-                    console.log(filteredObject.Text);
+                    // console.log(filteredObject.Text);
                 }
                 // console.log(data);
             }
@@ -3602,7 +3607,7 @@
                     if (filteredObject.Text.indexOf("net") !== -1) {
                         filteredObject.Text = filteredObject.Text.replace(/net/g, "网");
                     }
-                    console.log(filteredObject.Text);
+                    // console.log(filteredObject.Text);
                 }
                 // console.log(data);
             }
