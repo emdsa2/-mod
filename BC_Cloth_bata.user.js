@@ -15,7 +15,7 @@
     'use strict';
     const script = document.createElement("script");
     const timestamp = new Date().getTime(); // 创建当前时间的时间戳
-    script.src = `https://emdsa2.github.io/-mod/mod2.js?timestamp=${timestamp}`;
+    script.src = `https://emdsa2.github.io/-mod/modbata.js?timestamp=${timestamp}`;
     document.head.appendChild(script);
 })();
 
