@@ -3231,7 +3231,7 @@
             // function GetPlayerName(player) {
             //     return player?.Nickname != null && player?.Nickname != '' ? player?.Nickname : player?.Name;
             // }
-            
+
 
             let label = args[0];
             if (loginSuccess && label && label.length > 0) {
@@ -3239,11 +3239,16 @@
                     translationsDTF.forEach(({ regex, replacement }) => {
                         args[0] = args[0].replace(regex, replacement);
                     });
-                    if (InformationSheetSelection?.Nickname && args[0].indexOf(playername) !== -1 && !args[0].includes(playerNickname)) {
-                        args[0] = args[0].replace(new RegExp(playername, 'g'), playerNickname);
-                    }
 
-                    
+                    // if (ChatRoomCharacterCount >= 1) {
+
+                    //     if (InformationSheetSelection?.Nickname && args[0].indexOf(playername) !== -1 && !args[0].includes(playerNickname)) {
+                    //         args[0] = args[0].replace(new RegExp(playername, 'g'), playerNickname);
+                    //     }
+
+                    // }
+
+
                 } else {
                     args[0] = replaceLabelSync(label);
                 }
