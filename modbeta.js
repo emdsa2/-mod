@@ -31,9 +31,9 @@
     mod.patchFunction("GLDrawLoadImage", { // 这是服装图片
         "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
-    mod.patchFunction("DrawGetImage", { // 这是缩略图片
-        "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
-    });
+    // mod.patchFunction("DrawGetImage", { // 这是缩略图片
+    //     "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
+    // });
     // =======================================================================================
     const ICONS = Object.freeze({
         "Assets/Female3DCG/ItemDevices/Preview/猪猪_Luzi.png": "https://i.ibb.co/r0N2zGr/Luzi.png",
