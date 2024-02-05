@@ -41,7 +41,7 @@
     };
     // 屏蔽跨域
     mod.patchFunction("GLDrawLoadImage", { // 这是服装图片
-        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
+        "Img.src = url;": 'Img.crossOrigin = "anonymous";\n\t\tImg.src = url;',
     });
     // mod.patchFunction("DrawGetImage", { // 这是缩略图片
     //     "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
