@@ -28,43 +28,12 @@
     const w = window;
 
 
-    // 获取图像数据并转换为 Base64 编码
-    function fetchImageAndConvertToBase64(imageName, imageUrl) {
-        return fetch(imageUrl)
-            .then(response => response.blob())
-            .then(blob => {
-                return new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.onloadend = () => resolve([imageName, reader.result]);
-                    reader.onerror = reject;
-                    reader.readAsDataURL(blob);
-                });
-            });
-    }
 
     const imageUrlArray = {
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_鼻子.png": "https://raw.githubusercontent.com/emdsa2/-mod/main/image/%E7%8C%AA%E7%8C%AA%E9%BC%BB%E5%AD%90.png",
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://raw.githubusercontent.com/emdsa2/-mod/main/image/%E7%8C%AA%E7%8C%AA%E7%8C%AA%E7%8C%AA.png",
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://raw.githubusercontent.com/emdsa2/-mod/main/image/%E7%8C%AA%E7%8C%AA%E7%BC%B0%E7%BB%B3.png",
     };
-
-    // 初始化 ICONSSSSSSS 为空对象
-    w.ICONSSSSSSS = {};
-
-    // 使用 Promise.all 处理所有图像链接
-    Promise.all(Object.entries(imageUrlArray).map(([imageName, imageUrl]) => fetchImageAndConvertToBase64(imageName, imageUrl)))
-        .then(base64Array => {
-            // 将所有的 Base64 编码拼接到 ICONSSSSSSS 中
-            base64Array.forEach(([imageName, base64]) => {
-                w.ICONSSSSSSS[imageName] = base64;
-            });
-
-            // console.log(w.ICONSSSSSSS);
-        })
-        .catch(error => { console.error(error); });
-
-
-
 
     // =======================================================================================
     const ICONS = Object.freeze({
