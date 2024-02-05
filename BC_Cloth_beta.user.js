@@ -7,7 +7,6 @@
 // @include      /^https:\/\/(www\.)?bondageprojects\.elementfx\.com\/R\d+\/(BondageClub|\d+)(\/((index|\d+)\.html)?)?$/
 // @include      /^https:\/\/(www\.)?bondage-europe\.com\/R\d+\/(BondageClub|\d+)(\/((index|\d+)\.html)?)?$/
 // @grant        GM_xmlhttpRequest
-// @connect      gitlab.com
 // @run-at       document-end
 // ==/UserScript==
 
