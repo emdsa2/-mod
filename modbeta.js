@@ -27,13 +27,7 @@
     });
     const w = window;
 
-    // 屏蔽跨域
-    mod.patchFunction("GLDrawLoadImage", { // 这是服装图片
-        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
-    });
-    // mod.patchFunction("DrawGetImage", { // 这是缩略图片
-    //     "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
-    // });
+
     // =======================================================================================
     const ICONS = Object.freeze({
         "Assets/Female3DCG/ItemDevices/Preview/猪猪_Luzi.png": "https://i.ibb.co/r0N2zGr/Luzi.png",
@@ -45,7 +39,13 @@
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E7%8C%AA%E7%8C%AA.png",
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E7%BC%B0%E7%BB%B3.png",
     };
-
+    // 屏蔽跨域
+    mod.patchFunction("GLDrawLoadImage", { // 这是服装图片
+        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
+    });
+    // mod.patchFunction("DrawGetImage", { // 这是缩略图片
+    //     "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
+    // });
 
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
