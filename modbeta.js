@@ -25,23 +25,24 @@
         fullName: MOD_FULL_NAME,
         version: MOD_VERSION
     });
-    const w = window;
-
 
     // =======================================================================================
+    function patchFunction(target, patches) {
+        mod.patchFunction(target, patches);
+    }
     const ICONS = Object.freeze({
         "Assets/Female3DCG/ItemDevices/Preview/猪猪_Luzi.png": "https://i.ibb.co/r0N2zGr/Luzi.png",
 
     });
 
-    w.imageUrlArray = {
+    const imageUrlArray = {
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_鼻子.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E9%BC%BB%E5%AD%90.png",
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E7%8C%AA%E7%8C%AA.png",
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E7%BC%B0%E7%BB%B3.png",
     };
     // 屏蔽跨域
-    mod.patchFunction("GLDrawLoadImage", { // 这是服装图片
-        "Img.src = url;": 'Img.crossOrigin = "anonymous";\n\t\tImg.src = url;',
+    patchFunction("GLDrawLoadImage", { // 这是服装图片
+        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
     // mod.patchFunction("DrawGetImage", { // 这是缩略图片
     //     "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
@@ -50,8 +51,8 @@
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
 
-        if (w.imageUrlArray[data]) {
-            args[0] = w.imageUrlArray[data];
+        if (imageUrlArray[data]) {
+            args[0] = imageUrlArray[data];
             args[2] = 0;
             args[3] = 590;
         }
@@ -68,19 +69,16 @@
         next(args);
     });
 
-
-
-
     // ================================================================================
     // ================================================================================
+
     const addAsset = {
         ItemDevices: [
             { Name: "猪猪_Luzi", Random: false, SetPose: ["KneelingSpread"], AllowActivePose: ["KneelingSpread"], OverrideHeight: { Height: -150, Priority: 21 }, Layer: [{ Name: "鼻子", Priority: 56 }, { Name: "猪猪", Priority: 55 }, { Name: "缰绳", Priority: 26 },], },
-
-
         ],
 
     };
+
     function updateFemale3DCGAssets() {
         // "Socks", "SocksRight", "SocksLeft","RightAnklet","LeftAnklet","Garters",
         for (const groupName in addAsset) {
@@ -119,19 +117,6 @@
         }
         next(args);
     });
-
-
-
-
-
-    // ================================================================================
-    // ================================================================================
-
-
-
-    // ================================================================================
-    // ================================================================================
-
 
     mod.hookFunction("LoginResponse", 50, (args, next) => {
         next(args);
