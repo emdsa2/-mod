@@ -28,6 +28,7 @@
 
     // =======================================================================================
     function patchFunction(target, patches) {
+        console.log("服装拓展已加载！")
         mod.patchFunction(target, patches);
     }
     const ICONS = Object.freeze({
@@ -40,19 +41,13 @@
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E7%8C%AA%E7%8C%AA.png",
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://emdsa2.github.io/-mod/image/%E7%8C%AA%E7%8C%AA%E7%BC%B0%E7%BB%B3.png",
     };
+    // 屏蔽跨域
+    patchFunction("GLDrawLoadImage", {
+        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
+    });
 
 
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
-        // 屏蔽跨域
-        patchFunction("GLDrawLoadImage", { // 这是服装图片
-            "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
-        });
-        // mod.patchFunction("DrawGetImage", { // 这是缩略图片
-        //     "Img.src = Source;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = Source;',
-        // });
-
-
-
         const data = args[0];
 
         if (imageUrlArray[data]) {
