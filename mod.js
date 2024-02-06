@@ -618,6 +618,7 @@
             {
                 Name: "窝瓜_Luzi", Random: false,
                 Fetish: ["Pet"],
+                AllowLock: true,
                 Difficulty: -25,
                 SelfBondage: 0,
                 Time: 5,
