@@ -3206,11 +3206,7 @@
             { regex: /You must be the owner to purchase this module for (.+)\.\.\./, replacement: "你必须是 $1 的所有者才能购买此模块..." },
             { regex: /Your BCX version\: (.+)/, replacement: "您的BCX版本: $1" },
             { regex: /(.+)\'s BCX version\: (.+)/, replacement: "$1 的BCX版本: $2" },
-
-
             // { regex: /-/, replacement: "" },
-
-
         ];
 
         // 同步替换函数
@@ -3231,13 +3227,12 @@
             // function GetPlayerName(player) {
             //     return player?.Nickname != null && player?.Nickname != '' ? player?.Nickname : player?.Name;
             // }
-
-
+            
             let label = args[0];
             if (loginSuccess && label && label.length > 0) {
-                if (label.includes(Player.Name) || label.includes(InformationSheetSelection?.Name) || label.includes(InformationSheetSelection?.Nickname)) {
+                if (label.includes(Player.Name) || label.includes(InformationSheetSelection?.Name) ) {
                     translationsDTF.forEach(({ regex, replacement }) => {
-                        args[0] = args[0].replace(regex, replacement);
+                        args[0] = args[0].replace(regex, replacement.replace(playername, playerNickname));
                     });
 
                     // if (ChatRoomCharacterCount >= 1) {
@@ -3932,6 +3927,20 @@
     let CRCharacter;
     mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
+        if (data.Content === '╰(*°▽°*)╯BETA' && data.Type === 'Hidden') {
+            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
+            // console.log(CRCharacter)
+            if (CRCharacter) {
+                CRCharacter.ECHOBETA = true;
+            }
+        }
+        if (data.Content === '╰(*°▽°*)╯' && data.Type === 'Hidden') {
+            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
+            // console.log(CRCharacter)
+            if (CRCharacter) {
+                CRCharacter.ECHO = true;
+            }
+        }
         if (data.Content === '(._.)' && data.Type === 'Hidden') {
             CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
             // console.log(CRCharacter)
@@ -3948,10 +3957,19 @@
             let CharX = args[1];
             let CharY = args[2];
             let Zoom = args[3];
+            if (C.ECHOBETA) {
+                DrawImageResize("data:image/png;base64,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",
+                    CharX + 420 * Zoom, CharY + 5, 35 * Zoom, 35 * Zoom);
+            }
+            if (C.ECHO) {
+                DrawImageResize("data:image/png;base64,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",
+                    CharX + 420 * Zoom, CharY + 5, 35 * Zoom, 35 * Zoom);
+            }
             if (C.ECHO2) {
                 DrawImageResize("data:image/png;base64,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",
                     CharX + 420 * Zoom, CharY + 5, 35 * Zoom, 35 * Zoom);
             }
+
         }
         next(args);
     });
