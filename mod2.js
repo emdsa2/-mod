@@ -389,9 +389,7 @@
     //============================================================
 
     mod.hookFunction("LoginResponse", 10, (args, next) => {
-
         next(args)
-
         for (const key in activityAdd) {
             const activity2 = activityAdd[key].B;
             activity2.forEach((subArray) => {
@@ -1375,6 +1373,12 @@
             DrawCheckbox(250, 200, 64, 64, "                    高潮计数保留", Player.OnlineSettings.ECHO.高潮开关);
             DrawButton(250, 290, 390, 90, "      清空高潮次数", "White", "Icons/Trash.png");
             // 高潮计数
+            DrawButton(1500, 840, 390, 90, "      Discord", "White", "Icons/Trash.png");
+            if (MouseIn(1500, 840, 390, 90,) && PreferenceSubscreen === "Luzi") {
+                DrawTextWrap(
+                    `插件翻译\n\n\n\n\n动作\n/\n服装拓展\n\n在此查看插件更新及反馈建议`
+                    , 1500, 700, 390, 90, "black");
+            }
 
             // ElementCreateInput("InputLuzi", "text", "", "20"); // 添加输入框设置
             // ElementPosition("InputLuzi", 447, 450, 400); // 绘制输入框
@@ -1406,6 +1410,12 @@
             saveOrgasmCount(0);
         }
         // 高潮计数
+
+
+        if (MouseIn(1500, 840, 390, 90) && PreferenceSubscreen === "Luzi") {
+            window.open("https://discord.gg/K9YnNqsNKx");
+            // 
+        }
     });
 
     // ========================================================================
@@ -3227,10 +3237,10 @@
             // function GetPlayerName(player) {
             //     return player?.Nickname != null && player?.Nickname != '' ? player?.Nickname : player?.Name;
             // }
-            
+
             let label = args[0];
             if (loginSuccess && label && label.length > 0) {
-                if (label.includes(Player.Name) || label.includes(InformationSheetSelection?.Name) ) {
+                if (label.includes(Player.Name) || label.includes(InformationSheetSelection?.Name)) {
                     translationsDTF.forEach(({ regex, replacement }) => {
                         args[0] = args[0].replace(regex, replacement.replace(playername, playerNickname));
                     });
