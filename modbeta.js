@@ -343,6 +343,9 @@
         "Assets/Female3DCG/Emoticon/灯泡/Icon.png": "https://emdsa2.github.io/-mod/image/灯泡Icon.png",
         "Assets/Female3DCG/Emoticon/警告/Icon.png": "https://emdsa2.github.io/-mod/image/警告Icon.png",
         "Assets/Female3DCG/Emoticon/心/Icon.png": "https://emdsa2.github.io/-mod/image/心Icon.png",
+        "Assets/Female3DCG/Emoticon/画画/Icon.png": "https://emdsa2.github.io/-mod/image/画画Icon.png",
+        "Assets/Female3DCG/Emoticon/符号/Icon.png": "https://emdsa2.github.io/-mod/image/符号Icon.png",
+        "Assets/Female3DCG/Emoticon/视频/Icon.png": "https://emdsa2.github.io/-mod/image/视频Icon.png",
 
     });
     const PreviewICONS2 = Object.freeze({
@@ -352,6 +355,9 @@
         "Assets/Female3DCG/Emoticon/灯泡/Emoticon.png": "https://emdsa2.github.io/-mod/image/灯泡Emoticon.png",
         "Assets/Female3DCG/Emoticon/警告/Emoticon.png": "https://emdsa2.github.io/-mod/image/警告Emoticon.png",
         "Assets/Female3DCG/Emoticon/心/Emoticon.png": "https://emdsa2.github.io/-mod/image/心Emoticon.png",
+        "Assets/Female3DCG/Emoticon/画画/Emoticon.png": "https://emdsa2.github.io/-mod/image/画画Emoticon.png",
+        "Assets/Female3DCG/Emoticon/符号/Emoticon.png": "https://emdsa2.github.io/-mod/image/符号Emoticon.png",
+        "Assets/Female3DCG/Emoticon/视频/Emoticon.png": "https://emdsa2.github.io/-mod/image/视频Emoticon.png",
 
 
     });
@@ -814,9 +820,6 @@
             PoseFemale3DCG.push(...newPose);
             Object.assign(PoseRecord, newPoseRecord);
 
-            var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心"];
-            var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
-            GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
 
             updateFemale3DCGAssets();
 
@@ -869,25 +872,6 @@
         next(args);
     });
 
-    mod.hookFunction('CharacterIsExpressionAllowed', 0, async (args, next) => {
-        next(args);
-    });
-
-
-
-    mod.hookFunction('DialogFacialExpressionsBuild', 0, (args, next) => {
-
-
-
-        next(args);
-        var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心"];
-        var DialogEmoticon = DialogFacialExpressions.filter(A => A.Group === "Emoticon");
-        DialogEmoticon[0].ExpressionList = [...DialogEmoticon[0].ExpressionList, ...Emoticon内容];
-
-    });
-
-
-
     mod.hookFunction("LoginResponse", 50, (args, next) => {
         let newAssetPoseMapping = { 开腿_Luzi: "开腿_Luzi", 单腿站立_Luzi: "单腿站立_Luzi", };
         Asset.forEach(A => { if (A.Group.Name == "BodyLower") { A.Layer.forEach(item => item.PoseMapping = { ...item.PoseMapping, ...newAssetPoseMapping }); } });
@@ -914,7 +898,17 @@
                 });
             }
         });
+        
+        var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
+        var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
+        GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
 
+
+        AssetGroup.forEach(A => { if (A.Name === "Emoticon") {  
+            var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
+            A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
+            console.log(A.AllowExpression) 
+        } });
 
         next(args);
 
