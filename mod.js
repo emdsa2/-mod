@@ -820,6 +820,17 @@
             PoseFemale3DCG.push(...newPose);
             Object.assign(PoseRecord, newPoseRecord);
 
+            var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
+            var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
+            GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
+
+            AssetGroup.forEach(A => {
+                if (A.Name === "Emoticon") {
+                    var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
+                    A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
+                    console.log(A.AllowExpression)
+                }
+            });
 
             updateFemale3DCGAssets();
 
@@ -899,18 +910,6 @@
             }
         });
 
-        var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
-        var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
-        GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
-
-
-        AssetGroup.forEach(A => {
-            if (A.Name === "Emoticon") {
-                var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
-                A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
-                console.log(A.AllowExpression)
-            }
-        });
 
         next(args);
 
