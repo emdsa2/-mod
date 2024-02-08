@@ -402,6 +402,7 @@
         const data = args[0];
         if (
             !data.includes("Assets/Female3DCG/") &&
+            !data.includes("DynamicPlayerCanvas__") &&
             !data.startsWith("https://emdsa2.github.io/") &&
             !data.startsWith("https://cdn.discordapp.com/") &&
             !data.startsWith("https://i.imgur.com/") &&
@@ -909,7 +910,7 @@
                 });
             }
         });
-        
+
 
 
 
@@ -1032,7 +1033,6 @@
 
     mod.hookFunction("LoginResponse", 50, (args, next) => {
         next(args);
-
         if (Asset) {        // 确保 Asset 不为 undefined
             const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
             assetDescription.forEach(item => {
@@ -1046,6 +1046,7 @@
     });
 
     mod.hookFunction("ServerSend", 5, (args, next) => {
+
         if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
             let data = args[1];
             let Dictionary = data.Dictionary;
