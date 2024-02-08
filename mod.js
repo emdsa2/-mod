@@ -401,8 +401,7 @@
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
         if (
-            !data.includes("Assets/Female3DCG/") &&
-            !data.includes("DynamicPlayerCanvas__") &&
+            data.startsWith("https://") &&
             !data.startsWith("https://emdsa2.github.io/") &&
             !data.startsWith("https://cdn.discordapp.com/") &&
             !data.startsWith("https://i.imgur.com/") &&
@@ -413,6 +412,7 @@
 
         next(args);
     });
+
 
     mod.hookFunction('DrawImageEx', 50, async (args, next) => {
         const data = args[0];
