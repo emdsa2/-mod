@@ -255,9 +255,16 @@
         Act_触手揉鼻子: { A: createActivity("触手揉鼻子", "ItemNose", "ItemNose", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手揉鼻子", "SourceCharacter用触手揉了揉TargetCharacter的鼻子.", "SourceCharacter用触手揉了揉自己的鼻子.") },
         Act_触手揉脸: { A: createActivity("触手揉脸", "ItemMouth", "ItemMouth", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手揉脸", "SourceCharacter用触手揉了揉TargetCharacter的脸.", "SourceCharacter用触手揉了揉自己的脸.") },
 
+        Act_鱼尾揉脸: { A: createActivity("鱼尾揉脸", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾揉脸", "SourceCharacter用鱼尾揉了揉TargetCharacter的脸.", "SourceCharacter用鱼尾揉了揉PronounPossessive自己的脸.") },
+        Act_鱼尾戳脸: { A: createActivity("鱼尾戳脸", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾戳脸", "SourceCharacter用鱼尾戳了戳TargetCharacter的脸.", "SourceCharacter用鱼尾戳了戳PronounPossessive自己的脸.") },
+        Act_鱼尾抚脸: { A: createActivity("鱼尾抚脸", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾抚脸", "SourceCharacter用鱼尾轻抚TargetCharacter的脸颊.", "SourceCharacter用鱼尾轻抚PronounPossessive自己的脸颊.") },
+        Act_鱼尾担膝盖: { A: createActivity("鱼尾担膝盖", "ItemLegs", "", 50, 50, ["SuitLower鱼鱼尾_Luzi", "IsKneeling"], []), B: ActivityDictionaryadd("Act_鱼尾担膝盖", "SourceCharacter将鱼尾担在了TargetCharacter的膝盖上.", "") },
+        Act_鱼尾揉乳房: { A: createActivity("鱼尾揉乳房", "ItemBreast", "ItemBreast", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾揉乳房", "SourceCharacter用鱼尾揉了揉TargetCharacter的乳房.", "SourceCharacter用鱼尾揉了揉PronounPossessive自己的乳房.") },
+        Act_鱼尾扇风: { A: createActivity("鱼尾扇风", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾扇风", "SourceCharacter用鱼尾给TargetCharacter的脸扇了扇风.", "SourceCharacter用鱼尾给自己扇了扇风") },
+        Act_鱼尾戳乳头: { A: createActivity("鱼尾戳乳头", "ItemNipples", "ItemNipples", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾戳乳头", "SourceCharacter用鱼尾戳了戳TargetCharacter的乳头.", "SourceCharacter用鱼尾戳了戳自己的乳头.") },
+        Act_鱼尾碰手: { A: createActivity("鱼尾碰手", "ItemHands", "", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾碰手", "SourceCharacter将鱼尾踝搭在了TargetCharacter的手心上.", "") },
+        Act_鱼尾抚弄大腿: { A: createActivity("鱼尾抚弄大腿", "ItemLegs", "", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾抚弄大腿", "SourceCharacter用鱼尾抚弄TargetCharacter的大腿.", "") },
 
-
-        
 
         // ===========================
         // ===========================
@@ -305,6 +312,7 @@
 
         "HasTentacles2": (acting, acted, group) => !!InventoryIsItemInList(acting, "TailStraps", "Tentacles"), // 触手
 
+        "SuitLower鱼鱼尾_Luzi": (acting, acted, group) => !!InventoryIsItemInList(acting, "SuitLower", "鱼鱼尾_Luzi"),
 
 
     }));
@@ -426,6 +434,7 @@
     const Swordspng = "Assets/Female3DCG/ItemHandheld/Preview/Sword.png";
     const Scissorspng = "Assets/Female3DCG/ItemHandheld/Preview/Scissors.png";
     const Tentaclespng = "Assets/Female3DCG/TailStraps/Preview/Tentacles.png";
+    const 鱼尾 = "Assets/Female3DCG/ItemLegs/Preview/MermaidTail.png";
 
 
 
@@ -563,6 +572,15 @@
         [Activitypng + "Act_触手揉鼻子.png", Tentaclespng],
         [Activitypng + "Act_触手揉脸.png", Tentaclespng],
 
+        [Activitypng + "Act_鱼尾揉脸.png", 鱼尾],
+        [Activitypng + "Act_鱼尾戳脸.png", 鱼尾],
+        [Activitypng + "Act_鱼尾抚脸.png", 鱼尾],
+        [Activitypng + "Act_鱼尾担膝盖.png", 鱼尾],
+        [Activitypng + "Act_鱼尾揉乳房.png", 鱼尾],
+        [Activitypng + "Act_鱼尾扇风.png", 鱼尾],
+        [Activitypng + "Act_鱼尾戳乳头.png", 鱼尾],
+        [Activitypng + "Act_鱼尾碰手.png", 鱼尾],
+        [Activitypng + "Act_鱼尾抚弄大腿.png", 鱼尾],
 
 
 
