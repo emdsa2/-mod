@@ -556,8 +556,8 @@
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "", Kneel: "", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
                 Layer: [
-                    { Name: "鱼尾", AllowColorize: true, Priority: 24 },
-                    { Name: "高光", AllowColorize: true, Priority: 24 },
+                    { Name: "鱼尾", AllowColorize: true, Priority: 22 },
+                    { Name: "高光", AllowColorize: true, Priority: 22 },
                 ]
             },
         ],
