@@ -70,14 +70,10 @@
         "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png",
         "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png",
 
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
+        "Assets/Female3DCG/Shoes/鱼鱼尾_Luzi_Small_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
+        "Assets/Female3DCG/Shoes/鱼鱼尾_Luzi_Normal_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
+        "Assets/Female3DCG/Shoes/鱼鱼尾_Luzi_Large_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
+        "Assets/Female3DCG/Shoes/鱼鱼尾_Luzi_XLarge_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
 
 
     };
@@ -340,7 +336,7 @@
         "Assets/Female3DCG/Socks/Preview/条纹袜2_Luzi.png": "https://i.ibb.co/fHq6LX4/2.png",
         "Assets/Female3DCG/ItemDevices/Preview/窝瓜_Luzi.png": "https://i.ibb.co/6Bdh52s/image.png",
 
-        "Assets/Female3DCG/SuitLower/Preview/鱼鱼尾_Luzi.png": "https://emdsa2.github.io/-mod/image/Preview鱼鱼尾_Luzi.png",
+        "Assets/Female3DCG/Shoes/Preview/鱼鱼尾_Luzi.png": "https://emdsa2.github.io/-mod/image/Preview鱼鱼尾_Luzi.png",
 
 
 
@@ -550,18 +546,6 @@
         ],
         SuitLower: [
             { Name: "乳胶衣下_Luzi", Random: false, Prerequisite: ["HasVagina"], Attribute: ["SuitLower"], },
-            {
-                Name: "鱼鱼尾_Luzi", Random: false,
-                OverrideHeight: { Height: 30, Priority: 21 }, Hide: [],
-                PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "", Kneel: "", },
-                Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
-                Layer: [
-                    { Name: "鱼尾", AllowColorize: true, Priority: 24 },
-                    { Name: "高光", AllowColorize: true, Priority: 24 },
-
-                ]
-
-            },
         ],
         Bra: [
             {
@@ -790,29 +774,31 @@
                 IsRestraint: true, PoseMapping: ["开腿_Luzi"], SetPose: ["开腿_Luzi"],
             },
         ],
-        // ItemBoots: [
-        //     // {
-        //     //     Name: "隐藏四肢_Luzi", Random: false,
-        //     //     OverrideHeight: { Height: -300, Priority: 21 }, Hide: [], PoseMapping: [],
-        //     //     SetPose: ["手臂空D_Luzi", "小腿空D_Luzi"],
-        //     //     AllowActivePose: ["手臂空D_Luzi", "手臂空Y_Luzi", "手臂空O_Luzi", "小腿空KS_Luzi", "小腿空K_Luzi", "小腿空D_Luzi", "BaseUpper", "Kneel", "KneelingSpread", "Yoked", "OverTheHead", "AllFours", "BackBoxTie", "BackCuffs", "BackElbowTouch"]
-        //     // },
-        // ],
+        ItemBoots: [
+            {
+                Name: "隐藏四肢_Luzi", Random: false,
+                OverrideHeight: { Height: -300, Priority: 21 }, Hide: [], PoseMapping: [],
+                SetPose: ["手臂空D_Luzi", "小腿空D_Luzi"],
+                AllowActivePose: ["手臂空D_Luzi", "手臂空Y_Luzi", "手臂空O_Luzi", "小腿空KS_Luzi", "小腿空K_Luzi", "小腿空D_Luzi", "BaseUpper", "Kneel", "KneelingSpread", "Yoked", "OverTheHead", "AllFours", "BackBoxTie", "BackCuffs", "BackElbowTouch"]
+            },
+        ],
 
-        // Shoes: [
-        //     {
-        //         Name: "鱼鱼尾_Luzi", Random: false,
-        //         OverrideHeight: { Height: 30, Priority: 21 }, Hide: [],
-        //         PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "", Kneel: "", },
-        //         Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "SuitLower", "RightAnklet", "LeftAnklet", "Pussy"],
-        //         Layer: [
-        //             { Name: "鱼尾", AllowColorize: true, Priority: 26 },
-        //             { Name: "高光", AllowColorize: true, Priority: 26 },
+        Shoes: [
+            {
+                Name: "鱼鱼尾_Luzi", Random: false,
+                OverrideHeight: { Height: -300, Priority: 21 }, Hide: [],
+                PoseMapping: {
+                    Spread: "Spread",
+                    LegsClosed: "LegsClosed",
+                    KneelingSpread: "KneelingSpread",
+                    Kneel: "Kneel",
+                },
+                Hide: ["BodyLower"],
+                Layer: [
+                    { Name: "鱼尾", AllowColorize: true, Priority: 58 },]
 
-        //         ]
-
-        //     },
-        // ],
+            },
+        ],
 
 
 
@@ -915,7 +901,7 @@
             AssetAdd_Luzi("ItemAddon", "被子右边_Luzi");
             AssetAdd_Luzi("Bra", "透视皮衣_Luzi");
             AssetAdd_Luzi("ItemDevices", "窝瓜_Luzi");
-            AssetAdd_Luzi("SuitLower", "鱼鱼尾_Luzi");
+            AssetAdd_Luzi("Shoes", "鱼鱼尾_Luzi");
 
 
             AssetAdd_Luzi("Socks", "踩脚袜_Luzi");
