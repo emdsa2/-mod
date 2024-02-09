@@ -790,14 +790,14 @@
                 IsRestraint: true, PoseMapping: ["开腿_Luzi"], SetPose: ["开腿_Luzi"],
             },
         ],
-        ItemBoots: [
-            // {
-            //     Name: "隐藏四肢_Luzi", Random: false,
-            //     OverrideHeight: { Height: -300, Priority: 21 }, Hide: [], PoseMapping: [],
-            //     SetPose: ["手臂空D_Luzi", "小腿空D_Luzi"],
-            //     AllowActivePose: ["手臂空D_Luzi", "手臂空Y_Luzi", "手臂空O_Luzi", "小腿空KS_Luzi", "小腿空K_Luzi", "小腿空D_Luzi", "BaseUpper", "Kneel", "KneelingSpread", "Yoked", "OverTheHead", "AllFours", "BackBoxTie", "BackCuffs", "BackElbowTouch"]
-            // },
-        ],
+        // ItemBoots: [
+        //     // {
+        //     //     Name: "隐藏四肢_Luzi", Random: false,
+        //     //     OverrideHeight: { Height: -300, Priority: 21 }, Hide: [], PoseMapping: [],
+        //     //     SetPose: ["手臂空D_Luzi", "小腿空D_Luzi"],
+        //     //     AllowActivePose: ["手臂空D_Luzi", "手臂空Y_Luzi", "手臂空O_Luzi", "小腿空KS_Luzi", "小腿空K_Luzi", "小腿空D_Luzi", "BaseUpper", "Kneel", "KneelingSpread", "Yoked", "OverTheHead", "AllFours", "BackBoxTie", "BackCuffs", "BackElbowTouch"]
+        //     // },
+        // ],
 
         // Shoes: [
         //     {
