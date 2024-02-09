@@ -246,6 +246,23 @@
 
         Act_骑上去: { A: createActivity("骑上去", "ItemTorso", "", 50, 50, ["Hassaddle"], []), B: ActivityDictionaryadd("Act_骑上去", "SourceCharacter骑在TargetCharacter的背上.", "") },
         Act_躺上去: { A: createActivity("躺上去", "ItemDevices", "", 50, 50, ["Hasbed"], []), B: ActivityDictionaryadd("Act_躺上去", "SourceCharacter躺到TargetCharacter的身边.", "") },
+
+
+        Act_舔触手: { A: createActivity("舔触手", "", "ItemMouth", 50, 50, ["HasTentacles"], []), B: ActivityDictionaryadd("Act_舔触手", "", "SourceCharacter舔PronounPossessive的触手.") },
+        Act_触手摸头: { A: createActivity("触手摸头", "ItemHead", "ItemHead", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手摸头", "SourceCharacter用触手摸了摸TargetCharacter的头.", "SourceCharacter用触手摸了摸自己的头.") },
+        Act_触手戳鼻子: { A: createActivity("触手戳鼻子", "ItemNose", "ItemNose", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手戳鼻子", "SourceCharacter用触手戳了戳TargetCharacter的鼻子.", "SourceCharacter用触手戳了戳自己的鼻子.") },
+        Act_触手戳脸: { A: createActivity("触手戳脸", "ItemMouth", "ItemMouth", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手戳脸", "SourceCharacter用触手戳了戳TargetCharacter的脸.", "SourceCharacter用触手戳了戳自己的脸.") },
+        Act_触手揉鼻子: { A: createActivity("触手揉鼻子", "ItemNose", "ItemNose", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手揉鼻子", "SourceCharacter用触手揉了揉TargetCharacter的鼻子.", "SourceCharacter用触手揉了揉自己的鼻子.") },
+        Act_触手揉脸: { A: createActivity("触手揉脸", "ItemMouth", "ItemMouth", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手揉脸", "SourceCharacter用触手揉了揉TargetCharacter的脸.", "SourceCharacter用触手揉了揉自己的脸.") },
+
+
+
+        
+
+        // ===========================
+        // ===========================
+        // ===========================
+
     };
 
     //============================================================
@@ -258,6 +275,7 @@
         "HasTailCat": (acting, acted, group) => // 有猫尾巴
             !!InventoryIsItemInList(acted, "TailStraps", "TailStrap") ||
             !!InventoryIsItemInList(acted, "TailStraps", "KittenTailStrap1"),
+        "HasTentacles": (acting, acted, group) => !!InventoryIsItemInList(acted, "TailStraps", "Tentacles"), // 触手
 
         // 双向
         "HasPawMittens": (acting, acted, group) => // 有猫爪手套
@@ -282,13 +300,12 @@
         "HasBra": (acting, acted, group) => !!InventoryGet(acting, "Bra"), // 有胸罩
         "HasPanties": (acting, acted, group) => !!InventoryGet(acting, "Panties"), // 有内裤
         "HasSocks": (acting, acted, group) => !!InventoryGet(acting, "Socks"), // 有袜子
+        "Hassaddle": (acting, acted, group) => !!InventoryIsItemInList(acting, "ItemTorso", "缰绳_Luzi"), // 鞍
+        "Hasbed": (acting, acted, group) => !!InventoryIsItemInList(acting, "ItemDevices", "床右边_Luzi"), // 鞍
+
+        "HasTentacles2": (acting, acted, group) => !!InventoryIsItemInList(acting, "TailStraps", "Tentacles"), // 触手
 
 
-        "Hassaddle": (acting, acted, group) => // 鞍
-            !!InventoryIsItemInList(acting, "ItemTorso", "缰绳_Luzi"),
-
-        "Hasbed": (acting, acted, group) => // 鞍
-            !!InventoryIsItemInList(acting, "ItemDevices", "床右边_Luzi"),
 
     }));
 
@@ -408,6 +425,9 @@
     const Kennelpng = "Assets/Female3DCG/ItemDevices/Preview/Kennel.png";
     const Swordspng = "Assets/Female3DCG/ItemHandheld/Preview/Sword.png";
     const Scissorspng = "Assets/Female3DCG/ItemHandheld/Preview/Scissors.png";
+    const Tentaclespng = "Assets/Female3DCG/TailStraps/Preview/Tentacles.png";
+
+
 
     const ICONS = Object.freeze({ // 图片文件
     });
@@ -535,6 +555,15 @@
 
         [Activitypng + "Act_骑上去.png", Activitypng + "SistersHug.png"],
         [Activitypng + "Act_躺上去.png", Activitypng + "SistersHug.png"],
+
+        [Activitypng + "Act_舔触手.png", Tentaclespng],
+        [Activitypng + "Act_触手摸头.png", Tentaclespng],
+        [Activitypng + "Act_触手戳鼻子.png", Tentaclespng],
+        [Activitypng + "Act_触手戳脸.png", Tentaclespng],
+        [Activitypng + "Act_触手揉鼻子.png", Tentaclespng],
+        [Activitypng + "Act_触手揉脸.png", Tentaclespng],
+
+
 
 
     ]);
