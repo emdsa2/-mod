@@ -1920,7 +1920,7 @@
             ["Authority", "权限"],
             ["Export-Import", "导入导出"],
             ["Miscellaneous", "杂项"],
-            ["For saying 'thank you' with a tip", "说 '谢谢'并给出小费"],
+            ["For saying 'thank you' with a tip", "用于赞助支持"],
             ["Open changelog on GitHub", "在 GitHub 上打开更新日志"],
             ["Open invite to BCX Discord server", "打开 BCX Discord服务器邀请"],
             ["Show the BCX tutorial again", "再次显示 BCX教程"],
@@ -2100,7 +2100,7 @@
             ["Log each single orgasm", "记录每一次的高潮"],
             ["Log every rule violation", "记录每一次违规"],
             ["Log every time a triggered curse reapplies an item", "记录每一次触发的诅咒重新应用物品"],
-            ["Log getting or losing a BCX owner/mistress", "记录增加或删除 BCX 所有者/女主人的情况"],
+            ["Log getting or losing a BCX owner/mistress", "记录每一次增加或删除 BCX 所有者/女主人"],
             ["Log praising or scolding behavior", "记录赞扬或责备的行为"],
             ["Log which private rooms are entered", "记录进入哪些私人房间"],
             ["Log which public rooms are entered", "记录进入哪些公共房间"],
@@ -2811,7 +2811,7 @@
             ["- Little Sera's Club Games v0.3.41 -", ""],
             ["- LSCG General -", "- LSCG 通用 -"],
             ["- LSCG Triggered Hypnosis -", "- LSCG 触发催眠 -"],
-            ["- LSCG Breathplay -", "- LSCG 呼吸游戏 -"],
+            ["- LSCG Breathplay -", "- LSCG 窒息游戏 -"],
             ["Now available:", "现在可用:"],
             ["Andrew's Collar Control Module!!", "安德鲁的颈圈控制模块!!"],
             ["Has your owner sent you shopping for a more controlling collar?", "你的主人是否让你去购物找一个更有控制力的颈圈?"],
@@ -3129,7 +3129,6 @@
             ["Nude", "裸体"],
             ["View previous items", "查看上一项"],
             ["Cosplay", "角色装扮"],
-
 
 
 
@@ -3469,8 +3468,6 @@
             { regex: /You must be the owner to purchase this module for (.+)\.\.\./, replacement: "你必须是 $1 的所有者才能购买此模块..." },
             { regex: /Your BCX version\: (.+)/, replacement: "您的BCX版本: $1" },
             { regex: /(.+)\'s BCX version\: (.+)/, replacement: "$1 的BCX版本: $2" },
-            { regex: /For Better Club (.+) Loaded/, replacement: "1111111" },
-
 
 
 
@@ -3941,9 +3938,6 @@
         { regex: /(.+) tugs (.+) and (.+) out of the room by (.+) tongues\./, replacement: "$1拽着$2和$3走出房间, 用$4的舌头." },
         { regex: /(.+) tries (.+) best to escape from (.+)'s grip\.\.\./, replacement: "$1竭尽全力从$3的控制中挣脱..." },
         { regex: /(.+)\'s eyes start to roll back with a groan as (.+) completely closes (.+) airway with (.+) hand\./, replacement: "$1的眼睛开始滚动, 发出呻吟声, 当$2用$4的手完全封闭$3的气道时." },
-
-
-
     ];
 
 
