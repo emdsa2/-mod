@@ -26,9 +26,41 @@
         version: MOD_VERSION
     });
 
+    function patchFunction(target, patches) {
+        console.log("动作拓展0.3.0已加载！")
+        mod.patchFunction(target, patches);
+    }
+    // 屏蔽跨域
+    patchFunction("GLDrawLoadImage", {
+        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
+    });
+    patchFunction("CommonDynamicFunction", {
+        "else": '// else',
+        "console.log": '// console.log',
+    });
+    //============================================================
+    //============================================================
+    /**
+     * 替换原始动作
+     * @param {string} itemSlot - 道具所在的部位
+     * @param {string} itemName - 道具的名称
+     * @param {string} itemContent - 道具的内容
+     * @param {string} replacementText - 替换文本
+     */
+    function ReplaceOriginalAction(itemSlot, itemName, itemContent, replacementText, data) {
+        if (!!InventoryIsItemInList(Player, itemSlot, itemName)) {
+            if (data[0] == "ChatRoomChat" && data[1]?.Type == "Activity") {
+                if (data[1] && data[1]?.Content == itemContent) {
+                    data[1].Content = "笨蛋Luzi";
+                    data[1].Dictionary.push({
+                        Tag: "MISSING ACTIVITY DESCRIPTION FOR KEYWORD " + data[1].Content,
+                        Text: replacementText
+                    });
+                }
+            }
+        }
+    }
 
-    //============================================================
-    //============================================================
     mod.hookFunction("ServerSend", 5, (args, next) => { // ServerSend 只能检测自己发出的聊天信息 可以用来替换自己发出去的文字
         if (args[0] == "ChatRoomChat" && args[1]?.Type == "Activity") {
             let data = args[1];
@@ -44,6 +76,10 @@
                 });
             }
         }
+        var data = args;
+        ReplaceOriginalAction("SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemFeet-Wiggle", "SourceCharacter摇晃自己的鱼尾.", data);
+
+
         return next(args);
     });
 
@@ -436,10 +472,6 @@
     const Tentaclespng = "Assets/Female3DCG/TailStraps/Preview/Tentacles.png";
     const 鱼尾 = "Assets/Female3DCG/ItemLegs/Preview/MermaidTail.png";
 
-
-
-    const ICONS = Object.freeze({ // 图片文件
-    });
     const imageReplacement = new Map([ // 替换图片
         // ["Assets/Female3DCG/Activity/Act_托起乳房.png", ICONS2["Luzi_Oaood"]],
         [Activitypng + "Act_歪头.png", Activitypng + "Wiggle.png"],
@@ -634,7 +666,6 @@
             PoseSetActive(Player, poseName);
             ChatRoomCharacterUpdate(Player)
         }
-
         next(args);
     });
     //============================================================
@@ -1476,7 +1507,7 @@
     var playernum = "";
     var playerNickname = "";
 
-    var printedTextMap = new Map();
+    w.printedTextMap = new Map();
     // 打印整个 printedTextMap
     w.printPrintedTextMap = function () {
         console.log("Printed Text Map:");
@@ -3100,11 +3131,186 @@
             ["Cosplay", "角色装扮"],
 
 
+
+
+            // BCAR
+            ["BCAR + Settings", ""],
+            ["Current Version", ""],
+            ["- BCAR+ Settings -", ""],
+            ["Open Changelog", ""],
+            ["Open Wiki", ""],
+            ["List of all commands", ""],
+            ["Ears", ""],
+            ["Tails", ""],
+            ["Wings", ""],
+            ["Profiles", ""],
+            ["Reactions", ""],
+            ["Non-Binary", ""],
+            ["Human", ""],
+            ["Lower Right", ""],
+            ["Female", ""],
+            ["Lower Left", ""],
+            ["Fox", ""],
+            ["Upper Left", ""],
+            ["Mouse", ""],
+            ["Male", ""],
+            ["Open BCAR+ Changelog on GitHub.", ""],
+            ["Open BCAR+ Wiki on GitHub.", ""],
+            ["Cat", ""],
+            ["Dog", ""],
+            ["- BCAR+ Commands -", ""],
+            ["General Commands", ""],
+            ["/bcar animalhelp - Opens animal instructions and commands page.", ""],
+            ["/bcar arousalhelp - Opens arousal instructions and commands page.", ""],
+            ["/bcar changelog - Shows the BCAR changelog.", ""],
+            ["/bcar help - Opens the help window.", ""],
+            ["/bcar status - Opens the status window.", ""],
+            ["/bcar misc - Opens misc instructions and commands page.", ""],
+            ["/bcar profilehelp - Opens profile instructions and commands page.", ""],
+            [`/bcar male - Lets the reactions refer to the Player as "he".`, ""],
+            [`/bcar female - Lets the reactions refer to the Player as "she".`, ""],
+            [`/bcar other - Lets the reactions refer to the Player as "they".`, ""],
+            ["/bcar timerhelp - Opens timer instructions and commands page.", ""],
+            ["/bcar reset - Resets the ears, tails and wings to the default settings.", ""],
+            ["/bcar versions - Shows you the version of BCAR+ you are using.", ""],
+            ["Animals Commands", ""],
+            ["/bcar cat - Changes the reactions and sounds to cat realted ones.", ""],
+            ["/bcar dog - Changes the reactions and sounds to dog realted ones.", ""],
+            ["/bcar fox - Changes the reactions and sounds to fox realted ones.", ""],
+            ["/bcar human - Literally disables the reactions and sounds.", ""],
+            ["/bcar mouse - Changes the reactions and sounds to mouse realted ones.", ""],
+            ["Ear Commands", ""],
+            ["/bcar ear1 - Saves the primary ears.", ""],
+            ["/bcar ear2 - Saves the secondary ears.", ""],
+            ["/bcar earwiggle - Toggles the ear wiggling on/off.", ""],
+            ["/bcar earwigglecount - Determines the number of wiggles.", ""],
+            ["/bcar eardelay - Determines the wiggle speed.", ""],
+            ["/bcar eardelete - Removes the ears.", ""],
+            ["/bcar earhelp - Opens ear instructions and commands page.", ""],
+            ["Emote Commands", ""],
+            ["/bcar emoteear - Toggles ear wiggle emote on/off.", ""],
+            ["/bcar emotetail - Toggles tail wag emote on/off.", ""],
+            ["/bcar emotehelp - Opens emote instructions and commands page.", ""],
+            ["Expression Commands", ""],
+            ["/bcar expression - Toggles expression on/off.", ""],
+            ["/bcar expressions - Toggles expression on/off.", ""],
+            ["/bcar expressionhelp - Opens expression instructions and commands page.", ""],
+            ["Gender Commands", ""],
+            ["Misc Commands", ""],
+            ["/cum - Lets the player cum instantly.", ""],
+            ["/leave - Lets the player leave the room immediately.", ""],
+            ["/safewordspecific - Lets the player remove a certain restraint.", ""],
+            ["/wardrobe - Opens the wardrobe of the player.", ""],
+            ["Profile Commands", ""],
+            ["/bcar save1 - Saves current setup in Profile1.", ""],
+            ["/bcar save2 - Saves current setup in Profile2.", ""],
+            ["/bcar save3 - Saves current setup in Profile3.", ""],
+            ["/bcar load1 - Loads the setup saved in Profile1.", ""],
+            ["/bcar load2 - Loads the setup saved in Profile2.", ""],
+            ["/bcar load3 - Loads the setup saved in Profile3.", ""],
+            ["/bcar profile1 - Shows which setup is saved in Profile1.", ""],
+            ["/bcar profile2 - Shows which setup is saved in Profile2.", ""],
+            ["/bcar profile3 - Shows which setup is saved in Profile3.", ""],
+            ["Tail Commands", ""],
+            ["/bcar tail1 - Saves the primary tail.", ""],
+            ["/bcar tail2 - Saves the secondary tail.", ""],
+            ["/bcar tailwag - Toggles the tail wagging on/off.", ""],
+            ["/bcar tailwagcount - Determines the number of wags.", ""],
+            ["/bcar taildelay - Determines the wag speed.", ""],
+            ["/bcar taildelete - Removes the tail.", ""],
+            ["/bcar tailhelp - Opens tail instructions and commands page.", ""],
+            ["Timer Commands", ""],
+            ["/bcar timer - Toggles the timer on/off.", ""],
+            ["10/11", ""],
+            ["Wing Commands", ""],
+            ["/bcar wing1 - Saves the primary wings.", ""],
+            ["/bcar wing2 - Saves the secondary wings.", ""],
+            ["/bcar wingflap - Toggles the wing flapping on/off.", ""],
+            ["/bcar wingflapcount - Determines the number of flaps.", ""],
+            ["/bcar wingdelay - Determines the flap speed.", ""],
+            ["/bcar wingdelete - Removes the wings.", ""],
+            ["/bcar winghelp - Opens wing instructions and commands page.", ""],
+            ["/bcar fly - Starts flying.", ""],
+            ["/bcar land - Stops flying.", ""],
+            ["- BCAR+ Ears -", ""],
+            ["How To Use", ""],
+            ["First equip the main ears you want", ""],
+            [`to wear primarily in the "Ears" slot`, ""],
+            ["in your wardrobe. Use Update Ear 1", ""],
+            ["to save the main ears.", ""],
+            ["For your ears to wiggle follow the same", ""],
+            ["steps and equip a different type of ", ""],
+            [`"Ears" to use as your secondary.`, ""],
+            ["Use Update Ear 2 to save", ""],
+            ["the secondary ears.", ""],
+            ["The default of Wiggle Count is 12. ", ""],
+            ["You can set it to an even number ", ""],
+            ["between 0 and 40. ", ""],
+            ["The default of Wiggle Delay is 175. ", ""],
+            ["You can set it to a number ", ""],
+            ["between 50 and 3000. ", ""],
+            ["Update Ear 1:", ""],
+            ["Update Ear 2:", ""],
+            ["Enable Ear Wiggle:", ""],
+            ["Wiggle Count:", ""],
+            ["Wiggle Delay (ms):", ""],
+            ["Clear Ears:", ""],
+            ["Clear", ""],
+            ["Wiggle Ears:", ""],
+            ["Test", ""],
+            ["Clear Ears", ""],
+            ["Test Ear Wiggles", ""],
+            ["Update Ear 2 to Current", ""],
+            ["Update Ear 1 to Current", ""],
+            ["- BCAR+ Tail -", ""],
+            ["First equip the main tail you want", ""],
+            [`to wear primarily in the "TailStraps"`, ""],
+            ["slot in your wardrobe. Use Update Tail 1", ""],
+            ["to save the main tail.", ""],
+            ["For your tail to wag follow the same", ""],
+            [`"Tail" to use as your secondary.`, ""],
+            ["Use Update Tail 2 to save", ""],
+            ["the secondary tail.", ""],
+            ["The default of Wag Count is 6. ", ""],
+            ["The default of Wag Delay is 800. ", ""],
+            ["between 200 and 5000. ", ""],
+            ["Update Tail 1:", ""],
+            ["Update Tail 2:", ""],
+            ["Enable Tail Wag:", ""],
+            ["Wag Count:", ""],
+            ["Wag Delay (ms):", ""],
+            ["Clear Tail:", ""],
+            ["Wag Tail:", ""],
+            ["Update Tail 1 to Current", ""],
+            ["Update Tail 2 to Current", ""],
+            ["Test Tail Wags", ""],
+            ["Clear Tail", ""],
+            ["- BCAR+ Miscellaneous -", ""],
+            ["Enable Animation Buttons:", ""],
+            ["Enable Arousal Manipulation:", ""],
+            ["Enable BCAR+ Expressions:", ""],
+            ["Enable Ear Emote:", ""],
+            ["Enable Tail Emote:", ""],
+            ["Reset BCAR+", ""],
+            ["Resets every setting to default.", ""],
+            ["- BCAR+ Profiles -", ""],
+            ["Profile 1:", ""],
+            ["Save", ""],
+            ["Profile 2:", ""],
+            ["Profile 3:", ""],
+            ["Save Profile 1", ""],
+            ["Save Profile 2", ""],
+            ["Save Profile 3", ""],
+            ["Load Profile 1", ""],
+            ["Load Profile 2", ""],
+            ["Load Profile 3", ""],
+            ["Delete Profile 3", ""],
+            ["Delete Profile 2", ""],
+            ["Delete Profile 1", ""],
+            ["- BCAR+ Reactions -", ""],
             [`-  -`, `-  -`],
             ["", ""],
         ]);
-
-
 
 
 
@@ -3263,6 +3469,11 @@
             { regex: /You must be the owner to purchase this module for (.+)\.\.\./, replacement: "你必须是 $1 的所有者才能购买此模块..." },
             { regex: /Your BCX version\: (.+)/, replacement: "您的BCX版本: $1" },
             { regex: /(.+)\'s BCX version\: (.+)/, replacement: "$1 的BCX版本: $2" },
+            { regex: /For Better Club (.+) Loaded/, replacement: "1111111" },
+
+
+
+
             // { regex: /-/, replacement: "" },
         ];
 
@@ -3305,8 +3516,12 @@
                     args[0] = replaceLabelSync(label);
                 }
 
-                if (args[0].indexOf("Your BCX version") !== -1) {
-                    args[0] = args[0].replace(/Your BCX version\: (.+)/, "您的BCX版本: $1");
+
+                if (args[0].indexOf("BCX loaded! Version:") !== -1) {
+                    args[0] = args[0].replace(/BCX loaded! Version\: (.+)/, "您的BCX版本: $1");
+                }
+                if (args[0].indexOf("For Better Club v") !== -1) {
+                    args[0] = args[0].replace(/For Better Club v(.+) Loaded/, "您的BCX版本: $1");
                 }
                 if (args[0].indexOf("MBS: Show new") !== -1) {
                     args[0] = args[0].replace(/MBS\: Show new (.+) items/, "MBS:显示新的$1项目");
@@ -3318,20 +3533,138 @@
                     args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
                 }
                 // 检查是否已经打印过这个文本
-                // if (!printedTextMap.has(args[0])) {
-                //     console.log(args[0]);
-                //     printedTextMap.set(args[0], true);
-                // }
+                if (!printedTextMap.has(args[0])) {
+                    console.log(args[0]);
+                    printedTextMap.set(args[0], true);
+                }
             }
         };
+
+
+
+
+
+        const textsToTranslate = {
+            "#fusam-addon-manager-header > h1": "插件管理器",
+            "#fusam-addon-manager-body > p": "关于安全性的说明：尽管被发现是恶意的插件会从插件管理器中移除，但仍然有可能有一些漏网的鱼鱼",
+            "#fusam-show-button": "插件管理器",
+            "#fusam-addon-manager-close": "保存",
+        };
+
+
+        // 映射对象，存储搜索文本和对应的替换文本
+        const textReplacements = {
+            "For Better Club (FBC)": "更好的俱乐部 (FBC)",
+            "Smarter, extensible facial animation and posing engine, instant messaging, appearance layering and a collection of quality of life improvements.": "智能、可扩展的面部动画和姿势引擎、即时消息、外观分层以及一系列提升游戏品质的改进",
+            "by the authors of the Addon Manager": "由插件管理器的作者编写",
+            "Universal Remote": "通用远程控制器 (Universal Remote)",
+            "This remote works across chat rooms, but requires both players to have it. /ur or friends list to use.": "该远程控制器可以跨聊天室使用，但需要双方玩家都拥有它。/ur 或 好友列表中使用。",
+            "Bondage Club Extended (BCX)": "束缚俱乐部扩展 (BCX)",
+            "by Jomshir98 & Claudia": "由 Jomshir98 & Claudia 编写",
+            "Adds rules, curses, and more to enhance D/s play alongside a handful of quality of life improvements": "添加规则、诅咒等，以增强 D/s 游戏体验，并提供一些提升游戏品质的改进",
+            "Themed": "主题 (Themed)",
+            "by dDeepLb": "由 dDeepLb 编写",
+            "Adds custom themes to BC along with other features": "为 BC 添加自定义主题以及其他功能",
+            "Advanced Drone Control System (ADCS)": "先进仆从机控制系统 (ADCS)",
+            "by SaotomeToyStore": "由 SaotomeToyStore 制作",
+            "Expansion of Drone gameplay": "提供一些主人语言指令控制ADCS束缚套装的功能",
+            "BCX Reset Button Disabler": "BCX 重置按钮禁用器 (BCX Reset Button Disabler)",
+            "by Ciber": "由 Ciber 制作",
+            "A very simple addon that disables the Module and Reset Buttons from BCX. That means you can have a new layer of helplessness.": "一个非常简单的插件，可以禁用 BCX 的模块和重置按钮。这意味着你可以增加一层新的无助感。",
+            "Bondage Club Auto React (BCAR)": "束缚俱乐部自动回应 (BCAR)",
+            "by Dr Branestawm": "由 Dr Branestawm 制作",
+            "Automatically reacts to messages in the Bondage Club": "自动回应束缚俱乐部的消息",
+            "Bondage Club X-Toys Integration": "束缚俱乐部 X-Toys 集成 (Bondage Club X-Toys Integration)",
+            "by ItsNorin": "由 ItsNorin 制作",
+            "Sync club interactions and toys with IRL remote-controlled toys, recommended use with https://github.com/itsFro/BCBridge": "将俱乐部互动和玩具与现实生活中的远程控制玩具同步，建议与 https://github.com/itsFro/BCBridge 一起使用",
+            "BCTweaks": "BC调整 (BCTweaks)",
+            "by Crimsonfox & agicitag": "由 Crimsonfox & agicitag 制作",
+            "Split arousal and orgasm bars, tail wagging, and Best Friends": "分割兴奋和高潮条，摇尾巴和最好的朋友",
+            "Eli's Bondage Club Helper (EBCH)": "Eli 的束缚俱乐部助手 (EBCH)",
+            "by Elicia": "由 Elicia 制作",
+            "Ungarble, custom notifications, altering other player's poses": "解除混淆，自定义通知，修改其他玩家的姿势",
+            "Little Sera's Club Games (LSCG)": "Little Sera 的俱乐部游戏 (LSCG)",
+            "by Little Sera": "由 Little Sera 制作",
+            "Adds large gamified systems for hypnotism and breathplay": "添加了大型游戏化系统，用于催眠和呼吸游戏。",
+            "Mute's Bondage Club Hacks Collection (MBCHC)": "Mute 的束缚俱乐部黑客收藏 (MBCHC)",
+            "by Mute": "由 Mute 制作",
+            "Autohack, local time, some keyboard goodies etc.": "自动黑客，本地时间，一些键盘上的东西等等",
+            "Maid's Bondage Scripts (MBS)": "女仆的束缚脚本 (MBS)",
+            "by Rama": "由 Rama 制作",
+            "Additional crafting slots, additional options in wheel of fortune, and custom outfits in wheel of fortune": "额外的制作槽，命运之轮中的额外选项，以及命运之轮中的定制服装",
+            "Responsive": "回应 (Responsive)",
+            "by SaotomeToyStore, dDeepLb": "由 SaotomeToyStore，dDeepLb 制作",
+            "Automatically sends messages when the user reaches a certain state (slapped, orgasm, etc).": "当用户达到特定状态（被打，高潮等）时自动发送消息。",
+            "ULTRAbc": "ULTRA Bondage Club (ULTRAbc)",
+            "by Nemesea": "由 Nemesea 制作",
+            "A large collection of cheats, quality of life improvements, and a moaner script": "一大堆作弊、提高生活质量的改进和呻吟者脚本",
+            "NotifyPlus": "改进提醒 (NotifyPlus)",
+            "by SaotomeToyStore": "由 SaotomeToyStore 制作",
+            "Improve the Name Mentioned notification in the original BC. Use keywords for mentioning names according to different roles. (Note: source code unavailable)": "改进BC原本提醒中的提到名字的规则。按照不同的身份配置提到名字的触发关键词。（注：源代码不可用）",
+            "TTS and Morse": "TTS 和 Morse (TTS and Morse)",
+            "by KatKammand": "由 KatKammand 制作",
+            "Text-to-speech reading for chat messages, and some buttplug.io + morse functionalities.": "聊天文字转语音阅读，以及一些 buttplug.io + morse 功能。",
+            "Chat Auto Translator Script": "聊天自动翻译脚本 (Chat Auto Translator Script)",
+            "by Ciber, dDeepLb and KatKammand": "由 Ciber，dDeepLb 和 KatKammand 制作",
+            "Addon that auto-translates the chat to the language you want. 130+ Languages available. Commands: /ttoggle to toggle the translator on and off. And /tlang": "将聊天自动翻译为您想要的语言的插件。有 130 多种语言可用。命令：/ttoggle 切换翻译器的开关。/tlang ",
+            ", to change the language used.": "用于更改所使用的语言。",
+            "Device": "本设备启用",
+            "Account": "当前账户开启",
+            "None": "无",
+            "stable": "稳定版",
+            "dev": "开发版",
+            
+            // "": "",
+            // "": "",
+            // console.log(1)
+
+        };
+
+        
+        // 递归函数替换文本内容
+        function replaceTextNodes(element) {
+            if (element.nodeType === Node.TEXT_NODE) { // 如果是文本节点，则进行文本替换
+                let nodeValue = element.nodeValue;
+                // 遍历映射对象，查找并替换文本
+                for (let searchText in textReplacements) {
+                    if (nodeValue.includes(searchText)) {
+                        const replacedText = textReplacements[searchText];
+                        if (!nodeValue.includes(replacedText)) { // 检查当前节点是否已经包含替换后的文本
+                            nodeValue = nodeValue.replace(searchText, replacedText);
+                            element.nodeValue = nodeValue;
+                            element.parentElement.setAttribute('data-replaced', true); // 添加标记
+                        }
+                    }
+                }
+            } else if (element.nodeType === Node.ELEMENT_NODE) {
+                // 如果是元素节点，则递归遍历其子节点
+                for (let i = 0; i < element.childNodes.length; i++) {
+                    replaceTextNodes(element.childNodes[i]);
+                }
+            }
+        }
+
 
         mod.hookFunction("DrawText", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
             if (language === "CN" || language === "TW") {
                 replaceLabels(args);
+                // 遍历待翻译的文本内容，翻译并替换对应的元素文本内容
+                for (const [selector, translatedText] of Object.entries(textsToTranslate)) {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        element.textContent = translatedText;
+                    }
+                }
+                const myDiv = document.querySelector("#fusam-addon-manager-body");
+                if (myDiv) {
+                    // 调用递归函数替换文本内容
+                    replaceTextNodes(myDiv);
+                }
             }
             next(args);
         });
+
 
         mod.hookFunction("DrawTextFit", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
@@ -3608,6 +3941,9 @@
         { regex: /(.+) tugs (.+) and (.+) out of the room by (.+) tongues\./, replacement: "$1拽着$2和$3走出房间, 用$4的舌头." },
         { regex: /(.+) tries (.+) best to escape from (.+)'s grip\.\.\./, replacement: "$1竭尽全力从$3的控制中挣脱..." },
         { regex: /(.+)\'s eyes start to roll back with a groan as (.+) completely closes (.+) airway with (.+) hand\./, replacement: "$1的眼睛开始滚动, 发出呻吟声, 当$2用$4的手完全封闭$3的气道时." },
+
+
+
     ];
 
 
@@ -3677,8 +4013,14 @@
         }
         next(args);
     });
+    // ========================================================================
+    // ========================================================================
 
 
+    // ========================================================================
+    // ========================================================================
+    // ========================================================================
+    // ========================================================================
     // ========================================================================
     // ========================================================================
     function getMountArray(name, data, assetgroup) {
