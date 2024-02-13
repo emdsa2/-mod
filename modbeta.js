@@ -910,7 +910,7 @@
     // AssetFemale3DCG.find(asset => asset.Group === "ClothAccessory_笨蛋Luzi")
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
-
+        AssetLoadAll()
         let newPose = [
             { Name: '开腿_Luzi', Category: 'BodyLower', OverrideHeight: { Height: -260, Priority: 9 }, AllowMenu: false, MovePosition: [{ Group: "ItemVulva", X: 0, Y: -18, }, { Group: "Pussy", X: 0, Y: -18, }, { Group: "ItemVulvaPiercings", X: 0, Y: -18, }], },
             { Name: '单腿站立_Luzi', Category: 'BodyLower', OverrideHeight: { Priority: 9 }, AllowMenu: false, MovePosition: [], },
@@ -999,22 +999,59 @@
 
 
 
+            // // 需要执行相同操作的项的数组
+            // const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
 
             // // 循环遍历每个需要复制的项
+            // itemsToCopy.forEach(itemName => {
+            //     // 找到对应项的索引位置
+            //     let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
+            //     if (itemIndex !== -1) { // 如果找到了对应项
+            //         // 复制对应项
+            //         let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
+            //         itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+
+            //         // 获取复制项的 Asset 数组
+            //         let copiedAssets = itemCopy.Asset;
+            //         copiedAssets.forEach(asset => {
+            //             // 给每个对象都加上 Random: false 属性（如果不存在的话）
+            //             asset.Random = false;
+            //         });
+            //         AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
+            //     }
+            // });
+
+            // // 遍历 itemsToCopy 中的每一项
+            // itemsToCopy.forEach(itemName => {
+            //     // 找到对应项的对象
+            //     const item = AssetFemale3DCGExtended[itemName];
+            //     if (item) { // 如果找到了对应项
+            //         // 复制对应项
+            //         const itemCopy = { ...item };
+            //         // 修改复制的项的名称为原名称加上 "2"
+            //         const newItemName = itemName + "_笨笨蛋Luzi";
+            //         itemCopy.Group = newItemName;
+
+            //         // 将修改后的项添加到原数组中
+            //         AssetFemale3DCGExtended[newItemName] = itemCopy;
+            //     }
+            // });
+
+            // // // 循环遍历每个需要复制的项
             // itemsToCopy.forEach(itemName => {
             //     let itemIndex = AssetGroup.findIndex(A => A.Name === itemName); // 找到对应项的索引位置
             //     if (itemIndex !== -1) { // 如果找到了对应项
             //         // 复制对应项
             //         let itemCopy = Object.assign({}, AssetGroup[itemIndex]); // 假设 AssetGroup 里的项是对象，如果是数组则使用 slice() 方法
-            //         itemCopy.Name = itemName + "_笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
-            //         itemCopy.DynamicGroupName = itemName + "_笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+            //         itemCopy.Name = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+            //         itemCopy.DynamicGroupName = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
 
             //         // itemCopy.Asset = []; // 将复制项的 Asset 属性设置为空数组
             //         AssetGroup.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
             //     }
             // });
 
-            // // 遍历需要复制的项的数组
+            // // // 遍历需要复制的项的数组
             // itemsToCopy.forEach(itemName => {
             //     // 在 AssetGroupMap 中找到对应项
             //     let item = AssetGroupMap.get(itemName);
@@ -1023,13 +1060,13 @@
             //     if (item) {
             //         // 创建复制项并修改名称
             //         let copiedItem = Object.assign({}, item);
-            //         copiedItem.Name = itemName + "_笨蛋Luzi";
-            //         copiedItem.DynamicGroupName = itemName + "_笨蛋Luzi";
+            //         copiedItem.Name = itemName + "_笨笨蛋Luzi";
+            //         copiedItem.DynamicGroupName = itemName + "_笨笨蛋Luzi";
             //         // 将复制项添加到 AssetGroupMap 中
-            //         AssetGroupMap.set(itemName + "_笨蛋Luzi", copiedItem);
+            //         AssetGroupMap.set(itemName + "_笨笨蛋Luzi", copiedItem);
             //     }
             // });
-            // // 遍历需要复制的项的数组
+            // // // 遍历需要复制的项的数组
             // itemsToCopy.forEach(itemName => {
             //     // 在 AssetActivityMirrorGroups 中找到对应项
             //     let item = AssetActivityMirrorGroups.get(itemName);
@@ -1038,19 +1075,19 @@
             //     if (item) {
             //         // 创建复制项并修改名称
             //         let copiedItem = Object.assign({}, item);
-            //         copiedItem.Name = itemName + "_笨蛋Luzi";
-            //         copiedItem.DynamicGroupName = itemName + "_笨蛋Luzi";
+            //         copiedItem.Name = itemName + "_笨笨蛋Luzi";
+            //         copiedItem.DynamicGroupName = itemName + "_笨笨蛋Luzi";
             //         // 将复制项添加到 AssetActivityMirrorGroups 中
-            //         AssetActivityMirrorGroups.set(itemName + "_笨蛋Luzi", copiedItem);
+            //         AssetActivityMirrorGroups.set(itemName + "_笨笨蛋Luzi", copiedItem);
             //     }
             // });
 
 
             // AssetGroup.forEach(A => {
-            //     if (A.Name === "Cloth_笨蛋Luzi") {
+            //     if (A.Name === "Cloth_笨笨蛋Luzi") {
             //         // console.log(A);
             //         A.Asset.forEach(A => {
-            //             // A.Name = A.Name.concat("_笨蛋Luzi");
+            //             // A.Name = A.Name.concat("_笨笨蛋Luzi");
             //             console.log(A.Group);
             //         })
             //     }
