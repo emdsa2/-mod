@@ -18,13 +18,15 @@
     const MOD_NAME = "动作拓展";
     const MOD_FULL_NAME = "动作拓展";
     const MOD_VERSION = "0.2.0";
-
+    const MOD_REPOSITORY = "https://github.com/emdsa2/-mod";
 
     const mod = bcModSdk.registerMod({
         name: MOD_NAME,
         fullName: MOD_FULL_NAME,
-        version: MOD_VERSION
+        version: MOD_VERSION,
+        repository: MOD_REPOSITORY,
     });
+
 
     function patchFunction(target, patches) {
         console.log("动作拓展0.3.0已加载！")
