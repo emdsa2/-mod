@@ -38,7 +38,7 @@
 
 
     // 需要执行相同操作的项的数组
-    const itemsToCopy = ["Cloth", "ClothAccessory", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
+    const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
 
     // 循环遍历每个需要复制的项
     itemsToCopy.forEach(itemName => {
@@ -51,7 +51,7 @@
             AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy);// 在原索引位置之后插入复制的项
         }
     });
-
+    
 
 
     const ICONSSSSSSS = {
@@ -453,8 +453,9 @@
     });
 
 
-    mod.hookFunction('DrawImageEx', 50, async (args, next) => {
+    mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
+        // console.log(data)
         if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
@@ -1019,7 +1020,7 @@
             //         })
             //     }
             // });
-            
+
 
             // AssetGroup.forEach(A => {
             //     if (A.Name === "ClothAccessory") {
@@ -1191,6 +1192,29 @@
         ['ItemDevices窝瓜_LuziSet有盖子', 'SourceCharacter盖上了DestinationCharacter的盖子'],
     ]);
 
+
+    // 创建一个函数，用于替换描述
+    function replaceDescription(baseName, luZiName) {
+        // 获取基本名称和笨笨蛋Luzi名称的 Asset 数组
+        const baseAssets = AssetGroup.find(item => item.Name === baseName)?.Asset;
+        const luZiAssets = AssetGroup.find(item => item.Name === luZiName)?.Asset;
+
+        // 如果两者都存在
+        if (baseAssets && luZiAssets) {
+            // 遍历基本名称的 Asset 数组
+            baseAssets.forEach(baseAsset => {
+                // 在笨笨蛋Luzi名称的 Asset 数组中查找相同的 Name
+                const matchingAsset = luZiAssets.find(asset => asset.Name === baseAsset.Name);
+                if (matchingAsset) {
+                    // 如果找到了相同的 Name，则将笨笨蛋Luzi的 Description 替换为基本名称的 Description
+                    matchingAsset.Description = baseAsset.Description;
+                }
+            });
+        }
+    }
+
+
+
     mod.hookFunction("LoginResponse", 50, (args, next) => {
         next(args);
 
@@ -1203,22 +1227,48 @@
             });
         }
         if (AssetGroup) {        // 确保 Asset 不为 undefined
-            const assetDescription = AssetGroup.filter(item => item.Name && item.Name.includes('_笨笨蛋Luzi'));
-            assetDescription.forEach(item => {
+            // 创建一个映射存储名称和描述的对应关系
+            const descriptionMap = new Map([
+                ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
+                ['ClothLower_笨笨蛋Luzi', '🍔下装2'],
+                ['Panties_笨笨蛋Luzi', '🍔内裤2'],
+                ['ClothAccessory_笨笨蛋Luzi', '🍔服装配饰2'],
+                ['Necklace_笨笨蛋Luzi', '🍔项链2'],
+                ['Bra_笨笨蛋Luzi', '🍔胸罩2'],
+                ['Shoes_笨笨蛋Luzi', '🍔鞋子2'],
+                ['Hat_笨笨蛋Luzi', '🍔帽子2'],
+                ['HairAccessory3_笨笨蛋Luzi', '🍔发饰2'],
+                ['Gloves_笨笨蛋Luzi', '🍔手套2'],
+                ['Mask_笨笨蛋Luzi', '🍔面具2'],
+                ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
+
+            ]);
+            // 遍历 AssetGroup，并根据名称从映射中获取描述并设置给对应的道具对象
+            AssetGroup.forEach(item => {
                 if (item.Name) {
-                    item.Description = item.Name.replace('_笨笨蛋Luzi', '');
+                    const description = descriptionMap.get(item.Name);
+                    if (description) {
+                        item.Description = description;
+                    }
                 }
             });
+
         }
 
-        if (AssetGroup) {        // 确保 Asset 不为 undefined
-            const assetDescription = Asset.filter(item => item.Description && item.Description.includes('MISSING ASSET DESCRIPTION: '));
-            assetDescription.forEach(item => {
-                if (item.Name) {
-                    item.Description = item.Name.replace(/.*?_笨笨蛋Luzi:/, ''); // 删除'_Luzi'及其前面的字符串
-                }
-            });
-        }
+        // 执行替换操作
+        replaceDescription('Cloth', 'Cloth_笨笨蛋Luzi');
+        replaceDescription('ClothLower', 'ClothLower_笨笨蛋Luzi');
+        replaceDescription('Panties', 'Panties_笨笨蛋Luzi');
+        replaceDescription('ClothAccessory', 'ClothAccessory_笨笨蛋Luzi');
+        replaceDescription('Necklace', 'Necklace_笨笨蛋Luzi');
+        replaceDescription('Bra', 'Bra_笨笨蛋Luzi');
+        replaceDescription('Shoes', 'Shoes_笨笨蛋Luzi');
+        replaceDescription('Hat', 'Hat_笨笨蛋Luzi');
+        replaceDescription('HairAccessory3', 'HairAccessory3_笨笨蛋Luzi');
+        replaceDescription('Gloves', 'Gloves_笨笨蛋Luzi');
+        replaceDescription('Mask', 'Mask_笨笨蛋Luzi');
+        replaceDescription('Wings', 'Wings_笨笨蛋Luzi');
+
 
 
 
@@ -1286,8 +1336,12 @@
     });
 
     mod.hookFunction("DrawTextFit", 10, (args, next) => {
+        // console.log(args[0])
         if (args[0] && args[0].includes('_Luzi')) {
             args[0] = args[0].replace(/.*?_Luzi/, ''); // 删除'_Luzi'及其前面的字符串
+        }
+        if (args[0] && args[0].includes('_笨笨蛋Luzi')) {
+            args[0] = args[0].replace(/.*?_笨笨蛋Luzi/, ''); // 删除'_Luzi'及其前面的字符串
         }
         next(args);
     });
