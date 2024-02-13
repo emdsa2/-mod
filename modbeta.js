@@ -48,6 +48,7 @@
             // 复制对应项
             let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
             itemCopy.Group = itemName + "_笨笨蛋Luzi";// 修改复制的项的名称为原名称加上 "2"
+            Random = false
             AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy);// 在原索引位置之后插入复制的项
         }
     });
