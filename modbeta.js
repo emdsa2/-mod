@@ -19,13 +19,15 @@
     const MOD_NAME = "服装拓展Beta";
     const MOD_FULL_NAME = "服装拓展Beta";
     const MOD_VERSION = "0.2.0";
+    const MOD_REPOSITORY = "https://github.com/emdsa2/-mod";
 
     const mod = bcModSdk.registerMod({
         name: MOD_NAME,
         fullName: MOD_FULL_NAME,
-        version: MOD_VERSION
+        version: MOD_VERSION,
+        repository: MOD_REPOSITORY,
     });
-    const w = window;
+
 
     function patchFunction(target, patches) {
         console.log("服装拓展已加载！")
@@ -35,6 +37,12 @@
     patchFunction("GLDrawLoadImage", {
         "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
+
+    // patchFunction("CommonCallFunctionByNameWarn", {
+    //     "console.warn": '// console.warn', 
+    // });
+
+
 
 
     // 需要执行相同操作的项的数组
@@ -51,19 +59,32 @@
 
             // 获取复制项的 Asset 数组
             let copiedAssets = itemCopy.Asset;
-
-            // 如果复制项的 Asset 存在且是数组
-            if (copiedAssets && Array.isArray(copiedAssets)) {
-                // 循环遍历复制项的 Asset 数组中的每个对象
-                copiedAssets.forEach(asset => {
-                    // 给每个对象都加上 Random: false 属性（如果不存在的话）
-                    asset.Random = false;
-                });
-            }
-
+            copiedAssets.forEach(asset => {
+                // 给每个对象都加上 Random: false 属性（如果不存在的话）
+                asset.Random = false;
+            });
             AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
         }
     });
+
+    // 遍历 itemsToCopy 中的每一项
+    itemsToCopy.forEach(itemName => {
+        // 找到对应项的对象
+        const item = AssetFemale3DCGExtended[itemName];
+        if (item) { // 如果找到了对应项
+            // 复制对应项
+            const itemCopy = { ...item };
+            // 修改复制的项的名称为原名称加上 "2"
+            const newItemName = itemName + "_笨笨蛋Luzi";
+            itemCopy.Group = newItemName;
+
+            // 将修改后的项添加到原数组中
+            AssetFemale3DCGExtended[newItemName] = itemCopy;
+        }
+    });
+
+
+
 
 
 
