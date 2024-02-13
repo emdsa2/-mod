@@ -494,6 +494,13 @@
         if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
+
+        next(args);
+    });
+
+    mod.hookFunction('DrawImageEx', 1, async (args, next) => {
+        const data = args[0];
+
         // console.log(data)
         if (PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
@@ -501,7 +508,6 @@
 
         next(args);
     });
-
 
 
 
