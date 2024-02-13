@@ -47,12 +47,25 @@
         if (itemIndex !== -1) { // 如果找到了对应项
             // 复制对应项
             let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
-            itemCopy.Group = itemName + "_笨笨蛋Luzi";// 修改复制的项的名称为原名称加上 "2"
-            Random = false
-            AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy);// 在原索引位置之后插入复制的项
+            itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+
+            // 获取复制项的 Asset 数组
+            let copiedAssets = itemCopy.Asset;
+
+            // 如果复制项的 Asset 存在且是数组
+            if (copiedAssets && Array.isArray(copiedAssets)) {
+                // 循环遍历复制项的 Asset 数组中的每个对象
+                copiedAssets.forEach(asset => {
+                    // 给每个对象都加上 Random: false 属性（如果不存在的话）
+                    asset.Random = false;
+                });
+            }
+
+            AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
         }
     });
-    
+
+
 
 
     const ICONSSSSSSS = {
