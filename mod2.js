@@ -3466,8 +3466,7 @@
             { regex: /This rule forces (.+) to talk as if they were gagged\, automatically garbling all of their speech\. This rule does not affect OOC\. This rule only affects whispers if the rule \"Garble whispers while gagged\" is also in effect\./, replacement: "此规则强制 $1 以口球的方式交谈, 自动压制她的所有言论. 此规则不影响 OOC. 仅当规则 '口球时扭曲私语' 也生效时, 此规则才会影响私语." },
             { regex: /(.+) has too much willpower to let you in\.\.\./, replacement: "$1 拥有太多意志力不让你进入..." },
             { regex: /You must be the owner to purchase this module for (.+)\.\.\./, replacement: "你必须是 $1 的所有者才能购买此模块..." },
-            { regex: /Your BCX version\: (.+)/, replacement: "您的BCX版本: $1" },
-            { regex: /(.+)\'s BCX version\: (.+)/, replacement: "$1 的BCX版本: $2" },
+
 
 
 
@@ -3508,12 +3507,19 @@
 
                     // }
 
-
                 } else {
                     args[0] = replaceLabelSync(label);
                 }
 
 
+
+
+                if (args[0].indexOf("Your BCX version: ") !== -1) {
+                    args[0] = args[0].replace(/Your BCX version\: (.+)/, "您的BCX版本: $1");
+                }
+                if (args[0].indexOf("'s BCX version: ") !== -1) {
+                    args[0] = args[0].replace(/(.+)\'s BCX version\: (.+)/, "$1 的BCX版本: $2");
+                }
                 if (args[0].indexOf("BCX loaded! Version:") !== -1) {
                     args[0] = args[0].replace(/BCX loaded! Version\: (.+)/, "您的BCX版本: $1");
                 }
@@ -3530,10 +3536,10 @@
                     args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
                 }
                 // 检查是否已经打印过这个文本
-                if (!printedTextMap.has(args[0])) {
-                    console.log(args[0]);
-                    printedTextMap.set(args[0], true);
-                }
+                // if (!printedTextMap.has(args[0])) {
+                //     console.log(args[0]);
+                //     printedTextMap.set(args[0], true);
+                // }
             }
         };
 
@@ -3610,14 +3616,14 @@
             "None": "无",
             "stable": "稳定版",
             "dev": "开发版",
-            
+
             // "": "",
             // "": "",
             // console.log(1)
 
         };
 
-        
+
         // 递归函数替换文本内容
         function replaceTextNodes(element) {
             if (element.nodeType === Node.TEXT_NODE) { // 如果是文本节点，则进行文本替换
