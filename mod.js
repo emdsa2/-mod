@@ -19,13 +19,15 @@
     const MOD_NAME = "服装拓展";
     const MOD_FULL_NAME = "服装拓展";
     const MOD_VERSION = "0.2.0";
+    const MOD_REPOSITORY = "https://github.com/emdsa2/-mod";
 
     const mod = bcModSdk.registerMod({
         name: MOD_NAME,
         fullName: MOD_FULL_NAME,
-        version: MOD_VERSION
+        version: MOD_VERSION,
+        repository: MOD_REPOSITORY,
     });
-    const w = window;
+
 
     function patchFunction(target, patches) {
         console.log("服装拓展已加载！")
@@ -35,6 +37,57 @@
     patchFunction("GLDrawLoadImage", {
         "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
+
+    // patchFunction("CommonCallFunctionByNameWarn", {
+    //     "console.warn": '// console.warn', 
+    // });
+
+
+
+
+    // 需要执行相同操作的项的数组
+    const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
+
+    // 循环遍历每个需要复制的项
+    itemsToCopy.forEach(itemName => {
+        // 找到对应项的索引位置
+        let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
+        if (itemIndex !== -1) { // 如果找到了对应项
+            // 复制对应项
+            let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
+            itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+
+            // 获取复制项的 Asset 数组
+            let copiedAssets = itemCopy.Asset;
+            copiedAssets.forEach(asset => {
+                // 给每个对象都加上 Random: false 属性（如果不存在的话）
+                asset.Random = false;
+            });
+            AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
+        }
+    });
+
+    // 遍历 itemsToCopy 中的每一项
+    itemsToCopy.forEach(itemName => {
+        // 找到对应项的对象
+        const item = AssetFemale3DCGExtended[itemName];
+        if (item) { // 如果找到了对应项
+            // 复制对应项
+            const itemCopy = { ...item };
+            // 修改复制的项的名称为原名称加上 "2"
+            const newItemName = itemName + "_笨笨蛋Luzi";
+            itemCopy.Group = newItemName;
+
+            // 将修改后的项添加到原数组中
+            AssetFemale3DCGExtended[newItemName] = itemCopy;
+        }
+    });
+
+
+
+
+
+
 
     const ICONSSSSSSS = {
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_鼻子.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_鼻子.png", "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_猪猪.png", "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_缰绳.png",
@@ -382,8 +435,15 @@
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
 
-        if (data.includes("_Luzi")) {
-            // console.log(data)
+        // console.log(data)
+
+        // if (data.includes("_笨笨蛋炉子")) {
+        //     console.log(data)
+        // }
+
+
+        if (data.includes("_笨笨蛋Luzi")) {
+            args[0] = data.replace("_笨笨蛋Luzi", "");
         }
 
         if (ICONSSSSSSS[data]) {
@@ -413,6 +473,7 @@
 
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
+
         if (
             data.startsWith("https://") &&
             !data.startsWith("https://emdsa2.github.io/") &&
@@ -427,11 +488,17 @@
     });
 
 
-    mod.hookFunction('DrawImageEx', 50, async (args, next) => {
+    mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
+        // console.log(data)
+        if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
+            args[0] = data.replace("_笨笨蛋Luzi", "");
+        }
+        // console.log(data)
         if (PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
         }
+
         next(args);
     });
 
@@ -832,13 +899,15 @@
 
     }
 
+
     function AssetAdd_Luzi(assetgroupName, assetName) {
         let assetGtoup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
         let asset = assetGtoup.Asset.find(asset => asset.Name === assetName)
         let G = AssetGroupMap.get(assetgroupName)
         AssetAdd(G, asset, AssetFemale3DCGExtended);
     }
-
+    // AssetAdd_Luzi("ClothAccessory_笨蛋Luzi", "StudentOutfit3Scarf");
+    // AssetFemale3DCG.find(asset => asset.Group === "ClothAccessory_笨蛋Luzi")
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
 
@@ -874,6 +943,11 @@
                     console.log(A.AllowExpression)
                 }
             });
+
+
+
+
+
 
             updateFemale3DCGAssets();
 
@@ -921,12 +995,92 @@
             AssetAdd_Luzi("Socks", "条纹袜_Luzi");
             AssetAdd_Luzi("Socks", "条纹袜2_Luzi");
 
+
+
+
+
+
+            // // 循环遍历每个需要复制的项
+            // itemsToCopy.forEach(itemName => {
+            //     let itemIndex = AssetGroup.findIndex(A => A.Name === itemName); // 找到对应项的索引位置
+            //     if (itemIndex !== -1) { // 如果找到了对应项
+            //         // 复制对应项
+            //         let itemCopy = Object.assign({}, AssetGroup[itemIndex]); // 假设 AssetGroup 里的项是对象，如果是数组则使用 slice() 方法
+            //         itemCopy.Name = itemName + "_笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+            //         itemCopy.DynamicGroupName = itemName + "_笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+
+            //         // itemCopy.Asset = []; // 将复制项的 Asset 属性设置为空数组
+            //         AssetGroup.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
+            //     }
+            // });
+
+            // // 遍历需要复制的项的数组
+            // itemsToCopy.forEach(itemName => {
+            //     // 在 AssetGroupMap 中找到对应项
+            //     let item = AssetGroupMap.get(itemName);
+
+            //     // 如果找到了对应项
+            //     if (item) {
+            //         // 创建复制项并修改名称
+            //         let copiedItem = Object.assign({}, item);
+            //         copiedItem.Name = itemName + "_笨蛋Luzi";
+            //         copiedItem.DynamicGroupName = itemName + "_笨蛋Luzi";
+            //         // 将复制项添加到 AssetGroupMap 中
+            //         AssetGroupMap.set(itemName + "_笨蛋Luzi", copiedItem);
+            //     }
+            // });
+            // // 遍历需要复制的项的数组
+            // itemsToCopy.forEach(itemName => {
+            //     // 在 AssetActivityMirrorGroups 中找到对应项
+            //     let item = AssetActivityMirrorGroups.get(itemName);
+
+            //     // 如果找到了对应项
+            //     if (item) {
+            //         // 创建复制项并修改名称
+            //         let copiedItem = Object.assign({}, item);
+            //         copiedItem.Name = itemName + "_笨蛋Luzi";
+            //         copiedItem.DynamicGroupName = itemName + "_笨蛋Luzi";
+            //         // 将复制项添加到 AssetActivityMirrorGroups 中
+            //         AssetActivityMirrorGroups.set(itemName + "_笨蛋Luzi", copiedItem);
+            //     }
+            // });
+
+
+            // AssetGroup.forEach(A => {
+            //     if (A.Name === "Cloth_笨蛋Luzi") {
+            //         // console.log(A);
+            //         A.Asset.forEach(A => {
+            //             // A.Name = A.Name.concat("_笨蛋Luzi");
+            //             console.log(A.Group);
+            //         })
+            //     }
+            // });
+
+
+            // AssetGroup.forEach(A => {
+            //     if (A.Name === "ClothAccessory") {
+            //         console.log(A);
+            //         A.Asset.forEach(A => {
+
+            //         })
+            //     }
+            // });
+
+
             // const G = AssetGroupAdd("Female3DCG", 'ItemDevices');
             // AssetAdd(G , AssetFemale3DCG[73].Asset[58] , AssetFemale3DCGExtended);
             isAssetAdded = true;
         }
         next(args);
     });
+
+    mod.hookFunction("LoginResponse", 50, (args, next) => {
+
+
+        next(args);
+
+    });
+
 
     mod.hookFunction("LoginResponse", 50, (args, next) => {
         let newAssetPoseMapping = { 开腿_Luzi: "开腿_Luzi", 单腿站立_Luzi: "单腿站立_Luzi", };
@@ -1073,6 +1227,29 @@
         ['ItemDevices窝瓜_LuziSet有盖子', 'SourceCharacter盖上了DestinationCharacter的盖子'],
     ]);
 
+
+    // 创建一个函数，用于替换描述
+    function replaceDescription(baseName, luZiName) {
+        // 获取基本名称和笨笨蛋Luzi名称的 Asset 数组
+        const baseAssets = AssetGroup.find(item => item.Name === baseName)?.Asset;
+        const luZiAssets = AssetGroup.find(item => item.Name === luZiName)?.Asset;
+
+        // 如果两者都存在
+        if (baseAssets && luZiAssets) {
+            // 遍历基本名称的 Asset 数组
+            baseAssets.forEach(baseAsset => {
+                // 在笨笨蛋Luzi名称的 Asset 数组中查找相同的 Name
+                const matchingAsset = luZiAssets.find(asset => asset.Name === baseAsset.Name);
+                if (matchingAsset) {
+                    // 如果找到了相同的 Name，则将笨笨蛋Luzi的 Description 替换为基本名称的 Description
+                    matchingAsset.Description = baseAsset.Description;
+                }
+            });
+        }
+    }
+
+
+
     mod.hookFunction("LoginResponse", 50, (args, next) => {
         next(args);
 
@@ -1084,6 +1261,51 @@
                 }
             });
         }
+        if (AssetGroup) {        // 确保 Asset 不为 undefined
+            // 创建一个映射存储名称和描述的对应关系
+            const descriptionMap = new Map([
+                ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
+                ['ClothLower_笨笨蛋Luzi', '🍔下装2'],
+                ['Panties_笨笨蛋Luzi', '🍔内裤2'],
+                ['ClothAccessory_笨笨蛋Luzi', '🍔服装配饰2'],
+                ['Necklace_笨笨蛋Luzi', '🍔项链2'],
+                ['Bra_笨笨蛋Luzi', '🍔胸罩2'],
+                ['Shoes_笨笨蛋Luzi', '🍔鞋子2'],
+                ['Hat_笨笨蛋Luzi', '🍔帽子2'],
+                ['HairAccessory3_笨笨蛋Luzi', '🍔发饰2'],
+                ['Gloves_笨笨蛋Luzi', '🍔手套2'],
+                ['Mask_笨笨蛋Luzi', '🍔面具2'],
+                ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
+
+            ]);
+            // 遍历 AssetGroup，并根据名称从映射中获取描述并设置给对应的道具对象
+            AssetGroup.forEach(item => {
+                if (item.Name) {
+                    const description = descriptionMap.get(item.Name);
+                    if (description) {
+                        item.Description = description;
+                    }
+                }
+            });
+
+        }
+
+        // 执行替换操作
+        replaceDescription('Cloth', 'Cloth_笨笨蛋Luzi');
+        replaceDescription('ClothLower', 'ClothLower_笨笨蛋Luzi');
+        replaceDescription('Panties', 'Panties_笨笨蛋Luzi');
+        replaceDescription('ClothAccessory', 'ClothAccessory_笨笨蛋Luzi');
+        replaceDescription('Necklace', 'Necklace_笨笨蛋Luzi');
+        replaceDescription('Bra', 'Bra_笨笨蛋Luzi');
+        replaceDescription('Shoes', 'Shoes_笨笨蛋Luzi');
+        replaceDescription('Hat', 'Hat_笨笨蛋Luzi');
+        replaceDescription('HairAccessory3', 'HairAccessory3_笨笨蛋Luzi');
+        replaceDescription('Gloves', 'Gloves_笨笨蛋Luzi');
+        replaceDescription('Mask', 'Mask_笨笨蛋Luzi');
+        replaceDescription('Wings', 'Wings_笨笨蛋Luzi');
+
+
+
 
         dialogMap.forEach((value, key) => { PlayerDialog.set(key, value); });
     });
@@ -1149,8 +1371,12 @@
     });
 
     mod.hookFunction("DrawTextFit", 10, (args, next) => {
+        // console.log(args[0])
         if (args[0] && args[0].includes('_Luzi')) {
             args[0] = args[0].replace(/.*?_Luzi/, ''); // 删除'_Luzi'及其前面的字符串
+        }
+        if (args[0] && args[0].includes('_笨笨蛋Luzi')) {
+            args[0] = args[0].replace(/.*?_笨笨蛋Luzi/, ''); // 删除'_Luzi'及其前面的字符串
         }
         next(args);
     });
@@ -1240,6 +1466,18 @@
 
     // ================================================================================
     // ================================================================================
+    // 道具名称:  // 输入框
+    // 道具位置:  // 输入框
+    // 道具缩略图:  // 输入框
+    // 道具图片:  // 输入框
+    // X轴: // 输入框
+    // Y轴: // 输入框
+
+
+
+
+
+
 
 
 
