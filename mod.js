@@ -914,7 +914,7 @@
     // AssetFemale3DCG.find(asset => asset.Group === "ClothAccessory_笨蛋Luzi")
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
-        AssetLoadAll()
+        
         let newPose = [
             { Name: '开腿_Luzi', Category: 'BodyLower', OverrideHeight: { Height: -260, Priority: 9 }, AllowMenu: false, MovePosition: [{ Group: "ItemVulva", X: 0, Y: -18, }, { Group: "Pussy", X: 0, Y: -18, }, { Group: "ItemVulvaPiercings", X: 0, Y: -18, }], },
             { Name: '单腿站立_Luzi', Category: 'BodyLower', OverrideHeight: { Priority: 9 }, AllowMenu: false, MovePosition: [], },
@@ -931,6 +931,7 @@
         const newPosesToAdd = ["开腿_Luzi", "单腿站立_Luzi"];
 
         if (!isAssetAdded) {
+            AssetLoadAll()
             Object.assign(AssetPoseMapping.BodyLower, newBodyLowerAssetPoseMapping);
             PoseFemale3DCGNames.push(...newPosesToAdd);
             PoseFemale3DCG.push(...newPose);
