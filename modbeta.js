@@ -45,43 +45,6 @@
 
 
 
-    // 需要执行相同操作的项的数组
-    const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
-
-    // 循环遍历每个需要复制的项
-    itemsToCopy.forEach(itemName => {
-        // 找到对应项的索引位置
-        let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
-        if (itemIndex !== -1) { // 如果找到了对应项
-            // 复制对应项
-            let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
-            itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
-
-            // 获取复制项的 Asset 数组
-            let copiedAssets = itemCopy.Asset;
-            copiedAssets.forEach(asset => {
-                // 给每个对象都加上 Random: false 属性（如果不存在的话）
-                asset.Random = false;
-            });
-            AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
-        }
-    });
-
-    // 遍历 itemsToCopy 中的每一项
-    itemsToCopy.forEach(itemName => {
-        // 找到对应项的对象
-        const item = AssetFemale3DCGExtended[itemName];
-        if (item) { // 如果找到了对应项
-            // 复制对应项
-            const itemCopy = { ...item };
-            // 修改复制的项的名称为原名称加上 "2"
-            const newItemName = itemName + "_笨笨蛋Luzi";
-            itemCopy.Group = newItemName;
-
-            // 将修改后的项添加到原数组中
-            AssetFemale3DCGExtended[newItemName] = itemCopy;
-        }
-    });
 
 
 
@@ -915,7 +878,7 @@
     // AssetFemale3DCG.find(asset => asset.Group === "ClothAccessory_笨蛋Luzi")
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
-        
+
         let newPose = [
             { Name: '开腿_Luzi', Category: 'BodyLower', OverrideHeight: { Height: -260, Priority: 9 }, AllowMenu: false, MovePosition: [{ Group: "ItemVulva", X: 0, Y: -18, }, { Group: "Pussy", X: 0, Y: -18, }, { Group: "ItemVulvaPiercings", X: 0, Y: -18, }], },
             { Name: '单腿站立_Luzi', Category: 'BodyLower', OverrideHeight: { Priority: 9 }, AllowMenu: false, MovePosition: [], },
@@ -932,7 +895,60 @@
         const newPosesToAdd = ["开腿_Luzi", "单腿站立_Luzi"];
 
         if (!isAssetAdded) {
-            AssetLoadAll()
+
+
+            // 需要执行相同操作的项的数组
+            const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
+
+            // 循环遍历每个需要复制的项
+            itemsToCopy.forEach(itemName => {
+                // 找到对应项的索引位置
+                let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
+                if (itemIndex !== -1) { // 如果找到了对应项
+                    // 复制对应项
+                    let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
+                    itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+
+                    // 获取复制项的 Asset 数组
+                    let copiedAssets = itemCopy.Asset;
+                    copiedAssets.forEach(asset => {
+                        // 给每个对象都加上 Random: false 属性（如果不存在的话）
+                        asset.Random = false;
+                    });
+                    AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
+                }
+            });
+
+            // 遍历 itemsToCopy 中的每一项
+            itemsToCopy.forEach(itemName => {
+                // 找到对应项的对象
+                const item = AssetFemale3DCGExtended[itemName];
+                if (item) { // 如果找到了对应项
+                    // 复制对应项
+                    const itemCopy = { ...item };
+                    // 修改复制的项的名称为原名称加上 "2"
+                    const newItemName = itemName + "_笨笨蛋Luzi";
+                    itemCopy.Group = newItemName;
+
+                    // 将修改后的项添加到原数组中
+                    AssetFemale3DCGExtended[newItemName] = itemCopy;
+                }
+            });
+
+            // 提取 AssetFemale3DCG 中 Group 属性包含 '_笨笨蛋Luzi' 的对象存入新数组
+            const filteredAssetFemale3DCG = AssetFemale3DCG.filter(asset => asset.Group.includes('_笨笨蛋Luzi'));
+            // 输出结果
+            AssetLoad(filteredAssetFemale3DCG, "Female3DCG", AssetFemale3DCGExtended);
+
+
+
+
+
+
+
+
+
+
             Object.assign(AssetPoseMapping.BodyLower, newBodyLowerAssetPoseMapping);
             PoseFemale3DCGNames.push(...newPosesToAdd);
             PoseFemale3DCG.push(...newPose);
