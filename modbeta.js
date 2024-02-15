@@ -42,13 +42,7 @@
     //     "console.warn": '// console.warn', 
     // });
 
-    patchFunction("CommonDrawAppearanceBuild", {
-        "let Property = CA.Property;": `let Property = null;
-if (CA && CA.Property) {
-    Property = CA.Property;
-}
-`,
-    });
+
 
 
 
