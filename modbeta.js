@@ -42,13 +42,13 @@
     //     "console.warn": '// console.warn', 
     // });
 
-
-
-
-
-
-
-
+    patchFunction("CommonDrawAppearanceBuild", {
+        "let Property = CA.Property;": `let Property = null;
+if (CA && CA.Property) {
+    Property = CA.Property;
+}
+`,
+    });
 
 
 
@@ -962,7 +962,7 @@
                 if (A.Name === "Emoticon") {
                     var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
                     A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
-                    console.log(A.AllowExpression)
+                    // console.log(A.AllowExpression)
                 }
             });
 
