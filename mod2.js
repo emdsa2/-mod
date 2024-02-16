@@ -1233,7 +1233,7 @@
     //============================================================
 
     // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
-    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         if (data.Type === "Hidden" && data.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
             ChatRoomSendLocal(data.Content);
@@ -1250,8 +1250,8 @@
         console.log("公开", data)
         next(args);
     });
-    
-    笨蛋Luzi.hookFunction("ServerSend", 5, (args, next) => {
+
+    mod.hookFunction("ServerSend", 5, (args, next) => {
         const data = args;
         // Player.ChatSettings.MuStylePoses
         if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1]?.Content.includes('></iframe>') && data[1]?.Type === "Chat") {
