@@ -1247,7 +1247,7 @@
         if (data.Type === "Hidden" && data.Content.includes('<iframe src="https://www.pornhub.com/')) {
             ChatRoomSendLocal(data.Content);
         };
-        console.log("公开", data)
+        // console.log("公开", data)
         next(args);
     });
 
