@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         BC 动作拓展
+// @name         BC 动作拓展3
 // @namespace    https://www.bondageprojects.com/
-// @version      0.2.0
+// @version      0.3.0
 // @description  代码测试
 // @author       Echo
 // @include      /^https:\/\/(www\.)?bondageprojects\.elementfx\.com\/R\d+\/(BondageClub|\d+)(\/((index|\d+)\.html)?)?$/
@@ -15,47 +15,56 @@
     // =======================================================================================
     var bcModSdk = function () { "use strict"; const e = "1.1.0"; function o(e) { alert("Mod ERROR:\n" + e); const o = new Error(e); throw console.error(o), o } const t = new TextEncoder; function n(e) { return !!e && "object" == typeof e && !Array.isArray(e) } function r(e) { const o = new Set; return e.filter((e => !o.has(e) && o.add(e))) } const i = new Map, a = new Set; function d(e) { a.has(e) || (a.add(e), console.warn(e)) } function s(e) { const o = [], t = new Map, n = new Set; for (const r of p.values()) { const i = r.patching.get(e.name); if (i) { o.push(...i.hooks); for (const [o, a] of i.patches.entries()) t.has(o) && t.get(o) !== a && d(`ModSDK: Mod '${r.name}' is patching function ${e.name} with same pattern that is already applied by different mod, but with different pattern:\nPattern:\n${o}\nPatch1:\n${t.get(o) || ""}\nPatch2:\n${a}`), t.set(o, a), n.add(r.name) } } o.sort(((e, o) => o.priority - e.priority)); const r = function (e, o) { if (0 === o.size) return e; let t = e.toString().replaceAll("\r\n", "\n"); for (const [n, r] of o.entries()) t.includes(n) || d(`ModSDK: Patching ${e.name}: Patch ${n} not applied`), t = t.replaceAll(n, r); return (0, eval)(`(${t})`) }(e.original, t); let i = function (o) { var t, i; const a = null === (i = (t = m.errorReporterHooks).hookChainExit) || void 0 === i ? void 0 : i.call(t, e.name, n), d = r.apply(this, o); return null == a || a(), d }; for (let t = o.length - 1; t >= 0; t--) { const n = o[t], r = i; i = function (o) { var t, i; const a = null === (i = (t = m.errorReporterHooks).hookEnter) || void 0 === i ? void 0 : i.call(t, e.name, n.mod), d = n.hook.apply(this, [o, e => { if (1 !== arguments.length || !Array.isArray(o)) throw new Error(`Mod ${n.mod} failed to call next hook: Expected args to be array, got ${typeof e}`); return r.call(this, e) }]); return null == a || a(), d } } return { hooks: o, patches: t, patchesSources: n, enter: i, final: r } } function c(e, o = !1) { let r = i.get(e); if (r) o && (r.precomputed = s(r)); else { let o = window; const a = e.split("."); for (let t = 0; t < a.length - 1; t++)if (o = o[a[t]], !n(o)) throw new Error(`ModSDK: Function ${e} to be patched not found; ${a.slice(0, t + 1).join(".")} is not object`); const d = o[a[a.length - 1]]; if ("function" != typeof d) throw new Error(`ModSDK: Function ${e} to be patched not found`); const c = function (e) { let o = -1; for (const n of t.encode(e)) { let e = 255 & (o ^ n); for (let o = 0; o < 8; o++)e = 1 & e ? -306674912 ^ e >>> 1 : e >>> 1; o = o >>> 8 ^ e } return ((-1 ^ o) >>> 0).toString(16).padStart(8, "0").toUpperCase() }(d.toString().replaceAll("\r\n", "\n")), l = { name: e, original: d, originalHash: c }; r = Object.assign(Object.assign({}, l), { precomputed: s(l), router: () => { }, context: o, contextProperty: a[a.length - 1] }), r.router = function (e) { return function (...o) { return e.precomputed.enter.apply(this, [o]) } }(r), i.set(e, r), o[r.contextProperty] = r.router } return r } function l() { const e = new Set; for (const o of p.values()) for (const t of o.patching.keys()) e.add(t); for (const o of i.keys()) e.add(o); for (const o of e) c(o, !0) } function f() { const e = new Map; for (const [o, t] of i) e.set(o, { name: o, original: t.original, originalHash: t.originalHash, sdkEntrypoint: t.router, currentEntrypoint: t.context[t.contextProperty], hookedByMods: r(t.precomputed.hooks.map((e => e.mod))), patchedByMods: Array.from(t.precomputed.patchesSources) }); return e } const p = new Map; function u(e) { p.get(e.name) !== e && o(`Failed to unload mod '${e.name}': Not registered`), p.delete(e.name), e.loaded = !1, l() } function g(e, t, r) { "string" == typeof e && "string" == typeof t && (alert(`Mod SDK warning: Mod '${e}' is registering in a deprecated way.\nIt will work for now, but please inform author to update.`), e = { name: e, fullName: e, version: t }, t = { allowReplace: !0 === r }), e && "object" == typeof e || o("Failed to register mod: Expected info object, got " + typeof e), "string" == typeof e.name && e.name || o("Failed to register mod: Expected name to be non-empty string, got " + typeof e.name); let i = `'${e.name}'`; "string" == typeof e.fullName && e.fullName || o(`Failed to register mod ${i}: Expected fullName to be non-empty string, got ${typeof e.fullName}`), i = `'${e.fullName} (${e.name})'`, "string" != typeof e.version && o(`Failed to register mod ${i}: Expected version to be string, got ${typeof e.version}`), e.repository || (e.repository = void 0), void 0 !== e.repository && "string" != typeof e.repository && o(`Failed to register mod ${i}: Expected repository to be undefined or string, got ${typeof e.version}`), null == t && (t = {}), t && "object" == typeof t || o(`Failed to register mod ${i}: Expected options to be undefined or object, got ${typeof t}`); const a = !0 === t.allowReplace, d = p.get(e.name); d && (d.allowReplace && a || o(`Refusing to load mod ${i}: it is already loaded and doesn't allow being replaced.\nWas the mod loaded multiple times?`), u(d)); const s = e => { "string" == typeof e && e || o(`Mod ${i} failed to patch a function: Expected function name string, got ${typeof e}`); let t = g.patching.get(e); return t || (t = { hooks: [], patches: new Map }, g.patching.set(e, t)), t }, f = { unload: () => u(g), hookFunction: (e, t, n) => { g.loaded || o(`Mod ${i} attempted to call SDK function after being unloaded`); const r = s(e); "number" != typeof t && o(`Mod ${i} failed to hook function '${e}': Expected priority number, got ${typeof t}`), "function" != typeof n && o(`Mod ${i} failed to hook function '${e}': Expected hook function, got ${typeof n}`); const a = { mod: g.name, priority: t, hook: n }; return r.hooks.push(a), l(), () => { const e = r.hooks.indexOf(a); e >= 0 && (r.hooks.splice(e, 1), l()) } }, patchFunction: (e, t) => { g.loaded || o(`Mod ${i} attempted to call SDK function after being unloaded`); const r = s(e); n(t) || o(`Mod ${i} failed to patch function '${e}': Expected patches object, got ${typeof t}`); for (const [n, a] of Object.entries(t)) "string" == typeof a ? r.patches.set(n, a) : null === a ? r.patches.delete(n) : o(`Mod ${i} failed to patch function '${e}': Invalid format of patch '${n}'`); l() }, removePatches: e => { g.loaded || o(`Mod ${i} attempted to call SDK function after being unloaded`); s(e).patches.clear(), l() }, callOriginal: (e, t, n) => (g.loaded || o(`Mod ${i} attempted to call SDK function after being unloaded`), "string" == typeof e && e || o(`Mod ${i} failed to call a function: Expected function name string, got ${typeof e}`), Array.isArray(t) || o(`Mod ${i} failed to call a function: Expected args array, got ${typeof t}`), function (e, o, t = window) { return c(e).original.apply(t, o) }(e, t, n)), getOriginalHash: e => ("string" == typeof e && e || o(`Mod ${i} failed to get hash: Expected function name string, got ${typeof e}`), c(e).originalHash) }, g = { name: e.name, fullName: e.fullName, version: e.version, repository: e.repository, allowReplace: a, api: f, loaded: !0, patching: new Map }; return p.set(e.name, g), Object.freeze(f) } function h() { const e = []; for (const o of p.values()) e.push({ name: o.name, fullName: o.fullName, version: o.version, repository: o.repository }); return e } let m; const y = function () { if (void 0 === window.bcModSdk) return window.bcModSdk = function () { const o = { version: e, apiVersion: 1, registerMod: g, getModsInfo: h, getPatchingInfo: f, errorReporterHooks: Object.seal({ hookEnter: null, hookChainExit: null }) }; return m = o, Object.freeze(o) }(); if (n(window.bcModSdk) || o("Failed to init Mod SDK: Name already in use"), 1 !== window.bcModSdk.apiVersion && o(`Failed to init Mod SDK: Different version already loaded ('1.1.0' vs '${window.bcModSdk.version}')`), window.bcModSdk.version !== e && (alert(`Mod SDK warning: Loading different but compatible versions ('1.1.0' vs '${window.bcModSdk.version}')\nOne of mods you are using is using an old version of SDK. It will work for now but please inform author to update`), window.bcModSdk.version.startsWith("1.0.") && void 0 === window.bcModSdk._shim10register)) { const e = window.bcModSdk, o = Object.freeze(Object.assign(Object.assign({}, e), { registerMod: (o, t, n) => o && "object" == typeof o && "string" == typeof o.name && "string" == typeof o.version ? e.registerMod(o.name, o.version, "object" == typeof t && !!t && !0 === t.allowReplace) : e.registerMod(o, t, n), _shim10register: !0 })); window.bcModSdk = o } return window.bcModSdk }(); return "undefined" != typeof exports && (Object.defineProperty(exports, "__esModule", { value: !0 }), exports.default = y), y }();
 
-    const MOD_NAME = "动作拓展";
-    const MOD_FULL_NAME = "动作拓展";
-    const MOD_VERSION = "0.2.0";
-    const MOD_REPOSITORY = "https://github.com/emdsa2/-mod";
+    const MOD_NAME = "动作拓展3";
+    const MOD_FULL_NAME = "动作拓展3";
+    const MOD_VERSION = "0.3.0";
 
-    const mod = bcModSdk.registerMod({
+    const 笨蛋Luzi = bcModSdk.registerMod({
         name: MOD_NAME,
         fullName: MOD_FULL_NAME,
-        version: MOD_VERSION,
-        repository: MOD_REPOSITORY,
+        version: MOD_VERSION
     });
 
+    const w = window;
+    const ActivityICONS = new Map();
+    const poseMapping = {};
 
     function patchFunction(target, patches) {
         console.log("动作拓展0.3.0已加载！")
-        mod.patchFunction(target, patches);
+        笨蛋Luzi.patchFunction(target, patches);
     }
-    // 屏蔽跨域
-    patchFunction("GLDrawLoadImage", {
-        "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
+
+    var isLogin = false;
+    笨蛋Luzi.hookFunction('LoginResponse', 0, (args, next) => {
+        if (!isLogin) {
+            // 屏蔽跨域
+            patchFunction("GLDrawLoadImage", {
+                "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
+            });
+            patchFunction("CommonDynamicFunction", {
+                "else": '// else',
+                "console.log": '// console.log',
+            });
+            isLogin = true;
+        }
+        next(args);
     });
-    patchFunction("CommonDynamicFunction", {
-        "else": '// else',
-        "console.log": '// console.log',
-    });
-    //============================================================
-    //============================================================
+
     /**
      * 替换原始动作
-     * @param {string} itemSlot - 道具所在的部位
-     * @param {string} itemName - 道具的名称
-     * @param {string} itemContent - 道具的内容
+     * @param {string} args - 聊天数据
+     * @param {string} itemSlot - 道具所在部位
+     * @param {string} itemName - 道具名称
+     * @param {string} itemContent - 道具内容
      * @param {string} replacementText - 替换文本
      */
-    function ReplaceOriginalAction(itemSlot, itemName, itemContent, replacementText, data) {
+    function ReplaceOriginalAction(args, itemSlot, itemName, itemContent, replacementText) {
         if (!!InventoryIsItemInList(Player, itemSlot, itemName)) {
-            if (data[0] == "ChatRoomChat" && data[1]?.Type == "Activity") {
-                if (data[1] && data[1]?.Content == itemContent) {
-                    data[1].Content = "笨蛋Luzi";
-                    data[1].Dictionary.push({
-                        Tag: "MISSING ACTIVITY DESCRIPTION FOR KEYWORD " + data[1].Content,
+            if (args[0] == "ChatRoomChat" && args[1]?.Type == "Activity") {
+                if (args[1] && args[1]?.Content === itemContent) {
+                    args[1].Content = "笨蛋Luzi";
+                    args[1].Dictionary.push({
+                        Tag: "MISSING ACTIVITY DESCRIPTION FOR KEYWORD " + args[1].Content,
                         Text: replacementText
                     });
                 }
@@ -63,12 +72,12 @@
         }
     }
 
-    mod.hookFunction("ServerSend", 5, (args, next) => { // ServerSend 只能检测自己发出的聊天信息 可以用来替换自己发出去的文字
+    // 替换自己发出去的文字
+    笨蛋Luzi.hookFunction("ServerSend", 5, (args, next) => {
         if (args[0] == "ChatRoomChat" && args[1]?.Type == "Activity") {
             let data = args[1];
             let actName = data.Dictionary[3]?.ActivityName ?? "";
-            if (actName.indexOf("Act_") == 0) { // 这个条件表示只有当消息中包含以 "Act_" 开头的自定义活动时,才会执行下面的操作
-                // 拦截自定义活动的发送并执行自定义操作
+            if (actName.indexOf("笨蛋Luzi_") == 0) {
                 let { metadata, substitutions } = ChatRoomMessageRunExtractors(data, Player)
                 let msg = ActivityDictionaryText(data.Content);
                 msg = CommonStringSubstitute(msg, substitutions ?? [])
@@ -77,241 +86,1164 @@
                     Text: msg
                 });
             }
+            if (actName.indexOf("笨蛋笨Luzi_") == 0) {
+                let { metadata, substitutions } = ChatRoomMessageRunExtractors(data, Player)
+                let msg = ActivityDictionaryText(data.Content);
+                msg = CommonStringSubstitute(msg, substitutions ?? [])
+                data.Dictionary.push({
+                    Tag: "MISSING ACTIVITY DESCRIPTION FOR KEYWORD " + data.Content,
+                    Text: msg
+                });
+            }
+            let language = localStorage.getItem("BondageClubLanguage");
+            if ((language === "CN" || language === "TW")) {
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemFeet-Wiggle", "SourceCharacter摇晃自己的鱼尾.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemBoots-Wiggle", "SourceCharacter摇晃自己的鱼尾.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatOther-ItemFeet-Kick", "SourceCharacter用鱼尾在TargetCharacter的小腿上拍了一下.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatOther-ItemLegs-Kick", "SourceCharacter用鱼尾在TargetCharacter的大腿上拍了一下.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemBoots-笨蛋Luzi_跺脚", "SourceCharacter用鱼尾不停地拍打着地面.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemBoots-Lick", "SourceCharacter舔PronounPossessive的鱼尾巴.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemFeet-Caress", "SourceCharacter轻抚自己的鱼尾.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemBoots-Caress", "SourceCharacter抚摸PronounPossessive的鱼尾.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemFeet-Tickle", "SourceCharacter挠了挠自己的鱼尾.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemLegs-笨蛋Luzi_摇晃双腿", "SourceCharacter摇晃PronounPossessive的鱼尾.")
+                ReplaceOriginalAction(args, "SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemBoots-LSCG_Flick", "SourceCharacter轻弹自己的鱼尾.")
+            }
+
+            // 找到具有 ActivityName 属性的对象
+            // const activityObjects = data.Dictionary.filter(item => item.hasOwnProperty('ActivityName'));
+            // activityObjects.forEach(activityObject => {// 遍历找到的对象并替换 ActivityName 值
+            //     activityObject.ActivityName = 'ShockItem';// 将 ActivityName 值替换为 'ShockItem'
+            // });
+            console.log(args)
+
         }
-        var data = args;
-        ReplaceOriginalAction("SuitLower", "鱼鱼尾_Luzi", "ChatSelf-ItemFeet-Wiggle", "SourceCharacter摇晃自己的鱼尾.", data);
-
-
-        return next(args);
+        next(args);
     });
 
-    //============================================================
-    //============================================================
+
     /**
      * 创建活动对象的函数
-     * @param {string} name - 活动的名称
-     * @param {string} target - 活动的目标
-     * @param {string} targetSelf - 活动的自身目标
-     * @param {number} maxProgress - 活动的最大进度
-     * @param {number} maxProgressSelf - 活动自身的最大进度
-     * @param {Array} activityExpression - 活动表达式,包含一系列的动作
+     * @param {string} prerequisite - 动作前提条件
+     * @param {string} name - 动作名称
+     * @param {string} targetSelf - 对自己做动作的部位
+     * @param {string} target - 对他人做动作的部位
+     * @param {number} maxProgressSelf - 对自己做动作最大的兴奋值
+     * @param {number} maxProgress - 对他人做动作最大的兴奋值
+     * @param {Array} activityExpression - 动作表情
+     * @param {string} targetSelftext - 对自己做动作的描述
+     * @param {string} targettext - 对他人做动作的描述
+     * @param {string} assetgroup - 道具图片的组名没有就 ""
+     * @param {string} imageName - 如果道具组名没有就填写姿势图片名称
+     * @param {boolean} modPosture - true修改姿势  false不修改姿势
+     * @param {boolean} modifyOwnPosture - true修改自己的姿势  false活动的目标动作修改自己的姿势
+     * @param {string} postureName - 姿势名称
      * @returns {object} - 包含创建的活动信息的对象
      */
-    function createActivity(name, target, targetSelf, maxProgress, maxProgressSelf, prerequisite, activityExpression) {
+    function createActivity(activityInfo) {
+        const {
+            prerequisite,
+            name,
+            targetSelf,
+            target,
+            maxProgressSelf,
+            maxProgress,
+            activityExpression,
+            targetSelftext,
+            targettext,
+            assetgroup,
+            imageName,
+            modPosture,
+            modifyOwnPosture,
+            postureName
+        } = activityInfo;
+
         const activity = {
-            Name: `Act_${name}`,
-            Target: [target],
-            TargetSelf: [targetSelf],
-            MaxProgress: maxProgress,
-            MaxProgressSelf: maxProgressSelf,
-            Prerequisite: prerequisite,
-            ActivityExpression: activityExpression,
+            Name: `笨蛋Luzi_${name}`, // 道具名字
+            TargetSelf: [targetSelf], // 自己的部位
+            Target: [target], // 对方的部位
+            MaxProgressSelf: maxProgressSelf, // 自己目标最大进度
+            MaxProgress: maxProgress, // 对方活动最大进度
+            Prerequisite: prerequisite, // 前提条件
+            ActivityExpression: activityExpression, // 活动表情
         };
-        ActivityFemale3DCG.push(activity);
-        ActivityFemale3DCGOrdering.push(activity.Name);
-    }
+        ActivityFemale3DCG.push(activity); // 这个是把自己的活动数组添加进去
+        ActivityFemale3DCGOrdering.push(activity.Name); // 这个是活动名字
+        ActivityDictionary.push([`Activity笨蛋Luzi_${name}`, `${name}`]);
+        if (targetSelftext) {
+            ActivityDictionary.push([`Label-ChatSelf-${targetSelf}-${activity.Name}`, `${name}`]);
+            ActivityDictionary.push([`ChatSelf-${targetSelf}-${activity.Name}`, targetSelftext]);
+        };
+        if (targettext) {
+            ActivityDictionary.push([`Label-ChatOther-${target}-${activity.Name}`, `${name}`]);
+            ActivityDictionary.push([`ChatOther-${target}-${activity.Name}`, targettext]);
+        };
 
-    /**
-     * 活动添加文字描述
-     * @param {string} name - 活动的名称
-     * @param {string} target - 对别人的描述
-     * @param {string} targetSelf - 对自己的描述
-     * @returns {Array} - 包含添加的值的数组
-     */
-    function ActivityDictionaryadd(name, target, targetSelf) {
-        const addedValues = [];
-        // 使用 filter 函数来检查 Name 属性中是否包含指定名称
-        const actActivityFemale3DCG = ActivityFemale3DCG.filter(activity => activity.Name.includes(name));
-        if (actActivityFemale3DCG.length > 0) {
-            const actName = actActivityFemale3DCG[0].Name;
-            const actNameWithoutPrefix = actName.substring(4);
-            const actTarget = actActivityFemale3DCG[0].Target;
-            const actTargetSelf = actActivityFemale3DCG[0].TargetSelf;
-
-            addedValues.push([`ActivityAct_${actNameWithoutPrefix}`, `${actNameWithoutPrefix}`]);
-            if (actTarget.length > 0) {
-                addedValues.push([`Label-ChatOther-${actTarget}-${actName}`, `${actNameWithoutPrefix}`]);
-                addedValues.push([`ChatOther-${actTarget}-${actName}`, target]);
+        if (!assetgroup) {
+            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋Luzi_${name}.png`, `Assets/Female3DCG/Activity/${imageName}.png`);
+        } else {
+            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋Luzi_${name}.png`, `Assets/Female3DCG/${assetgroup}/Preview/${imageName}.png`);
+        };
+        if (modPosture) {
+            if (modifyOwnPosture) {
+                poseMapping[`ChatSelf-${targetSelf}-笨蛋Luzi_${name}`] = postureName;
+            } else {
+                poseMapping[`ChatOther-${target}-笨蛋Luzi_${name}`] = postureName;
             }
-            if (actTargetSelf.length > 0) {
-                addedValues.push([`Label-ChatSelf-${actTargetSelf}-${actName}`, `${actNameWithoutPrefix}`]);
-                addedValues.push([`ChatSelf-${actTargetSelf}-${actName}`, targetSelf]);
-            }
-        }
-        // 返回添加的值的数组
-        return addedValues;
+        };
     }
+    // 添加动作
+    const activitiesInfo = [
+        {
+            name: "歪头", prerequisite: [],
+            targetSelf: "ItemNeck", targetSelftext: "SourceCharacter歪头.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "环视周围", prerequisite: [],
+            targetSelf: "ItemNeck", targetSelftext: "SourceCharacter环视周围.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "上下打量", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter仔细打量TargetCharacter.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "闭上眼睛", prerequisite: [],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter闭上了眼睛.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "眼睛呆滞", prerequisite: [],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter眼睛呆滞地看着前方.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "眼睛湿润", prerequisite: [],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter眼角泛着泪光.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagWhimper",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "流眼泪", prerequisite: [],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter眼泪从眼角流下.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagWhimper",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "张开嘴", prerequisite: [],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter张开了嘴.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Kiss",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "吞咽口水", prerequisite: [],
+            targetSelf: "ItemNeck", targetSelftext: "SourceCharacter吞咽嘴里的口水.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagWhimper",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "流口水", prerequisite: [],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter的口水顺着嘴角流下.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagWhimper",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "轻声喘息", prerequisite: ["Talk"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter发出轻声地喘息.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagGroan",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "打哈欠", prerequisite: ["UseMouth"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter张嘴打哈欠.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Kiss",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "舔手", prerequisite: ["UseMouth"],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter舔PronounPossessive自己的手.", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter舔TargetCharacter的手.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateTongue",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "舔手指", prerequisite: ["UseMouth"],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter舔PronounPossessive自己的手指.", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter舔TargetCharacter的手指.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateTongue",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "吮吸手指", prerequisite: ["UseMouth"],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter吮吸PronounPossessive的手指.", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter吮吸TargetCharacter的手指.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "FrenchKiss",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "舔脸", prerequisite: ["UseMouth"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter舔TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateTongue",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "舔脚", prerequisite: ["UseTougue"],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter舔PronounPossessive自己的脚.", maxProgressSelf: 50,
+            target: "ItemBoots", targettext: "SourceCharacter舔TargetCharacter的脚.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateTongue",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "嗅手", prerequisite: [],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter用鼻子嗅了嗅自己的手.", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter用鼻子嗅了嗅TargetCharacter的手.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Kiss",
+            modPosture: false, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "跪下", prerequisite: ["UseArms"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter轻轻地跪了下来.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "Kneel"
+        },
+        {
+            name: "站起来", prerequisite: ["UseArms"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter手扶着地站了起来.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: ""
+        },
+        {
+            name: "跪着张开腿", prerequisite: ["UseArms"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter张开了PronounPossessive的腿.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "KneelingSpread"
+        },
+        {
+            name: "跪着并拢腿", prerequisite: ["UseArms"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter并拢了PronounPossessive的腿.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "Kneel"
+        },
+        {
+            name: "趴下", prerequisite: ["UseArms"],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter手放身后趴在地上.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "Hogtied"
+        },
+        {
+            name: "四肢着地", prerequisite: ["UseArms"],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter四肢着地趴在地上.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "AllFours"
+        },
+        {
+            name: "起身跪下", prerequisite: ["UseArms"],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter起身跪下.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "Kneel"
+        },
+        {
+            name: "爬到脚边", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemBoots", targettext: "SourceCharacter爬到TargetCharacter的脚边.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: false, postureName: "AllFours"
+        },
+        {
+            name: "蹭大腿", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemLegs", targettext: "SourceCharacter用头轻轻蹭TargetCharacter的大腿.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "PoliteKiss",
+            modPosture: true, modifyOwnPosture: false, postureName: "Kneel"
+        },
+        {
+            name: "蹭小腿", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemFeet", targettext: "SourceCharacter用头轻轻蹭TargetCharacter的小腿.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "PoliteKiss",
+            modPosture: true, modifyOwnPosture: false, postureName: "AllFours"
+        },
+        {
+            name: "骑上去", prerequisite: ["Hassaddle"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter骑在TargetCharacter的背上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: false, postureName: "Kneel"
+        },
+        {
+            name: "踮起双脚", prerequisite: ["UseFeet"],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter踮起PronounPossessive的双脚.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Kick",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "摇晃脚踝", prerequisite: [],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter摇晃PronounPossessive的脚踝.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "伸出脚", prerequisite: [],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter伸出PronounPossessive的脚.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Kick",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "掰开双腿", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemLegs", targettext: "SourceCharacter掰开TargetCharacter的双腿.", maxProgress: 500,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "夹紧双腿", prerequisite: ["HasItemVulva"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter夹紧了自己的腿.", maxProgressSelf: 500,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "脚托起下巴", prerequisite: ["HasKneel"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用脚托起TargetCharacter的下巴.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "戳脸", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter戳了戳自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter戳了戳TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "捏脸", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter捏了捏自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter捏了捏TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pinch",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "戳手臂", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemArms", targetSelftext: "SourceCharacter戳了戳自己的手臂.", maxProgressSelf: 50,
+            target: "ItemArms", targettext: "SourceCharacter戳了戳TargetCharacter的手臂.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "揉脸", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter揉了揉自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter揉了揉TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "摇晃手臂", prerequisite: ["UseHands"],
+            targetSelf: "ItemArms", targetSelftext: "SourceCharacter摇晃自己的手臂.", maxProgressSelf: 50,
+            target: "ItemArms", targettext: "SourceCharacter摇晃TargetCharacter的手臂.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "轻推", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter用手轻推TargetCharacter的身体.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Slap",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "托起脚", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemBoots", targettext: "SourceCharacter托起TargetCharacter的脚.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "扭动手腕", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter扭动PronounPossessive的手腕.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "扭动手腕", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter挠了挠PronounPossessive的头.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pull",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "盖住耳朵", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemEars", targetSelftext: "SourceCharacter用手盖住了自己的耳朵.", maxProgressSelf: 50,
+            target: "ItemEars", targettext: "SourceCharacter用手盖住了TargetCharacter的耳朵.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "HandGag",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "遮住眼睛", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter用手遮住了自己的眼睛.", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter用手遮住了TargetCharacter的眼睛.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "HandGag",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "捂住头", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter捂住自己的头.", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter捂住TargetCharacter的头.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "HandGag",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "捂住下体", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter捂住自己的下体.", maxProgressSelf: 50,
+            target: "ItemVulva", targettext: "SourceCharacter捂住TargetCharacter的下体.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "HandGag",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "掀开裙子", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter掀开PronounPossessive的裙子.", maxProgressSelf: 50,
+            target: "ItemButt", targettext: "SourceCharacter掀开TargetCharacter的裙子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateHand",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "挥手", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter向TargetCharacter挥手.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Slap",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "伸出手", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter伸出自己的手.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "捂住胸", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "ItemBreast", targetSelftext: "SourceCharacter捂住自己的胸.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pull",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "手托起下巴", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用手托起TargetCharacter的下巴.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "拽链子", prerequisite: ["UseHands", "UseArms", "HasLeash"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemNeck", targettext: "SourceCharacter拽TargetCharacter的链子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateHand",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "弹额头", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter弹了一下TargetCharacter的额头.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pinch",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "弹阴蒂", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemVulvaPiercings", targettext: "SourceCharacter弹了一下TargetCharacter的阴蒂.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pinch",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "抱腿", prerequisite: ["UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemLegs", targettext: "SourceCharacter抱住TargetCharacter的腿.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "拉扯衣角", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemPelvis", targettext: "SourceCharacter用手拉扯TargetCharacter的衣角.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pull",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "拍头", prerequisite: ["UseHands", "UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemPelvis", targettext: "SourceCharacter拍打TargetCharacter的头.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Slap",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "摇晃尾巴", prerequisite: ["HasTail"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter摇晃PronounPossessive的尾巴.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "竖起尾巴", prerequisite: ["HasTailCat"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter的尾巴竖了起来.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "炸毛", prerequisite: ["HasTailCat"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter弓起后背, 身体的毛发立了起来, 发出嘶的声音.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Bite",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "舔尾巴", prerequisite: ["HasTailCat"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter舔自己的尾巴.", maxProgressSelf: 50,
+            target: "ItemButt", targettext: "SourceCharacter舔TargetCharacter的尾巴.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateTongue",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "轻抚尾巴", prerequisite: ["HasTail"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter轻抚PronounPossessive的尾巴.", maxProgressSelf: 50,
+            target: "ItemButt", targettext: "SourceCharacter轻抚TargetCharacter的尾巴.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "尾巴叼在嘴里", prerequisite: ["HasTailCat"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter叼起自己的尾巴.", maxProgressSelf: 50,
+            target: "ItemButt", targettext: "SourceCharacter叼起TargetCharacter的尾巴.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Kiss",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "抬起屁股", prerequisite: [],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter弯腰抬起PronounPossessive的屁股.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "扇动翅膀", prerequisite: ["HasWings"],
+            targetSelf: "ItemArms", targetSelftext: "SourceCharacter扇动PronounPossessive的翅膀.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "躲到身后", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter躲到TargetCharacter的身后.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "SistersHug",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "移动到身后", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter移动到TargetCharacter的身后.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "SistersHug",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "下巴搭在肩膀上", prerequisite: [],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemNeck", targettext: "SourceCharacter把下巴搭在TargetCharacter的肩膀上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "RestHead",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "手臂搭在肩膀上", prerequisite: ["UseArms"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemNeck", targettext: "SourceCharacter把手臂搭在TargetCharacter的肩膀上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Slap",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "搂腰", prerequisite: ["UseArms", "UseHands"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter搂住TargetCharacter的腰.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "SistersHug",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "叉腰", prerequisite: ["UseArms", "UseHands"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter双手叉在腰上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Choke",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "身体颤抖", prerequisite: [],
+            targetSelf: "ItemTorso", targetSelftext: "SourceCharacter颤抖着身体.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "身体抽搐", prerequisite: [],
+            targetSelf: "ItemTorso", targetSelftext: "SourceCharacter身体抽搐着.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "托起乳房", prerequisite: [],
+            targetSelf: "ItemBreast", targetSelftext: "SourceCharacter托起PronounPossessive的双乳.", maxProgressSelf: 50,
+            target: "ItemBreast", targettext: "SourceCharacter托起TargetCharacter的双乳.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "揉搓乳头", prerequisite: ["UseHands", "UseArms", "ZoneNaked"],
+            targetSelf: "ItemNipples", targetSelftext: "SourceCharacter揉搓PronounPossessive的乳头.", maxProgressSelf: 90,
+            target: "ItemNipples", targettext: "SourceCharacter揉搓TargetCharacter的乳头.", maxProgress: 90,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pinch",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "揉搓乳头", prerequisite: ["HasItemVulva"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter颤抖着双腿.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "摇晃双腿", prerequisite: [],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter摇晃PronounPossessive的双腿.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "流出液体", prerequisite: ["HasItemVulva"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter股间有液体顺着的大腿流下.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagWhimper",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "失禁", prerequisite: ["HasItemVulva"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter的尿液顺着PronounPossessive大腿流下.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "MoanGagWhimper",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "撇眼", prerequisite: [],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter撇了TargetCharacter一眼.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "跺脚", prerequisite: [],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter不停地跺脚.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Step",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "撩头发", prerequisite: ["UseArms", "UseHands"],
+            targetSelf: "ItemHood", targetSelftext: "SourceCharacter撩起头发挂在耳边.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Caress",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "手指插进阴道", prerequisite: ["UseHands", "ZoneNaked", "TargetZoneNaked"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter手指插进自己的的阴道内.", maxProgressSelf: 90,
+            target: "ItemVulva", targettext: "SourceCharacter手指插进TargetCharacter的阴道内.", maxProgress: 90,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateHand",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "拔出自己的手指", prerequisite: ["UseHands", "ZoneNaked", "TargetZoneNaked"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter从PronounPossessive的阴道内拔出自己的手指,手指连着自己的爱液.", maxProgressSelf: 90,
+            target: "ItemVulva", targettext: "SourceCharacter从TargetCharacter的阴道内拔出自己的手指,手指连着PronounPossessive的爱液.", maxProgress: 90,
+            activityExpression: [],
+            assetgroup: "", imageName: "MasturbateHand",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "蠕动手指", prerequisite: ["UseHands", "ZoneNaked", "TargetZoneNaked"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter在PronounPossessive的阴道内蠕动手指.", maxProgressSelf: 50,
+            target: "ItemVulva", targettext: "SourceCharacter在TargetCharacter的阴道内蠕动手指.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Grope",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "快速抽插", prerequisite: ["UseHands", "ZoneNaked", "TargetZoneNaked"],
+            targetSelf: "ItemVulva", targetSelftext: "SourceCharacter的手在PronounPossessive的阴道内快速抽插.", maxProgressSelf: 50,
+            target: "ItemVulva", targettext: "SourceCharacter的手在TargetCharacter的阴道内快速抽插.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Grope",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "钩住阴蒂环", prerequisite: ["UseHands", "HasItemVulvaPiercings"],
+            targetSelf: "ItemVulvaPiercings", targetSelftext: "SourceCharacter钩住自己的阴蒂环.", maxProgressSelf: 50,
+            target: "ItemVulvaPiercings", targettext: "SourceCharacter钩住TargetCharacter的阴蒂环.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pinch",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "拉扯阴蒂环", prerequisite: ["UseHands", "HasItemVulvaPiercings"],
+            targetSelf: "ItemVulvaPiercings", targetSelftext: "SourceCharacter拉了一下自己的阴蒂环.", maxProgressSelf: 50,
+            target: "ItemVulvaPiercings", targettext: "SourceCharacter拉了一下TargetCharacter的阴蒂环.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Pinch",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "宠物服爬到脚边", prerequisite: ["HasPet"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemBoots", targettext: "SourceCharacter爬到TargetCharacter脚边.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: false, postureName: "AllFours"
+        },
+        {
+            name: "宠物服蹭小腿", prerequisite: ["HasPet"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemFeet", targettext: "SourceCharacter蹭TargetCharacter的腿.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: "AllFours"
+        },
+        {
+            name: "宠物服蹭大腿", prerequisite: ["HasPet"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemLegs", targettext: "SourceCharacter蹭TargetCharacter的腿.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: "AllFours"
+        },
+        {
+            name: "宠物服趴下", prerequisite: ["HasPet"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter四肢着地趴在地上.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: false, postureName: "AllFours"
+        },
+        {
+            name: "宠物服跪立", prerequisite: ["HasPet"],
+            targetSelf: "ItemLegs", targetSelftext: "SourceCharacter手臂离地跪立.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: true, postureName: "Hogtied"
+        },
+        {
+            name: "宠物服扑", prerequisite: ["HasPet"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemArms", targettext: "SourceCharacter扑到TargetCharacter身上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪挠手", prerequisite: ["HasPawMittens"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter用爪子挠了一下TargetCharacter的手.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪挠手臂", prerequisite: ["HasPawMittens"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemArms", targettext: "SourceCharacter用爪子挠了一下TargetCharacter的手臂.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪舔手", prerequisite: ["HasPawMittens"],
+            targetSelf: "ItemHands", targetSelftext: "SourceCharacter舔自己的爪子.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪戳脸", prerequisite: ["HasPawMittens"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用爪子戳了戳自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用爪子戳了戳TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪戳鼻子", prerequisite: ["HasPawMittens"],
+            targetSelf: "ItemNose", targetSelftext: "SourceCharacter用爪子戳了戳自己的鼻子.", maxProgressSelf: 50,
+            target: "ItemNose", targettext: "SourceCharacter用爪子戳了戳TargetCharacter的鼻子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪揉脸", prerequisite: ["HasPawMittens"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用爪子揉了揉自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用爪子揉了揉TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "猫爪揉鼻子", prerequisite: ["HasPawMittens"],
+            targetSelf: "ItemNose", targetSelftext: "SourceCharacter用爪子揉了揉自己的鼻子.", maxProgressSelf: 50,
+            target: "ItemNose", targettext: "SourceCharacter用爪子揉了揉TargetCharacter的鼻子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHands", imageName: "PawMittens",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "撞笼子", prerequisite: ["HasKennel"],
+            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter用身体撞击笼子.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemDevices", imageName: "Kennel",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "咬笼子", prerequisite: ["HasKennel"],
+            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter用牙齿咬笼子.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemDevices", imageName: "Kennel",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "摇晃笼子", prerequisite: ["HasKennel"],
+            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter摇晃笼子的门.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemDevices", imageName: "Kennel",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "摇晃笼子", prerequisite: ["HasKennel"],
+            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter摇晃笼子的门.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemDevices", imageName: "Kennel",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "泡沫剑架在脖子上", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "ItemNeck", targetSelftext: "SourceCharacter把泡沫剑架在自己的脖子上.", maxProgressSelf: 50,
+            target: "ItemNeck", targettext: "SourceCharacter把泡沫剑架在TargetCharacter的脖子上", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Sword",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "泡沫剑拍脸", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用泡沫剑轻轻拍了拍一下TargetCharacter的脸", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Sword",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "剪刀剪掉上衣", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "ItemTorso", targetSelftext: "SourceCharacter用剪刀剪掉了自己的上衣.", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter用剪刀剪掉了TargetCharacter的上衣.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "剪刀剪掉下衣", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "ItemPelvis", targetSelftext: "SourceCharacter用剪刀剪掉了自己的下衣.", maxProgressSelf: 50,
+            target: "ItemPelvis", targettext: "SourceCharacter用剪刀剪掉了TargetCharacter的下衣.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "剪刀剪掉胸罩", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "ItemBreast", targetSelftext: "SourceCharacter用剪刀剪掉了自己的胸罩.", maxProgressSelf: 50,
+            target: "ItemBreast", targettext: "SourceCharacter用剪刀剪掉了TargetCharacter的胸罩.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "剪刀剪掉内裤", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "ItemVulvaPiercings", targetSelftext: "SourceCharacter用剪刀剪掉了自己的内裤.", maxProgressSelf: 50,
+            target: "ItemVulvaPiercings", targettext: "SourceCharacter用剪刀剪掉了TargetCharacter的内裤.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "剪刀剪掉袜子", prerequisite: ["UseHands", "UseArms", "HasSword"],
+            targetSelf: "ItemBoots", targetSelftext: "SourceCharacter用剪刀剪掉了自己的袜子.", maxProgressSelf: 50,
+            target: "ItemBoots", targettext: "SourceCharacter用剪刀剪掉了TargetCharacter的袜子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemHandheld", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "躺上去", prerequisite: ["Hasbed"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemDevices", targettext: "SourceCharacter躺到TargetCharacter的身边.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "舔触手", prerequisite: ["HasTentacles"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter舔PronounPossessive的触手.", maxProgressSelf: 50,
+            target: "", targettext: "", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "触手摸头", prerequisite: ["HasTentacles2"],
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter用触手摸了摸自己的头.", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter用触手摸了摸TargetCharacter的头.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "触手戳鼻子", prerequisite: ["HasTentacles2"],
+            targetSelf: "ItemNose", targetSelftext: "SourceCharacter用触手戳了戳自己的鼻子.", maxProgressSelf: 50,
+            target: "ItemNose", targettext: "SourceCharacter用触手戳了戳TargetCharacter的鼻子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "触手戳脸", prerequisite: ["HasTentacles2"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用触手戳了戳自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用触手戳了戳TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "触手揉鼻子", prerequisite: ["HasTentacles2"],
+            targetSelf: "ItemNose", targetSelftext: "SourceCharacter用触手揉了揉自己的鼻子.", maxProgressSelf: 50,
+            target: "ItemNose", targettext: "SourceCharacter用触手揉了揉TargetCharacter的鼻子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "触手揉脸", prerequisite: ["HasTentacles2"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用触手揉了揉自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用触手揉了揉TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾揉脸", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用鱼尾揉了揉PronounPossessive自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用鱼尾揉了揉TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾戳脸", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用鱼尾戳了戳PronounPossessive自己的脸.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用鱼尾戳了戳TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾抚脸", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用鱼尾轻抚PronounPossessive自己的脸颊.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用鱼尾轻抚TargetCharacter的脸颊.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾担膝盖", prerequisite: ["SuitLower鱼鱼尾_Luzi", "IsKneeling"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemLegs", targettext: "SourceCharacter将鱼尾担在了TargetCharacter的膝盖上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾揉乳房", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "ItemBreast", targetSelftext: "SourceCharacter用鱼尾揉了揉PronounPossessive自己的乳房.", maxProgressSelf: 50,
+            target: "ItemBreast", targettext: "SourceCharacter用鱼尾揉了揉TargetCharacter的乳房.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾扇风", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用鱼尾给自己扇了扇风.", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter用鱼尾给TargetCharacter的脸扇了扇风.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾戳乳头", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "ItemNipples", targetSelftext: "SourceCharacter用鱼尾戳了戳自己的乳头.", maxProgressSelf: 50,
+            target: "ItemNipples", targettext: "SourceCharacter用鱼尾戳了戳TargetCharacter的乳头.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾碰手", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHands", targettext: "SourceCharacter将鱼尾踝搭在了TargetCharacter的手心上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "鱼尾抚弄大腿", prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemLegs", targettext: "SourceCharacter用鱼尾抚弄TargetCharacter的大腿.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "ItemLegs", imageName: "MermaidTail",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
 
-    // name target targetSelf
-    var activityAdd = {
-        // 头
-        Act_歪头: { A: createActivity("歪头", "", "ItemNeck", 50, 50, [], []), B: ActivityDictionaryadd("Act_歪头", "", "SourceCharacter歪头.") },
-        Act_环顾四周: { A: createActivity("环顾四周", "", "ItemNeck", 50, 50, [], []), B: ActivityDictionaryadd("Act_环顾四周", "", "SourceCharacter环视周围.") },
-        Act_上下打量: { A: createActivity("上下打量", "ItemHead", "", 50, 50, [], []), B: ActivityDictionaryadd("Act_上下打量", "SourceCharacter仔细打量TargetCharacter", "") },
-        Act_闭上眼睛: { A: createActivity("闭上眼睛", "", "ItemHead", 50, 50, [], []), B: ActivityDictionaryadd("Act_闭上眼睛", "", "SourceCharacter闭上了眼睛.") },
-        Act_眼睛呆滞: { A: createActivity("眼睛呆滞", "", "ItemHead", 50, 50, [], []), B: ActivityDictionaryadd("Act_眼睛呆滞", "", "SourceCharacter眼睛呆滞地看着前方.") },
-        Act_眼睛湿润: { A: createActivity("眼睛湿润", "", "ItemHead", 50, 50, [], []), B: ActivityDictionaryadd("Act_眼睛湿润", "", "SourceCharacter眼角泛着泪光.") },
-        Act_流眼泪: { A: createActivity("流眼泪", "", "ItemHead", 50, 50, [], []), B: ActivityDictionaryadd("Act_流眼泪", "", "SourceCharacter眼泪从眼角流下.") },
-        //  吞咽
-        Act_张开嘴: { A: createActivity("张开嘴", "", "ItemMouth", 50, 50, [], []), B: ActivityDictionaryadd("Act_张开嘴", "", "SourceCharacter张开了嘴") },
-        Act_吞咽口水: { A: createActivity("吞咽口水", "", "ItemNeck", 50, 50, [], []), B: ActivityDictionaryadd("Act_吞咽口水", "", "SourceCharacter吞咽嘴里的口水") },
-        Act_流口水: { A: createActivity("流口水", "", "ItemMouth", 50, 50, [], []), B: ActivityDictionaryadd("Act_流口水", "", "SourceCharacter的口水顺着嘴角流下") },
-        //声音
-        Act_轻声喘息: { A: createActivity("轻声喘息", "", "ItemMouth", 50, 50, [], ["Talk"]), B: ActivityDictionaryadd("Act_轻声喘息", "", "SourceCharacter发出轻声地喘息.") },
-        Act_打哈欠: { A: createActivity("打哈欠", "", "ItemMouth", 50, 50, ["UseMouth"], []), B: ActivityDictionaryadd("Act_打哈欠", "", "SourceCharacter张嘴打哈欠.") },
-        //舔吸
-        Act_舔手: { A: createActivity("舔手", "ItemHands", "ItemHands", 50, 50, ["UseMouth"], []), B: ActivityDictionaryadd("Act_舔手", "SourceCharacter舔TargetCharacter的手.", "SourceCharacter舔PronounPossessive自己的手.") },
-        Act_舔手指: { A: createActivity("舔手指", "ItemHands", "ItemHands", 50, 50, ["UseMouth"], []), B: ActivityDictionaryadd("Act_舔手指", "SourceCharacter舔TargetCharacter的手指.", "SourceCharacter舔PronounPossessive自己的手指.") },
-        Act_舔脚: { A: createActivity("舔脚", "ItemBoots", "ItemBoots", 50, 50, ["UseTougue"], []), B: ActivityDictionaryadd("Act_舔脚", "SourceCharacter舔TargetCharacter的脚.", "SourceCharacter舔PronounPossessive自己的脚.") },
-        Act_舔脸: { A: createActivity("舔脸", "ItemMouth", "", 50, 50, ["UseMouth"], []), B: ActivityDictionaryadd("Act_舔脸", "SourceCharacter舔TargetCharacter的脸.", "") },
-        Act_吮吸手指: { A: createActivity("吮吸手指", "ItemHands", "ItemHands", 50, 50, ["UseMouth"], []), B: ActivityDictionaryadd("Act_吮吸手指", "SourceCharacter吮吸TargetCharacter的手指.", "SourceCharacter吮吸PronounPossessive的手指.") },
-        Act_嗅: { A: createActivity("嗅", "ItemHands", "ItemHands", 50, 50, [], []), B: ActivityDictionaryadd("Act_嗅", "SourceCharacter用鼻子嗅了嗅TargetCharacter的手.", "SourceCharacter用鼻子嗅了嗅自己的手.") },
-        //姿势
-        Act_跪下: { A: createActivity("跪下", "", "ItemLegs", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_跪下", "", "SourceCharacter轻轻地跪了下来.") },
-        Act_站起来: { A: createActivity("站起来", "", "ItemLegs", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_站起来", "", "SourceCharacter手扶着地站了起来.") },
-        Act_跪着张开双腿: { A: createActivity("跪着张开双腿", "", "ItemLegs", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_跪着张开双腿", "", "SourceCharacter张开了PronounPossessive的腿.") },
-        Act_跪着合并双腿: { A: createActivity("跪着合并双腿", "", "ItemLegs", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_跪着合并双腿", "", "SourceCharacter并拢了PronounPossessive的腿.") },
-        Act_手放身后: { A: createActivity("手放身后", "", "ItemArms", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_手放身后", "", "SourceCharacter把PronounPossessive的手放在了身后.") },
-        Act_手放身前: { A: createActivity("手放身前", "", "ItemArms", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_手放身前", "", "SourceCharacter把PronounPossessive的手放在了身前.") },
-        Act_趴下: { A: createActivity("趴下", "", "ItemBoots", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_趴下", "", "SourceCharacter手放身后趴在地上.") },
-        Act_四肢着地: { A: createActivity("四肢着地", "", "ItemBoots", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_四肢着地", "", "SourceCharacter四肢着地趴在地上.") },
-        Act_起身跪下: { A: createActivity("起身跪下", "", "ItemBoots", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_起身跪下", "", "SourceCharacter起身跪下.") },
-        Act_爬到脚边: { A: createActivity("爬到脚边", "ItemBoots", "", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_爬到脚边", "SourceCharacter爬到TargetCharacter的脚边.", "") },
-        Act_蹭大腿: { A: createActivity("蹭大腿", "ItemLegs", "", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_蹭大腿", "SourceCharacter用头轻轻蹭TargetCharacter的大腿.", "") },
-        Act_蹭小腿: { A: createActivity("蹭小腿", "ItemFeet", "", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_蹭小腿", "SourceCharacter用头轻轻蹭TargetCharacter的小腿.", "") },
-        //脚
-        Act_踮起双脚: { A: createActivity("踮起双脚", "", "ItemBoots", 50, 50, ["UseFeet"], []), B: ActivityDictionaryadd("Act_踮起双脚", "", "SourceCharacter踮起PronounPossessive的双脚.") },
-        Act_摇晃脚踝: { A: createActivity("摇晃脚踝", "", "ItemBoots", 50, 50, [], []), B: ActivityDictionaryadd("Act_摇晃脚踝", "", "SourceCharacter摇晃PronounPossessive的脚踝.") },
-        Act_伸出脚: { A: createActivity("伸出脚", "", "ItemBoots", 50, 50, ["UseFeet"], []), B: ActivityDictionaryadd("Act_伸出脚", "", "SourceCharacter伸出PronounPossessive的脚.") },
-        Act_掰开双腿: { A: createActivity("掰开双腿", "ItemLegs", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_掰开双腿", "SourceCharacter掰开TargetCharacter的双腿", "") },
-        Act_脚托起下巴: { A: createActivity("脚托起下巴", "ItemMouth", "", 50, 50, ["HasKneel"], []), B: ActivityDictionaryadd("Act_脚托起下巴", "SourceCharacter用脚托起TargetCharacter的下巴.", "") },
-        //手
-        Act_戳脸: { A: createActivity("戳脸", "ItemMouth", "ItemMouth", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_戳脸", "SourceCharacter戳了戳TargetCharacter的脸.", "SourceCharacter戳了戳自己的脸") },
-        Act_捏脸: { A: createActivity("捏脸", "ItemMouth", "ItemMouth", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_捏脸", "SourceCharacter捏了捏TargetCharacter的脸.", "SourceCharacter捏了捏自己的脸.") },
-        Act_戳手臂: { A: createActivity("戳手臂", "ItemArms", "ItemArms", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_戳手臂", "SourceCharacter戳了戳TargetCharacter的手臂.", "SourceCharacter戳了戳自己的手臂.") },
-        Act_揉脸: { A: createActivity("揉脸", "ItemMouth", "ItemMouth", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_揉脸", "SourceCharacter揉了揉TargetCharacter的脸.", "SourceCharacter揉了揉自己的脸.") },
-        Act_摇晃手臂: { A: createActivity("摇晃手臂", "ItemArms", "ItemArms", 50, 50, ["UseHands"], []), B: ActivityDictionaryadd("Act_摇晃手臂", "SourceCharacter摇晃TargetCharacter的手臂.", "SourceCharacter摇晃自己的手臂.") },
-        Act_轻推: { A: createActivity("轻推", ["ItemTorso"], "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_轻推", "SourceCharacter用手轻推TargetCharacter的身体.", "") },
-        Act_托起脚: { A: createActivity("托起脚", "ItemBoots", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_托起脚", "SourceCharacter托起TargetCharacter的脚.", "") },
-        Act_扭动手腕: { A: createActivity("扭动手腕", "", "ItemHands", 50, 50, [], []), B: ActivityDictionaryadd("Act_扭动手腕", "", "SourceCharacter扭动PronounPossessive的手腕.") },
-        Act_挠头: { A: createActivity("挠头", "", "ItemHead", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_挠头", "", "SourceCharacter用手挠了挠PronounPossessive的头.") },
-        Act_捂住耳朵: { A: createActivity("捂住耳朵", "ItemEars", "ItemEars", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_捂住耳朵", "SourceCharacter用手盖住了TargetCharacter的耳朵.", "SourceCharacter用手盖住了自己的耳朵.") },
-        Act_捂住眼睛: { A: createActivity("捂住眼睛", "ItemHead", "ItemHead", 50, 50, ["UseArms", "UseHands"], []), B: ActivityDictionaryadd("Act_捂住眼睛", "SourceCharacter捂住TargetCharacter的眼睛.", "SourceCharacter捂住自己的眼睛.") },
-        Act_捂住头: { A: createActivity("捂住头", "ItemHead", "ItemHead", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_捂住头", "SourceCharacter捂住TargetCharacter的头.", "SourceCharacter捂住自己的头.") },
-        Act_捂住下体: { A: createActivity("捂住下体", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_捂住下体", "SourceCharacter捂住TargetCharacter的下体.", "SourceCharacter捂住自己的下体.") },
-        Act_掀开裙子: { A: createActivity("掀开裙子", "ItemButt", "ItemButt", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_掀开裙子", "SourceCharacter掀开TargetCharacter的裙子.", "SourceCharacter掀开PronounPossessive的裙子.") },
-        Act_挥手: { A: createActivity("挥手", "Itemhands", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_挥手", "", "SourceCharacter向TargetCharacter挥手.") },
-        Act_伸出手: { A: createActivity("伸出手", "", "ItemHands", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_伸出手", "", "SourceCharacter伸出自己的手.") }, Act_拉扯衣角: { A: createActivity("拉扯衣角", "ItemPelvis", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_拉扯衣角", "SourceCharacter用手拉扯TargetCharacter的衣角.", "") },
-        Act_捂住胸: { A: createActivity("捂住胸", "", "ItemBreast", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_捂住胸", "", "SourceCharacter捂住自己的胸.") },
-        Act_手托起下巴: { A: createActivity("手托起下巴", "ItemMouth", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_手托起下巴", "SourceCharacter用手托起TargetCharacter的下巴.", "") },
-        Act_拽链子: { A: createActivity("拽链子", "ItemNeck", "", 50, 50, ["UseHands", "UseArms", "HasLeash"], []), B: ActivityDictionaryadd("Act_拽链子", "SourceCharacter拽TargetCharacter的链子.", "") },
-        Act_弹额头: { A: createActivity("弹额头", "ItemHead", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_弹额头", "SourceCharacter弹了一下TargetCharacter的额头.", "") },
-        Act_弹阴蒂: { A: createActivity("弹阴蒂", "ItemVulvaPiercings", "", 50, 50, ["UseHands", "UseArms"], []), B: ActivityDictionaryadd("Act_弹阴蒂", "SourceCharacter弹了一下TargetCharacter的阴蒂.", "") },
-        Act_抱腿: { A: createActivity("抱腿", "ItemLegs", "", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_抱腿", "SourceCharacter抱住TargetCharacter的腿.", "") },
-        //尾巴
-        Act_摇晃尾巴: { A: createActivity("摇晃尾巴", "", "ItemButt", 50, 50, ["HasTail"], []), B: ActivityDictionaryadd("Act_摇晃尾巴", "", "SourceCharacter摇晃PronounPossessive的尾巴.") },
-        Act_竖起尾巴: { A: createActivity("竖起尾巴", "", "ItemButt", 50, 50, ["HasTailCat"], []), B: ActivityDictionaryadd("Act_竖起尾巴", "", "SourceCharacter的尾巴竖了起来.") },
-        Act_炸毛: { A: createActivity("炸毛", "", "ItemButt", 50, 50, ["HasTailCat"], []), B: ActivityDictionaryadd("Act_炸毛", "", "SourceCharacter弓起后背,身体的毛发立了起来,发出嘶的声音.") },
-        Act_舔尾巴: { A: createActivity("舔尾巴", "ItemButt", "ItemButt", 50, 50, ["HasTailCat"], []), B: ActivityDictionaryadd("Act_舔尾巴", "SourceCharacter舔TargetCharacter的尾巴.", "SourceCharacter舔自己的尾巴.") },
-        Act_轻抚尾巴: { A: createActivity("轻抚尾巴", "ItemButt", "ItemButt", 50, 50, ["HasTail"], []), B: ActivityDictionaryadd("Act_轻抚尾巴", "SourceCharacter轻抚TargetCharacter的尾巴.", "SourceCharacter轻抚PronounPossessive的尾巴.") },
-        Act_尾巴叼在嘴里: { A: createActivity("尾巴叼在嘴里", "ItemButt", "ItemButt", 50, 50, ["HasTailCat"], []), B: ActivityDictionaryadd("Act_尾巴叼在嘴里", "SourceCharacter叼起TargetCharacter的尾巴.", "SourceCharacter把自己的尾巴叼在嘴里.") },
-        // 屁股
-        Act_抬起屁股: { A: createActivity("抬起屁股", "", "ItemButt", 50, 50, [], []), B: ActivityDictionaryadd("Act_抬起屁股", "", "SourceCharacter弯腰抬起PronounPossessive的屁股.") },
-        // 有翅膀
-        Act_扇动翅膀: { A: createActivity("扇动翅膀", "", "ItemArms", 50, 50, ["HasWings"], []), B: ActivityDictionaryadd("Act_扇动翅膀", "", "SourceCharacter扇动PronounPossessive的翅膀.") },
-        //身体
-        Act_躲到身后: { A: createActivity("躲到身后", "ItemTorso", "", 50, 50, [], []), B: ActivityDictionaryadd("Act_躲到身后", "SourceCharacter躲到TargetCharacter的身后.", "") },
-        Act_移动到身后: { A: createActivity("移动到身后", "ItemTorso", "", 50, 50, [], []), B: ActivityDictionaryadd("Act_移动到身后", "SourceCharacter移动到TargetCharacter的身后.", "") },
-        Act_下巴搭在肩膀上: { A: createActivity("下巴搭在肩膀上", "ItemNeck", "", 50, 50, [], []), B: ActivityDictionaryadd("Act_下巴搭在肩膀上", "SourceCharacter把下巴搭在TargetCharacter的肩膀上.", "") },
-        Act_手臂搭在肩膀上: { A: createActivity("手臂搭在肩膀上", "ItemNeck", "", 50, 50, ["UseArms"], []), B: ActivityDictionaryadd("Act_手臂搭在肩膀上", "SourceCharacter把手臂搭在TargetCharacter的肩膀上.", "") },
-        Act_搂腰: { A: createActivity("搂腰", "ItemTorso", "", 50, 50, ["UseArms", "UseHands"], []), B: ActivityDictionaryadd("Act_搂腰", "SourceCharacter搂住TargetCharacter的腰.", "") },
-        Act_叉腰: { A: createActivity("叉腰", "", "ItemTorso", 50, 50, ["UseArms", "UseHands"], []), B: ActivityDictionaryadd("Act_叉腰", "", "SourceCharacter双手叉腰.") },
-
-        Act_身体颤抖: { A: createActivity("身体颤抖", "", "ItemTorso", 50, 50, [], []), B: ActivityDictionaryadd("Act_身体颤抖", "", "SourceCharacter身体在颤抖.") },
-        Act_身体抽搐: { A: createActivity("身体抽搐", "", "ItemTorso", 50, 50, [], []), B: ActivityDictionaryadd("Act_身体抽搐", "", "SourceCharacter身体在抽搐.") },
-        // 胸部
-        Act_托起乳房: { A: createActivity("托起乳房", "ItemBreast", "ItemBreast", 50, 50, [], []), B: ActivityDictionaryadd("Act_托起乳房", "SourceCharacter托起TargetCharacter的双乳.", "SourceCharacter托起PronounPossessive的双乳.") },
-        Act_揉搓乳头: { A: createActivity("揉搓乳头", "ItemNipples", "ItemMipples", 50, 50, ["UseHands", "UseArms", "ZoneNaked"], []), B: ActivityDictionaryadd("Act_揉搓乳头", "SourceCharacter用手捏住TargetCharacter的乳头,开始揉搓.", "SourceCharacter用手捏住PronounPossessive的乳头,开始揉搓.") },
-        // 下体有道具
-        Act_双腿颤抖: { A: createActivity("双腿颤抖", "", "ItemLegs", 50, 50, ["HasItemVulva"], []), B: ActivityDictionaryadd("Act_双腿颤抖", "", "SourceCharacter的双腿颤抖着.") },
-        Act_摇晃双腿: { A: createActivity("摇晃双腿", "", "ItemLegs", 50, 50, ["HasItemVulva"], []), B: ActivityDictionaryadd("Act_摇晃双腿", "", "SourceCharacter摇晃自己的双腿.") },
-        Act_流出液体: { A: createActivity("流出液体", "", "ItemVulva", 50, 50, ["HasItemVulva"], []), B: ActivityDictionaryadd("Act_流出液体", "", "有液体顺着SourceCharacter的大腿流下.") },
-        Act_失禁: { A: createActivity("失禁", "", "ItemVulva", 50, 50, ["HasItemVulva"], []), B: ActivityDictionaryadd("Act_失禁", "", "SourceCharacter的尿液顺着PronounPossessive大腿流下.") },
-        Act_夹紧双腿: { A: createActivity("夹紧双腿", "", "ItemLegs", 50, 50, ["HasItemVulva"], []), B: ActivityDictionaryadd("Act_夹紧双腿", "", "SourceCharacter夹紧TargetCharacter的双腿.") },
-
-        Act_撇眼: { A: createActivity("撇眼", "ItemHead", "", 50, 50, [], []), B: ActivityDictionaryadd("Act_撇眼", "SourceCharacter撇了TargetCharacter一眼.", "") },
-        Act_跺脚: { A: createActivity("跺脚", "", "ItemBoots", 50, 50, [], []), B: ActivityDictionaryadd("Act_跺脚", "", "SourceCharacter不停地跺脚.") },
-        Act_撩头发: { A: createActivity("撩头发", "", "ItemHood", 50, 50, [], []), B: ActivityDictionaryadd("Act_撩头发", "", "SourceCharacter撩起头发挂在耳边.") },
-
-        // 阴部手
-        Act_手指插进阴道: { A: createActivity("手指插进阴道", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "ZoneNaked", "TargetZoneNaked"], []), B: ActivityDictionaryadd("Act_手指插进阴道", "SourceCharacter手指插进TargetCharacter的阴道内.", "SourceCharacter手指插进自己的的阴道内.") },
-        Act_拔出自己的手指: { A: createActivity("拔出自己的手指", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "ZoneNaked", "TargetZoneNaked"], []), B: ActivityDictionaryadd("Act_拔出自己的手指", "SourceCharacter从TargetCharacter的阴道内拔出自己的手指,手指连着PronounPossessive的爱液.", "SourceCharacter从PronounPossessive的阴道内拔出自己的手指,手指连着自己的爱液.") },
-        Act_蠕动手指: { A: createActivity("蠕动手指", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "ZoneNaked", "TargetZoneNaked"], []), B: ActivityDictionaryadd("Act_蠕动手指", "SourceCharacter在TargetCharacter的阴道内蠕动手指.", "SourceCharacter在PronounPossessive的阴道内蠕动手指.") },
-        Act_快速抽插: { A: createActivity("快速抽插", "ItemVulva", "ItemVulva", 50, 50, ["UseHands", "ZoneNaked", "TargetZoneNaked"], []), B: ActivityDictionaryadd("Act_快速抽插", "SourceCharacter的手在TargetCharacter的阴道内快速抽插,开始揉搓.", "SourceCharacter的手在PronounPossessive的阴道内快速抽插,开始揉搓.") },
-
-        Act_钩住阴蒂环: { A: createActivity("钩住阴蒂环", "ItemVulvaPiercings", "ItemVulvaPiercings", 50, 50, ["UseHands", "HasItemVulvaPiercings"], []), B: ActivityDictionaryadd("Act_钩住阴蒂环", "SourceCharacter钩住TargetCharacter的阴蒂环.", "SourceCharacter钩住自己的阴蒂环.") },
-        Act_拉扯阴蒂环: { A: createActivity("拉扯阴蒂环", "ItemVulvaPiercings", "ItemVUlvaPiercings", 50, 50, ["UseHands", "HasItemVulvaPiercings"], []), B: ActivityDictionaryadd("Act_拉扯阴蒂环", "SourceCharacter拉了一下TargetCharacter的阴蒂环.", "SourceCharacter拉了一下自己的阴蒂环.") },
-        //宠物服
-        Act_宠物服爬到脚边: { A: createActivity("宠物服爬到脚边", "ItemBoots", "", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服爬到脚边", "SourceCharacter爬到TargetCharacter脚边.", "") },
-        Act_宠物服蹭腿: { A: createActivity("宠物服蹭腿", ["ItemLegs", "ItemFeet"], "", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服蹭腿", "SourceCharacter蹭TargetCharacter的腿.", "") },
-        Act_宠物服趴下: { A: createActivity("宠物服趴下", "", "ItemLegs", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服趴下", "", "SourceCharacter四肢着地趴在地上.") },
-        Act_宠物服跪立: { A: createActivity("宠物服跪立", "", "ItemLegs", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服跪立", "", "SourceCharacter手臂离地跪立.") },
-        Act_宠物服扑: { A: createActivity("宠物服扑", "ItemArms", "", 50, 50, ["HasPet"], []), B: ActivityDictionaryadd("Act_宠物服扑", "SourceCharacter扑到TargetCharacter身上.", "") },
-
-        // 有猫爪
-        Act_猫爪挠手: { A: createActivity("猫爪挠手", "ItemHands", "", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪挠手", "SourceCharacter用爪子挠了一下TargetCharacter的手.", "") },
-        Act_猫爪挠手臂: { A: createActivity("猫爪挠手臂", "ItemArms", "", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪挠手臂", "SourceCharacter用爪子挠了一下TargetCharacter的手臂.", "") },
-        Act_猫爪舔手: { A: createActivity("猫爪舔手", "", "ItemHands", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪舔手", "", "SourceCharacter舔自己的爪子.") },
-        Act_猫爪戳脸: { A: createActivity("猫爪戳脸", "ItemMouth", "ItemMouth", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪戳脸", "SourceCharacter用爪子戳了戳TargetCharacter的脸.", "SourceCharacter用爪子戳了戳自己的脸.") },
-        Act_猫爪戳鼻子: { A: createActivity("猫爪戳鼻子", "ItemNose", "ItemNose", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪戳鼻子", "SourceCharacter用爪子戳了戳TargetCharacter的鼻子.", "SourceCharacter用爪子戳了戳自己的鼻子.") },
-        Act_猫爪揉脸: { A: createActivity("猫爪揉脸", "ItemMouth", "ItemMouth", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪揉脸", "SourceCharacter用爪子揉了揉TargetCharacter的脸.", "SourceCharacter用爪子揉了揉自己的脸.") },
-        Act_猫爪揉鼻子: { A: createActivity("猫爪揉鼻子", "ItemNose", "ItemNose", 50, 50, ["HasPawMittens"], []), B: ActivityDictionaryadd("Act_猫爪揉鼻子", "SourceCharacter用爪子揉了揉TargetCharacter的鼻子.", "SourceCharacter用爪子揉了揉自己的鼻子.") },
-
-        // 有笼子
-        Act_撞笼子: { A: createActivity("撞笼子", "", "ItemDevices", 50, 50, ["HasKennel"], []), B: ActivityDictionaryadd("Act_撞笼子", "", "SourceCharacter用身体撞击笼子.") },
-        Act_咬笼子: { A: createActivity("咬笼子", "", "ItemDevices", 50, 50, ["HasKennel"], []), B: ActivityDictionaryadd("Act_咬笼子", "", "SourceCharacter用牙齿咬笼子.") },
-        Act_摇晃笼子: { A: createActivity("摇晃笼子", "", "ItemDevices", 50, 50, ["HasKennel"], []), B: ActivityDictionaryadd("Act_摇晃笼子", "", "SourceCharacter摇晃笼子的门.") },
-
-        Act_泡沫剑架在脖子上: { A: createActivity("泡沫剑架在脖子上", "ItemNeck", "ItemNeck", 50, 50, ["UseHands", "UseArms", "HasSword"], []), B: ActivityDictionaryadd("Act_泡沫剑架在脖子上", "SourceCharacter把泡沫剑架在TargetCharacter的脖子上.", "SourceCharacter把泡沫剑架在自己的脖子上.") },
-        Act_泡沫剑拍脸: { A: createActivity("泡沫剑拍脸", "ItemMouth", "", 50, 50, ["UseHands", "UseArms", "HasSword"], []), B: ActivityDictionaryadd("Act_泡沫剑拍脸", "SourceCharacter用泡沫剑轻轻拍了拍一下TargetCharacter的脸.", "") },
-
-        Act_剪刀剪掉上衣: { A: createActivity("剪刀剪掉上衣", "ItemTorso", "ItemTorso", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉上衣", "SourceCharacter用剪刀剪掉了TargetCharacter的上衣.", "SourceCharacter用剪刀剪掉了自己的上衣.") },
-        Act_剪刀剪掉下衣: { A: createActivity("剪刀剪掉下衣", "ItemPelvis", "ItemPelvis", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉下衣", "SourceCharacter用剪刀剪掉了TargetCharacter的下衣.", "SourceCharacter用剪刀剪掉了自己的下衣.") },
-        // Act_剪刀剪掉绳子: { A: createActivity("剪刀剪掉绳子", "ItemMouth", "", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉绳子", "SourceCharacter用泡沫剑轻轻拍了拍一下TargetCharacter的脸", "") },
-        Act_剪刀剪掉胸罩: { A: createActivity("剪刀剪掉胸罩", "ItemBreast", "ItemBreast", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉胸罩", "SourceCharacter用剪刀剪掉了TargetCharacter的胸罩.", "SourceCharacter用剪刀剪掉了自己的胸罩.") },
-        Act_剪刀剪掉内裤: { A: createActivity("剪刀剪掉内裤", "ItemVulvaPiercings", "ItemVulvaPiercings", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉内裤", "SourceCharacter用剪刀剪掉了TargetCharacter的内裤.", "SourceCharacter用剪刀剪掉了自己的内裤.") },
-        Act_剪刀剪掉袜子: { A: createActivity("剪刀剪掉袜子", "ItemBoots", "ItemBoots", 50, 50, ["UseHands", "UseArms", "HasScissors"], []), B: ActivityDictionaryadd("Act_剪刀剪掉袜子", "SourceCharacter用剪刀剪掉了TargetCharacter的袜子.", "SourceCharacter用剪刀剪掉了自己的袜子.") },
-
-        Act_骑上去: { A: createActivity("骑上去", "ItemTorso", "", 50, 50, ["Hassaddle"], []), B: ActivityDictionaryadd("Act_骑上去", "SourceCharacter骑在TargetCharacter的背上.", "") },
-        Act_躺上去: { A: createActivity("躺上去", "ItemDevices", "", 50, 50, ["Hasbed"], []), B: ActivityDictionaryadd("Act_躺上去", "SourceCharacter躺到TargetCharacter的身边.", "") },
 
 
-        Act_舔触手: { A: createActivity("舔触手", "", "ItemMouth", 50, 50, ["HasTentacles"], []), B: ActivityDictionaryadd("Act_舔触手", "", "SourceCharacter舔PronounPossessive的触手.") },
-        Act_触手摸头: { A: createActivity("触手摸头", "ItemHead", "ItemHead", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手摸头", "SourceCharacter用触手摸了摸TargetCharacter的头.", "SourceCharacter用触手摸了摸自己的头.") },
-        Act_触手戳鼻子: { A: createActivity("触手戳鼻子", "ItemNose", "ItemNose", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手戳鼻子", "SourceCharacter用触手戳了戳TargetCharacter的鼻子.", "SourceCharacter用触手戳了戳自己的鼻子.") },
-        Act_触手戳脸: { A: createActivity("触手戳脸", "ItemMouth", "ItemMouth", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手戳脸", "SourceCharacter用触手戳了戳TargetCharacter的脸.", "SourceCharacter用触手戳了戳自己的脸.") },
-        Act_触手揉鼻子: { A: createActivity("触手揉鼻子", "ItemNose", "ItemNose", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手揉鼻子", "SourceCharacter用触手揉了揉TargetCharacter的鼻子.", "SourceCharacter用触手揉了揉自己的鼻子.") },
-        Act_触手揉脸: { A: createActivity("触手揉脸", "ItemMouth", "ItemMouth", 50, 50, ["HasTentacles2"], []), B: ActivityDictionaryadd("Act_触手揉脸", "SourceCharacter用触手揉了揉TargetCharacter的脸.", "SourceCharacter用触手揉了揉自己的脸.") },
-
-        Act_鱼尾揉脸: { A: createActivity("鱼尾揉脸", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾揉脸", "SourceCharacter用鱼尾揉了揉TargetCharacter的脸.", "SourceCharacter用鱼尾揉了揉PronounPossessive自己的脸.") },
-        Act_鱼尾戳脸: { A: createActivity("鱼尾戳脸", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾戳脸", "SourceCharacter用鱼尾戳了戳TargetCharacter的脸.", "SourceCharacter用鱼尾戳了戳PronounPossessive自己的脸.") },
-        Act_鱼尾抚脸: { A: createActivity("鱼尾抚脸", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾抚脸", "SourceCharacter用鱼尾轻抚TargetCharacter的脸颊.", "SourceCharacter用鱼尾轻抚PronounPossessive自己的脸颊.") },
-        Act_鱼尾担膝盖: { A: createActivity("鱼尾担膝盖", "ItemLegs", "", 50, 50, ["SuitLower鱼鱼尾_Luzi", "IsKneeling"], []), B: ActivityDictionaryadd("Act_鱼尾担膝盖", "SourceCharacter将鱼尾担在了TargetCharacter的膝盖上.", "") },
-        Act_鱼尾揉乳房: { A: createActivity("鱼尾揉乳房", "ItemBreast", "ItemBreast", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾揉乳房", "SourceCharacter用鱼尾揉了揉TargetCharacter的乳房.", "SourceCharacter用鱼尾揉了揉PronounPossessive自己的乳房.") },
-        Act_鱼尾扇风: { A: createActivity("鱼尾扇风", "ItemMouth", "ItemMouth", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾扇风", "SourceCharacter用鱼尾给TargetCharacter的脸扇了扇风.", "SourceCharacter用鱼尾给自己扇了扇风") },
-        Act_鱼尾戳乳头: { A: createActivity("鱼尾戳乳头", "ItemNipples", "ItemNipples", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾戳乳头", "SourceCharacter用鱼尾戳了戳TargetCharacter的乳头.", "SourceCharacter用鱼尾戳了戳自己的乳头.") },
-        Act_鱼尾碰手: { A: createActivity("鱼尾碰手", "ItemHands", "", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾碰手", "SourceCharacter将鱼尾踝搭在了TargetCharacter的手心上.", "") },
-        Act_鱼尾抚弄大腿: { A: createActivity("鱼尾抚弄大腿", "ItemLegs", "", 50, 50, ["SuitLower鱼鱼尾_Luzi"], []), B: ActivityDictionaryadd("Act_鱼尾抚弄大腿", "SourceCharacter用鱼尾抚弄TargetCharacter的大腿.", "") },
 
 
-        // ===========================
-        // ===========================
-        // ===========================
 
-    };
 
-    //============================================================
-    //============================================================
+    ];
+
+    // 先决条件
     const CustomPrerequisiteFuncs = new Map(Object.entries({
         // 单向 仅自己
         "HasTail": (acting, acted, group) => !!InventoryGet(acted, "TailStraps"), // 有尾巴
@@ -355,7 +1287,7 @@
 
     }));
 
-    mod.hookFunction("ActivityCheckPrerequisite", 500, (args, next) => {
+    笨蛋Luzi.hookFunction("ActivityCheckPrerequisite", 500, (args, next) => {
         var prereqName = args[0];
         if (CustomPrerequisiteFuncs.has(prereqName)) {
             var acting = args[1];
@@ -372,295 +1304,20 @@
             return next(args);
     });
 
-    //============================================================
-    //============================================================
-    /**
-     * 从玩家身上移除指定活动的道具组函数
-     * @param {object} data - 活动消息的数据对象
-     * @param {string} groupName - 身体部位名称
-     * @param {string} assetName - 活动名称
-     * @param {string} removalGroup - 要移除的道具组名称
-     */
-    function removeActivityItems(data, groupName, assetName, removalGroup) {
-        // 检测消息发送者是否是玩家自身, 并且消息内容是否包含对应的 Activity
-        if (data.Sender === Player.MemberNumber && (data.Content.includes(`Self-${groupName}-${assetName}`) || data.Content.includes(`Other-${groupName}-${assetName}`))) {
-
-            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
-            const playerIndex = ChatRoomCharacter.findIndex(player => player.MemberNumber === targetCharacter); // 查找房间内对应的玩家
-            const targetMember = ChatRoomCharacter[playerIndex]; // 对方玩家的信息
-            if (playerIndex !== -1) {
-                InventoryRemove(targetMember, removalGroup);
-                ChatRoomCharacterUpdate(targetMember)
-            }
-        }
-    }
-    function 缰绳(name) {
-        const halter =
-        {
-            Name: "缰绳",
-            Description: name,
-            Property: name,
-        };
-        InventoryWear(Player, "缰绳_Luzi", "ItemTorso", "", 1, 1, halter);
-        ChatRoomCharacterUpdate(Player)
-    }
-    function 床右边(name) {
-        const halter =
-        {
-            Name: "床右边",
-            Description: name,
-            Property: name,
-        };
-        InventoryWear(Player, "床右边_Luzi", "ItemDevices", "", 1, 1, halter);
-        ChatRoomCharacterUpdate(Player)
-    }
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    笨蛋Luzi.hookFunction('DrawImageEx', 50, async (args, next) => {
         const data = args[0];
-        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemTorso-Act_骑上去' && data.Type === 'Activity' && data.Dictionary) {
-            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
-            // 遍历ChatRoomCharacterDrawlist中的所有角色的Name和MemberNumber
-            for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
-                const characterName = ChatRoomCharacterDrawlist[i].Name;
-                const memberNumber = ChatRoomCharacterDrawlist[i].MemberNumber;
-
-                if (memberNumber === targetCharacter) {
-                    缰绳(`${characterName}`) // 检查是否符合玩家ID
-                }
+        if (typeof data === 'string' && (data.indexOf("笨蛋Luzi_") !== -1 || data.indexOf("笨蛋笨Luzi_") !== -1)) {
+            if (ActivityICONS.has(data)) {
+                args[0] = ActivityICONS.get(data);
             }
-        }
-        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemDevices-Act_躺上去' && data.Type === 'Activity' && data.Dictionary) {
-            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
-            // 遍历ChatRoomCharacterDrawlist中的所有角色的Name和MemberNumber
-            for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
-                const characterName = ChatRoomCharacterDrawlist[i].Name;
-                const memberNumber = ChatRoomCharacterDrawlist[i].MemberNumber;
-
-                if (memberNumber === targetCharacter) {
-                    床右边(`${characterName}`) // 检查是否符合玩家ID
-                }
-            }
-        }
-        removeActivityItems(data, "ItemTorso", "Act_剪刀剪掉上衣", "Cloth");
-        removeActivityItems(data, "ItemPelvis", "Act_剪刀剪掉下衣", "ClothLower");
-        removeActivityItems(data, "ItemBreast", "Act_剪刀剪掉胸罩", "Bra");
-        removeActivityItems(data, "ItemVulvaPiercings", "Act_剪刀剪掉内裤", "Panties");
-        removeActivityItems(data, "ItemBoots", "Act_剪刀剪掉袜子", "Socks");
-
-        next(args);
-    });
-    //============================================================
-    //============================================================
-
-    mod.hookFunction("LoginResponse", 10, (args, next) => {
-        next(args)
-        for (const key in activityAdd) {
-            const activity2 = activityAdd[key].B;
-            activity2.forEach((subArray) => {
-                ActivityDictionary.push(subArray);
-            });
-        }
-    })
-
-    var Nibble = { Name: "Nibble", MaxProgress: 40, Prerequisite: ["ZoneAccessible", "UseMouth", "ZoneNaked"], Target: ["ItemArms", "ItemBoots", "ItemEars", "ItemFeet", "ItemHands", "ItemLegs", "ItemMouth", "ItemNeck", "ItemNipples", "ItemNose", "ItemPelvis", "ItemTorso", "ItemTorso2", "ItemVulva", "ItemVulvaPiercings",], TargetSelf: ["ItemArms", "ItemBoots", "ItemHands", "ItemMouth", "ItemNipples",], };
-    ActivityFemale3DCG.push(Nibble);
-    ActivityFemale3DCG.push(Nibble.Name);
-
-
-    const Activitypng = "Assets/Female3DCG/Activity/";
-    const PawMittenspng = "Assets/Female3DCG/ItemHands/Preview/PawMittens.png";
-    const Kennelpng = "Assets/Female3DCG/ItemDevices/Preview/Kennel.png";
-    const Swordspng = "Assets/Female3DCG/ItemHandheld/Preview/Sword.png";
-    const Scissorspng = "Assets/Female3DCG/ItemHandheld/Preview/Scissors.png";
-    const Tentaclespng = "Assets/Female3DCG/TailStraps/Preview/Tentacles.png";
-    const 鱼尾 = "Assets/Female3DCG/ItemLegs/Preview/MermaidTail.png";
-
-    const imageReplacement = new Map([ // 替换图片
-        // ["Assets/Female3DCG/Activity/Act_托起乳房.png", ICONS2["Luzi_Oaood"]],
-        [Activitypng + "Act_歪头.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_环顾四周.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_上下打量.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_闭上眼睛.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_眼睛呆滞.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_眼睛湿润.png", Activitypng + "MoanGagWhimper.png"],
-        [Activitypng + "Act_流眼泪.png", Activitypng + "MoanGagWhimper.png"],
-        [Activitypng + "Act_张开嘴.png", Activitypng + "Kiss.png"],
-        [Activitypng + "Act_吞咽口水.png", Activitypng + "MoanGagWhimper.png"],
-        [Activitypng + "Act_流口水.png", Activitypng + "MoanGagWhimper.png"],
-        [Activitypng + "Act_轻声喘息.png", Activitypng + "MoanGagGroan.png"],
-        [Activitypng + "Act_打哈欠.png", Activitypng + "Kiss.png"],
-        [Activitypng + "Act_舔手.png", Activitypng + "MasturbateTongue.png"],
-        [Activitypng + "Act_舔手指.png", Activitypng + "MasturbateTongue.png"],
-        [Activitypng + "Act_吮吸手指.png", Activitypng + "FrenchKiss.png"],
-        [Activitypng + "Act_舔脸.png", Activitypng + "MasturbateTongue.png"],
-        [Activitypng + "Act_舔脚.png", Activitypng + "MasturbateTongue.png"],
-        [Activitypng + "Act_嗅.png", Activitypng + "Kiss.png"],
-        [Activitypng + "Act_跪下.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_站起来.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_跪着张开双腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_跪着合并双腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_手放身后.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_手放身前.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_趴下.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_四肢着地.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_爬到脚边.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_蹭腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_蹭腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_踮起双脚.png", Activitypng + "Kick.png"],
-        [Activitypng + "Act_摇晃脚踝.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_伸出脚.png", Activitypng + "Kick.png"],
-        [Activitypng + "Act_夹紧双腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_掰开双腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_脚托起下巴.png", Activitypng + "Kick.png"],
-        [Activitypng + "Act_脚托起下巴2.png", Activitypng + "Kick.png"],
-        [Activitypng + "Act_抬起屁股.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_扇动翅膀.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_猫爪挠手.png", PawMittenspng],
-        [Activitypng + "Act_猫爪挠手臂.png", PawMittenspng],
-        [Activitypng + "Act_猫爪舔手.png", PawMittenspng],
-        [Activitypng + "Act_猫爪戳鼻子.png", PawMittenspng],
-        [Activitypng + "Act_猫爪戳脸.png", PawMittenspng],
-        [Activitypng + "Act_猫爪揉脸.png", PawMittenspng],
-        [Activitypng + "Act_猫爪揉鼻子.png", PawMittenspng],
-        [Activitypng + "Act_戳脸.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_捏脸.png", Activitypng + "Pinch.png"],
-        [Activitypng + "Act_戳手臂.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_揉脸.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_摇晃手臂.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_轻推.png", Activitypng + "Slap.png"],
-        [Activitypng + "Act_托起脚.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_扭动手腕.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_挠头.png", Activitypng + "Pull.png"],
-        [Activitypng + "Act_捂住耳朵.png", Activitypng + "HandGag.png"],
-        [Activitypng + "Act_捂住眼睛.png", Activitypng + "HandGag.png"],
-        [Activitypng + "Act_捂住头.png", Activitypng + "HandGag.png"],
-        [Activitypng + "Act_捂住下体.png", Activitypng + "HandGag.png"],
-        [Activitypng + "Act_拍头.png", Activitypng + "Slap.png"],
-        [Activitypng + "Act_掀开裙子.png", Activitypng + "MasturbateHand.png"],
-        [Activitypng + "Act_挥手.png", Activitypng + "Slap.png"],
-        [Activitypng + "Act_伸出手.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_拉扯衣角.png", Activitypng + "Pull.png"],
-        [Activitypng + "Act_捂住胸.png", Activitypng + "Pull.png"],
-        [Activitypng + "Act_手托起下巴.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_拽链子.png", Activitypng + "MasturbateHand.png"],
-        [Activitypng + "Act_弹额头.png", Activitypng + "Pinch.png"],
-        [Activitypng + "Act_弹阴蒂.png", Activitypng + "Pinch.png"],
-        [Activitypng + "Act_摇晃尾巴.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_竖起尾巴.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_炸毛.png", Activitypng + "Bite.png"],
-        [Activitypng + "Act_舔尾巴.png", Activitypng + "MasturbateTongue.png"],
-        [Activitypng + "Act_轻抚尾巴.png", Activitypng + "Caress.png"],
-        [Activitypng + "Act_尾巴叼在嘴里.png", Activitypng + "Kiss.png"],
-        [Activitypng + "Act_躲到身后.png", Activitypng + "SistersHug.png"],
-        [Activitypng + "Act_移动到身后.png", Activitypng + "SistersHug.png"],
-        [Activitypng + "Act_下巴搭在肩膀上.png", Activitypng + "RestHead.png"],
-        [Activitypng + "Act_手臂搭在肩膀上.png", Activitypng + "Slap.png"],
-        [Activitypng + "Act_搂腰.png", Activitypng + "SistersHug.png"],
-        [Activitypng + "Act_身体颤抖.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_身体抽搐.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_托起乳房.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_揉搓乳头.png", Activitypng + "Pinch.png"],
-        [Activitypng + "Act_双腿颤抖.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_摇晃双腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_流出液体.png", Activitypng + "MoanGagWhimper.png"],
-        [Activitypng + "Act_失禁.png", Activitypng + "MoanGagWhimper.png"],
-        [Activitypng + "Act_抱.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_手指插进阴道.png", Activitypng + "MasturbateHand.png"],
-        [Activitypng + "Act_拔出自己的手指.png", Activitypng + "MasturbateHand.png"],
-        [Activitypng + "Act_蠕动手指.png", Activitypng + "Grope.png"],
-        [Activitypng + "Act_快速抽插.png", Activitypng + "Grope.png"],
-        [Activitypng + "Act_钩住阴蒂环.png", Activitypng + "Pinch.png"],
-        [Activitypng + "Act_拉扯阴蒂环.png", Activitypng + "Pinch.png"],
-        [Activitypng + "Act_宠物服爬到脚边.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_宠物服蹭腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_宠物服蹭腿.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_宠物服趴下.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_宠物服立起来.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_宠物服跪立.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_宠物服扑.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_起身跪下.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_蹭大腿.png", Activitypng + "PoliteKiss.png"],
-        [Activitypng + "Act_蹭小腿.png", Activitypng + "PoliteKiss.png"],
-        [Activitypng + "Act_撇眼.png", Activitypng + "Wiggle.png"],
-        [Activitypng + "Act_跺脚.png", Activitypng + "Step.png"],
-        [Activitypng + "Act_叉腰.png", Activitypng + "Choke.png"],
-        [Activitypng + "Act_撞笼子.png", Kennelpng],
-        [Activitypng + "Act_咬笼子.png", Kennelpng],
-        [Activitypng + "Act_摇晃笼子.png", Kennelpng],
-
-        [Activitypng + "Act_泡沫剑架在脖子上.png", Swordspng],
-        [Activitypng + "Act_泡沫剑拍脸.png", Swordspng],
-
-        [Activitypng + "Act_剪刀剪掉上衣.png", Scissorspng],
-        [Activitypng + "Act_剪刀剪掉下衣.png", Scissorspng],
-        [Activitypng + "Act_剪刀剪掉胸罩.png", Scissorspng],
-        [Activitypng + "Act_剪刀剪掉内裤.png", Scissorspng],
-        [Activitypng + "Act_剪刀剪掉袜子.png", Scissorspng],
-
-        [Activitypng + "Act_骑上去.png", Activitypng + "SistersHug.png"],
-        [Activitypng + "Act_躺上去.png", Activitypng + "SistersHug.png"],
-
-        [Activitypng + "Act_舔触手.png", Tentaclespng],
-        [Activitypng + "Act_触手摸头.png", Tentaclespng],
-        [Activitypng + "Act_触手戳鼻子.png", Tentaclespng],
-        [Activitypng + "Act_触手戳脸.png", Tentaclespng],
-        [Activitypng + "Act_触手揉鼻子.png", Tentaclespng],
-        [Activitypng + "Act_触手揉脸.png", Tentaclespng],
-
-        [Activitypng + "Act_鱼尾揉脸.png", 鱼尾],
-        [Activitypng + "Act_鱼尾戳脸.png", 鱼尾],
-        [Activitypng + "Act_鱼尾抚脸.png", 鱼尾],
-        [Activitypng + "Act_鱼尾担膝盖.png", 鱼尾],
-        [Activitypng + "Act_鱼尾揉乳房.png", 鱼尾],
-        [Activitypng + "Act_鱼尾扇风.png", 鱼尾],
-        [Activitypng + "Act_鱼尾戳乳头.png", 鱼尾],
-        [Activitypng + "Act_鱼尾碰手.png", 鱼尾],
-        [Activitypng + "Act_鱼尾抚弄大腿.png", 鱼尾],
-
-
-
-    ]);
-
-    // 图片加载队列
-    const imageQueue = [];
-    // 在绘制循环中使用图片加载队列
-    mod.hookFunction('DrawImageResize', 0, async (args, next) => {
-        const data = args[0];
-        if (!!data && typeof data === 'string' && data.indexOf("Act_") > -1) {
-            const modifiedImage = imageReplacement.get(data);
-            if (modifiedImage) {
-                // 检查图片是否在队列中
-                const queuedImage = imageQueue.find((item) => item.src === modifiedImage);
-                if (queuedImage) {
-                    // 等待加载完成后再使用图片
-                    args[0] = await queuedImage.image;
-                } else {
-                    // 如果不在队列中,说明图片已经加载完成,直接使用
-                    args[0] = modifiedImage;
-                }
+            if (data.indexOf("笨蛋笨Luzi_") !== -1) {
+                args[0] = "Assets/Female3DCG/Activity/Wiggle.png";
             }
         }
         next(args);
     });
 
-    //============================================================
-    //============================================================
-
-    const poseMapping = {
-        "ChatSelf-ItemLegs-Act_跪下": "Kneel",
-        "ChatSelf-ItemBoots-Act_起身跪下": "Kneel",
-        "ChatSelf-ItemLegs-Act_跪着合并双腿": "Kneel",
-        "ChatSelf-ItemLegs-Act_跪着张开双腿": "KneelingSpread",
-        "ChatSelf-ItemArms-Act_手放身后": "BackBoxTie",
-        "ChatSelf-ItemBoots-Act_趴下": "Hogtied",
-        "ChatSelf-ItemBoots-Act_四肢着地": "AllFours",
-        "ChatSelf-ItemLegs-Act_站起来": null,
-        "ChatSelf-ItemArms-Act_手放身前": null,
-        "ChatSelf-ItemLegs-Act_宠物服立起来": "Hogtied",
-        "ChatSelf-ItemLegs-Act_宠物服趴下": "AllFours",
-        "ChatOther-ItemTorso-Act_骑上去": "Kneel",
-    };
-
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         const content = data.Content;
         if (data.Sender === Player.MemberNumber && poseMapping.hasOwnProperty(content)) {
@@ -670,12 +1327,32 @@
         }
         next(args);
     });
-    //============================================================
-    //============================================================
+    let is笨蛋炉子 = false;
+    笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
+        next(args)
+        if (!is笨蛋炉子) {
+            w.newActivities = activitiesInfo.map(activityInfo => createActivity(activityInfo));
+            if (Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG) {
+                // 解压炉子ActivityFemale3DCG
+                var decompressedActivityFemale3DCG = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG));
+                ActivityFemale3DCG.push(...decompressedActivityFemale3DCG); // 将解压缩后的数据添加到ActivityFemale3DCG数组中
+            }
+            if (Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering) {
+                // 解压炉子ActivityFemale3DCGOrdering
+                var decompressedActivityFemale3DCGOrdering = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering));
+                ActivityFemale3DCGOrdering.push(...decompressedActivityFemale3DCGOrdering); // 将解压缩后的数据添加到ActivityFemale3DCGOrdering数组中
+            }
+            if (Player.OnlineSettings.ECHO.炉子ActivityDictionary) {
+                // 解压炉子ActivityDictionary
+                var decompressedActivityDictionary = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子ActivityDictionary));
+                ActivityDictionary.push(...decompressedActivityDictionary); // 将解压缩后的数据添加到ActivityDictionary数组中
+            }
+            is笨蛋炉子 = true;
+        }
+    })
 
 
-
-
+    // 翻译
     const translationMap = new Map([
         ["Bap", "拍打"],
         ["SourceCharacter baps TargetCharacter.", "SourceCharacter拍打了TargetCharacter."],
@@ -915,13 +1592,14 @@
         ["SourceCharacter takes a selfie.", "SourceCharacter自拍了一张照片."],
 
     ]);
+
     const translationMapEN = new Map([
         ["歪头", "Tilt Head"],
         ["SourceCharacter歪头.", "SourceCharacter tilts head."],
-        ["环顾四周", "Look Around"],
+        ["环视周围", "Look Around"],
         ["SourceCharacter环视周围.", "SourceCharacter looks around."],
         ["上下打量", "Size Up"],
-        ["SourceCharacter仔细打量TargetCharacter", "SourceCharacter sizes up TargetCharacter."],
+        ["SourceCharacter仔细打量TargetCharacter.", "SourceCharacter sizes up TargetCharacter."],
         ["闭上眼睛", "Close Eyes"],
         ["SourceCharacter闭上了眼睛.", "SourceCharacter closes eyes."],
         ["眼睛呆滞", "Blank Stare"],
@@ -933,9 +1611,9 @@
         ["张开嘴", "Open Mouth"],
         ["SourceCharacter张开了嘴", "SourceCharacter opens mouth."],
         ["吞咽口水", "Swallow Saliva"],
-        ["SourceCharacter吞咽嘴里的口水", "SourceCharacter swallows saliva."],
+        ["SourceCharacter吞咽嘴里的口水.", "SourceCharacter swallows saliva."],
         ["流口水", "Drool"],
-        ["SourceCharacter的口水顺着嘴角流下", "SourceCharacter drools down the corner of the mouth."],
+        ["SourceCharacter的口水顺着嘴角流下.", "SourceCharacter drools down the corner of the mouth."],
         ["轻声喘息", "Softly Pant"],
         ["SourceCharacter发出轻声地喘息.", "SourceCharacter softly pants."],
         ["打哈欠", "Yawn"],
@@ -954,16 +1632,16 @@
         ["吮吸手指", "Suck on Fingers"],
         ["SourceCharacter吮吸TargetCharacter的手指.", "SourceCharacter sucks on TargetCharacter's fingers."],
         ["SourceCharacter吮吸PronounPossessive的手指.", "SourceCharacter sucks on PronounPossessive own fingers."],
-        ["嗅", "Sniff"],
+        ["嗅手", "Sniff"],
         ["SourceCharacter用鼻子嗅了嗅TargetCharacter的手.", "SourceCharacter sniffs TargetCharacter's hand."],
         ["SourceCharacter用鼻子嗅了嗅自己的手.", "SourceCharacter sniffs own hand."],
         ["跪下", "Kneel Down"],
         ["SourceCharacter轻轻地跪了下来.", "SourceCharacter kneels down gently."],
         ["站起来", "Stand Up"],
         ["SourceCharacter手扶着地站了起来.", "SourceCharacter stands up with hands on the ground."],
-        ["跪着张开双腿", "Kneel with Legs Spread"],
+        ["跪着张开腿", "Kneel with Legs Spread"],
         ["SourceCharacter张开了PronounPossessive的腿.", "SourceCharacter kneels with legs spread."],
-        ["跪着合并双腿", "Kneel with Legs Together"],
+        ["跪着并拢腿", "Kneel with Legs Together"],
         ["SourceCharacter并拢了PronounPossessive的腿.", "SourceCharacter kneels with legs together."],
         ["手放身后", "Hands Behind Back"],
         ["SourceCharacter把PronounPossessive的手放在了身后.", "SourceCharacter puts PronounPossessive hands behind back."],
@@ -993,7 +1671,7 @@
         ["SourceCharacter用脚托起TargetCharacter的下巴.", "SourceCharacter places foot on TargetCharacter's chin."],
         ["戳脸", "Poke Face"],
         ["SourceCharacter戳了戳TargetCharacter的脸.", "SourceCharacter pokes TargetCharacter's face."],
-        ["SourceCharacter戳了戳自己的脸", "SourceCharacter pokes own face."],
+        ["SourceCharacter戳了戳自己的脸.", "SourceCharacter pokes own face."],
         ["捏脸", "Pinch Face"],
         ["SourceCharacter捏了捏TargetCharacter的脸.", "SourceCharacter pinches TargetCharacter's face."],
         ["SourceCharacter捏了捏自己的脸.", "SourceCharacter pinches own face."],
@@ -1014,10 +1692,10 @@
         ["SourceCharacter扭动PronounPossessive的手腕.", "SourceCharacter twists PronounPossessive wrists."],
         ["挠头", "Scratch Head"],
         ["SourceCharacter用手挠了挠PronounPossessive的头.", "SourceCharacter scratches PronounPossessive head."],
-        ["捂住耳朵", "Cover Ears"],
-        ["SourceCharacter用手盖住了TargetCharacter的耳朵.", "SourceCharacter covers TargetCharacter's ears with hands."],
-        ["SourceCharacter用手盖住了自己的耳朵.", "SourceCharacter covers own ears with hands."],
-        ["捂住眼睛", "Cover Eyes"],
+        ["盖住耳朵", "Cover Ears"],
+        ["SourceCharacter用手遮住了TargetCharacter的眼睛.", "SourceCharacter covers TargetCharacter's ears with hands."],
+        ["SourceCharacter用手遮住了自己的眼睛.", "SourceCharacter covers own ears with hands."],
+        ["遮住眼睛", "Cover Eyes"],
         ["SourceCharacter捂住TargetCharacter的眼睛.", "SourceCharacter covers TargetCharacter's eyes with hands."],
         ["SourceCharacter捂住自己的眼睛.", "SourceCharacter covers own eyes with hands."],
         ["捂住头", "Cover Head"],
@@ -1052,7 +1730,7 @@
         ["竖起尾巴", "Raise Tail"],
         ["SourceCharacter的尾巴竖了起来.", "SourceCharacter raises own tail."],
         ["炸毛", "Puff Up"],
-        ["SourceCharacter弓起后背,身体的毛发立了起来,发出嘶的声音.", "SourceCharacter arches back, body hair stands up, emitting a hissing sound."],
+        ["SourceCharacter弓起后背, 身体的毛发立了起来, 发出嘶的声音.", "SourceCharacter arches back, body hair stands up, emitting a hissing sound."],
         ["舔尾巴", "Lick Tail"],
         ["SourceCharacter舔TargetCharacter的尾巴.", "SourceCharacter licks TargetCharacter's tail."],
         ["SourceCharacter舔自己的尾巴.", "SourceCharacter licks own tail."],
@@ -1061,7 +1739,7 @@
         ["SourceCharacter轻抚PronounPossessive的尾巴.", "SourceCharacter gently strokes PronounPossessive's tail."],
         ["尾巴叼在嘴里", "Hold Tail in Mouth"],
         ["SourceCharacter叼起TargetCharacter的尾巴.", "SourceCharacter holds TargetCharacter's tail in mouth."],
-        ["SourceCharacter把自己的尾巴叼在嘴里.", "SourceCharacter holds own tail in mouth."],
+        ["SourceCharacter叼起自己的尾巴.", "SourceCharacter holds own tail in mouth."],
         ["抬起屁股", "Lift Buttocks"],
         ["SourceCharacter弯腰抬起PronounPossessive的屁股.", "SourceCharacter bends over, lifting PronounPossessive buttocks."],
         ["扇动翅膀", "Flap Wings"],
@@ -1077,26 +1755,25 @@
         ["搂腰", "Embrace Waist"],
         ["SourceCharacter搂住TargetCharacter的腰.", "SourceCharacter embraces TargetCharacter's waist."],
         ["身体颤抖", "Body Trembles"],
-        ["SourceCharacter身体在颤抖.", "SourceCharacter's body trembles."],
+        ["SourceCharacter颤抖着身体.", "SourceCharacter's body trembles."],
         ["身体抽搐", "Body Twitches"],
-        ["SourceCharacter身体在抽搐.", "SourceCharacter's body twitches."],
+        ["SourceCharacter身体抽搐着.", "SourceCharacter's body twitches."],
         ["托起乳房", "Lift Breasts"],
         ["SourceCharacter托起TargetCharacter的双乳.", "SourceCharacter lifts TargetCharacter's breasts."],
         ["SourceCharacter托起PronounPossessive的双乳.", "SourceCharacter lifts PronounPossessive's breasts."],
         ["揉搓乳头", "Rub Nipples"],
-        ["SourceCharacter用手捏住TargetCharacter的乳头,开始揉搓.", "SourceCharacter uses hands to pinch TargetCharacter's nipples, rubbing them."],
-        ["SourceCharacter用手捏住PronounPossessive的乳头,开始揉搓.", "SourceCharacter uses hands to pinch PronounPossessive's nipples, rubbing them."],
+        ["SourceCharacter揉搓TargetCharacter的乳头.", "SourceCharacter uses hands to pinch TargetCharacter's nipples, rubbing them."],
+        ["SourceCharacter揉搓PronounPossessive的乳头.", "SourceCharacter uses hands to pinch PronounPossessive's nipples, rubbing them."],
         ["双腿颤抖", "Legs Tremble"],
-        ["SourceCharacter的双腿颤抖着.", "SourceCharacter's legs tremble."],
+        ["SourceCharacter颤抖着双腿.", "SourceCharacter's legs tremble."],
         ["摇晃双腿", "Shake Legs"],
-        ["SourceCharacter摇晃自己的双腿.", "SourceCharacter shakes own legs."],
+        ["SourceCharacter摇晃PronounPossessive的双腿.", "SourceCharacter shakes own legs."],
         ["流出液体", "Liquid Flows"],
-        ["有液体顺着SourceCharacter的大腿流下.", "Liquid flows down SourceCharacter's thighs."],
+        ["SourceCharacter股间有液体顺着的大腿流下.", "Liquid flows down SourceCharacter's thighs."],
         ["失禁", "Incontinence"],
         ["SourceCharacter的尿液顺着PronounPossessive大腿流下.", "SourceCharacter's urine flows down PronounPossessive thighs."],
-        ["夹紧双腿", "Clamp Legs"],
         ["夹紧双腿", "Squeeze Legs"],
-        ["SourceCharacter夹紧TargetCharacter的双腿.", "SourceCharacter squeezes TargetCharacter's legs."],
+        ["SourceCharacter夹紧了自己的腿..", "SourceCharacter squeezes TargetCharacter's legs."],
         ["手指插进阴道", "Insert Finger into Vagina"],
         ["SourceCharacter手指插进TargetCharacter的阴道内.", "SourceCharacter inserts a finger into TargetCharacter's vagina."],
         ["SourceCharacter手指插进自己的的阴道内.", "SourceCharacter inserts a finger into own vagina."],
@@ -1107,17 +1784,18 @@
         ["SourceCharacter在TargetCharacter的阴道内蠕动手指.", "SourceCharacter wriggles a finger inside TargetCharacter's vagina."],
         ["SourceCharacter在PronounPossessive的阴道内蠕动手指.", "SourceCharacter wriggles a finger inside PronounPossessive's vagina."],
         ["快速抽插", "Quickly Thrust"],
-        ["SourceCharacter的手在TargetCharacter的阴道内快速抽插,开始揉搓.", "SourceCharacter's hand quickly thrusts in and out of TargetCharacter's vagina, rubbing and kneading."],
-        ["SourceCharacter的手在PronounPossessive的阴道内快速抽插,开始揉搓.", "SourceCharacter's hand quickly thrusts in and out of PronounPossessive's vagina, rubbing and kneading."],
+        ["SourceCharacter的手在TargetCharacter的阴道内快速抽插.", "SourceCharacter's hand quickly thrusts in and out of TargetCharacter's vagina, rubbing and kneading."],
+        ["SourceCharacter的手在PronounPossessive的阴道内快速抽插.", "SourceCharacter's hand quickly thrusts in and out of PronounPossessive's vagina, rubbing and kneading."],
         ["钩住阴蒂环", "Hook Clitoral Piercing"],
         ["SourceCharacter钩住TargetCharacter的阴蒂环.", "SourceCharacter hooks onto TargetCharacter's clitoral piercing."],
         ["SourceCharacter钩住自己的阴蒂环.", "SourceCharacter hooks onto own clitoral piercing."],
         ["拉扯阴蒂环", "Tug Clitoral Piercing"],
-        ["SourceCharacter拉了一下TargetCharacter的阴蒂环又松开了.", "SourceCharacter tugs on TargetCharacter's clitoral piercing and then releases it."],
-        ["SourceCharacter拉了一下自己的阴蒂环又松开了.", "SourceCharacter tugs on own clitoral piercing and then releases it."],
+        ["SourceCharacter拉了一下TargetCharacter的阴蒂环.", "SourceCharacter tugs on TargetCharacter's clitoral piercing and then releases it."],
+        ["SourceCharacter拉了一下自己的阴蒂环.", "SourceCharacter tugs on own clitoral piercing and then releases it."],
         ["宠物服爬到脚边", "Pet Crawls to Feet"],
         ["SourceCharacter爬到TargetCharacter脚边.", "SourceCharacter's pet crawls to TargetCharacter's feet."],
-        ["宠物服蹭腿", "Pet Rubs Legs"],
+        ["宠物服蹭小腿", "Pet Rubs Legs"],
+        ["宠物服蹭大腿", "Pet Rubs Legs"],
         ["SourceCharacter蹭TargetCharacter的腿.", "SourceCharacter's pet rubs against TargetCharacter's legs."],
         ["宠物服趴下", "Pet Lies Down"],
         ["SourceCharacter四肢着地趴在地上.", "SourceCharacter's pet lies down on all fours."],
@@ -1144,7 +1822,7 @@
         ["SourceCharacter用爪子揉了揉TargetCharacter的鼻子.", "SourceCharacter uses its claws to rub TargetCharacter's nose."],
         ["SourceCharacter用爪子揉了揉自己的鼻子.", "SourceCharacter uses its claws to rub its own nose."],
         ["撞笼子", "Bump into Cage"],
-        ["SourceCharacter用身体撞笼子.", "SourceCharacter bumps its body into the cage."],
+        ["SourceCharacter用身体撞击笼子.", "SourceCharacter bumps its body into the cage."],
         ["咬笼子", "Bite Cage"],
         ["SourceCharacter用牙齿咬笼子.", "SourceCharacter bites the cage."],
         ["摇晃笼子", "Shake Cage"],
@@ -1154,145 +1832,131 @@
         ["跺脚", "Stamp Feet"],
         ["SourceCharacter不停地跺脚.", "SourceCharacter keeps stamping its feet."],
         ["叉腰", "Put Hands on Hips"],
-        ["SourceCharacter双手叉腰.", "SourceCharacter puts its hands on its hips."],
+        ["SourceCharacter双手叉在腰上.", "SourceCharacter puts its hands on its hips."],
         ["撩头发", "Toss Hair"],
         ["SourceCharacter撩起头发挂在耳边.", "SourceCharacter tosses its hair, letting it hang by its ears."],
+        ["骑上去", "Ride On"],
+        ["SourceCharacter骑在TargetCharacter的背上.", "SourceCharacter Rides on TargetCharacter's Back."],
+        ["泡沫剑架在脖子上", "Foam Sword Rests on the Neck"],
+        ["SourceCharacter把泡沫剑架在自己的脖子上.", "SourceCharacter Places the Foam Sword on Their Own Neck."],
+        ["SourceCharacter把泡沫剑架在TargetCharacter的脖子上", "SourceCharacter Places the Foam Sword on TargetCharacter's Neck"],
+        ["泡沫剑拍脸", "Foam Sword Hits the Face"],
+        ["SourceCharacter用泡沫剑轻轻拍了拍一下TargetCharacter的脸", "SourceCharacter Gently Hits TargetCharacter's Face with a Foam Sword"],
+        ["剪刀剪掉上衣", "Scissors Cut Off the Top"],
+        ["SourceCharacter用剪刀剪掉了自己的上衣.", "SourceCharacter Cuts Off Their Own Top with Scissors."],
+        ["SourceCharacter用剪刀剪掉了TargetCharacter的上衣.", "SourceCharacter Cuts Off TargetCharacter's Top with Scissors."],
+        ["剪刀剪掉下衣", "Scissors Cut Off the Bottom"],
+        ["SourceCharacter用剪刀剪掉了自己的下衣.", "SourceCharacter Cuts Off Their Own Bottom with Scissors."],
+        ["SourceCharacter用剪刀剪掉了TargetCharacter的下衣.", "SourceCharacter Cuts Off TargetCharacter's Bottom with Scissors."],
+        ["剪刀剪掉胸罩", "Scissors Cut Off the Bra"],
+        ["SourceCharacter用剪刀剪掉了自己的胸罩.", "SourceCharacter Cuts Off Their Own Bra with Scissors."],
+        ["SourceCharacter用剪刀剪掉了TargetCharacter的胸罩.", "SourceCharacter Cuts Off TargetCharacter's Bra with Scissors."],
+        ["剪刀剪掉内裤", "Scissors Cut Off the Underwear"],
+        ["SourceCharacter用剪刀剪掉了自己的内裤.", "SourceCharacter Cuts Off Their Own Underwear with Scissors."],
+        ["SourceCharacter用剪刀剪掉了TargetCharacter的内裤.", "SourceCharacter Cuts Off TargetCharacter's Underwear with Scissors."],
+        ["剪刀剪掉袜子", "Scissors Cut Off the Socks"],
+        ["SourceCharacter用剪刀剪掉了自己的袜子.", "SourceCharacter Cuts Off Their Own Socks with Scissors."],
+        ["SourceCharacter用剪刀剪掉了TargetCharacter的袜子.", "SourceCharacter Cuts Off TargetCharacter's Socks with Scissors."],
+        ["躺上去", "Lie Down"],
+        ["SourceCharacter躺到TargetCharacter的身边.", "SourceCharacter Lies Down Next to TargetCharacter."],
+        ["舔触手", "Lick Tentacles"],
+        ["SourceCharacter舔PronounPossessive的触手.", "SourceCharacter Licks PronounPossessive Tentacles."],
+        ["触手摸头", "Tentacles Touch Head"],
+        ["SourceCharacter用触手摸了摸自己的头.", "SourceCharacter Touches Their Own Head with Tentacles."],
+        ["SourceCharacter用触手摸了摸TargetCharacter的头.", "SourceCharacter Touches TargetCharacter's Head with Tentacles."],
+        ["触手戳鼻子", "Tentacles Poke Nose"],
+        ["SourceCharacter用触手戳了戳自己的鼻子.", "SourceCharacter Pokes Their Own Nose with Tentacles."],
+        ["SourceCharacter用触手戳了戳TargetCharacter的鼻子.", "SourceCharacter Pokes TargetCharacter's Nose with Tentacles."],
+        ["触手戳脸", "Tentacles Poke Face"],
+        ["SourceCharacter用触手戳了戳自己的脸.", "SourceCharacter Pokes Their Own Face with Tentacles."],
+        ["SourceCharacter用触手戳了戳TargetCharacter的脸.", "SourceCharacter Pokes TargetCharacter's Face with Tentacles."],
+        ["触手揉鼻子", "Tentacles Rub Nose"],
+        ["SourceCharacter用触手揉了揉自己的鼻子.", "SourceCharacter Rubs Their Own Nose with Tentacles."],
+        ["SourceCharacter用触手揉了揉TargetCharacter的鼻子.", "SourceCharacter Rubs TargetCharacter's Nose with Tentacles."],
+        ["触手揉脸", "Tentacles Rub Face"],
+        ["SourceCharacter用触手揉了揉自己的脸.", "SourceCharacter Rubs Their Own Face with Tentacles."],
+        ["SourceCharacter用触手揉了揉TargetCharacter的脸.", "SourceCharacter用触手揉了揉TargetCharacter的脸."],
+        ["鱼尾揉脸", "Fish Tail Rubs Face"],
+        ["SourceCharacter用鱼尾揉了揉PronounPossessive自己的脸.", "SourceCharacter用鱼尾揉了揉自己的脸."],
+        ["SourceCharacter用鱼尾揉了揉TargetCharacter的脸.", "SourceCharacter用鱼尾揉了揉TargetCharacter的脸."],
+        ["鱼尾戳脸", "Fish Tail Pokes Face"],
+        ["SourceCharacter用鱼尾戳了戳PronounPossessive自己的脸.", "SourceCharacter用鱼尾戳了戳自己的脸."],
+        ["SourceCharacter用鱼尾戳了戳TargetCharacter的脸.", "SourceCharacter用鱼尾戳了戳TargetCharacter的脸."],
+        ["鱼尾抚脸", "Fish Tail Caresses Face"],
+        ["SourceCharacter用鱼尾轻抚PronounPossessive自己的脸颊.", "SourceCharacter用鱼尾轻抚自己的脸颊."],
+        ["SourceCharacter用鱼尾轻抚TargetCharacter的脸颊.", "SourceCharacter用鱼尾轻抚TargetCharacter的脸颊."],
+        ["鱼尾担膝盖", "Fish Tail Rests on Knee"],
+        ["SourceCharacter将鱼尾担在了TargetCharacter的膝盖上.", "SourceCharacter将鱼尾担在了TargetCharacter的膝盖上."],
+        ["鱼尾揉乳房", "Fish Tail Rubs Chest"],
+        ["SourceCharacter用鱼尾揉了揉PronounPossessive自己的乳房.", "SourceCharacter用鱼尾揉了揉自己的乳房."],
+        ["SourceCharacter用鱼尾揉了揉TargetCharacter的乳房.", "SourceCharacter用鱼尾揉了揉TargetCharacter的乳房."],
+        ["鱼尾扇风", "Fish Tail Fans"],
+        ["SourceCharacter用鱼尾给自己扇了扇风.", "SourceCharacter用鱼尾给自己扇了扇风."],
+        ["SourceCharacter用鱼尾给TargetCharacter的脸扇了扇风.", "SourceCharacter用鱼尾给TargetCharacter的脸扇了扇风."],
+        ["鱼尾戳乳头", "Fish Tail Pokes Nipple"],
+        ["SourceCharacter用鱼尾戳了戳自己的乳头.", "SourceCharacter用鱼尾戳了戳自己的乳头."],
+        ["SourceCharacter用鱼尾戳了戳TargetCharacter的乳头.", "SourceCharacter用鱼尾戳了戳TargetCharacter的乳头."],
+        ["鱼尾碰手", "Fish Tail Touches Hand"],
+        ["SourceCharacter将鱼尾踝搭在了TargetCharacter的手心上.", "SourceCharacter将鱼尾踝搭在了TargetCharacter的手心上."],
+        ["鱼尾抚弄大腿", "Fish Tail Strokes Thigh"],
+        ["SourceCharacter用鱼尾抚弄TargetCharacter的大腿.", "SourceCharacter用鱼尾抚弄TargetCharacter的大腿."],
+        ["SourceCharacter拍打TargetCharacter的头.", "SourceCharacter拍打TargetCharacter的头."],
 
     ]);
 
-    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+    let is笨蛋炉子2 = false;
+    笨蛋Luzi.hookFunction("ChatRoomSync", 10, (args, next) => {
         next(args);
-        let language = localStorage.getItem("BondageClubLanguage");
-        if ((language === "CN" || language === "TW")) {
-            // 替换翻译后的值
-            let found = false;
-            while (!found) {
-                const containsActivityLSCG_ = ActivityDictionary.some(activity => activity[0].includes('LSCG_'));
-                if (containsActivityLSCG_) {
+        if (!is笨蛋炉子2) {
+            setTimeout(() => {
+                let language = localStorage.getItem("BondageClubLanguage");
+                if ((language === "CN" || language === "TW")) {
+                    // 替换翻译后的值
+                    let found = false;
+                    while (!found) {
+                        const containsActivityLSCG_ = ActivityDictionary.some(activity => activity[0].includes('LSCG_'));
+                        if (containsActivityLSCG_) {
+                            ActivityDictionary.forEach(activity => {
+                                const originalValue = activity[1];
+                                if (translationMap.has(originalValue)) {
+                                    activity[1] = translationMap.get(originalValue);
+                                }
+                            });
+                            found = true;
+                        } else {
+                            break;
+                        }
+                    }
+                };
+                if (!(language === "CN" || language === "TW")) {
+                    // 替换翻译后的值
                     ActivityDictionary.forEach(activity => {
                         const originalValue = activity[1];
-                        if (translationMap.has(originalValue)) {
-                            activity[1] = translationMap.get(originalValue);
+                        if (translationMapEN.has(originalValue)) {
+                            activity[1] = translationMapEN.get(originalValue);
                         }
                     });
-                    found = true;
-                } else {
-                    break;
                 }
-            }
-        };
-        if (!(language === "CN" || language === "TW")) {
-            // 替换翻译后的值
-            ActivityDictionary.forEach(activity => {
-                const originalValue = activity[1];
-                if (translationMapEN.has(originalValue)) {
-                    activity[1] = translationMapEN.get(originalValue);
-                }
-            });
+            }, 2000);
+            is笨蛋炉子2 = true;
         }
     });
 
-    mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
-        next(args)
-        // LSCG行动翻译
-        let data = args[0]
-        if (data.Content === 'ServerEnter') {
-            let language = localStorage.getItem("BondageClubLanguage");
-            if ((language === "CN" || language === "TW")) {
-                // 替换翻译后的值
-                let found = false;
-                while (!found) {
-                    const containsActivityLSCG_ = ActivityDictionary.some(activity => activity[0].includes('LSCG_'));
-                    if (containsActivityLSCG_) {
-                        ActivityDictionary.forEach(activity => {
-                            const originalValue = activity[1];
-                            if (translationMap.has(originalValue)) {
-                                activity[1] = translationMap.get(originalValue);
-                            }
-                        });
-                        found = true;
-                    } else {
-                        break;
-                    }
-                }
-            };
-            if (!(language === "CN" || language === "TW")) {
-                // 替换翻译后的值
-                ActivityDictionary.forEach(activity => {
-                    const originalValue = activity[1];
-                    if (translationMapEN.has(originalValue)) {
-                        activity[1] = translationMapEN.get(originalValue);
-                    }
-                });
-            }
-        }
+    // 笨蛋Luzi.hookFunction("ChatRoomMessageDisplay", 10, (args, next) => {
+    //     console.log(args)
+    //     next(args);
+    // });
 
-    });
+
 
     //============================================================
     //============================================================
 
-    // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
-        const data = args[0];
-        if (data.Type === "Hidden" && data.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        if (data.Type === "Hidden" && data.Content.includes('<iframe src="//player.bilibili.com/player.html')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        if (data.Type === "Hidden" && data.Content.includes('<iframe width="560" height="315" src="https://www.youtube.com/')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        if (data.Type === "Hidden" && data.Content.includes('<iframe src="https://www.pornhub.com/')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        // console.log("公开", data)
-        next(args);
-    });
-
-    mod.hookFunction("ServerSend", 5, (args, next) => {
-        const data = args;
-        // Player.ChatSettings.MuStylePoses
-        if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1]?.Content.includes('></iframe>') && data[1]?.Type === "Chat") {
-            if (data[1]?.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
-                args[1].Type = "Hidden";
-                ChatRoomSendEmote("一个 网易云 嵌入分享 ╰(*°▽°*)╯");
-            };
-            if (data[1]?.Content.includes('<iframe src="//player.bilibili.com/player.html')) {
-                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                args[1].Content = modifiedContent;
-                args[1].Type = "Hidden";
-                ChatRoomSendEmote("一个 Bilibili 嵌入分享 ╰(*°▽°*)╯");
-            };
-            if (data[1]?.Content.includes('<iframe width="560" height="315" src="https://www.youtube.com/')) {
-                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                args[1].Content = modifiedContent;
-                args[1].Type = "Hidden";
-                ChatRoomSendEmote("一个 Youtube 嵌入分享 ╰(*°▽°*)╯");
-            };
-            if (data[1]?.Content.includes('<iframe src="https://www.pornhub.com/')) {
-                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                args[1].Content = modifiedContent;
-                args[1].Type = "Hidden";
-                ChatRoomSendEmote("一个 Pornhub 嵌入分享 ╰(*°▽°*)╯");
-            };
-        };
-        // console.log("自己", data[1])
-        next(args);
-    });
-
-
-    //============================================================
-    //============================================================
     // 这个忘记写的是个什么东西了 有空优化一下逻辑
     let currentLanguage = '';
     let currentLanguage2 = '';
     let halo2 = false;
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         // console.log(data);
         halo2 = true;
@@ -1313,7 +1977,7 @@
                     currentLanguage = matches[1];
                 }
             }
-        }
+        } else { currentLanguage = ''; }
         // ============================================
         let luzi2 = InventoryGet(Player, "ItemMisc");
         if ((data.Sender === Player.MemberNumber && data.Content === "ActionRemove" && data.Dictionary[3].GroupName === "ItemMisc") ||
@@ -1333,7 +1997,7 @@
                     }
                 }
             }
-        }
+        } else { currentLanguage2 = ''; }
         // ============================================
         if (data.Sender !== Player.MemberNumber && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote") && !data.Content.includes("[T]") && !data.Content.includes("📞") && !data.Content.includes("🔊") && !data.Content.includes("\\") && !data.Content.includes("/")) {
             let sourceText = data.Dictionary?.find(d => d.Tag === "BCX_ORIGINAL_MESSAGE")?.Text ?? data.Content;
@@ -1398,6 +2062,54 @@
 
         next(args);
     });
+    //============================================================
+    //============================================================
+    // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
+    const blockedLinks = [
+        '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/',
+        '<iframe src="//player.bilibili.com/player.html',
+        '<iframe width="560" height="315" src="https://www.youtube.com/',
+        '<iframe src="https://www.pornhub.com/'
+    ];
+
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
+        const data = args[0];
+        if (data.Type === "Hidden" && blockedLinks.some(link => data.Content.includes(link))) {
+            ChatRoomSendLocal(data.Content);
+        }
+        console.log("公开", data);
+        next(args);
+    });
+
+    笨蛋Luzi.hookFunction("ServerSend", 5, (args, next) => {
+        const data = args;
+        if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1]?.Content.includes('></iframe>') && data[1]?.Type === "Chat") {
+            blockedLinks.forEach(link => {
+                if (data[1]?.Content.includes(link)) {
+                    let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
+                    modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
+                    args[1].Content = modifiedContent;
+                    args[1].Type = "Hidden";
+                    switch (link) {
+                        case blockedLinks[0]:
+                            ChatRoomSendEmote("一个 网易云 嵌入分享 ╰(*°▽°*)╯");
+                            break;
+                        case blockedLinks[1]:
+                            ChatRoomSendEmote("一个 Bilibili 嵌入分享 ╰(*°▽°*)╯");
+                            break;
+                        case blockedLinks[2]:
+                            ChatRoomSendEmote("一个 Youtube 嵌入分享 ╰(*°▽°*)╯");
+                            break;
+                        case blockedLinks[3]:
+                            ChatRoomSendEmote("一个 Pornhub 嵌入分享 ╰(*°▽°*)╯");
+                            break;
+                    }
+                }
+            });
+        }
+        next(args);
+    });
+
 
     //============================================================
     //============================================================
@@ -1424,7 +2136,7 @@
     }
 
     // 处理聊天室消息
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         const 开关 = Player.OnlineSettings.ECHO && Player.OnlineSettings.ECHO.高潮开关;
         const 历史次数 = (Player.OnlineSettings.ECHO && Player.OnlineSettings.ECHO.高潮次数) || 0;
@@ -1446,24 +2158,373 @@
         next(args);
     });
 
-    mod.hookFunction("PreferenceRun", 50, (args, next) => {
-        next(args);
+
+    function 动作拓展设置进入Run() {
         if (PreferenceSubscreen === "") {
-            DrawButton(1340, 50, 400, 90, "      一些设置", "White", "Icons/Use.png");
+            DrawButton(1340, 50, 400, 90, "      动作拓展设置", "White", "Icons/Use.png");
         }
-        if (PreferenceSubscreen === "Luzi") {
+    }
+    function 动作拓展设置进入Click() {
+        if (MouseIn(1340, 50, 400, 90) && PreferenceSubscreen === "") {
+            PreferenceSubscreen = "动作拓展设置";
+        }
+    }
+
+    function 动作拓展设置退出UIRun() {
+        if (PreferenceSubscreen === "动作拓展设置" || PreferenceSubscreen === "自定义动作设置" || PreferenceSubscreen === "自定义服装设置" || PreferenceSubscreen === "高潮计数保留设置") {
+            DrawButton(1815, 75, 90, 90, "", "White", "Icons/Exit.png"); // 退出按钮
+            DrawText(`- ${PreferenceSubscreen} -`, 1000, 125, "Black");
+        }
+    }
+
+    function 动作拓展设置退出UIClick() {
+        if (MouseIn(1815, 75, 90, 90) && (PreferenceSubscreen === "动作拓展设置" || PreferenceSubscreen === "自定义动作设置" || PreferenceSubscreen === "自定义服装设置" || PreferenceSubscreen === "高潮计数保留设置")) {
+            // 如果 PreferenceSubscreen 为 "动作拓展设置"，执行 PreferenceSubscreenArousalExit()
+            if (PreferenceSubscreen === "动作拓展设置") {
+                PreferenceSubscreenArousalExit();
+            } else {
+                // 如果 PreferenceSubscreen 不为 "动作拓展设置"，返回 PreferenceSubscreen 的上一级
+                PreferenceSubscreen = "动作拓展设置";
+            }
+        }
+    }
+
+
+    function 动作拓展设置主界面Run() {
+        if (PreferenceSubscreen === "动作拓展设置") {
+            DrawButton(250, 190, 390, 90, "      自定义动作", "White", "Icons/Trash.png");
+            DrawButton(250, 290, 390, 90, "      自定义服装", "White", "Icons/Trash.png");
+            DrawButton(250, 390, 390, 90, "      高潮计数保留", "White", "Icons/Trash.png");
+            DrawButton(1500, 840, 390, 90, "      Discord", "White", "Icons/Trash.png");
+            if (MouseIn(1500, 840, 390, 90)) {
+                DrawTextWrap(
+                    `插件翻译\n\n\n\n\n动作\n/\n服装拓展\n\n在此查看插件更新及反馈建议`
+                    , 1500, 700, 390, 90, "White");
+            }
+        }
+    }
+    function 动作拓展设置主界面Click() {
+        if (PreferenceSubscreen === "动作拓展设置") {
+            if (MouseIn(250, 190, 390, 90)) {
+                PreferenceSubscreen = "自定义动作设置";
+            }
+            if (MouseIn(250, 290, 390, 90)) {
+                PreferenceSubscreen = "自定义服装设置";
+            }
+            if (MouseIn(250, 390, 390, 90)) {
+                PreferenceSubscreen = "高潮计数保留设置";
+                if (Player.OnlineSettings.ECHO === undefined) { saveOrgasmSettings(false, 0) }
+            }
+            if (MouseIn(1500, 840, 390, 90)) {
+                window.open("https://discord.gg/K9YnNqsNKx");
+            }
+        }
+    }
+
+
+
+    /**
+     * 创建活动对象的函数
+     * @param {string} name - 动作名称
+     * @param {string} targetSelf - 对自己做动作的部位
+     * @param {string} target - 对他人做动作的部位
+     * @param {string} targetSelftext - 对自己做动作的描述
+     * @param {string} targettext - 对他人做动作的描述
+     * @returns {object} - 包含创建的活动信息的对象
+     */
+    function createActivity2(activityInfo) {
+        const {
+            name,
+            targetSelf,
+            target,
+            targetSelftext,
+            targettext,
+        } = activityInfo;
+
+        const activity = {
+            Name: `笨蛋笨Luzi_${name}`, // 道具名字
+            TargetSelf: [targetSelf], // 自己的部位
+            Target: [target], // 对方的部位
+            Prerequisite: [],
+            MaxProgress: 50,
+            MaxProgressSelf: 50,
+        };
+        ActivityFemale3DCG.push(activity); // 这个是把自己的活动数组添加进去
+        ActivityFemale3DCGOrdering.push(activity.Name); // 这个是活动名字
+        ActivityDictionary.push([`Activity笨蛋笨Luzi_${name}`, `${name}`]);
+        if (targetSelf) {
+            ActivityDictionary.push([`Label-ChatSelf-${targetSelf}-${activity.Name}`, `${name}`]);
+            ActivityDictionary.push([`ChatSelf-${targetSelf}-${activity.Name}`, targetSelftext]);
+        };
+        if (target) {
+            ActivityDictionary.push([`Label-ChatOther-${target}-${activity.Name}`, `${name}`]);
+            ActivityDictionary.push([`ChatOther-${target}-${activity.Name}`, targettext]);
+        };
+
+        let Actname = Player.FocusGroup.Name;
+
+        if (
+            Actname === "ItemArms" ||
+            Actname === "ItemHands" ||
+            Actname === "ItemPelvis" ||
+            Actname === "ItemTorso"
+        ) {
+            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋笨Luzi_${name}.png`, `Assets/Female3DCG/Activity/Caress.png`);
+        }
+        if (
+            Actname === "ItemLegs" ||
+            Actname === "ItemFeet" ||
+            Actname === "ItemBoots"
+        ) {
+            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋笨Luzi_${name}.png`, `Assets/Female3DCG/Activity/MassageFeet.png`);
+        }
+        if (
+            Actname === "ItemButt" ||
+            Actname === "ItemVulvaPiercings" ||
+            Actname === "ItemVulva" ||
+            Actname === "ItemNipples" ||
+            Actname === "ItemBreast" ||
+            Actname === "ItemDevices" ||
+            Actname === "ItemNeck" ||
+            Actname === "ItemMouth" ||
+            Actname === "ItemHood" ||
+            Actname === "ItemHead" ||
+            Actname === "ItemNose" ||
+            Actname === "ItemEars"
+        ) {
+            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋笨Luzi_${name}.png`, `Assets/Female3DCG/Activity/Wiggle.png`);
+        }
+    }
+
+
+    // 👤👥
+    // 🅰🅱
+    // 👈👉
+    /**
+     * 创建活动对象的函数
+     * @param {string} name - 输入框名称
+     */
+    function 移除清空输入框(name) {
+        if (document.getElementById(name)) {
+            document.getElementById(name).style.display = "none"; // 移除输入框
+            document.getElementById(name).value = ""; // 清空输入框
+        }
+    }
+
+    var 单双 = "👤"
+    var isme = "👈"
+    var 新建动作 = false
+    var 当前动作索引 = 0;
+    var 动作
+    function 自定义动作设置Run() {
+        if (PreferenceSubscreen === "自定义动作设置") { // 装备量表
+            DrawCharacter(Player, 50, 50, 0.9, false);// 绘制主要标签和玩家
+            if (PreferenceArousalIsActive()) {
+                // 绘制所有可用的角色区域
+                for (let Group of AssetGroup) {
+                    if (Group.IsItem() && !Group.MirrorActivitiesFrom && AssetActivitiesForGroup("Female3DCG", Group.Name).length)
+                        DrawAssetGroupZone(Player, Group.Zone, 0.9, 50, 50, 1, "#808080FF", 3, PreferenceGetFactorColor(PreferenceGetZoneFactor(Player, Group.Name)));
+                }
+                // 可以选择并在角色身上绘制区域
+                if (Player.FocusGroup != null) {
+                    DrawAssetGroupZone(Player, Player.FocusGroup.Zone, 0.9, 50, 50, 1, "cyan");
+                    MainCanvas.textAlign = "center";
+                }
+            }
+
+            ElementCreateInput("笨蛋Luzi_activityName", "text", "", "20"); // 创建一个新的文本输入元素
+            ElementPosition("笨蛋Luzi_activityName", 960, 250, 400); // 特定位置绘制一个输入框
+            DrawText(`动作名字:`, 660, 260, "Black");// 绘制一个文本元素
+
+            let name = document.getElementById('笨蛋Luzi_activityName')?.value || "";
+            let targetSelfText = document.getElementById('笨蛋Luzi_targetSelfText')?.value || "";
+            let targetText = document.getElementById('笨蛋Luzi_targetText')?.value || "";
+
+            let targetSelf = Player.FocusGroup?.Name || "";
+            let target = Player.FocusGroup?.Name || "";
+
+            if (单双 === "👤") {
+                DrawButton(1500, 200, 90, 90, "👤", "White", "");
+                DrawImageResize("data:image/png;base64,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",
+                    500, 100, 100, 140,);
+                if (isme === "👈") {
+                    DrawButton(410, 120, 80, 90, "👈", "White", "");
+                    ElementCreateInput("笨蛋Luzi_targetSelfText", "text", "", "200");
+                    ElementPosition("笨蛋Luzi_targetSelfText", 1260, 350, 500); // 特定位置绘制一个输入框
+                    DrawText(`对自己使用动作的文本:`, 760, 360, "Black");// 绘制一个文本元素
+                    target = "";
+                } else { 移除清空输入框("笨蛋Luzi_targetSelfText") }
+                // document.getElementById("笨蛋Luzi_targetSelfText").value
+
+                if (isme === "👉") {
+                    DrawButton(410, 120, 80, 90, "👉", "White", "");
+                    ElementCreateInput("笨蛋Luzi_targetText", "text", "", "200");
+                    ElementPosition("笨蛋Luzi_targetText", 1260, 350, 500); // 特定位置绘制一个输入框
+                    DrawText(`对别人使用动作的文本:`, 760, 360, "Black");// 绘制一个文本元素
+                    targetSelf = "";
+                } else { 移除清空输入框("笨蛋Luzi_targetText") }
+            }
+            if (单双 === "👥") {
+                DrawButton(1500, 200, 90, 90, "👥", "White", "");
+                ElementCreateInput("笨蛋Luzi_targetSelfText", "text", "", "200");
+                ElementPosition("笨蛋Luzi_targetSelfText", 1260, 350, 500); // 特定位置绘制一个输入框
+                DrawText(`对自己使用动作的文本:`, 760, 360, "Black");// 绘制一个文本元素
+
+                ElementCreateInput("笨蛋Luzi_targetText", "text", "", "200");
+                ElementPosition("笨蛋Luzi_targetText", 1260, 450, 500); // 特定位置绘制一个输入框
+                DrawText(`对别人使用动作的文本:`, 760, 460, "Black");// 绘制一个文本元素
+
+
+
+            }
+
+            const activityInfo2 = {
+                name: name,
+                targetSelf: targetSelf,
+                target: target,
+                targetSelftext: targetSelfText,
+                targettext: targetText
+            };
+
+            if (Player.FocusGroup && Player.FocusGroup.Name && name) {
+                if (MouseIn(1600, 200, 90, 90)) {
+                    // 获取用户输入的动作名字
+                    let name = document.getElementById('笨蛋Luzi_activityName')?.value || "";
+                    // 检查是否存在重复的动作名字
+                    if (ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
+                        DrawText(`动作名字已存在, 请输入其他名字! `, 1600, 300, "red");// 绘制一个文本元素
+                    }
+                    if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
+                        DrawText(`新建动作`, 1600, 300, "Black");// 绘制一个文本元素
+                    }
+                }
+
+                if (!新建动作) {
+                    DrawButton(1600, 200, 90, 90, "✪ ω ✪", "White", "");
+                }
+                if (新建动作) {
+                    DrawButton(1600, 200, 90, 90, "0 ω 0", "White", "");
+
+                    createActivity2(activityInfo2);
+                    新建动作 = false
+                }
+            }
+
+            // const name = document.getElementById('activityName').value;
+            // const targetSelf = document.getElementById('targetSelf').value;
+            // const targetSelfText = document.getElementById('targetSelfText').value;
+            // const target = document.getElementById('target').value;
+            // const targetText = document.getElementById('targetText').value;
+
+
+            DrawText(`删除已有动作:`, 660, 760, "Black");// 绘制一个文本元素
+            动作 = ActivityFemale3DCGOrdering.filter(item => item.includes("笨蛋笨Luzi_"));
+            DrawBackNextButton(800, 725, 400, 64, 动作[当前动作索引], "White", "", () => { }, () => { });
+            DrawButton(1260, 720, 98, 78, "🚮", "White", "");
+
+
+
+        } else {
+            移除清空输入框("笨蛋Luzi_activityName");
+            移除清空输入框("笨蛋Luzi_targetSelfText");
+            移除清空输入框("笨蛋Luzi_targetText")
+        }
+    }
+
+    function 笨蛋LZActivity() {
+        Player.OnlineSettings.ECHO = Player.OnlineSettings.ECHO || {};
+        Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG = LZString.compressToUTF16(JSON.stringify(ActivityFemale3DCG.filter(obj => obj.Name && obj.Name.includes("笨蛋笨Luzi_"))));
+        Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering = LZString.compressToUTF16(JSON.stringify(ActivityFemale3DCGOrdering.filter(item => item.includes("笨蛋笨Luzi_"))));
+        Player.OnlineSettings.ECHO.炉子ActivityDictionary = LZString.compressToUTF16(JSON.stringify(ActivityDictionary.filter(subArray => { return subArray.some(item => item.includes("笨蛋笨Luzi_")); })));
+        ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
+    }
+
+    function 自定义动作设置Click() {
+        if (PreferenceSubscreen === "自定义动作设置") {
+            for (const Group of AssetGroup) {
+                if (Group.IsItem() && !Group.MirrorActivitiesFrom && AssetActivitiesForGroup("Female3DCG", Group.Name).length) {
+                    const Zone = Group.Zone.find(z => DialogClickedInZone(Player, z, 0.9, 50, 50, 1));
+                    if (Zone) {
+                        Player.FocusGroup = Group;
+                        PreferenceArousalZoneFactor = PreferenceGetZoneFactor(Player, Group.Name);
+                    }
+                }
+            }
+
+            if (MouseIn(1500, 200, 90, 90)) {
+                单双 = (单双 === "👤") ? "👥" : "👤";
+                移除清空输入框("笨蛋Luzi_targetSelfText");
+                移除清空输入框("笨蛋Luzi_targetText");
+            }
+            if (MouseIn(410, 120, 80, 90)) {
+                isme = (isme === "👈") ? "👉" : "👈";
+                移除清空输入框("笨蛋Luzi_targetSelfText");
+                移除清空输入框("笨蛋Luzi_targetText");
+            }
+            if (MouseIn(1600, 200, 90, 90)) {
+                let name = document.getElementById('笨蛋Luzi_activityName')?.value || "";// 获取用户输入的动作名字
+                // 检查是否存在重复的动作名字
+                if (ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
+                    新建动作 = false;
+                }
+
+                if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
+                    新建动作 = true
+                    setTimeout(() => {
+                        笨蛋LZActivity();
+                        console.log("已存储进个人设置");
+                    }, 3000);
+                }
+            }
+            if (Array.isArray(动作) && 动作.length > 0) {
+                DrawBackNextButton(800, 725, 400, 64, 动作[当前动作索引], "White", "",
+                    // 点击按钮切换到上一个字符串
+                    () => {
+                        当前动作索引 = (当前动作索引 - 1 + 动作.length) % 动作.length;
+                        return 动作[当前动作索引];
+                    },
+                    // 点击按钮切换到下一个字符串
+                    () => {
+                        当前动作索引 = (当前动作索引 + 1) % 动作.length;
+                        return 动作[当前动作索引];
+                    }
+                );
+            }
+
+            if (MouseIn(1300, 720, 90, 90)) {
+                // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
+                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引]));
+
+                // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
+                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => !item.includes(动作[当前动作索引]));
+
+                // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
+                ActivityDictionary = ActivityDictionary.filter(subArray => {
+                    return !subArray.some(item => item.includes(动作[当前动作索引]));
+                });
+                笨蛋LZActivity();
+                console.log("已存储进个人设置");
+            }
+
+
+        }
+    }
+
+
+    // ActivityFemale3DCG.filter(obj => obj.Name && obj.Name.includes("笨蛋笨Luzi_"))
+    // ActivityFemale3DCGOrdering.filter(item => item.includes("笨蛋笨Luzi_"))
+    // ActivityDictionary.filter(subArray => { return subArray.some(item => item.includes("笨蛋笨Luzi_")); })
+
+
+
+
+
+    function 高潮计数Run() {
+        if (PreferenceSubscreen === "高潮计数保留设置") {
             // 高潮计数
-            DrawButton(1815, 75, 90, 90, "", "White", "Icons/Exit.png");
-            DrawText("- 设置 -", 1000, 125, "Black");
             DrawCheckbox(250, 200, 64, 64, "                    高潮计数保留", Player.OnlineSettings.ECHO.高潮开关);
             DrawButton(250, 290, 390, 90, "      清空高潮次数", "White", "Icons/Trash.png");
             // 高潮计数
-            DrawButton(1500, 840, 390, 90, "      Discord", "White", "Icons/Trash.png");
-            if (MouseIn(1500, 840, 390, 90,) && PreferenceSubscreen === "Luzi") {
-                DrawTextWrap(
-                    `插件翻译\n\n\n\n\n动作\n/\n服装拓展\n\n在此查看插件更新及反馈建议`
-                    , 1500, 700, 390, 90, "black");
-            }
 
             // ElementCreateInput("InputLuzi", "text", "", "20"); // 添加输入框设置
             // ElementPosition("InputLuzi", 447, 450, 400); // 绘制输入框
@@ -1472,43 +2533,48 @@
             // var luziInput = document.getElementById("InputLuzi"); // 储存输入框的值
             // luziInput.value = "笨蛋Luzi"; // 将值设置回输入框
         }
-    });
+    }
+    function 高潮计数Click() {
+        if (PreferenceSubscreen === "高潮计数保留设置") {
+            // 初始按钮
+            // 高潮计数
+            if (MouseIn(250, 200, 64, 64)) {
+                saveOrgasmToggle(!Player.OnlineSettings.ECHO.高潮开关);
+            }
+            if (MouseIn(250, 290, 390, 90)) {
+                saveOrgasmCount(0);
+            }
+            // 高潮计数
 
-    mod.hookFunction("PreferenceClick", 10, (args, next) => {
+        }
+    }
+
+
+    笨蛋Luzi.hookFunction("PreferenceRun", 50, (args, next) => {
         next(args);
-        // 初始按钮
-        if (MouseIn(1340, 50, 400, 90) && PreferenceSubscreen === "") {
-            PreferenceSubscreen = "Luzi"; // 当鼠标点击图标后修改PreferenceSubscreen的值
-            if (Player.OnlineSettings.ECHO === undefined) { saveOrgasmSettings(false, 0) }
-
-        }
-        if (MouseIn(1815, 75, 90, 90) && PreferenceSubscreen === "Luzi") {
-            // document.getElementById("InputLuzi").style.display = "none"; // 移除输入框
-            PreferenceSubscreenArousalExit();
-        }
-        // 初始按钮
-        // 高潮计数
-        if (MouseIn(250, 200, 64, 64) && PreferenceSubscreen === "Luzi") {
-            saveOrgasmToggle(!Player.OnlineSettings.ECHO.高潮开关);
-        }
-        if (MouseIn(250, 290, 390, 90) && PreferenceSubscreen === "Luzi") {
-            saveOrgasmCount(0);
-        }
-        // 高潮计数
-
-
-        if (MouseIn(1500, 840, 390, 90) && PreferenceSubscreen === "Luzi") {
-            window.open("https://discord.gg/K9YnNqsNKx");
-            // 
-        }
+        动作拓展设置进入Run();
+        动作拓展设置主界面Run();
+        动作拓展设置退出UIRun();
+        自定义动作设置Run();
+        高潮计数Run();
     });
+
+    笨蛋Luzi.hookFunction("PreferenceClick", 10, (args, next) => {
+        next(args);
+        动作拓展设置进入Click();
+        动作拓展设置主界面Click();
+        动作拓展设置退出UIClick();
+        自定义动作设置Click();
+        高潮计数Click();
+    });
+
+
 
     // ========================================================================
     // ========================================================================
     // DrawCheckbox
     // DrawText
     // DrawTextFit
-    const w = window;
     var loginSuccess = false;
     var playername = "";
     var playernum = "";
@@ -1524,7 +2590,7 @@
     };
     // Promise 用于确保 playername 已经被设置
     var playernamePromise = new Promise((resolve) => {
-        mod.hookFunction("LoginResponse", 10, (args, next) => {
+        笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
             next(args);
             loginSuccess = true;
 
@@ -3655,7 +4721,7 @@
         }
 
 
-        mod.hookFunction("DrawText", 10, (args, next) => {
+        笨蛋Luzi.hookFunction("DrawText", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
             if (language === "CN" || language === "TW") {
                 replaceLabels(args);
@@ -3676,7 +4742,7 @@
         });
 
 
-        mod.hookFunction("DrawTextFit", 10, (args, next) => {
+        笨蛋Luzi.hookFunction("DrawTextFit", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
             if (language === "CN" || language === "TW") {
                 replaceLabels(args);
@@ -3684,7 +4750,7 @@
             next(args);
         });
 
-        mod.hookFunction("DrawTextWrap", 10, (args, next) => {
+        笨蛋Luzi.hookFunction("DrawTextWrap", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
             if (language === "CN" || language === "TW") {
                 replaceLabels(args);
@@ -3957,7 +5023,7 @@
 
 
 
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
 
         let language = localStorage.getItem("BondageClubLanguage");
         if (language === "CN" || language === "TW") {
@@ -3990,7 +5056,7 @@
         next(args);
     });
 
-    mod.hookFunction("ServerSend", 0, (args, next) => {
+    笨蛋Luzi.hookFunction("ServerSend", 0, (args, next) => {
         let language = localStorage.getItem("BondageClubLanguage");
         if (language === "CN" || language === "TW") {
             const data = args[1];
@@ -4049,7 +5115,7 @@
     w.bedMapping = new Map();
     var bedData;
 
-    mod.hookFunction("DrawCharacter", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("DrawCharacter", 10, (args, next) => {
 
         // 乘骑 ------------------------------------------
         w.mountCharacterArray = getMountArray(args[0].Name, args[0], "ItemTorso");
@@ -4145,7 +5211,7 @@
 
 
 
-    mod.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
         next(args);
         // 根据玩家数量调整缩放和绘制坐标
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
@@ -4280,7 +5346,7 @@
     });
 
 
-    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomSync", 10, (args, next) => {
         let data = args;
         if (data) {
             w.saddleMapping.clear();
@@ -4289,7 +5355,7 @@
         next(args);
     });
 
-    mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
         let data = args;
         if (data) {
             w.saddleMapping.clear();
@@ -4307,20 +5373,20 @@
         })
     };
 
-    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomSync", 10, (args, next) => {
         setTimeout(() => {
             Hidden("(._.)");
         }, 2000);
         next(args);
 
     });
-    mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
         setTimeout(() => {
             Hidden("(._.)");
         }, 2000);
         next(args);
     });
-    mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 10, (args, next) => {
         let data = args[0]
         if (data.Content === 'ServerEnter') {
             setTimeout(() => {
@@ -4331,7 +5397,7 @@
     });
 
     let CRCharacter;
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         if (data.Content === '╰(*°▽°*)╯BETA' && data.Type === 'Hidden') {
             CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
@@ -4357,7 +5423,7 @@
         next(args);
     });
 
-    mod.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
         if (ChatRoomHideIconState == 0) {
             let C = args[0];
             let CharX = args[1];
@@ -4384,3 +5450,7 @@
     // ========================================================================
 
 })();
+
+
+
+
