@@ -2189,11 +2189,10 @@
         }
     }
 
-
     function 动作拓展设置主界面Run() {
         if (PreferenceSubscreen === "动作拓展设置") {
-            DrawButton(250, 190, 390, 90, "      自定义动作", "White", "Icons/Trash.png");
-            DrawButton(250, 290, 390, 90, "      自定义服装", "White", "Icons/Trash.png");
+            DrawButton(250, 190, 390, 90, "      自定义动作", "White", "data:image/png;base64,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");
+            DrawButton(250, 290, 390, 90, "      自定义服装", "White", "data:image/png;base64,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");
             DrawButton(250, 390, 390, 90, "      高潮计数保留", "White", "Icons/Trash.png");
             DrawButton(1500, 840, 390, 90, "      Discord", "White", "Icons/Trash.png");
             if (MouseIn(1500, 840, 390, 90)) {
@@ -2352,6 +2351,11 @@
                     ElementCreateInput("笨蛋Luzi_targetSelfText", "text", "", "200");
                     ElementPosition("笨蛋Luzi_targetSelfText", 1260, 350, 500); // 特定位置绘制一个输入框
                     DrawText(`对自己使用动作的文本:`, 760, 360, "Black");// 绘制一个文本元素
+                    DrawButton(1560, 328, 80, 60, "👈", "White", "");
+                    DrawButton(1660, 328, 80, 60, "👉", "White", "");
+                    DrawButton(1760, 328, 80, 60, "🚻", "White", "");
+
+
                     target = "";
                 } else { 移除清空输入框("笨蛋Luzi_targetSelfText") }
                 // document.getElementById("笨蛋Luzi_targetSelfText").value
@@ -2361,6 +2365,11 @@
                     ElementCreateInput("笨蛋Luzi_targetText", "text", "", "200");
                     ElementPosition("笨蛋Luzi_targetText", 1260, 350, 500); // 特定位置绘制一个输入框
                     DrawText(`对别人使用动作的文本:`, 760, 360, "Black");// 绘制一个文本元素
+                    DrawButton(1560, 328, 80, 60, "👈", "White", "");
+                    DrawButton(1660, 328, 80, 60, "👉", "White", "");
+                    DrawButton(1760, 328, 80, 60, "🚻", "White", "");
+
+
                     targetSelf = "";
                 } else { 移除清空输入框("笨蛋Luzi_targetText") }
             }
@@ -2369,11 +2378,16 @@
                 ElementCreateInput("笨蛋Luzi_targetSelfText", "text", "", "200");
                 ElementPosition("笨蛋Luzi_targetSelfText", 1260, 350, 500); // 特定位置绘制一个输入框
                 DrawText(`对自己使用动作的文本:`, 760, 360, "Black");// 绘制一个文本元素
+                DrawButton(1560, 328, 80, 60, "👈", "White", "");
+                DrawButton(1660, 328, 80, 60, "👉", "White", "");
+                DrawButton(1760, 328, 80, 60, "🚻", "White", "");
 
                 ElementCreateInput("笨蛋Luzi_targetText", "text", "", "200");
                 ElementPosition("笨蛋Luzi_targetText", 1260, 450, 500); // 特定位置绘制一个输入框
                 DrawText(`对别人使用动作的文本:`, 760, 460, "Black");// 绘制一个文本元素
-
+                DrawButton(1560, 428, 80, 60, "👈", "White", "");
+                DrawButton(1660, 428, 80, 60, "👉", "White", "");
+                DrawButton(1760, 428, 80, 60, "🚻", "White", "");
 
 
             }
@@ -2415,6 +2429,9 @@
             // const targetSelfText = document.getElementById('targetSelfText').value;
             // const target = document.getElementById('target').value;
             // const targetText = document.getElementById('targetText').value;
+            // DrawText(`你的名字 => SourceCharacter`, 760, 540, "Black");// 绘制一个文本元素
+            // DrawText(`动作目标 => TargetCharacter`, 760, 580, "Black");// 绘制一个文本元素
+            // DrawText(`性别代词 => PronounPossessive`, 768, 620, "Black");// 绘制一个文本元素
 
 
             DrawText(`删除已有动作:`, 660, 760, "Black");// 绘制一个文本元素
@@ -2456,11 +2473,13 @@
                 移除清空输入框("笨蛋Luzi_targetSelfText");
                 移除清空输入框("笨蛋Luzi_targetText");
             }
+
             if (MouseIn(410, 120, 80, 90)) {
                 isme = (isme === "👈") ? "👉" : "👈";
                 移除清空输入框("笨蛋Luzi_targetSelfText");
                 移除清空输入框("笨蛋Luzi_targetText");
             }
+
             if (MouseIn(1600, 200, 90, 90)) {
                 let name = document.getElementById('笨蛋Luzi_activityName')?.value || "";// 获取用户输入的动作名字
                 // 检查是否存在重复的动作名字
@@ -2470,50 +2489,52 @@
 
                 if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
                     新建动作 = true
-                    setTimeout(() => {
-                        笨蛋LZActivity();
-                        console.log("已存储进个人设置");
-                    }, 3000);
+                    setTimeout(() => { 笨蛋LZActivity(); console.log("已存储进个人设置"); }, 3000);
                 }
             }
+
             if (Array.isArray(动作) && 动作.length > 0) {
                 DrawBackNextButton(800, 725, 400, 64, 动作[当前动作索引], "White", "",
                     // 点击按钮切换到上一个字符串
-                    () => {
-                        当前动作索引 = (当前动作索引 - 1 + 动作.length) % 动作.length;
-                        return 动作[当前动作索引];
-                    },
+                    () => { 当前动作索引 = (当前动作索引 - 1 + 动作.length) % 动作.length; return 动作[当前动作索引]; },
                     // 点击按钮切换到下一个字符串
-                    () => {
-                        当前动作索引 = (当前动作索引 + 1) % 动作.length;
-                        return 动作[当前动作索引];
-                    }
+                    () => { 当前动作索引 = (当前动作索引 + 1) % 动作.length; return 动作[当前动作索引]; }
                 );
             }
 
             if (MouseIn(1300, 720, 90, 90)) {
-                // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
-                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引]));
-
-                // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
-                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => !item.includes(动作[当前动作索引]));
-
-                // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
-                ActivityDictionary = ActivityDictionary.filter(subArray => {
-                    return !subArray.some(item => item.includes(动作[当前动作索引]));
-                });
+                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
+                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => !item.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
+                ActivityDictionary = ActivityDictionary.filter(subArray => { return !subArray.some(item => item.includes(动作[当前动作索引])); }); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
                 笨蛋LZActivity();
                 console.log("已存储进个人设置");
             }
 
+            if (单双 === "👤") {
+                if (isme === "👈") {
+                    if (MouseIn(1560, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "SourceCharacter" };
+                    if (MouseIn(1660, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "TargetCharacter" };
+                    if (MouseIn(1760, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "PronounPossessive" }
+                };
+                if (isme === "👉") {
+                    if (MouseIn(1560, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetText').value += "SourceCharacter" };
+                    if (MouseIn(1660, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetText').value += "TargetCharacter" };
+                    if (MouseIn(1760, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetText').value += "PronounPossessive" }
+                };
+            };
 
-        }
-    }
+            if (单双 === "👥") {
+                if (MouseIn(1560, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "SourceCharacter" };
+                if (MouseIn(1660, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "TargetCharacter" };
+                if (MouseIn(1760, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "PronounPossessive" };
+                if (MouseIn(1560, 428, 80, 60)) { document.getElementById('笨蛋Luzi_targetText').value += "SourceCharacter" };
+                if (MouseIn(1660, 428, 80, 60)) { document.getElementById('笨蛋Luzi_targetText').value += "TargetCharacter" };
+                if (MouseIn(1760, 428, 80, 60)) { document.getElementById('笨蛋Luzi_targetText').value += "PronounPossessive" }
+            }
 
+        };
+    };
 
-    // ActivityFemale3DCG.filter(obj => obj.Name && obj.Name.includes("笨蛋笨Luzi_"))
-    // ActivityFemale3DCGOrdering.filter(item => item.includes("笨蛋笨Luzi_"))
-    // ActivityDictionary.filter(subArray => { return subArray.some(item => item.includes("笨蛋笨Luzi_")); })
 
 
 
