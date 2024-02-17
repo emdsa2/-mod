@@ -1331,6 +1331,10 @@
     笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
         next(args)
         if (!is笨蛋炉子) {
+            var Nibble = { Name: "Nibble", MaxProgress: 40, Prerequisite: ["ZoneAccessible", "UseMouth", "ZoneNaked"], Target: ["ItemArms", "ItemBoots", "ItemEars", "ItemFeet", "ItemHands", "ItemLegs", "ItemMouth", "ItemNeck", "ItemNipples", "ItemNose", "ItemPelvis", "ItemTorso", "ItemTorso2", "ItemVulva", "ItemVulvaPiercings",], TargetSelf: ["ItemArms", "ItemBoots", "ItemHands", "ItemMouth", "ItemNipples",], };
+            ActivityFemale3DCG.push(Nibble);
+            ActivityFemale3DCG.push(Nibble.Name);
+
             w.newActivities = activitiesInfo.map(activityInfo => createActivity(activityInfo));
             if (Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG) {
                 // 解压炉子ActivityFemale3DCG
@@ -2596,6 +2600,7 @@
     var playernamePromise = new Promise((resolve) => {
         笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
             next(args);
+            
             loginSuccess = true;
 
             resolve();
