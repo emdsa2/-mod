@@ -661,7 +661,7 @@
         {
             name: "拍头", prerequisite: ["UseHands", "UseArms"],
             targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
-            target: "ItemPelvis", targettext: "SourceCharacter拍打TargetCharacter的头.", maxProgress: 50,
+            target: "ItemHead", targettext: "SourceCharacter拍打TargetCharacter的头.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "Slap",
             modPosture: false, modifyOwnPosture: false, postureName: ""
@@ -2260,42 +2260,10 @@
             ActivityDictionary.push([`ChatOther-${target}-${activity.Name}`, targettext]);
         };
 
-        let Actname = Player.FocusGroup.Name;
 
-        if (
-            Actname === "ItemArms" ||
-            Actname === "ItemHands" ||
-            Actname === "ItemPelvis" ||
-            Actname === "ItemTorso"
-        ) {
-            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋笨Luzi_${name}.png`, `Assets/Female3DCG/Activity/Caress.png`);
-        }
-        if (
-            Actname === "ItemLegs" ||
-            Actname === "ItemFeet" ||
-            Actname === "ItemBoots"
-        ) {
-            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋笨Luzi_${name}.png`, `Assets/Female3DCG/Activity/MassageFeet.png`);
-        }
-        if (
-            Actname === "ItemButt" ||
-            Actname === "ItemVulvaPiercings" ||
-            Actname === "ItemVulva" ||
-            Actname === "ItemNipples" ||
-            Actname === "ItemBreast" ||
-            Actname === "ItemDevices" ||
-            Actname === "ItemNeck" ||
-            Actname === "ItemMouth" ||
-            Actname === "ItemHood" ||
-            Actname === "ItemHead" ||
-            Actname === "ItemNose" ||
-            Actname === "ItemEars"
-        ) {
-            ActivityICONS.set(`Assets/Female3DCG/Activity/笨蛋笨Luzi_${name}.png`, `Assets/Female3DCG/Activity/Wiggle.png`);
-        }
     }
 
-
+    
     // 👤👥
     // 🅰🅱
     // 👈👉
