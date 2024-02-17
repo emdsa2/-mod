@@ -2077,7 +2077,7 @@
         if (data.Type === "Hidden" && blockedLinks.some(link => data.Content.includes(link))) {
             ChatRoomSendLocal(data.Content);
         }
-        console.log("公开", data);
+        // console.log("公开", data);
         next(args);
     });
 
@@ -2472,13 +2472,13 @@
 
             if (Player.FocusGroup && Player.FocusGroup.Name && name) {
                 if (MouseIn(1300, 720, 90, 90)) {
-                    ActivityFemale3DCG = ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
+                    ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
                     ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
-                    ActivityDictionary = ActivityDictionary = ActivityDictionary.filter(subArray => { return !subArray.every(item => item.includes(动作[当前动作索引])); }); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
+                    ActivityDictionary = ActivityDictionary.filter(subArray => { return !subArray.some(item => item.includes(动作[当前动作索引])); }); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
                     笨蛋LZActivity(); console.log("已存储进个人设置");
                 }
             }
-            
+
             if (单双 === "👤") {
                 if (isme === "👈") {
                     if (MouseIn(1560, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "SourceCharacter" };
