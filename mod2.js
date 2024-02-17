@@ -2562,12 +2562,12 @@
         高潮计数Click();
     });
 
-    笨蛋Luzi.hookFunction("DrawBackNextButton", 10, (args, next) => {
-        if (args[4].includes("笨蛋笨Luzi_")) {
-            args[4] = args[4].replace("笨蛋笨Luzi_", "");
-        }
-        next(args);
-    });
+    // 笨蛋Luzi.hookFunction("DrawBackNextButton", 10, (args, next) => {
+    //     if (args[4].includes("笨蛋笨Luzi_")) {
+    //         args[4] = args[4].replace("笨蛋笨Luzi_", "");
+    //     }
+    //     next(args);
+    // });
 
 
     // ========================================================================
