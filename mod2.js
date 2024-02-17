@@ -1953,6 +1953,87 @@
 
 
 
+
+
+    //============================================================
+    //============================================================
+    /**
+     * 从玩家身上移除指定活动的道具组函数
+     * @param {object} data - 活动消息的数据对象
+     * @param {string} groupName - 身体部位名称
+     * @param {string} assetName - 活动名称
+     * @param {string} removalGroup - 要移除的道具组名称
+     */
+    function removeActivityItems(data, groupName, assetName, removalGroup) {
+        // 检测消息发送者是否是玩家自身, 并且消息内容是否包含对应的 Activity
+        if (data.Sender === Player.MemberNumber && (data.Content.includes(`Self-${groupName}-${assetName}`) || data.Content.includes(`Other-${groupName}-${assetName}`))) {
+
+            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
+            const playerIndex = ChatRoomCharacter.findIndex(player => player.MemberNumber === targetCharacter); // 查找房间内对应的玩家
+            const targetMember = ChatRoomCharacter[playerIndex]; // 对方玩家的信息
+            if (playerIndex !== -1) {
+                InventoryRemove(targetMember, removalGroup);
+                ChatRoomCharacterUpdate(targetMember)
+            }
+        }
+    }
+    function 缰绳(name) {
+        const halter =
+        {
+            Name: "缰绳",
+            Description: name,
+            Property: name,
+        };
+        InventoryWear(Player, "缰绳_Luzi", "ItemTorso", "", 1, 1, halter);
+        ChatRoomCharacterUpdate(Player)
+    }
+    function 床右边(name) {
+        const halter =
+        {
+            Name: "床右边",
+            Description: name,
+            Property: name,
+        };
+        InventoryWear(Player, "床右边_Luzi", "ItemDevices", "", 1, 1, halter);
+        ChatRoomCharacterUpdate(Player)
+    }
+    笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
+        const data = args[0];
+        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemTorso-笨蛋Luzi_骑上去' && data.Type === 'Activity' && data.Dictionary) {
+            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
+            // 遍历ChatRoomCharacterDrawlist中的所有角色的Name和MemberNumber
+            for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
+                const characterName = ChatRoomCharacterDrawlist[i].Name;
+                const memberNumber = ChatRoomCharacterDrawlist[i].MemberNumber;
+
+                if (memberNumber === targetCharacter) {
+                    缰绳(`${characterName}`) // 检查是否符合玩家ID
+                }
+            }
+        }
+        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemDevices-笨蛋Luzi_躺上去' && data.Type === 'Activity' && data.Dictionary) {
+            const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
+            // 遍历ChatRoomCharacterDrawlist中的所有角色的Name和MemberNumber
+            for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
+                const characterName = ChatRoomCharacterDrawlist[i].Name;
+                const memberNumber = ChatRoomCharacterDrawlist[i].MemberNumber;
+
+                if (memberNumber === targetCharacter) {
+                    床右边(`${characterName}`) // 检查是否符合玩家ID
+                }
+            }
+        }
+        removeActivityItems(data, "ItemTorso", "笨蛋Luzi_剪刀剪掉上衣", "Cloth");
+        removeActivityItems(data, "ItemPelvis", "笨蛋Luzi_剪刀剪掉下衣", "ClothLower");
+        removeActivityItems(data, "ItemBreast", "笨蛋Luzi_剪刀剪掉胸罩", "Bra");
+        removeActivityItems(data, "ItemVulvaPiercings", "笨蛋Luzi_剪刀剪掉内裤", "Panties");
+        removeActivityItems(data, "ItemBoots", "笨蛋Luzi_剪刀剪掉袜子", "Socks");
+
+        next(args);
+    });
+    //============================================================
+    //============================================================
+
     //============================================================
     //============================================================
 
