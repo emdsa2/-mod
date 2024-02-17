@@ -2470,13 +2470,15 @@
                 );
             }
 
-            if (MouseIn(1300, 720, 90, 90)) {
-                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
-                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => !item.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
-                ActivityDictionary = ActivityDictionary.filter(subArray => { return !subArray.some(item => item.includes(动作[当前动作索引])); }); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
-                setTimeout(() => { 笨蛋LZActivity(); console.log("已存储进个人设置"); }, 3000);
+            if (Player.FocusGroup && Player.FocusGroup.Name && name) {
+                if (MouseIn(1300, 720, 90, 90)) {
+                    ActivityFemale3DCG = ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
+                    ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
+                    ActivityDictionary = ActivityDictionary = ActivityDictionary.filter(subArray => { return !subArray.every(item => item.includes(动作[当前动作索引])); }); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
+                    笨蛋LZActivity(); console.log("已存储进个人设置");
+                }
             }
-
+            
             if (单双 === "👤") {
                 if (isme === "👈") {
                     if (MouseIn(1560, 328, 80, 60)) { document.getElementById('笨蛋Luzi_targetSelfText').value += "SourceCharacter" };
@@ -2562,12 +2564,13 @@
         高潮计数Click();
     });
 
-    // 笨蛋Luzi.hookFunction("DrawBackNextButton", 10, (args, next) => {
-    //     if (args[4].includes("笨蛋笨Luzi_")) {
-    //         args[4] = args[4].replace("笨蛋笨Luzi_", "");
-    //     }
-    //     next(args);
-    // });
+    笨蛋Luzi.hookFunction("DrawBackNextButton", 10, (args, next) => {
+        if (args[4]?.includes("笨蛋笨Luzi_")) {
+            args[4] = args[4]?.replace("笨蛋笨Luzi_", "");
+        }
+        next(args);
+    });
+
 
 
     // ========================================================================
