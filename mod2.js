@@ -2457,7 +2457,8 @@
 
                 if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
                     新建动作 = true
-                    setTimeout(() => { 笨蛋LZActivity(); console.log("已存储进个人设置"); }, 3000);
+                    笨蛋LZActivity(); 
+                    console.log("已存储进个人设置");
                 }
             }
 
@@ -2470,13 +2471,13 @@
                 );
             }
 
-            if (Player.FocusGroup && Player.FocusGroup.Name && name) {
-                if (MouseIn(1300, 720, 90, 90)) {
-                    ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes(动作[当前动作索引])); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
-                    ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
-                    ActivityDictionary = ActivityDictionary.filter(subArray => { return !subArray.some(item => item.includes(动作[当前动作索引])); }); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
-                    笨蛋LZActivity(); console.log("已存储进个人设置");
-                }
+            if (MouseIn(1300, 720, 90, 90)) {
+                var regex = new RegExp("\\b" + 动作[当前动作索引] + "\\b");
+                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !regex.test(obj.Name)); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
+                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
+                ActivityDictionary = ActivityDictionary.filter(subArray => !subArray.some(item => regex.test(item[0]))); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
+                笨蛋LZActivity(); 
+                console.log("已存储进个人设置");
             }
 
             if (单双 === "👤") {
