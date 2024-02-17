@@ -2150,51 +2150,57 @@
     //============================================================
     //============================================================
     // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
-    const blockedLinks = [
-        '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/',
-        '<iframe src="//player.bilibili.com/player.html',
-        '<iframe width="560" height="315" src="https://www.youtube.com/',
-        '<iframe src="https://www.pornhub.com/'
-    ];
-
     笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
-        if (data.Type === "Hidden" && blockedLinks.some(link => data.Content.includes(link))) {
+        if (data.Type === "Hidden" && data.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
             ChatRoomSendLocal(data.Content);
-        }
-        // console.log("公开", data);
+        };
+        if (data.Type === "Hidden" && data.Content.includes('<iframe src="//player.bilibili.com/player.html')) {
+            ChatRoomSendLocal(data.Content);
+        };
+        if (data.Type === "Hidden" && data.Content.includes('<iframe width="560" height="315" src="https://www.youtube.com/')) {
+            ChatRoomSendLocal(data.Content);
+        };
+        if (data.Type === "Hidden" && data.Content.includes('<iframe src="https://www.pornhub.com/')) {
+            ChatRoomSendLocal(data.Content);
+        };
+        console.log("公开", data)
         next(args);
     });
 
     笨蛋Luzi.hookFunction("ServerSend", 5, (args, next) => {
         const data = args;
+        // Player.ChatSettings.MuStylePoses
         if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1]?.Content.includes('></iframe>') && data[1]?.Type === "Chat") {
-            blockedLinks.forEach(link => {
-                if (data[1]?.Content.includes(link)) {
-                    let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                    modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                    args[1].Content = modifiedContent;
-                    args[1].Type = "Hidden";
-                    switch (link) {
-                        case blockedLinks[0]:
-                            ChatRoomSendEmote("一个 网易云 嵌入分享 ╰(*°▽°*)╯");
-                            break;
-                        case blockedLinks[1]:
-                            ChatRoomSendEmote("一个 Bilibili 嵌入分享 ╰(*°▽°*)╯");
-                            break;
-                        case blockedLinks[2]:
-                            ChatRoomSendEmote("一个 Youtube 嵌入分享 ╰(*°▽°*)╯");
-                            break;
-                        case blockedLinks[3]:
-                            ChatRoomSendEmote("一个 Pornhub 嵌入分享 ╰(*°▽°*)╯");
-                            break;
-                    }
-                }
-            });
-        }
+            if (data[1]?.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
+                args[1].Type = "Hidden";
+                ChatRoomSendEmote("一个 网易云 嵌入分享 ╰(*°▽°*)╯");
+            };
+            if (data[1]?.Content.includes('<iframe src="//player.bilibili.com/player.html')) {
+                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
+                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
+                args[1].Content = modifiedContent;
+                args[1].Type = "Hidden";
+                ChatRoomSendEmote("一个 Bilibili 嵌入分享 ╰(*°▽°*)╯");
+            };
+            if (data[1]?.Content.includes('<iframe width="560" height="315" src="https://www.youtube.com/')) {
+                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
+                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
+                args[1].Content = modifiedContent;
+                args[1].Type = "Hidden";
+                ChatRoomSendEmote("一个 Youtube 嵌入分享 ╰(*°▽°*)╯");
+            };
+            if (data[1]?.Content.includes('<iframe src="https://www.pornhub.com/')) {
+                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
+                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
+                args[1].Content = modifiedContent;
+                args[1].Type = "Hidden";
+                ChatRoomSendEmote("一个 Pornhub 嵌入分享 ╰(*°▽°*)╯");
+            };
+        };
+        // console.log("自己", data[1])
         next(args);
     });
-
 
     //============================================================
     //============================================================
