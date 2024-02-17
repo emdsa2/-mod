@@ -30,13 +30,14 @@
     const poseMapping = {};
 
     function patchFunction(target, patches) {
-        console.log("动作拓展0.3.0已加载！")
         笨蛋Luzi.patchFunction(target, patches);
     }
 
     var isLogin = false;
     笨蛋Luzi.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isLogin) {
+            console.log("动作拓展0.3.0已加载！")
+
             // 屏蔽跨域
             patchFunction("GLDrawLoadImage", {
                 "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
@@ -1336,17 +1337,17 @@
             ActivityFemale3DCG.push(Nibble.Name);
 
             w.newActivities = activitiesInfo.map(activityInfo => createActivity(activityInfo));
-            if (Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG) {
+            if (Player.OnlineSettings.ECHO && Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG) {
                 // 解压炉子ActivityFemale3DCG
                 var decompressedActivityFemale3DCG = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG));
                 ActivityFemale3DCG.push(...decompressedActivityFemale3DCG); // 将解压缩后的数据添加到ActivityFemale3DCG数组中
             }
-            if (Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering) {
+            if (Player.OnlineSettings.ECHO && Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering) {
                 // 解压炉子ActivityFemale3DCGOrdering
                 var decompressedActivityFemale3DCGOrdering = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering));
                 ActivityFemale3DCGOrdering.push(...decompressedActivityFemale3DCGOrdering); // 将解压缩后的数据添加到ActivityFemale3DCGOrdering数组中
             }
-            if (Player.OnlineSettings.ECHO.炉子ActivityDictionary) {
+            if (Player.OnlineSettings.ECHO && Player.OnlineSettings.ECHO.炉子ActivityDictionary) {
                 // 解压炉子ActivityDictionary
                 var decompressedActivityDictionary = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子ActivityDictionary));
                 ActivityDictionary.push(...decompressedActivityDictionary); // 将解压缩后的数据添加到ActivityDictionary数组中
@@ -2164,7 +2165,7 @@
         if (data.Type === "Hidden" && data.Content.includes('<iframe src="https://www.pornhub.com/')) {
             ChatRoomSendLocal(data.Content);
         };
-        // console.log("公开", data)
+        console.log("公开", data)
         next(args);
     });
 
@@ -2548,7 +2549,7 @@
 
                 if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
                     新建动作 = true
-                    笨蛋LZActivity(); 
+                    笨蛋LZActivity();
                     console.log("已存储进个人设置");
                 }
             }
@@ -2567,7 +2568,7 @@
                 ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !regex.test(obj.Name)); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
                 ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
                 ActivityDictionary = ActivityDictionary.filter(subArray => !subArray.some(item => regex.test(item[0]))); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
-                笨蛋LZActivity(); 
+                笨蛋LZActivity();
                 console.log("已存储进个人设置");
             }
 
@@ -2687,7 +2688,7 @@
     var playernamePromise = new Promise((resolve) => {
         笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
             next(args);
-            
+
             loginSuccess = true;
 
             resolve();
@@ -5186,6 +5187,20 @@
     // ========================================================================
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // ========================================================================
     // ========================================================================
     // ========================================================================
@@ -5306,8 +5321,8 @@
     });
 
 
-
-    笨蛋Luzi.hookFunction("ChatRoomDrawCharacter", 10, (args, next) => {
+    // 为了
+    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
         next(args);
         // 根据玩家数量调整缩放和绘制坐标
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
@@ -5354,8 +5369,6 @@
             if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
                 // 如果在数组中,可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
             }
         }
 
@@ -5370,8 +5383,6 @@
             if (foundCharacters2.includes(ChatRoomCharacterDrawlist[C])) {
                 // 如果在数组中,可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
             }
         }
         // 乘骑 ------------------------------------------
@@ -5414,8 +5425,6 @@
             if (foundCharacters2bed.includes(ChatRoomCharacterDrawlist[C])) {
                 // 如果在数组中,可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
             }
         }
 
@@ -5430,8 +5439,6 @@
             if (foundCharactersbed.includes(ChatRoomCharacterDrawlist[C])) {
                 // 如果在数组中,可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                DrawStatus(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-                if (ChatRoomCharacterDrawlist[C].MemberNumber != null) ChatRoomDrawCharacterOverlay(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom, C);
             }
         }
         // bed ------------------------------------------
@@ -5440,6 +5447,19 @@
 
 
     });
+
+
+    // var isLogin2 = false;
+    // 笨蛋Luzi.hookFunction('LoginResponse', 0, (args, next) => {
+    //     if (!isLogin2) {
+    //         patchFunction("ChatRoomDrawCharacter", {
+    //             "DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);": '',
+
+    //         });
+    //         isLogin2 = true;
+    //     }
+    //     next(args);
+    // });
 
 
     笨蛋Luzi.hookFunction("ChatRoomSync", 10, (args, next) => {
