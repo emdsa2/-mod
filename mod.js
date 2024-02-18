@@ -470,7 +470,7 @@
         const data = args[6];
         // console.log(data)
         if (PreviewICONS[data]) {
-            args[0] = PreviewICONS[data];
+            args[6] = PreviewICONS[data];
         }
         next(args);
     });
