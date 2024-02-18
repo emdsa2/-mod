@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         BC 动作拓展3
+// @name         BC 动作拓展
 // @namespace    https://www.bondageprojects.com/
 // @version      0.3.0
 // @description  代码测试
@@ -17,7 +17,7 @@
 
     const MOD_NAME = "动作拓展";
     const MOD_FULL_NAME = "动作拓展";
-    const MOD_VERSION = "0.3.0";
+    const MOD_VERSION = "0.3.1";
 
     const 笨蛋Luzi = bcModSdk.registerMod({
         name: MOD_NAME,
@@ -36,7 +36,7 @@
     var isLogin = false;
     笨蛋Luzi.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isLogin) {
-            console.log("动作拓展0.3.0已加载！")
+            console.log("动作拓展0.3.1已加载！")
 
             // 屏蔽跨域
             patchFunction("GLDrawLoadImage", {
@@ -116,7 +116,7 @@
             // activityObjects.forEach(activityObject => {// 遍历找到的对象并替换 ActivityName 值
             //     activityObject.ActivityName = 'ShockItem';// 将 ActivityName 值替换为 'ShockItem'
             // });
-            console.log(args)
+            // console.log(args)
 
         }
         next(args);
@@ -1909,7 +1909,7 @@
 
     ]);
 
-    
+
     let is笨蛋炉子2 = false;
     笨蛋Luzi.hookFunction("ChatRoomSync", 10, (args, next) => {
         next(args);
@@ -2166,7 +2166,7 @@
         if (data.Type === "Hidden" && data.Content.includes('<iframe src="https://www.pornhub.com/')) {
             ChatRoomSendLocal(data.Content);
         };
-        console.log("公开", data)
+        // console.log("公开", data)
         next(args);
     });
 
@@ -2517,6 +2517,9 @@
         ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
     }
 
+    //  Player.OnlineSettings.ECHO = {};
+    //  ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
+
     function 自定义动作设置Click() {
         if (PreferenceSubscreen === "自定义动作设置") {
             for (const Group of AssetGroup) {
@@ -2679,12 +2682,12 @@
 
     w.printedTextMap = new Map();
     // 打印整个 printedTextMap
-    w.printPrintedTextMap = function () {
-        console.log("Printed Text Map:");
-        printedTextMap.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    };
+    // w.printPrintedTextMap = function () {
+    //     console.log("Printed Text Map:");
+    //     printedTextMap.forEach((value, key) => {
+    //         console.log(`${key}: ${value}`);
+    //     });
+    // };
     // Promise 用于确保 playername 已经被设置
     var playernamePromise = new Promise((resolve) => {
         笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
@@ -5323,7 +5326,7 @@
 
 
     // 为了
-    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterStatusIcons", 10, (args, next) => {
         next(args);
         // 根据玩家数量调整缩放和绘制坐标
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
@@ -5540,7 +5543,7 @@
         next(args);
     });
 
-    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterStatusIcons", 10, (args, next) => {
         if (ChatRoomHideIconState == 0) {
             let C = args[0];
             let CharX = args[1];
