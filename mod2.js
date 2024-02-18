@@ -2371,6 +2371,18 @@
         }
     }
 
+    function resetLuzi() {
+        ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => !item.includes("笨蛋笨Luzi_"));
+        ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !obj.Name.includes("笨蛋笨Luzi_"));
+        ActivityDictionary = ActivityDictionary.filter(subArray => {
+            return !subArray.every(item => item.includes("笨蛋笨Luzi_"));
+        });
+        Player.OnlineSettings.ECHO.炉子ActivityDictionary = "";
+        Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG = "";
+        Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering = "";
+        ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
+    }
+
     var 单双 = "👤"
     var isme = "👈"
     var 新建动作 = false
@@ -2485,22 +2497,15 @@
                 }
             }
 
-            // const name = document.getElementById('activityName').value;
-            // const targetSelf = document.getElementById('targetSelf').value;
-            // const targetSelfText = document.getElementById('targetSelfText').value;
-            // const target = document.getElementById('target').value;
-            // const targetText = document.getElementById('targetText').value;
-            // DrawText(`你的名字 => SourceCharacter`, 760, 540, "Black");// 绘制一个文本元素
-            // DrawText(`动作目标 => TargetCharacter`, 760, 580, "Black");// 绘制一个文本元素
-            // DrawText(`性别代词 => PronounPossessive`, 768, 620, "Black");// 绘制一个文本元素
-
-
             DrawText(`删除已有动作:`, 660, 760, "Black");// 绘制一个文本元素
             动作 = ActivityFemale3DCGOrdering.filter(item => item.includes("笨蛋笨Luzi_"));
             DrawBackNextButton(800, 725, 400, 64, 动作[当前动作索引], "White", "", () => { }, () => { });
             DrawButton(1260, 720, 98, 78, "🚮", "White", "");
 
-
+            DrawButton(1600, 720, 90, 90, "♻", "red", "");
+            if (MouseIn(1600, 720, 90, 90)) {
+                DrawText(`清空所有创建动作`, 1650, 680, "red");// 绘制一个文本元素
+            }
 
         } else {
             移除清空输入框("笨蛋Luzi_activityName");
@@ -2517,8 +2522,6 @@
         ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
     }
 
-    //  Player.OnlineSettings.ECHO = {};
-    //  ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
 
     function 自定义动作设置Click() {
         if (PreferenceSubscreen === "自定义动作设置") {
@@ -2567,14 +2570,20 @@
                 );
             }
 
-            if (MouseIn(1300, 720, 90, 90)) {
-                var regex = new RegExp("\\b" + 动作[当前动作索引] + "\\b");
-                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => !obj.Name || !regex.test(obj.Name)); // 删除 ActivityFemale3DCG 数组中包含当前动作索引的项
-                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]); // 删除 ActivityFemale3DCGOrdering 数组中包含当前动作索引的项
-                ActivityDictionary = ActivityDictionary.filter(subArray => !subArray.some(item => regex.test(item[0]))); // 删除 ActivityDictionary 数组中包含当前动作索引的子数组
+            if (MouseIn(1260, 720, 98, 78)) {
+                ActivityFemale3DCG = ActivityFemale3DCG.filter(obj => obj.Name !== 动作[当前动作索引]);
+                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(item => item !== 动作[当前动作索引]);
+                var regex2 = new RegExp(".*" + 动作[当前动作索引] + "\\b");
+                ActivityDictionary.filter(subArray => !regex2.test(subArray[0]));
                 笨蛋LZActivity();
                 console.log("已存储进个人设置");
             }
+
+            if (MouseIn(1600, 720, 90, 90)) {
+                resetLuzi()
+                console.log("已全部清空");
+            }
+
 
             if (单双 === "👤") {
                 if (isme === "👈") {
