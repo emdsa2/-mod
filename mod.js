@@ -466,16 +466,15 @@
         next(args);
     });
 
-    mod.hookFunction('DrawImageEx', 1, async (args, next) => {
-        const data = args[0];
-
+    mod.hookFunction('DrawButton', 1, (args, next) => {
+        const data = args[6];
         // console.log(data)
         if (PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
         }
-
         next(args);
     });
+
 
 
     // if (!!InventoryIsItemInList(Player, "ItemBoots", "隐藏四肢_Luzi")) {
