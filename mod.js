@@ -18,7 +18,7 @@
 
     const MOD_NAME = "服装拓展";
     const MOD_FULL_NAME = "服装拓展";
-    const MOD_VERSION = "0.2.0";
+    const MOD_VERSION = "0.2.1";
     const MOD_REPOSITORY = "https://github.com/emdsa2/-mod";
 
     const mod = bcModSdk.registerMod({
@@ -1448,7 +1448,7 @@
         next(args);
     });
 
-    mod.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
+    mod.hookFunction("ChatRoomDrawCharacterStatusIcons", 10, (args, next) => {
         if (ChatRoomHideIconState == 0) {
             let C = args[0];
             let CharX = args[1];
