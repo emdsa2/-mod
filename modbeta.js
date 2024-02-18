@@ -231,7 +231,7 @@
 
 
         "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
-        
+
 
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/测试.png",
         // "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
@@ -247,7 +247,7 @@
         "Assets/Female3DCG/ItemTorso/AllFours/鞍_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/AllFours/鞍_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
 
-    
+
 
     };
 
@@ -463,12 +463,12 @@
         next(args);
     });
 
-    mod.hookFunction('DrawImageEx', 1, async (args, next) => {
-        const data = args[0];
+    mod.hookFunction('DrawButton', 1, (args, next) => {
+        const data = args[6];
         // console.log(data)
         if (PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
-        }
+        } 
         next(args);
     });
 
