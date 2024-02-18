@@ -18,7 +18,7 @@
 
     const MOD_NAME = "服装拓展Beta";
     const MOD_FULL_NAME = "服装拓展Beta";
-    const MOD_VERSION = "0.2.0";
+    const MOD_VERSION = "0.2.1";
     const MOD_REPOSITORY = "https://github.com/emdsa2/-mod";
 
     const mod = bcModSdk.registerMod({
@@ -41,10 +41,6 @@
     // patchFunction("CommonCallFunctionByNameWarn", {
     //     "console.warn": '// console.warn', 
     // });
-
-
-
-
 
     const ICONSSSSSSS = {
         "Assets/Female3DCG/ItemDevices/猪猪_Luzi_鼻子.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_鼻子.png", "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_猪猪.png", "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_缰绳.png",
@@ -440,7 +436,6 @@
         ) {
             args[0] = "https://emdsa2.github.io/-mod/image/空.png"; // 替换为指定的URL
         }
-
         next(args);
     });
 
@@ -451,18 +446,19 @@
         if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
-
+        // console.log(data)
         next(args);
     });
 
     mod.hookFunction('DrawImageEx', 1, async (args, next) => {
         const data = args[0];
-
+        if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
+            args[0] = data.replace("_笨笨蛋Luzi", "");
+        }
         // console.log(data)
         if (PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
         }
-
         next(args);
     });
 
@@ -1494,7 +1490,7 @@
         next(args);
     });
 
-    mod.hookFunction("ChatRoomDrawCharacterOverlay", 10, (args, next) => {
+    mod.hookFunction("ChatRoomDrawCharacterStatusIcons", 10, (args, next) => {
         if (ChatRoomHideIconState == 0) {
             let C = args[0];
             let CharX = args[1];
