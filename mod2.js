@@ -420,14 +420,6 @@
             modPosture: true, modifyOwnPosture: false, postureName: "AllFours"
         },
         {
-            name: "骑上去", prerequisite: ["Hassaddle"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
-            target: "ItemTorso", targettext: "SourceCharacter骑在TargetCharacter的背上.", maxProgress: 50,
-            activityExpression: [],
-            assetgroup: "", imageName: "Wiggle",
-            modPosture: true, modifyOwnPosture: false, postureName: "Kneel"
-        },
-        {
             name: "踮起双脚", prerequisite: ["UseFeet"],
             targetSelf: "ItemBoots", targetSelftext: "SourceCharacter踮起PronounPossessive的双脚.", maxProgressSelf: 50,
             target: "", targettext: "", maxProgress: 50,
@@ -1021,7 +1013,7 @@
         },
         {
             name: "撞笼子", prerequisite: ["HasKennel"],
-            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter用身体撞击笼子.", maxProgressSelf: 50,
+            targetSelf: "ItemArms", targetSelftext: "SourceCharacter用身体撞击笼子.", maxProgressSelf: 50,
             target: "", targettext: "", maxProgress: 50,
             activityExpression: [],
             assetgroup: "ItemDevices", imageName: "Kennel",
@@ -1029,7 +1021,7 @@
         },
         {
             name: "咬笼子", prerequisite: ["HasKennel"],
-            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter用牙齿咬笼子.", maxProgressSelf: 50,
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用牙齿咬笼子.", maxProgressSelf: 50,
             target: "", targettext: "", maxProgress: 50,
             activityExpression: [],
             assetgroup: "ItemDevices", imageName: "Kennel",
@@ -1037,15 +1029,7 @@
         },
         {
             name: "摇晃笼子", prerequisite: ["HasKennel"],
-            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter摇晃笼子的门.", maxProgressSelf: 50,
-            target: "", targettext: "", maxProgress: 50,
-            activityExpression: [],
-            assetgroup: "ItemDevices", imageName: "Kennel",
-            modPosture: false, modifyOwnPosture: false, postureName: ""
-        },
-        {
-            name: "摇晃笼子", prerequisite: ["HasKennel"],
-            targetSelf: "ItemDevices", targetSelftext: "SourceCharacter摇晃笼子的门.", maxProgressSelf: 50,
+            targetSelf: "ItemArms", targetSelftext: "SourceCharacter摇晃笼子的门.", maxProgressSelf: 50,
             target: "", targettext: "", maxProgress: 50,
             activityExpression: [],
             assetgroup: "ItemDevices", imageName: "Kennel",
@@ -1105,14 +1089,6 @@
             target: "ItemBoots", targettext: "SourceCharacter用剪刀剪掉了TargetCharacter的袜子.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "ItemHandheld", imageName: "Scissors",
-            modPosture: false, modifyOwnPosture: false, postureName: ""
-        },
-        {
-            name: "躺上去", prerequisite: ["Hasbed"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
-            target: "ItemDevices", targettext: "SourceCharacter躺到TargetCharacter的身边.", maxProgress: 50,
-            activityExpression: [],
-            assetgroup: "", imageName: "Scissors",
             modPosture: false, modifyOwnPosture: false, postureName: ""
         },
         {
@@ -1235,10 +1211,22 @@
             assetgroup: "ItemLegs", imageName: "MermaidTail",
             modPosture: false, modifyOwnPosture: false, postureName: ""
         },
-
-
-
-
+        {
+            name: "躺上去", prerequisite: ["Hasbed"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemArms", targettext: "SourceCharacter躺到TargetCharacter的身边.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Scissors",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "骑上去", prerequisite: ["Hassaddle"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter骑在TargetCharacter的背上.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "Wiggle",
+            modPosture: true, modifyOwnPosture: false, postureName: "Kneel"
+        },
 
 
 
@@ -1305,7 +1293,7 @@
             return next(args);
     });
 
-    笨蛋Luzi.hookFunction('DrawImageEx', 50, async (args, next) => {
+    笨蛋Luzi.hookFunction('DrawImageResize', 50, (args, next) => {
         const data = args[0];
         if (typeof data === 'string' && (data.indexOf("笨蛋Luzi_") !== -1 || data.indexOf("笨蛋笨Luzi_") !== -1)) {
             if (ActivityICONS.has(data)) {
@@ -1334,7 +1322,7 @@
         if (!is笨蛋炉子) {
             var Nibble = { Name: "Nibble", MaxProgress: 40, Prerequisite: ["ZoneAccessible", "UseMouth", "ZoneNaked"], Target: ["ItemArms", "ItemBoots", "ItemEars", "ItemFeet", "ItemHands", "ItemLegs", "ItemMouth", "ItemNeck", "ItemNipples", "ItemNose", "ItemPelvis", "ItemTorso", "ItemTorso2", "ItemVulva", "ItemVulvaPiercings",], TargetSelf: ["ItemArms", "ItemBoots", "ItemHands", "ItemMouth", "ItemNipples",], };
             ActivityFemale3DCG.push(Nibble);
-            ActivityFemale3DCG.push(Nibble.Name);
+            // ActivityFemale3DCG.push(Nibble.Name);
 
             w.newActivities = activitiesInfo.map(activityInfo => createActivity(activityInfo));
             if (Player.OnlineSettings.ECHO && Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG) {
@@ -2013,7 +2001,7 @@
                 }
             }
         }
-        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemDevices-笨蛋Luzi_躺上去' && data.Type === 'Activity' && data.Dictionary) {
+        if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemArms-笨蛋Luzi_躺上去' && data.Type === 'Activity' && data.Dictionary) {
             const targetCharacter = data.Dictionary.find(entry => entry.TargetCharacter !== undefined)?.TargetCharacter; // 提取对方的ID
             // 遍历ChatRoomCharacterDrawlist中的所有角色的Name和MemberNumber
             for (let i = 0; i < ChatRoomCharacterDrawlist.length; i++) {
@@ -3818,12 +3806,6 @@
             ["Enable anti-cheat", "开启防作弊功能"],
             ["Blacklist detected cheaters automatically", "自动将作弊者列入黑名单"],
             ["Prompt before loading content from a 3rd party domain", "从第三方域名加载内容前的提示"],
-            ["Share Addons", "分享插件"],
-            ["Load BCX by Jomshir98", "加载 BCX by Jomshir98"],
-            ["Load BCX beta", "加载 BCX测试版"],
-            ["Load EBCH by Elicia", "加载 EBCH by Elicia"],
-            ["Load MBS by Rama", "加载 Rama by Rama"],
-            ["Load LSCG by LittleSera", "加载 LSCG by LittleSera"],
             ["Allow IMs to bypass BCX beep restrictions", "允许即时消息绕过BCX提示音限制"],
             ["Change this rule's configuration", "更改此规则的配置"],
             ["Remaining duration of the rule", "规则的剩余时间"],
@@ -3885,6 +3867,7 @@
             ["Load the latest stable version of EBCH. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.", "加载EBCH的最新稳定版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改."],
             ["Load the latest stable version of MBS. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.", "加载MBS的最新稳定版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改."],
             ["Load the latest stable version of LSCG. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.", "加载LSCG的最新稳定版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改."],
+
             ["More", "更多"],
             ["More options [BCX]", "更多选项 [BCX]"],
             ["Standardize your room description so the room's purpose is clear and it can easily be filtered:", "标准化您的房间描述, 以便清晰显示房间的用途, 并且可以轻松进行过滤: "],
@@ -5239,7 +5222,32 @@
     w.bedMapping = new Map();
     var bedData;
 
+
+    patchFunction("DrawCharacter", {
+        'if (CurrentScreen != "ChatRoom" || ChatRoomHideIconState <= 1)': '',
+        'DrawArousalMeter(C, X, Y, Zoom);': '',
+        'OnlineGameDrawCharacter(C, X, Y, Zoom);': '',
+        'if (C.HasHiddenItems) DrawImageZoomCanvas("Screens/Character/Player/HiddenItem.png", DrawCanvas, 0, 0, 86, 86, X + 54 * Zoom, Y + 880 * Zoom, 70 * Zoom, 70 * Zoom);': '',
+        'if ((C.Name != "") && ((CurrentModule == "Room") || (CurrentModule == "Online" && !(CurrentScreen == "ChatRoom" && ChatRoomHideIconState >= 3)) || ((CurrentScreen == "Wardrobe") && !C.IsPlayer())) && (CurrentScreen != "Private") && (CurrentScreen != "PrivateBed") && (CurrentScreen != "PrivateRansom"))': '',
+        'if ((CurrentScreen !== "ChatRoom") || (ChatRoomMapViewIsActive() === false) || (CurrentCharacter != null))': '',
+        'if ((!Player.IsBlind() && BlurLevel <= 10) || (Player.GameplaySettings && Player.GameplaySettings.SensDepChatLog == "SensDepLight"))': '',
+        'DrawCanvas.font = CommonGetFont(30);': '',
+        'const NameOffset = CurrentScreen == "ChatRoom" && (ChatRoomCharacter.length > 5 || (ChatRoomCharacter.length == 5 && CommonPhotoMode)) && CurrentCharacter == null ? -4 : 0;': '',
+        'DrawText(CharacterNickname(C), X + 255 * Zoom, Y + 980 * Zoom + NameOffset, (CommonIsColor(C.LabelColor)) ? C.LabelColor : "White", "Black");': '',
+        'DrawCanvas.font = CommonGetFont(36);': '',
+        'SourcePos: [0, YStart, Canvas.width, SourceHeight],': 'SourcePos: [],',
+
+
+        // Options = {}
+    });
+
     笨蛋Luzi.hookFunction("DrawCharacter", 10, (args, next) => {
+        var C = args[0];
+        var X = args[1];
+        var Y = args[2];
+        var Zoom = args[3];
+        var IsHeightResizeAllowed = args[4];
+        var DrawCanvas = args[5];
 
         // 乘骑 ------------------------------------------
         w.mountCharacterArray = getMountArray(args[0].Name, args[0], "ItemTorso");
@@ -5331,11 +5339,48 @@
 
         next(args);
 
+        if (!DrawCanvas) DrawCanvas = MainCanvas;
+
+        var OverrideDark = (
+            CurrentModule == "MiniGame"
+            || ((Player.Effect.includes("VRAvatars") && C.Effect.includes("VRAvatars")))
+            || CurrentScreen == "InformationSheet"
+            || CurrentScreen === "Crafting"
+            || (CurrentScreen === "ChatRoom") && (ChatRoomMapViewIsActive() === true) && (CurrentCharacter == null)
+        );
+
+        if ((C != null) && ((C.IsPlayer()) || (OverrideDark || Player.GetBlindLevel() < 3))) {
+
+            const BlurLevel = Player.GetBlurLevel();// 如果需要，应用模糊滤镜
+            if (!C.IsPlayer() && !OverrideDark && BlurLevel > 0) {
+                MainCanvas.filter = `blur(${BlurLevel}px)`;
+            }
+
+            if (CurrentScreen != "ChatRoom" || ChatRoomHideIconState <= 1) {// 在某些条件下绘制性唤醒仪表盘和游戏图片
+                DrawArousalMeter(C, X, Y, Zoom);
+                OnlineGameDrawCharacter(C, X, Y, Zoom);
+                if (C.HasHiddenItems) DrawImageZoomCanvas("Screens/Character/Player/HiddenItem.png", DrawCanvas, 0, 0, 86, 86, X + 54 * Zoom, Y + 880 * Zoom, 70 * Zoom, 70 * Zoom);
+            }
+            // 在角色下面绘制角色名称
+            if ((C.Name != "") && ((CurrentModule == "Room") || (CurrentModule == "Online" && !(CurrentScreen == "ChatRoom" && ChatRoomHideIconState >= 3)) || ((CurrentScreen == "Wardrobe") && !C.IsPlayer())) && (CurrentScreen != "Private") && (CurrentScreen != "PrivateBed") && (CurrentScreen != "PrivateRansom"))
+                if ((CurrentScreen !== "ChatRoom") || (ChatRoomMapViewIsActive() === false) || (CurrentCharacter != null))
+                    if ((!Player.IsBlind() && BlurLevel <= 10) || (Player.GameplaySettings && Player.GameplaySettings.SensDepChatLog == "SensDepLight")) {
+                        DrawCanvas.font = CommonGetFont(30);
+                        const NameOffset = CurrentScreen == "ChatRoom" && (ChatRoomCharacter.length > 5 || (ChatRoomCharacter.length == 5 && CommonPhotoMode)) && CurrentCharacter == null ? -4 : 0;
+                        DrawText(CharacterNickname(C), X + 255 * Zoom, Y + 980 * Zoom + NameOffset, (CommonIsColor(C.LabelColor)) ? C.LabelColor : "White", "Black");
+                        DrawCanvas.font = CommonGetFont(36);
+                    }
+
+        }
+
+
     });
 
 
+
+
     // 为了
-    笨蛋Luzi.hookFunction("ChatRoomDrawCharacterStatusIcons", 10, (args, next) => {
+    笨蛋Luzi.hookFunction("DrawStatus", 10, (args, next) => {
         next(args);
         // 根据玩家数量调整缩放和绘制坐标
         const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
@@ -5371,19 +5416,19 @@
             }
         }
 
-        // 先绘制缰绳角色的数组
-        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
-            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
-            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
-            const Zoom = ChatRoomCharacterZoom;
-            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
-            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
-            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
-            if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
-                // 如果在数组中,可以在这里执行额外的操作
-                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-            }
-        }
+        // // 先绘制缰绳角色的数组
+        // for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+        //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+        //     if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+        //     const Zoom = ChatRoomCharacterZoom;
+        //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+        //     const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+        //     if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+        //     if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
+        //         // 如果在数组中,可以在这里执行额外的操作
+        //         DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+        //     }
+        // }
 
         // 再绘制鞍角色的数组
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
@@ -5427,19 +5472,19 @@
             }
         }
 
-        // 再绘制鞍角色的数组
-        for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
-            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
-            if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
-            const Zoom = ChatRoomCharacterZoom;
-            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
-            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
-            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
-            if (foundCharacters2bed.includes(ChatRoomCharacterDrawlist[C])) {
-                // 如果在数组中,可以在这里执行额外的操作
-                DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
-            }
-        }
+        // // 再绘制鞍角色的数组
+        // for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
+        //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+        //     if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
+        //     const Zoom = ChatRoomCharacterZoom;
+        //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+        //     const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+        //     if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+        //     if (foundCharacters2bed.includes(ChatRoomCharacterDrawlist[C])) {
+        //         // 如果在数组中,可以在这里执行额外的操作
+        //         DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
+        //     }
+        // }
 
         // 先绘制缰绳角色的数组
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
@@ -5455,8 +5500,6 @@
             }
         }
         // bed ------------------------------------------
-
-
 
 
     });
@@ -5573,6 +5616,7 @@
 
         }
         next(args);
+
     });
 
     // ========================================================================
