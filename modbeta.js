@@ -459,6 +459,9 @@
         if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
+        if (PreviewICONS[data]) {
+            args[0] = PreviewICONS[data];
+        }
         // console.log(data)
         next(args);
     });
