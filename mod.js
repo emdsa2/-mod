@@ -251,8 +251,8 @@
         "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
 
 
-        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/测试.png",
-        // "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
+       
+        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
