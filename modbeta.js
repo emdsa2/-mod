@@ -76,14 +76,31 @@
         "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/单腿吊_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/单腿吊_Luzi.png",
         "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png", "Assets/Female3DCG/ItemLegs/M开腿吊_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/M开腿吊_Luzi.png",
 
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
         "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
+
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
         "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
+
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
         "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
+
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
+        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
         "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
+
+
 
 
     };
@@ -471,7 +488,7 @@
         // console.log(data)
         if (PreviewICONS[data]) {
             args[6] = PreviewICONS[data];
-        } 
+        }
         next(args);
     });
 
@@ -594,7 +611,10 @@
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "", Kneel: "", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
                 Layer: [
-                    { Name: "鱼尾", AllowColorize: true, Priority: 22 },
+                    { Name: "鱼尾上", AllowColorize: true, Priority: 22 },
+                    { Name: "鱼尾下", AllowColorize: true, Priority: 22 },
+                    { Name: "鱼尾鱼鳍上", AllowColorize: true, Priority: 22 },
+                    { Name: "鱼尾鱼鳍下", AllowColorize: true, Priority: 22 },
                     { Name: "高光", AllowColorize: true, Priority: 22 },
                 ]
             },
@@ -814,18 +834,18 @@
         ItemHandheld: [
             { Name: "电蚊拍_Luzi", Random: false, Fetish: ["Sadism"], AllowActivity: ["ShockItem"], ActivityAudio: ["Shocks"], PoseMapping: { TapedHands: "Hide", Yoked: "Hide", OverTheHead: "Hide", BackBoxTie: "Hide", BackElbowTouch: "Hide", BackCuffs: "Hide", AllFours: "Hide" }, },
         ],
-        ItemLegs: [
-            {
-                Name: "单腿吊_Luzi", Random: false,
-                Hide: ["Suit", "ClothLower", "SuitLower", "Panties", "Shoes", "ItemFeet", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "Garters",],
-                IsRestraint: true, PoseMapping: ["单腿站立_Luzi"], SetPose: ["单腿站立_Luzi"],
-            },
-            {
-                Name: "M开腿吊_Luzi", Random: false, OverrideHeight: { Height: 0, Priority: 21 },
-                Hide: ["Suit", "ClothLower", "SuitLower", "Panties", "Shoes", "ItemFeet", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "Garters",],
-                IsRestraint: true, PoseMapping: ["开腿_Luzi"], SetPose: ["开腿_Luzi"],
-            },
-        ],
+        // ItemLegs: [
+        //     {
+        //         Name: "单腿吊_Luzi", Random: false,
+        //         Hide: ["Suit", "ClothLower", "SuitLower", "Panties", "Shoes", "ItemFeet", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "Garters",],
+        //         IsRestraint: true, PoseMapping: ["单腿站立_Luzi"], SetPose: ["单腿站立_Luzi"],
+        //     },
+        //     {
+        //         Name: "M开腿吊_Luzi", Random: false, OverrideHeight: { Height: 0, Priority: 21 },
+        //         Hide: ["Suit", "ClothLower", "SuitLower", "Panties", "Shoes", "ItemFeet", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "Garters",],
+        //         IsRestraint: true, PoseMapping: ["开腿_Luzi"], SetPose: ["开腿_Luzi"],
+        //     },
+        // ],
 
         // ItemBoots: [
         //     {
@@ -862,12 +882,6 @@
                 group.Asset.push(...addAsset[groupName]);
             }
         }
-        // //Asset.forEach(A => { if (A.Name === "隐藏四肢_Luzi") { console.log(A) } });
-        // AssetFemale3DCGExtended.BodyUpper.手臂空_Luzi = {
-        //     Archetype: ExtendedArchetype.TYPED,
-        //     CopyConfig: { GroupName: "BodyUpper", AssetName: "Small" },
-        // };
-
     }
 
 
@@ -881,24 +895,7 @@
     // AssetFemale3DCG.find(asset => asset.Group === "ClothAccessory_笨蛋Luzi")
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
-
-        let newPose = [
-            { Name: '开腿_Luzi', Category: 'BodyLower', OverrideHeight: { Height: -260, Priority: 9 }, AllowMenu: false, MovePosition: [{ Group: "ItemVulva", X: 0, Y: -18, }, { Group: "Pussy", X: 0, Y: -18, }, { Group: "ItemVulvaPiercings", X: 0, Y: -18, }], },
-            { Name: '单腿站立_Luzi', Category: 'BodyLower', OverrideHeight: { Priority: 9 }, AllowMenu: false, MovePosition: [], },
-        ];
-        let newPoseRecord = {
-            开腿_Luzi: { Name: '开腿_Luzi', Category: 'BodyLower', OverrideHeight: { Height: -260, Priority: 9 }, AllowMenu: false, MovePosition: [{ Group: "ItemVulva", X: 0, Y: -18, }, { Group: "Pussy", X: 0, Y: -18, }, { Group: "ItemVulvaPiercings", X: 0, Y: -18, }], },
-            单腿站立_Luzi: { Name: '单腿站立_Luzi', Category: 'BodyLower', OverrideHeight: { Priority: 9 }, AllowMenu: false, MovePosition: [], },
-        };
-        let newBodyLowerAssetPoseMapping = { // 添加姿势
-            开腿_Luzi: "开腿_Luzi",
-            单腿站立_Luzi: "单腿站立_Luzi",
-        };
-
-        const newPosesToAdd = ["开腿_Luzi", "单腿站立_Luzi"];
-
         if (!isAssetAdded) {
-
 
             // 需要执行相同操作的项的数组
             const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
@@ -945,18 +942,6 @@
 
 
 
-
-
-
-
-
-
-
-            Object.assign(AssetPoseMapping.BodyLower, newBodyLowerAssetPoseMapping);
-            PoseFemale3DCGNames.push(...newPosesToAdd);
-            PoseFemale3DCG.push(...newPose);
-            Object.assign(PoseRecord, newPoseRecord);
-
             var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
             var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
             GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
@@ -968,10 +953,6 @@
                     // console.log(A.AllowExpression)
                 }
             });
-
-
-
-
 
 
             updateFemale3DCGAssets();
@@ -1004,8 +985,8 @@
             AssetAdd_Luzi("Socks", "圣诞_Luzi");
             AssetAdd_Luzi("ItemArms", "乳胶宠物拘束服_Luzi");
             AssetAdd_Luzi("ItemHandheld", "电蚊拍_Luzi");
-            AssetAdd_Luzi("ItemLegs", "单腿吊_Luzi");
-            AssetAdd_Luzi("ItemLegs", "M开腿吊_Luzi");
+            // AssetAdd_Luzi("ItemLegs", "单腿吊_Luzi");
+            // AssetAdd_Luzi("ItemLegs", "M开腿吊_Luzi");
             // AssetAdd_Luzi("ItemBoots", "隐藏四肢_Luzi");
             AssetAdd_Luzi("ItemDevices", "床左边_Luzi");
             AssetAdd_Luzi("ItemDevices", "床右边_Luzi");
@@ -1021,264 +1002,92 @@
             AssetAdd_Luzi("Socks", "条纹袜2_Luzi");
 
 
+            AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
+                Archetype: ExtendedArchetype.MODULAR,
+                Modules: [
+                    {
+                        Name: "窗户", Key: "c", DrawImages: false,
+                        Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Prone", "Freeze", "Enclose",], }, },],
+                    },
+                    {
+                        Name: "腿部拘束", Key: "t", DrawImages: false,
+                        Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Prone", "Freeze", "Mounted"], }, },],
+                    },
+                    {
+                        Name: "手臂拘束", Key: "s", DrawImages: false,
+                        Options: [{}, { Property: { Difficulty: 18, SetPose: ["BackElbowTouch"], Effect: ["Prone", "Freeze", "Block", "Mounted"], OverrideHeight: { Height: 0, Priority: 60 }, }, },],
+                    },
+                    {
+                        Name: "管道", Key: "gz", DrawImages: false,
+                        Options: [{}, {},],
+                    },
+                    {
+                        Name: "液体", Key: "yt", DrawImages: false,
+                        Options: [{}, {},],
+                    },
+                    {
+                        Name: "快感模块", Key: "k", DrawImages: false,
+                        Options: [{ Property: { Intensity: -1, Effect: ["Egged"] } }, { Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 2, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] } },],
+                    },
+                    {
+                        Name: "电击模块", Key: "d", DrawImages: false,
+                        Options: [{ Property: { ShockLevel: 0 } }, { Property: { ShockLevel: 0 } }, { Property: { ShockLevel: 1 } }, { Property: { ShockLevel: 2 } },],
+                    },
+                    {
+                        Name: "高潮锁", Key: "g", DrawImages: false,
+                        Options: [{}, { Property: { Effect: ["DenialMode"] } }, { Property: { Effect: ["DenialMode", "RuinOrgasms"] } },],
+                    },
+                ],
+                ChangeWhenLocked: false,
+            };
+            AssetFemale3DCGExtended.ItemDevices.窝瓜_Luzi = {
+                Archetype: ExtendedArchetype.TYPED,
+                ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
+                Options: [
+                    {
+                        Name: "没盖子",
+                    },
+                    {
+                        Name: "有盖子",
+                        Property: {
+                            SetPose: ["AllFours"],
+                            AllowActivePose: ["Hogtied"],
+                            Hide: ["ItemArms", "ItemButt", "TailStraps", "Wings"],
+                            HideItem: ["ItemMiscTeddyBear"],
+                            HideItemExclude: [
+                                "ItemArmsBitchSuit",
+                                "ItemArmsBitchSuitExposed",
+                                "ItemArmsShinyPetSuit",
+                            ],
+                            Block: [
+                                "ItemArms",
+                                "ItemBreast",
+                                "ItemButt",
+                                "ItemFeet",
+                                "ItemBoots",
+                                "ItemLegs",
+                                "ItemMisc",
+                                "ItemNipples",
+                                "ItemNipplesPiercings",
+                                "ItemPelvis",
+                                "ItemTorso",
+                                "ItemVulva",
+                                "ItemVulvaPiercings",
+                            ],
+                        },
+                        Random: false,
+                    },
+                ],
+            };
 
-
-
-            // // 需要执行相同操作的项的数组
-            // const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
-
-            // // 循环遍历每个需要复制的项
-            // itemsToCopy.forEach(itemName => {
-            //     // 找到对应项的索引位置
-            //     let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
-            //     if (itemIndex !== -1) { // 如果找到了对应项
-            //         // 复制对应项
-            //         let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
-            //         itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
-
-            //         // 获取复制项的 Asset 数组
-            //         let copiedAssets = itemCopy.Asset;
-            //         copiedAssets.forEach(asset => {
-            //             // 给每个对象都加上 Random: false 属性（如果不存在的话）
-            //             asset.Random = false;
-            //         });
-            //         AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
-            //     }
-            // });
-
-            // // 遍历 itemsToCopy 中的每一项
-            // itemsToCopy.forEach(itemName => {
-            //     // 找到对应项的对象
-            //     const item = AssetFemale3DCGExtended[itemName];
-            //     if (item) { // 如果找到了对应项
-            //         // 复制对应项
-            //         const itemCopy = { ...item };
-            //         // 修改复制的项的名称为原名称加上 "2"
-            //         const newItemName = itemName + "_笨笨蛋Luzi";
-            //         itemCopy.Group = newItemName;
-
-            //         // 将修改后的项添加到原数组中
-            //         AssetFemale3DCGExtended[newItemName] = itemCopy;
-            //     }
-            // });
-
-            // // // 循环遍历每个需要复制的项
-            // itemsToCopy.forEach(itemName => {
-            //     let itemIndex = AssetGroup.findIndex(A => A.Name === itemName); // 找到对应项的索引位置
-            //     if (itemIndex !== -1) { // 如果找到了对应项
-            //         // 复制对应项
-            //         let itemCopy = Object.assign({}, AssetGroup[itemIndex]); // 假设 AssetGroup 里的项是对象，如果是数组则使用 slice() 方法
-            //         itemCopy.Name = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
-            //         itemCopy.DynamicGroupName = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
-
-            //         // itemCopy.Asset = []; // 将复制项的 Asset 属性设置为空数组
-            //         AssetGroup.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
-            //     }
-            // });
-
-            // // // 遍历需要复制的项的数组
-            // itemsToCopy.forEach(itemName => {
-            //     // 在 AssetGroupMap 中找到对应项
-            //     let item = AssetGroupMap.get(itemName);
-
-            //     // 如果找到了对应项
-            //     if (item) {
-            //         // 创建复制项并修改名称
-            //         let copiedItem = Object.assign({}, item);
-            //         copiedItem.Name = itemName + "_笨笨蛋Luzi";
-            //         copiedItem.DynamicGroupName = itemName + "_笨笨蛋Luzi";
-            //         // 将复制项添加到 AssetGroupMap 中
-            //         AssetGroupMap.set(itemName + "_笨笨蛋Luzi", copiedItem);
-            //     }
-            // });
-            // // // 遍历需要复制的项的数组
-            // itemsToCopy.forEach(itemName => {
-            //     // 在 AssetActivityMirrorGroups 中找到对应项
-            //     let item = AssetActivityMirrorGroups.get(itemName);
-
-            //     // 如果找到了对应项
-            //     if (item) {
-            //         // 创建复制项并修改名称
-            //         let copiedItem = Object.assign({}, item);
-            //         copiedItem.Name = itemName + "_笨笨蛋Luzi";
-            //         copiedItem.DynamicGroupName = itemName + "_笨笨蛋Luzi";
-            //         // 将复制项添加到 AssetActivityMirrorGroups 中
-            //         AssetActivityMirrorGroups.set(itemName + "_笨笨蛋Luzi", copiedItem);
-            //     }
-            // });
-
-
-            // AssetGroup.forEach(A => {
-            //     if (A.Name === "Cloth_笨笨蛋Luzi") {
-            //         // console.log(A);
-            //         A.Asset.forEach(A => {
-            //             // A.Name = A.Name.concat("_笨笨蛋Luzi");
-            //             console.log(A.Group);
-            //         })
-            //     }
-            // });
-
-
-            // AssetGroup.forEach(A => {
-            //     if (A.Name === "ClothAccessory") {
-            //         console.log(A);
-            //         A.Asset.forEach(A => {
-
-            //         })
-            //     }
-            // });
-
-
-            // const G = AssetGroupAdd("Female3DCG", 'ItemDevices');
-            // AssetAdd(G , AssetFemale3DCG[73].Asset[58] , AssetFemale3DCGExtended);
             isAssetAdded = true;
         }
         next(args);
     });
 
-    mod.hookFunction("LoginResponse", 50, (args, next) => {
-
-
-        next(args);
-
-    });
-
-
-    mod.hookFunction("LoginResponse", 50, (args, next) => {
-        let newAssetPoseMapping = { 开腿_Luzi: "开腿_Luzi", 单腿站立_Luzi: "单腿站立_Luzi", };
-        Asset.forEach(A => { if (A.Group.Name == "BodyLower") { A.Layer.forEach(item => item.PoseMapping = { ...item.PoseMapping, ...newAssetPoseMapping }); } });
-
-        // Asset.forEach(A => { if (A.Name === "隐藏四肢_Luzi") { console.log(A) } });
-        // Asset.forEach(A => { console.log(A.Layer.PoseMapping) });
-
-        // AssetGroup
-        Asset.forEach(A => {
-            if (A.Group.Name === "ItemLegs") {
-                A.Layer.forEach(layer => {
-                    if (layer.Name === '单腿吊_Luzi') {
-                        layer.PoseMapping = { ...layer.PoseMapping, ...newAssetPoseMapping5 };
-                    }
-                });
-            }
-        });
-        Asset.forEach(A => {
-            if (A.Group.Name === "ItemLegs") {
-                A.Layer.forEach(layer => {
-                    if (layer.Name === 'M开腿吊_Luzi') {
-                        layer.PoseMapping = { ...layer.PoseMapping, ...newAssetPoseMapping };
-                    }
-                });
-            }
-        });
-
-
-        next(args);
-
-    });
-
     // ================================================================================
     // ================================================================================
 
-    const CustomPrerequisiteFuncs2 = new Map(Object.entries({
-        "Can单腿站立_Luzi": (C) => PoseAvailable(C, "BodyLower", "单腿站立_Luzi"),
-        "Can开腿_Luzi": (C) => PoseAvailable(C, "BodyLower", "开腿_Luzi"),
-    }));
-
-    mod.hookFunction("InventoryPrerequisiteMessage", 10, (args, next) => {
-        const C = args[0];
-        const prereqName = args[1];
-
-        if (CustomPrerequisiteFuncs2.has(prereqName)) {
-            const customPrereqFunc = CustomPrerequisiteFuncs2.get(prereqName);
-            if (!customPrereqFunc)
-                return next(args);
-            else {
-                // 将 true 转换为 ""，将 false 转换为条件不满足的消息
-                return customPrereqFunc(C) ? "" : "条件不满足";
-            }
-        }
-        return next(args);
-    });
-
-    // ================================================================================
-    // ================================================================================
-    AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
-        Archetype: ExtendedArchetype.MODULAR,
-        Modules: [
-            {
-                Name: "窗户", Key: "c", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Prone", "Freeze", "Enclose",], }, },],
-            },
-            {
-                Name: "腿部拘束", Key: "t", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Prone", "Freeze", "Mounted"], }, },],
-            },
-            {
-                Name: "手臂拘束", Key: "s", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 18, SetPose: ["BackElbowTouch"], Effect: ["Prone", "Freeze", "Block", "Mounted"], OverrideHeight: { Height: 0, Priority: 60 }, }, },],
-            },
-            {
-                Name: "管道", Key: "gz", DrawImages: false,
-                Options: [{}, {},],
-            },
-            {
-                Name: "液体", Key: "yt", DrawImages: false,
-                Options: [{}, {},],
-            },
-            {
-                Name: "快感模块", Key: "k", DrawImages: false,
-                Options: [{ Property: { Intensity: -1, Effect: ["Egged"] } }, { Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 2, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] } },],
-            },
-            {
-                Name: "电击模块", Key: "d", DrawImages: false,
-                Options: [{ Property: { ShockLevel: 0 } }, { Property: { ShockLevel: 0 } }, { Property: { ShockLevel: 1 } }, { Property: { ShockLevel: 2 } },],
-            },
-            {
-                Name: "高潮锁", Key: "g", DrawImages: false,
-                Options: [{}, { Property: { Effect: ["DenialMode"] } }, { Property: { Effect: ["DenialMode", "RuinOrgasms"] } },],
-            },
-        ],
-        ChangeWhenLocked: false,
-    };
-    AssetFemale3DCGExtended.ItemDevices.窝瓜_Luzi = {
-        Archetype: ExtendedArchetype.TYPED,
-        ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
-        Options: [
-            {
-                Name: "没盖子",
-            },
-            {
-                Name: "有盖子",
-                Property: {
-                    SetPose: ["AllFours"],
-                    AllowActivePose: ["Hogtied"],
-                    Hide: ["ItemArms", "ItemButt", "TailStraps", "Wings"],
-                    HideItem: ["ItemMiscTeddyBear"],
-                    HideItemExclude: [
-                        "ItemArmsBitchSuit",
-                        "ItemArmsBitchSuitExposed",
-                        "ItemArmsShinyPetSuit",
-                    ],
-                    Block: [
-                        "ItemArms",
-                        "ItemBreast",
-                        "ItemButt",
-                        "ItemFeet",
-                        "ItemBoots",
-                        "ItemLegs",
-                        "ItemMisc",
-                        "ItemNipples",
-                        "ItemNipplesPiercings",
-                        "ItemPelvis",
-                        "ItemTorso",
-                        "ItemVulva",
-                        "ItemVulvaPiercings",
-                    ],
-                },
-                Random: false,
-            },
-        ],
-    };
 
     // ================================================================================
     // ================================================================================
