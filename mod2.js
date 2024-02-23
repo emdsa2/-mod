@@ -548,7 +548,7 @@
             modPosture: false, modifyOwnPosture: false, postureName: ""
         },
         {
-            name: "扭动手腕", prerequisite: ["UseHands", "UseArms"],
+            name: "挠头", prerequisite: ["UseHands", "UseArms"],
             targetSelf: "ItemHead", targetSelftext: "SourceCharacter挠了挠PronounPossessive的头.", maxProgressSelf: 50,
             target: "", targettext: "", maxProgress: 50,
             activityExpression: [],
