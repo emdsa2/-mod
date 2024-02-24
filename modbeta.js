@@ -1050,6 +1050,7 @@
             {
                 Name: "拘束套装_Luzi", Random: false,
                 Gender: "F",
+                Difficulty: 25,
                 Effect: [E.Block, E.BlockWardrobe],
                 Prerequisite: ["HasBreasts"],
                 SetPose: ["BackElbowTouch"], AllowActivePose: ["BackElbowTouch"],
