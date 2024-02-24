@@ -2258,7 +2258,7 @@
         next(args);
     });
 
-
+    // PreferenceSubscreenList.push("      动作拓展设置");
     function 动作拓展设置进入Run() {
         if (PreferenceSubscreen === "") {
             DrawButton(1340, 50, 400, 90, "      动作拓展设置", "White", "Icons/Use.png");
@@ -4864,7 +4864,7 @@
         function replaceLabels(args) {
             let playername = InformationSheetSelection?.Name || Player.Name || "";
             // let playernum = InformationSheetSelection?.MemberNumber || Player.MemberNumber;
-            let playerNickname = InformationSheetSelection?.Nickname || Player.Nickname || "";
+            let playerNickname = (InformationSheetSelection && InformationSheetSelection.Nickname) || (Player && Player.Nickname) || "";
 
             // function GetPlayerName(player) {
             //     return player?.Nickname != null && player?.Nickname != '' ? player?.Nickname : player?.Name;
