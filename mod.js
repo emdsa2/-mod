@@ -338,8 +338,8 @@
         "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png", "Assets/Female3DCG/ItemBoots/隐藏四肢_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
 
 
-        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/测试.png",
-        // "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
+
+        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Assets/Female3DCG/ItemTorso/缰绳_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
@@ -1045,7 +1045,8 @@
                 Name: "拘束套装_Luzi", Random: false,
                 Gender: "F",
                 Difficulty: 25,
-                Effect: [E.Block, E.BlockWardrobe],
+                AllowLock: true,
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 SetPose: ["BackElbowTouch"], AllowActivePose: ["BackElbowTouch"],
                 Layer: [
