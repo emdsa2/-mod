@@ -482,7 +482,13 @@
         "Assets/Female3DCG/ItemTorso/Spread/拘束套装_Luzi_XLarge_链子.png": "https://emdsa2.github.io/-mod/image/拘束套装/Spread/拘束套装_Luzi_XLarge_链子.png",
 
 
+        "Assets/Female3DCG/HairAccessory1/奶牛耳_Luzi_牛耳.png": "https://emdsa2.github.io/-mod/image/奶牛耳/奶牛耳_Luzi.png",
+        "Assets/Female3DCG/HairAccessory1/奶牛耳_Luzi_牛角.png": "https://emdsa2.github.io/-mod/image/奶牛耳/奶牛角.png",
 
+        "Assets/Female3DCG/ItemHood/纸袋_Luzi_胶带.png": "https://emdsa2.github.io/-mod/image/纸袋/胶带.png",
+        "Assets/Female3DCG/ItemHood/纸袋_Luzi_字.png": "https://emdsa2.github.io/-mod/image/纸袋/字.png",
+        "Assets/Female3DCG/ItemHood/纸袋_Luzi_A4纸.png": "https://emdsa2.github.io/-mod/image/纸袋/A4纸.png",
+        "Assets/Female3DCG/ItemHood/纸袋_Luzi_纸袋.png": "https://emdsa2.github.io/-mod/image/纸袋/纸袋.png",
 
 
 
@@ -600,6 +606,8 @@
 
         "Assets/Female3DCG/SuitLower/Preview/鱼鱼尾_Luzi.png": "https://emdsa2.github.io/-mod/image/Preview鱼鱼尾_Luzi.png",
 
+        "Assets/Female3DCG/ItemHood/Preview/纸袋_Luzi.png": "https://emdsa2.github.io/-mod/image/纸袋/Preview/纸袋_Luzi.png",
+        "Assets/Female3DCG/HairAccessory1/Preview/奶牛耳_Luzi.png": "https://emdsa2.github.io/-mod/image/奶牛耳/Preview/奶牛耳_Luzi.png",
         "Assets/Female3DCG/ItemTorso/Preview/拘束套装_Luzi.png": "https://emdsa2.github.io/-mod/image/拘束套装/Preview/拘束套装_Luzi.png",
         "Screens/Inventory/ItemTorso/拘束套装_Luzi/无.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/ItemTorso/拘束套装_Luzi/乳胶衣.png": "https://emdsa2.github.io/-mod/image/空.png",
@@ -1188,7 +1196,23 @@
         ItemHandheld: [
             { Name: "电蚊拍_Luzi", Random: false, Fetish: ["Sadism"], AllowActivity: ["ShockItem"], ActivityAudio: ["Shocks"], PoseMapping: { TapedHands: "Hide", Yoked: "Hide", OverTheHead: "Hide", BackBoxTie: "Hide", BackElbowTouch: "Hide", BackCuffs: "Hide", AllFours: "Hide" }, },
         ],
-
+        HairAccessory1: [
+            {
+                Name: "奶牛耳_Luzi", Random: false,
+                Layer: [{ Name: "牛耳", Priority: 40 }, { Name: "牛角", Priority: 55 },],
+            },
+        ],
+        ItemHood: [
+            {
+                Name: "纸袋_Luzi", Random: false,
+                Layer: [
+                    { Name: "胶带", Priority: 58 },
+                    { Name: "字", Priority: 57 },
+                    { Name: "A4纸", Priority: 56 },
+                    { Name: "纸袋", Priority: 55 },
+                ],
+            },
+        ],
     };
 
 
@@ -1324,14 +1348,13 @@
             AssetAdd_Luzi("ItemDevices", "窝瓜_Luzi");
             AssetAdd_Luzi("SuitLower", "鱼鱼尾_Luzi");
             AssetAdd_Luzi("ItemTorso2", "拘束套装_Luzi");
-
+            AssetAdd_Luzi("HairAccessory1", "奶牛耳_Luzi");
+            AssetAdd_Luzi("ItemHood", "纸袋_Luzi");
 
 
             AssetAdd_Luzi("Socks", "踩脚袜_Luzi");
             AssetAdd_Luzi("Socks", "条纹袜_Luzi");
             AssetAdd_Luzi("Socks", "条纹袜2_Luzi");
-
-
 
             isAssetAdded = true;
         }
