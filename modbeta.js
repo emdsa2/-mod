@@ -587,10 +587,10 @@
             },
         ],
         Suit: [
-            { Name: "乳胶衣上_Luzi", Random: false, Prerequisite: ["HasBreasts"], Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"], Layer: [{ Name: "手套", Priority: 27, PoseMapping: { TapedHands: "Hide", Yoked: "Hide", OverTheHead: "Hide", BackBoxTie: "Hide", BackElbowTouch: "Hide", BackCuffs: "Hide" } }, { Name: "上衣", Priority: 14 },] },
+            { Name: "乳胶衣上_Luzi", Top: -110, Random: false, Prerequisite: ["HasBreasts"], Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"], Layer: [{ Name: "手套", Priority: 27, PoseMapping: { TapedHands: "Hide", Yoked: "Hide", OverTheHead: "Hide", BackBoxTie: "Hide", BackElbowTouch: "Hide", BackCuffs: "Hide" } }, { Name: "上衣", Priority: 14 },] },
         ],
         SuitLower: [
-            { Name: "乳胶衣下_Luzi", Random: false, Prerequisite: ["HasVagina"], Attribute: ["SuitLower"], },
+            { Name: "乳胶衣下_Luzi", Top: -110, Random: false, Prerequisite: ["HasVagina"], Attribute: ["SuitLower"], },
             {
                 Name: "鱼鱼尾_Luzi", Random: false,
                 OverrideHeight: { Height: 30, Priority: 21 }, Hide: [],
