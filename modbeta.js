@@ -169,7 +169,7 @@
 
     });
     const PreviewICONS = Object.freeze({
-        "Assets/Female3DCG/ItemDevices/Preview/猪猪_Luzi.png": "https://i.ibb.co/r0N2zGr/Luzi.png",
+
         "Assets/Female3DCG/TailStraps/Preview/穿戴式狗尾:镜像_Luzi.png": "Assets/Female3DCG/TailStraps/Preview/PuppyTailStrap.png",
         "Assets/Female3DCG/TailStraps/Preview/白色穿戴式狼尾:镜像_Luzi.png": "Assets/Female3DCG/TailStraps/Preview/WolfTailStrap3.png",
         "Assets/Female3DCG/TailStraps/Preview/穿戴式浅色猫尾:镜像_Luzi.png": "Assets/Female3DCG/TailStraps/Preview/KittenTailStrap1.png",
@@ -178,37 +178,9 @@
         "Assets/Female3DCG/TailStraps/Preview/小型穿戴式狼尾:镜像_Luzi.png": "Assets/Female3DCG/TailStraps/Preview/WolfTailStrap2.png",
         "Assets/Female3DCG/TailStraps/Preview/小型穿戴式软猫尾:镜像_Luzi.png": "Assets/Female3DCG/TailStraps/Preview/KittenTailStrap2.png",
         "Assets/Female3DCG/TailStraps/Preview/穿戴式猫尾:镜像_Luzi.png": "Assets/Female3DCG/TailStraps/Preview/TailStrap.png",
-        "Assets/Female3DCG/ItemDevices/Preview/玻璃罐子_Luzi.png": "https://i.ibb.co/JH8G7GV/Preview-Luzi.png",
-        "Assets/Female3DCG/Panties/Preview/淫纹_Luzi.png": "https://i.ibb.co/kK18DTC/Preview-Luzi.png",
-        "Assets/Female3DCG/ItemHandheld/Preview/电蚊拍_Luzi.png": "https://i.ibb.co/rm4bktW/Preview-Luzi.png",
-        "Assets/Female3DCG/Suit/Preview/乳胶衣上_Luzi.png": "https://i.ibb.co/BfMJp0z/Preview-Luzi.png",
-        "Assets/Female3DCG/SuitLower/Preview/乳胶衣下_Luzi.png": "https://i.ibb.co/BfMJp0z/Preview-Luzi.png",
-        "Assets/Female3DCG/Wings/Preview/蝴蝶结背饰_Luzi.png": "https://i.ibb.co/yX3Sz5L/Preview-Luzi.png",
-        "Assets/Female3DCG/ItemArms/Preview/乳胶宠物拘束服_Luzi.png": "https://i.ibb.co/9GVyhwd/Preview-Luzi.png",
-        "Assets/Female3DCG/Cloth/Preview/礼服_Luzi.png": "https://i.ibb.co/vzHJXmG/Preview-Luzi.png",
-        "Assets/Female3DCG/Hat/Preview/修女头饰_Luzi.png": "https://i.ibb.co/Tr1ktLL/Preview-Luzi.png",
-        "Assets/Female3DCG/Cloth/Preview/修女_Luzi.png": "https://i.ibb.co/f1J24Hg/Preview-Luzi.png",
-        "Assets/Female3DCG/Glasses/Preview/单边眼镜左_Luzi.png": "https://i.ibb.co/37rzjSS/Preview-Luzi.png",
-        "Assets/Female3DCG/Glasses/Preview/单边眼镜右_Luzi.png": "https://i.ibb.co/rKBCHQJ/Preview-Luzi.png",
-        "Assets/Female3DCG/ItemLegs/Preview/单腿吊_Luzi.png": "Assets/Female3DCG/ItemLegs/Preview/HempRope.png",
-        "Assets/Female3DCG/ItemLegs/Preview/M开腿吊_Luzi.png": "Assets/Female3DCG/ItemLegs/Preview/HempRope.png",
-        "Assets/Female3DCG/Cloth/Preview/圣诞_Luzi.png": "https://i.ibb.co/qyJhP3s/Preview-Luzi.png",
-        "Assets/Female3DCG/Socks/Preview/圣诞_Luzi.png": "https://i.ibb.co/mbJ6HC5/Preview-Luzi.png",
-        "Assets/Female3DCG/ItemTorso/Preview/鞍_Luzi.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/Preview/缰绳_Luzi.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemBoots/Preview/隐藏四肢_Luzi.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/Cloth/Preview/女仆装_Luzi.png": "https://i.ibb.co/ZTc1gP3/image.png",
-        "Assets/Female3DCG/Bra/Preview/透视皮衣_Luzi.png": "https://i.ibb.co/G3Dd9jw/Luzi.png",
-        "Assets/Female3DCG/Socks/Preview/踩脚袜_Luzi.png": "https://i.ibb.co/vs18Tpm/image.png",
-        "Assets/Female3DCG/Socks/Preview/条纹袜_Luzi.png": "https://i.ibb.co/0CwG84W/image.png",
-        "Assets/Female3DCG/Socks/Preview/条纹袜2_Luzi.png": "https://i.ibb.co/fHq6LX4/2.png",
-        "Assets/Female3DCG/ItemDevices/Preview/窝瓜_Luzi.png": "https://i.ibb.co/6Bdh52s/image.png",
 
-        "Assets/Female3DCG/SuitLower/Preview/鱼鱼尾_Luzi.png": "https://emdsa2.github.io/-mod/image/Preview鱼鱼尾_Luzi.png",
 
-        "Assets/Female3DCG/ItemHood/Preview/纸袋_Luzi.png": "https://emdsa2.github.io/-mod/image/纸袋/Preview/纸袋_Luzi.png",
-        "Assets/Female3DCG/HairAccessory1/Preview/奶牛耳_Luzi.png": "https://emdsa2.github.io/-mod/image/奶牛耳/Preview/奶牛耳_Luzi.png",
-        "Assets/Female3DCG/ItemTorso/Preview/拘束套装_Luzi.png": "https://emdsa2.github.io/-mod/image/拘束套装/Preview/拘束套装_Luzi.png",
+
         "Screens/Inventory/ItemTorso/拘束套装_Luzi/无.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/ItemTorso/拘束套装_Luzi/乳胶衣.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/ItemTorso/拘束套装_Luzi/透视紧身衣.png": "https://emdsa2.github.io/-mod/image/空.png",
