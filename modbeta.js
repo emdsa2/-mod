@@ -48,39 +48,6 @@
 
     const ICONSSSSSSS = {
 
-
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_舌头.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_舌头.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_上1.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_上1.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_上2.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_上2.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_下1.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_下1.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_下2.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_下2.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_管道衔接.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_管道衔接.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_玻璃外层.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_玻璃外层.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_玻璃罐液体前.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_玻璃罐液体前.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_玻璃罐液体后.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_玻璃罐液体后.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_面板.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_面板.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_Lock.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_Lock.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_管道.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_管道.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_液体.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_液体.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_管道2.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_管道2.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_液体2.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_液体2.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_玻璃关闭.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_玻璃关闭.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_身体衔接.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_身体衔接.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_手臂拘束.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_手臂拘束.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_腿部拘束.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_腿部拘束.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_吊顶链.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_吊顶链.png",
-        "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_发光.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_发光.png",
-
-        "Assets/Female3DCG/Panties/淫纹_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/淫纹_Luzi.png",
-        "Assets/Female3DCG/Panties/淫纹_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/淫纹_Luzi.png",
-        "Assets/Female3DCG/Panties/淫纹_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/淫纹_Luzi.png",
-        "Assets/Female3DCG/Panties/淫纹_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/淫纹_Luzi.png",
-
-        "Assets/Female3DCG/ItemHandheld/电蚊拍_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/电蚊拍_Luzi.png",
-        "Assets/Female3DCG/ItemHandheld/电蚊拍_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/电蚊拍_Luzi.png",
-        "Assets/Female3DCG/ItemHandheld/电蚊拍_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/电蚊拍_Luzi.png",
-        "Assets/Female3DCG/ItemHandheld/电蚊拍_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/电蚊拍_Luzi.png",
-
         "Assets/Female3DCG/Socks/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/CowPrintedSocks_Small.png",
         "Assets/Female3DCG/Socks/LegsClosed/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/LegsClosed_CowPrintedSocks_Small.png",
         "Assets/Female3DCG/Socks/Spread/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/Spread_CowPrintedSocks_Small.png",
@@ -110,102 +77,11 @@
 
 
 
-
-        "Assets/Female3DCG/Cloth/修女_Luzi_Small_衣服.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_Small_衣服.png",
-        "Assets/Female3DCG/Cloth/TapedHands/修女_Luzi_Small_衣服.png": "https://emdsa2.github.io/-mod/image/TapedHands_修女_Luzi_Small_衣服.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_Small_衣服.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_Small_衣服.png",
-        "Assets/Female3DCG/Cloth/BackBoxTie/修女_Luzi_Small_衣服.png": "https://emdsa2.github.io/-mod/image/BackBoxTie_修女_Luzi_Small_衣服.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_Small_衣服.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_Small_衣服.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Normal_衣服.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_Normal_衣服.png",
-        "Assets/Female3DCG/Cloth/TapedHands/修女_Luzi_Normal_衣服.png": "https://emdsa2.github.io/-mod/image/TapedHands_修女_Luzi_Normal_衣服.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_Normal_衣服.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_Normal_衣服.png",
-        "Assets/Female3DCG/Cloth/BackBoxTie/修女_Luzi_Normal_衣服.png": "https://emdsa2.github.io/-mod/image/BackBoxTie_修女_Luzi_Normal_衣服.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_Normal_衣服.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_Normal_衣服.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Large_衣服.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_Large_衣服.png",
-        "Assets/Female3DCG/Cloth/TapedHands/修女_Luzi_Large_衣服.png": "https://emdsa2.github.io/-mod/image/TapedHands_修女_Luzi_Large_衣服.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_Large_衣服.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_Large_衣服.png",
-        "Assets/Female3DCG/Cloth/BackBoxTie/修女_Luzi_Large_衣服.png": "https://emdsa2.github.io/-mod/image/BackBoxTie_修女_Luzi_Large_衣服.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_Large_衣服.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_Large_衣服.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_XLarge_衣服.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_XLarge_衣服.png",
-        "Assets/Female3DCG/Cloth/TapedHands/修女_Luzi_XLarge_衣服.png": "https://emdsa2.github.io/-mod/image/TapedHands_修女_Luzi_XLarge_衣服.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_XLarge_衣服.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_XLarge_衣服.png",
-        "Assets/Female3DCG/Cloth/BackBoxTie/修女_Luzi_XLarge_衣服.png": "https://emdsa2.github.io/-mod/image/BackBoxTie_修女_Luzi_XLarge_衣服.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_XLarge_衣服.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_XLarge_衣服.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Small_披肩.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_Small_披肩.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_Small_披肩.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Normal_披肩.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_Normal_披肩.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_Normal_披肩.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Large_披肩.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_Large_披肩.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_Large_披肩.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_XLarge_披肩.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/Yoked/修女_Luzi_XLarge_披肩.png": "https://emdsa2.github.io/-mod/image/Yoked_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/OverTheHead/修女_Luzi_XLarge_披肩.png": "https://emdsa2.github.io/-mod/image/OverTheHead_修女_Luzi_披肩.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Small_带子.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_带子.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Small_后面.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Small_后面2.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面2.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Normal_带子.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_带子.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Normal_后面.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Normal_后面2.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面2.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Large_带子.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_带子.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Large_后面.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_Large_后面2.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面2.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_XLarge_带子.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_带子.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_XLarge_后面.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面.png",
-        "Assets/Female3DCG/Cloth/修女_Luzi_XLarge_后面2.png": "https://emdsa2.github.io/-mod/image/修女_Luzi_后面2.png",
-
-
-
-        "Assets/Female3DCG/Hat/修女头饰_Luzi_前面.png": "https://emdsa2.github.io/-mod/image/修女头饰_Luzi_前面.png", "Assets/Female3DCG/Hat/修女头饰_Luzi_后面.png": "https://emdsa2.github.io/-mod/image/修女头饰_Luzi_后面.png", "Assets/Female3DCG/Hat/修女头饰_Luzi_后面2.png": "https://emdsa2.github.io/-mod/image/修女头饰_Luzi_后面2.png",
-        "Assets/Female3DCG/ItemDevices/窝瓜_Luzi_后.png": "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_后.png", "Assets/Female3DCG/ItemDevices/窝瓜_Luzi_前.png": "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_前.png", "Assets/Female3DCG/ItemDevices/窝瓜_Luzi_灯.png": "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_灯.png",
-
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Small_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Normal_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_Large_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼尾下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾鱼鳍上.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍上_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_鱼尾鱼鳍下.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾鱼鳍下_Luzi.png",
-        "Assets/Female3DCG/SuitLower/鱼鱼尾_Luzi_XLarge_高光.png": "https://emdsa2.github.io/-mod/image/鱼鱼尾高光_Luzi.png",
-
     };
 
     // 添加 ICONSSSSSSS2
     const ICONSSSSSSS2 = {
         "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png",
-        "Assets/Female3DCG/Glasses/单边眼镜左_Luzi.png": "https://emdsa2.github.io/-mod/image/单边眼镜左_Luzi.png", "Assets/Female3DCG/Glasses/单边眼镜右_Luzi.png": "https://emdsa2.github.io/-mod/image/单边眼镜右_Luzi.png",
-
-
-
-
-
-
-
-        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Small_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Small_皮.png",
-        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Small_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Small_丝.png",
-        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Small_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Small_皮.png",
-        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Small_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Small_丝.png",
-        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Normal_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Normal_皮.png",
-        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Normal_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Normal_丝.png",
-        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Normal_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Normal_皮.png",
-        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Normal_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Normal_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Large_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Large_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Large_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Large_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Large_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Large_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Large_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Large_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_XLarge_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_XLarge_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_XLarge_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_XLarge_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_XLarge_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_XLarge_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_XLarge_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_XLarge_丝.png",
 
 
 
@@ -315,28 +191,7 @@
         },
 
 
-        "Assets/Female3DCG/ItemDevices/AllFours/窝瓜_Luzi_后.png": {
-            imagePath: "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_后.png",
-            handleFunction: (args) => { args[2] = 0; args[3] = 280; },
-        },
-        "Assets/Female3DCG/ItemDevices/AllFours/窝瓜_Luzi_前.png": {
-            imagePath: "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_前.png",
-            handleFunction: (args) => { args[2] = 0; args[3] = 280; },
-        },
-        "Assets/Female3DCG/ItemDevices/AllFours/窝瓜_Luzi_灯.png": {
-            imagePath: "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_灯.png",
-            handleFunction: (args) => { args[2] = 0; args[3] = 280; },
-        },
 
-
-        "Assets/Female3DCG/ItemDevices/AllFours/窝瓜_Luzi_盖.png": {
-            imagePath: "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_盖.png",
-            handleFunction: (args) => { args[2] = 0; args[3] = 280; },
-        },
-        "Assets/Female3DCG/ItemDevices/AllFours/窝瓜_Luzi_盖1.png": {
-            imagePath: "https://emdsa2.github.io/-mod/image/窝瓜_Luzi_盖1.png",
-            handleFunction: (args) => { args[2] = 0; args[3] = 280; },
-        },
     });
     const PreviewICONS = Object.freeze({
         "Assets/Female3DCG/ItemDevices/Preview/猪猪_Luzi.png": "https://i.ibb.co/r0N2zGr/Luzi.png",
