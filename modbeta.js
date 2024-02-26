@@ -317,7 +317,7 @@
     // ================================================================================
     const addAsset = {
         Hat: [
-            { Name: "修女头饰_Luzi", Random: false, Layer: [{ Name: "前面", Priority: 55 }, { Name: "后面", Priority: 4 }, { Name: "后面2", Priority: 3 }] }
+            { Name: "修女头饰_Luzi", Top: -110, Left: 0, Random: false, Layer: [{ Name: "前面", Priority: 55 }, { Name: "后面", Priority: 4 }, { Name: "后面2", Priority: 3 }] }
         ],
         Cloth: [
             {
@@ -360,7 +360,7 @@
                     },
                 ]
             },
-            { Name: "修女_Luzi", Random: false, Prerequisite: ["HasBreasts"], Layer: [{ Name: "衣服", Priority: 32, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "BackBoxTie", BackElbowTouch: "BackBoxTie", BackCuffs: "BackBoxTie", }, }, { Name: "带子", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "披肩", Priority: 34, PoseMapping: { TapedHands: "", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "后面", CopyLayerColor: "衣服", Priority: 5, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "" }, }, { Name: "后面2", Priority: 4, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, },] },
+            { Name: "修女_Luzi", Top: -110, Random: false, Prerequisite: ["HasBreasts"], Layer: [{ Name: "衣服", Priority: 32, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "BackBoxTie", BackElbowTouch: "BackBoxTie", BackCuffs: "BackBoxTie", }, }, { Name: "带子", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "披肩", Priority: 34, PoseMapping: { TapedHands: "", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "后面", CopyLayerColor: "衣服", Priority: 5, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "" }, }, { Name: "后面2", Priority: 4, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, },] },
             {
                 Name: "圣诞_Luzi", // 不用修改位置
                 Random: false, Prerequisite: ["HasBreasts"],
@@ -451,7 +451,8 @@
         SuitLower: [
             { Name: "乳胶衣下_Luzi", Top: -110, Left: 0, Random: false, Prerequisite: ["HasVagina"], Attribute: ["SuitLower"], },
             {
-                Name: "鱼鱼尾_Luzi", Random: false,
+                Name: "鱼鱼尾_Luzi", Top: -110, Left: 0, Random: false,
+                
                 OverrideHeight: { Height: 30, Priority: 21 }, Hide: [],
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "", Kneel: "", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
@@ -466,7 +467,7 @@
         ],
         Bra: [
             {
-                Name: "透视皮衣_Luzi", Random: false, Prerequisite: ["HasBreasts"],
+                Name: "透视皮衣_Luzi", Top: 0, Left: 0, Random: false, Prerequisite: ["HasBreasts"],
                 Layer: [
                     {
                         Name: "皮",
@@ -494,7 +495,7 @@
             },
         ],
         Glasses: [
-            { Name: "单边眼镜左_Luzi", Random: false, }, { Name: "单边眼镜右_Luzi", Random: false, },
+            { Name: "单边眼镜左_Luzi", Top: 0, Left: 0, Random: false, }, { Name: "单边眼镜右_Luzi", Top: 0, Left: 0, Random: false, },
         ],
         ItemDevices: [
             { Name: "猪猪_Luzi", Top: -110, Random: false, SetPose: ["KneelingSpread"], AllowActivePose: ["KneelingSpread"], OverrideHeight: { Height: -150, Priority: 21 }, Layer: [{ Name: "鼻子", Priority: 56 }, { Name: "猪猪", Priority: 55 }, { Name: "缰绳", Priority: 26 },], },
@@ -592,7 +593,7 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi", Random: false,
+                Name: "窝瓜_Luzi", Top: -110, Left: 0, Random: false,
                 Fetish: ["Pet"],
                 Difficulty: -25,
                 AllowLock: true,
@@ -784,10 +785,10 @@
             },
         ],
         Panties: [
-            { Name: "淫纹_Luzi", Random: false, Gender: "F", Prerequisite: ["HasVagina"], Fetish: ["Lingerie"], DefaultColor: ["#E975A0"], },
+            { Name: "淫纹_Luzi", Top: -110, Left: 0, Random: false, Gender: "F", Prerequisite: ["HasVagina"], Fetish: ["Lingerie"], DefaultColor: ["#E975A0"], },
         ],
         Wings: [
-            { Name: "蝴蝶结背饰_Luzi", Top: 0, Left: 0, Random: false, },
+            { Name: "蝴蝶结背饰_Luzi", Top: -110, Left: 0, Random: false, },
         ],
         Socks: [
             { Name: "圣诞_Luzi", Top: -110, Left: 0, Random: false, Layer: [{ Name: "袜子", AllowColorize: false }, { Name: "绒毛", AllowColorize: false },], },
@@ -800,12 +801,12 @@
             { Name: "乳胶宠物拘束服_Luzi", Random: false, Difficulty: 12, SelfBondage: 8, Time: 40, RemoveTime: 30, AllowLock: true, AllowTighten: true, Gender: "F", Fetish: ["Leather", "Pet"], Prerequisite: ["HasBreasts"], PoseMapping: { Kneel: "Kneel", KneelingSpread: "KneelingSpread", AllFours: "AllFours", }, AllowActivePose: ["KneelingSpread", "BackElbowTouch", "AllFours"], SetPose: ["BackElbowTouch", "Kneel"], Effect: [E.Block, E.BlockWardrobe], Block: ["ItemHands", "ItemHandheld"], Layer: [{ Name: "本体" }, { Name: "束带" }, { Name: "挂钩" }, { Name: "Lock", ParentGroup: null, LockLayer: true },], },
         ],
         ItemHandheld: [
-            { Name: "电蚊拍_Luzi", Random: false, Fetish: ["Sadism"], AllowActivity: ["ShockItem"], ActivityAudio: ["Shocks"], PoseMapping: { TapedHands: "Hide", Yoked: "Hide", OverTheHead: "Hide", BackBoxTie: "Hide", BackElbowTouch: "Hide", BackCuffs: "Hide", AllFours: "Hide" }, },
+            { Name: "电蚊拍_Luzi", Top: -110, Left: 0, Random: false, Fetish: ["Sadism"], AllowActivity: ["ShockItem"], ActivityAudio: ["Shocks"], PoseMapping: { TapedHands: "Hide", Yoked: "Hide", OverTheHead: "Hide", BackBoxTie: "Hide", BackElbowTouch: "Hide", BackCuffs: "Hide", AllFours: "Hide" }, },
         ],
         HairAccessory1: [
             {
                 Name: "奶牛耳_Luzi", Random: false,
-                Left: 0,
+                Top: 0, Left: 0,
                 Layer: [{ Name: "牛耳", Priority: 40 }, { Name: "牛角", Priority: 55 },],
             },
         ],
