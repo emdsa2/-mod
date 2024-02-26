@@ -638,7 +638,7 @@
             { Name: "单边眼镜左_Luzi", Random: false, }, { Name: "单边眼镜右_Luzi", Random: false, },
         ],
         ItemDevices: [
-            { Name: "猪猪_Luzi", Top: -50, Random: false, SetPose: ["KneelingSpread"], AllowActivePose: ["KneelingSpread"], OverrideHeight: { Height: -150, Priority: 21 }, Layer: [{ Name: "鼻子", Priority: 56 }, { Name: "猪猪", Priority: 55 }, { Name: "缰绳", Priority: 26 },], },
+            { Name: "猪猪_Luzi", Top: -60, Random: false, SetPose: ["KneelingSpread"], AllowActivePose: ["KneelingSpread"], OverrideHeight: { Height: -150, Priority: 21 }, Layer: [{ Name: "鼻子", Priority: 56 }, { Name: "猪猪", Priority: 55 }, { Name: "缰绳", Priority: 26 },], },
             {
                 Name: "玻璃罐子_Luzi", Random: false, AllowLock: true, Difficulty: 50,
                 Hide: ["Mouth", "Glasses", "TailStraps"], DefaultColor: ["#151515", "#151515", "#FFFFFF", "#FFFFFF", "#2A2A2A", "#404040", "#2A2A2A", "#404040", "#EE168E", "#EE168E", "#9E2184", "#6D0B4A", "#4A4242", "#FF3CC3", "#E17070"],
@@ -946,6 +946,7 @@
         HairAccessory1: [
             {
                 Name: "奶牛耳_Luzi", Random: false,
+                Left: -30,
                 Layer: [{ Name: "牛耳", Priority: 40 }, { Name: "牛角", Priority: 55 },],
             },
         ],
