@@ -931,7 +931,7 @@
             { Name: "蝴蝶结背饰_Luzi", Random: false, },
         ],
         Socks: [
-            { Name: "圣诞_Luzi", Random: false, Layer: [{ Name: "袜子", AllowColorize: false }, { Name: "绒毛", AllowColorize: false },], },
+            { Name: "圣诞_Luzi", Top: -110, Left: 20, Random: false, Layer: [{ Name: "袜子", AllowColorize: false }, { Name: "绒毛", AllowColorize: false },], },
             { Name: "踩脚袜_Luzi", Random: false, },
             { Name: "条纹袜_Luzi", Random: false, },
             { Name: "条纹袜2_Luzi", Random: false, },
