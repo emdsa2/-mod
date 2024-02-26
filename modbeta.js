@@ -39,13 +39,6 @@
     });
 
 
-
-
-
-    // patchFunction("CommonCallFunctionByNameWarn", {
-    //     "console.warn": '// console.warn', 
-    // });
-
     const ICONSSSSSSS = {
 
         "Assets/Female3DCG/Socks/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/CowPrintedSocks_Small.png",
@@ -81,7 +74,54 @@
 
     // 添加 ICONSSSSSSS2
     const ICONSSSSSSS2 = {
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png",
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
+        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", 
+        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png",
 
 
 
@@ -593,7 +633,7 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi", Top: -110, Left: 0, Random: false,
+                Name: "窝瓜_Luzi", Top: 110, Left: 0, Random: false,
                 Fetish: ["Pet"],
                 Difficulty: -25,
                 AllowLock: true,
@@ -824,153 +864,7 @@
     };
 
 
-    function updateFemale3DCGAssets() {
-        // "Socks", "SocksRight", "SocksLeft","RightAnklet","LeftAnklet","Garters",
-        for (const groupName in addAsset) {
-            const group = AssetFemale3DCG.find(group => group.Group === groupName);
-            if (group) {
-                group.Asset.push(...addAsset[groupName]);
-            }
-        }
-    }
 
-
-    function AssetAdd_Luzi(assetgroupName, assetName) {
-        let assetGtoup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
-        let asset = assetGtoup.Asset.find(asset => asset.Name === assetName)
-        let G = AssetGroupMap.get(assetgroupName)
-        AssetAdd(G, asset, AssetFemale3DCGExtended);
-    }
-    // AssetAdd_Luzi("ClothAccessory_笨蛋Luzi", "StudentOutfit3Scarf");
-    // AssetFemale3DCG.find(asset => asset.Group === "ClothAccessory_笨蛋Luzi")
-    let isAssetAdded = false;
-    mod.hookFunction('LoginResponse', 0, (args, next) => {
-        if (!isAssetAdded) {
-
-            // 需要执行相同操作的项的数组
-            const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
-
-            // 循环遍历每个需要复制的项
-            itemsToCopy.forEach(itemName => {
-                // 找到对应项的索引位置
-                let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
-                if (itemIndex !== -1) { // 如果找到了对应项
-                    // 复制对应项
-                    let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
-                    itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
-
-                    // 获取复制项的 Asset 数组
-                    let copiedAssets = itemCopy.Asset;
-                    copiedAssets.forEach(asset => {
-                        // 给每个对象都加上 Random: false 属性（如果不存在的话）
-                        asset.Random = false;
-                    });
-                    AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
-                }
-            });
-
-            // 遍历 itemsToCopy 中的每一项
-            itemsToCopy.forEach(itemName => {
-                // 找到对应项的对象
-                const item = AssetFemale3DCGExtended[itemName];
-                if (item) { // 如果找到了对应项
-                    // 复制对应项
-                    const itemCopy = { ...item };
-                    // 修改复制的项的名称为原名称加上 "2"
-                    const newItemName = itemName + "_笨笨蛋Luzi";
-                    itemCopy.Group = newItemName;
-
-                    // 将修改后的项添加到原数组中
-                    AssetFemale3DCGExtended[newItemName] = itemCopy;
-                }
-            });
-
-            // 提取 AssetFemale3DCG 中 Group 属性包含 '_笨笨蛋Luzi' 的对象存入新数组
-            const filteredAssetFemale3DCG = AssetFemale3DCG.filter(asset => asset.Group.includes('_笨笨蛋Luzi'));
-            // 输出结果
-            AssetLoad(filteredAssetFemale3DCG, "Female3DCG", AssetFemale3DCGExtended);
-
-
-
-
-
-
-
-
-
-            var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
-            var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
-            GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
-
-            AssetGroup.forEach(A => {
-                if (A.Name === "Emoticon") {
-                    var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
-                    A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
-                    // console.log(A.AllowExpression)
-                }
-            });
-
-
-
-
-
-
-            updateFemale3DCGAssets();
-
-            // AssetAdd_Luzi("BodyUpper", "手臂空_Luzi手臂空");
-            // AssetAdd_Luzi("BodyLower", "小腿空_Luzi小腿空");
-            AssetAdd_Luzi("Hat", "修女头饰_Luzi");
-            AssetAdd_Luzi("Cloth", "女仆装_Luzi");
-            AssetAdd_Luzi("Cloth", "修女_Luzi");
-            AssetAdd_Luzi("Cloth", "圣诞_Luzi");
-            AssetAdd_Luzi("Cloth", "礼服_Luzi");
-            AssetAdd_Luzi("Suit", "乳胶衣上_Luzi");
-            AssetAdd_Luzi("SuitLower", "乳胶衣下_Luzi");
-            AssetAdd_Luzi("Glasses", "单边眼镜左_Luzi");
-            AssetAdd_Luzi("Glasses", "单边眼镜右_Luzi");
-            AssetAdd_Luzi("ItemDevices", "猪猪_Luzi");
-            AssetAdd_Luzi("ItemDevices", "玻璃罐子_Luzi");
-            AssetAdd_Luzi("TailStraps", "穿戴式狗尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "白色穿戴式狼尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "穿戴式浅色猫尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "穿戴式软小狗尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "大型穿戴式狼尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "小型穿戴式狼尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "小型穿戴式软猫尾:镜像_Luzi");
-            AssetAdd_Luzi("TailStraps", "穿戴式猫尾:镜像_Luzi");
-            AssetAdd_Luzi("ItemTorso", "鞍_Luzi");
-            AssetAdd_Luzi("ItemTorso", "缰绳_Luzi");
-            AssetAdd_Luzi("Panties", "淫纹_Luzi");
-            AssetAdd_Luzi("Wings", "蝴蝶结背饰_Luzi");
-            AssetAdd_Luzi("Socks", "圣诞_Luzi");
-            AssetAdd_Luzi("ItemArms", "乳胶宠物拘束服_Luzi");
-            AssetAdd_Luzi("ItemHandheld", "电蚊拍_Luzi");
-            // AssetAdd_Luzi("ItemLegs", "单腿吊_Luzi");
-            // AssetAdd_Luzi("ItemLegs", "M开腿吊_Luzi");
-            // AssetAdd_Luzi("ItemBoots", "隐藏四肢_Luzi");
-            AssetAdd_Luzi("ItemDevices", "床左边_Luzi");
-            AssetAdd_Luzi("ItemDevices", "床右边_Luzi");
-            AssetAdd_Luzi("ItemAddon", "被子左边_Luzi");
-            AssetAdd_Luzi("ItemAddon", "被子右边_Luzi");
-            AssetAdd_Luzi("Bra", "透视皮衣_Luzi");
-            AssetAdd_Luzi("ItemDevices", "窝瓜_Luzi");
-            AssetAdd_Luzi("SuitLower", "鱼鱼尾_Luzi");
-            AssetAdd_Luzi("ItemTorso2", "拘束套装_Luzi");
-            AssetAdd_Luzi("HairAccessory1", "奶牛耳_Luzi");
-            AssetAdd_Luzi("ItemHood", "纸袋_Luzi");
-
-
-            AssetAdd_Luzi("Socks", "踩脚袜_Luzi");
-            AssetAdd_Luzi("Socks", "条纹袜_Luzi");
-            AssetAdd_Luzi("Socks", "条纹袜2_Luzi");
-
-            isAssetAdded = true;
-        }
-        next(args);
-    });
-
-    // ================================================================================
-    // ================================================================================
     AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
         Archetype: ExtendedArchetype.MODULAR,
         Modules: [
@@ -1067,8 +961,7 @@
         ],
     };
 
-    // ================================================================================
-    // ================================================================================
+
     const dialogMap = new Map([
         ['ItemDevices玻璃罐子_LuziSelectBase', '选择罐子配置'], ['ItemDevices玻璃罐子_LuziSelect窗户', '设置窗户'], ['ItemDevices玻璃罐子_LuziModule窗户', '窗户'], ['ItemDevices玻璃罐子_LuziOptionc0', '无'], ['ItemDevices玻璃罐子_LuziOptionc1', '密封'], ['ItemDevices玻璃罐子_LuziSetc0', 'SourceCharacter打开了DestinationCharacter的罐子'], ['ItemDevices玻璃罐子_LuziSetc1', 'SourceCharacter封上了DestinationCharacter的罐子'], ['ItemDevices玻璃罐子_LuziSelect腿部拘束', '设置腿部拘束'], ['ItemDevices玻璃罐子_LuziModule腿部拘束', '腿部拘束'], ['ItemDevices玻璃罐子_LuziOptiont0', '无'], ['ItemDevices玻璃罐子_LuziOptiont1', '腿拘束'], ['ItemDevices玻璃罐子_LuziSett0', "SourceCharacter移除了DestinationCharacter双腿的拘束"], ['ItemDevices玻璃罐子_LuziSett1', "SourceCharacter将DestinationCharacter的双腿束缚在一起"], ['ItemDevices玻璃罐子_LuziSelect手臂拘束', '设置手臂拘束'], ['ItemDevices玻璃罐子_LuziModule手臂拘束', '手臂拘束'], ['ItemDevices玻璃罐子_LuziOptions0', '无'], ['ItemDevices玻璃罐子_LuziOptions1', '手臂拘束'], ['ItemDevices玻璃罐子_LuziSets0', "SourceCharacter移除了DestinationCharacter手腕和手肘的拘束"], ['ItemDevices玻璃罐子_LuziSets1', "SourceCharacter将DestinationCharacter的手腕和手肘束缚到她的身后"], ['ItemDevices玻璃罐子_LuziSelect管道', '设置管道'], ['ItemDevices玻璃罐子_LuziModule管道', '管道'], ['ItemDevices玻璃罐子_LuziOptiongz0', '无'], ['ItemDevices玻璃罐子_LuziOptiongz1', '连接身体'], ['ItemDevices玻璃罐子_LuziSetgz0', 'SourceCharacter移除了连接DestinationCharacter的身体的管子'], ['ItemDevices玻璃罐子_LuziSetgz1', 'SourceCharacter将管子连接进了DestinationCharacter的身体'], ['ItemDevices玻璃罐子_LuziSelect液体', '设置液体'], ['ItemDevices玻璃罐子_LuziModule液体', '液体'], ['ItemDevices玻璃罐子_LuziOptionyt0', '无'], ['ItemDevices玻璃罐子_LuziOptionyt1', '注入液体'], ['ItemDevices玻璃罐子_LuziSetyt0', 'SourceCharacter排空了DestinationCharacter身体和罐子里的液体'], ['ItemDevices玻璃罐子_LuziSetyt1', 'DestinationCharacter的身体和罐子充满了液体'], ['ItemDevices玻璃罐子_LuziSelect快感模块', '设置快感模块'], ['ItemDevices玻璃罐子_LuziModule快感模块', '快感模块'], ['ItemDevices玻璃罐子_LuziOptionk0', '关闭'], ['ItemDevices玻璃罐子_LuziOptionk1', '低'], ['ItemDevices玻璃罐子_LuziOptionk2', '一般'], ['ItemDevices玻璃罐子_LuziOptionk3', '高'], ['ItemDevices玻璃罐子_LuziOptionk4', '最多'], ['ItemDevices玻璃罐子_LuziSetk0', "插在DestinationCharacter体内的振动装置停止振动"], ['ItemDevices玻璃罐子_LuziSetk1', "插在DestinationCharacter体内的振动装置轻微逗弄起来"], ['ItemDevices玻璃罐子_LuziSetk2', "插在DestinationCharacter体内的振动装置带温和嗡鸣着"], ['ItemDevices玻璃罐子_LuziSetk3', "插在DestinationCharacter体内的振动装置猛烈地颤动"], ['ItemDevices玻璃罐子_LuziSetk4', "插在DestinationCharacter体内的振动装置以最大速度振动着"], ['ItemDevices玻璃罐子_LuziSelect电击模块', '设置电击模块'], ['ItemDevices玻璃罐子_LuziModule电击模块', '电击模块'], ['ItemDevices玻璃罐子_LuziOptiond0', '关闭'], ['ItemDevices玻璃罐子_LuziOptiond1', '低'], ['ItemDevices玻璃罐子_LuziOptiond2', '一般'], ['ItemDevices玻璃罐子_LuziOptiond3', '高'], ['ItemDevices玻璃罐子_LuziSetd0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置关闭了'], ['ItemDevices玻璃罐子_LuziSetd1', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级1'], ['ItemDevices玻璃罐子_LuziSetd2', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级2'], ['ItemDevices玻璃罐子_LuziSetd3', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级3'], ['ItemDevices玻璃罐子_LuziSelect高潮锁', '设置高潮锁'], ['ItemDevices玻璃罐子_LuziModule高潮锁', '高潮锁'], ['ItemDevices玻璃罐子_LuziOptiong0', '允许'], ['ItemDevices玻璃罐子_LuziOptiong1', '寸止'], ['ItemDevices玻璃罐子_LuziOptiong2', '拒绝'], ['ItemDevices玻璃罐子_LuziSetg0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮'], ['ItemDevices玻璃罐子_LuziSetg1', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式'], ['ItemDevices玻璃罐子_LuziSetg2', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式'],
         ['ItemDevices窝瓜_LuziSelect', '选择窝配置'],
@@ -1087,140 +980,204 @@
 
 
 
-    mod.hookFunction("LoginResponse", 50, (args, next) => {
+
+    function mergeAddAssetIntoFemale3DCGAssets() { // 把服装拓展脚本数据转进 AssetFemale3DCG
+        for (const groupName in addAsset) {
+            const group = AssetFemale3DCG.find(group => group.Group === groupName);
+            if (group) {
+                group.Asset.push(...addAsset[groupName]);
+            }
+        }
+    }
+
+    function AssetAdd_Luzi(assetgroupName, assetName) {
+        let assetGtoup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
+        let asset = assetGtoup.Asset.find(asset => asset.Name === assetName)
+        let G = AssetGroupMap.get(assetgroupName)
+        AssetAdd(G, asset, AssetFemale3DCGExtended);
+    }
+
+    function addExtraOutfitsToAssets() {
+        // 需要执行相同操作的项的数组
+        const itemsToCopy = ["Cloth", "ClothAccessory", "ClothLower", "Panties", "Necklace", "Bra", "Hat", "Shoes", "HairAccessory3", "Mask", "Wings", "Gloves"];
+
+        // 循环遍历每个需要复制的项
+        itemsToCopy.forEach(itemName => {
+            // 找到对应项的索引位置
+            let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
+            if (itemIndex !== -1) { // 如果找到了对应项
+                // 复制对应项
+                let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
+                itemCopy.Group = itemName + "_笨笨蛋Luzi"; // 修改复制的项的名称为原名称加上 "2"
+
+                // 获取复制项的 Asset 数组
+                let copiedAssets = itemCopy.Asset;
+                copiedAssets.forEach(asset => {
+                    // 给每个对象都加上 Random: false 属性（如果不存在的话）
+                    asset.Random = false;
+                });
+                AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
+            }
+        });
+
+        // 遍历 itemsToCopy 中的每一项
+        itemsToCopy.forEach(itemName => {
+            // 找到对应项的对象
+            const item = AssetFemale3DCGExtended[itemName];
+            if (item) { // 如果找到了对应项
+                // 复制对应项
+                const itemCopy = { ...item };
+                // 修改复制的项的名称为原名称加上 "2"
+                const newItemName = itemName + "_笨笨蛋Luzi";
+                itemCopy.Group = newItemName;
+
+                // 将修改后的项添加到原数组中
+                AssetFemale3DCGExtended[newItemName] = itemCopy;
+            }
+        });
+
+        // 提取 AssetFemale3DCG 中 Group 属性包含 '_笨笨蛋Luzi' 的对象存入新数组
+        const filteredAssetFemale3DCG = AssetFemale3DCG.filter(asset => asset.Group.includes('_笨笨蛋Luzi'));
+        // 输出结果
+        AssetLoad(filteredAssetFemale3DCG, "Female3DCG", AssetFemale3DCGExtended);
+    }
+
+    function addExtraExpressionsToAssets() {
+        const emoticonContent = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频"];
+
+        AssetFemale3DCG.filter(A => A.Group === "Emoticon")
+            .forEach(group => group.AllowExpression.push(...emoticonContent));
+
+        AssetGroup.forEach(A => {
+            if (A.Name === "Emoticon") {
+                A.AllowExpression.push(...emoticonContent);
+            }
+        });
+    }
+
+
+    let isAssetAdded = false;
+    let isAssetAdded2 = false;
+    mod.hookFunction('LoginResponse', 0, (args, next) => {
+        if (!isAssetAdded) {
+            addExtraOutfitsToAssets();
+            addExtraExpressionsToAssets()
+
+
+            mergeAddAssetIntoFemale3DCGAssets();
+
+            for (const type in addAsset) {
+                addAsset[type].forEach(item => {
+                    AssetAdd_Luzi(String(type), String(item.Name));
+                });
+            }
+
+            isAssetAdded = true;
+        }
+
         next(args);
-
-        if (Asset) {        // 确保 Asset 不为 undefined
-            const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
-            assetDescription.forEach(item => {
-                if (item.Name) {
-                    item.Description = item.Name.replace('_Luzi', '');
-                }
-            });
-        }
-        if (AssetGroup) {        // 确保 Asset 不为 undefined
-            // 创建一个映射存储名称和描述的对应关系
-            const descriptionMap = new Map([
-                ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
-                ['ClothLower_笨笨蛋Luzi', '🍔下装2'],
-                ['Panties_笨笨蛋Luzi', '🍔内裤2'],
-                ['ClothAccessory_笨笨蛋Luzi', '🍔服装配饰2'],
-                ['Necklace_笨笨蛋Luzi', '🍔项链2'],
-                ['Bra_笨笨蛋Luzi', '🍔胸罩2'],
-                ['Shoes_笨笨蛋Luzi', '🍔鞋子2'],
-                ['Hat_笨笨蛋Luzi', '🍔帽子2'],
-                ['HairAccessory3_笨笨蛋Luzi', '🍔发饰2'],
-                ['Gloves_笨笨蛋Luzi', '🍔手套2'],
-                ['Mask_笨笨蛋Luzi', '🍔面具2'],
-                ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
-
-            ]);
-            // 遍历 AssetGroup，并根据名称从映射中获取描述并设置给对应的道具对象
-            AssetGroup.forEach(item => {
-                if (item.Name) {
-                    const description = descriptionMap.get(item.Name);
-                    if (description) {
-                        item.Description = description;
-                    }
-                }
-            });
-
-        }
-        // 创建一个函数，用于替换描述
-        function replaceDescription(baseName, luZiName) {
-            // 获取基本名称和笨笨蛋Luzi名称的 Asset 数组
-            const baseAssets = AssetGroup.find(item => item.Name === baseName)?.Asset;
-            const luZiAssets = AssetGroup.find(item => item.Name === luZiName)?.Asset;
-
-            // 如果两者都存在
-            if (baseAssets && luZiAssets) {
-                // 遍历基本名称的 Asset 数组
-                baseAssets.forEach(baseAsset => {
-                    // 在笨笨蛋Luzi名称的 Asset 数组中查找相同的 Name
-                    const matchingAsset = luZiAssets.find(asset => asset.Name === baseAsset.Name);
-                    if (matchingAsset) {
-                        // 如果找到了相同的 Name，则将笨笨蛋Luzi的 Description 替换为基本名称的 Description
-                        matchingAsset.Description = baseAsset.Description;
+        if (!isAssetAdded2) {
+            if (Asset) {        // 用于删除自定义服装的_Luzi后缀
+                const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
+                assetDescription.forEach(item => {
+                    if (item.Name) {
+                        item.Description = item.Name.replace('_Luzi', '');
                     }
                 });
             }
+            if (AssetGroup) {        // 用于修改服装组名
+                const descriptionMap = new Map([
+                    ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
+                    ['ClothLower_笨笨蛋Luzi', '🍔下装2'],
+                    ['Panties_笨笨蛋Luzi', '🍔内裤2'],
+                    ['ClothAccessory_笨笨蛋Luzi', '🍔服装配饰2'],
+                    ['Necklace_笨笨蛋Luzi', '🍔项链2'],
+                    ['Bra_笨笨蛋Luzi', '🍔胸罩2'],
+                    ['Shoes_笨笨蛋Luzi', '🍔鞋子2'],
+                    ['Hat_笨笨蛋Luzi', '🍔帽子2'],
+                    ['HairAccessory3_笨笨蛋Luzi', '🍔发饰2'],
+                    ['Gloves_笨笨蛋Luzi', '🍔手套2'],
+                    ['Mask_笨笨蛋Luzi', '🍔面具2'],
+                    ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
+
+                ]);
+                AssetGroup.forEach(item => {
+                    if (item.Name) {
+                        const description = descriptionMap.get(item.Name);
+                        if (description) {
+                            item.Description = description;
+                        }
+                    }
+                });
+
+            }
+
+
+            // 用于替换🍔组内的服装名字 ============================
+            const nameMap = {
+                'Cloth': 'Cloth_笨笨蛋Luzi',
+                'ClothLower': 'ClothLower_笨笨蛋Luzi',
+                'Panties': 'Panties_笨笨蛋Luzi',
+                'ClothAccessory': 'ClothAccessory_笨笨蛋Luzi',
+                'Necklace': 'Necklace_笨笨蛋Luzi',
+                'Bra': 'Bra_笨笨蛋Luzi',
+                'Shoes': 'Shoes_笨笨蛋Luzi',
+                'Hat': 'Hat_笨笨蛋Luzi',
+                'HairAccessory3': 'HairAccessory3_笨笨蛋Luzi',
+                'Gloves': 'Gloves_笨笨蛋Luzi',
+                'Mask': 'Mask_笨笨蛋Luzi',
+                'Wings': 'Wings_笨笨蛋Luzi'
+            };
+
+            function replaceDescription(baseName, luZiName) {
+                const baseAssets = AssetGroup.find(item => item.Name === baseName)?.Asset;
+                const luZiAssets = AssetGroup.find(item => item.Name === luZiName)?.Asset;
+
+                if (baseAssets && luZiAssets) {
+                    baseAssets.forEach(baseAsset => {
+                        const matchingAsset = luZiAssets.find(asset => asset.Name === baseAsset.Name);
+                        if (matchingAsset) {
+                            matchingAsset.Description = baseAsset.Description;
+                        }
+                    });
+                }
+            }
+
+            for (const baseName in nameMap) {
+                replaceDescription(baseName, nameMap[baseName]);
+            }
+            // ========================================================
+            dialogMap.forEach((value, key) => { PlayerDialog.set(key, value); });
+            // ========================================================
+            isAssetAdded2 = true;
         }
-
-
-        // 执行替换操作
-        replaceDescription('Cloth', 'Cloth_笨笨蛋Luzi');
-        replaceDescription('ClothLower', 'ClothLower_笨笨蛋Luzi');
-        replaceDescription('Panties', 'Panties_笨笨蛋Luzi');
-        replaceDescription('ClothAccessory', 'ClothAccessory_笨笨蛋Luzi');
-        replaceDescription('Necklace', 'Necklace_笨笨蛋Luzi');
-        replaceDescription('Bra', 'Bra_笨笨蛋Luzi');
-        replaceDescription('Shoes', 'Shoes_笨笨蛋Luzi');
-        replaceDescription('Hat', 'Hat_笨笨蛋Luzi');
-        replaceDescription('HairAccessory3', 'HairAccessory3_笨笨蛋Luzi');
-        replaceDescription('Gloves', 'Gloves_笨笨蛋Luzi');
-        replaceDescription('Mask', 'Mask_笨笨蛋Luzi');
-        replaceDescription('Wings', 'Wings_笨笨蛋Luzi');
-
-
-
-
-        dialogMap.forEach((value, key) => { PlayerDialog.set(key, value); });
     });
 
-    mod.hookFunction("ServerSend", 5, (args, next) => {
-        if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
-            let data = args[1];
-            let Dictionary = data.Dictionary;
-            if (Dictionary) {
-                if (Dictionary[3]?.AssetName?.includes('_Luzi')) {
-                    if (data.Content === "ActionUse") {
-                        let AssetName = Dictionary[3].AssetName;
-                        data.Dictionary.push({
-                            Tag: `NextAsset`, Text: AssetName.replace('_Luzi', '')
-                        });
-                    };
-                    if (data.Content === "ActionRemove") {
-                        let AssetName = Dictionary[3].AssetName;
-                        data.Dictionary.push({
-                            Tag: `PrevAsset`, Text: AssetName.replace('_Luzi', '')
-                        });
-                    };
-                }
-            };
-            if (Dictionary[3]?.AssetName?.includes('_Luzi')) {
-                if (data.Content === "ActionSwap") {
-                    let Dictionary = data.Dictionary;
-                    if (Dictionary) {
-                        let AssetName = Dictionary[3].AssetName;
-                        data.Dictionary.push({
-                            Tag: `PrevAsset`, Text: AssetName.replace('_Luzi', '')
-                        });
-                    };
-                }
-            };
-            if (Dictionary[4]?.AssetName?.includes('_Luzi')) {
-                if (data.Content === "ActionSwap") {
-                    let Dictionary = data.Dictionary;
-                    if (Dictionary) {
-                        let AssetName = Dictionary[4].AssetName;
-                        data.Dictionary.push({
-                            Tag: `NextAsset`, Text: AssetName.replace('_Luzi', '')
-                        });
-                    };
-                }
-            };
-        }
-        if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
-            let data = args[1];
-            const Content = data.Content;
-            // 检查 Content 是否含 "_Luzi"
-            if (Content.indexOf("_Luzi")) {
-                // 在 PlayerDialog 映射中查找对应的消息
-                const msg = PlayerDialog.get(Content) || ""; // 如果找不到，则使用
 
-                // 将修改后的消息添加到 Dictionary 中
+    // ================================================================================
+    // ================================================================================
+
+    mod.hookFunction("ServerSend", 5, (args, next) => {
+        const data = args[1];
+        if (args[0] === "ChatRoomChat" && data?.Type === "Action") {
+            const Content = data.Content;
+            const Dictionary = data.Dictionary;
+
+            if (Dictionary && (Content === "ActionUse" || Content === "ActionRemove" || Content === "ActionSwap")) {
+                const targetIndex = Content === "ActionSwap" ? 4 : 3;
+                const AssetName = Dictionary[targetIndex]?.AssetName;
+                if (AssetName?.includes('_Luzi')) {
+                    const tag = Content === "ActionSwap" ? "PrevAsset" : "NextAsset";
+                    data.Dictionary.push({
+                        Tag: tag,
+                        Text: AssetName.replace('_Luzi', '')
+                    });
+                }
+            } else if (Content?.indexOf("_Luzi") !== -1) {
+                const msg = PlayerDialog.get(Content) || "";
                 data.Dictionary.push({
-                    Tag: "MISSING PLAYER DIALOG: " + Content, Text: msg,
+                    Tag: "MISSING PLAYER DIALOG: " + Content,
+                    Text: msg,
                 });
             }
         }
