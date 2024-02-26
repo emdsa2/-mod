@@ -173,28 +173,31 @@
 
     mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
-        // console.log(data)
+
         if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
+
         if (PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
         }
+
         if (data.includes("_Luzi")) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
-        // console.log(data)
+
         next(args);
     });
 
     mod.hookFunction('DrawButton', 1, (args, next) => {
         const data = args[6];
-        // console.log(data)
+
         if (typeof data === 'string' && data.includes("_Luzi")) {
             let data = args[6];
             args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
+        
         next(args);
     });
 
