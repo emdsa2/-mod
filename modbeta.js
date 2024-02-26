@@ -240,7 +240,7 @@
     mod.hookFunction('DrawButton', 1, (args, next) => {
         const data = args[6];
         // console.log(data)
-        if (data.includes("_Luzi")) {
+        if (typeof data === 'string' &&data.includes("_Luzi")) {
             let data = args[6];
             args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
@@ -1318,6 +1318,7 @@
         }
 
         next(args);
+
         if (!isAssetAdded2) {
             if (Asset) {        // 用于删除自定义服装的_Luzi后缀
                 const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
@@ -1522,20 +1523,5 @@
 
     // ================================================================================
     // ================================================================================
-    // 道具名称:  // 输入框
-    // 道具位置:  // 输入框
-    // 道具缩略图:  // 输入框
-    // 道具图片:  // 输入框
-    // X轴: // 输入框
-    // Y轴: // 输入框
-
-
-
-
-
-
-
-
-
 
 })();
