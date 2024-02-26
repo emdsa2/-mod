@@ -654,7 +654,20 @@
                 ]
             },
             { Name: "修女_Luzi", Random: false, Prerequisite: ["HasBreasts"], Layer: [{ Name: "衣服", Priority: 32, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "BackBoxTie", BackElbowTouch: "BackBoxTie", BackCuffs: "BackBoxTie", }, }, { Name: "带子", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "披肩", Priority: 34, PoseMapping: { TapedHands: "", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "后面", CopyLayerColor: "衣服", Priority: 5, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "" }, }, { Name: "后面2", Priority: 4, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, },] },
-            { Name: "圣诞_Luzi", Random: false, Prerequisite: ["HasBreasts"], PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "BackBoxTie", BackElbowTouch: "BackBoxTie", BackCuffs: "BackBoxTie", }, Layer: [{ Name: "蝴蝶结", Priority: 33, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "Yoked", BackBoxTie: "Yoked", BackElbowTouch: "Yoked", BackCuffs: "Yoked", } }, { Name: "披肩", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "Yoked", OverTheHead: "Yoked", BackBoxTie: "Yoked", BackElbowTouch: "Yoked", BackCuffs: "Yoked", } }, { Name: "绒毛", Priority: 32, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", } }, { Name: "条纹", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", } }, { Name: "布料", Priority: 31, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "Yoked", BackBoxTie: "Yoked", BackElbowTouch: "Yoked", BackCuffs: "Yoked", } }, { Name: "打底", Priority: 31, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", } }] },
+            { 
+                Name: "圣诞_Luzi", Random: false, Prerequisite: ["HasBreasts"], 
+                PoseMapping: { 
+                    TapedHands: "TapedHands", 
+                    Yoked: "Yoked", 
+                    OverTheHead: "OverTheHead", 
+                    BackBoxTie: "BackBoxTie", 
+                    BackElbowTouch: "BackBoxTie", 
+                    BackCuffs: "BackBoxTie", 
+                }, 
+                Layer: [
+                    { Name: "蝴蝶结", Priority: 33, 
+                    PoseMapping: { 
+                        TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "Yoked", BackBoxTie: "Yoked", BackElbowTouch: "Yoked", BackCuffs: "Yoked", } }, { Name: "披肩", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "Yoked", OverTheHead: "Yoked", BackBoxTie: "Yoked", BackElbowTouch: "Yoked", BackCuffs: "Yoked", } }, { Name: "绒毛", Priority: 32, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", } }, { Name: "条纹", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", } }, { Name: "布料", Priority: 31, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "Yoked", BackBoxTie: "Yoked", BackElbowTouch: "Yoked", BackCuffs: "Yoked", } }, { Name: "打底", Priority: 31, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", } }] },
             {
                 Name: "礼服_Luzi", Random: false,
                 Gender: "F",
