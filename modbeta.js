@@ -217,9 +217,6 @@
         next(args);
     });
 
-
-
-
     mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
         // console.log(data)
