@@ -644,7 +644,7 @@
         ItemDevices: [
             { Name: "猪猪_Luzi", Top: -110, Random: false, SetPose: ["KneelingSpread"], AllowActivePose: ["KneelingSpread"], OverrideHeight: { Height: -150, Priority: 21 }, Layer: [{ Name: "鼻子", Priority: 56 }, { Name: "猪猪", Priority: 55 }, { Name: "缰绳", Priority: 26 },], },
             {
-                Name: "玻璃罐子_Luzi", Random: false, AllowLock: true, Difficulty: 50,
+                Name: "玻璃罐子_Luzi", Random: false, AllowLock: true, Difficulty: 50, Top: -110,
                 Hide: ["Mouth", "Glasses", "TailStraps"], DefaultColor: ["#151515", "#151515", "#FFFFFF", "#FFFFFF", "#2A2A2A", "#404040", "#2A2A2A", "#404040", "#EE168E", "#EE168E", "#9E2184", "#6D0B4A", "#4A4242", "#FF3CC3", "#E17070"],
                 AllowActivePose: ["BackBoxTie", 'BackCuffs', 'BackElbowTouch', 'LegsClosed'],
                 Extended: true,
@@ -807,7 +807,7 @@
         ],
         ItemTorso2: [
             {
-                Name: "拘束套装_Luzi", Random: false,
+                Name: "拘束套装_Luzi", Top: 0, Left: 0, Random: false,
                 Gender: "F",
                 Difficulty: 25,
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -932,7 +932,7 @@
             { Name: "淫纹_Luzi", Random: false, Gender: "F", Prerequisite: ["HasVagina"], Fetish: ["Lingerie"], DefaultColor: ["#E975A0"], },
         ],
         Wings: [
-            { Name: "蝴蝶结背饰_Luzi", Random: false, },
+            { Name: "蝴蝶结背饰_Luzi", Top: 0, Left: 0, Random: false, },
         ],
         Socks: [
             { Name: "圣诞_Luzi", Top: -110, Left: 0, Random: false, Layer: [{ Name: "袜子", AllowColorize: false }, { Name: "绒毛", AllowColorize: false },], },
@@ -956,7 +956,7 @@
         ],
         ItemHood: [
             {
-                Name: "纸袋_Luzi", Left: 0, Random: false,
+                Name: "纸袋_Luzi", Top: 0, Left: 0, Random: false,
                 Layer: [
                     { Name: "胶带", Priority: 58 },
                     { Name: "字", Priority: 57 },
