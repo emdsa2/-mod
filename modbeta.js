@@ -614,7 +614,7 @@
         ],
         Cloth: [
             {
-                Name: "女仆装_Luzi",
+                Name: "女仆装_Luzi", // 不用修改位置
                 Random: false,
                 Prerequisite: ["HasBreasts"],
                 Layer: [
@@ -655,7 +655,8 @@
             },
             { Name: "修女_Luzi", Random: false, Prerequisite: ["HasBreasts"], Layer: [{ Name: "衣服", Priority: 32, PoseMapping: { TapedHands: "TapedHands", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "BackBoxTie", BackElbowTouch: "BackBoxTie", BackCuffs: "BackBoxTie", }, }, { Name: "带子", Priority: 33, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "披肩", Priority: 34, PoseMapping: { TapedHands: "", Yoked: "Yoked", OverTheHead: "OverTheHead", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, }, { Name: "后面", CopyLayerColor: "衣服", Priority: 5, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "" }, }, { Name: "后面2", Priority: 4, PoseMapping: { TapedHands: "", Yoked: "", OverTheHead: "", BackBoxTie: "", BackElbowTouch: "", BackCuffs: "", }, },] },
             { 
-                Name: "圣诞_Luzi", Random: false, Prerequisite: ["HasBreasts"], 
+                Name: "圣诞_Luzi", // 不用修改位置
+                Random: false, Prerequisite: ["HasBreasts"], 
                 PoseMapping: { 
                     TapedHands: "TapedHands", 
                     Yoked: "Yoked", 
