@@ -578,17 +578,6 @@
         "Assets/Female3DCG/ItemTorso/Spread/拘束套装_Luzi_XLarge_链子.png": "https://emdsa2.github.io/-mod/image/拘束套装/Spread/拘束套装_Luzi_XLarge_链子.png",
 
 
-        "Assets/Female3DCG/HairAccessory1/奶牛耳_Luzi_牛耳.png": "https://emdsa2.github.io/-mod/image/奶牛耳/奶牛耳_Luzi.png",
-        "Assets/Female3DCG/HairAccessory1/奶牛耳_Luzi_牛角.png": "https://emdsa2.github.io/-mod/image/奶牛耳/奶牛角.png",
-
-<<<<<<< HEAD
-        "Assets/Female3DCG/ItemHood/纸袋_Luzi_胶带.png": "https://emdsa2.github.io/-mod/Female3DCG/ItemHood/纸袋_Luzi_胶带.png",
-=======
-        "Assets/Female3DCG/ItemHood/纸袋_Luzi_胶带.png": "https://emdsa2.github.io/-mod/image/纸袋/胶带.png",
->>>>>>> 36b364ac88b030d52d9e55cd779975d2d447ef70
-        "Assets/Female3DCG/ItemHood/纸袋_Luzi_字.png": "https://emdsa2.github.io/-mod/image/纸袋/字.png",
-        "Assets/Female3DCG/ItemHood/纸袋_Luzi_A4纸.png": "https://emdsa2.github.io/-mod/image/纸袋/A4纸.png",
-        "Assets/Female3DCG/ItemHood/纸袋_Luzi_纸袋.png": "https://emdsa2.github.io/-mod/image/纸袋/纸袋.png",
 
 
 
