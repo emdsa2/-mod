@@ -64,60 +64,7 @@
 
     };
 
-    // 添加 ICONSSSSSSS2
-    const ICONSSSSSSS2 = {
-
-        "Assets/Female3DCG/Socks/踩脚袜_Luzi_Small.png": "https://i.ibb.co/qDnQ9jh/Small-Default.png",
-        "Assets/Female3DCG/Socks/Kneel/踩脚袜_Luzi_Small.png": "https://i.ibb.co/XZbm41w/Small-Kneel.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/TwJJb1X/Small-Kneeling-Spread.png",
-        "Assets/Female3DCG/Socks/LegsClosed/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bKFW1xy/Small-Legs-Closed.png",
-        "Assets/Female3DCG/Socks/Spread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bRWddsw/Small-Spread.png",
-
-        // "Assets/Female3DCG/Socks/踩脚袜_Luzi_Small.png": "https://i.ibb.co/qDnQ9jh/Small-Default.png",
-        // "Assets/Female3DCG/Socks/Kneel/踩脚袜_Luzi_Small.png": "https://i.ibb.co/XZbm41w/Small-Kneel.png",
-        // "Assets/Female3DCG/Socks/KneelingSpread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/TwJJb1X/Small-Kneeling-Spread.png",
-        // "Assets/Female3DCG/Socks/LegsClosed/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bKFW1xy/Small-Legs-Closed.png",
-        // "Assets/Female3DCG/Socks/Spread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bRWddsw/Small-Spread.png",
-
-        // "Assets/Female3DCG/Socks/踩脚袜_Luzi_Small.png": "https://i.ibb.co/qDnQ9jh/Small-Default.png",
-        // "Assets/Female3DCG/Socks/Kneel/踩脚袜_Luzi_Small.png": "https://i.ibb.co/XZbm41w/Small-Kneel.png",
-        // "Assets/Female3DCG/Socks/KneelingSpread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/TwJJb1X/Small-Kneeling-Spread.png",
-        // "Assets/Female3DCG/Socks/LegsClosed/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bKFW1xy/Small-Legs-Closed.png",
-        // "Assets/Female3DCG/Socks/Spread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bRWddsw/Small-Spread.png",
-
-        // "Assets/Female3DCG/Socks/踩脚袜_Luzi_Small.png": "https://i.ibb.co/qDnQ9jh/Small-Default.png",
-        // "Assets/Female3DCG/Socks/Kneel/踩脚袜_Luzi_Small.png": "https://i.ibb.co/XZbm41w/Small-Kneel.png",
-        // "Assets/Female3DCG/Socks/KneelingSpread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/TwJJb1X/Small-Kneeling-Spread.png",
-        // "Assets/Female3DCG/Socks/LegsClosed/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bKFW1xy/Small-Legs-Closed.png",
-        // "Assets/Female3DCG/Socks/Spread/踩脚袜_Luzi_Small.png": "https://i.ibb.co/bRWddsw/Small-Spread.png",
-
-
-
-
-
-        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/测试.png",
-        // "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/缰绳_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/鞍_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/鞍_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/鞍_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/鞍_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/AllFours/鞍_Luzi_Small.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/AllFours/鞍_Luzi_Normal.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/AllFours/鞍_Luzi_Large.png": "https://emdsa2.github.io/-mod/image/空.png",
-        "Assets/Female3DCG/ItemTorso/AllFours/鞍_Luzi_XLarge.png": "https://emdsa2.github.io/-mod/image/空.png",
-
-
-
-
-
-    };
-
     // =======================================================================================
-
-
 
     const ICONS4 = Object.freeze({
         "Assets/Female3DCG/ItemDevices/床左边_Luzi_枕头.png": {
@@ -240,7 +187,7 @@
     mod.hookFunction('DrawButton', 1, (args, next) => {
         const data = args[6];
         // console.log(data)
-        if (typeof data === 'string' &&data.includes("_Luzi")) {
+        if (typeof data === 'string' && data.includes("_Luzi")) {
             let data = args[6];
             args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
@@ -1299,7 +1246,6 @@
 
 
     let isAssetAdded = false;
-    let isAssetAdded2 = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
             addExtraOutfitsToAssets();
@@ -1314,12 +1260,8 @@
                 });
             }
 
-            isAssetAdded = true;
-        }
 
-        next(args);
 
-        if (!isAssetAdded2) {
             if (Asset) {        // 用于删除自定义服装的_Luzi后缀
                 const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
                 assetDescription.forEach(item => {
@@ -1392,8 +1334,10 @@
             // ========================================================
             dialogMap.forEach((value, key) => { PlayerDialog.set(key, value); });
             // ========================================================
-            isAssetAdded2 = true;
+            isAssetAdded = true;
         }
+
+        next(args);
     });
 
 
