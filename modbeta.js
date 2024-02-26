@@ -164,6 +164,10 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
+        if (data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
+            args[2] = 0;
+        }
+
         next(args);
     });
 
