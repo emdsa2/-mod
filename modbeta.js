@@ -335,57 +335,23 @@
 
 
 
-        "Assets/Female3DCG/Socks/圣诞_Luzi_Small_绒毛.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_Small_绒毛.png",
-        "Assets/Female3DCG/Socks/圣诞_Luzi_Small_袜子.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_Small_袜子.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_Small_绒毛.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_Small_绒毛.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_Small_袜子.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_Small_袜子.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_Small_绒毛.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_Small_绒毛.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_Small_袜子.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_Small_袜子.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_Small_绒毛.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_Small_绒毛.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_Small_袜子.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_Small_袜子.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_Small_绒毛.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_Small_绒毛.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_Small_袜子.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_Small_袜子.png",
 
-        "Assets/Female3DCG/Socks/圣诞_Luzi_Normal_绒毛.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_Normal_绒毛.png",
-        "Assets/Female3DCG/Socks/圣诞_Luzi_Normal_袜子.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_Normal_袜子.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_Normal_绒毛.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_Normal_绒毛.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_Normal_袜子.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_Normal_袜子.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_Normal_绒毛.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_Normal_绒毛.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_Normal_袜子.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_Normal_袜子.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_Normal_绒毛.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_Normal_绒毛.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_Normal_袜子.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_Normal_袜子.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_Normal_绒毛.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_Normal_绒毛.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_Normal_袜子.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_Normal_袜子.png",
 
-        "Assets/Female3DCG/Socks/圣诞_Luzi_Large_绒毛.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_Large_绒毛.png",
-        "Assets/Female3DCG/Socks/圣诞_Luzi_Large_袜子.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_Large_袜子.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_Large_绒毛.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_Large_绒毛.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_Large_袜子.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_Large_袜子.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_Large_绒毛.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_Large_绒毛.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_Large_袜子.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_Large_袜子.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_Large_绒毛.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_Large_绒毛.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_Large_袜子.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_Large_袜子.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_Large_绒毛.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_Large_绒毛.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_Large_袜子.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_Large_袜子.png",
 
-        "Assets/Female3DCG/Socks/圣诞_Luzi_XLarge_绒毛.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_XLarge_绒毛.png",
-        "Assets/Female3DCG/Socks/圣诞_Luzi_XLarge_袜子.png": "https://emdsa2.github.io/-mod/image/圣诞_Luzi_XLarge_袜子.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_XLarge_绒毛.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_XLarge_绒毛.png",
-        "Assets/Female3DCG/Socks/Kneel/圣诞_Luzi_XLarge_袜子.png": "https://emdsa2.github.io/-mod/image/Kneel_圣诞_Luzi_XLarge_袜子.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_XLarge_绒毛.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_XLarge_绒毛.png",
-        "Assets/Female3DCG/Socks/KneelingSpread/圣诞_Luzi_XLarge_袜子.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_圣诞_Luzi_XLarge_袜子.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_XLarge_绒毛.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_XLarge_绒毛.png",
-        "Assets/Female3DCG/Socks/LegsClosed/圣诞_Luzi_XLarge_袜子.png": "https://emdsa2.github.io/-mod/image/LegsClosed_圣诞_Luzi_XLarge_袜子.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_XLarge_绒毛.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_XLarge_绒毛.png",
-        "Assets/Female3DCG/Socks/Spread/圣诞_Luzi_XLarge_袜子.png": "https://emdsa2.github.io/-mod/image/Spread_圣诞_Luzi_XLarge_袜子.png",
+
+        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Small_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Small_皮.png",
+        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Small_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Small_丝.png",
+        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Small_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Small_皮.png",
+        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Small_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Small_丝.png",
+        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Normal_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Normal_皮.png",
+        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Normal_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Normal_丝.png",
+        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Normal_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Normal_皮.png",
+        "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Normal_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Normal_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Large_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Large_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Large_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Large_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Large_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Large_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Large_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Large_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_XLarge_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_XLarge_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_XLarge_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_XLarge_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_XLarge_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_XLarge_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_XLarge_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_XLarge_丝.png",
 
 
 
 
 
-
-
-        "Assets/Female3DCG/Bra/透视皮衣_Luzi_Small_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Small_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Small_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Small_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Small_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Small_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Small_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Small_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Normal_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Normal_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Normal_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Normal_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Normal_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Normal_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Normal_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Normal_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Large_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Large_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_Large_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_Large_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Large_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Large_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_Large_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_Large_丝.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_XLarge_皮.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_XLarge_皮.png", "Assets/Female3DCG/Bra/透视皮衣_Luzi_XLarge_丝.png": "https://emdsa2.github.io/-mod/image/透视皮衣_Luzi_XLarge_丝.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_XLarge_皮.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_XLarge_皮.png", "Assets/Female3DCG/Bra/BackElbowTouch/透视皮衣_Luzi_XLarge_丝.png": "https://emdsa2.github.io/-mod/image/BackElbowTouch_透视皮衣_Luzi_XLarge_丝.png",
 
 
 
@@ -596,13 +562,6 @@
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
 
-        // console.log(data)
-
-        // if (data.includes("_笨笨蛋炉子")) {
-        //     console.log(data)
-        // }
-
-
         if (data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
@@ -610,27 +569,6 @@
         if (data.includes("_Luzi")) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
-
-        if (ICONSSSSSSS[data]) {
-            args[0] = ICONSSSSSSS[data];
-            args[2] = 0;
-            args[3] = 590;
-        }
-
-        if (ICONSSSSSSS2[data]) {
-            args[0] = ICONSSSSSSS2[data];
-            args[2] = 0;
-            args[3] = 700;
-        }
-
-        if (ICONS4[data]) {
-            args[0] = ICONS4[data].imagePath;
-            ICONS4[data].handleFunction(args);
-        }
-
-        if (PreviewICONS2[data]) {
-            args[0] = PreviewICONS2[data];
         }
 
         next(args);
