@@ -62,75 +62,10 @@
         "Assets/Female3DCG/Socks/Kneel/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Kneel_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
-
-
-
-
-
-
-
-
     };
 
     // 添加 ICONSSSSSSS2
     const ICONSSSSSSS2 = {
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_本体.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_束带.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_拘束带.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_挂钩.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_趴下_锁扣.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁.png", 
-        "Assets/Female3DCG/ItemArms/KneelingSpread/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/Kneel/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服小_开腿.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Small_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Normal_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_Large_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png", 
-        "Assets/Female3DCG/ItemArms/AllFours/乳胶宠物拘束服_Luzi_XLarge_Lock.png": "https://emdsa2.github.io/-mod/image/乳胶宠物服锁_趴下.png",
-
-
-
-
-
-
-
-
-
 
         "Assets/Female3DCG/Socks/踩脚袜_Luzi_Small.png": "https://i.ibb.co/qDnQ9jh/Small-Default.png",
         "Assets/Female3DCG/Socks/Kneel/踩脚袜_Luzi_Small.png": "https://i.ibb.co/XZbm41w/Small-Kneel.png",
@@ -320,6 +255,17 @@
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
 
+        if (ICONSSSSSSS[data]) {
+            args[0] = ICONSSSSSSS[data];
+            args[2] = 0;
+            args[3] = 590;
+        }
+
+        if (ICONS4[data]) {
+            args[0] = ICONS4[data].imagePath;
+            ICONS4[data].handleFunction(args);
+        }
+
         if (data.includes("_Luzi")) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
@@ -492,7 +438,7 @@
             { Name: "乳胶衣下_Luzi", Top: -110, Left: 0, Random: false, Prerequisite: ["HasVagina"], Attribute: ["SuitLower"], },
             {
                 Name: "鱼鱼尾_Luzi", Top: -110, Left: 0, Random: false,
-                
+
                 OverrideHeight: { Height: 30, Priority: 21 }, Hide: [],
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "", Kneel: "", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
@@ -633,7 +579,7 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi", Top: 110, Left: 0, Random: false,
+                Name: "窝瓜_Luzi", Top: 140, Left: 0, Random: false,
                 Fetish: ["Pet"],
                 Difficulty: -25,
                 AllowLock: true,
@@ -653,32 +599,17 @@
                 Layer: [
                     { Name: "后", AllowColorize: true, Priority: 1 },
                     { Name: "前", AllowColorize: true, Priority: 58 },
-                    { Name: "灯", AllowColorize: true, Priority: 57 },
-                    { Name: "盖", AllowColorize: true, Priority: 2 },
+                    {
+                        Name: "灯", AllowColorize: true, Priority: 57, 
+                        
+                    },
+                    { Name: "盖", AllowColorize: true, Priority: 2, },
                     {
                         Name: "盖1",
                         Priority: 58,
                         AllowColorize: true,
                         AllowTypes: { typed: 1 },
-                        Alpha: [
-                            {
-                                Pose: ["Hogtied"],
-                                Group: [
-                                    "ItemBoots",
-                                    "Shoes",
-                                    "Socks",
-                                    "SocksLeft",
-                                    "SocksRight",
-                                    "ClothLower",
-                                    "SuitLower",
-                                    "BodyUpper",
-                                ],
-                                Masks: [[0, 0, 500, 100]],
-                            },
-                        ],
                     },
-
-
                 ]
             },
 
@@ -831,7 +762,7 @@
             { Name: "蝴蝶结背饰_Luzi", Top: -110, Left: 0, Random: false, },
         ],
         Socks: [
-            { Name: "圣诞_Luzi", Top: -110, Left: 0, Random: false, Layer: [{ Name: "袜子", AllowColorize: false }, { Name: "绒毛", AllowColorize: false },], },
+            { Name: "圣诞_Luzi", Top: 0, Left: 0, Random: false, Layer: [{ Name: "袜子", AllowColorize: false }, { Name: "绒毛", AllowColorize: false },], },
             { Name: "踩脚袜_Luzi", Random: false, },
             { Name: "条纹袜_Luzi", Random: false, },
             { Name: "条纹袜2_Luzi", Random: false, },
