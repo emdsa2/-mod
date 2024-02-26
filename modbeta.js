@@ -47,20 +47,7 @@
     // });
 
     const ICONSSSSSSS = {
-        "Assets/Female3DCG/ItemDevices/猪猪_Luzi_鼻子.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_鼻子.png",
-        "Assets/Female3DCG/ItemDevices/猪猪_Luzi_猪猪.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_猪猪.png",
-        "Assets/Female3DCG/ItemDevices/猪猪_Luzi_缰绳.png": "https://emdsa2.github.io/-mod/image/猪猪_Luzi_缰绳.png",
 
-        "Assets/Female3DCG/TailStraps/穿戴式狗尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/穿戴式狗尾_镜像_Luzi.png",
-        "Assets/Female3DCG/TailStraps/白色穿戴式狼尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/白色穿戴式狼尾_镜像_Luzi.png",
-        // "Assets/Female3DCG/TailStraps/穿戴式浅色猫尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/穿戴式浅色猫尾_镜像_Luzi.png",
-        // "Assets/Female3DCG/TailStraps/穿戴式软小狗尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/穿戴式软小狗尾_镜像_Luzi.png",
-        "Assets/Female3DCG/TailStraps/大型穿戴式狼尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/大型穿戴式狼尾_镜像_Luzi.png",
-        "Assets/Female3DCG/TailStraps/小型穿戴式狼尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/小型穿戴式狼尾_镜像_Luzi.png",
-        "Assets/Female3DCG/TailStraps/小型穿戴式软猫尾:镜像_Luzi.png": "https://emdsa2.github.io/-mod/image/小型穿戴式软猫尾_镜像_Luzi.png",
-        "Assets/Female3DCG/TailStraps/穿戴式猫尾:镜像_Luzi_蝴蝶结.png": "https://emdsa2.github.io/-mod/image/穿戴式猫尾_镜像_Luzi_蝴蝶结.png",
-        "Assets/Female3DCG/TailStraps/穿戴式猫尾:镜像_Luzi_铃铛.png": "https://emdsa2.github.io/-mod/image/穿戴式猫尾_镜像_Luzi_铃铛.png",
-        "Assets/Female3DCG/TailStraps/穿戴式猫尾:镜像_Luzi_尾巴.png": "https://emdsa2.github.io/-mod/image/穿戴式猫尾_镜像_Luzi_尾巴.png",
 
         "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_舌头.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_舌头.png",
         "Assets/Female3DCG/ItemDevices/玻璃罐子_Luzi_上1.png": "https://emdsa2.github.io/-mod/image/玻璃罐子_Luzi_上1.png",
@@ -115,12 +102,6 @@
         "Assets/Female3DCG/Socks/Kneel/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Kneel_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
-
-
-
-
-        
-        "Assets/Female3DCG/Wings/蝴蝶结背饰_Luzi.png": "https://emdsa2.github.io/-mod/image/蝴蝶结背饰_Luzi.png",
 
 
 
