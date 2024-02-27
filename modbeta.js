@@ -1190,8 +1190,6 @@
                 });
             }
 
-
-
             if (Asset) {        // 用于删除自定义服装的_Luzi后缀
                 const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
                 assetDescription.forEach(item => {
@@ -1200,6 +1198,7 @@
                     }
                 });
             }
+            
             if (AssetGroup) {        // 用于修改服装组名
                 const descriptionMap = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
