@@ -567,28 +567,28 @@
         ],
         TailStraps: [
             {
-                Name: "穿戴式狗尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "穿戴式狗尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "白色穿戴式狼尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "白色穿戴式狼尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "穿戴式浅色猫尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "穿戴式浅色猫尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "穿戴式软小狗尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "穿戴式软小狗尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "大型穿戴式狼尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "大型穿戴式狼尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "小型穿戴式狼尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "小型穿戴式狼尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "小型穿戴式软猫尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "小型穿戴式软猫尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "穿戴式猫尾镜像_Luzi", Random: false, Top: 0, Left: 0,
+                Name: "穿戴式猫尾镜像_Luzi", Random: false, Top: -100, Left: 0,
                 Layer: [
                     { Name: "尾巴" },
                     { Name: "蝴蝶结" },
@@ -1198,7 +1198,7 @@
                     }
                 });
             }
-            
+
             if (AssetGroup) {        // 用于修改服装组名
                 const descriptionMap = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
