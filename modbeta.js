@@ -644,7 +644,7 @@
         ItemArms: [
             {
                 Name: "乳胶宠物拘束服_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
+                Top: 0, Left: 0,
                 Difficulty: 12,
                 SelfBondage: 8,
                 Time: 40,
