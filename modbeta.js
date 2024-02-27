@@ -38,6 +38,9 @@
         "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
 
+    // patchFunction("", {
+    //     "": '',
+    // });
 
     const ICONSSSSSSS = {
 
@@ -1426,6 +1429,21 @@
         }
         next(args);
     });
+
+    // mod.hookFunction("DrawImageEx", 10, async (args, next) => {
+    //     const value = args[0];
+
+    //     // 检测该值是否为 canvas 元素
+    //     if (value instanceof HTMLCanvasElement) {
+    //         console.log(args)
+    //         args[2] += 30
+    //     } 
+
+        
+    //     next(args);
+    // });
+    
+
 
     // ================================================================================
     // ================================================================================
