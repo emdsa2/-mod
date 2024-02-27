@@ -573,19 +573,19 @@
                 Name: "白色穿戴式狼尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "穿戴式浅色猫尾镜像_Luzi", Random: false, Top: -100, Left: 0,
+                Name: "穿戴式浅色猫尾镜像_Luzi", Random: false, Top: 0, Left: 0,
             },
             {
-                Name: "穿戴式软小狗尾镜像_Luzi", Random: false, Top: -100, Left: 0,
+                Name: "穿戴式软小狗尾镜像_Luzi", Random: false, Top: 0, Left: 0,
             },
             {
                 Name: "大型穿戴式狼尾镜像_Luzi", Random: false, Top: -100, Left: 0,
             },
             {
-                Name: "小型穿戴式狼尾镜像_Luzi", Random: false, Top: -100, Left: 0,
+                Name: "小型穿戴式狼尾镜像_Luzi", Random: false, Top: 0, Left: 0,
             },
             {
-                Name: "小型穿戴式软猫尾镜像_Luzi", Random: false, Top: -100, Left: 0,
+                Name: "小型穿戴式软猫尾镜像_Luzi", Random: false, Top: 0, Left: 0,
             },
             {
                 Name: "穿戴式猫尾镜像_Luzi", Random: false, Top: -100, Left: 0,
