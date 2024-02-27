@@ -1161,14 +1161,15 @@
     }
 
     function addExtraExpressionsToAssets() {
-        const emoticonContent = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi"];
-
-        AssetFemale3DCG.filter(A => A.Group === "Emoticon")
-            .forEach(group => group.AllowExpression.push(...emoticonContent));
+        var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
+        var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
+        GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
 
         AssetGroup.forEach(A => {
             if (A.Name === "Emoticon") {
-                A.AllowExpression.push(...emoticonContent);
+                var Emoticon内容 = ["车车", "衣架", "电话", "灯泡", "警告", "心", "画画", "符号", "视频",];
+                A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
+                // console.log(A.AllowExpression)
             }
         });
     }
@@ -1274,26 +1275,59 @@
     // ================================================================================
 
     mod.hookFunction("ServerSend", 5, (args, next) => {
-        const data = args[1];
-        if (args[0] === "ChatRoomChat" && data?.Type === "Action") {
-            const Content = data.Content;
-            const Dictionary = data.Dictionary;
-
-            if (Dictionary && (Content === "ActionUse" || Content === "ActionRemove" || Content === "ActionSwap")) {
-                const targetIndex = Content === "ActionSwap" ? 4 : 3;
-                const AssetName = Dictionary[targetIndex]?.AssetName;
-                if (AssetName?.includes('_Luzi')) {
-                    const tag = Content === "ActionSwap" ? "PrevAsset" : "NextAsset";
-                    data.Dictionary.push({
-                        Tag: tag,
-                        Text: AssetName.replace('_Luzi', '')
-                    });
+        if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
+            let data = args[1];
+            let Dictionary = data.Dictionary;
+            if (Dictionary) {
+                if (Dictionary[3]?.AssetName?.includes('_Luzi')) {
+                    if (data.Content === "ActionUse") {
+                        let AssetName = Dictionary[3].AssetName;
+                        data.Dictionary.push({
+                            Tag: `NextAsset`, Text: AssetName.replace('_Luzi', '')
+                        });
+                    };
+                    if (data.Content === "ActionRemove") {
+                        let AssetName = Dictionary[3].AssetName;
+                        data.Dictionary.push({
+                            Tag: `PrevAsset`, Text: AssetName.replace('_Luzi', '')
+                        });
+                    };
                 }
-            } else if (Content?.indexOf("_Luzi") !== -1) {
-                const msg = PlayerDialog.get(Content) || "";
+            };
+            if (Dictionary[3]?.AssetName?.includes('_Luzi')) {
+                if (data.Content === "ActionSwap") {
+                    let Dictionary = data.Dictionary;
+                    if (Dictionary) {
+                        let AssetName = Dictionary[3].AssetName;
+                        data.Dictionary.push({
+                            Tag: `PrevAsset`, Text: AssetName.replace('_Luzi', '')
+                        });
+                    };
+                }
+            };
+            if (Dictionary[4]?.AssetName?.includes('_Luzi')) {
+                if (data.Content === "ActionSwap") {
+                    let Dictionary = data.Dictionary;
+                    if (Dictionary) {
+                        let AssetName = Dictionary[4].AssetName;
+                        data.Dictionary.push({
+                            Tag: `NextAsset`, Text: AssetName.replace('_Luzi', '')
+                        });
+                    };
+                }
+            };
+        }
+        if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
+            let data = args[1];
+            const Content = data.Content;
+            // 检查 Content 是否含 "_Luzi"
+            if (Content.indexOf("_Luzi")) {
+                // 在 PlayerDialog 映射中查找对应的消息
+                const msg = PlayerDialog.get(Content) || ""; // 如果找不到，则使用
+
+                // 将修改后的消息添加到 Dictionary 中
                 data.Dictionary.push({
-                    Tag: "MISSING PLAYER DIALOG: " + Content,
-                    Text: msg,
+                    Tag: "MISSING PLAYER DIALOG: " + Content, Text: msg,
                 });
             }
         }
