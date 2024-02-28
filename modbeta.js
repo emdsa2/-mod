@@ -38,10 +38,6 @@
         "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
 
-    // patchFunction("", {
-    //     "": '',
-    // });
-
     const ICONSSSSSSS = {
 
         "Assets/Female3DCG/Socks/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/CowPrintedSocks_Small.png",
@@ -1430,20 +1426,50 @@
         next(args);
     });
 
-    // mod.hookFunction("DrawImageEx", 10, async (args, next) => {
-    //     const value = args[0];
+    // 为了完整的双人床！ 修改了角色画布的宽度 
+    patchFunction("CommonDrawCanvasPrepare", {
+        "C.Canvas.width = 500;": 'C.Canvas.width = 1000;',
+        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
 
-    //     // 检测该值是否为 canvas 元素
-    //     if (value instanceof HTMLCanvasElement) {
-    //         console.log(args)
-    //         args[2] += 30
-    //     } 
+        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
+        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 1000;',
 
-        
-    //     next(args);
+
+    });
+
+    patchFunction("GLDrawAppearanceBuild", {
+        "500": '1000',
+    });
+
+    // patchFunction("DrawCharacter", {
+    //     "X + XOffset": 'X + XOffset + -1000',
     // });
-    
 
+    // patchFunction("DrawCharacter", {
+    //     "C.BlinkFactor == 0 && !CommonPhotoMode) ? C.CanvasBlink : C.Canvas;": 'C.BlinkFactor == 0 && !CommonPhotoMode) ? C.Canvas : C.Canvas;',
+    //     // "GLDrawCanvas, 0,": 'GLDrawCanvas, 100,',
+    // });
+
+    mod.hookFunction("DrawImageEx", 10, async (args, next) => {
+        const value = args[0];
+
+        if (value instanceof HTMLCanvasElement) { // 检测该值是否为 canvas 元素
+            if (ChatRoomCharacterCount <= 2) {
+                args[4].Width += 440;
+            }
+            if (ChatRoomCharacterCount == 3) {
+                args[4].Width += 360;
+            }
+            if (ChatRoomCharacterCount == 4) {
+                args[4].Width += 286;
+            }
+            if (ChatRoomCharacterCount >= 5) {
+                args[4].Width += 232;
+            }
+        }
+
+        next(args);
+    });
 
     // ================================================================================
     // ================================================================================
