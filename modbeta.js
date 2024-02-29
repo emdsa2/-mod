@@ -1426,55 +1426,55 @@
         next(args);
     });
 
-    // 为了完整的双人床！ 修改了角色画布的宽度 
-    patchFunction("CommonDrawCanvasPrepare", {
-        "C.Canvas.width = 500;": 'C.Canvas.width = 1000;',
-        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
+    // // 为了完整的双人床！ 修改了角色画布的宽度 
+    // patchFunction("CommonDrawCanvasPrepare", {
+    //     "C.Canvas.width = 500;": 'C.Canvas.width = 1000;',
+    //     'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
 
-        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
-        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 1000;',
+    //     'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
+    //     "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 1000;',
 
-        'C.Canvas.height = CanvasDrawHeight;': 'C.Canvas.height = CanvasDrawHeight; C.Canvas.ECHO = "好厉害的炉子"',
-        'C.CanvasBlink.height = CanvasDrawHeight;': 'C.CanvasBlink.height = CanvasDrawHeight; C.CanvasBlink.ECHO = "好厉害的星涟"',
+    //     'C.Canvas.height = CanvasDrawHeight;': 'C.Canvas.height = CanvasDrawHeight; C.Canvas.ECHO = "好厉害的炉子"',
+    //     'C.CanvasBlink.height = CanvasDrawHeight;': 'C.CanvasBlink.height = CanvasDrawHeight; C.CanvasBlink.ECHO = "好厉害的星涟"',
 
-    });
+    // });
 
-    patchFunction("GLDrawAppearanceBuild", {
-        "500": '1000',
-    });
+    // patchFunction("GLDrawAppearanceBuild", {
+    //     "500": '1000',
+    // });
 
-    mod.hookFunction("DrawImageEx", 10, async (args, next) => {
-        const value = args[0];
-        // 检测该值是否为 canvas 元素
-        if (value instanceof HTMLCanvasElement) {
-            // console.log(args[0].ECHO)
-            if (ChatRoomCharacterCount <= 2) {
-                args[4].Width += 440;
-            }
-            if (ChatRoomCharacterCount == 3) {
-                args[4].Width += 360;
-            }
-            if (ChatRoomCharacterCount == 4) {
-                args[4].Width += 286;
-            }
-            if (ChatRoomCharacterCount >= 5) {
-                args[4].Width += 232;
-            }
-            if (args[0].ECHO === "好厉害的星涟") {
-                args[2] += 0;
-            }
-        }
+    // mod.hookFunction("DrawImageEx", 10, async (args, next) => {
+    //     const value = args[0];
+    //     // 检测该值是否为 canvas 元素
+    //     if (value instanceof HTMLCanvasElement) {
+    //         // console.log(args[0].ECHO)
+    //         if (ChatRoomCharacterCount <= 2) {
+    //             args[4].Width += 440;
+    //         }
+    //         if (ChatRoomCharacterCount == 3) {
+    //             args[4].Width += 360;
+    //         }
+    //         if (ChatRoomCharacterCount == 4) {
+    //             args[4].Width += 286;
+    //         }
+    //         if (ChatRoomCharacterCount >= 5) {
+    //             args[4].Width += 232;
+    //         }
+    //         if (args[0].ECHO === "好厉害的星涟") {
+    //             args[2] += 0;
+    //         }
+    //     }
 
-        next(args);
-    });
+    //     next(args);
+    // });
 
-    mod.hookFunction("GLDrawImage", 1, (args, next) => {
-        const data = args[0];
-        console.log(args)
+    // mod.hookFunction("GLDrawImage", 1, (args, next) => {
+    //     const data = args[0];
+    //     console.log(args)
  
 
-        next(args);
-    });
+    //     next(args);
+    // });
 
     // ================================================================================
     // ================================================================================
