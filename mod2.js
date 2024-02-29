@@ -1583,7 +1583,7 @@
         ["Steal", "抢夺"],
         ["SourceCharacter grabs at TargetCharacters hands, trying to steal TargetPronounPossessive item.", "SourceCharacter抓住了TargetCharacters的手,试图抢夺TargetPronounPossessive的物品."],
         ["Give Item", "交出物品"],
-        ["SourceCharacter grabs at TargetCharacters hands, trying to steal TargetPronounPossessive item!", "SourceCharacter抓住了TargetCharacters的手，试图抢夺TargetPronounPossessive的物品!"],
+        ["SourceCharacter grabs at TargetCharacters hands, trying to steal TargetPronounPossessive item!", "SourceCharacter抓住了TargetCharacters的手, 试图抢夺TargetPronounPossessive的物品!"],
         ["Shark Bite", "鲨鱼咬"],
         ["SourceCharacter's ActivityAsset bites TargetCharacter's arm.", "SourceCharacter的ActivityAsset咬住了TargetCharacter的胳膊."],
         ["SourceCharacter's ActivityAsset bites TargetCharacter's foot.", "SourceCharacter的ActivityAsset咬住了TargetCharacter的脚."],
@@ -2300,11 +2300,11 @@
                 console.log("已存储进个人设置");
             }
 
-            // 如果 PreferenceSubscreen 为 "动作拓展设置"，执行 PreferenceSubscreenArousalExit()
+            // 如果 PreferenceSubscreen 为 "动作拓展设置", 执行 PreferenceSubscreenArousalExit()
             if (PreferenceSubscreen === "动作拓展设置") {
                 PreferenceSubscreenArousalExit();
             } else {
-                // 如果 PreferenceSubscreen 不为 "动作拓展设置"，返回 PreferenceSubscreen 的上一级
+                // 如果 PreferenceSubscreen 不为 "动作拓展设置", 返回 PreferenceSubscreen 的上一级
                 PreferenceSubscreen = "动作拓展设置";
             }
         }
@@ -4446,7 +4446,7 @@
             ["Poses", "姿势"],
             ["~Sign Here~", "~在此签名~"],
             ["~ Any sufficiently advanced technology is indistinguishable from magic ~", "~ 任何足够先进的技术都无法与魔法区分开 ~"],
-            ["* Signatory agrees to Magic™ Installation (ᴘᴀᴛ. ᴘᴇɴᴅ.) required to experience spell effects *", "签署者同意魔法™安装（专利申请中）以体验咒语效果"],
+            ["* Signatory agrees to Magic™ Installation (ᴘᴀᴛ. ᴘᴇɴᴅ.) required to experience spell effects *", "签署者同意魔法™安装(专利申请中)以体验咒语效果"],
             ["Apply signature to scroll", "在卷轴上签名"],
             ["Magic", "魔法"],
             ["Cast Spell", "施放咒语"],
@@ -4697,7 +4697,7 @@
 
 
         const translationsDTF = [
-            { regex: /Failed to get role data from (.+)\. This can be caused by missing permission to interact with their items\, the user having left the room meanwhile\, or the user not having the BC tab focused\./, replacement: "无法从 $1 获取角色数据. 这可能是由于缺少与其物品交互的权限, 用户已经离开房间，或用户没有将 BC 标签页聚焦." },
+            { regex: /Failed to get role data from (.+)\. This can be caused by missing permission to interact with their items\, the user having left the room meanwhile\, or the user not having the BC tab focused\./, replacement: "无法从 $1 获取角色数据. 这可能是由于缺少与其物品交互的权限, 用户已经离开房间, 或用户没有将 BC 标签页聚焦." },
             { regex: / Global\: Configuration for (.+) \-/, replacement: "- 全局: $1 的配置 -" },
             { regex: /\- Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项: $1 的配置 -" },
             { regex: /Dear (.+),/, replacement: "亲爱的 $1," },
@@ -4929,22 +4929,22 @@
 
         const textsToTranslate = {
             "#fusam-addon-manager-header > h1": "插件管理器",
-            "#fusam-addon-manager-body > p": "关于安全性的说明：尽管被发现是恶意的插件会从插件管理器中移除，但仍然有可能有一些漏网的鱼鱼",
+            "#fusam-addon-manager-body > p": "关于安全性的说明：尽管被发现是恶意的插件会从插件管理器中移除, 但仍然有可能有一些漏网的鱼鱼",
             "#fusam-show-button": "插件管理器",
             "#fusam-addon-manager-close": "保存",
         };
 
 
-        // 映射对象，存储搜索文本和对应的替换文本
+        // 映射对象, 存储搜索文本和对应的替换文本
         const textReplacements = {
             "For Better Club (FBC)": "更好的俱乐部 (FBC)",
             "Smarter, extensible facial animation and posing engine, instant messaging, appearance layering and a collection of quality of life improvements.": "智能、可扩展的面部动画和姿势引擎、即时消息、外观分层以及一系列提升游戏品质的改进",
             "by the authors of the Addon Manager": "由插件管理器的作者编写",
             "Universal Remote": "通用远程控制器 (Universal Remote)",
-            "This remote works across chat rooms, but requires both players to have it. /ur or friends list to use.": "该远程控制器可以跨聊天室使用，但需要双方玩家都拥有它。/ur 或 好友列表中使用。",
+            "This remote works across chat rooms, but requires both players to have it. /ur or friends list to use.": "该远程控制器可以跨聊天室使用, 但需要双方玩家都拥有它./ur 或 好友列表中使用.",
             "Bondage Club Extended (BCX)": "束缚俱乐部扩展 (BCX)",
             "by Jomshir98 & Claudia": "由 Jomshir98 & Claudia 编写",
-            "Adds rules, curses, and more to enhance D/s play alongside a handful of quality of life improvements": "添加规则、诅咒等，以增强 D/s 游戏体验，并提供一些提升游戏品质的改进",
+            "Adds rules, curses, and more to enhance D/s play alongside a handful of quality of life improvements": "添加规则、诅咒等, 以增强 D/s 游戏体验, 并提供一些提升游戏品质的改进",
             "Themed": "主题 (Themed)",
             "by dDeepLb": "由 dDeepLb 编写",
             "Adds custom themes to BC along with other features": "为 BC 添加自定义主题以及其他功能",
@@ -4953,44 +4953,44 @@
             "Expansion of Drone gameplay": "提供一些主人语言指令控制ADCS束缚套装的功能",
             "BCX Reset Button Disabler": "BCX 重置按钮禁用器 (BCX Reset Button Disabler)",
             "by Ciber": "由 Ciber 制作",
-            "A very simple addon that disables the Module and Reset Buttons from BCX. That means you can have a new layer of helplessness.": "一个非常简单的插件，可以禁用 BCX 的模块和重置按钮。这意味着你可以增加一层新的无助感。",
+            "A very simple addon that disables the Module and Reset Buttons from BCX. That means you can have a new layer of helplessness.": "一个非常简单的插件, 可以禁用 BCX 的模块和重置按钮.这意味着你可以增加一层新的无助感.",
             "Bondage Club Auto React (BCAR)": "束缚俱乐部自动回应 (BCAR)",
             "by Dr Branestawm": "由 Dr Branestawm 制作",
             "Automatically reacts to messages in the Bondage Club": "自动回应束缚俱乐部的消息",
             "Bondage Club X-Toys Integration": "束缚俱乐部 X-Toys 集成 (Bondage Club X-Toys Integration)",
             "by ItsNorin": "由 ItsNorin 制作",
-            "Sync club interactions and toys with IRL remote-controlled toys, recommended use with https://github.com/itsFro/BCBridge": "将俱乐部互动和玩具与现实生活中的远程控制玩具同步，建议与 https://github.com/itsFro/BCBridge 一起使用",
+            "Sync club interactions and toys with IRL remote-controlled toys, recommended use with https://github.com/itsFro/BCBridge": "将俱乐部互动和玩具与现实生活中的远程控制玩具同步, 建议与 https://github.com/itsFro/BCBridge 一起使用",
             "BCTweaks": "BC调整 (BCTweaks)",
             "by Crimsonfox & agicitag": "由 Crimsonfox & agicitag 制作",
-            "Split arousal and orgasm bars, tail wagging, and Best Friends": "分割兴奋和高潮条，摇尾巴和最好的朋友",
+            "Split arousal and orgasm bars, tail wagging, and Best Friends": "分割兴奋和高潮条, 摇尾巴和最好的朋友",
             "Eli's Bondage Club Helper (EBCH)": "Eli 的束缚俱乐部助手 (EBCH)",
             "by Elicia": "由 Elicia 制作",
-            "Ungarble, custom notifications, altering other player's poses": "解除混淆，自定义通知，修改其他玩家的姿势",
+            "Ungarble, custom notifications, altering other player's poses": "解除混淆, 自定义通知, 修改其他玩家的姿势",
             "Little Sera's Club Games (LSCG)": "Little Sera 的俱乐部游戏 (LSCG)",
             "by Little Sera": "由 Little Sera 制作",
-            "Adds large gamified systems for hypnotism and breathplay": "添加了大型游戏化系统，用于催眠和呼吸游戏。",
+            "Adds large gamified systems for hypnotism and breathplay": "添加了大型游戏化系统, 用于催眠和呼吸游戏.",
             "Mute's Bondage Club Hacks Collection (MBCHC)": "Mute 的束缚俱乐部黑客收藏 (MBCHC)",
             "by Mute": "由 Mute 制作",
-            "Autohack, local time, some keyboard goodies etc.": "自动黑客，本地时间，一些键盘上的东西等等",
+            "Autohack, local time, some keyboard goodies etc.": "自动黑客, 本地时间, 一些键盘上的东西等等",
             "Maid's Bondage Scripts (MBS)": "女仆的束缚脚本 (MBS)",
             "by Rama": "由 Rama 制作",
-            "Additional crafting slots, additional options in wheel of fortune, and custom outfits in wheel of fortune": "额外的制作槽，命运之轮中的额外选项，以及命运之轮中的定制服装",
+            "Additional crafting slots, additional options in wheel of fortune, and custom outfits in wheel of fortune": "额外的制作槽, 命运之轮中的额外选项, 以及命运之轮中的定制服装",
             "Responsive": "回应 (Responsive)",
-            "by SaotomeToyStore, dDeepLb": "由 SaotomeToyStore，dDeepLb 制作",
-            "Automatically sends messages when the user reaches a certain state (slapped, orgasm, etc).": "当用户达到特定状态（被打，高潮等）时自动发送消息。",
+            "by SaotomeToyStore, dDeepLb": "由 SaotomeToyStore, dDeepLb 制作",
+            "Automatically sends messages when the user reaches a certain state (slapped, orgasm, etc).": "当用户达到特定状态(被打, 高潮等)时自动发送消息.",
             "ULTRAbc": "ULTRA Bondage Club (ULTRAbc)",
             "by Nemesea": "由 Nemesea 制作",
-            "A large collection of cheats, quality of life improvements, and a moaner script": "一大堆作弊、提高生活质量的改进和呻吟者脚本",
+            "A large collection of cheats, quality of life improvements, and a moaner script": "一大堆作弊、提高游戏品质的改进和呻吟者脚本.",
             "NotifyPlus": "改进提醒 (NotifyPlus)",
             "by SaotomeToyStore": "由 SaotomeToyStore 制作",
-            "Improve the Name Mentioned notification in the original BC. Use keywords for mentioning names according to different roles. (Note: source code unavailable)": "改进BC原本提醒中的提到名字的规则。按照不同的身份配置提到名字的触发关键词。（注：源代码不可用）",
+            "Improve the Name Mentioned notification in the original BC. Use keywords for mentioning names according to different roles. (Note: source code unavailable)": "改进BC原本提醒中的提到名字的规则.按照不同的身份配置提到名字的触发关键词.(注：源代码不可用)",
             "TTS and Morse": "TTS 和 Morse (TTS and Morse)",
             "by KatKammand": "由 KatKammand 制作",
-            "Text-to-speech reading for chat messages, and some buttplug.io + morse functionalities.": "聊天文字转语音阅读，以及一些 buttplug.io + morse 功能。",
+            "Text-to-speech reading for chat messages, and some buttplug.io + morse functionalities.": "聊天文字转语音阅读, 以及一些 buttplug.io + morse 功能.",
             "Chat Auto Translator Script": "聊天自动翻译脚本 (Chat Auto Translator Script)",
-            "by Ciber, dDeepLb and KatKammand": "由 Ciber，dDeepLb 和 KatKammand 制作",
-            "Addon that auto-translates the chat to the language you want. 130+ Languages available. Commands: /ttoggle to toggle the translator on and off. And /tlang": "将聊天自动翻译为您想要的语言的插件。有 130 多种语言可用。命令：/ttoggle 切换翻译器的开关。/tlang ",
-            ", to change the language used.": "用于更改所使用的语言。",
+            "by Ciber, dDeepLb and KatKammand": "由 Ciber, dDeepLb 和 KatKammand 制作",
+            "Addon that auto-translates the chat to the language you want. 130+ Languages available. Commands: /ttoggle to toggle the translator on and off. And /tlang": "将聊天自动翻译为您想要的语言的插件.有 130 多种语言可用.命令：/ttoggle 切换翻译器的开关./tlang ",
+            ", to change the language used.": "用于更改所使用的语言.",
             "Device": "本设备启用",
             "Account": "当前账户开启",
             "None": "无",
@@ -5006,9 +5006,9 @@
 
         // 递归函数替换文本内容
         function replaceTextNodes(element) {
-            if (element.nodeType === Node.TEXT_NODE) { // 如果是文本节点，则进行文本替换
+            if (element.nodeType === Node.TEXT_NODE) { // 如果是文本节点, 则进行文本替换
                 let nodeValue = element.nodeValue;
-                // 遍历映射对象，查找并替换文本
+                // 遍历映射对象, 查找并替换文本
                 for (let searchText in textReplacements) {
                     if (nodeValue.includes(searchText)) {
                         const replacedText = textReplacements[searchText];
@@ -5020,7 +5020,7 @@
                     }
                 }
             } else if (element.nodeType === Node.ELEMENT_NODE) {
-                // 如果是元素节点，则递归遍历其子节点
+                // 如果是元素节点, 则递归遍历其子节点
                 for (let i = 0; i < element.childNodes.length; i++) {
                     replaceTextNodes(element.childNodes[i]);
                 }
@@ -5032,7 +5032,7 @@
             let language = localStorage.getItem("BondageClubLanguage");
             if (language === "CN" || language === "TW") {
                 replaceLabels(args);
-                // 遍历待翻译的文本内容，翻译并替换对应的元素文本内容
+                // 遍历待翻译的文本内容, 翻译并替换对应的元素文本内容
                 for (const [selector, translatedText] of Object.entries(textsToTranslate)) {
                     const element = document.querySelector(selector);
                     if (element) {
@@ -5549,7 +5549,7 @@
 
         if ((C != null) && ((C.IsPlayer()) || (OverrideDark || Player.GetBlindLevel() < 3))) {
 
-            const BlurLevel = Player.GetBlurLevel();// 如果需要，应用模糊滤镜
+            const BlurLevel = Player.GetBlurLevel();// 如果需要, 应用模糊滤镜
             if (!C.IsPlayer() && !OverrideDark && BlurLevel > 0) {
                 MainCanvas.filter = `blur(${BlurLevel}px)`;
             }
@@ -5605,7 +5605,7 @@
                     if (index !== -1) {
                         foundCharacters.splice(index, 1);
                     }
-                    // 将找到的角色添加到数组中（排在最后）
+                    // 将找到的角色添加到数组中(排在最后)
                     foundCharacters2.push(ChatRoomCharacterDrawlist[i]);
                 } else if (currentAsset.Name === "缰绳_Luzi") {
                     // 将找到的角色添加到数组中
@@ -5661,7 +5661,7 @@
                     if (index !== -1) {
                         foundCharactersbed.splice(index, 1);
                     }
-                    // 将找到的角色添加到数组中（排在最后）
+                    // 将找到的角色添加到数组中(排在最后)
                     foundCharacters2bed.push(ChatRoomCharacterDrawlist[i]);
                 } else if (currentAsset.Name === "床右边_Luzi") {
                     // 将找到的角色添加到数组中
