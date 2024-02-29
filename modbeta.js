@@ -1440,7 +1440,7 @@
     });
 
     patchFunction("GLDrawAppearanceBuild", {
-        "500": '800',
+        "500": '1500',
     });
 
     patchFunction("DrawCharacter", {
