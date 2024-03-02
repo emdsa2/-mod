@@ -1264,7 +1264,12 @@
             // ========================================================
             isAssetAdded = true;
         }
-
+        AssetFemale3DCG.forEach(group => {
+            if (group.Group.includes("_笨笨蛋Luzi")) {
+                group.Asset.forEach(item => InventoryAdd(Player, item.Name, group.Group, true));
+            }
+        });
+        CraftingItemListBuild()
         next(args);
     });
 
@@ -1428,46 +1433,21 @@
 
     // 为了完整的双人床！ 修改了角色画布的宽度 
     patchFunction("CommonDrawCanvasPrepare", {
-        "C.Canvas.width = 500;": 'C.Canvas.width = 1000;',
-        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
-
-        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 1000, CanvasDrawHeight);',
-        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 1000;',
-
-        'C.Canvas.height = CanvasDrawHeight;': 'C.Canvas.height = CanvasDrawHeight; C.Canvas.ECHO = "好厉害的炉子"',
-        'C.CanvasBlink.height = CanvasDrawHeight;': 'C.CanvasBlink.height = CanvasDrawHeight; C.CanvasBlink.ECHO = "好厉害的星涟"',
-
+        "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;',
+        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;',
     });
 
     patchFunction("GLDrawAppearanceBuild", {
-        "500": '1500',
+        '500': '500 * 2',
     });
-
     patchFunction("DrawCharacter", {
-        "Width: 500 * HeightRatio * Zoom,": 'Width: (500 * HeightRatio * Zoom) + 440,',
+        '500 * HeightRatio * Zoom':
+            '500 * HeightRatio * Zoom * 2',
+            
+        'let Canvas = (Math.round(CurrentTime / 400) % C.BlinkFactor == 0 && !CommonPhotoMode) ? C.CanvasBlink : C.Canvas;':
+            'let Canvas = (Math.round(CurrentTime / 400) % C.BlinkFactor == 0 && !CommonPhotoMode) ? C.Canvas : C.Canvas;',
     });
-
-
-
-    // mod.hookFunction("DrawImageEx", 10, async (args, next) => {
-    //     const value = args[0];
-    //     // 检测该值是否为 canvas 元素
-    //     if (value instanceof HTMLCanvasElement) {
-    //         if (args[0].ECHO === "好厉害的星涟") {
-    //             args[2] += 0;
-    //         }
-    //     }
-
-    //     next(args);
-    // });
-
-    // mod.hookFunction("GLDrawImage", 1, (args, next) => {
-    //     const data = args[0];
-    //     console.log(args)
-
-
-    //     next(args);
-    // });
+    
 
     // ================================================================================
     // ================================================================================
