@@ -143,27 +143,27 @@
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
 
-        if (data.includes("_笨笨蛋Luzi")) {
+        if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
 
-        if (ICONSSSSSSS[data]) {
+        if (typeof data === 'string' && ICONSSSSSSS[data]) {
             args[0] = ICONSSSSSSS[data];
             args[2] = 0;
             args[3] = 590;
         }
 
-        if (ICONS4[data]) {
+        if (typeof data === 'string' && ICONS4[data]) {
             args[0] = ICONS4[data].imagePath;
             ICONS4[data].handleFunction(args);
         }
 
-        if (data.includes("_Luzi")) {
+        if (typeof data === 'string' && data.includes("_Luzi")) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
-        if (data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
+        if (typeof data === 'string' && data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
             args[2] = 0;
         }
 
@@ -177,11 +177,11 @@
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
 
-        if (PreviewICONS[data]) {
+        if (typeof data === 'string' && PreviewICONS[data]) {
             args[0] = PreviewICONS[data];
         }
 
-        if (data.includes("_Luzi")) {
+        if (typeof data === 'string' && data.includes("_Luzi")) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
