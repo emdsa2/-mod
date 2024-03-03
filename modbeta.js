@@ -1431,23 +1431,84 @@
         next(args);
     });
 
-    // 为了完整的双人床！ 修改了角色画布的宽度 
+
+
+
+    // 完整的双人床！ 修改了角色画布的宽度 
+    function GLDrawLoadEx(_evt, force2d = false) {
+        GLDrawCanvas = document.createElement("canvas");
+        GLDrawCanvas.width = 1000 * 2;
+        GLDrawCanvas.height = CanvasDrawHeight;
+        const glOpts = GLDrawGetOptions();
+        let gl = null;
+        for (const glVersion of ["webgl2", "webgl"]) {
+            gl = GLDrawCanvas.getContext(glVersion, glOpts);
+            if (gl) {
+                /* @ts-ignore */
+                GLVersion = glVersion;
+                break;
+            }
+        }
+        if (!gl || force2d) {
+
+            if (force2d) {
+                console.error('WebGL: forcing fallback to 2D renderer');
+            } else {
+                console.error('WebGL: failed to initialize canvas');
+            }
+            GLVersion = "No WebGL"; 
+            GLDrawCanvas.remove(); 
+            GLDrawCanvas = null; 
+            return;
+        }
+        console.info(`WebGL: initialized as ${GLVersion}`);
+        /* @ts-ignore */
+        GLDrawCanvas.GL = gl;
+        GLDrawMakeGLProgram(GLDrawCanvas.GL);
+        GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);
+        GLDrawCanvas.addEventListener("webglcontextlost", GLDrawOnContextLost, false);
+        GLDrawCanvas.addEventListener("webglcontextrestored", GLDrawOnContextRestored, false);
+    }
+
+    mod.hookFunction("GLDrawLoad", 999, (args, next) => {
+        GLDrawLoadEx(...args);
+    });
+
+    let isGLDrawCanvaswidth = false;
+    mod.hookFunction("DrawCharacter", 10, (args, next) => {
+        if (!isGLDrawCanvaswidth) {
+            GLDrawResetCanvas(false)
+            isGLDrawCanvaswidth = true;
+        }
+        next(args);
+    });
+
+
     patchFunction("CommonDrawCanvasPrepare", {
         "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;',
         "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;',
+
+        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);':'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 2, CanvasDrawHeight);',
+        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);':'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 2, CanvasDrawHeight);',
+
+
     });
 
     patchFunction("GLDrawAppearanceBuild", {
         '500': '500 * 2',
+        'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);':
+            'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);',
     });
+
     patchFunction("DrawCharacter", {
-        '500 * HeightRatio * Zoom':
-            '500 * HeightRatio * Zoom * 2',
-            
-        'let Canvas = (Math.round(CurrentTime / 400) % C.BlinkFactor == 0 && !CommonPhotoMode) ? C.CanvasBlink : C.Canvas;':
-            'let Canvas = (Math.round(CurrentTime / 400) % C.BlinkFactor == 0 && !CommonPhotoMode) ? C.Canvas : C.Canvas;',
+        '500 * HeightRatio * Zoom':'500 * HeightRatio * Zoom * 2',
+
+        'TempCanvas.canvas.width = CanvasDrawWidth;':'TempCanvas.canvas.width = CanvasDrawWidth * 2;',
     });
-    
+
+
+    // ================================================================================
+    // ================================================================================
 
     // ================================================================================
     // ================================================================================
