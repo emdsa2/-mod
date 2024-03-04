@@ -167,6 +167,10 @@
             args[2] = 0;
         }
 
+        if (typeof data === 'string' && data.includes("ItemTorso/缰绳_Luzi_Normal")) {
+            args[2] = -600;
+        }
+
         next(args);
     });
 
@@ -1456,9 +1460,9 @@
             } else {
                 console.error('WebGL: failed to initialize canvas');
             }
-            GLVersion = "No WebGL"; 
-            GLDrawCanvas.remove(); 
-            GLDrawCanvas = null; 
+            GLVersion = "No WebGL";
+            GLDrawCanvas.remove();
+            GLDrawCanvas = null;
             return;
         }
         console.info(`WebGL: initialized as ${GLVersion}`);
@@ -1488,8 +1492,8 @@
         "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;',
         "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;',
 
-        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);':'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 2, CanvasDrawHeight);',
-        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);':'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 2, CanvasDrawHeight);',
+        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 2, CanvasDrawHeight);',
+        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 2, CanvasDrawHeight);',
 
 
     });
@@ -1501,16 +1505,14 @@
     });
 
     patchFunction("DrawCharacter", {
-        '500 * HeightRatio * Zoom':'500 * HeightRatio * Zoom * 2',
+        '500 * HeightRatio * Zoom': '500 * HeightRatio * Zoom * 2',
 
-        'TempCanvas.canvas.width = CanvasDrawWidth;':'TempCanvas.canvas.width = CanvasDrawWidth * 2;',
+        'TempCanvas.canvas.width = CanvasDrawWidth;': 'TempCanvas.canvas.width = CanvasDrawWidth * 2;',
     });
 
 
     // ================================================================================
     // ================================================================================
 
-    // ================================================================================
-    // ================================================================================
 
 })();
