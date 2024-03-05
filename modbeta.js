@@ -1435,29 +1435,14 @@
         next(args);
     });
 
-    const ctx4 = GLDrawCanvas.getContext("2d");
-        ctx4.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
-    ctx4.translate(-278, 0); // 进行平移
 
-
-    const ctx = Player.Canvas.getContext("2d");
-    ctx.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
-    ctx.translate(-278, 0); // 进行平移
-    const ctx2 = Player.CanvasBlink.getContext("2d");
-    ctx2.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
-    ctx2.translate(-278, 0); // 进行平移
-
-
+    // ================================================================================
+    // ================================================================================
     // 完整的双人床！ 修改了角色画布的宽度 
     function GLDrawLoadEx(_evt, force2d = false) {
         GLDrawCanvas = document.createElement("canvas");
         GLDrawCanvas.width = 1000 * 2;
         GLDrawCanvas.height = CanvasDrawHeight;
-        const ctx = GLDrawCanvas.getContext("2d");
-        ctx.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
-        ctx.translate(-278, 0); // 进行平移
-        // GLDrawCanvas.style.position = "absolute";
-        // GLDrawCanvas.style.left = "750px"; // 向右移动 750px
 
         const glOpts = GLDrawGetOptions();
         let gl = null;
@@ -1504,7 +1489,7 @@
         next(args);
     });
 
-    // 修改角色画布的大小为 875
+
     patchFunction("CommonDrawCanvasPrepare", {
         "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 3.5 / 2;',
         "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 3.5 / 2;',
@@ -1512,28 +1497,19 @@
         'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 3.5 / 2, CanvasDrawHeight);',
         'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 3.5 / 2, CanvasDrawHeight);',
 
-        // 'C.Canvas.height = CanvasDrawHeight;':
-        //     'C.Canvas.height = CanvasDrawHeight; C.Canvas.style.position = "absolute"; C.Canvas.style.left = "750px";',
     });
-    // 修改闪烁偏移为 1000
+
     patchFunction("GLDrawAppearanceBuild", {
         '500': '500 * 2',
-        'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);':
-            'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);',
+        'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);': 'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);',
 
-
-        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 0),':
-            'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 250),',
-        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),':
-            'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + 250),',
-
-
+        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 0),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 250),',
+        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset + 250),',
+        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 0),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 250),',
+        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + 250),',
+        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 0, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 250, alphaMasks),',
+        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset + 250, alphaMasks),',
         // 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + (500)),',
-    });
-    // 对齐角色高度
-    patchFunction("GLDrawAppearanceBuild", {
-        'const viewWidth = ChatRoomCharacterViewWidth': 'let MainCanvasWidthEx = 2000 * 3.5 / 2; let ChatRoomCharacterViewWidthEx = MainCanvasWidthEx / 2; const viewWidth = ChatRoomCharacterViewWidthEx',
-
     });
 
     patchFunction("DrawCharacter", {
@@ -1542,11 +1518,13 @@
 
         'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);',
 
-    });
 
+
+        'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2.5 - 875 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom',
+
+    });
 
     // ================================================================================
     // ================================================================================
 
 })();
-
