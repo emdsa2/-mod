@@ -804,7 +804,7 @@
             },
             {
                 Name: "床左边_Luzi", Random: false,
-                Top: 0, Left: 0,
+                Top: -110, Left: 0,
                 Priority: 1,
                 Difficulty: -20,
                 SelfBondage: 0,
@@ -837,7 +837,7 @@
             },
             {
                 Name: "床右边_Luzi", Random: false,
-                Top: 0, Left: -100,
+                Top: -110, Left: -110,
                 Priority: 1,
                 Difficulty: -20,
                 SelfBondage: 0,
@@ -869,7 +869,8 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi", Top: 140, Left: 0, Random: false,
+                Name: "窝瓜_Luzi", Random: false, 
+                Top: 140, Left: 0, 
                 Fetish: ["Pet"],
                 Difficulty: -25,
                 AllowLock: true,
@@ -902,7 +903,8 @@
         ],
         ItemAddon: [
             {
-                Name: "被子左边_Luzi",
+                Name: "被子左边_Luzi", Random: false,
+                Top: -110, Left: -110,
                 Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
@@ -915,7 +917,8 @@
                 ],
             },
             {
-                Name: "被子右边_Luzi",
+                Name: "被子右边_Luzi", Random: false,
+                Top: -110, Left: -110,
                 Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
