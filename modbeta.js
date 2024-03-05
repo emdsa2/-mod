@@ -804,14 +804,14 @@
             },
             {
                 Name: "床左边_Luzi", Random: false,
-                Top: -110, Left: 0,
+                Top: -260, Left: 0,
                 Priority: 1,
                 Difficulty: -20,
                 SelfBondage: 0,
                 Time: 5,
                 RemoveTime: 5,
                 RemoveAtLogin: true,
-                OverrideHeight: { Height: 40, HeightRatioProportion: 1, Priority: 21 },
+                OverrideHeight: { Height: 20, HeightRatioProportion: 1, Priority: 21 },
                 DefaultColor: ["#523629", "#888990", "#808284"],
                 RemoveItemOnRemove: [
                     { Group: "ItemAddon", Name: "Covers" },
@@ -837,7 +837,7 @@
             },
             {
                 Name: "床右边_Luzi", Random: false,
-                Top: -110, Left: -110,
+                Top: -260, Left: -110,
                 Priority: 1,
                 Difficulty: -20,
                 SelfBondage: 0,
@@ -845,7 +845,7 @@
                 RemoveTime: 5,
                 RemoveAtLogin: true,
                 DefaultColor: ["#523629", "#888990", "#808284",],
-                OverrideHeight: { Height: 40, HeightRatioProportion: 1, Priority: 21, },
+                OverrideHeight: { Height: 20, HeightRatioProportion: 1, Priority: 21, },
                 RemoveItemOnRemove: [
                     { Group: "ItemAddon", Name: "Covers", },
                     { Group: "ItemAddon", Name: "被子左边_Luzi", },
@@ -869,8 +869,8 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi", Random: false, 
-                Top: 140, Left: 0, 
+                Name: "窝瓜_Luzi", Random: false,
+                Top: 140, Left: 0,
                 Fetish: ["Pet"],
                 Difficulty: -25,
                 AllowLock: true,
@@ -904,7 +904,7 @@
         ItemAddon: [
             {
                 Name: "被子左边_Luzi", Random: false,
-                Top: -110, Left: 0,
+                Top: -260, Left: 0,
                 Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
@@ -918,7 +918,7 @@
             },
             {
                 Name: "被子右边_Luzi", Random: false,
-                Top: -110, Left: -110,
+                Top: -260, Left: -200,
                 Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
