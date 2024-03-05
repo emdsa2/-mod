@@ -803,8 +803,8 @@
                     { Name: "吊顶链", Priority: 5, AllowTypes: { s: 1 } },],
             },
             {
-                Name: "床左边_Luzi",
-                Random: false,
+                Name: "床左边_Luzi", Random: false,
+                Top: 0, Left: 0,
                 Priority: 1,
                 Difficulty: -20,
                 SelfBondage: 0,
@@ -836,8 +836,8 @@
                 ]
             },
             {
-                Name: "床右边_Luzi",
-                Random: false,
+                Name: "床右边_Luzi", Random: false,
+                Top: 0, Left: -100,
                 Priority: 1,
                 Difficulty: -20,
                 SelfBondage: 0,
@@ -1462,7 +1462,7 @@
         'TempCanvas.canvas.width = CanvasDrawWidth;': 'TempCanvas.canvas.width = CanvasDrawWidth * 2;',
 
         'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);',
-        
+
         'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2 - 1000 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom',
     });
 
