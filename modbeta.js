@@ -904,7 +904,7 @@
         ItemAddon: [
             {
                 Name: "被子左边_Luzi", Random: false,
-                Top: -110, Left: -110,
+                Top: -110, Left: 0,
                 Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
