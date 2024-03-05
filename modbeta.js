@@ -1435,6 +1435,17 @@
         next(args);
     });
 
+    const ctx4 = GLDrawCanvas.getContext("2d");
+        ctx4.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
+    ctx4.translate(-278, 0); // 进行平移
+
+
+    const ctx = Player.Canvas.getContext("2d");
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
+    ctx.translate(-278, 0); // 进行平移
+    const ctx2 = Player.CanvasBlink.getContext("2d");
+    ctx2.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
+    ctx2.translate(-278, 0); // 进行平移
 
 
     // 完整的双人床！ 修改了角色画布的宽度 
@@ -1442,6 +1453,9 @@
         GLDrawCanvas = document.createElement("canvas");
         GLDrawCanvas.width = 1000 * 2;
         GLDrawCanvas.height = CanvasDrawHeight;
+        const ctx = GLDrawCanvas.getContext("2d");
+        ctx.setTransform(1, 0, 0, 1, 0, 0); // 重置变换矩阵
+        ctx.translate(-278, 0); // 进行平移
         // GLDrawCanvas.style.position = "absolute";
         // GLDrawCanvas.style.left = "750px"; // 向右移动 750px
 
@@ -1490,7 +1504,7 @@
         next(args);
     });
 
-
+    // 修改角色画布的大小为 875
     patchFunction("CommonDrawCanvasPrepare", {
         "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 3.5 / 2;',
         "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 3.5 / 2;',
@@ -1501,7 +1515,7 @@
         // 'C.Canvas.height = CanvasDrawHeight;':
         //     'C.Canvas.height = CanvasDrawHeight; C.Canvas.style.position = "absolute"; C.Canvas.style.left = "750px";',
     });
-
+    // 修改闪烁偏移为 1000
     patchFunction("GLDrawAppearanceBuild", {
         '500': '500 * 2',
         'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);':
@@ -1516,9 +1530,9 @@
 
         // 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + (500)),',
     });
-
+    // 对齐角色高度
     patchFunction("GLDrawAppearanceBuild", {
-        'const viewWidth = ChatRoomCharacterViewWidth': 'const MainCanvasWidthEx = 2000 * 3.5 / 2; const ChatRoomCharacterViewWidthEx = MainCanvasWidthEx / 2; const viewWidth = ChatRoomCharacterViewWidthEx',
+        'const viewWidth = ChatRoomCharacterViewWidth': 'let MainCanvasWidthEx = 2000 * 3.5 / 2; let ChatRoomCharacterViewWidthEx = MainCanvasWidthEx / 2; const viewWidth = ChatRoomCharacterViewWidthEx',
 
     });
 
@@ -1528,50 +1542,7 @@
 
         'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);',
 
-        // 'const YOffset = CharacterAppearanceYOffset(C, HeightRatio);': 'const YOffset = CharacterAppearanceYOffset(C, HeightRatio); let 身高 = { 0.9: 115, 0.91: 120, 0.92: 125, 0.93: 130, 0.94: 135, 0.95: 140, 0.96: 145, 0.97: 150, 0.98: 155, 0.99: 160, 1: 165 }[C.HeightRatio] || 0; let 绘制人数 = { 1: 244, 2: 244, 3: 208, 4: 152, 5: 124, 6: 124, 7: 124, 8: 124, 9: 124, 10: 124, }[DrawLastCharacters.length] || 0;',
-
-        // 'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'DrawImageEx(Canvas, DrawCanvas, (X + XOffset * Zoom) - (Y + DestY * Zoom)',
-
-        // 'SourcePos: [0': 'SourcePos: [270',
-
     });
-
-    patchFunction("DrawImageEx", {
-        'Canvas.save();':'Canvas.save(); let 绘制人数 = { 1: 244, 2: 244, 3: 208, 4: 152, 5: 124, 6: 124, 7: 124, 8: 124, 9: 124, 10: 124, }[DrawLastCharacters.length] || 0;',
-        'Canvas.translate(X, Y);': 'if (Source instanceof HTMLCanvasElement) { Canvas.translate(X - 绘制人数, Y); } else { Canvas.translate(X, Y); }',
-
-    });
-    
-
-    // let 绘制人数;
-    // mod.hookFunction("GLDrawImage", 1, (args, next) => {
-    //     绘制人数 = DrawLastCharacters.length
-    //     next(args);
-    // });
-    // mod.hookFunction("DrawCharacter", 1, (args, next) => {
-    //     console.log(args)
-    //     // if (绘制人数 >= 5) {
-    //     //     args[1] -= 124
-    //     // }
-    //     // if (绘制人数 == 4) {
-    //     //     args[1] -= 152
-    //     // }
-    //     // if (绘制人数 == 3) {
-    //     //     args[1] -= 208
-    //     // }
-    //     // if (绘制人数 == 2) {
-    //     //     args[1] -= 244
-    //     // }
-    //     // if (绘制人数 == 1) {
-    //     //     args[1] -= 244
-    //     // }
-    //     next(args);
-    // });
-    // mod.hookFunction("DrawImageEx", 1, async (args, next) => {
-    //     if (args[0] instanceof HTMLCanvasElement) { console.log(args) }
-
-    //     next(args);
-    // });
 
 
     // ================================================================================
