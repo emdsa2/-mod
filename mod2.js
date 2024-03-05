@@ -2336,7 +2336,7 @@
         ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
     }
 
-    // #region GUIScreen
+// #region GUIScreen
 
     const GUIScreen = {
         /** @type { Subscreen | null } */
@@ -2346,9 +2346,9 @@
          * @param {Subscreen | null} value
          */
         set Current(value) {
-            if (this._Current !== null) this._Current.unload();
+            if(this._Current !== null) this._Current.unload();
             this._Current = value;
-            if (this._Current === null) {
+            if(this._Current === null) {
                 if (typeof PreferenceSubscreenExtensionsClear === "function")
                     PreferenceSubscreenExtensionsClear();
                 else PreferenceSubscreen = "";
@@ -2359,11 +2359,11 @@
     }
 
     class Subscreen {
-        load() { }
-        run() { }
-        click() { }
-        exit() { GUIScreen.Current = null; }
-        unload() { }
+        load(){}
+        run(){}
+        click(){}
+        exit(){GUIScreen.Current = null;}
+        unload(){}
     }
 
     class BaseSubscreen extends Subscreen {
@@ -2372,8 +2372,8 @@
     }
 
     class 自定义动作设置 extends BaseSubscreen {
-        constructor(prev) {
-            super(prev);
+        constructor(prev) { 
+            super(prev); 
             this.单双 = "👤"
             this.isme = "👈"
             this.新建动作 = false
@@ -2570,7 +2570,7 @@
                 }
             }
         }
-        click() {
+        click() { 
             if (MouseIn(114, 75, 90, 90)) {
                 笨蛋LZActivity();
                 console.log("已存储进个人设置");
@@ -2703,11 +2703,11 @@
 
     class 高潮计数保留设置 extends BaseSubscreen {
         constructor(prev) { super(prev); }
-        run() {
+        run() {            
             DrawImageResize("https://emdsa2.github.io/-mod/image/选择界面.png"
-                , 0, 0, 2000, 1000);
+        , 0, 0, 2000, 1000);
             DrawImageResize("https://emdsa2.github.io/-mod/image/返回白.png"
-                , 114, 75, 90, 90);
+        , 114, 75, 90, 90);
 
             DrawText(`- 高潮计数保留设置 -`, 1000, 125, "Black");
 
@@ -2738,7 +2738,7 @@
             DrawText(`- 动作拓展设置 -`, 1000, 125, "Black");
 
             DrawImageResize("https://emdsa2.github.io/-mod/image/界面选择.png"
-                , 0, 0, 2000, 1000,);
+            , 0, 0, 2000, 1000,);
 
             DrawImageResize("https://emdsa2.github.io/-mod/image/界面缠绕.png"
                 , 0, 0, 2000, 1000,);
@@ -2763,7 +2763,7 @@
                     , 1500, 700, 390, 90, "White");
             }
         }
-        click() {
+        click(){
             if (MouseIn(114, 75, 90, 90)) {
                 this.exit();
             }
@@ -2782,8 +2782,8 @@
         }
     }
 
-    (async () => {
-        if (typeof PreferenceRegisterExtensionSetting === "function") {
+    (async ()=>{
+        if(typeof PreferenceRegisterExtensionSetting === "function") {
             PreferenceRegisterExtensionSetting({
                 Identifier: "动作拓展设置",
                 ButtonText: "动作拓展设置",
@@ -2802,32 +2802,32 @@
             window[`PreferenceSubscreen${SettingSubscreenName}Click`] = () => GUIScreen.Current?.click();
             window[`PreferenceSubscreen${SettingSubscreenName}Exit`] = () => GUIScreen.Current?.exit();
             window[`PreferenceSubscreen${SettingSubscreenName}Unload`] = () => GUIScreen.Current?.unload();
-
+    
             笨蛋Luzi.hookFunction("DrawButton", 2, (args, next) => {
                 if (args[6] == `Icons/${SettingSubscreenName}.png`) args[6] = "Icons/Use.png";
                 return next(args);
             });
-
+    
             笨蛋Luzi.hookFunction("TextGet", 2, (args, next) => {
                 if (args[0] == `Homepage${SettingSubscreenName}`) return "动作拓展设置";
                 return next(args);
             });
-
+    
             笨蛋Luzi.hookFunction("DrawBackNextButton", 10, (args, next) => {
                 if (args[4]?.includes("笨蛋笨Luzi_")) {
                     args[4] = args[4]?.replace("笨蛋笨Luzi_", "");
                 }
                 next(args);
             });
-
-            while (!Array.isArray(PreferenceSubscreenList)) await delay(100);
+    
+            while(!Array.isArray(PreferenceSubscreenList)) await delay(100);
             if (!PreferenceSubscreenList.includes(SettingSubscreenName))
                 PreferenceSubscreenList.push(SettingSubscreenName);
         }
 
     })()
 
-    //#endregion
+//#endregion
 
     // ========================================================================
     // ========================================================================
