@@ -1475,6 +1475,12 @@
         'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2 - 1000 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom',
     });
 
+    patchFunction("DrawCharacterSegment", {
+        'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250',
+
+    });
+
+
     // ================================================================================
     // ================================================================================
 
