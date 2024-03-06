@@ -462,7 +462,7 @@
             },
             {
                 Name: "鱼鱼尾_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
+                Top: -110, Left: 0, Extended: true,
                 OverrideHeight: { Height: 30, Priority: 19, },
                 Hide: [],
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Kneel", Kneel: "Kneel", },
@@ -473,10 +473,8 @@
                     { Name: "鱼尾下骨架2", Priority: 22, CopyLayerColor: "衣鱼尾下骨架", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
                     { Name: "鱼尾下透明", Priority: 22 },
                     { Name: "鱼尾下骨架", Priority: 22 },
-                    { Name: "鱼尾鱼鳍上透明", Priority: 22 },
-                    { Name: "鱼尾鱼鳍上骨架", Priority: 22 },
-                    { Name: "鱼尾鱼鳍下透明", Priority: 22 },
-                    { Name: "鱼尾鱼鳍下骨架", Priority: 22 },
+                    { Name: "鱼尾鱼鳍上透明", Priority: 22, AllowTypes: { typed: 1 }, },
+                    { Name: "鱼尾鱼鳍上骨架", Priority: 22, AllowTypes: { typed: 1 }, },
                     { Name: "高光上半", Priority: 22 },
                     { Name: "高光下半", Priority: 22 },
                 ]
@@ -639,11 +637,8 @@
         ],
         ItemTorso2: [
             {
-                Name: "拘束套装_Luzi",
-                Top: 0,
-                Left: 0,
-                Random: false,
-                Gender: "F",
+                Name: "拘束套装_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
                 Difficulty: 25,
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1036,7 +1031,17 @@
             },
         ],
     };
-
+    AssetFemale3DCGExtended.SuitLower.鱼鱼尾_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        Options: [
+            {
+                Name: "无",
+            },
+            {
+                Name: "有鱼鳍",
+            },
+        ],
+    };
 
     const dialogMap = new Map([
         ['ItemDevices玻璃罐子_LuziSelectBase', '选择罐子配置'], ['ItemDevices玻璃罐子_LuziSelect窗户', '设置窗户'], ['ItemDevices玻璃罐子_LuziModule窗户', '窗户'], ['ItemDevices玻璃罐子_LuziOptionc0', '无'], ['ItemDevices玻璃罐子_LuziOptionc1', '密封'], ['ItemDevices玻璃罐子_LuziSetc0', 'SourceCharacter打开了DestinationCharacter的罐子'], ['ItemDevices玻璃罐子_LuziSetc1', 'SourceCharacter封上了DestinationCharacter的罐子'], ['ItemDevices玻璃罐子_LuziSelect腿部拘束', '设置腿部拘束'], ['ItemDevices玻璃罐子_LuziModule腿部拘束', '腿部拘束'], ['ItemDevices玻璃罐子_LuziOptiont0', '无'], ['ItemDevices玻璃罐子_LuziOptiont1', '腿拘束'], ['ItemDevices玻璃罐子_LuziSett0', "SourceCharacter移除了DestinationCharacter双腿的拘束"], ['ItemDevices玻璃罐子_LuziSett1', "SourceCharacter将DestinationCharacter的双腿束缚在一起"], ['ItemDevices玻璃罐子_LuziSelect手臂拘束', '设置手臂拘束'], ['ItemDevices玻璃罐子_LuziModule手臂拘束', '手臂拘束'], ['ItemDevices玻璃罐子_LuziOptions0', '无'], ['ItemDevices玻璃罐子_LuziOptions1', '手臂拘束'], ['ItemDevices玻璃罐子_LuziSets0', "SourceCharacter移除了DestinationCharacter手腕和手肘的拘束"], ['ItemDevices玻璃罐子_LuziSets1', "SourceCharacter将DestinationCharacter的手腕和手肘束缚到她的身后"], ['ItemDevices玻璃罐子_LuziSelect管道', '设置管道'], ['ItemDevices玻璃罐子_LuziModule管道', '管道'], ['ItemDevices玻璃罐子_LuziOptiongz0', '无'], ['ItemDevices玻璃罐子_LuziOptiongz1', '连接身体'], ['ItemDevices玻璃罐子_LuziSetgz0', 'SourceCharacter移除了连接DestinationCharacter的身体的管子'], ['ItemDevices玻璃罐子_LuziSetgz1', 'SourceCharacter将管子连接进了DestinationCharacter的身体'], ['ItemDevices玻璃罐子_LuziSelect液体', '设置液体'], ['ItemDevices玻璃罐子_LuziModule液体', '液体'], ['ItemDevices玻璃罐子_LuziOptionyt0', '无'], ['ItemDevices玻璃罐子_LuziOptionyt1', '注入液体'], ['ItemDevices玻璃罐子_LuziSetyt0', 'SourceCharacter排空了DestinationCharacter身体和罐子里的液体'], ['ItemDevices玻璃罐子_LuziSetyt1', 'DestinationCharacter的身体和罐子充满了液体'], ['ItemDevices玻璃罐子_LuziSelect快感模块', '设置快感模块'], ['ItemDevices玻璃罐子_LuziModule快感模块', '快感模块'], ['ItemDevices玻璃罐子_LuziOptionk0', '关闭'], ['ItemDevices玻璃罐子_LuziOptionk1', '低'], ['ItemDevices玻璃罐子_LuziOptionk2', '一般'], ['ItemDevices玻璃罐子_LuziOptionk3', '高'], ['ItemDevices玻璃罐子_LuziOptionk4', '最多'], ['ItemDevices玻璃罐子_LuziSetk0', "插在DestinationCharacter体内的振动装置停止振动"], ['ItemDevices玻璃罐子_LuziSetk1', "插在DestinationCharacter体内的振动装置轻微逗弄起来"], ['ItemDevices玻璃罐子_LuziSetk2', "插在DestinationCharacter体内的振动装置带温和嗡鸣着"], ['ItemDevices玻璃罐子_LuziSetk3', "插在DestinationCharacter体内的振动装置猛烈地颤动"], ['ItemDevices玻璃罐子_LuziSetk4', "插在DestinationCharacter体内的振动装置以最大速度振动着"], ['ItemDevices玻璃罐子_LuziSelect电击模块', '设置电击模块'], ['ItemDevices玻璃罐子_LuziModule电击模块', '电击模块'], ['ItemDevices玻璃罐子_LuziOptiond0', '关闭'], ['ItemDevices玻璃罐子_LuziOptiond1', '低'], ['ItemDevices玻璃罐子_LuziOptiond2', '一般'], ['ItemDevices玻璃罐子_LuziOptiond3', '高'], ['ItemDevices玻璃罐子_LuziSetd0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置关闭了'], ['ItemDevices玻璃罐子_LuziSetd1', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级1'], ['ItemDevices玻璃罐子_LuziSetd2', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级2'], ['ItemDevices玻璃罐子_LuziSetd3', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级3'], ['ItemDevices玻璃罐子_LuziSelect高潮锁', '设置高潮锁'], ['ItemDevices玻璃罐子_LuziModule高潮锁', '高潮锁'], ['ItemDevices玻璃罐子_LuziOptiong0', '允许'], ['ItemDevices玻璃罐子_LuziOptiong1', '寸止'], ['ItemDevices玻璃罐子_LuziOptiong2', '拒绝'], ['ItemDevices玻璃罐子_LuziSetg0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮'], ['ItemDevices玻璃罐子_LuziSetg1', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式'], ['ItemDevices玻璃罐子_LuziSetg2', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式'],
@@ -1050,7 +1055,7 @@
         ['ItemTorso2拘束套装_LuziSet透视紧身衣', ''],
         ['ItemTorso2拘束套装_LuziSet紧身衣', ''],
 
-
+        ['SuitLower鱼鱼尾_LuziSelect', '选择配置'],
     ]);
 
 
