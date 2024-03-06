@@ -463,7 +463,7 @@
             {
                 Name: "鱼鱼尾_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
-                OverrideHeight: { Height: 30, Priority: 21, },
+                OverrideHeight: { Height: 30, Priority: 19, },
                 Hide: [],
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Kneel", Kneel: "Kneel", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
