@@ -2056,17 +2056,21 @@
         const data = args[0];
         // console.log(data);
         halo2 = true;
+        // 耳朵部位的装备
         let luzi = InventoryGet(Player, "ItemEars");
 
+        // 重置当前的需要翻译的语言
         if ((data.Sender === Player.MemberNumber && data.Content === "ActionRemove" && data.Dictionary[3].GroupName === "ItemEars") ||
             (data.Sender === Player.MemberNumber && data.Content === "ActionSwap" && data.Dictionary[3].GroupName === "ItemEars")) {
             currentLanguage = '';
         }
 
+        // 如果获取到耳朵有物品
         if (luzi !== null) {
+            // 自定义 & 描述
             if (luzi.Craft && luzi.Craft.Description) {
                 // 使用正则表达式匹配双引号内的内容
-                const matches = luzi.Craft.Description.match(/"([^"]*)"/);
+                const matches = luzi.Craft.Description.match(/"(auto|[a-z]{2}|zh(-cn)?(-tw)?)"/); // 限定为: auto, [任意两个字母], zh-cn, zh-tw // 或许可以去掉 auto
 
                 // 如果有匹配的内容,matches[1] 就是双引号内的内容
                 if (matches) {
@@ -2075,17 +2079,23 @@
             }
         } else { currentLanguage = ''; }
         // ============================================
+        // 获取混合槽的物品
         let luzi2 = InventoryGet(Player, "ItemMisc");
+        // 重置
         if ((data.Sender === Player.MemberNumber && data.Content === "ActionRemove" && data.Dictionary[3].GroupName === "ItemMisc") ||
             (data.Sender === Player.MemberNumber && data.Content === "ActionSwap" && data.Dictionary[3].GroupName === "ItemMisc")) {
             currentLanguage2 = '';
         }
+        // 获取到到的混合槽的物品
         if (luzi2 !== null) {
+            // 自定义 & 描述
             if (luzi2.Craft && luzi2.Craft.Description) {
-                const validAssetNames = ["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl"];
-                if (validAssetNames.includes(luzi2.Asset.Name)) {
+                // 有效物品
+                const validAssetNames = new Set < string > (["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl"]);
+                // 是有效物品
+                if (validAssetNames.has(luzi2.Asset.Name)) {
                     // 使用正则表达式匹配双引号内的内容
-                    const matches = luzi2.Craft.Description.match(/"([^"]*)"/);
+                    const matches = luzi2.Craft.Description.match(/"(auto|[a-z]{2}|zh(-cn)?(-tw)?)"/);// 限定为: auto, [任意两个字母], zh-cn, zh-tw  // 或许可以去掉 auto
 
                     // 如果有匹配的内容,matches[1] 就是双引号内的内容
                     if (matches) {
@@ -2095,32 +2105,58 @@
             }
         } else { currentLanguage2 = ''; }
         // ============================================
-        if (data.Sender !== Player.MemberNumber && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote") && !data.Content.includes("[T]") && !data.Content.includes("📞") && !data.Content.includes("🔊") && !data.Content.includes("\\") && !data.Content.includes("/")) {
+
+        if (data.Sender !== Player.MemberNumber
+            && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote")
+            && !data.Content.includes("[T]")
+            && !data.Content.includes("📞")
+            && !data.Content.includes("🔊")
+            && !data.Content.includes("\\")
+            && !data.Content.includes("/")) {
+            //原始文本
             let sourceText = data.Dictionary?.find(d => d.Tag === "BCX_ORIGINAL_MESSAGE")?.Text ?? data.Content;
             let sourceLang = 'auto';
+            // 目标语言
             let targetLang = currentLanguage;
 
+            /**
+             * 当目标语言不等于源语言时，使用Google翻译API进行翻译，并将翻译结果发送为聊天消息。
+             * @param {string} sourceLang 源语言代码
+             * @param {string} targetLang 目标语言代码
+             * @param {string} sourceText 待翻译的文本
+             * @param {string} Player 成员对象，用于标识发送消息的玩家
+             */
             if (targetLang !== sourceLang) {
+                // 构建Google翻译API的请求URL
                 let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
                 fetch(url)
                     .then(response => response.json())
                     .then((dt) => {
+                        // 检查翻译结果是否有效
                         if (dt && dt[0] && dt[0][0] && dt[0][0][0]) {
-                            let translatedText = dt[0][0][0].replace("[T]", ""); // 去掉翻译中的[T]
+                            // 从翻译结果中移除特定标记"[T]"
+                            let translatedText = dt[0][0][0].replace("[T]", "");
 
+                            // 如果翻译结果不等于源文本，则发送翻译后的文本作为聊天消息
                             if (translatedText !== sourceText) {
                                 ChatRoomMessage({ Content: "📞 " + translatedText, Type: "Chat", Sender: Player.MemberNumber, Dictionary: [{ Tag: '发送私聊', Text: 1 }] });
                             }
                         } else {
-                            //console.log("无效的翻译数据:", dt);
+                            // 无效的翻译数据处理逻辑（当前为空，可根据需要添加日志记录等）
                         }
                     })
                     .catch(error => {
-                        //console.error("翻译请求失败:", error);
+                        // 处理翻译请求失败的情况（当前为空，可根据需要添加错误日志记录等）
                     });
             }
         }
-        if (data.Sender === Player.MemberNumber && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote") && !data.Content.includes("[T]") && !data.Content.includes("📞") && !data.Content.includes("🔊") && !data.Content.includes("\\") && !data.Content.includes("/")) {
+        if (data.Sender === Player.MemberNumber
+            && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote")
+            && !data.Content.includes("[T]")
+            && !data.Content.includes("📞")
+            && !data.Content.includes("🔊")
+            && !data.Content.includes("\\")
+            && !data.Content.includes("/")) {
             let sourceText = data.Dictionary?.find(d => d.Tag === "BCX_ORIGINAL_MESSAGE")?.Text ?? data.Content;
             let sourceLang = 'auto';
             let targetLang = currentLanguage2;
@@ -2161,20 +2197,50 @@
     //============================================================
     //============================================================
     // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
+
+    // 分享方式说明: 
+    // * 开头键入: "分享| "  (注意空格)
+    // 网易云: 复制分享链接(网页版或客户端的 分享->复制链接)
+    // B站: 复制嵌入式链接
+    // YouTube: 复制分享链接
+    // 那啥站: 复制网址
+    
+    function GetNMIframe(Id) {
+        return `<iframe border="0" marginwidth="0" marginheight="0" src="https://dontpanic92.github.io/embedded-netease-music-player/embedded-netease-music-player.html?${Id}" width="560" height="96" frameborder="no"></iframe>`
+    }
+    function GetBiliIframe(info) {
+        const IDs = info.split("-");
+        return `<iframe width="560" height="315" src="//player.bilibili.com/player.html?aid=${IDs[0]}&bvid=${IDs[1]}&cid=${IDs[2]}&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`
+    }
+    function GetYoutubeIframe(info) {
+        const IDs = info.split("-");
+        return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${IDs[0]}?si=${IDs[1]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    }
+    function GetPornhubIframe(Id) {
+        return `<iframe src="https://www.pornhub.com/embed/${Id}" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>`
+    }
+
     笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
-        if (data.Type === "Hidden" && data.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        if (data.Type === "Hidden" && data.Content.includes('<iframe src="//player.bilibili.com/player.html')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        if (data.Type === "Hidden" && data.Content.includes('<iframe width="560" height="315" src="https://www.youtube.com/')) {
-            ChatRoomSendLocal(data.Content);
-        };
-        if (data.Type === "Hidden" && data.Content.includes('<iframe src="https://www.pornhub.com/')) {
-            ChatRoomSendLocal(data.Content);
-        };
+        if (data.Content === "Share_Link") {
+            const linkType = data.Dictionary[0].linkType;
+            const info = data.Dictionary[0].info;
+            switch (linkType) {
+                case "nm":
+                    ChatRoomSendLocal(GetNMIframe(info))
+                    break;
+                case "bili":
+                    ChatRoomSendLocal(GetBiliIframe(info))
+                    break;
+                case "ytb":
+                    ChatRoomSendLocal(GetYoutubeIframe(info))
+                    break;
+                case "phb":
+                    ChatRoomSendLocal(GetPornhubIframe(info))
+                    break;
+            }
+            return;
+        }
         // console.log("公开", data)
         next(args);
     });
@@ -2182,32 +2248,42 @@
     笨蛋Luzi.hookFunction("ServerSend", 5, (args, next) => {
         const data = args;
         // Player.ChatSettings.MuStylePoses
-        if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1]?.Content.includes('></iframe>') && data[1]?.Type === "Chat") {
-            if (data[1]?.Content.includes('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/')) {
-                args[1].Type = "Hidden";
+        // "分享| " 开头  (注意有空格)
+        if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1].Content.includes('分享| ') && data[1]?.Type === "Chat") {
+            // 处理信息
+            // 移除签4个字符 (去掉"分享| ")
+            const shareContent = data[1].Content.replace(/( ?\() ?}/g, '').replace(/( \))}/g, '').substring(4);
+            data[1].Content = "Share_Link";
+            const dictionary = {}
+
+            if (shareContent.includes('https://music.163.com/song?id=')) {
                 ChatRoomSendEmote("一个 网易云 嵌入分享 ╰(*°▽°*)╯");
-            };
-            if (data[1]?.Content.includes('<iframe src="//player.bilibili.com/player.html')) {
-                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                args[1].Content = modifiedContent;
-                args[1].Type = "Hidden";
+                dictionary["linkType"] = "nm";
+                const match = shareContent.match(/id=(\d+)&userid=(\d+)/); // 拿到歌曲ID   用户ID不能发出去 保护隐私
+                if (match) dictionary.info = match[1];
+            } else if (shareContent.includes('<iframe src="//player.bilibili.com/player.html')) {
                 ChatRoomSendEmote("一个 Bilibili 嵌入分享 ╰(*°▽°*)╯");
-            };
-            if (data[1]?.Content.includes('<iframe width="560" height="315" src="https://www.youtube.com/')) {
-                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                args[1].Content = modifiedContent;
-                args[1].Type = "Hidden";
+                dictionary["linkType"] = "bili";
+                const match = shareContent.match(/aid=(\d+)&bvid=([A-Za-z0-9]+)&cid=([A-Za-z0-9]+)/);
+                if (match) dictionary.info = `${match[1]}-${match[2]}-${match[3]}`;
+
+            } else if (shareContent.includes('https://youtu.be/')) {
                 ChatRoomSendEmote("一个 Youtube 嵌入分享 ╰(*°▽°*)╯");
-            };
-            if (data[1]?.Content.includes('<iframe src="https://www.pornhub.com/')) {
-                let modifiedContent = data[1].Content.replace(/width\s*=\s*['"]\d+['"]/i, 'width="560"');
-                modifiedContent = modifiedContent.replace(/height\s*=\s*['"]\d+['"]/i, 'height="315"');
-                args[1].Content = modifiedContent;
-                args[1].Type = "Hidden";
+                dictionary["linkType"] = "ytb";
+                const match = shareContent.match(/([A-Za-z0-9_-]+)\?si=([A-Za-z0-9]+)/);
+                if (match)  dictionary.info = `${match[1]}-${match[2]}`;
+            } else if (shareContent.includes('pornhub.com/view_video.php')) {
                 ChatRoomSendEmote("一个 Pornhub 嵌入分享 ╰(*°▽°*)╯");
-            };
+                dictionary["linkType"] = "phb";
+                const match = shareContent.match(/viewkey=([A-Za-z0-9]+)/);
+                if (match) dictionary.info = match[1];
+
+            } else return; // 如果都不匹配则直接返回
+
+            // 修改为隐藏类型 并传入数据字典
+            args[1].Type = "Hidden";
+            if (data[1]["Dictionary"]) data[1].Dictionary.push(dictionary);
+            else { data[1]["Dictionary"] = [dictionary] }
         };
         // console.log("自己", data[1])
         next(args);
@@ -2336,7 +2412,7 @@
         ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
     }
 
-// #region GUIScreen
+    // #region GUIScreen
 
     const GUIScreen = {
         /** @type { Subscreen | null } */
@@ -2346,9 +2422,9 @@
          * @param {Subscreen | null} value
          */
         set Current(value) {
-            if(this._Current !== null) this._Current.unload();
+            if (this._Current !== null) this._Current.unload();
             this._Current = value;
-            if(this._Current === null) {
+            if (this._Current === null) {
                 if (typeof PreferenceSubscreenExtensionsClear === "function")
                     PreferenceSubscreenExtensionsClear();
                 else PreferenceSubscreen = "";
@@ -2359,11 +2435,11 @@
     }
 
     class Subscreen {
-        load(){}
-        run(){}
-        click(){}
-        exit(){GUIScreen.Current = null;}
-        unload(){}
+        load() { }
+        run() { }
+        click() { }
+        exit() { GUIScreen.Current = null; }
+        unload() { }
     }
 
     class BaseSubscreen extends Subscreen {
@@ -2372,8 +2448,8 @@
     }
 
     class 自定义动作设置 extends BaseSubscreen {
-        constructor(prev) { 
-            super(prev); 
+        constructor(prev) {
+            super(prev);
             this.单双 = "👤"
             this.isme = "👈"
             this.新建动作 = false
@@ -2570,7 +2646,7 @@
                 }
             }
         }
-        click() { 
+        click() {
             if (MouseIn(114, 75, 90, 90)) {
                 笨蛋LZActivity();
                 console.log("已存储进个人设置");
@@ -2703,11 +2779,11 @@
 
     class 高潮计数保留设置 extends BaseSubscreen {
         constructor(prev) { super(prev); }
-        run() {            
+        run() {
             DrawImageResize("https://emdsa2.github.io/-mod/image/选择界面.png"
-        , 0, 0, 2000, 1000);
+                , 0, 0, 2000, 1000);
             DrawImageResize("https://emdsa2.github.io/-mod/image/返回白.png"
-        , 114, 75, 90, 90);
+                , 114, 75, 90, 90);
 
             DrawText(`- 高潮计数保留设置 -`, 1000, 125, "Black");
 
@@ -2738,7 +2814,7 @@
             DrawText(`- 动作拓展设置 -`, 1000, 125, "Black");
 
             DrawImageResize("https://emdsa2.github.io/-mod/image/界面选择.png"
-            , 0, 0, 2000, 1000,);
+                , 0, 0, 2000, 1000,);
 
             DrawImageResize("https://emdsa2.github.io/-mod/image/界面缠绕.png"
                 , 0, 0, 2000, 1000,);
@@ -2763,7 +2839,7 @@
                     , 1500, 700, 390, 90, "White");
             }
         }
-        click(){
+        click() {
             if (MouseIn(114, 75, 90, 90)) {
                 this.exit();
             }
@@ -2782,8 +2858,8 @@
         }
     }
 
-    (async ()=>{
-        if(typeof PreferenceRegisterExtensionSetting === "function") {
+    (async () => {
+        if (typeof PreferenceRegisterExtensionSetting === "function") {
             PreferenceRegisterExtensionSetting({
                 Identifier: "动作拓展设置",
                 ButtonText: "动作拓展设置",
@@ -2802,32 +2878,32 @@
             window[`PreferenceSubscreen${SettingSubscreenName}Click`] = () => GUIScreen.Current?.click();
             window[`PreferenceSubscreen${SettingSubscreenName}Exit`] = () => GUIScreen.Current?.exit();
             window[`PreferenceSubscreen${SettingSubscreenName}Unload`] = () => GUIScreen.Current?.unload();
-    
+
             笨蛋Luzi.hookFunction("DrawButton", 2, (args, next) => {
                 if (args[6] == `Icons/${SettingSubscreenName}.png`) args[6] = "Icons/Use.png";
                 return next(args);
             });
-    
+
             笨蛋Luzi.hookFunction("TextGet", 2, (args, next) => {
                 if (args[0] == `Homepage${SettingSubscreenName}`) return "动作拓展设置";
                 return next(args);
             });
-    
+
             笨蛋Luzi.hookFunction("DrawBackNextButton", 10, (args, next) => {
                 if (args[4]?.includes("笨蛋笨Luzi_")) {
                     args[4] = args[4]?.replace("笨蛋笨Luzi_", "");
                 }
                 next(args);
             });
-    
-            while(!Array.isArray(PreferenceSubscreenList)) await delay(100);
+
+            while (!Array.isArray(PreferenceSubscreenList)) await delay(100);
             if (!PreferenceSubscreenList.includes(SettingSubscreenName))
                 PreferenceSubscreenList.push(SettingSubscreenName);
         }
 
     })()
 
-//#endregion
+    //#endregion
 
     // ========================================================================
     // ========================================================================
