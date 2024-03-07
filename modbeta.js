@@ -1075,8 +1075,8 @@
         ['SuitLower鱼鱼尾_LuziOptionq1', '有'],
 
         ['SuitLower鱼鱼尾_LuziModule鱼尾', '鱼尾'],
-        ['SuitLower鱼鱼尾_LuziOptionq0', '透明'],
-        ['SuitLower鱼鱼尾_LuziOptionq1', '不透明'],
+        ['SuitLower鱼鱼尾_LuziOptionw0', '透明'],
+        ['SuitLower鱼鱼尾_LuziOptionw1', '不透明'],
     ]);
 
 
