@@ -1376,6 +1376,16 @@
     });
 
     let isGLDrawResetCanvas = false;
+    mod.hookFunction("DrawCharacter", 10, (args, next) => {
+        if (!isGLDrawResetCanvas) {
+            GLDrawResetCanvas(false) // <- 重新运行一次
+            ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
+            isGLDrawResetCanvas = true;
+        }
+        next(args);
+    });
+    
+    // 本地版登陆后调用
     mod.hookFunction("LoginResponse", 10, (args, next) => {
         if (!isGLDrawResetCanvas) {
             GLDrawResetCanvas(false) // <- 重新运行一次
