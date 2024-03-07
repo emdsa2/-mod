@@ -2199,7 +2199,7 @@
     // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
 
     // 分享方式说明: 
-    // * 开头键入: "分享| "  (注意空格)
+    // * 开头键入: "分享/ "  (注意空格)
     // 网易云: 复制分享链接(网页版或客户端的 分享->复制链接)
     // B站: 复制嵌入式链接
     // YouTube: 复制分享链接
@@ -2249,10 +2249,10 @@
         /** @type {string} */
         const msg = args[0];
         // Player.ChatSettings.MuStylePoses
-        // "分享| " 开头  (注意有空格)
-        if (msg.startsWith('分享| ')) {
+        // "分享/ " 开头  (注意有空格)
+        if (msg.startsWith('分享/ ')) {
             // 处理信息
-            // 移除签4个字符 (去掉"分享| ")
+            // 移除签4个字符 (去掉"分享/ ")
             const shareContent = msg.substring(4);
 
             let shareName = "";
@@ -2303,24 +2303,24 @@
                 但该链接无法被正确识别。
                 <br/>
                 格式说明:
-                * 开头键入: "分享| "  (注意空格)
+                * 开头键入: "分享/ "  (注意空格)
                 <br/>
                 网易云: 
                 网页版点开歌曲详情 => 唱片底下的蓝色字体'生成外链播放器' => 点击'复制代码'
                 客户端版 => 点击歌曲的分享 => 复制链接
-                示例: "分享| https://music.163.com/song?id=******&userid=******"  (注意userid不会发送 在处理阶段已过滤 但必须包括用来识别格式匹配)
+                示例: "分享/ https://music.163.com/song?id=******&userid=******"  (注意userid不会发送 在处理阶段已过滤 但必须包括用来识别格式匹配)
                 <br/>
                 B站: 
                 点击视频下面的分享按钮 => 复制嵌入式链接
-                示例: "分享| &lt;iframe src=&quot;//...aid=*******&amp;bvid=*******&amp;cid=*********...&gt; &lt;/iframe&gt;"
+                示例: "分享/ &lt;iframe src=&quot;//...aid=*******&amp;bvid=*******&amp;cid=*********...&gt; &lt;/iframe&gt;"
                 <br/>
                 YouTube: 
                 点击分享按钮 => 直接点复制按钮
-                示例: "分享| https://youtu.be/*******?si=*******"
+                示例: "分享/ https://youtu.be/*******?si=*******"
                 <br/>
                 那啥站: 复制网址
                 点击视频 => 直接复制浏览器地址栏的网址
-                示例: "分享| https://cn.pornhub.com/view_video.php?viewkey=**********"
+                示例: "分享/ https://cn.pornhub.com/view_video.php?viewkey=**********"
                 `, 30000);
                 return;
             }
