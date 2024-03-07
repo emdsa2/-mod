@@ -2119,13 +2119,6 @@
             // 目标语言
             let targetLang = currentLanguage;
 
-            /**
-             * 当目标语言不等于源语言时，使用Google翻译API进行翻译，并将翻译结果发送为聊天消息。
-             * @param {string} sourceLang 源语言代码
-             * @param {string} targetLang 目标语言代码
-             * @param {string} sourceText 待翻译的文本
-             * @param {string} Player 成员对象，用于标识发送消息的玩家
-             */
             if (targetLang !== sourceLang) {
                 // 构建Google翻译API的请求URL
                 let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
@@ -2199,14 +2192,12 @@
     // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
 
     // 分享方式说明: 
-    // * 开头键入: "分享/ "  (注意空格)
-    // 网易云: 复制分享链接(网页版或客户端的 分享->复制链接)
-    // B站: 复制嵌入式链接
-    // YouTube: 复制分享链接
-    // 那啥站: 复制网址
+    // 聊天框键入: "分享/ [随便什么内容]" 查看(注意 / 后面有空格)
 
     function GetNMIframe(Id) {
-        return `<iframe border="0" marginwidth="0" marginheight="0" src="https://dontpanic92.github.io/embedded-netease-music-player/embedded-netease-music-player.html?${Id}" width="560" height="96" frameborder="no"></iframe>`
+        // return `<iframe border="0" marginwidth="0" marginheight="0" src="https://dontpanic92.github.io/embedded-netease-music-player/embedded-netease-music-player.html?${Id}" width="560" height="96" frameborder="no"></iframe>`
+        // 先还用官方的iframe插件吧，第三方API中间用了http协议 导致发送分享后浏览器弹警告
+        return `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=${Id}&auto=0&height=66"></iframe>`
     }
     function GetBiliIframe(info) {
         const IDs = info.split("-");
@@ -2252,7 +2243,7 @@
         // "分享/ " 开头  (注意有空格)
         if (msg.startsWith('分享/ ')) {
             // 处理信息
-            // 移除签4个字符 (去掉"分享/ ")
+            // 移除前4个字符 (去掉"分享/ ")
             const shareContent = msg.substring(4);
 
             let shareName = "";
@@ -2261,7 +2252,7 @@
             let successfully = false;
             if (shareContent.includes('music.163.com')) {
                 shareName = "网易云";
-                const match = shareContent.match(/id=(\d+)(&userid=\d+|&auto=1)/); // 拿到歌曲ID   用户ID不能发出去 保护隐私
+                const match = shareContent.match(/id=(\d+)(&userid=\d+|&auto=)/); // 拿到歌曲ID   用户ID不能发出去 保护隐私
                 if (match) {
                     linkType = "nm";
                     info = match[1];
@@ -2275,7 +2266,6 @@
                     info = `${match[1]}-${match[2]}-${match[3]}`;
                     successfully = true;
                 }
-
             } else if (shareContent.startsWith('https://youtu.be/')) {
                 shareName = "Youtube";
                 const match = shareContent.match(/([A-Za-z0-9_-]+)\?si=([A-Za-z0-9]+)/);
@@ -2328,7 +2318,9 @@
 
             // 创建数据字典
             const dictionary = { info, linkType }
+            // 发送
             ServerSend("ChatRoomChat", { Type: 'Hidden', Content: 'Share_Link', Dictionary: [dictionary], Sender: Player.MemberNumber })
+            // 发送*号消息
             ChatRoomSendEmote(`一个 ${shareName} 嵌入分享 ╰(*°▽°*)╯`);
             // 清理输入框内容
             ElementValue("InputChat", "");
@@ -2534,8 +2526,8 @@
             const name = document.getElementById('笨蛋Luzi_activityName')?.value || "";
             const targetSelftext = document.getElementById('笨蛋Luzi_targetSelfText')?.value || "";
             const targettext = document.getElementById('笨蛋Luzi_targetText')?.value || "";
-            const targetSelf = Player.FocusGroup?.Name || "";
-            const target = Player.FocusGroup?.Name || "";
+            let targetSelf = Player.FocusGroup?.Name || "";
+            let target = Player.FocusGroup?.Name || "";
 
             const activityInfo2 = { name, targetSelf, target, targetSelftext, targettext };
 
@@ -2981,7 +2973,7 @@
     });
 
     // 定义 labelMap
-    w.labelMap;
+    w.labelMap = undefined;
 
     playernamePromise.then(() => {
         w.labelMap = new Map([
@@ -5052,7 +5044,6 @@
             "by Nemesea": "由 Nemesea 制作",
             "A large collection of cheats, quality of life improvements, and a moaner script": "一大堆作弊、提高游戏品质的改进和呻吟者脚本.",
             "NotifyPlus": "改进提醒 (NotifyPlus)",
-            "by SaotomeToyStore": "由 SaotomeToyStore 制作",
             "Improve the Name Mentioned notification in the original BC. Use keywords for mentioning names according to different roles. (Note: source code unavailable)": "改进BC原本提醒中的提到名字的规则.按照不同的身份配置提到名字的触发关键词.(注：源代码不可用)",
             "TTS and Morse": "TTS 和 Morse (TTS and Morse)",
             "by KatKammand": "由 KatKammand 制作",
