@@ -2091,7 +2091,7 @@
             // 自定义 & 描述
             if (luzi2.Craft && luzi2.Craft.Description) {
                 // 有效物品
-                const validAssetNames = new Set < string > (["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl"]);
+                const validAssetNames = new Set(["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl"]);
                 // 是有效物品
                 if (validAssetNames.has(luzi2.Asset.Name)) {
                     // 使用正则表达式匹配双引号内的内容
