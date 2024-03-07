@@ -2204,7 +2204,7 @@
     // B站: 复制嵌入式链接
     // YouTube: 复制分享链接
     // 那啥站: 复制网址
-    
+
     function GetNMIframe(Id) {
         return `<iframe border="0" marginwidth="0" marginheight="0" src="https://dontpanic92.github.io/embedded-netease-music-player/embedded-netease-music-player.html?${Id}" width="560" height="96" frameborder="no"></iframe>`
     }
@@ -2245,45 +2245,94 @@
         next(args);
     });
 
-    笨蛋Luzi.hookFunction("ServerSend", 5, (args, next) => {
-        const data = args;
+    笨蛋Luzi.hookFunction("CommandParse", 5, (args, next) => {
+        /** @type {string} */
+        const msg = args[0];
         // Player.ChatSettings.MuStylePoses
         // "分享| " 开头  (注意有空格)
-        if (Player && Player.ChatSettings && data[0] === "ChatRoomChat" && typeof data[1]?.Content === 'string' && data[1].Content.includes('分享| ') && data[1]?.Type === "Chat") {
+        if (msg.startsWith('分享| ')) {
             // 处理信息
             // 移除签4个字符 (去掉"分享| ")
-            const shareContent = data[1].Content.replace(/( ?\() ?}/g, '').replace(/( \))}/g, '').substring(4);
-            data[1].Content = "Share_Link";
-            const dictionary = {}
+            const shareContent = msg.substring(4);
 
-            if (shareContent.includes('https://music.163.com/song?id=')) {
-                ChatRoomSendEmote("一个 网易云 嵌入分享 ╰(*°▽°*)╯");
-                dictionary["linkType"] = "nm";
-                const match = shareContent.match(/id=(\d+)&userid=(\d+)/); // 拿到歌曲ID   用户ID不能发出去 保护隐私
-                if (match) dictionary.info = match[1];
-            } else if (shareContent.includes('<iframe src="//player.bilibili.com/player.html')) {
-                ChatRoomSendEmote("一个 Bilibili 嵌入分享 ╰(*°▽°*)╯");
-                dictionary["linkType"] = "bili";
+            let shareName = "";
+            let linkType = "";
+            let info = "";
+            let successfully = false;
+            if (shareContent.includes('music.163.com')) {
+                shareName = "网易云";
+                const match = shareContent.match(/id=(\d+)(&userid=\d+|&auto=1)/); // 拿到歌曲ID   用户ID不能发出去 保护隐私
+                if (match) {
+                    linkType = "nm";
+                    info = match[1];
+                    successfully = true;
+                }
+            } else if (shareContent.startsWith('<iframe src="//player.bilibili.com/player.html')) {
+                shareName = "Bilibili";
                 const match = shareContent.match(/aid=(\d+)&bvid=([A-Za-z0-9]+)&cid=([A-Za-z0-9]+)/);
-                if (match) dictionary.info = `${match[1]}-${match[2]}-${match[3]}`;
+                if (match) {
+                    linkType = "bili";
+                    info = `${match[1]}-${match[2]}-${match[3]}`;
+                    successfully = true;
+                }
 
-            } else if (shareContent.includes('https://youtu.be/')) {
-                ChatRoomSendEmote("一个 Youtube 嵌入分享 ╰(*°▽°*)╯");
-                dictionary["linkType"] = "ytb";
+            } else if (shareContent.startsWith('https://youtu.be/')) {
+                shareName = "Youtube";
                 const match = shareContent.match(/([A-Za-z0-9_-]+)\?si=([A-Za-z0-9]+)/);
-                if (match)  dictionary.info = `${match[1]}-${match[2]}`;
+                if (match) {
+                    linkType = "ytb";
+                    info = `${match[1]}-${match[2]}`;
+                    successfully = true;
+                }
             } else if (shareContent.includes('pornhub.com/view_video.php')) {
-                ChatRoomSendEmote("一个 Pornhub 嵌入分享 ╰(*°▽°*)╯");
-                dictionary["linkType"] = "phb";
+                shareName = "Pornhub";
                 const match = shareContent.match(/viewkey=([A-Za-z0-9]+)/);
-                if (match) dictionary.info = match[1];
+                if (match) {
+                    linkType = "phb";
+                    info = match[1];
+                    successfully = true;
+                }
+            } else {
+                shareName = "未知"
+            }
 
-            } else return; // 如果都不匹配则直接返回
+            // 失败则发送提示消息 并阻止后续处理;
+            if (!successfully) {
+                ChatRoomSendLocal(`
+                你分享的似乎是一个: ${shareName} 链接
+                但该链接无法被正确识别。
+                <br/>
+                格式说明:
+                * 开头键入: "分享| "  (注意空格)
+                <br/>
+                网易云: 
+                网页版点开歌曲详情 => 唱片底下的蓝色字体'生成外链播放器' => 点击'复制代码'
+                客户端版 => 点击歌曲的分享 => 复制链接
+                示例: "分享| https://music.163.com/song?id=******&userid=******"  (注意userid不会发送 在处理阶段已过滤 但必须包括用来识别格式匹配)
+                <br/>
+                B站: 
+                点击视频下面的分享按钮 => 复制嵌入式链接
+                示例: "分享| &lt;iframe src=&quot;//...aid=*******&amp;bvid=*******&amp;cid=*********...&gt; &lt;/iframe&gt;"
+                <br/>
+                YouTube: 
+                点击分享按钮 => 直接点复制按钮
+                示例: "分享| https://youtu.be/*******?si=*******"
+                <br/>
+                那啥站: 复制网址
+                点击视频 => 直接复制浏览器地址栏的网址
+                示例: "分享| https://cn.pornhub.com/view_video.php?viewkey=**********"
+                `, 30000);
+                return;
+            }
 
-            // 修改为隐藏类型 并传入数据字典
-            args[1].Type = "Hidden";
-            if (data[1]["Dictionary"]) data[1].Dictionary.push(dictionary);
-            else { data[1]["Dictionary"] = [dictionary] }
+
+            // 创建数据字典
+            const dictionary = { info, linkType }
+            ServerSend("ChatRoomChat", { Type: 'Hidden', Content: 'Share_Link', Dictionary: [dictionary], Sender: Player.MemberNumber })
+            ChatRoomSendEmote(`一个 ${shareName} 嵌入分享 ╰(*°▽°*)╯`);
+            // 清理输入框内容
+            ElementValue("InputChat", "");
+            return; // 拦截后续处理
         };
         // console.log("自己", data[1])
         next(args);
