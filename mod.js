@@ -1377,7 +1377,7 @@
     });
 
     let isGLDrawResetCanvas = false;
-    mod.hookFunction("DrawCharacter", 10, (args, next) => {
+    mod.hookFunction("LoginResponse", 10, (args, next) => {
         if (!isGLDrawResetCanvas) {
             GLDrawResetCanvas(false) // <- 重新运行一次
             ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
