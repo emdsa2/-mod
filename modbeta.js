@@ -469,16 +469,18 @@
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
                 Layer: [
                     { Name: "鱼尾上", Priority: 22 },
-                    { Name: "鱼尾下透明2", Priority: 22, CopyLayerColor: "鱼尾下透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
+                    { Name: "鱼尾下不透明2", Priority: 22, AllowTypes: { w: 1 }, CopyLayerColor: "鱼尾下透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
+                    { Name: "鱼尾下透明2", Priority: 22, AllowTypes: { w: 0 }, CopyLayerColor: "鱼尾下透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
                     { Name: "鱼尾下骨架2", Priority: 22, CopyLayerColor: "衣鱼尾下骨架", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
-                    { Name: "鱼尾下透明", Priority: 22 },
+                    { Name: "鱼尾下不透明", Priority: 22, AllowTypes: { w: 1 } },
+                    { Name: "鱼尾下透明", Priority: 22, AllowTypes: { w: 0 } },
                     { Name: "鱼尾下骨架", Priority: 22 },
-                    { Name: "鱼尾鱼鳍上透明", Priority: 22, AllowTypes: { typed: 1 }, },
-                    { Name: "鱼尾鱼鳍上骨架", Priority: 22, AllowTypes: { typed: 1 }, },
+                    { Name: "鱼尾鱼鳍上透明", Priority: 22, AllowTypes: { q: 1 } },
+                    { Name: "鱼尾鱼鳍上骨架", Priority: 22, AllowTypes: { q: 1 } },
                     { Name: "高光上半", Priority: 22 },
                     { Name: "高光下半", Priority: 22 },
                 ]
-            },
+            }, 
         ],
         Panties: [
             {
@@ -1032,15 +1034,18 @@
         ],
     };
     AssetFemale3DCGExtended.SuitLower.鱼鱼尾_Luzi = {
-        Archetype: ExtendedArchetype.TYPED,
-        Options: [
+        Archetype: ExtendedArchetype.MODULAR,
+        Modules: [
             {
-                Name: "无",
+                Name: "鱼鳍", Key: "q", DrawImages: false,
+                Options: [{}, {},],
             },
             {
-                Name: "有鱼鳍",
+                Name: "鱼尾", Key: "w", DrawImages: false,
+                Options: [{}, {},],
             },
         ],
+        ChangeWhenLocked: false,
     };
 
     const dialogMap = new Map([
@@ -1055,7 +1060,13 @@
         ['ItemTorso2拘束套装_LuziSet透视紧身衣', ''],
         ['ItemTorso2拘束套装_LuziSet紧身衣', ''],
 
-        ['SuitLower鱼鱼尾_LuziSelect', '选择配置'],
+        ['SuitLower鱼鱼尾_LuziSelectBase', '选择配置'],
+        ['SuitLower鱼鱼尾_LuziSelect鱼鳍', '设置鱼鳍'],
+        ['SuitLower鱼鱼尾_LuziSelect鱼尾', '设置鱼尾'],
+        ['SuitLower鱼鱼尾_LuziOptionq0', '无'],
+        ['SuitLower鱼鱼尾_LuziOptionq1', '无'],
+
+
     ]);
 
 
@@ -1350,21 +1361,18 @@
         const data = args[0];
         if (data.Content === '╰(*°▽°*)╯BETA' && data.Type === 'Hidden') {
             CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            // console.log(CRCharacter)
             if (CRCharacter) {
                 CRCharacter.ECHOBETA = true;
             }
         }
         if (data.Content === '╰(*°▽°*)╯' && data.Type === 'Hidden') {
             CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            // console.log(CRCharacter)
             if (CRCharacter) {
                 CRCharacter.ECHO = true;
             }
         }
         if (data.Content === '(._.)' && data.Type === 'Hidden') {
             CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            // console.log(CRCharacter)
             if (CRCharacter) {
                 CRCharacter.ECHO2 = true;
             }
@@ -1398,10 +1406,10 @@
 
     // ================================================================================
     // ================================================================================
-    // 完整的双人床！ 修改了角色画布的宽度 好厉害的星涟
+    // 完整的双人床！ 修改了角色画布的宽度 好厉害的星涟!
     function GLDrawLoadEx(_evt, force2d = false) {
         GLDrawCanvas = document.createElement("canvas");
-        GLDrawCanvas.width = 1000 * 2;
+        GLDrawCanvas.width = 1000 * 2; // <- 修改 主画布 整体宽度
         GLDrawCanvas.height = CanvasDrawHeight;
 
         const glOpts = GLDrawGetOptions();
@@ -1439,49 +1447,49 @@
         GLDrawLoadEx(...args);
     });
 
-    let isGLDrawCanvaswidth = false;
+    let isGLDrawResetCanvas = false;
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
-        if (!isGLDrawCanvaswidth) {
-            GLDrawResetCanvas(false)
-            ChatRoomViews.Character.Run = function () { };
-            isGLDrawCanvaswidth = true;
+        if (!isGLDrawResetCanvas) {
+            GLDrawResetCanvas(false) // <- 重新运行一次
+            ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
+            isGLDrawResetCanvas = true;
         }
         next(args);
     });
 
     patchFunction("CommonDrawCanvasPrepare", {
-        "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;',
-        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;',
+        "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;', // <- 修改 Canvas画布 整体宽度
+        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;', // <- 修改 CanvasBlink画布 整体宽度
 
-        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);',
-        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);',
+        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);', // <- 清理 Canvas画布 因闪烁消失的多余像素
+        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);', // <- 清理 CanvasBlink画布 因闪烁消失的多余像素
     });
 
     patchFunction("GLDrawAppearanceBuild", {
-        '500': '500 * 2',
-        'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);': 'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);',
+        '500': '500 * 2', // <- 修改 Canvas 和 CanvasBlink 两者的距离
+        'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);': 'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);', // <- 也是清理
 
-        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 0),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 500 / 2),',
-        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset + 500 / 2),',
+        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 0),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 500 / 2),', // <- 整体向右移动
+        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset + 500 / 2),',// <- 整体向右移动
 
-        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 0),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 500 / 2),',
-        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + 500 / 2),',
+        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 0),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 500 / 2),', // <- 整体向右移动
+        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + 500 / 2),', // <- 整体向右移动
 
-        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 0, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 500 / 2, alphaMasks),',
-        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset + 500 / 2, alphaMasks),',
+        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 0, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 500 / 2, alphaMasks),', // <- 整体向右移动
+        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset + 500 / 2, alphaMasks),', // <- 整体向右移动
     });
 
     patchFunction("DrawCharacter", {
-        '500 * HeightRatio * Zoom': '500 * HeightRatio * Zoom * 2',
-        'TempCanvas.canvas.width = CanvasDrawWidth;': 'TempCanvas.canvas.width = CanvasDrawWidth * 2;',
+        '500 * HeightRatio * Zoom': '500 * HeightRatio * Zoom * 2', // <-  向左回正
+        'TempCanvas.canvas.width = CanvasDrawWidth;': 'TempCanvas.canvas.width = CanvasDrawWidth * 2;', // <-  向左回正
 
-        'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);',
+        'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);', // <-  向左回正
 
-        'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2 - 1000 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom',
+        'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2 - 1000 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom', // <-  向左回正
     });
 
     patchFunction("DrawCharacterSegment", {
-        'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250',
+        'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250', // <- 衣柜缩略图 向左回正
 
     });
 
