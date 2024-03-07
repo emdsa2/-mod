@@ -84,6 +84,12 @@
         "Screens/Inventory/ItemDevices/窝瓜_Luzi/没盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/ItemDevices/窝瓜_Luzi/有盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
 
+
+        "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q0.png": "https://emdsa2.github.io/-mod/image/空.png",
+        "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q1.png": "https://emdsa2.github.io/-mod/image/空.png",
+        "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w0.png": "https://emdsa2.github.io/-mod/image/空.png",
+        "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w1.png": "https://emdsa2.github.io/-mod/image/空.png",
+
     });
 
 
@@ -1037,11 +1043,11 @@
         Archetype: ExtendedArchetype.MODULAR,
         Modules: [
             {
-                Name: "鱼鳍", Key: "q", DrawImages: false,
+                Name: "鱼鳍", Key: "q", 
                 Options: [{}, {},],
             },
             {
-                Name: "鱼尾", Key: "w", DrawImages: false,
+                Name: "鱼尾", Key: "w", 
                 Options: [{}, {},],
             },
         ],
@@ -1063,10 +1069,14 @@
         ['SuitLower鱼鱼尾_LuziSelectBase', '选择配置'],
         ['SuitLower鱼鱼尾_LuziSelect鱼鳍', '设置鱼鳍'],
         ['SuitLower鱼鱼尾_LuziSelect鱼尾', '设置鱼尾'],
+
+        ['SuitLower鱼鱼尾_LuziModule鱼鳍', '鱼鳍'],
         ['SuitLower鱼鱼尾_LuziOptionq0', '无'],
-        ['SuitLower鱼鱼尾_LuziOptionq1', '无'],
+        ['SuitLower鱼鱼尾_LuziOptionq1', '有'],
 
-
+        ['SuitLower鱼鱼尾_LuziModule鱼尾', '鱼尾'],
+        ['SuitLower鱼鱼尾_LuziOptionq0', '透明'],
+        ['SuitLower鱼鱼尾_LuziOptionq1', '不透明'],
     ]);
 
 
