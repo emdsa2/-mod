@@ -470,23 +470,22 @@
                 Name: "鱼鱼尾_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0, Extended: true,
                 OverrideHeight: { Height: 30, Priority: 19, },
-                Hide: [],
                 PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Kneel", Kneel: "Kneel", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
                 Layer: [
                     { Name: "鱼尾上", Priority: 22 },
-                    { Name: "鱼尾下不透明2", Priority: 22, AllowTypes: { w: 1 }, CopyLayerColor: "鱼尾下透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
+                    { Name: "鱼尾下不透明2", Priority: 22, AllowTypes: { w: 1 }, CopyLayerColor: "鱼尾下不透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
                     { Name: "鱼尾下透明2", Priority: 22, AllowTypes: { w: 0 }, CopyLayerColor: "鱼尾下透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
-                    { Name: "鱼尾下骨架2", Priority: 22, CopyLayerColor: "衣鱼尾下骨架", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
-                    { Name: "鱼尾下不透明", Priority: 22, AllowTypes: { w: 1 } },
-                    { Name: "鱼尾下透明", Priority: 22, AllowTypes: { w: 0 } },
+                    { Name: "鱼尾下骨架2", Priority: 22, CopyLayerColor: "鱼尾下骨架", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
+                    { Name: "鱼尾下不透明", Priority: 22, AllowTypes: { w: 1 }, PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Hide", Kneel: "Hide", }, },
+                    { Name: "鱼尾下透明", Priority: 22, AllowTypes: { w: 0 }, PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Hide", Kneel: "Hide", }, },
                     { Name: "鱼尾下骨架", Priority: 22 },
                     { Name: "鱼尾鱼鳍上透明", Priority: 22, AllowTypes: { q: 1 } },
                     { Name: "鱼尾鱼鳍上骨架", Priority: 22, AllowTypes: { q: 1 } },
                     { Name: "高光上半", Priority: 22 },
                     { Name: "高光下半", Priority: 22 },
                 ]
-            }, 
+            },
         ],
         Panties: [
             {
@@ -942,8 +941,6 @@
         ],
     };
 
-
-
     AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
         Archetype: ExtendedArchetype.MODULAR,
         Modules: [
@@ -985,6 +982,7 @@
     AssetFemale3DCGExtended.ItemDevices.窝瓜_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
+        DrawImages: false,
         Options: [
             {
                 Name: "没盖子",
@@ -1024,6 +1022,7 @@
     AssetFemale3DCGExtended.ItemTorso2.拘束套装_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
+        DrawImages: false,
         Options: [
             {
                 Name: "无",
@@ -1043,15 +1042,14 @@
         Archetype: ExtendedArchetype.MODULAR,
         Modules: [
             {
-                Name: "鱼鳍", Key: "q", 
-                Options: [{}, {},],
+                Name: "鱼鳍", Key: "q",
+                Options: [{}, {}],
             },
             {
-                Name: "鱼尾", Key: "w", 
-                Options: [{}, {},],
+                Name: "鱼尾", Key: "w",
+                Options: [{}, {}],
             },
         ],
-        ChangeWhenLocked: false,
     };
 
     const dialogMap = new Map([
