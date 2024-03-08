@@ -62,7 +62,7 @@
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
 
-        "Assets/Female3DCG/BodyUpper/BackElbowTouch/Small_White.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
+        // "Assets/Female3DCG/BodyUpper/BackElbowTouch/Small_White.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
 
 
