@@ -61,6 +61,11 @@
         "Assets/Female3DCG/Socks/Kneel/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Kneel_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
+
+        "Assets/Female3DCG/BodyUpper/BackElbowTouch/Small_White.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
+
+
+
     };
 
     // =======================================================================================
@@ -1077,11 +1082,7 @@
         ['SuitLower鱼鱼尾_LuziOptionw1', '不透明'],
     ]);
 
-
-
-
-
-    function mergeAddAssetIntoFemale3DCGAssets() { // 把服装拓展脚本数据转进 AssetFemale3DCG
+    function mergeAddAssetIntoFemale3DCGAssets() { // 塞进 AssetFemale3DCG
         for (const groupName in addAsset) {
             const group = AssetFemale3DCG.find(group => group.Group === groupName);
             if (group) {
@@ -1090,9 +1091,9 @@
         }
     }
 
-    function AssetAdd_Luzi(assetgroupName, assetName) {
-        let assetGtoup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
-        let asset = assetGtoup.Asset.find(asset => asset.Name === assetName)
+    function AssetAdd_Luzi(assetgroupName, assetName) { // 加载道具
+        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
+        let asset = assetGroup.Asset.find(asset => asset.Name === assetName)
         let G = AssetGroupMap.get(assetgroupName)
         AssetAdd(G, asset, AssetFemale3DCGExtended);
     }
@@ -1162,8 +1163,6 @@
         if (!isAssetAdded) {
             addExtraOutfitsToAssets();
             addExtraExpressionsToAssets()
-
-
             mergeAddAssetIntoFemale3DCGAssets();
 
             for (const type in addAsset) {
@@ -1375,63 +1374,70 @@
         GLDrawLoadEx(...args);
     });
 
+    function 笨蛋Luzi() {
+        patchFunction("CommonDrawCanvasPrepare", {
+            "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;', // <- 修改 Canvas画布 整体宽度
+            "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;', // <- 修改 CanvasBlink画布 整体宽度
+
+            'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);', // <- 清理 Canvas画布 因闪烁消失的多余像素
+            'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);', // <- 清理 CanvasBlink画布 因闪烁消失的多余像素
+        });
+
+        patchFunction("GLDrawAppearanceBuild", {
+            '500': '500 * 2', // <- 修改 Canvas 和 CanvasBlink 两者的距离
+            'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);': 'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);', // <- 也是清理
+
+            'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 0),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 500 / 2),', // <- 整体向右移动
+            'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset + 500 / 2),',// <- 整体向右移动
+
+            'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 0),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 500 / 2),', // <- 整体向右移动
+            'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + 500 / 2),', // <- 整体向右移动
+
+            'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 0, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 500 / 2, alphaMasks),', // <- 整体向右移动
+            'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset + 500 / 2, alphaMasks),', // <- 整体向右移动
+        });
+
+        patchFunction("DrawCharacter", {
+            '500 * HeightRatio * Zoom': '500 * HeightRatio * Zoom * 2', // <-  向左回正
+            'TempCanvas.canvas.width = CanvasDrawWidth;': 'TempCanvas.canvas.width = CanvasDrawWidth * 2;', // <-  向左回正
+
+            'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);', // <-  向左回正
+
+            'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2 - 1000 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom', // <-  向左回正
+        });
+
+        patchFunction("DrawCharacterSegment", {
+            'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250', // <- 衣柜缩略图 向左回正
+
+        });
+    };
+
     let isGLDrawResetCanvas = false;
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         if (!isGLDrawResetCanvas) {
-            GLDrawResetCanvas(false) // <- 重新运行一次
+            GLDrawResetCanvas(false); // <- 重新运行一次
             ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
             isGLDrawResetCanvas = true;
         }
         next(args);
     });
-    
+
     // 本地版登陆后调用
     mod.hookFunction("LoginResponse", 10, (args, next) => {
         if (!isGLDrawResetCanvas) {
-            GLDrawResetCanvas(false) // <- 重新运行一次
+            笨蛋Luzi(); // 赐福
+            GLDrawResetCanvas(false); // <- 重新运行一次
             ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
             isGLDrawResetCanvas = true;
         }
         next(args);
+        if (Player.Canvas.width == 500) {
+            Player.Canvas.width = 1000;
+            Player.CanvasBlink.width = 1000;
+        }
     });
 
-    patchFunction("CommonDrawCanvasPrepare", {
-        "C.Canvas.width = 500;": 'C.Canvas.width = 500 * 2;', // <- 修改 Canvas画布 整体宽度
-        "C.CanvasBlink.width = 500;": 'C.CanvasBlink.width = 500 * 2;', // <- 修改 CanvasBlink画布 整体宽度
-
-        'C.Canvas.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.Canvas.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);', // <- 清理 Canvas画布 因闪烁消失的多余像素
-        'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500, CanvasDrawHeight);': 'C.CanvasBlink.getContext("2d").clearRect(0, 0, 500 * 4, CanvasDrawHeight);', // <- 清理 CanvasBlink画布 因闪烁消失的多余像素
-    });
-
-    patchFunction("GLDrawAppearanceBuild", {
-        '500': '500 * 2', // <- 修改 Canvas 和 CanvasBlink 两者的距离
-        'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);': 'GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000 * 2, CanvasDrawHeight, 0);', // <- 也是清理
-
-        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 0),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, 500 / 2),', // <- 整体向右移动
-        'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset),': 'GLDrawClearRect(GLDrawCanvas.GL, x, CanvasDrawHeight - y - h, w, h, blinkOffset + 500 / 2),',// <- 整体向右移动
-
-        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 0),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, 500 / 2),', // <- 整体向右移动
-        'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset),': 'GLDrawImage(src, GLDrawCanvas.GL, x, y, opts, blinkOffset + 500 / 2),', // <- 整体向右移动
-
-        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 0, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, 500 / 2, alphaMasks),', // <- 整体向右移动
-        'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset, alphaMasks),': 'GLDraw2DCanvas(GLDrawCanvas.GL, Img, x, y, blinkOffset + 500 / 2, alphaMasks),', // <- 整体向右移动
-    });
-
-    patchFunction("DrawCharacter", {
-        '500 * HeightRatio * Zoom': '500 * HeightRatio * Zoom * 2', // <-  向左回正
-        'TempCanvas.canvas.width = CanvasDrawWidth;': 'TempCanvas.canvas.width = CanvasDrawWidth * 2;', // <-  向左回正
-
-        'const XOffset = CharacterAppearanceXOffset(C, HeightRatio);': 'function CharacterAppearanceXOffsetEx(C, HeightRatio) {return 875 * (1 - HeightRatio) / 2;} const XOffset = CharacterAppearanceXOffsetEx(C, HeightRatio);', // <-  向左回正
-
-        'DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom': 'let offset = (500 / 2 - 1000 * 0.5) * Zoom; DrawImageEx(Canvas, DrawCanvas, X + offset + XOffset * Zoom', // <-  向左回正
-    });
-
-    patchFunction("DrawCharacterSegment", {
-        'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250', // <- 衣柜缩略图 向左回正
-
-    });
-
-
+    笨蛋Luzi();
     // ================================================================================
     // ================================================================================
     // 头顶的小裙子标识
