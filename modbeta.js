@@ -61,11 +61,6 @@
         "Assets/Female3DCG/Socks/Kneel/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Kneel_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
-
-        // "Assets/Female3DCG/BodyUpper/BackElbowTouch/Small_White.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
-
-
-
     };
 
     // =======================================================================================
@@ -116,6 +111,11 @@
         }
 
         if (typeof data === 'string' && data.includes("_Luzi")) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
+        if (typeof data === 'string' && data.includes("Small_White")) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
