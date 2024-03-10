@@ -125,6 +125,11 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
+        if (typeof data === 'string' && (data.includes("Pussy/Pussy1_White") || data.includes("Pussy/Pussy2_White") || data.includes("Pussy/Pussy3_White"))) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
         if (typeof data === 'string' && data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
             args[2] = 0;
         }
