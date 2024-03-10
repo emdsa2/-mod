@@ -120,6 +120,11 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
+        if (typeof data === 'string' && (data.includes("Hands/Default_White") || data.includes("Hands/AllFours/NoEars_White") || data.includes("Hands/TapedHands/NoEars_White"))) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
         if (typeof data === 'string' && data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
             args[2] = 0;
         }
