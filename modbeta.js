@@ -115,7 +115,7 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
-        if (typeof data === 'string' && data.includes("Small_White")) {
+        if (typeof data === 'string' && (data.includes("Small_White") || data.includes("Head/Default_White") || data.includes("Head/NoEars_White"))) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
