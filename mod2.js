@@ -4941,7 +4941,7 @@
                         args[0] = args[0].replace(regex, replacement.replace(playername, playerNickname));
                     });
 
-                    // if (ChatRoomCharacterCount >= 1) {
+                    // if (ChatRoomCharacterViewCharacterCount >= 1) {
 
                     //     if (InformationSheetSelection?.Nickname && args[0].indexOf(playername) !== -1 && !args[0].includes(playerNickname)) {
                     //         args[0] = args[0].replace(new RegExp(playername, 'g'), playerNickname);
@@ -5536,19 +5536,19 @@
         w.bedCharacterArray = getMountArray(args[0].Name, args[0], "ItemDevices");
         // 鞍 前面玩家
         if (bedCharacterArray.length > 0 && bedCharacterArray[0].itemName === "床左边_Luzi" && ChatRoomChatHidden === false) {
-            if (ChatRoomCharacterCount == 2) {
+            if (ChatRoomCharacterViewCharacterCount == 2) {
                 const newXValue = args[1] - 80; // 这里加运算符可以修改位置
                 args[1] = newXValue;
             }
-            if (ChatRoomCharacterCount == 3) {
+            if (ChatRoomCharacterViewCharacterCount == 3) {
                 const newXValue = args[1] - 83; // 这里加运算符可以修改位置
                 args[1] = newXValue;
             }
-            if (ChatRoomCharacterCount == 4) {
+            if (ChatRoomCharacterViewCharacterCount == 4) {
                 const newXValue = args[1] - 60; // 这里加运算符可以修改位置
                 args[1] = newXValue;
             }
-            if (ChatRoomCharacterCount >= 5) {
+            if (ChatRoomCharacterViewCharacterCount >= 5) {
                 const newXValue = args[1] - 50; // 这里加运算符可以修改位置
                 args[1] = newXValue;
             }
@@ -5564,19 +5564,19 @@
         // 缰绳 后面玩家
         if (bedCharacterArray.length > 0 && bedCharacterArray[0].itemName === "床右边_Luzi" && ChatRoomChatHidden === false) {
             if (bedMapping.has(bedCharacterArray[0].playerWithReins)) {
-                if (ChatRoomCharacterCount == 2) {
+                if (ChatRoomCharacterViewCharacterCount == 2) {
                     const newXValue = bedMapping.get(bedCharacterArray[0].playerWithReins).bedDataX + 180; // 这里加运算符可以修改位置
                     args[1] = newXValue;
                 }
-                if (ChatRoomCharacterCount == 3) {
+                if (ChatRoomCharacterViewCharacterCount == 3) {
                     const newXValue = bedMapping.get(bedCharacterArray[0].playerWithReins).bedDataX + 156; // 这里加运算符可以修改位置
                     args[1] = newXValue;
                 }
-                if (ChatRoomCharacterCount == 4) {
+                if (ChatRoomCharacterViewCharacterCount == 4) {
                     const newXValue = bedMapping.get(bedCharacterArray[0].playerWithReins).bedDataX + 116; // 这里加运算符可以修改位置
                     args[1] = newXValue;
                 }
-                if (ChatRoomCharacterCount >= 5) {
+                if (ChatRoomCharacterViewCharacterCount >= 5) {
                     const newXValue = bedMapping.get(bedCharacterArray[0].playerWithReins).bedDataX + 96; // 这里加运算符可以修改位置
                     args[1] = newXValue;
                 }
@@ -5642,10 +5642,10 @@
     笨蛋Luzi.hookFunction("DrawStatus", 10, (args, next) => {
         next(args);
         // 根据玩家数量调整缩放和绘制坐标
-        const Space = ChatRoomCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterCount, 5) : 500;
-        const Zoom = ChatRoomCharacterZoom;
-        const X = ChatRoomCharacterCount >= 3 ? (Space - 500 * Zoom) / 2 : 0;
-        const Y = ChatRoomCharacterCount <= 5 ? 1000 * (1 - Zoom) / 2 : 0;
+        const Space = ChatRoomCharacterViewCharacterCount >= 2 ? 1000 / Math.min(ChatRoomCharacterViewCharacterCount, 5) : 500;
+        const Zoom = ChatRoomCharacterViewZoom;
+        const X = ChatRoomCharacterViewCharacterCount >= 3 ? (Space - 500 * Zoom) / 2 : 0;
+        const Y = ChatRoomCharacterViewCharacterCount <= 5 ? 1000 * (1 - Zoom) / 2 : 0;
 
 
         // 乘骑 ------------------------------------------
@@ -5679,10 +5679,10 @@
         // for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
         //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
         //     if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
-        //     const Zoom = ChatRoomCharacterZoom;
-        //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
-        //     const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
-        //     if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+        //     const Zoom = ChatRoomCharacterViewZoom;
+        //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+        //     const CharY = ChatRoomCharacterViewCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+        //     if ((ChatRoomCharacterViewCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
         //     if (foundCharacters.includes(ChatRoomCharacterDrawlist[C])) {
         //         // 如果在数组中,可以在这里执行额外的操作
         //         DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
@@ -5693,10 +5693,10 @@
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
             let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
             if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
-            const Zoom = ChatRoomCharacterZoom;
-            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
-            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
-            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+            const Zoom = ChatRoomCharacterViewZoom;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterViewCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterViewCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
             if (foundCharacters2.includes(ChatRoomCharacterDrawlist[C])) {
                 // 如果在数组中,可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
@@ -5735,10 +5735,10 @@
         // for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
         //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
         //     if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
-        //     const Zoom = ChatRoomCharacterZoom;
-        //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
-        //     const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
-        //     if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+        //     const Zoom = ChatRoomCharacterViewZoom;
+        //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+        //     const CharY = ChatRoomCharacterViewCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+        //     if ((ChatRoomCharacterViewCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
         //     if (foundCharacters2bed.includes(ChatRoomCharacterDrawlist[C])) {
         //         // 如果在数组中,可以在这里执行额外的操作
         //         DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
@@ -5749,10 +5749,10 @@
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
             let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
             if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
-            const Zoom = ChatRoomCharacterZoom;
-            const CharX = ChatRoomCharacterX + (ChatRoomCharacterCount == 1 ? 0 : X + (C % 5) * Space);
-            const CharY = ChatRoomCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
-            if ((ChatRoomCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
+            const Zoom = ChatRoomCharacterViewZoom;
+            const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
+            const CharY = ChatRoomCharacterViewCharacterCount == 1 ? 0 : Y + Math.floor(C / 5) * 500;
+            if ((ChatRoomCharacterViewCharacterCount == 1) && ChatRoomCharacterDrawlist[C].ID !== 0) continue;
             if (foundCharactersbed.includes(ChatRoomCharacterDrawlist[C])) {
                 // 如果在数组中,可以在这里执行额外的操作
                 DrawCharacter(ChatRoomCharacterDrawlist[C], CharX, CharY, Zoom);
