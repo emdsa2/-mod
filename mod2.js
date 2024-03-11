@@ -5677,7 +5677,7 @@
 
         // // 先绘制缰绳角色的数组
         // for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
-        //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+        //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterViewX_Lower : ChatRoomCharacterViewX_Upper;
         //     if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
         //     const Zoom = ChatRoomCharacterViewZoom;
         //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
@@ -5691,7 +5691,7 @@
 
         // 再绘制鞍角色的数组
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
-            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterViewX_Lower : ChatRoomCharacterViewX_Upper;
             if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
             const Zoom = ChatRoomCharacterViewZoom;
             const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
@@ -5733,7 +5733,7 @@
 
         // // 再绘制鞍角色的数组
         // for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
-        //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+        //     let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterViewX_Lower : ChatRoomCharacterViewX_Upper;
         //     if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
         //     const Zoom = ChatRoomCharacterViewZoom;
         //     const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
@@ -5747,7 +5747,7 @@
 
         // 先绘制缰绳角色的数组
         for (let C = 0; C < ChatRoomCharacterDrawlist.length; C++) {
-            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterX_Lower : ChatRoomCharacterX_Upper;
+            let ChatRoomCharacterX = C >= 5 ? ChatRoomCharacterViewX_Lower : ChatRoomCharacterViewX_Upper;
             if (!(Player.GraphicsSettings && Player.GraphicsSettings.CenterChatrooms)) ChatRoomCharacterX = 0;
             const Zoom = ChatRoomCharacterViewZoom;
             const CharX = ChatRoomCharacterX + (ChatRoomCharacterViewCharacterCount == 1 ? 0 : X + (C % 5) * Space);
