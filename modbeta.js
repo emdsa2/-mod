@@ -92,7 +92,7 @@
 
     });
 
-
+    // #B28686
     // Small
     // Normal
     // Large
@@ -429,6 +429,33 @@
                             Spread: "",
                             AllFours: "Hide",
                             Hogtied: "Hide",
+                        },
+                    },
+                ],
+            },
+            {
+                Name: "奶牛_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    {
+                        Name: "衣服", Priority: 26,
+                        PoseMapping: {
+                            TapedHands: "",
+                            Yoked: "", OverTheHead: "",
+                            BackBoxTie: "",
+                            BackElbowTouch: "",
+                            BackCuffs: "",
+                        },
+                    },
+                    {
+                        Name: "边缘", Priority: 26,
+                        PoseMapping: {
+                            TapedHands: "",
+                            Yoked: "", OverTheHead: "",
+                            BackBoxTie: "",
+                            BackElbowTouch: "",
+                            BackCuffs: "",
                         },
                     },
                 ],
