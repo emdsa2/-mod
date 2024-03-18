@@ -1418,7 +1418,6 @@
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         if (!isGLDrawResetCanvas) {
             GLDrawResetCanvas(false); // <- 重新运行一次
-            ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
             isGLDrawResetCanvas = true;
         }
         next(args);
@@ -1429,7 +1428,6 @@
         if (!isGLDrawResetCanvas) {
             笨蛋Luzi(); // 赐福
             GLDrawResetCanvas(false); // <- 重新运行一次
-            ChatRoomViews.Character.Run = function () { }; // <- BC 绘制两次bug
             isGLDrawResetCanvas = true;
         }
         next(args);
