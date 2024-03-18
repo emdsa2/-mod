@@ -117,6 +117,7 @@
 
         if (typeof data === 'string' && (
             /(BodyUpper\/.*?_White)/.test(data) || /(BodyLower\/.*?_White)/.test(data) ||
+            /(BodyUpper\/.*?_Asian)/.test(data) || /(BodyLower\/.*?_Asian)/.test(data) ||
             data.includes("Head/Default_White") || data.includes("Head/NoEars_White")
         )) {
             let data = args[0];
