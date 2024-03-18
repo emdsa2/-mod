@@ -125,11 +125,11 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
-        if (typeof data === 'string' && 
-        (
-            data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
-            data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian")
-        )
+        if (typeof data === 'string' &&
+            (
+                data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
+                data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian")
+            )
         ) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
@@ -1569,4 +1569,5 @@
     // ================================================================================
 
 })();
-// 22 6 -10
+// 22 6 -10 _Asian
+// -4 30 -38 _Black
