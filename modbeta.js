@@ -118,7 +118,8 @@
         if (typeof data === 'string' && (
             /(BodyUpper\/.*?_White)/.test(data) || /(BodyLower\/.*?_White)/.test(data) ||
             /(BodyUpper\/.*?_Asian)/.test(data) || /(BodyLower\/.*?_Asian)/.test(data) ||
-            data.includes("Head/Default_White") || data.includes("Head/NoEars_White")
+            data.includes("Head/Default_White") || data.includes("Head/NoEars_White") ||
+            data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian")
         )) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
