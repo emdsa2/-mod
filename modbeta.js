@@ -125,7 +125,12 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
-        if (typeof data === 'string' && (data.includes("Hands/Default_White") || data.includes("Hands/AllFours/NoEars_White") || data.includes("Hands/TapedHands/NoEars_White"))) {
+        if (typeof data === 'string' && 
+        (
+            data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
+            data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian")
+        )
+        ) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
