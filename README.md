@@ -36,3 +36,16 @@ The add-on also includes new items and clothes.    It adds extra clothes categor
 All the new clothing, binding, and wardrobe slots are invisible to those who don't use the script.
 
 This add-on menu overview was provided by Nemesea.
+
+
+### 修改了角色的皮肤
+![角色皮肤预览](https://emdsa2.github.io/-mod/ck/皮肤修改.png)
+
+### 拓展了一些道具...
+![道具预览](https://emdsa2.github.io/-mod/ck/道具.png) 部分展示
+
+### 更大的床 / 和贴贴
+![床预览](https://emdsa2.github.io/-mod/ck/合并.png)
+
+### 额外的服装槽位
+

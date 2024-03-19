@@ -152,8 +152,8 @@
             args[2] = 0;
         }
 
-        if (typeof data === 'string' && data.includes("ItemTorso/缰绳_Luzi_Normal")) {
-            args[2] = -600;
+        if (typeof data === 'string' && data.includes("ItemAddon/被子右边")) {
+            args[2] += 8;
         }
 
         next(args);
