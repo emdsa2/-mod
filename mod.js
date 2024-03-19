@@ -93,7 +93,7 @@
 
     });
 
-
+    // #B28686
     // Small
     // Normal
     // Large
@@ -116,12 +116,45 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
+        if (typeof data === 'string' && (
+            /(BodyUpper\/.*?_White)/.test(data) || /(BodyLower\/.*?_White)/.test(data) ||
+            /(BodyUpper\/.*?_Asian)/.test(data) || /(BodyLower\/.*?_Asian)/.test(data) ||
+            /(BodyUpper\/.*?_Black)/.test(data) || /(BodyLower\/.*?_Black)/.test(data) ||
+            data.includes("Head/Default_White") || data.includes("Head/NoEars_White") || data.includes("Head/SmallEars_White") ||
+            data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian") || data.includes("Head/SmallEars_Asian") ||
+            data.includes("Head/Default_Black") || data.includes("Head/NoEars_Black") || data.includes("Head/SmallEars_Black")
+        )) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
+        if (typeof data === 'string' &&
+            (
+                data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
+                data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian") ||
+                data.includes("Hands/Default_Black") || data.includes("Hands/AllFours/Default_Black") || data.includes("Hands/TapedHands/Default_Black")
+            )
+        ) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
+        if (typeof data === 'string' && (data.includes("Pussy/Pussy1_White") || data.includes("Pussy/Pussy2_White") || data.includes("Pussy/Pussy3_White"))) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
+        if (typeof data === 'string' && data.includes("Female3DCG/Nipples/Nipples")) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
         if (typeof data === 'string' && data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
             args[2] = 0;
         }
 
-        if (typeof data === 'string' && data.includes("ItemTorso/缰绳_Luzi_Normal")) {
-            args[2] = -600;
+        if (typeof data === 'string' && data.includes("ItemAddon/被子右边")) {
+            args[2] += 8;
         }
 
         next(args);
@@ -412,6 +445,33 @@
                             Spread: "",
                             AllFours: "Hide",
                             Hogtied: "Hide",
+                        },
+                    },
+                ],
+            },
+            {
+                Name: "奶牛_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    {
+                        Name: "衣服", Priority: 26,
+                        PoseMapping: {
+                            TapedHands: "",
+                            Yoked: "", OverTheHead: "",
+                            BackBoxTie: "",
+                            BackElbowTouch: "",
+                            BackCuffs: "",
+                        },
+                    },
+                    {
+                        Name: "边缘", Priority: 26,
+                        PoseMapping: {
+                            TapedHands: "",
+                            Yoked: "", OverTheHead: "",
+                            BackBoxTie: "",
+                            BackElbowTouch: "",
+                            BackCuffs: "",
                         },
                     },
                 ],
@@ -1078,11 +1138,7 @@
         ['SuitLower鱼鱼尾_LuziOptionw1', '不透明'],
     ]);
 
-
-
-
-
-    function mergeAddAssetIntoFemale3DCGAssets() { // 把服装拓展脚本数据转进 AssetFemale3DCG
+    function mergeAddAssetIntoFemale3DCGAssets() { // 塞进 AssetFemale3DCG
         for (const groupName in addAsset) {
             const group = AssetFemale3DCG.find(group => group.Group === groupName);
             if (group) {
@@ -1091,7 +1147,7 @@
         }
     }
 
-    function AssetAdd_Luzi(assetgroupName, assetName) {
+    function AssetAdd_Luzi(assetgroupName, assetName) { // 加载道具
         let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
         let asset = assetGroup.Asset.find(asset => asset.Name === assetName)
         let G = AssetGroupMap.get(assetgroupName)
@@ -1163,8 +1219,6 @@
         if (!isAssetAdded) {
             addExtraOutfitsToAssets();
             addExtraExpressionsToAssets()
-
-
             mergeAddAssetIntoFemale3DCGAssets();
 
             for (const type in addAsset) {
