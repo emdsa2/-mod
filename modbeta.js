@@ -143,6 +143,11 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
+        if (typeof data === 'string' && data.includes("Female3DCG/Nipples/Nipples")) {
+            let data = args[0];
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
         if (typeof data === 'string' && data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
             args[2] = 0;
         }
