@@ -213,6 +213,10 @@
                 Name: "单边眼镜右_Luzi", Random: false,
                 Top: 0, Left: 0,
             },
+            {
+                Name: "眼镜卡_Luzi", Random: false,
+                Top: 0, Left: 0,
+            },
         ],
         Cloth: [
             {
