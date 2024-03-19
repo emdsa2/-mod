@@ -48,4 +48,4 @@ This add-on menu overview was provided by Nemesea.
 ![床预览](https://emdsa2.github.io/-mod/ck/合并.png)
 
 ### 额外的服装槽位 和 一些bug😶
-
+Discord：https://discord.gg/K9YnNqsNKx
