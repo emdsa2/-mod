@@ -118,8 +118,10 @@
         if (typeof data === 'string' && (
             /(BodyUpper\/.*?_White)/.test(data) || /(BodyLower\/.*?_White)/.test(data) ||
             /(BodyUpper\/.*?_Asian)/.test(data) || /(BodyLower\/.*?_Asian)/.test(data) ||
-            data.includes("Head/Default_White") || data.includes("Head/NoEars_White") ||
-            data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian")
+            /(BodyUpper\/.*?_Black)/.test(data) || /(BodyLower\/.*?_Black)/.test(data) ||
+            data.includes("Head/Default_White") || data.includes("Head/NoEars_White") || data.includes("Head/SmallEars_White") ||
+            data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian") || data.includes("Head/SmallEars_Asian") ||
+            data.includes("Head/Default_Black") || data.includes("Head/NoEars_Black") || data.includes("Head/SmallEars_Black")
         )) {
             let data = args[0];
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
@@ -128,7 +130,8 @@
         if (typeof data === 'string' &&
             (
                 data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
-                data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian")
+                data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian") ||
+                data.includes("Hands/Default_Black") || data.includes("Hands/AllFours/Default_Black") || data.includes("Hands/TapedHands/Default_Black")
             )
         ) {
             let data = args[0];
@@ -1571,3 +1574,5 @@
 })();
 // 22 6 -10 _Asian
 // -4 30 -38 _Black
+//       74
+//    -6 10
