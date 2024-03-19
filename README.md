@@ -47,5 +47,5 @@ This add-on menu overview was provided by Nemesea.
 ### 更大的床 / 和贴贴
 ![床预览](https://emdsa2.github.io/-mod/ck/合并.png)
 
-### 额外的服装槽位
+### 额外的服装槽位 和 一些bug😶
 
