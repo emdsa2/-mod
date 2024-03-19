@@ -216,6 +216,7 @@
             {
                 Name: "眼镜卡_Luzi", Random: false,
                 Top: 0, Left: 0,
+                Layer: [{ Name: "眼镜", Priority: 56, },],
             },
         ],
         Cloth: [
