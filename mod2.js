@@ -2639,7 +2639,7 @@
                         const name = document.getElementById('笨蛋Luzi_activityName')?.value || "";
                         // 检查是否存在重复的动作名字
                         if (ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
-                            DrawText(`动作名字已存在! `, 1850, 400, "red");// 绘制一个文本元素
+                            DrawText(`动作名字已存在!`, 1850, 400, "red");// 绘制一个文本元素
                         }
                         if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
                             DrawText(`新建动作`, 1850, 400, "White");// 绘制一个文本元素
