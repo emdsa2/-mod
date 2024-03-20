@@ -2860,9 +2860,7 @@
             DrawImageResize("https://emdsa2.github.io/-mod/image/界面缠绕.png"
                 , 0, 0, 2000, 1000,);
 
-            // DrawButton(250, 190, 390, 90, "      自定义动作", "#646464", "data:image/png;base64,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");
-            // DrawButton(250, 290, 390, 90, "      自定义服装", "#646464", "data:image/png;base64,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");
-
+                
             // DrawButton(900, 220, 360, 600, "", "#646464", "");
             if (MouseIn(317, 220, 360, 600)) { DrawText(`自定义动作`, 500, 356, "#FFFFFF"); }
             else { DrawText(`自定义动作`, 500, 356, "#888888"); }
@@ -2955,12 +2953,12 @@
 
     w.printedTextMap = new Map();
     // 打印整个 printedTextMap
-    // w.printPrintedTextMap = function () {
-    //     console.log("Printed Text Map:");
-    //     printedTextMap.forEach((value, key) => {
-    //         console.log(`${key}: ${value}`);
-    //     });
-    // };
+    w.printPrintedTextMap = function () {
+        console.log("Printed Text Map:");
+        printedTextMap.forEach((value, key) => {
+            console.log(`${key}: ${value}`);
+        });
+    };
     // Promise 用于确保 playername 已经被设置
     var playernamePromise = new Promise((resolve) => {
         笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
@@ -2972,11 +2970,11 @@
         });
     });
 
-    // 定义 labelMap
-    w.labelMap = undefined;
-
+    // 定义 labelMapCN
+    w.labelMapCN = undefined;
+    w.labelMapEN = undefined;
     playernamePromise.then(() => {
-        w.labelMap = new Map([
+        w.labelMapCN = new Map([
             // BCX
             ["You can find BCX here ►", "从这里浏览BCX ►"],
             ["- Bondage Club Extended -", "- Bondage Club 拓展 -"],
@@ -4754,8 +4752,22 @@
         ]);
 
 
+        w.labelMapEN = new Map([
+            ["动作拓展设置", "Action Settings"],
+            ["自定义动作", "Custom Actions"],
+            ["自定义服装", "Custom Outfits"],
+            ["高潮计数保留", "Save Orgasm count"],
+            ["      清空高潮次数", "       Clear Orgasm Count"],
+            ["动作", "Actions"],
+            ["文本", "Text"],
+            ["删除", "Delete"],
+            ["动作名字:", "ActionName:"],
+            ["对自己使用动作的文本:", "Text for Self-Use:"],
+            ["对别人使用动作的文本:", "      Text for Other's Use:"],
+            ["删除已有动作:", "         Delete Existing Action:"],
+            ["清空所有创建动作", "Clear All Created Actions"],
 
-
+        ]);
 
 
         const translationsDTF = [
@@ -4916,72 +4928,75 @@
         ];
 
         // 同步替换函数
-        function replaceLabelSync(label) {
-            let replacement = w.labelMap.get(label);
+        function replaceLabelSyncCN(label) {
+            let replacement = w.labelMapCN.get(label);
             while (replacement) {
                 label = replacement;
-                replacement = w.labelMap.get(label);
+                replacement = w.labelMapCN.get(label);
+            }
+            return label;
+        }
+
+        function replaceLabelSyncEN(label) {
+            let replacement = w.labelMapEN.get(label);
+            while (replacement) {
+                label = replacement;
+                replacement = w.labelMapEN.get(label);
             }
             return label;
         }
 
         function replaceLabels(args) {
             let playername = InformationSheetSelection?.Name || Player.Name || "";
-            // let playernum = InformationSheetSelection?.MemberNumber || Player.MemberNumber;
             let playerNickname = (InformationSheetSelection && InformationSheetSelection.Nickname) || (Player && Player.Nickname) || "";
-
-            // function GetPlayerName(player) {
-            //     return player?.Nickname != null && player?.Nickname != '' ? player?.Nickname : player?.Name;
-            // }
 
             let label = args[0];
             if (loginSuccess && label && label.length > 0) {
-                if (label.includes(Player.Name) || label.includes(InformationSheetSelection?.Name)) {
-                    translationsDTF.forEach(({ regex, replacement }) => {
-                        args[0] = args[0].replace(regex, replacement.replace(playername, playerNickname));
-                    });
-
-                    // if (ChatRoomCharacterViewCharacterCount >= 1) {
-
-                    //     if (InformationSheetSelection?.Nickname && args[0].indexOf(playername) !== -1 && !args[0].includes(playerNickname)) {
-                    //         args[0] = args[0].replace(new RegExp(playername, 'g'), playerNickname);
-                    //     }
-
-                    // }
-
+                let language = localStorage.getItem("BondageClubLanguage");
+                if ((language === "CN" || language === "TW")) {
+                    if (label.includes(Player.Name) || label.includes(InformationSheetSelection?.Name)) {
+                        translationsDTF.forEach(({ regex, replacement }) => {
+                            args[0] = args[0].replace(regex, replacement.replace(playername, playerNickname));
+                        });
+                    }
                 } else {
-                    args[0] = replaceLabelSync(label);
+                    let language = localStorage.getItem("BondageClubLanguage");
+                    if ((language === "CN" || language === "TW")) {
+                        args[0] = replaceLabelSyncCN(label);
+                    } else {
+                        args[0] = replaceLabelSyncEN(label);
+                    }
                 }
 
+                if ((language === "CN" || language === "TW")) {
+                    if (args[0].indexOf("Your BCX version: ") !== -1) {
+                        args[0] = args[0].replace(/Your BCX version\: (.+)/, "您的BCX版本: $1");
+                    }
+                    if (args[0].indexOf("'s BCX version: ") !== -1) {
+                        args[0] = args[0].replace(/(.+)\'s BCX version\: (.+)/, "$1 的BCX版本: $2");
+                    }
+                    if (args[0].indexOf("BCX loaded! Version:") !== -1) {
+                        args[0] = args[0].replace(/BCX loaded! Version\: (.+)/, "您的BCX版本: $1");
+                    }
+                    if (args[0].indexOf("For Better Club v") !== -1) {
+                        args[0] = args[0].replace(/For Better Club v(.+) Loaded/, "您的BCX版本: $1");
+                    }
+                    if (args[0].indexOf("MBS: Show new") !== -1) {
+                        args[0] = args[0].replace(/MBS\: Show new (.+) items/, "MBS:显示新的$1项目");
+                    }
+                    if (args[0].indexOf("Buy new ") !== -1) {
+                        args[0] = args[0].replace(/Buy new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
+                    }
+                    if (args[0].indexOf("Preview new ") !== -1) {
+                        args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
+                    }
+                }
 
-
-
-                if (args[0].indexOf("Your BCX version: ") !== -1) {
-                    args[0] = args[0].replace(/Your BCX version\: (.+)/, "您的BCX版本: $1");
-                }
-                if (args[0].indexOf("'s BCX version: ") !== -1) {
-                    args[0] = args[0].replace(/(.+)\'s BCX version\: (.+)/, "$1 的BCX版本: $2");
-                }
-                if (args[0].indexOf("BCX loaded! Version:") !== -1) {
-                    args[0] = args[0].replace(/BCX loaded! Version\: (.+)/, "您的BCX版本: $1");
-                }
-                if (args[0].indexOf("For Better Club v") !== -1) {
-                    args[0] = args[0].replace(/For Better Club v(.+) Loaded/, "您的BCX版本: $1");
-                }
-                if (args[0].indexOf("MBS: Show new") !== -1) {
-                    args[0] = args[0].replace(/MBS\: Show new (.+) items/, "MBS:显示新的$1项目");
-                }
-                if (args[0].indexOf("Buy new ") !== -1) {
-                    args[0] = args[0].replace(/Buy new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
-                }
-                if (args[0].indexOf("Preview new ") !== -1) {
-                    args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
-                }
                 // 检查是否已经打印过这个文本
-                // if (!printedTextMap.has(args[0])) {
-                //     console.log(args[0]);
-                //     printedTextMap.set(args[0], true);
-                // }
+                if (!printedTextMap.has(args[0])) {
+                    console.log(args[0]);
+                    printedTextMap.set(args[0], true);
+                }
             }
         };
 
@@ -5091,7 +5106,7 @@
 
         笨蛋Luzi.hookFunction("DrawText", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
-            if (language === "CN" || language === "TW") {
+            if ((language === "CN" || language === "TW")) {
                 replaceLabels(args);
                 // 遍历待翻译的文本内容, 翻译并替换对应的元素文本内容
                 for (const [selector, translatedText] of Object.entries(textsToTranslate)) {
@@ -5105,24 +5120,24 @@
                     // 调用递归函数替换文本内容
                     replaceTextNodes(myDiv);
                 }
-            }
+            } else { replaceLabels(args); }
             next(args);
         });
 
 
         笨蛋Luzi.hookFunction("DrawTextFit", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
-            if (language === "CN" || language === "TW") {
+            if ((language === "CN" || language === "TW")) {
                 replaceLabels(args);
-            }
+            } else { replaceLabels(args); }
             next(args);
         });
 
         笨蛋Luzi.hookFunction("DrawTextWrap", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
-            if (language === "CN" || language === "TW") {
+            if ((language === "CN" || language === "TW")) {
                 replaceLabels(args);
-            }
+            } else { replaceLabels(args); }
             next(args);
         });
 

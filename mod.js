@@ -1119,7 +1119,60 @@
     };
 
     const dialogMap = new Map([
-        ['ItemDevices玻璃罐子_LuziSelectBase', '选择罐子配置'], ['ItemDevices玻璃罐子_LuziSelect窗户', '设置窗户'], ['ItemDevices玻璃罐子_LuziModule窗户', '窗户'], ['ItemDevices玻璃罐子_LuziOptionc0', '无'], ['ItemDevices玻璃罐子_LuziOptionc1', '密封'], ['ItemDevices玻璃罐子_LuziSetc0', 'SourceCharacter打开了DestinationCharacter的罐子'], ['ItemDevices玻璃罐子_LuziSetc1', 'SourceCharacter封上了DestinationCharacter的罐子'], ['ItemDevices玻璃罐子_LuziSelect腿部拘束', '设置腿部拘束'], ['ItemDevices玻璃罐子_LuziModule腿部拘束', '腿部拘束'], ['ItemDevices玻璃罐子_LuziOptiont0', '无'], ['ItemDevices玻璃罐子_LuziOptiont1', '腿拘束'], ['ItemDevices玻璃罐子_LuziSett0', "SourceCharacter移除了DestinationCharacter双腿的拘束"], ['ItemDevices玻璃罐子_LuziSett1', "SourceCharacter将DestinationCharacter的双腿束缚在一起"], ['ItemDevices玻璃罐子_LuziSelect手臂拘束', '设置手臂拘束'], ['ItemDevices玻璃罐子_LuziModule手臂拘束', '手臂拘束'], ['ItemDevices玻璃罐子_LuziOptions0', '无'], ['ItemDevices玻璃罐子_LuziOptions1', '手臂拘束'], ['ItemDevices玻璃罐子_LuziSets0', "SourceCharacter移除了DestinationCharacter手腕和手肘的拘束"], ['ItemDevices玻璃罐子_LuziSets1', "SourceCharacter将DestinationCharacter的手腕和手肘束缚到她的身后"], ['ItemDevices玻璃罐子_LuziSelect管道', '设置管道'], ['ItemDevices玻璃罐子_LuziModule管道', '管道'], ['ItemDevices玻璃罐子_LuziOptiongz0', '无'], ['ItemDevices玻璃罐子_LuziOptiongz1', '连接身体'], ['ItemDevices玻璃罐子_LuziSetgz0', 'SourceCharacter移除了连接DestinationCharacter的身体的管子'], ['ItemDevices玻璃罐子_LuziSetgz1', 'SourceCharacter将管子连接进了DestinationCharacter的身体'], ['ItemDevices玻璃罐子_LuziSelect液体', '设置液体'], ['ItemDevices玻璃罐子_LuziModule液体', '液体'], ['ItemDevices玻璃罐子_LuziOptionyt0', '无'], ['ItemDevices玻璃罐子_LuziOptionyt1', '注入液体'], ['ItemDevices玻璃罐子_LuziSetyt0', 'SourceCharacter排空了DestinationCharacter身体和罐子里的液体'], ['ItemDevices玻璃罐子_LuziSetyt1', 'DestinationCharacter的身体和罐子充满了液体'], ['ItemDevices玻璃罐子_LuziSelect快感模块', '设置快感模块'], ['ItemDevices玻璃罐子_LuziModule快感模块', '快感模块'], ['ItemDevices玻璃罐子_LuziOptionk0', '关闭'], ['ItemDevices玻璃罐子_LuziOptionk1', '低'], ['ItemDevices玻璃罐子_LuziOptionk2', '一般'], ['ItemDevices玻璃罐子_LuziOptionk3', '高'], ['ItemDevices玻璃罐子_LuziOptionk4', '最多'], ['ItemDevices玻璃罐子_LuziSetk0', "插在DestinationCharacter体内的振动装置停止振动"], ['ItemDevices玻璃罐子_LuziSetk1', "插在DestinationCharacter体内的振动装置轻微逗弄起来"], ['ItemDevices玻璃罐子_LuziSetk2', "插在DestinationCharacter体内的振动装置带温和嗡鸣着"], ['ItemDevices玻璃罐子_LuziSetk3', "插在DestinationCharacter体内的振动装置猛烈地颤动"], ['ItemDevices玻璃罐子_LuziSetk4', "插在DestinationCharacter体内的振动装置以最大速度振动着"], ['ItemDevices玻璃罐子_LuziSelect电击模块', '设置电击模块'], ['ItemDevices玻璃罐子_LuziModule电击模块', '电击模块'], ['ItemDevices玻璃罐子_LuziOptiond0', '关闭'], ['ItemDevices玻璃罐子_LuziOptiond1', '低'], ['ItemDevices玻璃罐子_LuziOptiond2', '一般'], ['ItemDevices玻璃罐子_LuziOptiond3', '高'], ['ItemDevices玻璃罐子_LuziSetd0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置关闭了'], ['ItemDevices玻璃罐子_LuziSetd1', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级1'], ['ItemDevices玻璃罐子_LuziSetd2', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级2'], ['ItemDevices玻璃罐子_LuziSetd3', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级3'], ['ItemDevices玻璃罐子_LuziSelect高潮锁', '设置高潮锁'], ['ItemDevices玻璃罐子_LuziModule高潮锁', '高潮锁'], ['ItemDevices玻璃罐子_LuziOptiong0', '允许'], ['ItemDevices玻璃罐子_LuziOptiong1', '寸止'], ['ItemDevices玻璃罐子_LuziOptiong2', '拒绝'], ['ItemDevices玻璃罐子_LuziSetg0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮'], ['ItemDevices玻璃罐子_LuziSetg1', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式'], ['ItemDevices玻璃罐子_LuziSetg2', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式'],
+        ['ItemDevices玻璃罐子_LuziSelectBase', '选择罐子配置'],
+        ['ItemDevices玻璃罐子_LuziSelect窗户', '设置窗户'],
+        ['ItemDevices玻璃罐子_LuziModule窗户', '窗户'],
+        ['ItemDevices玻璃罐子_LuziOptionc0', '无'],
+        ['ItemDevices玻璃罐子_LuziOptionc1', '密封'],
+        ['ItemDevices玻璃罐子_LuziSetc0', 'SourceCharacter打开了DestinationCharacter的罐子'],
+        ['ItemDevices玻璃罐子_LuziSetc1', 'SourceCharacter封上了DestinationCharacter的罐子'],
+        ['ItemDevices玻璃罐子_LuziSelect腿部拘束', '设置腿部拘束'],
+        ['ItemDevices玻璃罐子_LuziModule腿部拘束', '腿部拘束'],
+        ['ItemDevices玻璃罐子_LuziOptiont0', '无'],
+        ['ItemDevices玻璃罐子_LuziOptiont1', '腿拘束'],
+        ['ItemDevices玻璃罐子_LuziSett0', "SourceCharacter移除了DestinationCharacter双腿的拘束"],
+        ['ItemDevices玻璃罐子_LuziSett1', "SourceCharacter将DestinationCharacter的双腿束缚在一起"],
+        ['ItemDevices玻璃罐子_LuziSelect手臂拘束', '设置手臂拘束'],
+        ['ItemDevices玻璃罐子_LuziModule手臂拘束', '手臂拘束'],
+        ['ItemDevices玻璃罐子_LuziOptions0', '无'],
+        ['ItemDevices玻璃罐子_LuziOptions1', '手臂拘束'],
+        ['ItemDevices玻璃罐子_LuziSets0', "SourceCharacter移除了DestinationCharacter手腕和手肘的拘束"],
+        ['ItemDevices玻璃罐子_LuziSets1', "SourceCharacter将DestinationCharacter的手腕和手肘束缚到她的身后"],
+        ['ItemDevices玻璃罐子_LuziSelect管道', '设置管道'], ['ItemDevices玻璃罐子_LuziModule管道', '管道'],
+        ['ItemDevices玻璃罐子_LuziOptiongz0', '无'], ['ItemDevices玻璃罐子_LuziOptiongz1', '连接身体'],
+        ['ItemDevices玻璃罐子_LuziSetgz0', 'SourceCharacter移除了连接DestinationCharacter的身体的管子'],
+        ['ItemDevices玻璃罐子_LuziSetgz1', 'SourceCharacter将管子连接进了DestinationCharacter的身体'],
+        ['ItemDevices玻璃罐子_LuziSelect液体', '设置液体'], ['ItemDevices玻璃罐子_LuziModule液体', '液体'],
+        ['ItemDevices玻璃罐子_LuziOptionyt0', '无'], ['ItemDevices玻璃罐子_LuziOptionyt1', '注入液体'],
+        ['ItemDevices玻璃罐子_LuziSetyt0', 'SourceCharacter排空了DestinationCharacter身体和罐子里的液体'],
+        ['ItemDevices玻璃罐子_LuziSetyt1', 'DestinationCharacter的身体和罐子充满了液体'],
+        ['ItemDevices玻璃罐子_LuziSelect快感模块', '设置快感模块'],
+        ['ItemDevices玻璃罐子_LuziModule快感模块', '快感模块'],
+        ['ItemDevices玻璃罐子_LuziOptionk0', '关闭'],
+        ['ItemDevices玻璃罐子_LuziOptionk1', '低'], ['ItemDevices玻璃罐子_LuziOptionk2', '一般'],
+        ['ItemDevices玻璃罐子_LuziOptionk3', '高'], ['ItemDevices玻璃罐子_LuziOptionk4', '最多'],
+        ['ItemDevices玻璃罐子_LuziSetk0', "插在DestinationCharacter体内的振动装置停止振动"],
+        ['ItemDevices玻璃罐子_LuziSetk1', "插在DestinationCharacter体内的振动装置轻微逗弄起来"],
+        ['ItemDevices玻璃罐子_LuziSetk2', "插在DestinationCharacter体内的振动装置带温和嗡鸣着"],
+        ['ItemDevices玻璃罐子_LuziSetk3', "插在DestinationCharacter体内的振动装置猛烈地颤动"],
+        ['ItemDevices玻璃罐子_LuziSetk4', "插在DestinationCharacter体内的振动装置以最大速度振动着"],
+        ['ItemDevices玻璃罐子_LuziSelect电击模块', '设置电击模块'],
+        ['ItemDevices玻璃罐子_LuziModule电击模块', '电击模块'],
+        ['ItemDevices玻璃罐子_LuziOptiond0', '关闭'],
+        ['ItemDevices玻璃罐子_LuziOptiond1', '低'],
+        ['ItemDevices玻璃罐子_LuziOptiond2', '一般'],
+        ['ItemDevices玻璃罐子_LuziOptiond3', '高'],
+        ['ItemDevices玻璃罐子_LuziSetd0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置关闭了'],
+        ['ItemDevices玻璃罐子_LuziSetd1', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级1'],
+        ['ItemDevices玻璃罐子_LuziSetd2', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级2'],
+        ['ItemDevices玻璃罐子_LuziSetd3', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级3'],
+        ['ItemDevices玻璃罐子_LuziSelect高潮锁', '设置高潮锁'], ['ItemDevices玻璃罐子_LuziModule高潮锁', '高潮锁'],
+        ['ItemDevices玻璃罐子_LuziOptiong0', '允许'], ['ItemDevices玻璃罐子_LuziOptiong1', '寸止'],
+        ['ItemDevices玻璃罐子_LuziOptiong2', '拒绝'],
+        ['ItemDevices玻璃罐子_LuziSetg0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮'],
+        ['ItemDevices玻璃罐子_LuziSetg1', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式'],
+        ['ItemDevices玻璃罐子_LuziSetg2', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式'],
+
         ['ItemDevices窝瓜_LuziSelect', '选择窝配置'],
         ['ItemDevices窝瓜_LuziSet没盖子', 'SourceCharacter推开了DestinationCharacter的盖子'],
         ['ItemDevices窝瓜_LuziSet有盖子', 'SourceCharacter盖上了DestinationCharacter的盖子'],
@@ -1255,17 +1308,41 @@
                     ['Gloves_笨笨蛋Luzi', '🍔手套2'],
                     ['Mask_笨笨蛋Luzi', '🍔面具2'],
                     ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
-
                 ]);
-                AssetGroup.forEach(item => {
-                    if (item.Name) {
-                        const description = descriptionMap.get(item.Name);
-                        if (description) {
-                            item.Description = description;
+                const descriptionMap2 = new Map([
+                    ['Cloth_笨笨蛋Luzi', '🍔Cloth2'],
+                    ['ClothLower_笨笨蛋Luzi', '🍔Bottom2'],
+                    ['Panties_笨笨蛋Luzi', '🍔Panties2'],
+                    ['ClothAccessory_笨笨蛋Luzi', '🍔Cloth Accessory2'],
+                    ['Necklace_笨笨蛋Luzi', '🍔Necklace2'],
+                    ['Bra_笨笨蛋Luzi', '🍔Bra2'],
+                    ['Shoes_笨笨蛋Luzi', '🍔Shoes2'],
+                    ['Hat_笨笨蛋Luzi', '🍔Hat2'],
+                    ['HairAccessory3_笨笨蛋Luzi', '🍔Hair Accessory2'],
+                    ['Gloves_笨笨蛋Luzi', '🍔Gloves2'],
+                    ['Mask_笨笨蛋Luzi', '🍔Mask2'],
+                    ['Wings_笨笨蛋Luzi', '🍔Wings2'],
+                ]);
+                let language = localStorage.getItem("BondageClubLanguage");
+                if ((language === "CN" || language === "TW")) {
+                    AssetGroup.forEach(item => {
+                        if (item.Name) {
+                            const description = descriptionMap.get(item.Name);
+                            if (description) {
+                                item.Description = description;
+                            }
                         }
-                    }
-                });
-
+                    });
+                } else {
+                    AssetGroup.forEach(item => {
+                        if (item.Name) {
+                            const description = descriptionMap2.get(item.Name);
+                            if (description) {
+                                item.Description = description;
+                            }
+                        }
+                    });
+                }
             }
 
 
