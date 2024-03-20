@@ -4765,6 +4765,9 @@
             ["对别人使用动作的文本:", "      Text for Other's Use:"],
             ["删除已有动作:", "         Delete Existing Action:"],
             ["清空所有创建动作", "Clear All Created Actions"],
+            ["新建", "New"],
+            ["新建动作", "New Action"],
+            ["动作名字已存在!", "Action Name Exists!"],
 
         ]);
 
