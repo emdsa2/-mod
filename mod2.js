@@ -2860,7 +2860,7 @@
             DrawImageResize("https://emdsa2.github.io/-mod/image/界面缠绕.png"
                 , 0, 0, 2000, 1000,);
 
-                
+
             // DrawButton(900, 220, 360, 600, "", "#646464", "");
             if (MouseIn(317, 220, 360, 600)) { DrawText(`自定义动作`, 500, 356, "#FFFFFF"); }
             else { DrawText(`自定义动作`, 500, 356, "#888888"); }
@@ -2953,12 +2953,12 @@
 
     w.printedTextMap = new Map();
     // 打印整个 printedTextMap
-    w.printPrintedTextMap = function () {
-        console.log("Printed Text Map:");
-        printedTextMap.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    };
+    // w.printPrintedTextMap = function () {
+    //     console.log("Printed Text Map:");
+    //     printedTextMap.forEach((value, key) => {
+    //         console.log(`${key}: ${value}`);
+    //     });
+    // };
     // Promise 用于确保 playername 已经被设置
     var playernamePromise = new Promise((resolve) => {
         笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
@@ -4993,10 +4993,10 @@
                 }
 
                 // 检查是否已经打印过这个文本
-                if (!printedTextMap.has(args[0])) {
-                    console.log(args[0]);
-                    printedTextMap.set(args[0], true);
-                }
+                // if (!printedTextMap.has(args[0])) {
+                //     console.log(args[0]);
+                //     printedTextMap.set(args[0], true);
+                // }
             }
         };
 
@@ -5439,36 +5439,36 @@
         next(args);
     });
 
-    笨蛋Luzi.hookFunction("ServerSend", 0, (args, next) => {
-        let language = localStorage.getItem("BondageClubLanguage");
-        if (language === "CN" || language === "TW") {
-            const data = args[1];
-            if (data.Content === 'Beep') {
-                const filteredDictionary = data.Dictionary.filter(item => item.Tag === 'msg');
-                const filteredObject = filteredDictionary[0];
-                if (filteredObject) {
-                    translations.forEach(({ regex, replacement }) => {
-                        filteredObject.Text = filteredObject.Text.replace(regex, replacement);
-                    });
-                    if (filteredObject.Text.indexOf("herself") !== -1) {
-                        filteredObject.Text = filteredObject.Text.replace(/herself/g, "她自己");
-                    }
-                    if (filteredObject.Text.indexOf("her") !== -1) {
-                        filteredObject.Text = filteredObject.Text.replace(/her/g, "她");
-                    }
-                    if (filteredObject.Text.indexOf("she") !== -1) {
-                        filteredObject.Text = filteredObject.Text.replace(/she/g, "她");
-                    }
-                    if (filteredObject.Text.indexOf("net") !== -1) {
-                        filteredObject.Text = filteredObject.Text.replace(/net/g, "网");
-                    }
-                    // console.log(filteredObject.Text);
-                }
-                // console.log(data);
-            }
-        }
-        next(args);
-    });
+    // 笨蛋Luzi.hookFunction("ServerSend", 0, (args, next) => {
+    //     let language = localStorage.getItem("BondageClubLanguage");
+    //     if (language === "CN" || language === "TW") {
+    //         const data = args[1];
+    //         if (data.Content === 'Beep') {
+    //             const filteredDictionary = data.Dictionary.filter(item => item.Tag === 'msg');
+    //             const filteredObject = filteredDictionary[0];
+    //             if (filteredObject) {
+    //                 translations.forEach(({ regex, replacement }) => {
+    //                     filteredObject.Text = filteredObject.Text.replace(regex, replacement);
+    //                 });
+    //                 if (filteredObject.Text.indexOf("herself") !== -1) {
+    //                     filteredObject.Text = filteredObject.Text.replace(/herself/g, "她自己");
+    //                 }
+    //                 if (filteredObject.Text.indexOf("her") !== -1) {
+    //                     filteredObject.Text = filteredObject.Text.replace(/her/g, "她");
+    //                 }
+    //                 if (filteredObject.Text.indexOf("she") !== -1) {
+    //                     filteredObject.Text = filteredObject.Text.replace(/she/g, "她");
+    //                 }
+    //                 if (filteredObject.Text.indexOf("net") !== -1) {
+    //                     filteredObject.Text = filteredObject.Text.replace(/net/g, "网");
+    //                 }
+    //                 // console.log(filteredObject.Text);
+    //             }
+    //             // console.log(data);
+    //         }
+    //     }
+    //     next(args);
+    // });
     // ========================================================================
     // ========================================================================
 
