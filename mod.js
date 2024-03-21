@@ -105,6 +105,10 @@
             args[0] = data.replace("_笨笨蛋Luzi", "");
         }
 
+        if (typeof data === 'string' && data.includes("_笨笨笨蛋Luzi2")) {
+            args[0] = data.replace("_笨笨笨蛋Luzi2", "");
+        }
+
         if (typeof data === 'string' && ICONSSSSSSS[data]) {
             args[0] = ICONSSSSSSS[data];
             args[2] = 0;
@@ -165,6 +169,10 @@
 
         if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
             args[0] = data.replace("_笨笨蛋Luzi", "");
+        }
+
+        if (typeof data === 'string' && data.includes("_笨笨笨蛋Luzi2")) {
+            args[0] = data.replace("_笨笨笨蛋Luzi2", "");
         }
 
         if (typeof data === 'string' && PreviewICONS[data]) {
@@ -1272,6 +1280,51 @@
         AssetLoad(filteredAssetFemale3DCG, "Female3DCG", AssetFemale3DCGExtended);
     }
 
+    function addExtraOutfitsToAssets2() {
+        // 需要执行相同操作的项的数组
+        const itemsToCopy = ["Cloth", "ClothLower"];
+
+        // 循环遍历每个需要复制的项
+        itemsToCopy.forEach(itemName => {
+            // 找到对应项的索引位置
+            let itemIndex = AssetFemale3DCG.findIndex(A => A.Group === itemName);
+            if (itemIndex !== -1) { // 如果找到了对应项
+                // 复制对应项
+                let itemCopy = Object.assign({}, AssetFemale3DCG[itemIndex]); // 假设 AssetFemale3DCG 里的项是对象，如果是数组则使用 slice() 方法
+                itemCopy.Group = itemName + "_笨笨笨蛋Luzi2"; // 修改复制的项的名称为原名称加上 "2"
+
+                // 获取复制项的 Asset 数组
+                let copiedAssets = itemCopy.Asset;
+                copiedAssets.forEach(asset => {
+                    // 给每个对象都加上 Random: false 属性（如果不存在的话）
+                    asset.Random = false;
+                });
+                AssetFemale3DCG.splice(itemIndex + 1, 0, itemCopy); // 在原索引位置之后插入复制的项
+            }
+        });
+
+        // 遍历 itemsToCopy 中的每一项
+        itemsToCopy.forEach(itemName => {
+            // 找到对应项的对象
+            const item = AssetFemale3DCGExtended[itemName];
+            if (item) { // 如果找到了对应项
+                // 复制对应项
+                const itemCopy = { ...item };
+                // 修改复制的项的名称为原名称加上 "2"
+                const newItemName = itemName + "_笨笨笨蛋Luzi2";
+                itemCopy.Group = newItemName;
+
+                // 将修改后的项添加到原数组中
+                AssetFemale3DCGExtended[newItemName] = itemCopy;
+            }
+        });
+
+        // 提取 AssetFemale3DCG 中 Group 属性包含 '_笨笨蛋Luzi' 的对象存入新数组
+        const filteredAssetFemale3DCG = AssetFemale3DCG.filter(asset => asset.Group.includes('_笨笨笨蛋Luzi2'));
+        // 输出结果
+        AssetLoad(filteredAssetFemale3DCG, "Female3DCG", AssetFemale3DCGExtended);
+    }
+
     function addExtraExpressionsToAssets() {
         var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi",];
         var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
@@ -1291,7 +1344,8 @@
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
             addExtraOutfitsToAssets();
-            addExtraExpressionsToAssets()
+            addExtraOutfitsToAssets2();
+            addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
             for (const type in addAsset) {
@@ -1313,6 +1367,8 @@
                 const descriptionMap = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔衣服2'],
                     ['ClothLower_笨笨蛋Luzi', '🍔下装2'],
+                    ['Cloth_笨笨笨蛋Luzi2', '🍔衣服3'],
+                    ['ClothLower_笨笨笨蛋Luzi2', '🍔下装3'],
                     ['Panties_笨笨蛋Luzi', '🍔内裤2'],
                     ['ClothAccessory_笨笨蛋Luzi', '🍔服装配饰2'],
                     ['Necklace_笨笨蛋Luzi', '🍔项链2'],
@@ -1327,6 +1383,8 @@
                 const descriptionMap2 = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔Cloth2'],
                     ['ClothLower_笨笨蛋Luzi', '🍔Bottom2'],
+                    ['Cloth_笨笨笨蛋Luzi2', '🍔Cloth3'],
+                    ['ClothLower_笨笨笨蛋Luzi2', '🍔Bottom3'],
                     ['Panties_笨笨蛋Luzi', '🍔Panties2'],
                     ['ClothAccessory_笨笨蛋Luzi', '🍔Cloth Accessory2'],
                     ['Necklace_笨笨蛋Luzi', '🍔Necklace2'],
@@ -1394,6 +1452,31 @@
             for (const baseName in nameMap) {
                 replaceDescription(baseName, nameMap[baseName]);
             }
+
+
+            const nameMap2 = {
+                'Cloth': 'Cloth_笨笨笨蛋Luzi2',
+                'ClothLower': 'ClothLower_笨笨笨蛋Luzi2',
+            };
+
+            function replaceDescription2(baseName, luZiName) {
+                const baseAssets = AssetGroup.find(item => item.Name === baseName)?.Asset;
+                const luZiAssets = AssetGroup.find(item => item.Name === luZiName)?.Asset;
+
+                if (baseAssets && luZiAssets) {
+                    baseAssets.forEach(baseAsset => {
+                        const matchingAsset = luZiAssets.find(asset => asset.Name === baseAsset.Name);
+                        if (matchingAsset) {
+                            matchingAsset.Description = baseAsset.Description;
+                        }
+                    });
+                }
+            }
+
+            for (const baseName in nameMap2) {
+                replaceDescription2(baseName, nameMap2[baseName]);
+            }
+
             // ========================================================
             dialogMap.forEach((value, key) => { PlayerDialog.set(key, value); });
             // ========================================================
@@ -1401,6 +1484,11 @@
         }
         AssetFemale3DCG.forEach(group => {
             if (group.Group.includes("_笨笨蛋Luzi")) {
+                group.Asset.forEach(item => InventoryAdd(Player, item.Name, group.Group, true));
+            }
+        });
+        AssetFemale3DCG.forEach(group => {
+            if (group.Group.includes("_笨笨笨蛋Luzi2")) {
                 group.Asset.forEach(item => InventoryAdd(Player, item.Name, group.Group, true));
             }
         });
@@ -1479,6 +1567,9 @@
         }
         if (args[0] && args[0].includes('_笨笨蛋Luzi')) {
             args[0] = args[0].replace(/.*?_笨笨蛋Luzi/, ''); // 删除'_Luzi'及其前面的字符串
+        }
+        if (args[0] && args[0].includes('_笨笨笨蛋Luzi2')) {
+            args[0] = args[0].replace(/.*?_笨笨笨蛋Luzi2/, ''); // 删除'_Luzi'及其前面的字符串
         }
         next(args);
     });
