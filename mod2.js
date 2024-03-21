@@ -2130,16 +2130,16 @@
                             // 从翻译结果中移除特定标记"[T]"
                             let translatedText = dt[0][0][0].replace("[T]", "");
 
-                            // 如果翻译结果不等于源文本，则发送翻译后的文本作为聊天消息
+                            // 如果翻译结果不等于源文本, 则发送翻译后的文本作为聊天消息
                             if (translatedText !== sourceText) {
                                 ChatRoomMessage({ Content: "📞 " + translatedText, Type: "Chat", Sender: Player.MemberNumber, Dictionary: [{ Tag: '发送私聊', Text: 1 }] });
                             }
                         } else {
-                            // 无效的翻译数据处理逻辑（当前为空，可根据需要添加日志记录等）
+                            // 无效的翻译数据处理逻辑(当前为空, 可根据需要添加日志记录等)
                         }
                     })
                     .catch(error => {
-                        // 处理翻译请求失败的情况（当前为空，可根据需要添加错误日志记录等）
+                        // 处理翻译请求失败的情况(当前为空, 可根据需要添加错误日志记录等)
                     });
             }
         }
@@ -2196,7 +2196,7 @@
 
     function GetNMIframe(Id) {
         // return `<iframe border="0" marginwidth="0" marginheight="0" src="https://dontpanic92.github.io/embedded-netease-music-player/embedded-netease-music-player.html?${Id}" width="560" height="96" frameborder="no"></iframe>`
-        // 先还用官方的iframe插件吧，第三方API中间用了http协议 导致发送分享后浏览器弹警告
+        // 先还用官方的iframe插件吧, 第三方API中间用了http协议 导致发送分享后浏览器弹警告
         return `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=${Id}&auto=0&height=66"></iframe>`
     }
     function GetBiliIframe(info) {
@@ -2290,7 +2290,7 @@
             if (!successfully) {
                 ChatRoomSendLocal(`
                 你分享的似乎是一个: ${shareName} 链接
-                但该链接无法被正确识别。
+                但该链接无法被正确识别.
                 <br/>
                 格式说明:
                 * 开头键入: "分享/ "  (注意空格)
@@ -2952,12 +2952,12 @@
 
     w.printedTextMap = new Map();
     // 打印整个 printedTextMap
-    w.printPrintedTextMap = function () {
-        console.log("Printed Text Map:");
-        printedTextMap.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
-    };
+    // w.printPrintedTextMap = function () {
+    //     console.log("Printed Text Map:");
+    //     printedTextMap.forEach((value, key) => {
+    //         console.log(`${key}: ${value}`);
+    //     });
+    // };
     // Promise 用于确保 playername 已经被设置
     var playernamePromise = new Promise((resolve) => {
         笨蛋Luzi.hookFunction("LoginResponse", 10, (args, next) => {
@@ -4400,15 +4400,15 @@
             ["Show Drug Levels:", "显示药物水平:"],
             ["Heartbeat Sound:", "心跳声:"],
             ["Chaotic Net Gun:", "混乱网枪:"],
-            ["Enable Enhanced Drinks, Injectors and Net Gun.", "增强饮料，注射器和网枪."],
+            ["Enable Enhanced Drinks, Injectors and Net Gun.", "增强饮料, 注射器和网枪."],
             ["If true, will allow respirators to deliver a continuous supply of drugged gas.", "允许呼吸器提供持续的麻醉气体."],
             [`Activates for any injector or drink with "horny" or "aphrodisiac" in its crafted name or description.`, `对于任何注射器或饮料,如果其精心制作的名称或描述中包含"horny"或"aphrodisiac",则激活.`],
             [`Activates for any injector or drink with "sedative" or "tranquilizer" in its crafted name or description.`, `对于任何注射器或饮料,如果其精心制作的名称或描述中包含"sedative"或"tranquilizer",则激活.`],
             ["Enable Enhanced Injections and Net Gun.", "启用增强注射和网枪."],
             [`Activates for any injector or drink with "mind control," "hypnotizing," or "brainwashing" in its crafted name ordescription.`, `对于任何注射器或饮料,如果其精心制作的名称或描述中包含"mind control","hypnotizing"或"brainwashing",则激活.`],
             ["Number of sips before your filled glasses empty. (0 for no limit)", "玻璃杯空前的饮用次数.(0 表示无限制)"],
-            ["If true, any continuous delivery (eg. respirator) on you will never run out of gas.", "你身上的任何持续输送设备（例如呼吸机）都不会耗尽气体."],
-            ["If true, will display bars showing the level of each drug type.", "将显示条形图，显示每种药物类型的条形图."],
+            ["If true, any continuous delivery (eg. respirator) on you will never run out of gas.", "你身上的任何持续输送设备(例如呼吸机)都不会耗尽气体."],
+            ["If true, will display bars showing the level of each drug type.", "将显示条形图, 显示每种药物类型的条形图."],
             ["If true, enables an occasional heartbeat sound while under the influence of aphrodisiac.", "在受到催情剂影响时,偶尔会启用心跳声."],
             ["If true, your net gun will fire wildly and have a 50/50 chance to net a random character instead of your target.", "你的网枪将会随意开火, 并且有50/50的机会网住一个随机的角色, 而不是你指定的目标."],
             ["Enable Chloroform:", "启用氯仿(药棉):"],
@@ -4615,96 +4615,96 @@
             ["Upper Left", "左上"],
             ["Mouse", "老鼠"],
             ["Male", "男性"],
-            ["Open BCAR+ Changelog on GitHub.", "在 GitHub 上打开 BCAR+ 更改日志。"],
-            ["Open BCAR+ Wiki on GitHub.", "在 GitHub 上打开 BCAR+ 维基。"],
+            ["Open BCAR+ Changelog on GitHub.", "在 GitHub 上打开 BCAR+ 更改日志."],
+            ["Open BCAR+ Wiki on GitHub.", "在 GitHub 上打开 BCAR+ 维基."],
             ["Cat", "猫"],
             ["Dog", "狗"],
             ["- BCAR+ Commands -", "- BCAR+ 命令 -"],
             ["General Commands", "通用命令"],
-            ["/bcar animalhelp - Opens animal instructions and commands page.", "/bcar animalhelp - 打开动物说明和命令页面。"],
-            ["/bcar arousalhelp - Opens arousal instructions and commands page.", "/bcar arousalhelp - 打开性唤醒说明和命令页面。"],
-            ["/bcar changelog - Shows the BCAR changelog.", "/bcar changelog - 显示 BCAR 更改日志。"],
-            ["/bcar help - Opens the help window.", "/bcar help - 打开帮助窗口。"],
-            ["/bcar status - Opens the status window.", "/bcar status - 打开状态窗口。"],
-            ["/bcar misc - Opens misc instructions and commands page.", "/bcar misc - 打开其他说明和命令页面。"],
-            ["/bcar profilehelp - Opens profile instructions and commands page.", "/bcar profilehelp - 打开配置文件说明和命令页面。"],
-            ["/bcar male - Lets the reactions refer to the Player as 'he'.", "/bcar male - 使反应指向玩家为“他”。"],
-            ["/bcar female - Lets the reactions refer to the Player as 'she'.", "/bcar female - 使反应指向玩家为“她”。"],
-            ["/bcar other - Lets the reactions refer to the Player as 'they'.", "/bcar other - 使反应指向玩家为“他们”。"],
-            ["/bcar timerhelp - Opens timer instructions and commands page.", "/bcar timerhelp - 打开定时器说明和命令页面。"],
-            ["/bcar reset - Resets the ears, tails and wings to the default settings.", "/bcar reset - 将耳朵、尾巴和翅膀重置为默认设置。"],
-            ["/bcar versions - Shows you the version of BCAR+ you are using.", "/bcar versions - 显示您正在使用的 BCAR+ 版本。"],
+            ["/bcar animalhelp - Opens animal instructions and commands page.", "/bcar animalhelp - 打开动物说明和命令页面."],
+            ["/bcar arousalhelp - Opens arousal instructions and commands page.", "/bcar arousalhelp - 打开性唤醒说明和命令页面."],
+            ["/bcar changelog - Shows the BCAR changelog.", "/bcar changelog - 显示 BCAR 更改日志."],
+            ["/bcar help - Opens the help window.", "/bcar help - 打开帮助窗口."],
+            ["/bcar status - Opens the status window.", "/bcar status - 打开状态窗口."],
+            ["/bcar misc - Opens misc instructions and commands page.", "/bcar misc - 打开其他说明和命令页面."],
+            ["/bcar profilehelp - Opens profile instructions and commands page.", "/bcar profilehelp - 打开配置文件说明和命令页面."],
+            ["/bcar male - Lets the reactions refer to the Player as 'he'.", "/bcar male - 使反应指向玩家为“他”."],
+            ["/bcar female - Lets the reactions refer to the Player as 'she'.", "/bcar female - 使反应指向玩家为“她”."],
+            ["/bcar other - Lets the reactions refer to the Player as 'they'.", "/bcar other - 使反应指向玩家为“他们”."],
+            ["/bcar timerhelp - Opens timer instructions and commands page.", "/bcar timerhelp - 打开定时器说明和命令页面."],
+            ["/bcar reset - Resets the ears, tails and wings to the default settings.", "/bcar reset - 将耳朵、尾巴和翅膀重置为默认设置."],
+            ["/bcar versions - Shows you the version of BCAR+ you are using.", "/bcar versions - 显示您正在使用的 BCAR+ 版本."],
             ["Animals Commands", "动物命令"],
-            ["/bcar cat - Changes the reactions and sounds to cat related ones.", "/bcar cat - 将反应和声音更改为猫相关的内容。"],
-            ["/bcar dog - Changes the reactions and sounds to dog related ones.", "/bcar dog - 将反应和声音更改为狗相关的内容。"],
-            ["/bcar fox - Changes the reactions and sounds to fox related ones.", "/bcar fox - 将反应和声音更改为狐狸相关的内容。"],
-            ["/bcar human - Literally disables the reactions and sounds.", "/bcar human - 禁用反应和声音。"],
-            ["/bcar mouse - Changes the reactions and sounds to mouse related ones.", "/bcar mouse - 将反应和声音更改为老鼠相关的内容。"],
+            ["/bcar cat - Changes the reactions and sounds to cat related ones.", "/bcar cat - 将反应和声音更改为猫相关的内容."],
+            ["/bcar dog - Changes the reactions and sounds to dog related ones.", "/bcar dog - 将反应和声音更改为狗相关的内容."],
+            ["/bcar fox - Changes the reactions and sounds to fox related ones.", "/bcar fox - 将反应和声音更改为狐狸相关的内容."],
+            ["/bcar human - Literally disables the reactions and sounds.", "/bcar human - 禁用反应和声音."],
+            ["/bcar mouse - Changes the reactions and sounds to mouse related ones.", "/bcar mouse - 将反应和声音更改为老鼠相关的内容."],
             ["Ear Commands", "耳朵命令"],
-            ["/bcar ear1 - Saves the primary ears.", "/bcar ear1 - 保存主要耳朵。"],
-            ["/bcar ear2 - Saves the secondary ears.", "/bcar ear2 - 保存次要耳朵。"],
-            ["/bcar earwiggle - Toggles the ear wiggling on/off.", "/bcar earwiggle - 打开/关闭耳朵摇晃。"],
-            ["/bcar earwigglecount - Determines the number of wiggles.", "/bcar earwigglecount - 确定摇晃次数。"],
-            ["/bcar eardelay - Determines the wiggle speed.", "/bcar eardelay - 确定摇晃速度。"],
-            ["/bcar eardelete - Removes the ears.", "/bcar eardelete - 移除耳朵。"],
-            ["/bcar earhelp - Opens ear instructions and commands page.", "/bcar earhelp - 打开耳朵说明和命令页面。"],
+            ["/bcar ear1 - Saves the primary ears.", "/bcar ear1 - 保存主要耳朵."],
+            ["/bcar ear2 - Saves the secondary ears.", "/bcar ear2 - 保存次要耳朵."],
+            ["/bcar earwiggle - Toggles the ear wiggling on/off.", "/bcar earwiggle - 打开/关闭耳朵摇晃."],
+            ["/bcar earwigglecount - Determines the number of wiggles.", "/bcar earwigglecount - 确定摇晃次数."],
+            ["/bcar eardelay - Determines the wiggle speed.", "/bcar eardelay - 确定摇晃速度."],
+            ["/bcar eardelete - Removes the ears.", "/bcar eardelete - 移除耳朵."],
+            ["/bcar earhelp - Opens ear instructions and commands page.", "/bcar earhelp - 打开耳朵说明和命令页面."],
             ["Emote Commands", "表情命令"],
-            ["/bcar emoteear - Toggles ear wiggle emote on/off.", "/bcar emoteear - 打开/关闭耳朵摇晃表情。"],
-            ["/bcar emotetail - Toggles tail wag emote on/off.", "/bcar emotetail - 打开/关闭尾巴摆动表情。"],
-            ["/bcar emotehelp - Opens emote instructions and commands page.", "/bcar emotehelp - 打开表情说明和命令页面。"],
+            ["/bcar emoteear - Toggles ear wiggle emote on/off.", "/bcar emoteear - 打开/关闭耳朵摇晃表情."],
+            ["/bcar emotetail - Toggles tail wag emote on/off.", "/bcar emotetail - 打开/关闭尾巴摆动表情."],
+            ["/bcar emotehelp - Opens emote instructions and commands page.", "/bcar emotehelp - 打开表情说明和命令页面."],
             ["Expression Commands", "表情命令"],
-            ["/bcar expression - Toggles expression on/off.", "/bcar expression - 打开/关闭表情。"],
-            ["/bcar expressions - Toggles expression on/off.", "/bcar expressions - 打开/关闭表情。"],
-            ["/bcar expressionhelp - Opens expression instructions and commands page.", "/bcar expressionhelp - 打开表情说明和命令页面。"],
+            ["/bcar expression - Toggles expression on/off.", "/bcar expression - 打开/关闭表情."],
+            ["/bcar expressions - Toggles expression on/off.", "/bcar expressions - 打开/关闭表情."],
+            ["/bcar expressionhelp - Opens expression instructions and commands page.", "/bcar expressionhelp - 打开表情说明和命令页面."],
             ["Gender Commands", "性别命令"],
             ["Misc Commands", "其他命令"],
-            ["/cum - Lets the player cum instantly.", "/cum - 允许玩家立即射精。"],
-            ["/leave - Lets the player leave the room immediately.", "/leave - 允许玩家立即离开房间。"],
-            ["/safewordspecific - Lets the player remove a certain restraint.", "/safewordspecific - 允许玩家解除特定的约束。"],
-            ["/wardrobe - Opens the wardrobe of the player.", "/wardrobe - 打开玩家的衣柜。"],
+            ["/cum - Lets the player cum instantly.", "/cum - 允许玩家立即射精."],
+            ["/leave - Lets the player leave the room immediately.", "/leave - 允许玩家立即离开房间."],
+            ["/safewordspecific - Lets the player remove a certain restraint.", "/safewordspecific - 允许玩家解除特定的约束."],
+            ["/wardrobe - Opens the wardrobe of the player.", "/wardrobe - 打开玩家的衣柜."],
             ["Profile Commands", "配置文件命令"],
-            ["/bcar save1 - Saves current setup in Profile1.", "/bcar save1 - 将当前设置保存在配置文件1中。"],
-            ["/bcar save2 - Saves current setup in Profile2.", "/bcar save2 - 将当前设置保存在配置文件2中。"],
-            ["/bcar save3 - Saves current setup in Profile3.", "/bcar save3 - 将当前设置保存在配置文件3中。"],
-            ["/bcar load1 - Loads the setup saved in Profile1.", "/bcar load1 - 加载在配置文件1中保存的设置。"],
-            ["/bcar load2 - Loads the setup saved in Profile2.", "/bcar load2 - 加载在配置文件2中保存的设置。"],
-            ["/bcar load3 - Loads the setup saved in Profile3.", "/bcar load3 - 加载在配置文件3中保存的设置。"],
-            ["/bcar profile1 - Shows which setup is saved in Profile1.", "/bcar profile1 - 显示在配置文件1中保存的设置。"],
-            ["/bcar profile2 - Shows which setup is saved in Profile2.", "/bcar profile2 - 显示在配置文件2中保存的设置。"],
-            ["/bcar profile3 - Shows which setup is saved in Profile3.", "/bcar profile3 - 显示在配置文件3中保存的设置。"],
+            ["/bcar save1 - Saves current setup in Profile1.", "/bcar save1 - 将当前设置保存在配置文件1中."],
+            ["/bcar save2 - Saves current setup in Profile2.", "/bcar save2 - 将当前设置保存在配置文件2中."],
+            ["/bcar save3 - Saves current setup in Profile3.", "/bcar save3 - 将当前设置保存在配置文件3中."],
+            ["/bcar load1 - Loads the setup saved in Profile1.", "/bcar load1 - 加载在配置文件1中保存的设置."],
+            ["/bcar load2 - Loads the setup saved in Profile2.", "/bcar load2 - 加载在配置文件2中保存的设置."],
+            ["/bcar load3 - Loads the setup saved in Profile3.", "/bcar load3 - 加载在配置文件3中保存的设置."],
+            ["/bcar profile1 - Shows which setup is saved in Profile1.", "/bcar profile1 - 显示在配置文件1中保存的设置."],
+            ["/bcar profile2 - Shows which setup is saved in Profile2.", "/bcar profile2 - 显示在配置文件2中保存的设置."],
+            ["/bcar profile3 - Shows which setup is saved in Profile3.", "/bcar profile3 - 显示在配置文件3中保存的设置."],
             ["Tail Commands", "尾巴命令"],
-            ["/bcar tail1 - Saves the primary tail.", "/bcar tail1 - 保存主要尾巴。"],
-            ["/bcar tail2 - Saves the secondary tail.", "/bcar tail2 - 保存次要尾巴。"],
-            ["/bcar tailwag - Toggles the tail wagging on/off.", "/bcar tailwag - 打开/关闭尾巴摇晃。"],
-            ["/bcar tailwagcount - Determines the number of wags.", "/bcar tailwagcount - 确定摇晃次数。"],
-            ["/bcar taildelay - Determines the wag speed.", "/bcar taildelay - 确定摇晃速度。"],
-            ["/bcar taildelete - Removes the tail.", "/bcar taildelete - 移除尾巴。"],
-            ["/bcar tailhelp - Opens tail instructions and commands page.", "/bcar tailhelp - 打开尾巴说明和命令页面。"],
+            ["/bcar tail1 - Saves the primary tail.", "/bcar tail1 - 保存主要尾巴."],
+            ["/bcar tail2 - Saves the secondary tail.", "/bcar tail2 - 保存次要尾巴."],
+            ["/bcar tailwag - Toggles the tail wagging on/off.", "/bcar tailwag - 打开/关闭尾巴摇晃."],
+            ["/bcar tailwagcount - Determines the number of wags.", "/bcar tailwagcount - 确定摇晃次数."],
+            ["/bcar taildelay - Determines the wag speed.", "/bcar taildelay - 确定摇晃速度."],
+            ["/bcar taildelete - Removes the tail.", "/bcar taildelete - 移除尾巴."],
+            ["/bcar tailhelp - Opens tail instructions and commands page.", "/bcar tailhelp - 打开尾巴说明和命令页面."],
             ["Timer Commands", "定时器命令"],
-            ["/bcar timer - Toggles the timer on/off.", "/bcar timer - 打开/关闭定时器。"],
+            ["/bcar timer - Toggles the timer on/off.", "/bcar timer - 打开/关闭定时器."],
             ["10/11", ""],
             ["Wing Commands", "翅膀命令"],
-            ["/bcar wing1 - Saves the primary wings.", "/bcar wing1 - 保存主要翅膀。"],
-            ["/bcar wing2 - Saves the secondary wings.", "/bcar wing2 - 保存次要翅膀。"],
-            ["/bcar wingflap - Toggles the wing flapping on/off.", "/bcar wingflap - 打开/关闭翅膀拍动。"],
-            ["/bcar wingflapcount - Determines the number of flaps.", "/bcar wingflapcount - 确定拍动次数。"],
-            ["/bcar wingdelay - Determines the flap speed.", "/bcar wingdelay - 确定拍动速度。"],
-            ["/bcar wingdelete - Removes the wings.", "/bcar wingdelete - 移除翅膀。"],
-            ["/bcar winghelp - Opens wing instructions and commands page.", "/bcar winghelp - 打开翅膀说明和命令页面。"],
-            ["/bcar fly - Starts flying.", "/bcar fly - 开始飞行。"],
-            ["/bcar land - Stops flying.", "/bcar land - 停止飞行。"],
+            ["/bcar wing1 - Saves the primary wings.", "/bcar wing1 - 保存主要翅膀."],
+            ["/bcar wing2 - Saves the secondary wings.", "/bcar wing2 - 保存次要翅膀."],
+            ["/bcar wingflap - Toggles the wing flapping on/off.", "/bcar wingflap - 打开/关闭翅膀扇动."],
+            ["/bcar wingflapcount - Determines the number of flaps.", "/bcar wingflapcount - 确定扇动次数."],
+            ["/bcar wingdelay - Determines the flap speed.", "/bcar wingdelay - 确定扇动速度."],
+            ["/bcar wingdelete - Removes the wings.", "/bcar wingdelete - 移除翅膀."],
+            ["/bcar winghelp - Opens wing instructions and commands page.", "/bcar winghelp - 打开翅膀说明和命令页面."],
+            ["/bcar fly - Starts flying.", "/bcar fly - 开始飞行."],
+            ["/bcar land - Stops flying.", "/bcar land - 停止飞行."],
             ["- BCAR+ Ears -", ""],
             ["How To Use", "如何使用"],
             ["First equip the main ears you want", "首先装备您想要的主要耳朵"],
             [`to wear primarily in the "Ears" slot`, `主要放置在 "耳朵" 插槽中`],
-            ["in your wardrobe. Use Update Ear 1", "在您的衣柜中。 使用更新耳朵 1"],
+            ["in your wardrobe. Use Update Ear 1", "在您的衣柜中. 使用更新耳朵 1"],
             ["to save the main ears.", "保存主要耳朵"],
-            ["For your ears to wiggle follow the same", "要使您的耳朵摇晃，请按照相同的步骤"],
+            ["For your ears to wiggle follow the same", "要使您的耳朵摇晃, 请按照相同的步骤"],
             ["steps and equip a different type of ", "装备不同类型的"],
-            [`"Ears" to use as your secondary.`, `"耳朵" 作为您的次要佩戴品。`],
+            [`"Ears" to use as your secondary.`, `"耳朵" 作为您的次要佩戴品.`],
             ["Use Update Ear 2 to save", "使用更新耳朵 2 来保存"],
             ["the secondary ears.", "次要耳朵"],
-            ["The default of Wiggle Count is 12. ", "摇晃次数的默认值为 12。"],
+            ["The default of Wiggle Count is 12. ", "摇晃次数的默认值为 12."],
             ["You can set it to an even number ", "您可以将其设置"],
             ["between 0 and 40. ", "为 0 到 40 之间的偶数"],
             ["The default of Wiggle Delay is 175. ", "摇晃延迟的默认值为 175"],
@@ -4726,9 +4726,9 @@
             ["- BCAR+ Tail -", "- BCAR+ 尾巴 -"],
             ["First equip the main tail you want", "首先装备您想要的主要尾巴"],
             [`to wear primarily in the "TailStraps"`, `主要放置在 "TailStraps"`],
-            ["slot in your wardrobe. Use Update Tail 1", "插槽中在您的衣柜中。 使用更新尾巴 1"],
+            ["slot in your wardrobe. Use Update Tail 1", "插槽中在您的衣柜中. 使用更新尾巴 1"],
             ["to save the main tail.", "保存主要尾巴"],
-            ["For your tail to wag follow the same", "要使您的尾巴摆动，请按照相同的步骤"],
+            ["For your tail to wag follow the same", "要使您的尾巴摆动, 请按照相同的步骤"],
             [`"Tail" to use as your secondary.`, `"尾巴" 作为您的次要佩戴品`],
             ["Use Update Tail 2 to save", "使用更新尾巴 2 来保存"],
             ["the secondary tail.", "次要尾巴"],
@@ -4739,7 +4739,7 @@
             ["Update Tail 2:", "更新尾巴 2:"],
             ["Enable Tail Wag:", "启用尾巴摆动:"],
             ["Wag Count:", "摇晃次数:"],
-            ["Wag Delay (ms):", "摇晃延迟（毫秒）:"],
+            ["Wag Delay (ms):", "摇晃延迟(毫秒):"],
             ["Clear Tail:", "清除尾巴:"],
             ["Wag Tail:", "摇晃尾巴:"],
             ["Update Tail 1 to Current", "更新尾巴 1 至当前"],
@@ -4768,6 +4768,31 @@
             ["Delete Profile 3", "删除配置文件 3"],
             ["Delete Profile 2", "删除配置文件 2"],
             ["Delete Profile 1", "删除配置文件 1"],
+            ["Invalid number of wags", "摇晃次数无效"],
+            ["Main Tail updated", "主要尾巴已更新"],
+            ["Secondary Tail updated", "次要尾巴已更新"],
+            ["Invalid number of delay", "延迟数量无效"],
+
+            ["- BCAR+ Wings -", "- BCAR+ 翅膀 -"],
+            ["First equip the main wings you want", "首先装备您想要的主要翅膀"],
+            ["to wear primarily in the \"Wings\" slot", "主要放置在 \"翅膀\" 插槽中"],
+            ["in your wardrobe. Use Update Wing 1", "在您的衣柜中. 使用更新翅膀 1"],
+            ["to save the main wings.", "保存主要翅膀"],
+            ["For your wings to flap follow the same", "要使您的翅膀扇动, 请按照相同的步骤"],
+            ["\"Wings\" to use as your secondary.", "\"翅膀\" 作为您的次要佩戴品"],
+            ["Use Update Wing 2 to save", "使用更新翅膀 2 来保存"],
+            ["the secondary wings.", "次要翅膀"],
+            ["The default of Flap Count is 6. ", "扇动次数的默认值为 6"],
+            ["The default of Flap Delay is 500. ", "扇动延迟的默认值为 500"],
+            ["Update Wing 1:", "更新翅膀 1:"],
+            ["Update Wing 2:", "更新翅膀 2:"],
+            ["Enable Wing Flap:", "启用翅膀扇动:"],
+            ["Flap Count:", "扇动次数:"],
+            ["Flap Delay (ms):", "扇动延迟(毫秒):"],
+            ["Clear Wing:", "清除翅膀:"],
+            ["Flap Wing:", "扇动翅膀:"],
+
+
             // ["- BCAR+ Reactions -", "- BCAR+ 反应 -"],
             [`-  -`, `-  -`],
             ["", ""],
@@ -5015,10 +5040,10 @@
                 }
 
                 // 检查是否已经打印过这个文本
-                if (!printedTextMap.has(args[0])) {
-                    console.log(args[0]);
-                    printedTextMap.set(args[0], true);
-                }
+                // if (!printedTextMap.has(args[0])) {
+                //     console.log(args[0]);
+                //     printedTextMap.set(args[0], true);
+                // }
             }
         };
 
