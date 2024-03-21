@@ -653,6 +653,21 @@
                     AllFours: "Hide",
                 },
             },
+            {
+                Name: "阿巴阿巴_Luzi", Random: false,
+                Top: -110, Left: 0,
+                Fetish: ["Sadism"],
+                // AllowActivity: ["ShockItem"],
+                // ActivityAudio: ["Shocks"],
+                PoseMapping: {
+                    TapedHands: "Hide",
+                    Yoked: "Hide", OverTheHead: "Hide",
+                    BackBoxTie: "Hide",
+                    BackElbowTouch: "Hide",
+                    BackCuffs: "Hide",
+                    AllFours: "Hide",
+                },
+            },
         ],
         ItemHood: [
             {

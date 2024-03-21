@@ -5941,7 +5941,26 @@
 
 })();
 
+// function 切换尾巴(尾巴1, 尾巴2) {
+//     let 尾巴 = InventoryGet(Player, "TailStraps");
+//     let 尾巴名字 = 尾巴.Asset.Name;
+//     let 尾巴颜色 = 尾巴.Color;
+//     if (尾巴名字 === 尾巴1 && !!InventoryGet(Player, "TailStraps")) {
+//         InventoryWear(Player, 尾巴2, "TailStraps", 尾巴颜色);
+//     } else if (尾巴名字 === 尾巴2 && !!InventoryGet(Player, "TailStraps")) {
+//         InventoryWear(Player, 尾巴1, "TailStraps", 尾巴颜色);
+//     }
+// }
 
+// // 使用尾巴名称调用函数
+// 切换尾巴("PuppyTailStrap1", "穿戴式软小狗尾镜像_Luzi");
+// 切换尾巴("PuppyTailStrap", "穿戴式狗尾镜像_Luzi");
+// 切换尾巴("WolfTailStrap3", "白色穿戴式狼尾镜像_Luzi");
 
+// 切换尾巴("KittenTailStrap1", "穿戴式浅色猫尾镜像_Luzi");
 
+// 切换尾巴("WolfTailStrap1", "大型穿戴式狼尾镜像_Luzi");
+// 切换尾巴("WolfTailStrap2", "小型穿戴式狼尾镜像_Luzi");
+// 切换尾巴("KittenTailStrap2", "小型穿戴式软猫尾镜像_Luzi");
+// 切换尾巴("TailStrap", "穿戴式猫尾镜像_Luzi");
 
