@@ -1452,7 +1452,7 @@
         ["SourceCharacter takes a big bite out of PronounPossessive own ActivityAsset.", "SourceCharacter咬了自己的ActivityAsset一大口."],
         ["Grab Tongue", "抓舌头"],
         ["SourceCharacter reaches in and grabs hold of TargetCharacter's tongue with PronounPossessive fingers.", "SourceCharacter伸手抓住TargetCharacter的舌头."],
-        ["Release Tongue", "释放舌头"],
+        ["Release Tongue", "松开舌头"],
         ["SourceCharacter lets go of TargetCharacter's tongue.", "SourceCharacter松开TargetCharacter的舌头."],
         ["Hold Hands", "牵手"],
         ["SourceCharacter takes TargetCharacter's hand.", "SourceCharacter牵住TargetCharacter的手."],
@@ -1464,18 +1464,18 @@
         ["Pinch Cheek", "捏脸颊"],
         ["SourceCharacter pinches TargetCharacter's cheek.", "SourceCharacter捏住TargetCharacter的脸颊."],
         ["SourceCharacter pinches PronounPossessive own cheek.", "SourceCharacter捏住自己的脸颊."],
-        ["Release Ear", "释放耳朵"],
-        ["SourceCharacter releases TargetCharacter's ear.", "SourceCharacter释放TargetCharacter的耳朵."],
+        ["Release Ear", "松开耳朵"],
+        ["SourceCharacter releases TargetCharacter's ear.", "SourceCharacter松开TargetCharacter的耳朵."],
         ["Grab Horn", "抓住角"],
         ["SourceCharacter grabs TargetCharacter's horn.", "SourceCharacter抓住TargetCharacter的角."],
-        ["Release Arm", "释放手臂"],
+        ["Release Arm", "松开手臂"],
         ["SourceCharacter releases TargetCharacter's arm.", "SourceCharacter放开TargetCharacter的手臂."],
-        ["Release Horn", "释放角"],
+        ["Release Horn", "松开角"],
         ["SourceCharacter releases TargetCharacter's horn.", "SourceCharacter放开TargetCharacter的角."],
-        ["Release Neck", "释放脖子"],
+        ["Release Neck", "松开脖子"],
         ["SourceCharacter releases TargetCharacter's neck.", "SourceCharacter放开TargetCharacter的脖子."],
-        ["Release Mouth", "释放嘴巴"],
-        ["SourceCharacter releases TargetCharacter's mouth.", "SourceCharacter释放TargetCharacter的嘴巴."],
+        ["Release Mouth", "松开嘴巴"],
+        ["SourceCharacter releases TargetCharacter's mouth.", "SourceCharacter松开TargetCharacter的嘴巴."],
         ["Stuff with Foot", "用脚填塞"],
         ["SourceCharacter shoves PronounPossessive foot into TargetCharacter's mouth, grabbing their tongue with PronounPossessive toes.", "SourceCharacter用脚塞进TargetCharacter的嘴巴,用脚趾夹住他们的舌头."],
         ["Remove Foot", "移开脚"],
@@ -1604,6 +1604,8 @@
         ["Take Photo", "拍照"],
         ["SourceCharacter snaps a photo of TargetCharacter.", "SourceCharacter给TargetCharacter拍了一张照片."],
         ["SourceCharacter takes a selfie.", "SourceCharacter自拍了一张照片."],
+        ['Wag Tail', '摇晃尾巴'],
+        ['SourceCharacter wags PronounPossessive tail.', 'SourceCharacter摇晃PronounPossessive的尾巴.'],
 
     ]);
 
@@ -1952,7 +1954,7 @@
                         }
                     });
                 }
-            }, 2000);
+            }, 6000);
             is笨蛋炉子2 = true;
         }
     });
