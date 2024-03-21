@@ -4960,14 +4960,11 @@
                         translationsDTF.forEach(({ regex, replacement }) => {
                             args[0] = args[0].replace(regex, replacement.replace(playername, playerNickname));
                         });
+                    } else {
+                        args[0] = replaceLabelSyncCN(label);
                     }
                 } else {
-                    let language = localStorage.getItem("BondageClubLanguage");
-                    if ((language === "CN" || language === "TW")) {
-                        args[0] = replaceLabelSyncCN(label);
-                    } else {
-                        args[0] = replaceLabelSyncEN(label);
-                    }
+                    args[0] = replaceLabelSyncEN(label);
                 }
 
                 if ((language === "CN" || language === "TW")) {
@@ -5109,7 +5106,6 @@
         笨蛋Luzi.hookFunction("DrawText", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
             if ((language === "CN" || language === "TW")) {
-                replaceLabels(args);
                 // 遍历待翻译的文本内容, 翻译并替换对应的元素文本内容
                 for (const [selector, translatedText] of Object.entries(textsToTranslate)) {
                     const element = document.querySelector(selector);
@@ -5122,24 +5118,19 @@
                     // 调用递归函数替换文本内容
                     replaceTextNodes(myDiv);
                 }
-            } else { replaceLabels(args); }
+            }
+            replaceLabels(args);
             next(args);
         });
 
 
         笨蛋Luzi.hookFunction("DrawTextFit", 10, (args, next) => {
-            let language = localStorage.getItem("BondageClubLanguage");
-            if ((language === "CN" || language === "TW")) {
-                replaceLabels(args);
-            } else { replaceLabels(args); }
+            replaceLabels(args);
             next(args);
         });
 
         笨蛋Luzi.hookFunction("DrawTextWrap", 10, (args, next) => {
-            let language = localStorage.getItem("BondageClubLanguage");
-            if ((language === "CN" || language === "TW")) {
                 replaceLabels(args);
-            } else { replaceLabels(args); }
             next(args);
         });
 
