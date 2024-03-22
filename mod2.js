@@ -2010,6 +2010,33 @@
         InventoryWear(Player, "床右边_Luzi", "ItemDevices", "", 1, 1, halter);
         ChatRoomCharacterUpdate(Player)
     }
+
+
+    /**
+    * 道具切换
+    * @param {string} itemSlot - 道具的槽位
+    * @param {string} item1 - 道具名称 1
+    * @param {string} item2 - 道具名称 2
+    */
+    function switchItem(itemSlot, item1, item2) {
+        for (let i = 0; i < 4; i++) {
+            setTimeout(() => {
+                let item = InventoryGet(Player, itemSlot);
+                let itemName = item.Asset.Name;
+                let itemColor = item.Color;
+
+                if (itemName === item1 && !!InventoryGet(Player, itemSlot)) {
+                    InventoryWear(Player, item2, itemSlot, itemColor);
+                } else if (itemName === item2 && !!InventoryGet(Player, itemSlot)) {
+                    InventoryWear(Player, item1, itemSlot, itemColor);
+                }
+            }, 200 * i);
+        }
+    }
+
+
+
+
     笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
         if (data.Sender === Player.MemberNumber && data.Content === 'ChatOther-ItemTorso-笨蛋Luzi_骑上去' && data.Type === 'Activity' && data.Dictionary) {
@@ -2041,6 +2068,17 @@
         removeActivityItems(data, "ItemBreast", "笨蛋Luzi_剪刀剪掉胸罩", "Bra");
         removeActivityItems(data, "ItemVulvaPiercings", "笨蛋Luzi_剪刀剪掉内裤", "Panties");
         removeActivityItems(data, "ItemBoots", "笨蛋Luzi_剪刀剪掉袜子", "Socks");
+
+        if (data.Content === "ChatSelf-ItemButt-笨蛋Luzi_摇晃尾巴" && data.Sender === Player.MemberNumber) {
+            switchItem("TailStraps", "PuppyTailStrap1", "穿戴式软小狗尾镜像_Luzi");
+            switchItem("TailStraps", "PuppyTailStrap", "穿戴式狗尾镜像_Luzi");
+            switchItem("TailStraps", "WolfTailStrap3", "白色穿戴式狼尾镜像_Luzi");
+            switchItem("TailStraps", "KittenTailStrap1", "穿戴式浅色猫尾镜像_Luzi");
+            switchItem("TailStraps", "WolfTailStrap1", "大型穿戴式狼尾镜像_Luzi");
+            switchItem("TailStraps", "WolfTailStrap2", "小型穿戴式狼尾镜像_Luzi");
+            switchItem("TailStraps", "KittenTailStrap2", "小型穿戴式软猫尾镜像_Luzi");
+            switchItem("TailStraps", "TailStrap", "穿戴式猫尾镜像_Luzi");
+        }
 
         next(args);
     });
@@ -5941,26 +5979,4 @@
 
 })();
 
-// function 切换尾巴(尾巴1, 尾巴2) {
-//     let 尾巴 = InventoryGet(Player, "TailStraps");
-//     let 尾巴名字 = 尾巴.Asset.Name;
-//     let 尾巴颜色 = 尾巴.Color;
-//     if (尾巴名字 === 尾巴1 && !!InventoryGet(Player, "TailStraps")) {
-//         InventoryWear(Player, 尾巴2, "TailStraps", 尾巴颜色);
-//     } else if (尾巴名字 === 尾巴2 && !!InventoryGet(Player, "TailStraps")) {
-//         InventoryWear(Player, 尾巴1, "TailStraps", 尾巴颜色);
-//     }
-// }
-
-// // 使用尾巴名称调用函数
-// 切换尾巴("PuppyTailStrap1", "穿戴式软小狗尾镜像_Luzi");
-// 切换尾巴("PuppyTailStrap", "穿戴式狗尾镜像_Luzi");
-// 切换尾巴("WolfTailStrap3", "白色穿戴式狼尾镜像_Luzi");
-
-// 切换尾巴("KittenTailStrap1", "穿戴式浅色猫尾镜像_Luzi");
-
-// 切换尾巴("WolfTailStrap1", "大型穿戴式狼尾镜像_Luzi");
-// 切换尾巴("WolfTailStrap2", "小型穿戴式狼尾镜像_Luzi");
-// 切换尾巴("KittenTailStrap2", "小型穿戴式软猫尾镜像_Luzi");
-// 切换尾巴("TailStrap", "穿戴式猫尾镜像_Luzi");
 
