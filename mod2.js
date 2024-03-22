@@ -2078,6 +2078,7 @@
             switchItem("TailStraps", "WolfTailStrap2", "小型穿戴式狼尾镜像_Luzi");
             switchItem("TailStraps", "KittenTailStrap2", "小型穿戴式软猫尾镜像_Luzi");
             switchItem("TailStraps", "TailStrap", "穿戴式猫尾镜像_Luzi");
+            switchItem("TailStraps", "FoxTailStrap1", "FoxTailStrap2");
         }
 
         next(args);
