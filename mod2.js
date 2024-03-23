@@ -1337,7 +1337,7 @@
             modPosture: false, modifyOwnPosture: false, postureName: ""
         },
 
-        
+
 
     ];
 
@@ -2167,6 +2167,11 @@
             switchItem("TailStraps", "TailStrap", "穿戴式猫尾镜像_Luzi");
             switchItem("TailStraps", "FoxTailStrap1", "FoxTailStrap2");
         }
+
+        if (data.Content.includes("笨蛋Luzi_射击") && data.Type === "Activity") {
+            AudioPlayInstantSound("https://emdsa2.github.io/-mod/Audio/阿巴阿巴.mp3");
+        }
+
 
         next(args);
     });
