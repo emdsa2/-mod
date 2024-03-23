@@ -644,6 +644,32 @@
                     { Name: "牛角", Priority: 55, },
                 ],
             },
+            {
+                Name: "角5_Luzi", Random: false,
+                Top: 0, Left: 0,
+            },
+            {
+                Name: "角6_Luzi", Random: false,
+                Top: 0, Left: 0,
+            },
+        ],
+        HairAccessory2: [
+            {
+                Name: "奶牛耳_Luzi", Random: false,
+                Top: 0, Left: 0,
+                Layer: [
+                    { Name: "牛耳", Priority: 40, },
+                    { Name: "牛角", Priority: 55, },
+                ],
+            },
+            {
+                Name: "角5_Luzi", Random: false,
+                Top: 0, Left: 0,
+            },
+            {
+                Name: "角6_Luzi", Random: false,
+                Top: 0, Left: 0,
+            },
         ],
         ItemHandheld: [
             {
