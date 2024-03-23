@@ -1248,8 +1248,86 @@
             assetgroup: "", imageName: "Wiggle",
             modPosture: true, modifyOwnPosture: false, postureName: "Kneel"
         },
-
-
+        {
+            name: "射击乳房", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemBreast", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的乳房.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击屁股", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemButt", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的屁股.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击脸", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemMouth", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脸.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击腰", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemTorso", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的腰.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击耳朵", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemEars", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的耳朵.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击手臂", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemArms", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的手臂.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击脖子", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemNeck", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脖子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击头", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的头.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击眉心", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemHead", targettext: "SourceCharacter举起枪瞄准, 水弹正中TargetCharacter的眉心!", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
+            name: "射击鼻子", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemNose", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的鼻子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
 
     ];
 
@@ -1289,10 +1367,9 @@
         "HasSocks": (acting, acted, group) => !!InventoryGet(acting, "Socks"), // 有袜子
         "Hassaddle": (acting, acted, group) => !!InventoryIsItemInList(acting, "ItemTorso", "缰绳_Luzi"), // 鞍
         "Hasbed": (acting, acted, group) => !!InventoryIsItemInList(acting, "ItemDevices", "床右边_Luzi"), // 鞍
-
         "HasTentacles2": (acting, acted, group) => !!InventoryIsItemInList(acting, "TailStraps", "Tentacles"), // 触手
-
         "SuitLower鱼鱼尾_Luzi": (acting, acted, group) => !!InventoryIsItemInList(acting, "SuitLower", "鱼鱼尾_Luzi"),
+        "阿巴阿巴": (acting, acted, group) => !!InventoryIsItemInList(acting, "ItemHandheld", "阿巴阿巴_Luzi"),
 
 
     }));

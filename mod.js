@@ -184,6 +184,11 @@
             args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
         }
 
+        if (typeof data === 'string' && data.includes("阿巴阿巴")) {
+            let data = args[0];
+            args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
+        }
+
         next(args);
     });
 
