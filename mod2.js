@@ -1328,6 +1328,16 @@
             assetgroup: "", imageName: "阿巴阿巴",
             modPosture: false, modifyOwnPosture: false, postureName: ""
         },
+        {
+            name: "射击肚子", prerequisite: ["阿巴阿巴"],
+            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            target: "ItemPelvis", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的肚子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "", imageName: "阿巴阿巴",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+
+        
 
     ];
 
