@@ -1,7 +1,7 @@
 https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Activity2.user.js   // 一些动作
 https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Cloth2.user.js      // 一些衣服
 
-
+wiki: https://github.com/emdsa2/-mod/wiki
 
 ## Add-on Menu Overview
 
