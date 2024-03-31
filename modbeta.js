@@ -1056,16 +1056,16 @@
                 ],
             },
         ],
-        xiatiyeti_Luzi: [
+        Liquid_Luzi: [
             {
-                Name: "xiatiyeti_Luzi", Random: false,
+                Name: "Liquid_Luzi", Random: false,
                 AllowExpression: [
                     "少",
                     "中"
                 ],
             },
         ],
-        xiatiyeti2_Luzi: [
+        Liquid2_Luzi: [
             {
                 Name: "无_Luzi", Random: false,
             },
@@ -1087,9 +1087,9 @@
     };
 
     const addAssetGroup = {
-        xiatiyeti_Luzi: [
+        Liquid_Luzi: [
             {
-                Group: "xiatiyeti_Luzi",
+                Group: "Liquid_Luzi",
                 Priority: 53,
                 Left: 0,
                 Top: 0,
@@ -1103,9 +1103,9 @@
                 Asset: [],
             },
         ],
-        xiatiyeti2_Luzi: [
+        Liquid2_Luzi: [
             {
-                Group: "xiatiyeti2_Luzi",
+                Group: "Liquid2_Luzi",
                 ParentGroup: "BodyLower",
                 PoseMapping: { ...AssetPoseMapping.BodyLower },
                 Priority: 53,
@@ -1132,7 +1132,7 @@
         //     },
         // ],
     };
-    // InventoryGet(Player, "xiatiyeti_Luzi").Property.Expression
+    // InventoryGet(Player, "Liquid_Luzi").Property.Expression
     // InventoryGet(Player, "Emoticon").Property.Expression
 
     AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
@@ -1448,11 +1448,11 @@
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
-            AssetFemale3DCG.push(addAssetGroup.xiatiyeti_Luzi[0])
-            AssetFemale3DCG.push(addAssetGroup.xiatiyeti2_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.Liquid_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
             // AssetFemale3DCG.push(addAssetGroup.shangtiyeti_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.xiatiyeti_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.xiatiyeti2_Luzi[0])
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid_Luzi[0])
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             // AssetGroupAdd("Female3DCG", addAssetGroup.shangtiyeti_Luzi[0])
             addExtraOutfitsToAssets();
             addExtraOutfitsToAssets2();
