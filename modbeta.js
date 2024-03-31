@@ -1059,6 +1059,10 @@
         xiatiyeti_Luzi: [
             {
                 Name: "xiatiyeti_Luzi", Random: false,
+                AllowExpression: [
+                    "少",
+                    "中"
+                ],
             },
         ],
         xiatiyeti2_Luzi: [
@@ -1086,7 +1090,7 @@
         xiatiyeti_Luzi: [
             {
                 Group: "xiatiyeti_Luzi",
-                Priority: 8,
+                Priority: 53,
                 Left: 0,
                 Top: 0,
                 AllowNone: false,
@@ -1104,7 +1108,7 @@
                 Group: "xiatiyeti2_Luzi",
                 ParentGroup: "BodyLower",
                 PoseMapping: { ...AssetPoseMapping.BodyLower },
-                Priority: 8,
+                Priority: 53,
                 Left: 0,
                 Top: 0,
                 Asset: [],
@@ -1128,6 +1132,8 @@
         //     },
         // ],
     };
+    // InventoryGet(Player, "xiatiyeti_Luzi").Property.Expression
+    // InventoryGet(Player, "Emoticon").Property.Expression
 
     AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
         Archetype: ExtendedArchetype.MODULAR,
