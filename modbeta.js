@@ -1093,8 +1093,8 @@
                 AllowColorize: true,
                 AllowCustomize: false,
                 AllowExpression: [
-                    "Low",
-                    "Medium"
+                    "少",
+                    "中"
                 ],
                 Asset: [],
             },
