@@ -1059,10 +1059,6 @@
         Liquid_Luzi: [
             {
                 Name: "Liquid_Luzi", Random: false,
-                AllowExpression: [
-                    "少",
-                    "中"
-                ],
             },
         ],
         Liquid2_Luzi: [
@@ -1076,14 +1072,6 @@
                 Name: "中_Luzi", Random: false,
             },
         ],
-        // shangtiyeti_Luzi: [
-        //     {
-        //         Name: "shangtiyeti_Luzi", Random: false,
-        //         PoseMapping: { ...AssetPoseMapping.BodyUpper },
-        //     },
-        // ],
-
-
     };
 
     const addAssetGroup = {
@@ -1100,7 +1088,7 @@
                     "少",
                     "中"
                 ],
-                Asset: [],
+                Asset: ["Liquid_Luzi"],
             },
         ],
         Liquid2_Luzi: [
@@ -1111,29 +1099,25 @@
                 Priority: 53,
                 Left: 0,
                 Top: 0,
-                Asset: [],
+                Asset: [
+                        {
+                            Name: "无_Luzi", Random: false,
+                        },
+                        {
+                            Name: "少_Luzi", Random: false,
+                        },
+                        {
+                            Name: "中_Luzi", Random: false,
+                        },
+                    
+                ],
             },
         ],
-        // shangtiyeti_Luzi: [
-        //     {
-        //         Group: "shangtiyeti_Luzi",
-        //         ParentGroup: "BodyUpper",
-        //         Priority: 8,
-        //         Left: 0,
-        //         Top: 0,
-        //         AllowNone: false,
-        //         AllowColorize: true,
-        //         AllowCustomize: false,
-        //         AllowExpression: [
-        //             "Low",
-        //             "Medium"
-        //         ],
-        //         Asset: [],
-        //     },
-        // ],
     };
     // InventoryGet(Player, "Liquid_Luzi").Property.Expression
     // InventoryGet(Player, "Emoticon").Property.Expression
+    // Asset.find(group => group.Name === "Liquid_Luzi");
+    // Asset.find(group => group.Name === "Emoticon");
 
     AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
         Archetype: ExtendedArchetype.MODULAR,
@@ -1450,10 +1434,8 @@
         if (!isAssetAdded) {
             AssetFemale3DCG.push(addAssetGroup.Liquid_Luzi[0])
             AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
-            // AssetFemale3DCG.push(addAssetGroup.shangtiyeti_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
-            // AssetGroupAdd("Female3DCG", addAssetGroup.shangtiyeti_Luzi[0])
             addExtraOutfitsToAssets();
             addExtraOutfitsToAssets2();
             addExtraExpressionsToAssets();
@@ -1604,7 +1586,9 @@
             }
         });
         CraftingItemListBuild()
+
         next(args);
+
     });
 
 
@@ -1765,6 +1749,18 @@
             'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250', // <- 衣柜缩略图 向左回正
 
         });
+
+        patchFunction("DialogClickExpressionMenu", {
+            'CharacterSetFacialExpression(Player, FE.Group, expression);':  
+            `if (FE.Group == 'Liquid_Luzi') {
+					const item = InventoryGet(Player, FE.Group);
+                    if (!item.Property) item.Property = {};
+					item.Property.Expression = expression;
+				} else {
+					CharacterSetFacialExpression(Player, FE.Group, expression);
+				}`
+
+        });
     };
 
     let isGLDrawResetCanvas = false;
@@ -1806,6 +1802,10 @@
         setTimeout(() => {
             Hidden("╰(*°▽°*)╯BETA");
         }, 2000);
+
+        // if (AssetGroup[78].Name == "Liquid_Luzi") {
+        //     AssetGroup[78].Asset = ["Liquid_Luzi"]
+        // }
         next(args);
     });
 
