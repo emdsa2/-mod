@@ -1028,6 +1028,89 @@
                     },
                 ],
             },
+            {
+                Name: "胶带全身_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                Audio: "DuctTapeRollShort",
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", },
+                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", },
+                ],
+            },
+            {
+                Name: "睡袋改_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                // Hide: [
+                //     "Cloth",
+                //     "Suit",
+                //     "ClothLower",
+                //     "SuitLower",
+                //     "Shoes",
+                //     "BodyLower",
+                //     "Socks",
+                //     "SocksRight",
+                //     "SocksLeft",
+                //     "Panties",
+                //     "ItemPelvis",
+                //     "Garters",
+                //     "LeftHand",
+                //     "RightHand",
+                //     "ItemBoots",
+                //     "ItemLegs",
+                //     "ItemFeet",
+                //     "ItemButt",
+                //     "TailStraps",
+                //     "Wings",
+                // ],
+                // HideItem: [
+                //     "PantiesPoofyDiaper",
+                //     "PantiesBulkyDiaper",
+                //     "ItemPelvisPoofyDiaper",
+                //     "ItemPelvisBulkyDiaper",
+                //     "ClothAccessoryPoncho",
+                // ],
+                SelfUnlock: false,
+                // Block: [
+                //     "ItemBreast",
+                //     "ItemButt",
+                //     "ItemFeet",
+                //     "ItemHands",
+                //     "ItemHandheld",
+                //     "ItemLegs",
+                //     "ItemNipples",
+                //     "ItemNipplesPiercings",
+                //     "ItemPelvis",
+                //     "ItemTorso",
+                //     "ItemTorso2",
+                //     "ItemVulva",
+                //     "ItemVulvaPiercings",
+                //     "ItemBoots",
+                // ],
+                Layer: [
+                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", },
+                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", },
+                ],
+            },
 
         ],
         ItemAddon: [
@@ -1100,16 +1183,16 @@
                 Left: 0,
                 Top: 0,
                 Asset: [
-                        {
-                            Name: "无_Luzi", Random: false,
-                        },
-                        {
-                            Name: "少_Luzi", Random: false,
-                        },
-                        {
-                            Name: "中_Luzi", Random: false,
-                        },
-                    
+                    {
+                        Name: "无_Luzi", Random: false,
+                    },
+                    {
+                        Name: "少_Luzi", Random: false,
+                    },
+                    {
+                        Name: "中_Luzi", Random: false,
+                    },
+
                 ],
             },
         ],
@@ -1751,8 +1834,8 @@
         });
 
         patchFunction("DialogClickExpressionMenu", {
-            'CharacterSetFacialExpression(Player, FE.Group, expression);':  
-            `if (FE.Group == 'Liquid_Luzi') {
+            'CharacterSetFacialExpression(Player, FE.Group, expression);':
+                `if (FE.Group == 'Liquid_Luzi') {
 					const item = InventoryGet(Player, FE.Group);
                     if (!item.Property) item.Property = {};
 					item.Property.Expression = expression;
