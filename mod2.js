@@ -1252,7 +1252,7 @@
         },
         {
             name: "射击乳房", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemBreast", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的乳房.", maxProgressSelf: 50,
             target: "ItemBreast", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的乳房.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1260,7 +1260,7 @@
         },
         {
             name: "射击屁股", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的屁股.", maxProgressSelf: 50,
             target: "ItemButt", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的屁股.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1268,7 +1268,7 @@
         },
         {
             name: "射击脸", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemMouth", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的脸.", maxProgressSelf: 50,
             target: "ItemMouth", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脸.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1276,7 +1276,7 @@
         },
         {
             name: "射击腰", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemTorso", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的腰.", maxProgressSelf: 50,
             target: "ItemTorso", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的腰.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1284,7 +1284,7 @@
         },
         {
             name: "射击耳朵", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemEars", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的耳朵.", maxProgressSelf: 50,
             target: "ItemEars", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的耳朵.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1292,7 +1292,7 @@
         },
         {
             name: "射击手臂", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemArms", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的手臂.", maxProgressSelf: 50,
             target: "ItemArms", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的手臂.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1300,7 +1300,7 @@
         },
         {
             name: "射击脖子", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemNeck", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的脖子.", maxProgressSelf: 50,
             target: "ItemNeck", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脖子.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1308,7 +1308,7 @@
         },
         {
             name: "射击头", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的头.", maxProgressSelf: 50,
             target: "ItemHead", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的头.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1316,7 +1316,7 @@
         },
         {
             name: "射击眉心", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemHead", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的眉心.", maxProgressSelf: 50,
             target: "ItemHead", targettext: "SourceCharacter举起枪瞄准, 水弹正中TargetCharacter的眉心!", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1324,7 +1324,7 @@
         },
         {
             name: "射击鼻子", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemNose", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的鼻子.", maxProgressSelf: 50,
             target: "ItemNose", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的鼻子.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
@@ -1332,7 +1332,7 @@
         },
         {
             name: "射击肚子", prerequisite: ["阿巴阿巴"],
-            targetSelf: "", targetSelftext: "", maxProgressSelf: 50,
+            targetSelf: "ItemPelvis", targetSelftext: "SourceCharacter举起枪瞄准PronounPossessive自己的肚子.", maxProgressSelf: 50,
             target: "ItemPelvis", targettext: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的肚子.", maxProgress: 50,
             activityExpression: [],
             assetgroup: "", imageName: "阿巴阿巴",
