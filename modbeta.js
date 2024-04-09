@@ -130,6 +130,7 @@
                 data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian") ||
                 data.includes("Hands/Default_Black") || data.includes("Hands/AllFours/Default_Black") || data.includes("Hands/TapedHands/Default_Black") ||
                 data.includes("Pussy/Pussy1_White") || data.includes("Pussy/Pussy2_White") || data.includes("Pussy/Pussy3_White") ||
+                data.includes("Pussy/Penis_White") || data.includes("Pussy/Hard/Penis_White") ||
                 data.includes("Female3DCG/Nipples/Nipples")
             ) {
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
