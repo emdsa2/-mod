@@ -2167,10 +2167,6 @@
         setTimeout(() => {
             Hidden("╰(*°▽°*)╯BETA");
         }, 2000);
-
-        // if (AssetGroup[78].Name == "Liquid_Luzi") {
-        //     AssetGroup[78].Asset = ["Liquid_Luzi"]
-        // }
         next(args);
     });
 
