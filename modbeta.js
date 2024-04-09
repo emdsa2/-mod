@@ -195,7 +195,7 @@
             var LiquidColor = previousExpression22.Appearance.Color
 
             if (LiquidName === null) {
-                InventoryWear(Player, "空_Luzi", "Liquid2_Luzi", LiquidColor);
+                InventoryWear(Player, "无_Luzi", "Liquid2_Luzi", LiquidColor);
             }
 
             if (LiquidName === '少') {
