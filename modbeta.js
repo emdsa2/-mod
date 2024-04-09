@@ -99,65 +99,49 @@
     // XLarge
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
+        if (typeof data === 'string') {
+            if (data.includes("_笨笨蛋Luzi")) {
+                args[0] = data.replace("_笨笨蛋Luzi", "");
+            }
 
-        if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
-            args[0] = data.replace("_笨笨蛋Luzi", "");
-        }
+            if (data.includes("_笨笨笨蛋Luzi2")) {
+                args[0] = data.replace("_笨笨笨蛋Luzi2", "");
+            }
 
-        if (typeof data === 'string' && data.includes("_笨笨笨蛋Luzi2")) {
-            args[0] = data.replace("_笨笨笨蛋Luzi2", "");
-        }
+            if (ICONSSSSSSS[data]) {
+                args[0] = ICONSSSSSSS[data];
+                args[2] = 0;
+                args[3] = 590;
+            }
 
-        if (typeof data === 'string' && ICONSSSSSSS[data]) {
-            args[0] = ICONSSSSSSS[data];
-            args[2] = 0;
-            args[3] = 590;
-        }
+            if (data.includes("_Luzi")) {
+                let data = args[0];
+                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
 
-        if (typeof data === 'string' && data.includes("_Luzi")) {
-            let data = args[0];
-            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
-
-        if (typeof data === 'string' && (
-            /(BodyUpper\/.*?_White)/.test(data) || /(BodyLower\/.*?_White)/.test(data) ||
-            /(BodyUpper\/.*?_Asian)/.test(data) || /(BodyLower\/.*?_Asian)/.test(data) ||
-            /(BodyUpper\/.*?_Black)/.test(data) || /(BodyLower\/.*?_Black)/.test(data) ||
-            data.includes("Head/Default_White") || data.includes("Head/NoEars_White") || data.includes("Head/SmallEars_White") ||
-            data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian") || data.includes("Head/SmallEars_Asian") ||
-            data.includes("Head/Default_Black") || data.includes("Head/NoEars_Black") || data.includes("Head/SmallEars_Black")
-        )) {
-            let data = args[0];
-            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
-
-        if (typeof data === 'string' &&
-            (
+            // 角色皮肤修改
+            if (
+                /(BodyUpper\/.*?_(White|Asian|Black))/.test(data) ||
+                /(BodyLower\/.*?_(White|Asian|Black))/.test(data) ||
+                data.includes("Head/Default_White") || data.includes("Head/NoEars_White") || data.includes("Head/SmallEars_White") ||
+                data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian") || data.includes("Head/SmallEars_Asian") ||
+                data.includes("Head/Default_Black") || data.includes("Head/NoEars_Black") || data.includes("Head/SmallEars_Black") ||
                 data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
                 data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian") ||
-                data.includes("Hands/Default_Black") || data.includes("Hands/AllFours/Default_Black") || data.includes("Hands/TapedHands/Default_Black")
-            )
-        ) {
-            let data = args[0];
-            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
+                data.includes("Hands/Default_Black") || data.includes("Hands/AllFours/Default_Black") || data.includes("Hands/TapedHands/Default_Black") ||
+                data.includes("Pussy/Pussy1_White") || data.includes("Pussy/Pussy2_White") || data.includes("Pussy/Pussy3_White") ||
+                data.includes("Female3DCG/Nipples/Nipples")
+            ) {
+                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
 
-        if (typeof data === 'string' && (data.includes("Pussy/Pussy1_White") || data.includes("Pussy/Pussy2_White") || data.includes("Pussy/Pussy3_White"))) {
-            let data = args[0];
-            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
+            if (data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
+                args[2] = 0;
+            }
 
-        if (typeof data === 'string' && data.includes("Female3DCG/Nipples/Nipples")) {
-            let data = args[0];
-            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
-
-        if (typeof data === 'string' && data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
-            args[2] = 0;
-        }
-
-        if (typeof data === 'string' && data.includes("ItemAddon/被子右边")) {
-            args[2] += 8;
+            if (data.includes("ItemAddon/被子右边")) {
+                args[2] += 8;
+            }
         }
 
         next(args);
@@ -165,27 +149,28 @@
 
     mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
+        if (typeof data === 'string') {
+            if (data.includes("_笨笨蛋Luzi")) {
+                args[0] = data.replace("_笨笨蛋Luzi", "");
+            }
 
-        if (typeof data === 'string' && data.includes("_笨笨蛋Luzi")) {
-            args[0] = data.replace("_笨笨蛋Luzi", "");
-        }
+            if (data.includes("_笨笨笨蛋Luzi2")) {
+                args[0] = data.replace("_笨笨笨蛋Luzi2", "");
+            }
 
-        if (typeof data === 'string' && data.includes("_笨笨笨蛋Luzi2")) {
-            args[0] = data.replace("_笨笨笨蛋Luzi2", "");
-        }
+            if (PreviewICONS[data]) {
+                args[0] = PreviewICONS[data];
+            }
 
-        if (typeof data === 'string' && PreviewICONS[data]) {
-            args[0] = PreviewICONS[data];
-        }
+            if (data.includes("_Luzi")) {
+                let data = args[0];
+                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
 
-        if (typeof data === 'string' && data.includes("_Luzi")) {
-            let data = args[0];
-            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-        }
-
-        if (typeof data === 'string' && data.includes("阿巴阿巴")) {
-            let data = args[0];
-            args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
+            if (data.includes("阿巴阿巴")) {
+                let data = args[0];
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
+            }
         }
 
         next(args);
@@ -193,12 +178,12 @@
 
     mod.hookFunction('DrawButton', 1, (args, next) => {
         const data = args[6];
-
-        if (typeof data === 'string' && data.includes("_Luzi")) {
-            let data = args[6];
-            args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        if (typeof data === 'string') {
+            if (data.includes("_Luzi")) {
+                let data = args[6];
+                args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
         }
-
         next(args);
     });
 
@@ -763,6 +748,128 @@
                 Random: false,
             },
             {
+                Name: "拘束套装_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                SetPose: ["BackElbowTouch"],
+                AllowActivePose: ["BackElbowTouch"],
+                Layer: [
+                    {
+                        Name: "下半身", Priority: 31,
+                        ParentGroup: "BodyLower",
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身", Priority: 31,
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+                    {
+                        Name: "下半身圆环", Priority: 31,
+                        ParentGroup: "BodyLower",
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身圆环", Priority: 32,
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+                    {
+                        Name: "下半身松紧扣", Priority: 32,
+                        ParentGroup: "BodyLower",
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身松紧扣", Priority: 32,
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+                    {
+                        Name: "链子", Priority: 30,
+                        ParentGroup: "BodyLower",
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                        },
+                    },
+                    {
+                        Name: "手臂", Priority: 5,
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "",
+                        },
+                    },
+                    {
+                        Name: "乳胶衣", Priority: 6,
+                        AllowTypes: { typed: 1 },
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "",
+                        },
+                    },
+                    {
+                        Name: "透视紧身衣", Priority: 6,
+                        AllowTypes: { typed: 2 },
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "",
+                        },
+                    },
+                    {
+                        Name: "紧身衣", Priority: 6,
+                        AllowTypes: { typed: 3 },
+                        PoseMapping:
+                        {
+                            BackElbowTouch: "BackElbowTouch",
+                            Hogtied: "",
+                        },
+                    },
+                ],
+            },
+            {
                 Name: "胶带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
@@ -795,6 +902,78 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
+                Layer: [
+                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
+            {
+                Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
+            {
+                Name: "胶带全身_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                Audio: "DuctTapeRollShort",
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
+            {
+                Name: "睡袋改_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                SelfUnlock: false,
+                Layer: [
+                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
+            {
+                Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
                 Layer: [
                     { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
                     { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
