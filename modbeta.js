@@ -147,8 +147,6 @@
         next(args);
     });
 
-    
-    let previousExpression = null;
     mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
         if (typeof data === 'string') {
@@ -175,35 +173,12 @@
             }
         }
 
-        const currentExpression = InventoryGet(Player, "Liquid_Luzi").Property.Expression;
-
-        if (currentExpression !== previousExpression) {
-            if (previousExpression === null) {
-                // 如果之前的表达式为 null，则不执行 InventoryRemove
-            } else if (previousExpression === '少') {
-                InventoryRemove(Player, "Liquid2_Luzi");
-            } else if (previousExpression === '中') {
-                InventoryRemove(Player, "Liquid2_Luzi");
-            }
-
-            if (currentExpression === '少') {
-                InventoryWear(Player, "少_Luzi", "Liquid2_Luzi", ["#D9DCFF"]);
-            } else if (currentExpression === '中') {
-                InventoryWear(Player, "中_Luzi", "Liquid2_Luzi", ["#D9DCFF"]);
-            }
-
-            previousExpression = currentExpression;
-        }
-
-        next(args);
-    });
-
-
-    mod.hookFunction('DrawImageResize', 1, (args, next) => {
 
 
         next(args);
     });
+
+
 
 
     mod.hookFunction('DrawButton', 1, (args, next) => {
