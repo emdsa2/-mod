@@ -903,8 +903,8 @@
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 35, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 0, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
             {
@@ -1082,8 +1082,8 @@
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 35, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 0, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
             {
