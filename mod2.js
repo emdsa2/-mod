@@ -2983,11 +2983,14 @@
             DrawImageResize("https://emdsa2.github.io/-mod/image/返回白.png"
                 , 114, 75, 90, 90);
 
-            DrawText(`- 高潮计数保留设置 -`, 1000, 125, "Black");
+            DrawText(`- 杂项设置 -`, 1000, 125, "Black");
 
             DrawText(`高潮计数保留`, 450, 236, "#FFFFFF");
             DrawCheckbox(250, 200, 64, 64, "", Player.OnlineSettings.ECHO.高潮开关);
             DrawButton(250, 290, 390, 90, "      清空高潮次数", "White", "Icons/Trash.png");
+
+            DrawButton(1050, 290, 390, 90, "       储存制作", "White", "Icons/Crafting.png");
+            DrawButton(1450, 290, 390, 90, "       读取制作", "White", "Icons/Crafting.png");
         }
         click() {
             if (MouseIn(114, 75, 90, 90)) {
@@ -2998,6 +3001,15 @@
             }
             if (MouseIn(250, 290, 390, 90)) {
                 saveOrgasmCount(0);
+            }
+            if (MouseIn(1050, 290, 290, 90)) {
+                Player.OnlineSettings.ECHO.炉子Crafting = LZString.compressToUTF16(JSON.stringify(Player.Crafting));
+                ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
+                console.log("已储存")
+            }
+            if (MouseIn(1450, 290, 290, 90)) {
+                Player.Crafting = JSON.parse(LZString.decompressFromUTF16(Player.OnlineSettings.ECHO.炉子Crafting));
+                console.log("已读取")
             }
         }
     }
@@ -3025,8 +3037,8 @@
             if (MouseIn(900, 220, 360, 600)) { DrawText(`自定义服装`, 1080, 356, "#FFFFFF"); }
             else { DrawText(`自定义服装`, 1080, 356, "#888888"); }
 
-            if (MouseIn(1450, 220, 360, 600)) { DrawText(`高潮计数保留`, 1624, 356, "#FFFFFF"); }
-            else { DrawText(`高潮计数保留`, 1624, 356, "#888888"); }
+            if (MouseIn(1450, 220, 360, 600)) { DrawText(`杂项`, 1624, 356, "#FFFFFF"); }
+            else { DrawText(`杂项`, 1624, 356, "#888888"); }
 
             // DrawButton(1500, 840, 390, 90, "      Discord", "White", "Icons/Trash.png");
             if (MouseIn(1500, 840, 390, 90)) {
@@ -4960,7 +4972,8 @@
             ["动作拓展设置", "Action Settings"],
             ["自定义动作", "Custom Actions"],
             ["自定义服装", "Custom Outfits"],
-            ["高潮计数保留", "Save Orgasm count"],
+            ["杂项", "Misc"],
+            ["高潮计数保留", "       Save Orgasm count"],
             ["      清空高潮次数", "       Clear Orgasm Count"],
             ["动作", "Actions"],
             ["文本", "Text"],
@@ -4973,7 +4986,8 @@
             ["新建", "New"],
             ["新建动作", "New Action"],
             ["动作名字已存在!", "Action Name Exists!"],
-
+            ["       储存制作", "       Store Crafting"],
+            ["       读取制作", "       Reading Crafting"],
         ]);
 
 
@@ -5204,17 +5218,12 @@
             }
         };
 
-
-
-
-
         const textsToTranslate = {
             "#fusam-addon-manager-header > h1": "插件管理器",
             "#fusam-addon-manager-body > p": "关于安全性的说明：尽管被发现是恶意的插件会从插件管理器中移除, 但仍然有可能有一些漏网的鱼鱼",
             "#fusam-show-button": "插件管理器",
             "#fusam-addon-manager-close": "保存",
         };
-
 
         // 映射对象, 存储搜索文本和对应的替换文本
         const textReplacements = {
@@ -5307,7 +5316,6 @@
             }
         }
 
-
         笨蛋Luzi.hookFunction("DrawText", 10, (args, next) => {
             let language = localStorage.getItem("BondageClubLanguage");
             if ((language === "CN" || language === "TW")) {
@@ -5327,7 +5335,6 @@
             replaceLabels(args);
             next(args);
         });
-
 
         笨蛋Luzi.hookFunction("DrawTextFit", 10, (args, next) => {
             replaceLabels(args);
@@ -5849,9 +5856,7 @@
     });
 
 
-
-
-    // 为了
+    //
     笨蛋Luzi.hookFunction("DrawStatus", 10, (args, next) => {
         next(args);
         // 根据玩家数量调整缩放和绘制坐标

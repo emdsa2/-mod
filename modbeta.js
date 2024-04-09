@@ -2244,3 +2244,15 @@
 //       74
 //    -6 10
 
+// const compressedData = LZString.compressToUTF16(JSON.stringify(Player.Crafting));
+// const tempInput = document.createElement('textarea');
+// tempInput.value = compressedData;
+// document.body.appendChild(tempInput);
+// tempInput.select();
+// document.execCommand('copy');
+// document.body.removeChild(tempInput);
+// console.log("已导出")
+
+
+// Player.Crafting = JSON.parse(LZString.decompressFromUTF16(制作道具数据文本));
+// console.log("已导入")
