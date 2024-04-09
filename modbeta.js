@@ -883,8 +883,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
             {
@@ -903,8 +903,8 @@
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
                 Layer: [
-                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
             {
@@ -920,8 +920,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
         ],
@@ -1062,8 +1062,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
             {
@@ -1082,8 +1082,8 @@
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
                 Layer: [
-                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
             {
@@ -1099,8 +1099,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 33, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 33, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
         ],
