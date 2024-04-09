@@ -1295,6 +1295,70 @@
                 Name: "中_Luzi", Random: false,
             },
         ],
+        BodyMarkings: [
+            {
+                Name: "淫纹_Luzi", Random: false, Gender: "F",
+                Top: -110, Left: 0,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+                DefaultColor: ["#E975A0"],
+            },
+            {
+                Name: "刻度尺_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+                DefaultColor: ["#000000"],
+            },
+        ],
+        BodyMarkings2_Luzi: [
+            {
+                Name: "淫纹_Luzi", Random: false, Gender: "F",
+                Top: -110, Left: 0,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+                DefaultColor: ["#E975A0"],
+            },
+            {
+                Name: "刻度尺_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+                DefaultColor: ["#000000"],
+            },
+        ],
     };
 
     const addAssetGroup = {
@@ -1326,13 +1390,20 @@
                     {
                         Name: "无_Luzi", Random: false,
                     },
+                ],
+            },
+        ],
+        BodyMarkings2_Luzi: [
+            {
+                Group: "BodyMarkings2_Luzi",
+                Priority: 8,
+                Clothing: true,
+                Default: false,
+                Random: false,
+                Asset: [
                     {
-                        Name: "少_Luzi", Random: false,
+                        Name: "无_Luzi", Random: false,
                     },
-                    {
-                        Name: "中_Luzi", Random: false,
-                    },
-
                 ],
             },
         ],
@@ -1657,8 +1728,10 @@
         if (!isAssetAdded) {
             AssetFemale3DCG.push(addAssetGroup.Liquid_Luzi[0])
             AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
+            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
             addExtraOutfitsToAssets();
             addExtraOutfitsToAssets2();
             addExtraExpressionsToAssets();
