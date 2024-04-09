@@ -206,8 +206,6 @@
                 InventoryWear(Player, "中_Luzi", "Liquid2_Luzi", LiquidColor);
             }
         }
-
-
         next(args);
     });
     // ================================================================================
@@ -1524,6 +1522,25 @@
         ],
     };
     AssetFemale3DCGExtended.ItemTorso2.拘束套装_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
+        DrawImages: false,
+        Options: [
+            {
+                Name: "无",
+            },
+            {
+                Name: "乳胶衣",
+            },
+            {
+                Name: "透视紧身衣",
+            },
+            {
+                Name: "紧身衣",
+            },
+        ],
+    };
+    AssetFemale3DCGExtended.ItemTorso.拘束套装_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
         DrawImages: false,
