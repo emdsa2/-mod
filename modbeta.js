@@ -172,14 +172,9 @@
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
             }
         }
-
-
-
+        
         next(args);
     });
-
-
-
 
     mod.hookFunction('DrawButton', 1, (args, next) => {
         const data = args[6];
@@ -190,8 +185,31 @@
             }
         }
         next(args);
-    });
+        
+    }); 
 
+    mod.hookFunction('CommonClick', 1, (args, next) => {
+        var previousExpression22 = DialogFacialExpressions.find(group => group.Group === "Liquid_Luzi");
+        if (previousExpression22 !== undefined) {
+            var LiquidName = previousExpression22.CurrentExpression
+            var LiquidColor = previousExpression22.Appearance.Color
+
+            if (LiquidName === null) {
+                InventoryWear(Player, "空_Luzi", "Liquid2_Luzi", LiquidColor);
+            }
+
+            if (LiquidName === '少') {
+                InventoryWear(Player, "少_Luzi", "Liquid2_Luzi", LiquidColor);
+            }
+
+            if (LiquidName === '中') {
+                InventoryWear(Player, "中_Luzi", "Liquid2_Luzi", LiquidColor);
+            }
+        }
+
+
+        next(args);
+    });
     // ================================================================================
     // ================================================================================
     const addAsset = {
@@ -1296,10 +1314,12 @@
             },
             {
                 Name: "少_Luzi", Random: false,
+                Priority: 9,
                 DefaultColor: ["#D9DCFF"],
             },
             {
                 Name: "中_Luzi", Random: false,
+                Priority: 9,
                 DefaultColor: ["#D9DCFF"],
             },
         ],
