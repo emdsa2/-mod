@@ -556,6 +556,7 @@
             {
                 Name: "淫纹_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
+                Priority: 9,
                 Prerequisite: ["HasVagina"],
                 Fetish: ["Lingerie"],
                 DefaultColor: ["#E975A0"],
@@ -1299,6 +1300,7 @@
             {
                 Name: "淫纹_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
+                Priority: 9,
                 PoseMapping: {
                     BackBoxTie: PoseType.DEFAULT,
                     BackCuffs: PoseType.DEFAULT,
@@ -1314,6 +1316,7 @@
             {
                 Name: "刻度尺_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
+                Priority: 9,
                 PoseMapping: {
                     BackBoxTie: PoseType.DEFAULT,
                     BackCuffs: PoseType.DEFAULT,
@@ -1331,6 +1334,7 @@
             {
                 Name: "淫纹_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
+                Priority: 9,
                 PoseMapping: {
                     BackBoxTie: PoseType.DEFAULT,
                     BackCuffs: PoseType.DEFAULT,
@@ -1346,6 +1350,7 @@
             {
                 Name: "刻度尺_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
+                Priority: 9,
                 PoseMapping: {
                     BackBoxTie: PoseType.DEFAULT,
                     BackCuffs: PoseType.DEFAULT,
@@ -1396,7 +1401,7 @@
         BodyMarkings2_Luzi: [
             {
                 Group: "BodyMarkings2_Luzi",
-                Priority: 8,
+                Priority: 9,
                 Clothing: true,
                 Default: false,
                 Random: false,
@@ -1768,6 +1773,9 @@
                     ['Gloves_笨笨蛋Luzi', '🍔手套2'],
                     ['Mask_笨笨蛋Luzi', '🍔面具2'],
                     ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid_Luzi', '🍔液体'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔液体2_Luzi'],
+                    ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔身体涂画2'],
                 ]);
                 const descriptionMap2 = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔Cloth2'],
@@ -1784,12 +1792,23 @@
                     ['Gloves_笨笨蛋Luzi', '🍔Gloves2'],
                     ['Mask_笨笨蛋Luzi', '🍔Mask2'],
                     ['Wings_笨笨蛋Luzi', '🍔Wings2'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid_Luzi', '🍔Liquid'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔Liquid2_Luzi'],
+                    ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔BodyMarkings2'],
                 ]);
                 let language = localStorage.getItem("BondageClubLanguage");
                 if ((language === "CN" || language === "TW")) {
                     AssetGroup.forEach(item => {
                         if (item.Name) {
                             const description = descriptionMap.get(item.Name);
+                            if (description) {
+                                item.Description = description;
+                            }
+                        }
+                    });
+                    AssetGroup.forEach(item => {
+                        if (item.Description) {
+                            const description = descriptionMap.get(item.Description);
                             if (description) {
                                 item.Description = description;
                             }
@@ -1803,9 +1822,15 @@
                                 item.Description = description;
                             }
                         }
+                        if (item.Description) {
+                            const description = descriptionMap2.get(item.Description);
+                            if (description) {
+                                item.Description = description;
+                            }
+                        }
                     });
                 }
-            }
+            } 
 
 
             // 用于替换🍔组内的服装名字 ============================
