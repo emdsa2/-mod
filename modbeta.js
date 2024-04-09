@@ -706,6 +706,13 @@
                     { Name: "纸袋", Priority: 55, },
                 ],
             },
+            {
+                Name: "符_Luzi", Random: false,
+                Top: 0, Left: 0,
+                Layer: [
+                    { Name: "符", Priority: 52, },
+                ],
+            },
         ],
         ItemArms: [
             {
