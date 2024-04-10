@@ -105,8 +105,12 @@
     mod.hookFunction("GLDrawImage", 1, (args, next) => {
         const data = args[0];
         if (typeof data === 'string') {
-            if (data.includes("_笨笨蛋Luzi") || data.includes("_笨笨笨蛋Luzi2")) {
-                args[0] = data.replace(/_笨笨(笨蛋)?Luzi(2)?/g, "");
+            if (data.includes("_笨笨蛋Luzi")) {
+                args[0] = data.replace("_笨笨蛋Luzi", "");
+            }
+
+            if (data.includes("_笨笨笨蛋Luzi2")) {
+                args[0] = data.replace("_笨笨笨蛋Luzi2", "");
             }
 
             if (ICONSSSSSSS[data]) {
@@ -116,7 +120,8 @@
             }
 
             if (data.includes("_Luzi")) {
-                args[0] = data.replace("_Luzi", "");
+                let data = args[0];
+                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
             if (data.includes("Assets/Female3DCG/BodyUpper") || data.includes("Assets/Female3DCG/BodyLower")) {
@@ -165,7 +170,7 @@
         "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w1.png": "https://emdsa2.github.io/-mod/image/空.png",
 
     });
-    
+
     mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
         if (typeof data === 'string') {
