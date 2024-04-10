@@ -150,10 +150,11 @@
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
-            // 角色皮肤修改
-            if (
-                /(BodyUpper\/.*?_(White|Asian|Black))/.test(data) || /(BodyLower\/.*?_(White|Asian|Black))/.test(data)
-            ) {
+            if (data.includes("Assets/Female3DCG/BodyUpper")) {
+                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
+
+            if (data.includes("Assets/Female3DCG/BodyLower")) {
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
