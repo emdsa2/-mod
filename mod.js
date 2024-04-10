@@ -93,7 +93,35 @@
     };
 
 
+    const ICONSSSSSSS2 = {
 
+        "Assets/Female3DCG/Pussy/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Penis_White.png",
+        "Assets/Female3DCG/Pussy/Pussy1_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy1_White.png",
+        "Assets/Female3DCG/Pussy/Pussy2_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy2_White.png",
+        "Assets/Female3DCG/Pussy/Pussy3_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy3_White.png",
+        "Assets/Female3DCG/Pussy/Hard/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Hard/Penis_White.png",
+
+        "Assets/Female3DCG/Head/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_White.png",
+        "Assets/Female3DCG/Head/NoEars_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_White.png",
+        "Assets/Female3DCG/Head/SmallEars_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_White.png",
+        "Assets/Female3DCG/Head/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_Asian.png",
+        "Assets/Female3DCG/Head/NoEars_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_Asian.png",
+        "Assets/Female3DCG/Head/SmallEars_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_Asian.png",
+        "Assets/Female3DCG/Head/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_Black.png",
+        "Assets/Female3DCG/Head/NoEars_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_Black.png",
+        "Assets/Female3DCG/Head/SmallEars_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_Black.png",
+
+        "Assets/Female3DCG/Hands/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_White.png",
+        "Assets/Female3DCG/Hands/AllFours/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_White.png",
+        "Assets/Female3DCG/Hands/TapedHands/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_White.png",
+        "Assets/Female3DCG/Hands/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_Asian.png",
+        "Assets/Female3DCG/Hands/AllFours/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Asian.png",
+        "Assets/Female3DCG/Hands/TapedHands/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Asian.png",
+        "Assets/Female3DCG/Hands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_Black.png",
+        "Assets/Female3DCG/Hands/AllFours/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Black.png",
+        "Assets/Female3DCG/Hands/TapedHands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Black.png",
+
+    };
 
     // =======================================================================================
 
@@ -143,6 +171,10 @@
                 args[0] = ICONSSSSSSS[data];
                 args[2] = 0;
                 args[3] = 590;
+            }
+
+            if (ICONSSSSSSS2[data]) {
+                args[0] = ICONSSSSSSS2[data];
             }
 
             if (data.includes("_Luzi")) {
