@@ -62,9 +62,39 @@
         "Assets/Female3DCG/Socks/Kneel/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Kneel_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
+
+
     };
 
 
+    const ICONSSSSSSSS = {
+        "Assets/Female3DCG/Pussy/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Penis_White.png",
+        "Assets/Female3DCG/Pussy/Pussy1_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy1_White.png",
+        "Assets/Female3DCG/Pussy/Pussy2_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy2_White.png",
+        "Assets/Female3DCG/Pussy/Pussy3_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy3_White.png",
+        "Assets/Female3DCG/Pussy/Hard/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Hard/Penis_White.png",
+
+        "Assets/Female3DCG/Head/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_White.png",
+        "Assets/Female3DCG/Head/NoEars_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_White.png",
+        "Assets/Female3DCG/Head/SmallEars_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_White.png",
+        "Assets/Female3DCG/Head/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_Asian.png",
+        "Assets/Female3DCG/Head/NoEars_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_Asian.png",
+        "Assets/Female3DCG/Head/SmallEars_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_Asian.png",
+        "Assets/Female3DCG/Head/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_Black.png",
+        "Assets/Female3DCG/Head/NoEars_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_Black.png",
+        "Assets/Female3DCG/Head/SmallEars_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_Black.png",
+
+        "Assets/Female3DCG/Hands/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_White.png",
+        "Assets/Female3DCG/Hands/AllFours/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_White.png",
+        "Assets/Female3DCG/Hands/TapedHands/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_White.png",
+        "Assets/Female3DCG/Hands/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_Asian.png",
+        "Assets/Female3DCG/Hands/AllFours/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Asian.png",
+        "Assets/Female3DCG/Hands/TapedHands/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Asian.png",
+        "Assets/Female3DCG/Hands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_Black.png",
+        "Assets/Female3DCG/Hands/AllFours/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Black.png",
+        "Assets/Female3DCG/Hands/TapedHands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Black.png",
+
+    };
     // =======================================================================================
 
     const PreviewICONS = Object.freeze({
@@ -122,20 +152,16 @@
             }
 
 
-            // 角色皮肤修改
-            if (
-                /(BodyUpper\/.*?_(White|Asian|Black))/.test(data) ||
-                /(BodyLower\/.*?_(White|Asian|Black))/.test(data) ||
-                data.includes("Head/Default_White") || data.includes("Head/NoEars_White") || data.includes("Head/SmallEars_White") ||
-                data.includes("Head/Default_Asian") || data.includes("Head/NoEars_Asian") || data.includes("Head/SmallEars_Asian") ||
-                data.includes("Head/Default_Black") || data.includes("Head/NoEars_Black") || data.includes("Head/SmallEars_Black") ||
-                data.includes("Hands/Default_White") || data.includes("Hands/AllFours/Default_White") || data.includes("Hands/TapedHands/Default_White") ||
-                data.includes("Hands/Default_Asian") || data.includes("Hands/AllFours/Default_Asian") || data.includes("Hands/TapedHands/Default_Asian") ||
-                data.includes("Hands/Default_Black") || data.includes("Hands/AllFours/Default_Black") || data.includes("Hands/TapedHands/Default_Black") ||
-                data.includes("Pussy/Pussy1_White") || data.includes("Pussy/Pussy2_White") || data.includes("Pussy/Pussy3_White") ||
-                data.includes("Female3DCG/Nipples/Nipples")
-            ) {
+            if (data.includes("Assets/Female3DCG/BodyUpper")) {
+                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
+            if (data.includes("Assets/Female3DCG/BodyLower")) {
+                let data = args[0];
+                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+            }
+            if (ICONSSSSSSSS[data]) {
+                args[0] = ICONSSSSSSSS[data];
             }
 
             if (data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
