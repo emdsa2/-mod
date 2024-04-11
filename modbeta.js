@@ -389,7 +389,7 @@
                         },
                     },
                     {
-                        Name: "披肩绒毛", Priority: 33,
+                        Name: "披肩绒毛", Priority: 34,
                         PoseMapping: {
                             TapedHands: "",
                             Yoked: "Yoked", OverTheHead: "Yoked",
