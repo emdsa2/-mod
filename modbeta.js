@@ -389,6 +389,16 @@
                         },
                     },
                     {
+                        Name: "披肩绒毛", Priority: 33,
+                        PoseMapping: {
+                            TapedHands: "",
+                            Yoked: "Yoked", OverTheHead: "Yoked",
+                            BackBoxTie: "Yoked",
+                            BackElbowTouch: "Yoked",
+                            BackCuffs: "Yoked",
+                        },
+                    },
+                    {
                         Name: "绒毛", Priority: 32,
                         PoseMapping: {
                             TapedHands: "",
