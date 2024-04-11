@@ -442,72 +442,6 @@
                 ],
             },
             {
-                Name: "礼服_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
-                Prerequisite: ["HasBreasts"],
-                Layer: [
-                    {
-                        Name: "Bottom",
-                        Priority: 33,
-                        ParentGroup: "BodyLower",
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "KneelingSpread",
-                            LegsClosed: "",
-                            Spread: "",
-                            AllFours: "Hide",
-                            Hogtied: "Hide",
-                        },
-                    },
-                    {
-                        Name: "Top",
-                        Priority: 33,
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            TapedHands: "TapedHands",
-                            Yoked: "Yoked",
-                            OverTheHead: "OverTheHead",
-                            BackBoxTie: "BackBoxTie",
-                            BackElbowTouch: "BackElbowTouch",
-                            BackCuffs: "BackCuffs",
-                            AllFours: "AllFours",
-                            Hogtied: "Hogtied",
-                        },
-                    },
-                    {
-                        Name: "Silk",
-                        Priority: 32,
-                        PoseMapping:
-                        {
-                            TapedHands: "",
-                            Yoked: "Yoked",
-                            OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                            AllFours: "AllFours",
-                            Hogtied: "Hogtied",
-                        },
-                    },
-                    {
-                        Name: "Back",
-                        Priority: 5,
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "Kneel",
-                            LegsClosed: "",
-                            Spread: "",
-                            AllFours: "Hide",
-                            Hogtied: "Hide",
-                        },
-                    },
-                ],
-            },
-            {
                 Name: "奶牛_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Prerequisite: ["HasBreasts"],
@@ -620,28 +554,25 @@
         ],
         Bra: [
             {
-                Name: "透视皮衣_Luzi", Random: false, Gender: "F",
-                Top: 0, Left: 0,
+                Name: "LeatherVestSuit",
+                Gender: "F",
+                Top: 0,
+                Left: 0,
+                Hide: ["ItemNipples"],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
                     {
-                        Name: "皮",
+                        Name: "Leather",
                         PoseMapping: {
-                            TapedHands: "BackElbowTouch",
-                            Yoked: "BackElbowTouch", OverTheHead: "BackElbowTouch",
-                            BackBoxTie: "BackElbowTouch",
-                            BackElbowTouch: "BackElbowTouch",
-                            BackCuffs: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                            AllFours: PoseType.HIDE,
                         },
                     },
                     {
-                        Name: "丝",
+                        Name: "Silk",
                         PoseMapping: {
-                            TapedHands: "BackElbowTouch",
-                            Yoked: "BackElbowTouch", OverTheHead: "BackElbowTouch",
-                            BackBoxTie: "BackElbowTouch",
-                            BackElbowTouch: "BackElbowTouch",
-                            BackCuffs: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                            AllFours: PoseType.HIDE,
                         },
                     },
                 ],
