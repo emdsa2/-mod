@@ -1155,6 +1155,14 @@
             modPosture: false, modifyOwnPosture: false, postureName: ""
         },
         {
+            name: "触手掀裙子", prerequisite: ["HasTentacles2"],
+            targetSelf: "ItemButt", targetSelftext: "SourceCharacter用触手掀开PronounPossessive的裙子.", maxProgressSelf: 50,
+            target: "ItemButt", targettext: "SourceCharacter用触手掀开TargetCharacter的裙子.", maxProgress: 50,
+            activityExpression: [],
+            assetgroup: "TailStraps", imageName: "Tentacles",
+            modPosture: false, modifyOwnPosture: false, postureName: ""
+        },
+        {
             name: "触手揉脸", prerequisite: ["HasTentacles2"],
             targetSelf: "ItemMouth", targetSelftext: "SourceCharacter用触手揉了揉自己的脸.", maxProgressSelf: 50,
             target: "ItemMouth", targettext: "SourceCharacter用触手揉了揉TargetCharacter的脸.", maxProgress: 50,
