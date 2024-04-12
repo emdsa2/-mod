@@ -1283,7 +1283,6 @@
             {
                 Name: "被子左边_Luzi", Random: false,
                 Top: -260, Left: 0,
-                Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
                 DefaultColor: ["#99A2AB", "Default"],
@@ -1295,7 +1294,6 @@
             {
                 Name: "被子右边_Luzi", Random: false,
                 Top: -260, Left: -210,
-                Value: -1,
                 Difficulty: 1,
                 SelfBondage: 0,
                 DefaultColor: ["#99A2AB", "Default"],
