@@ -2191,123 +2191,69 @@
     //============================================================
     //============================================================
 
-    // 这个忘记写的是个什么东西了 有空优化一下逻辑
-    let currentLanguage = '';
-    let currentLanguage2 = '';
-    let halo2 = false;
+    function checkItemName(itemPosition) {
+        const validAssetNames = new Set(["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl","FuturisticEarphones"]);
+        let itemMisc = InventoryGet(Player, itemPosition);
+        if (itemMisc && itemMisc.Asset && itemMisc.Asset.Name) {
+            let assetName = itemMisc.Asset.Name;
+            return validAssetNames.has(assetName);
+        }
+        return false; // 如果没有找到道具或者道具名称为空，则返回 false
+    }
+
+    function extractItemDescription(itemPosition) {
+        let itemMisc = InventoryGet(Player, itemPosition);
+        if (itemMisc && itemMisc.Craft && itemMisc.Craft.Description) {
+            // 假设原始字符串为 chineseStr
+            let chineseStr = itemMisc.Craft.Description;
+    
+            // 将中文双引号替换为英文双引号
+            let englishStr = chineseStr.replace(/“/g, '"').replace(/”/g, '"');
+    
+            // 检查第一个英文双引号内的内容
+            let firstQuoteIndex = englishStr.indexOf('"');
+            if (firstQuoteIndex !== -1) {
+                let contentInsideQuotes = englishStr.substring(firstQuoteIndex + 1, englishStr.indexOf('"', firstQuoteIndex + 1));
+                // 检查前两个字母
+                let firstTwoLetters = contentInsideQuotes.substring(0, 2);
+                return firstTwoLetters;
+            }
+        }
+    }
+
+    // 判断翻译结果是否符合条件的函数
+    function meetsCriteria(translatedText, sourceText) {
+        const blacklist = ["📞", "🔊", "\\", "/", "www"];
+        // 检查翻译结果是否包含黑名单中的任何一个词
+        for (let word of blacklist) {
+            if (translatedText.includes(word)) {
+                return false;
+            }
+        }
+        // 检查翻译结果与原文是否一致
+        if (translatedText === sourceText) {
+            return false;
+        }
+        return true;
+    }
+
     笨蛋Luzi.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
-        // console.log(data);
-        halo2 = true;
-        // 耳朵部位的装备
-        let luzi = InventoryGet(Player, "ItemEars");
-
-        // 重置当前的需要翻译的语言
-        if ((data.Sender === Player.MemberNumber && data.Content === "ActionRemove" && data.Dictionary[3].GroupName === "ItemEars") ||
-            (data.Sender === Player.MemberNumber && data.Content === "ActionSwap" && data.Dictionary[3].GroupName === "ItemEars")) {
-            currentLanguage = '';
-        }
-
-        // 如果获取到耳朵有物品
-        if (luzi !== null) {
-            // 自定义 & 描述
-            if (luzi.Craft && luzi.Craft.Description) {
-                // 使用正则表达式匹配双引号内的内容
-                const matches = luzi.Craft.Description.match(/"(auto|[a-z]{2}|zh(-cn)?(-tw)?)"/); // 限定为: auto, [任意两个字母], zh-cn, zh-tw // 或许可以去掉 auto
-
-                // 如果有匹配的内容,matches[1] 就是双引号内的内容
-                if (matches) {
-                    currentLanguage = matches[1];
-                }
-            }
-        } else { currentLanguage = ''; }
-        // ============================================
-        // 获取混合槽的物品
-        let luzi2 = InventoryGet(Player, "ItemMisc");
-        // 重置
-        if ((data.Sender === Player.MemberNumber && data.Content === "ActionRemove" && data.Dictionary[3].GroupName === "ItemMisc") ||
-            (data.Sender === Player.MemberNumber && data.Content === "ActionSwap" && data.Dictionary[3].GroupName === "ItemMisc")) {
-            currentLanguage2 = '';
-        }
-        // 获取到到的混合槽的物品
-        if (luzi2 !== null) {
-            // 自定义 & 描述
-            if (luzi2.Craft && luzi2.Craft.Description) {
-                // 有效物品
-                const validAssetNames = new Set(["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl"]);
-                // 是有效物品
-                if (validAssetNames.has(luzi2.Asset.Name)) {
-                    // 使用正则表达式匹配双引号内的内容
-                    const matches = luzi2.Craft.Description.match(/"(auto|[a-z]{2}|zh(-cn)?(-tw)?)"/);// 限定为: auto, [任意两个字母], zh-cn, zh-tw  // 或许可以去掉 auto
-
-                    // 如果有匹配的内容,matches[1] 就是双引号内的内容
-                    if (matches) {
-                        currentLanguage2 = matches[1];
-                    }
-                }
-            }
-        } else { currentLanguage2 = ''; }
-        // ============================================
-
-        if (data.Sender !== Player.MemberNumber
-            && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote")
-            && !data.Content.includes("[T]")
-            && !data.Content.includes("📞")
-            && !data.Content.includes("🔊")
-            && !data.Content.includes("\\")
-            && !data.Content.includes("/")) {
-            //原始文本
-            let sourceText = data.Dictionary?.find(d => d.Tag === "BCX_ORIGINAL_MESSAGE")?.Text ?? data.Content;
-            let sourceLang = 'auto';
-            // 目标语言
-            let targetLang = currentLanguage;
-
-            if (targetLang !== sourceLang) {
-                // 构建Google翻译API的请求URL
-                let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
+    
+        if (data.Sender === Player.MemberNumber && (data.Type && ["Chat", "Whisper", "Emote"].includes(data.Type)) && checkItemName("ItemMisc") && extractItemDescription("ItemMisc")) {
+            let targetLang = extractItemDescription("ItemMisc");
+            if (targetLang) {
+                let sourceText = data.Content;
+                let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
                 fetch(url)
                     .then(response => response.json())
                     .then((dt) => {
-                        // 检查翻译结果是否有效
                         if (dt && dt[0] && dt[0][0] && dt[0][0][0]) {
-                            // 从翻译结果中移除特定标记"[T]"
                             let translatedText = dt[0][0][0].replace("[T]", "");
-
-                            // 如果翻译结果不等于源文本, 则发送翻译后的文本作为聊天消息
-                            if (translatedText !== sourceText) {
-                                ChatRoomMessage({ Content: "📞 " + translatedText, Type: "Chat", Sender: Player.MemberNumber, Dictionary: [{ Tag: '发送私聊', Text: 1 }] });
-                            }
-                        } else {
-                            // 无效的翻译数据处理逻辑(当前为空, 可根据需要添加日志记录等)
-                        }
-                    })
-                    .catch(error => {
-                        // 处理翻译请求失败的情况(当前为空, 可根据需要添加错误日志记录等)
-                    });
-            }
-        }
-        if (data.Sender === Player.MemberNumber
-            && (data.Type === "Chat" || data.Type === "Whisper" || data.Type === "Emote")
-            && !data.Content.includes("[T]")
-            && !data.Content.includes("📞")
-            && !data.Content.includes("🔊")
-            && !data.Content.includes("\\")
-            && !data.Content.includes("/")) {
-            let sourceText = data.Dictionary?.find(d => d.Tag === "BCX_ORIGINAL_MESSAGE")?.Text ?? data.Content;
-            let sourceLang = 'auto';
-            let targetLang = currentLanguage2;
-
-            if (targetLang !== sourceLang) {
-                let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
-                fetch(url)
-                    .then(response => response.json())
-                    .then((dt) => {
-                        if (dt && dt[0] && dt[0][0] && dt[0][0][0]) {
-                            let translatedText = dt[0][0][0].replace("[T]", ""); // 去掉翻译中的[T]
-
-                            if (translatedText !== sourceText) {
+    
+                            if (meetsCriteria(translatedText, sourceText)) {
                                 ServerSend("ChatRoomChat", {
-                                    Content: "🔊 " + translatedText, // 不包含[T]的翻译文本
+                                    Content: "🔊 " + translatedText,
                                     Type: "Chat",
                                     Dictionary: [
                                         { SourceCharacter: !Player.MemberNumber },
@@ -2318,18 +2264,33 @@
                                     ]
                                 });
                             }
-                        } else {
-                            //console.log("无效的翻译数据:", dt);
                         }
                     })
-                    .catch(error => {
-                        //console.error("翻译请求失败:", error);
-                    });
             }
         }
+    
+        if (data.Sender !== Player.MemberNumber && (data.Type && ["Chat", "Whisper", "Emote"].includes(data.Type)) && checkItemName("ItemEars") && extractItemDescription("ItemEars")) {
+            let targetLang = extractItemDescription("ItemEars");
+            if (targetLang) {
+                let sourceText = data.Content;
+                let url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
+                fetch(url)
+                    .then(response => response.json())
+                    .then((dt) => {
+                        if (dt && dt[0] && dt[0][0] && dt[0][0][0]) {
+                            let translatedText = dt[0][0][0].replace("[T]", "");
 
+                            if (meetsCriteria(translatedText, sourceText)) {
+                                ChatRoomMessage({ Content: "📞 " + translatedText, Type: "Chat", Sender: Player.MemberNumber, Dictionary: [{ Tag: '发送私聊', Text: 1 }] });
+                            }
+                        }
+                    })
+            }
+        }
+    
         next(args);
     });
+    
     //============================================================
     //============================================================
     // 嵌入链接分享 目前只支持 bilibili 网易云音乐 youtube pornhub
