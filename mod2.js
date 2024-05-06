@@ -2214,13 +2214,16 @@
             let firstQuoteIndex = englishStr.indexOf('"');
             if (firstQuoteIndex !== -1) {
                 let contentInsideQuotes = englishStr.substring(firstQuoteIndex + 1, englishStr.indexOf('"', firstQuoteIndex + 1));
-                // 检查前两个字母
-                let firstTwoLetters = contentInsideQuotes.substring(0, 2);
-                return firstTwoLetters;
+                // 检查引号内的字符串长度是否超过两个字符
+                if (contentInsideQuotes.length <= 2) {
+                    // 检查前两个字母
+                    let firstTwoLetters = contentInsideQuotes.substring(0, 2);
+                    return firstTwoLetters;
+                }
             }
         }
     }
-
+    
     // 判断翻译结果是否符合条件的函数
     function meetsCriteria(translatedText, sourceText) {
         const blacklist = ["📞", "🔊", "\\", "/", "www"];
