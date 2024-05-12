@@ -411,72 +411,6 @@
                 ],
             },
             {
-                Name: "礼服_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
-                Prerequisite: ["HasBreasts"],
-                Layer: [
-                    {
-                        Name: "Bottom",
-                        Priority: 33,
-                        ParentGroup: "BodyLower",
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "KneelingSpread",
-                            LegsClosed: "",
-                            Spread: "",
-                            AllFours: "Hide",
-                            Hogtied: "Hide",
-                        },
-                    },
-                    {
-                        Name: "Top",
-                        Priority: 33,
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            TapedHands: "TapedHands",
-                            Yoked: "Yoked",
-                            OverTheHead: "OverTheHead",
-                            BackBoxTie: "BackBoxTie",
-                            BackElbowTouch: "BackElbowTouch",
-                            BackCuffs: "BackCuffs",
-                            AllFours: "AllFours",
-                            Hogtied: "Hogtied",
-                        },
-                    },
-                    {
-                        Name: "Silk",
-                        Priority: 32,
-                        PoseMapping:
-                        {
-                            TapedHands: "",
-                            Yoked: "Yoked",
-                            OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                            AllFours: "AllFours",
-                            Hogtied: "Hogtied",
-                        },
-                    },
-                    {
-                        Name: "Back",
-                        Priority: 5,
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "Kneel",
-                            LegsClosed: "",
-                            Spread: "",
-                            AllFours: "Hide",
-                            Hogtied: "Hide",
-                        },
-                    },
-                ],
-            },
-            {
                 Name: "奶牛_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Prerequisite: ["HasBreasts"],
@@ -1303,56 +1237,7 @@
                 ],
             },
         ],
-        Liquid2_Luzi: [
-            {
-                Name: "无_Luzi", Random: false,
-            },
-            {
-                Name: "少_Luzi", Random: false,
-                Priority: 9,
-                DefaultColor: ["#D9DCFF"],
-            },
-            {
-                Name: "中_Luzi", Random: false,
-                Priority: 9,
-                DefaultColor: ["#D9DCFF"],
-            },
-        ],
         BodyMarkings: [
-            {
-                Name: "淫纹_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
-                Priority: 9,
-                PoseMapping: {
-                    BackBoxTie: PoseType.DEFAULT,
-                    BackCuffs: PoseType.DEFAULT,
-                    BackElbowTouch: PoseType.DEFAULT,
-                    OverTheHead: PoseType.DEFAULT,
-                    TapedHands: PoseType.DEFAULT,
-                    Yoked: PoseType.DEFAULT,
-                    AllFours: PoseType.HIDE,
-                    Hogtied: PoseType.HIDE,
-                },
-                DefaultColor: ["#E975A0"],
-            },
-            {
-                Name: "刻度尺_Luzi", Random: false, Gender: "F",
-                Top: 0, Left: 0,
-                Priority: 9,
-                PoseMapping: {
-                    BackBoxTie: PoseType.DEFAULT,
-                    BackCuffs: PoseType.DEFAULT,
-                    BackElbowTouch: PoseType.DEFAULT,
-                    OverTheHead: PoseType.DEFAULT,
-                    TapedHands: PoseType.DEFAULT,
-                    Yoked: PoseType.DEFAULT,
-                    AllFours: PoseType.HIDE,
-                    Hogtied: PoseType.HIDE,
-                },
-                DefaultColor: ["#000000"],
-            },
-        ],
-        BodyMarkings2_Luzi: [
             {
                 Name: "淫纹_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
@@ -1388,37 +1273,6 @@
         ],
     };
 
-    const addAssetGroup = {
-        Liquid2_Luzi: [
-            {
-                Group: "Liquid2_Luzi",
-                ParentGroup: "BodyLower",
-                PoseMapping: { ...AssetPoseMapping.BodyLower },
-                Priority: 53,
-                Left: 0,
-                Top: 0,
-                Asset: [
-                    {
-                        Name: "无_Luzi", Random: false,
-                    },
-                ],
-            },
-        ],
-        BodyMarkings2_Luzi: [
-            {
-                Group: "BodyMarkings2_Luzi",
-                Priority: 9,
-                Clothing: true,
-                Default: false,
-                Random: false,
-                Asset: [
-                    {
-                        Name: "无_Luzi", Random: false,
-                    },
-                ],
-            },
-        ],
-    };
     // InventoryGet(Player, "Emoticon").Property.Expression
     // Asset.find(group => group.Name === "Emoticon");
 
@@ -1754,12 +1608,6 @@
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
-            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
-            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
-            addExtraOutfitsToAssets();
-            addExtraOutfitsToAssets2();
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
@@ -1794,8 +1642,6 @@
                     ['Gloves_笨笨蛋Luzi', '🍔手套2'],
                     ['Mask_笨笨蛋Luzi', '🍔面具2'],
                     ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
-                    ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔液体2_Luzi'],
-                    ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔身体涂画2'],
                 ]);
                 const descriptionMap2 = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔Cloth2'],
@@ -1812,8 +1658,6 @@
                     ['Gloves_笨笨蛋Luzi', '🍔Gloves2'],
                     ['Mask_笨笨蛋Luzi', '🍔Mask2'],
                     ['Wings_笨笨蛋Luzi', '🍔Wings2'],
-                    ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔Liquid2_Luzi'],
-                    ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔BodyMarkings2'],
                 ]);
                 let language = localStorage.getItem("BondageClubLanguage");
                 if ((language === "CN" || language === "TW")) {
