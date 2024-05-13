@@ -64,7 +64,7 @@
 
 
     };
-    
+
 
     const ICONSSSSSSSS = {
         "Assets/Female3DCG/Pussy/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Penis_White.png",
@@ -93,7 +93,7 @@
         "Assets/Female3DCG/Hands/AllFours/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Black.png",
         "Assets/Female3DCG/Hands/TapedHands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Black.png",
 
-        };
+    };
     // =======================================================================================
 
     // #B28686
@@ -198,7 +198,7 @@
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
             }
         }
-        
+
         next(args);
     });
 
@@ -211,8 +211,8 @@
             }
         }
         next(args);
-        
-    }); 
+
+    });
 
     mod.hookFunction('CommonClick', 1, (args, next) => {
         var previousExpression22 = DialogFacialExpressions.find(group => group.Group === "Liquid_Luzi");
@@ -920,6 +920,23 @@
                     { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
+            {
+                Name: "绷带全身_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
         ],
         ItemTorso2: [
             {
@@ -1084,6 +1101,23 @@
             },
             {
                 Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
+            {
+                Name: "绷带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1735,8 +1769,12 @@
             }
         });
     }
-
-
+    let isAssetAdded2 = false;
+    if (!isAssetAdded2) {
+        addExtraOutfitsToAssets();
+        addExtraOutfitsToAssets2();
+        isAssetAdded2 = true;
+    }
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
@@ -1746,8 +1784,11 @@
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
-            addExtraOutfitsToAssets();
-            addExtraOutfitsToAssets2();
+            if (!isAssetAdded2) {
+                addExtraOutfitsToAssets();
+                addExtraOutfitsToAssets2();
+                isAssetAdded2 = true;
+            }
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
@@ -1839,7 +1880,7 @@
                         }
                     });
                 }
-            } 
+            }
 
 
             // 用于替换🍔组内的服装名字 ============================

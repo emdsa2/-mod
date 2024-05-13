@@ -129,6 +129,7 @@
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
+
             if (ICONSSSSSSSS[data]) {
                 args[0] = ICONSSSSSSSS[data];
             }
@@ -164,12 +165,14 @@
         "Screens/Inventory/ItemDevices/窝瓜_Luzi/没盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/ItemDevices/窝瓜_Luzi/有盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
 
+
         "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q0.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q1.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w0.png": "https://emdsa2.github.io/-mod/image/空.png",
         "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w1.png": "https://emdsa2.github.io/-mod/image/空.png",
 
     });
+
 
     mod.hookFunction('DrawImageResize', 1, (args, next) => {
         const data = args[0];
@@ -212,6 +215,26 @@
 
     });
 
+    mod.hookFunction('CommonClick', 1, (args, next) => {
+        var previousExpression22 = DialogFacialExpressions.find(group => group.Group === "Liquid_Luzi");
+        if (previousExpression22 !== undefined) {
+            var LiquidName = previousExpression22.CurrentExpression
+            var LiquidColor = previousExpression22.Appearance.Color
+
+            if (LiquidName === null) {
+                InventoryWear(Player, "无_Luzi", "Liquid2_Luzi", LiquidColor);
+            }
+
+            if (LiquidName === '少') {
+                InventoryWear(Player, "少_Luzi", "Liquid2_Luzi", LiquidColor);
+            }
+
+            if (LiquidName === '中') {
+                InventoryWear(Player, "中_Luzi", "Liquid2_Luzi", LiquidColor);
+            }
+        }
+        next(args);
+    });
     // ================================================================================
     // ================================================================================
     const addAsset = {
@@ -359,6 +382,16 @@
                     },
                     {
                         Name: "披肩", Priority: 33,
+                        PoseMapping: {
+                            TapedHands: "",
+                            Yoked: "Yoked", OverTheHead: "Yoked",
+                            BackBoxTie: "Yoked",
+                            BackElbowTouch: "Yoked",
+                            BackCuffs: "Yoked",
+                        },
+                    },
+                    {
+                        Name: "披肩绒毛", Priority: 34,
                         PoseMapping: {
                             TapedHands: "",
                             Yoked: "Yoked", OverTheHead: "Yoked",
@@ -523,28 +556,25 @@
         ],
         Bra: [
             {
-                Name: "透视皮衣_Luzi", Random: false, Gender: "F",
-                Top: 0, Left: 0,
+                Name: "LeatherVestSuit",
+                Gender: "F",
+                Top: 0,
+                Left: 0,
+                Hide: ["ItemNipples"],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
                     {
-                        Name: "皮",
+                        Name: "Leather",
                         PoseMapping: {
-                            TapedHands: "BackElbowTouch",
-                            Yoked: "BackElbowTouch", OverTheHead: "BackElbowTouch",
-                            BackBoxTie: "BackElbowTouch",
-                            BackElbowTouch: "BackElbowTouch",
-                            BackCuffs: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                            AllFours: PoseType.HIDE,
                         },
                     },
                     {
-                        Name: "丝",
+                        Name: "Silk",
                         PoseMapping: {
-                            TapedHands: "BackElbowTouch",
-                            Yoked: "BackElbowTouch", OverTheHead: "BackElbowTouch",
-                            BackBoxTie: "BackElbowTouch",
-                            BackElbowTouch: "BackElbowTouch",
-                            BackCuffs: "BackElbowTouch",
+                            Hogtied: "Hogtied",
+                            AllFours: PoseType.HIDE,
                         },
                     },
                 ],
@@ -891,6 +921,23 @@
                     { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
+            {
+                Name: "绷带全身_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
         ],
         ItemTorso2: [
             {
@@ -1055,6 +1102,23 @@
             },
             {
                 Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
+                Top: 0, Left: 0,
+                Difficulty: 10,
+                SelfBondage: 6,
+                Time: 30,
+                RemoveTime: 40,
+                AllowTighten: true,
+                Random: false,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
+                Effect: [E.Block, E.BlockWardrobe, E.Slow],
+                Prerequisite: ["HasBreasts"],
+                Layer: [
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                ],
+            },
+            {
+                Name: "绷带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1237,7 +1301,61 @@
                 ],
             },
         ],
+        Liquid_Luzi: [
+            {
+                Name: "Liquid_Luzi", Random: false,
+            },
+        ],
+        Liquid2_Luzi: [
+            {
+                Name: "无_Luzi", Random: false,
+            },
+            {
+                Name: "少_Luzi", Random: false,
+                Priority: 9,
+                DefaultColor: ["#D9DCFF"],
+            },
+            {
+                Name: "中_Luzi", Random: false,
+                Priority: 9,
+                DefaultColor: ["#D9DCFF"],
+            },
+        ],
         BodyMarkings: [
+            {
+                Name: "淫纹_Luzi", Random: false, Gender: "F",
+                Top: -110, Left: 0,
+                Priority: 9,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+                DefaultColor: ["#E975A0"],
+            },
+            {
+                Name: "刻度尺_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Priority: 9,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+                DefaultColor: ["#000000"],
+            },
+        ],
+        BodyMarkings2_Luzi: [
             {
                 Name: "淫纹_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
@@ -1273,7 +1391,56 @@
         ],
     };
 
+    const addAssetGroup = {
+        Liquid_Luzi: [
+            {
+                Group: "Liquid_Luzi",
+                Priority: 53,
+                Left: 0,
+                Top: 0,
+                AllowNone: false,
+                AllowColorize: true,
+                AllowCustomize: false,
+                AllowExpression: [
+                    "少",
+                    "中"
+                ],
+                Asset: ["Liquid_Luzi"],
+            },
+        ],
+        Liquid2_Luzi: [
+            {
+                Group: "Liquid2_Luzi",
+                ParentGroup: "BodyLower",
+                PoseMapping: { ...AssetPoseMapping.BodyLower },
+                Priority: 53,
+                Left: 0,
+                Top: 0,
+                Asset: [
+                    {
+                        Name: "无_Luzi", Random: false,
+                    },
+                ],
+            },
+        ],
+        BodyMarkings2_Luzi: [
+            {
+                Group: "BodyMarkings2_Luzi",
+                Priority: 9,
+                Clothing: true,
+                Default: false,
+                Random: false,
+                Asset: [
+                    {
+                        Name: "无_Luzi", Random: false,
+                    },
+                ],
+            },
+        ],
+    };
+    // InventoryGet(Player, "Liquid_Luzi").Property.Expression
     // InventoryGet(Player, "Emoticon").Property.Expression
+    // Asset.find(group => group.Name === "Liquid_Luzi");
     // Asset.find(group => group.Name === "Emoticon");
 
     AssetFemale3DCGExtended.ItemDevices.玻璃罐子_Luzi = {
@@ -1603,11 +1770,26 @@
             }
         });
     }
-
-
+    let isAssetAdded2 = false;
+    if (!isAssetAdded2) {
+        addExtraOutfitsToAssets();
+        addExtraOutfitsToAssets2();
+        isAssetAdded2 = true;
+    }
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
+            AssetFemale3DCG.push(addAssetGroup.Liquid_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid_Luzi[0])
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
+            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
+            if (!isAssetAdded2) {
+                addExtraOutfitsToAssets();
+                addExtraOutfitsToAssets2();
+                isAssetAdded2 = true;
+            }
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
@@ -1642,6 +1824,9 @@
                     ['Gloves_笨笨蛋Luzi', '🍔手套2'],
                     ['Mask_笨笨蛋Luzi', '🍔面具2'],
                     ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid_Luzi', '🍔液体'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔液体2_Luzi'],
+                    ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔身体涂画2'],
                 ]);
                 const descriptionMap2 = new Map([
                     ['Cloth_笨笨蛋Luzi', '🍔Cloth2'],
@@ -1658,6 +1843,9 @@
                     ['Gloves_笨笨蛋Luzi', '🍔Gloves2'],
                     ['Mask_笨笨蛋Luzi', '🍔Mask2'],
                     ['Wings_笨笨蛋Luzi', '🍔Wings2'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid_Luzi', '🍔Liquid'],
+                    ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔Liquid2_Luzi'],
+                    ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔BodyMarkings2'],
                 ]);
                 let language = localStorage.getItem("BondageClubLanguage");
                 if ((language === "CN" || language === "TW")) {
