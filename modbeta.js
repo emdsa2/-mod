@@ -214,26 +214,6 @@
 
     });
 
-    mod.hookFunction('CommonClick', 1, (args, next) => {
-        var previousExpression22 = DialogFacialExpressions.find(group => group.Group === "Liquid_Luzi");
-        if (previousExpression22 !== undefined) {
-            var LiquidName = previousExpression22.CurrentExpression
-            var LiquidColor = previousExpression22.Appearance.Color
-
-            if (LiquidName === null) {
-                InventoryWear(Player, "无_Luzi", "Liquid2_Luzi", LiquidColor);
-            }
-
-            if (LiquidName === '少') {
-                InventoryWear(Player, "少_Luzi", "Liquid2_Luzi", LiquidColor);
-            }
-
-            if (LiquidName === '中') {
-                InventoryWear(Player, "中_Luzi", "Liquid2_Luzi", LiquidColor);
-            }
-        }
-        next(args);
-    });
     // ================================================================================
     // ================================================================================
     const addAsset = {
@@ -1300,11 +1280,6 @@
                 ],
             },
         ],
-        Liquid_Luzi: [
-            {
-                Name: "Liquid_Luzi", Random: false,
-            },
-        ],
         Liquid2_Luzi: [
             {
                 Name: "无_Luzi", Random: false,
@@ -1391,22 +1366,6 @@
     };
 
     const addAssetGroup = {
-        Liquid_Luzi: [
-            {
-                Group: "Liquid_Luzi",
-                Priority: 53,
-                Left: 0,
-                Top: 0,
-                AllowNone: false,
-                AllowColorize: true,
-                AllowCustomize: false,
-                AllowExpression: [
-                    "少",
-                    "中"
-                ],
-                Asset: ["Liquid_Luzi"],
-            },
-        ],
         Liquid2_Luzi: [
             {
                 Group: "Liquid2_Luzi",
@@ -1778,10 +1737,8 @@
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
-            AssetFemale3DCG.push(addAssetGroup.Liquid_Luzi[0])
             AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
             AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
             if (!isAssetAdded2) {
@@ -1823,7 +1780,6 @@
                     ['Gloves_笨笨蛋Luzi', '🍔手套2'],
                     ['Mask_笨笨蛋Luzi', '🍔面具2'],
                     ['Wings_笨笨蛋Luzi', '🍔翅膀2'],
-                    ['MISSING ASSETGROUP DESCRIPTION: Liquid_Luzi', '🍔液体'],
                     ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔液体2_Luzi'],
                     ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔身体涂画2'],
                 ]);
@@ -1842,7 +1798,6 @@
                     ['Gloves_笨笨蛋Luzi', '🍔Gloves2'],
                     ['Mask_笨笨蛋Luzi', '🍔Mask2'],
                     ['Wings_笨笨蛋Luzi', '🍔Wings2'],
-                    ['MISSING ASSETGROUP DESCRIPTION: Liquid_Luzi', '🍔Liquid'],
                     ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔Liquid2_Luzi'],
                     ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔BodyMarkings2'],
                 ]);
