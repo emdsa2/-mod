@@ -2456,7 +2456,7 @@
             ElementValue("InputChat", "/分享");
             return; // 拦截后续处理
         };
-        next(args);
+        return next(args);
     });
 
     //============================================================
