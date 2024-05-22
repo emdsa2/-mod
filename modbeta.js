@@ -1016,6 +1016,10 @@
                     },
                 ],
             },
+            {
+                Name: "树_Luzi", Random: false,
+                Top: -110, Left: 0,
+            },
         ],
         ItemAddon: [
             {
