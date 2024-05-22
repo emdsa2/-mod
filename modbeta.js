@@ -217,17 +217,6 @@
     // ================================================================================
     // ================================================================================
     const addAsset = {
-        Hat: [
-            {
-                Name: "修女头饰_Luzi", Random: false,
-                Top: -110, Left: 0,
-                Layer: [
-                    { Name: "前面", Priority: 55, },
-                    { Name: "后面", Priority: 4, },
-                    { Name: "后面2", Priority: 3, },
-                ],
-            },
-        ],
         Glasses: [
             {
                 Name: "单边眼镜左_Luzi", Random: false,
@@ -271,147 +260,6 @@
                     },
                     {
                         Name: "蝴蝶结",
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                        },
-                    },
-                ],
-            },
-            {
-                Name: "修女_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
-                Prerequisite: ["HasBreasts"],
-                Layer: [
-                    {
-                        Name: "衣服",
-                        Priority: 32,
-                        PoseMapping: {
-                            TapedHands: "TapedHands",
-                            Yoked: "Yoked", OverTheHead: "OverTheHead",
-                            BackBoxTie: "BackBoxTie",
-                            BackElbowTouch: "BackBoxTie",
-                            BackCuffs: "BackBoxTie",
-                        },
-                    },
-                    {
-                        Name: "带子",
-                        Priority: 33,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                        },
-                    },
-                    {
-                        Name: "披肩",
-                        Priority: 34,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "Yoked", OverTheHead: "OverTheHead",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                        },
-                    },
-                    {
-                        Name: "后面",
-                        CopyLayerColor: "衣服",
-                        Priority: 5,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: ""
-                        },
-                    },
-                    {
-                        Name: "后面2",
-                        Priority: 4,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                        },
-                    },
-                ],
-            },
-            {
-                Name: "圣诞_Luzi", Random: false, Gender: "F",
-                Top: 0, Left: 0,
-                Prerequisite: ["HasBreasts"],
-                Layer: [
-                    {
-                        Name: "蝴蝶结", Priority: 33,
-                        PoseMapping: {
-                            TapedHands: "TapedHands",
-                            Yoked: "Yoked", OverTheHead: "Yoked",
-                            BackBoxTie: "Yoked",
-                            BackElbowTouch: "Yoked",
-                            BackCuffs: "Yoked",
-                        },
-                    },
-                    {
-                        Name: "披肩", Priority: 33,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "Yoked", OverTheHead: "Yoked",
-                            BackBoxTie: "Yoked",
-                            BackElbowTouch: "Yoked",
-                            BackCuffs: "Yoked",
-                        },
-                    },
-                    {
-                        Name: "披肩绒毛", Priority: 34,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "Yoked", OverTheHead: "Yoked",
-                            BackBoxTie: "Yoked",
-                            BackElbowTouch: "Yoked",
-                            BackCuffs: "Yoked",
-                        },
-                    },
-                    {
-                        Name: "绒毛", Priority: 32,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                        },
-                    },
-                    {
-                        Name: "条纹", Priority: 33,
-                        PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
-                        },
-                    },
-                    {
-                        Name: "布料", Priority: 31,
-                        PoseMapping: {
-                            TapedHands: "TapedHands",
-                            Yoked: "Yoked", OverTheHead: "Yoked",
-                            BackBoxTie: "Yoked",
-                            BackElbowTouch: "Yoked",
-                            BackCuffs: "Yoked",
-                        },
-                    },
-                    {
-                        Name: "打底",
-                        Priority: 31,
                         PoseMapping: {
                             TapedHands: "",
                             Yoked: "", OverTheHead: "",
@@ -533,32 +381,6 @@
                 DefaultColor: ["#E975A0"],
             },
         ],
-        Bra: [
-            {
-                Name: "LeatherVestSuit",
-                Gender: "F",
-                Top: 0,
-                Left: 0,
-                Hide: ["ItemNipples"],
-                Prerequisite: ["HasBreasts"],
-                Layer: [
-                    {
-                        Name: "Leather",
-                        PoseMapping: {
-                            Hogtied: "Hogtied",
-                            AllFours: PoseType.HIDE,
-                        },
-                    },
-                    {
-                        Name: "Silk",
-                        PoseMapping: {
-                            Hogtied: "Hogtied",
-                            AllFours: PoseType.HIDE,
-                        },
-                    },
-                ],
-            },
-        ],
         TailStraps: [
             {
                 Name: "穿戴式狗尾镜像_Luzi", Random: false, Top: -100, Left: 0,
@@ -588,48 +410,6 @@
                     { Name: "蝴蝶结" },
                     { Name: "铃铛" },
                 ],
-            },
-        ],
-        Wings: [
-            {
-                Name: "蝴蝶结背饰_Luzi", Random: false,
-                Top: -110, Left: 0,
-            },
-        ],
-        HairAccessory1: [
-            {
-                Name: "奶牛耳_Luzi", Random: false,
-                Top: 0, Left: 0,
-                Layer: [
-                    { Name: "牛耳", Priority: 40, },
-                    { Name: "牛角", Priority: 55, },
-                ],
-            },
-            {
-                Name: "角5_Luzi", Random: false,
-                Top: 0, Left: 0,
-            },
-            {
-                Name: "角6_Luzi", Random: false,
-                Top: 0, Left: 0,
-            },
-        ],
-        HairAccessory2: [
-            {
-                Name: "奶牛耳_Luzi", Random: false,
-                Top: 0, Left: 0,
-                Layer: [
-                    { Name: "牛耳", Priority: 40, },
-                    { Name: "牛角", Priority: 55, },
-                ],
-            },
-            {
-                Name: "角5_Luzi", Random: false,
-                Top: 0, Left: 0,
-            },
-            {
-                Name: "角6_Luzi", Random: false,
-                Top: 0, Left: 0,
             },
         ],
         ItemHandheld: [
@@ -662,25 +442,6 @@
                     BackCuffs: "Hide",
                     AllFours: "Hide",
                 },
-            },
-        ],
-        ItemHood: [
-            {
-                Name: "纸袋_Luzi", Random: false,
-                Top: 0, Left: 0,
-                Layer: [
-                    { Name: "胶带", Priority: 58, },
-                    { Name: "字", Priority: 57, },
-                    { Name: "A4纸", Priority: 56, },
-                    { Name: "纸袋", Priority: 55, },
-                ],
-            },
-            {
-                Name: "符_Luzi", Random: false,
-                Top: 0, Left: 0,
-                Layer: [
-                    { Name: "符", Priority: 52, },
-                ],
             },
         ],
         ItemArms: [
