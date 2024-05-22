@@ -1728,12 +1728,7 @@
             }
         });
     }
-    let isAssetAdded2 = false;
-    if (!isAssetAdded2) {
-        addExtraOutfitsToAssets();
-        addExtraOutfitsToAssets2();
-        isAssetAdded2 = true;
-    }
+
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
@@ -1741,11 +1736,10 @@
             AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
-            if (!isAssetAdded2) {
-                addExtraOutfitsToAssets();
-                addExtraOutfitsToAssets2();
-                isAssetAdded2 = true;
-            }
+
+            addExtraOutfitsToAssets();
+            addExtraOutfitsToAssets2();
+            
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
@@ -2117,60 +2111,79 @@
     // ================================================================================
     // 头顶的小裙子标识
 
+    // 常量定义，避免硬编码
+    const HIDDEN_BETA_MESSAGE = "╰(*°▽°*)╯BETA";
+    const HIDDEN_ECHO_MESSAGE = "╰(*°▽°*)╯";
+    const HIDDEN_ECHO2_MESSAGE = "(._.)";
+
+    // 对输入进行清理和验证的函数
+    function sanitizeText(text) {
+        // 假设实现：这里可以添加更多的验证逻辑
+        return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    // 查找并返回与给定成员号相匹配的角色对象，如果找不到则返回undefined
+    function findCharacterByMemberNumber(memberNumber) {
+        return ChatRoomCharacterDrawlist.find(C => C.MemberNumber === memberNumber);
+    }
+
     function Hidden(text) {
+        // 清理和验证输入
+        const sanitizedText = sanitizeText(text);
         ServerSend("ChatRoomChat", {
-            Content: `${text}`,
+            Content: sanitizedText,
             Type: "Hidden",
-        })
-    };
+        });
+    }
 
-    mod.hookFunction("ChatRoomSync", 10, (args, next) => {
-        setTimeout(() => {
-            Hidden("╰(*°▽°*)╯BETA");
-        }, 2000);
-        next(args);
-    });
-
-    mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
-        setTimeout(() => {
-            Hidden("╰(*°▽°*)╯BETA");
-        }, 2000);
-        next(args);
-    });
-
-    mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
-        let data = args[0]
-        if (data.Content === 'ServerEnter') {
+    // 使用try-catch包裹可能抛出异常的代码
+    try {
+        mod.hookFunction("ChatRoomSync", 10, (args, next) => {
             setTimeout(() => {
-                Hidden("╰(*°▽°*)╯BETA");
+                Hidden(HIDDEN_BETA_MESSAGE);
             }, 2000);
-        }
-        next(args)
-    });
+            next(args);
+        });
 
-    let CRCharacter;
-    mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
-        const data = args[0];
-        if (data.Content === '╰(*°▽°*)╯BETA' && data.Type === 'Hidden') {
-            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            if (CRCharacter) {
-                CRCharacter.ECHOBETA = true;
+        mod.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
+            setTimeout(() => {
+                Hidden(HIDDEN_BETA_MESSAGE);
+            }, 2000);
+            next(args);
+        });
+
+        mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
+            let data = args[0];
+            if (data.Content === 'ServerEnter') {
+                setTimeout(() => {
+                    Hidden(HIDDEN_BETA_MESSAGE);
+                }, 2000);
             }
-        }
-        if (data.Content === '╰(*°▽°*)╯' && data.Type === 'Hidden') {
-            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            if (CRCharacter) {
-                CRCharacter.ECHO = true;
+            next(args);
+        });
+
+        let CRCharacter;
+        mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
+            const data = args[0];
+            // 使用映射关系来优化代码的可维护性和可扩展性
+            const messageHandlers = {
+                [HIDDEN_BETA_MESSAGE]: () => CRCharacter.ECHOBETA = true,
+                [HIDDEN_ECHO_MESSAGE]: () => CRCharacter.ECHO = true,
+                [HIDDEN_ECHO2_MESSAGE]: () => CRCharacter.ECHO2 = true,
+            };
+
+            if (messageHandlers[data.Content] && data.Type === 'Hidden') {
+                CRCharacter = findCharacterByMemberNumber(data.Sender);
+                if (CRCharacter) {
+                    messageHandlers[data.Content]();
+                }
             }
-        }
-        if (data.Content === '(._.)' && data.Type === 'Hidden') {
-            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            if (CRCharacter) {
-                CRCharacter.ECHO2 = true;
-            }
-        }
-        next(args);
-    });
+            next(args);
+        });
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+
 
     mod.hookFunction("ChatRoomDrawCharacterStatusIcons", 10, (args, next) => {
         if (ChatRoomHideIconState == 0) {

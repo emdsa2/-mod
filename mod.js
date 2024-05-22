@@ -1729,12 +1729,7 @@
             }
         });
     }
-    let isAssetAdded2 = false;
-    if (!isAssetAdded2) {
-        addExtraOutfitsToAssets();
-        addExtraOutfitsToAssets2();
-        isAssetAdded2 = true;
-    }
+
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
@@ -1742,11 +1737,10 @@
             AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
-            if (!isAssetAdded2) {
-                addExtraOutfitsToAssets();
-                addExtraOutfitsToAssets2();
-                isAssetAdded2 = true;
-            }
+
+            addExtraOutfitsToAssets();
+            addExtraOutfitsToAssets2();
+            
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
