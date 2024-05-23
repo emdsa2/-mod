@@ -217,6 +217,13 @@
     // ================================================================================
     // ================================================================================
     const addAsset = {
+        ItemHood: [
+            {
+                Name: "绷带头部_Luzi", Random: false,
+                Priority: 51,
+                Top: 0, Left: 0,
+            },
+        ],
         Glasses: [
             {
                 Name: "单边眼镜左_Luzi", Random: false,
@@ -1504,7 +1511,7 @@
 
             addExtraOutfitsToAssets();
             addExtraOutfitsToAssets2();
-            
+
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
 
