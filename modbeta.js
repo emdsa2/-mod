@@ -224,6 +224,12 @@
                 Top: 0, Left: 0,
             },
         ],
+        Wings: [
+            {
+                Name: "蝴蝶结背饰_Luzi", Random: false,
+                Top: -110, Left: 0,
+            },
+        ],
         Glasses: [
             {
                 Name: "单边眼镜左_Luzi", Random: false,
