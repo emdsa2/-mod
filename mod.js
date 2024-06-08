@@ -141,8 +141,24 @@
             if (data.includes("ItemAddon/被子右边")) {
                 args[2] += 8;
             }
-        }
 
+            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Legs")) {
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Legs.png";
+            }
+            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Butt")) {
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Butt.png";
+            }
+            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Pussy")) {
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Pussy.png";
+            }
+            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Hands")) {
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Hands.png";
+            }
+            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Feet")) {
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Feet.png";
+            }
+        }
+        
         next(args);
     });
 
