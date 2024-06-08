@@ -223,6 +223,15 @@
                 Priority: 51,
                 Top: 0, Left: 0,
             },
+            {
+                Name: "毛毯头部_Luzi", Random: false,
+                Top: 0, Left: 0,
+                Hide: ["HairBack"],
+                Layer: [
+                    { Name: "上", Priority: 52, },
+                    { Name: "下", Priority: 1, },
+                ],
+            },
         ],
         Wings: [
             {
