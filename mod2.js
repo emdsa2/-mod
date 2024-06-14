@@ -1702,16 +1702,16 @@
         ["SourceCharacter takes a selfie.", "SourceCharacter自拍了一张照片."],
         ['Wag Tail', '摇晃尾巴'],
         ['SourceCharacter wags PronounPossessive tail.', 'SourceCharacter摇晃PronounPossessive的尾巴.'],
-        ['SourceCharacter wraps TargetCharacter in a therapeutic self-hug.', 'SourceCharacter以一个治疗性的自我拥抱包裹着TargetCharacter.']
-        ['SourceCharacter releases PronounPossessive own neck.', 'SourceCharacter松开了自己的脖子.']
-        ['Clamp Hand over Eyes', '用手捂住眼睛.']
-        ["SourceCharacter clamps her hand over TargetCharacter's eyes.", 'SourceCharacter将她的手捂在TargetCharacter的眼睛上.']
-        ['SourceCharacter clamps her hand over PronounPossessive own eyes.', 'SourceCharacter将她的手捂在她自己的眼睛上.']
-        ['SourceCharacter releases PronounPossessive own mouth.', 'SourceCharacter放开了自己的嘴.']
-        ['Release Eyes', '放开眼睛']
-        ["SourceCharacter removes their hand from TargetCharacter's eyes.", 'SourceCharacter 将手从TargetCharacter的眼睛上移开.']
-        ['SourceCharacter pulls their hand away from PronounPossessive eyes.', 'SourceCharacter 将手从自己的眼睛旁抽走.']
-        ['SourceCharacter shoves PronounPossessive foot into…rabbing their tongue with PronounPossessive toes.', 'SourceCharacter 将脚塞入……用脚趾抓挠自己的舌头.']
+        ['SourceCharacter wraps TargetCharacter in a therapeutic self-hug.', 'SourceCharacter以一个治疗性的自我拥抱包裹着TargetCharacter.'],
+        ['SourceCharacter releases PronounPossessive own neck.', 'SourceCharacter松开了自己的脖子.'],
+        ['Clamp Hand over Eyes', '用手捂住眼睛.'],
+        ["SourceCharacter clamps her hand over TargetCharacter's eyes.", 'SourceCharacter将她的手捂在TargetCharacter的眼睛上.'],
+        ['SourceCharacter clamps her hand over PronounPossessive own eyes.', 'SourceCharacter将她的手捂在她自己的眼睛上.'],
+        ['SourceCharacter releases PronounPossessive own mouth.', 'SourceCharacter放开了自己的嘴.'],
+        ['Release Eyes', '放开眼睛'],
+        ["SourceCharacter removes their hand from TargetCharacter's eyes.", 'SourceCharacter 将手从TargetCharacter的眼睛上移开.'],
+        ['SourceCharacter pulls their hand away from PronounPossessive eyes.', 'SourceCharacter 将手从自己的眼睛旁抽走.'],
+        ['SourceCharacter shoves PronounPossessive foot into…rabbing their tongue with PronounPossessive toes.', 'SourceCharacter 将脚塞入……用脚趾抓挠自己的舌头.'],
     
     ]);
 
