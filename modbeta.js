@@ -1698,16 +1698,10 @@
             // ========================================================
             isAssetAdded = true;
         }
-        AssetFemale3DCG.forEach(group => {
-            if (group.Group.includes("_笨笨蛋Luzi")) {
-                group.Asset.forEach(item => InventoryAdd(Player, item.Name, group.Group, true));
-            }
-        });
-        AssetFemale3DCG.forEach(group => {
-            if (group.Group.includes("_笨笨笨蛋Luzi2")) {
-                group.Asset.forEach(item => InventoryAdd(Player, item.Name, group.Group, true));
-            }
-        });
+
+        Asset.map(i=>({Name:i.Name,Group:i.Group.Name}))
+        InventoryAddMany(Player, Asset.map(i=>({Name:i.Name,Group:i.Group.Name})))
+        
         CraftingItemListBuild()
 
         next(args);
