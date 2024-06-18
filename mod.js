@@ -1541,8 +1541,8 @@
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
 
-            addExtraOutfitsToAssets();
-            addExtraOutfitsToAssets2();
+            // addExtraOutfitsToAssets();
+            // addExtraOutfitsToAssets2();
 
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
