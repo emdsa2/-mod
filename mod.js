@@ -142,6 +142,10 @@
                 args[2] += 8;
             }
 
+            if (data.includes("Socks/KneelingSpread/踩脚袜_Luzi")) {
+                args[2] = 0;
+            }
+
             if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Legs")) {
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Legs.png";
             }
@@ -1541,8 +1545,8 @@
             AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
             AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
 
-            // addExtraOutfitsToAssets();
-            // addExtraOutfitsToAssets2();
+            addExtraOutfitsToAssets();
+            addExtraOutfitsToAssets2();
 
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
@@ -1700,8 +1704,10 @@
             isAssetAdded = true;
         }
 
+        Asset.map(i=>({Name:i.Name,Group:i.Group.Name}));
+        InventoryAddMany(Player, Asset.map(i=>({Name:i.Name,Group:i.Group.Name})));
         
-        CraftingItemListBuild()
+        CraftingItemListBuild();
 
         next(args);
 

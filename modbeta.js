@@ -137,6 +137,10 @@
                 args[2] = 0;
             }
 
+            if (data.includes("Socks/KneelingSpread/踩脚袜_Luzi")) {
+                args[2] = 0;
+            }
+
             if (data.includes("ItemAddon/被子右边")) {
                 args[2] += 8;
             }
@@ -1699,10 +1703,10 @@
             isAssetAdded = true;
         }
 
-        Asset.map(i=>({Name:i.Name,Group:i.Group.Name}))
-        InventoryAddMany(Player, Asset.map(i=>({Name:i.Name,Group:i.Group.Name})))
+        Asset.map(i=>({Name:i.Name,Group:i.Group.Name}));
+        InventoryAddMany(Player, Asset.map(i=>({Name:i.Name,Group:i.Group.Name})));
         
-        CraftingItemListBuild()
+        CraftingItemListBuild();
 
         next(args);
 
