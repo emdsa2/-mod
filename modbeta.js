@@ -137,12 +137,12 @@
                 args[2] = 0;
             }
 
-            if (data.includes("Socks/KneelingSpread/踩脚袜_Luzi")) {
-                args[2] = 0;
-            }
-
             if (data.includes("ItemAddon/被子右边")) {
                 args[2] += 8;
+            }
+
+            if (data.includes("Socks/KneelingSpread/踩脚袜_Luzi")) {
+                args[2] = 0;
             }
 
             if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Legs")) {
@@ -720,6 +720,55 @@
                     { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
+            {
+                Name: "触手服_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Prerequisite: ["HasBreasts"],
+                DynamicBeforeDraw: true,
+                DynamicScriptDraw: true,
+                Layer: [
+                    {
+                        AllowTypes: { d: 0 },
+                        Name: "触手服", Priority: 15,
+                        PoseMapping: { AllFours: "Hide", Hogtied: 'Hogtied', },
+                    },
+                    {
+                        AllowTypes: { s: 1 },
+                        Name: "上衣", Priority: 16,
+                        PoseMapping: { AllFours: "Hide", Hogtied: 'Hogtied', },
+                    },
+                    {
+                        AllowTypes: { d: [1, 2] },
+                        Name: "触手服开", Priority: 15,
+                        PoseMapping: { AllFours: "Hide", Hogtied: 'Hogtied', },
+                    },
+                    {
+                        ParentGroup: "ItemVulva",
+                        AllowTypes: { d: 2 },
+                        Name: "Pussy", Priority: 13,
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                    {
+                        ParentGroup: "ItemVulva",
+                        AllowTypes: { d: 2 },
+                        Name: "PussyMask", Priority: 14,
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                    {
+                        Name: "触手", Priority: 13,
+                        AllowTypes: { d: 2 },
+                        ParentGroup: "ItemVulva",
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                    {
+                        Name: "触手背后", Priority: 2,
+                        AllowTypes: { d: 2 },
+                        ParentGroup: "ItemVulva",
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                ],
+            },
         ],
         ItemTorso2: [
             {
@@ -916,6 +965,55 @@
                     { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
                 ],
             },
+            {
+                Name: "触手服_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Prerequisite: ["HasBreasts"],
+                DynamicBeforeDraw: true,
+                DynamicScriptDraw: true,
+                Layer: [
+                    {
+                        AllowTypes: { d: 0 },
+                        Name: "触手服", Priority: 15,
+                        PoseMapping: { AllFours: "Hide", Hogtied: 'Hogtied', },
+                    },
+                    {
+                        AllowTypes: { s: 1 },
+                        Name: "上衣", Priority: 16,
+                        PoseMapping: { AllFours: "Hide", Hogtied: 'Hogtied', },
+                    },
+                    {
+                        AllowTypes: { d: [1, 2] },
+                        Name: "触手服开", Priority: 15,
+                        PoseMapping: { AllFours: "Hide", Hogtied: 'Hogtied', },
+                    },
+                    {
+                        ParentGroup: "ItemVulva",
+                        AllowTypes: { d: 2 },
+                        Name: "Pussy", Priority: 13,
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                    {
+                        ParentGroup: "ItemVulva",
+                        AllowTypes: { d: 2 },
+                        Name: "PussyMask", Priority: 14,
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                    {
+                        Name: "触手", Priority: 13,
+                        AllowTypes: { d: 2 },
+                        ParentGroup: "ItemVulva",
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                    {
+                        Name: "触手背后", Priority: 2,
+                        AllowTypes: { d: 2 },
+                        ParentGroup: "ItemVulva",
+                        PoseMapping: { AllFours: "Hide", },
+                    },
+                ],
+            },
         ],
         ItemDevices: [
             {
@@ -1084,6 +1182,48 @@
                 Layer: [
                     { Name: "外" },
                     { Name: "内" }
+                ],
+            },
+        ],
+        ItemVulva: [
+            {
+                Name: "更多有线跳蛋_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Prerequisite: ["HasBreasts", "AccessVulva"],
+                Priority: 14,
+                PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Kneel: 'Kneel', KneelingSpread: 'KneelingSpread', LegsClosed: 'LegsClosed' },
+                DefaultColor: ["Default", "Default", "Default", "#3B3B3B", "Default", "Default", "#3B3B3B"],
+                Layer: [
+                    {
+                        Name: "跳蛋1",
+                        AllowTypes: { n: [0, 1, 2, 3, 4] },
+                    },
+                    {
+                        Name: "跳蛋2",
+                        AllowTypes: { n: [1, 2, 3, 4] },
+                    },
+                    {
+                        Name: "跳蛋5",
+                        AllowTypes: { n: [4] },
+                    },
+                    {
+                        Name: "绑带5",
+                        ParentGroup: "BodyLower",
+                        AllowTypes: { n: [4] },
+                    },
+                    {
+                        Name: "跳蛋3",
+                        AllowTypes: { n: [2, 3, 4] },
+                    },
+                    {
+                        Name: "跳蛋4",
+                        AllowTypes: { n: [3, 4] },
+                    },
+                    {
+                        Name: "绑带",
+                        ParentGroup: "BodyLower",
+                    },
                 ],
             },
         ],
@@ -1337,84 +1477,99 @@
             },
         ],
     };
-
-    const dialogMap = new Map([
-        ['ItemDevices玻璃罐子_LuziSelectBase', '选择罐子配置'],
-        ['ItemDevices玻璃罐子_LuziSelect窗户', '设置窗户'],
-        ['ItemDevices玻璃罐子_LuziModule窗户', '窗户'],
-        ['ItemDevices玻璃罐子_LuziOptionc0', '无'],
-        ['ItemDevices玻璃罐子_LuziOptionc1', '密封'],
-        ['ItemDevices玻璃罐子_LuziSetc0', 'SourceCharacter打开了DestinationCharacter的罐子'],
-        ['ItemDevices玻璃罐子_LuziSetc1', 'SourceCharacter封上了DestinationCharacter的罐子'],
-        ['ItemDevices玻璃罐子_LuziSelect腿部拘束', '设置腿部拘束'],
-        ['ItemDevices玻璃罐子_LuziModule腿部拘束', '腿部拘束'],
-        ['ItemDevices玻璃罐子_LuziOptiont0', '无'],
-        ['ItemDevices玻璃罐子_LuziOptiont1', '腿拘束'],
-        ['ItemDevices玻璃罐子_LuziSett0', "SourceCharacter移除了DestinationCharacter双腿的拘束"],
-        ['ItemDevices玻璃罐子_LuziSett1', "SourceCharacter将DestinationCharacter的双腿束缚在一起"],
-        ['ItemDevices玻璃罐子_LuziSelect手臂拘束', '设置手臂拘束'],
-        ['ItemDevices玻璃罐子_LuziModule手臂拘束', '手臂拘束'],
-        ['ItemDevices玻璃罐子_LuziOptions0', '无'],
-        ['ItemDevices玻璃罐子_LuziOptions1', '手臂拘束'],
-        ['ItemDevices玻璃罐子_LuziSets0', "SourceCharacter移除了DestinationCharacter手腕和手肘的拘束"],
-        ['ItemDevices玻璃罐子_LuziSets1', "SourceCharacter将DestinationCharacter的手腕和手肘束缚到她的身后"],
-        ['ItemDevices玻璃罐子_LuziSelect管道', '设置管道'], ['ItemDevices玻璃罐子_LuziModule管道', '管道'],
-        ['ItemDevices玻璃罐子_LuziOptiongz0', '无'], ['ItemDevices玻璃罐子_LuziOptiongz1', '连接身体'],
-        ['ItemDevices玻璃罐子_LuziSetgz0', 'SourceCharacter移除了连接DestinationCharacter的身体的管子'],
-        ['ItemDevices玻璃罐子_LuziSetgz1', 'SourceCharacter将管子连接进了DestinationCharacter的身体'],
-        ['ItemDevices玻璃罐子_LuziSelect液体', '设置液体'], ['ItemDevices玻璃罐子_LuziModule液体', '液体'],
-        ['ItemDevices玻璃罐子_LuziOptionyt0', '无'], ['ItemDevices玻璃罐子_LuziOptionyt1', '注入液体'],
-        ['ItemDevices玻璃罐子_LuziSetyt0', 'SourceCharacter排空了DestinationCharacter身体和罐子里的液体'],
-        ['ItemDevices玻璃罐子_LuziSetyt1', 'DestinationCharacter的身体和罐子充满了液体'],
-        ['ItemDevices玻璃罐子_LuziSelect快感模块', '设置快感模块'],
-        ['ItemDevices玻璃罐子_LuziModule快感模块', '快感模块'],
-        ['ItemDevices玻璃罐子_LuziOptionk0', '关闭'],
-        ['ItemDevices玻璃罐子_LuziOptionk1', '低'], ['ItemDevices玻璃罐子_LuziOptionk2', '一般'],
-        ['ItemDevices玻璃罐子_LuziOptionk3', '高'], ['ItemDevices玻璃罐子_LuziOptionk4', '最多'],
-        ['ItemDevices玻璃罐子_LuziSetk0', "插在DestinationCharacter体内的振动装置停止振动"],
-        ['ItemDevices玻璃罐子_LuziSetk1', "插在DestinationCharacter体内的振动装置轻微逗弄起来"],
-        ['ItemDevices玻璃罐子_LuziSetk2', "插在DestinationCharacter体内的振动装置带温和嗡鸣着"],
-        ['ItemDevices玻璃罐子_LuziSetk3', "插在DestinationCharacter体内的振动装置猛烈地颤动"],
-        ['ItemDevices玻璃罐子_LuziSetk4', "插在DestinationCharacter体内的振动装置以最大速度振动着"],
-        ['ItemDevices玻璃罐子_LuziSelect电击模块', '设置电击模块'],
-        ['ItemDevices玻璃罐子_LuziModule电击模块', '电击模块'],
-        ['ItemDevices玻璃罐子_LuziOptiond0', '关闭'],
-        ['ItemDevices玻璃罐子_LuziOptiond1', '低'],
-        ['ItemDevices玻璃罐子_LuziOptiond2', '一般'],
-        ['ItemDevices玻璃罐子_LuziOptiond3', '高'],
-        ['ItemDevices玻璃罐子_LuziSetd0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置关闭了'],
-        ['ItemDevices玻璃罐子_LuziSetd1', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级1'],
-        ['ItemDevices玻璃罐子_LuziSetd2', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级2'],
-        ['ItemDevices玻璃罐子_LuziSetd3', 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级3'],
-        ['ItemDevices玻璃罐子_LuziSelect高潮锁', '设置高潮锁'], ['ItemDevices玻璃罐子_LuziModule高潮锁', '高潮锁'],
-        ['ItemDevices玻璃罐子_LuziOptiong0', '允许'], ['ItemDevices玻璃罐子_LuziOptiong1', '寸止'],
-        ['ItemDevices玻璃罐子_LuziOptiong2', '拒绝'],
-        ['ItemDevices玻璃罐子_LuziSetg0', 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮'],
-        ['ItemDevices玻璃罐子_LuziSetg1', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式'],
-        ['ItemDevices玻璃罐子_LuziSetg2', 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式'],
-
-        ['ItemDevices窝瓜_LuziSelect', '选择窝配置'],
-        ['ItemDevices窝瓜_LuziSet没盖子', 'SourceCharacter推开了DestinationCharacter的盖子'],
-        ['ItemDevices窝瓜_LuziSet有盖子', 'SourceCharacter盖上了DestinationCharacter的盖子'],
-
-        ['ItemTorso2拘束套装_LuziSelect', '选择配置'],
-        ['ItemTorso2拘束套装_LuziSet无', ''],
-        ['ItemTorso2拘束套装_LuziSet乳胶衣', ''],
-        ['ItemTorso2拘束套装_LuziSet透视紧身衣', ''],
-        ['ItemTorso2拘束套装_LuziSet紧身衣', ''],
-
-        ['SuitLower鱼鱼尾_LuziSelectBase', '选择配置'],
-        ['SuitLower鱼鱼尾_LuziSelect鱼鳍', '设置鱼鳍'],
-        ['SuitLower鱼鱼尾_LuziSelect鱼尾', '设置鱼尾'],
-
-        ['SuitLower鱼鱼尾_LuziModule鱼鳍', '鱼鳍'],
-        ['SuitLower鱼鱼尾_LuziOptionq0', '无'],
-        ['SuitLower鱼鱼尾_LuziOptionq1', '有'],
-
-        ['SuitLower鱼鱼尾_LuziModule鱼尾', '鱼尾'],
-        ['SuitLower鱼鱼尾_LuziOptionw0', '透明'],
-        ['SuitLower鱼鱼尾_LuziOptionw1', '不透明'],
-    ]);
+    AssetFemale3DCGExtended.ItemVulva.更多有线跳蛋_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        Modules: [
+            {
+                Name: "跳蛋开关",
+                DrawImages: false,
+                Key: "o",
+                Options: [{ Property: { Intensity: -1, Effect: ["Egged"] } }, { Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 5, Effect: ["Egged", "Vibrating"] } },],
+            },
+            {
+                Name: "跳蛋数量",
+                DrawImages: false,
+                Key: "n",
+                Options: [{}, {}, {}, {}, {},],
+            },
+        ],
+    };
+    AssetFemale3DCGExtended.ItemTorso.触手服_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        ChangeWhenLocked: false,
+        Modules: [
+            {
+                Name: "触手状态",
+                DrawImages: false,
+                Key: "d",
+                Options: [
+                    { DrawImages: false, },
+                    { DrawImages: false, },
+                    {
+                        DrawImages: false,
+                        HasSubscreen: true,
+                        Prerequisite: ["AccessVulva", "VulvaEmpty"],
+                        Property: {
+                            Effect: [E.BlockWardrobe, E.VulvaShaft],
+                        },
+                        ArchetypeConfig: {
+                            Archetype: ExtendedArchetype.VIBRATING,
+                            ScriptHooks: {
+                                ScriptDraw: AssetsItemTorso触手服_LuziScriptDrawHook,
+                            },
+                        },
+                    },
+                ],
+            },
+            {
+                Name: "上衣开关",
+                DrawImages: false,
+                Key: "s",
+                Options: [
+                    { DrawImages: false, },
+                    { DrawImages: false, },
+                ],
+            },
+        ],
+    };
+    AssetFemale3DCGExtended.ItemTorso2.触手服_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        ChangeWhenLocked: false,
+        Modules: [
+            {
+                Name: "触手状态",
+                DrawImages: false,
+                Key: "d",
+                Options: [
+                    { DrawImages: false, },
+                    { DrawImages: false, },
+                    {
+                        DrawImages: false,
+                        HasSubscreen: true,
+                        Prerequisite: ["AccessVulva", "VulvaEmpty"],
+                        Property: {
+                            Effect: [E.BlockWardrobe, E.VulvaShaft],
+                        },
+                        ArchetypeConfig: {
+                            Archetype: ExtendedArchetype.VIBRATING,
+                            ScriptHooks: {
+                                ScriptDraw: AssetsItemTorso触手服_LuziScriptDrawHook,
+                            },
+                        },
+                    },
+                ],
+            },
+            {
+                Name: "上衣开关",
+                DrawImages: false,
+                Key: "s",
+                Options: [
+                    { DrawImages: false, },
+                    { DrawImages: false, },
+                ],
+            },
+        ],
+    };
 
     function mergeAddAssetIntoFemale3DCGAssets() { // 塞进 AssetFemale3DCG
         for (const groupName in addAsset) {
@@ -1698,21 +1853,199 @@
             }
 
             // ========================================================
-            dialogMap.forEach((value, key) => { PlayerDialog.set(key, value); });
+
+            let addAssetStringSCV = {
+                ItemTorso触手服_LuziSelectBase: '选择配置',
+                ItemTorso触手服_LuziSelect触手状态: '选择触手状态',
+                ItemTorso触手服_LuziSelect上衣开关: '选择上衣开关',
+                ItemTorso触手服_LuziModule触手状态: '选择触手状态',
+                ItemTorso触手服_LuziModule上衣开关: '选择上衣开关',
+                ItemTorso触手服_LuziOptiond0: '封闭阴部',
+                ItemTorso触手服_LuziOptiond1: '暴露阴部',
+                ItemTorso触手服_LuziOptiond2: '触手插入',
+                ItemTorso触手服_LuziOptions0: '上衣打开',
+                ItemTorso触手服_LuziOptions1: '上衣关闭',
+                ItemVulva更多有线跳蛋_LuziSelectBase: '选择配置',
+                ItemVulva更多有线跳蛋_LuziSelect跳蛋开关: '跳蛋开关',
+                ItemVulva更多有线跳蛋_LuziSelect跳蛋数量: '跳蛋数量',
+                ItemVulva更多有线跳蛋_LuziModule跳蛋开关: '跳蛋开关',
+                ItemVulva更多有线跳蛋_LuziModule跳蛋数量: '跳蛋数量',
+                ItemVulva更多有线跳蛋_LuziOptionn0: '1个',
+                ItemVulva更多有线跳蛋_LuziOptionn1: '2个',
+                ItemVulva更多有线跳蛋_LuziOptionn2: '3个',
+                ItemVulva更多有线跳蛋_LuziOptionn3: '4个',
+                ItemVulva更多有线跳蛋_LuziOptionn4: '5个',
+                ItemVulva更多有线跳蛋_LuziOptiono0: '关闭',
+                ItemVulva更多有线跳蛋_LuziOptiono1: '低',
+                ItemVulva更多有线跳蛋_LuziOptiono2: '中',
+                ItemVulva更多有线跳蛋_LuziOptiono3: '高',
+                ItemVulva更多有线跳蛋_LuziOptiono4: '最高',
+                SuitLower鱼鱼尾_LuziSelectBase: '选择配置',
+                SuitLower鱼鱼尾_LuziSelect鱼鳍: '设置鱼鳍',
+                SuitLower鱼鱼尾_LuziSelect鱼尾: '设置鱼尾',
+                SuitLower鱼鱼尾_LuziModule鱼鳍: '鱼鳍',
+                SuitLower鱼鱼尾_LuziOptionq0: '无',
+                SuitLower鱼鱼尾_LuziOptionq1: '有',
+                SuitLower鱼鱼尾_LuziModule鱼尾: '鱼尾',
+                SuitLower鱼鱼尾_LuziOptionw0: '透明',
+                SuitLower鱼鱼尾_LuziOptionw1: '不透明',
+                ItemTorso2拘束套装_LuziSelect: '选择配置',
+                ItemTorso2拘束套装_LuziSet无: '',
+                ItemTorso2拘束套装_LuziSet乳胶衣: '',
+                ItemTorso2拘束套装_LuziSet透视紧身衣: '',
+                ItemTorso2拘束套装_LuziSet紧身衣: '',
+                ItemDevices窝瓜_LuziSelect: '选择窝配置',
+                ItemDevices玻璃罐子_LuziSelectBase: '选择罐子配置',
+                ItemDevices玻璃罐子_LuziSelect窗户: '设置窗户',
+                ItemDevices玻璃罐子_LuziModule窗户: '窗户',
+                ItemDevices玻璃罐子_LuziOptionc0: '无',
+                ItemDevices玻璃罐子_LuziOptionc1: '密封',
+                ItemDevices玻璃罐子_LuziSelect腿部拘束: '设置腿部拘束',
+                ItemDevices玻璃罐子_LuziModule腿部拘束: '腿部拘束',
+                ItemDevices玻璃罐子_LuziOptiont0: '无',
+                ItemDevices玻璃罐子_LuziOptiont1: '腿拘束',
+                ItemDevices玻璃罐子_LuziSelect手臂拘束: '设置手臂拘束',
+                ItemDevices玻璃罐子_LuziModule手臂拘束: '手臂拘束',
+                ItemDevices玻璃罐子_LuziOptions0: '无',
+                ItemDevices玻璃罐子_LuziOptions1: '手臂拘束',
+                ItemDevices玻璃罐子_LuziSelect管道: '设置管道',
+                ItemDevices玻璃罐子_LuziModule管道: '管道',
+                ItemDevices玻璃罐子_LuziOptiongz0: '无',
+                ItemDevices玻璃罐子_LuziOptiongz1: '连接身体',
+                ItemDevices玻璃罐子_LuziSelect液体: '设置液体',
+                ItemDevices玻璃罐子_LuziModule液体: '液体',
+                ItemDevices玻璃罐子_LuziOptionyt0: '无',
+                ItemDevices玻璃罐子_LuziOptionyt1: '注入液体',
+                ItemDevices玻璃罐子_LuziSelect快感模块: '设置快感模块',
+                ItemDevices玻璃罐子_LuziModule快感模块: '快感模块',
+                ItemDevices玻璃罐子_LuziOptionk0: '关闭',
+                ItemDevices玻璃罐子_LuziOptionk1: '低',
+                ItemDevices玻璃罐子_LuziOptionk2: '一般',
+                ItemDevices玻璃罐子_LuziOptionk3: '高',
+                ItemDevices玻璃罐子_LuziOptionk4: '最多',
+                ItemDevices玻璃罐子_LuziSelect电击模块: '设置电击模块',
+                ItemDevices玻璃罐子_LuziModule电击模块: '电击模块',
+                ItemDevices玻璃罐子_LuziOptiond0: '关闭',
+                ItemDevices玻璃罐子_LuziOptiond1: '低',
+                ItemDevices玻璃罐子_LuziOptiond2: '一般',
+                ItemDevices玻璃罐子_LuziOptiond3: '高',
+                ItemDevices玻璃罐子_LuziSelect高潮锁: '设置高潮锁',
+                ItemDevices玻璃罐子_LuziModule高潮锁: '高潮锁',
+                ItemDevices玻璃罐子_LuziOptiong0: '允许',
+                ItemDevices玻璃罐子_LuziOptiong1: '寸止',
+                ItemDevices玻璃罐子_LuziOptiong2: '拒绝',
+
+            };
+
+            let addInterfaceCSV = {
+                ItemTorso触手服_LuziSetd0: 'TargetCharacterName的触手服下部的小口逐渐合上,粘连在一起.',
+                ItemTorso触手服_LuziSetd1: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部.',
+                ItemTorso触手服_LuziSetd2: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部,触手服下长出一只湿滑的触手插入了阴道.',
+                ItemTorso触手服_LuziSets0: 'TargetCharacterName的触手服缓慢变化.',
+                ItemTorso触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化.',
+                ItemVulva更多有线跳蛋_LuziSeto0: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为关闭.',
+                ItemVulva更多有线跳蛋_LuziSeto1: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为低.',
+                ItemVulva更多有线跳蛋_LuziSeto2: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为中.',
+                ItemVulva更多有线跳蛋_LuziSeto3: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为高.',
+                ItemVulva更多有线跳蛋_LuziSeto4: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为最高.',
+                ItemVulva更多有线跳蛋_LuziSetn0: 'SourceCharacter将TargetCharacter阴部的跳蛋拉出,仅剩下1个.',
+                ItemVulva更多有线跳蛋_LuziSetn1: 'SourceCharacter摆弄着有线跳蛋,现在TargetCharacter的阴道内有2个跳蛋.',
+                ItemVulva更多有线跳蛋_LuziSetn2: 'SourceCharacter摆弄着有线跳蛋,现在TargetCharacter的阴道内有3个跳蛋.',
+                ItemVulva更多有线跳蛋_LuziSetn3: 'SourceCharacter摆弄着有线跳蛋,现在TargetCharacter的阴道内有4个跳蛋.',
+                ItemVulva更多有线跳蛋_LuziSetn4: 'SourceCharacter摆弄着有线跳蛋,现在TargetCharacter的阴道内有5个跳蛋.',
+                ItemDevices窝瓜_LuziSet没盖子: 'SourceCharacter推开了DestinationCharacter的盖子',
+                ItemDevices窝瓜_LuziSet有盖子: 'SourceCharacter盖上了DestinationCharacter的盖子',
+                ItemDevices玻璃罐子_LuziSetc0: 'SourceCharacter打开了DestinationCharacter的罐子',
+                ItemDevices玻璃罐子_LuziSetc1: 'SourceCharacter封上了DestinationCharacter的罐子',
+                ItemDevices玻璃罐子_LuziSett0: "SourceCharacter移除了DestinationCharacter双腿的拘束",
+                ItemDevices玻璃罐子_LuziSett1: "SourceCharacter将DestinationCharacter的双腿束缚在一起",
+                ItemDevices玻璃罐子_LuziSets0: "SourceCharacter移除了DestinationCharacter手腕和手肘的拘束",
+                ItemDevices玻璃罐子_LuziSets1: "SourceCharacter将DestinationCharacter的手腕和手肘束缚到她的身后",
+                ItemDevices玻璃罐子_LuziSetgz0: 'SourceCharacter移除了连接DestinationCharacter的身体的管子',
+                ItemDevices玻璃罐子_LuziSetgz1: 'SourceCharacter将管子连接进了DestinationCharacter的身体',
+                ItemDevices玻璃罐子_LuziSetyt0: 'SourceCharacter排空了DestinationCharacter身体和罐子里的液体',
+                ItemDevices玻璃罐子_LuziSetyt1: 'DestinationCharacter的身体和罐子充满了液体',
+                ItemDevices玻璃罐子_LuziSetk0: "插在DestinationCharacter体内的振动装置停止振动",
+                ItemDevices玻璃罐子_LuziSetk1: "插在DestinationCharacter体内的振动装置轻微逗弄起来",
+                ItemDevices玻璃罐子_LuziSetk2: "插在DestinationCharacter体内的振动装置带温和嗡鸣着",
+                ItemDevices玻璃罐子_LuziSetk3: "插在DestinationCharacter体内的振动装置猛烈地颤动",
+                ItemDevices玻璃罐子_LuziSetk4: "插在DestinationCharacter体内的振动装置以最大速度振动着",
+                ItemDevices玻璃罐子_LuziSetd0: 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置关闭了',
+                ItemDevices玻璃罐子_LuziSetd1: 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级1',
+                ItemDevices玻璃罐子_LuziSetd2: 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级2',
+                ItemDevices玻璃罐子_LuziSetd3: 'SourceCharacter将插在DestinationCharacter体内的电击装置设置为等级3',
+                ItemDevices玻璃罐子_LuziSetg0: 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮',
+                ItemDevices玻璃罐子_LuziSetg1: 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式',
+                ItemDevices玻璃罐子_LuziSetg2: 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式',
+
+
+            };
+
+            Object.assign(TextAllScreenCache.get(AssetStringsPath).cache, addAssetStringSCV);
+            Object.assign(TextAllScreenCache.get(InterfaceStringsPath).cache, addInterfaceCSV);
             // ========================================================
             isAssetAdded = true;
         }
 
-        Asset.map(i=>({Name:i.Name,Group:i.Group.Name}));
-        InventoryAddMany(Player, Asset.map(i=>({Name:i.Name,Group:i.Group.Name})));
-        
+        Asset.map(i => ({ Name: i.Name, Group: i.Group.Name }));
+        InventoryAddMany(Player, Asset.map(i => ({ Name: i.Name, Group: i.Group.Name })));
+
         CraftingItemListBuild();
 
         next(args);
 
     });
 
+    // ==================================触手服动画钩子================================
+    window.AssetsItemTorso触手服_LuziBeforeDraw = function AssetsItemTorso触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
+        const Data = PersistentData();
+        if (typeof Data.DildoState !== "number") Data.DildoState = 0;
+        if (typeof Data.Modifier !== "number") Data.Modifier = 1;
 
+        //if (L === "DevicePleasureHolder") return { Y: Y + Data.DildoState };
+        if (L !== "触手" && L !== "触手背后") return;
+
+        const Properties = Property || {};
+        const Intensity = typeof Properties.Intensity === "number" ? Properties.Intensity : -1;
+
+
+        const FuckLength = 15;
+        const TimeModifier = 0.007;
+        const AnimationQualityRatio = (Player.GraphicsSettings ? Math.max(Player.GraphicsSettings.AnimationQuality * 0.6, 30) : 30) / 30;
+        Data.Speed = (Intensity + 1) * 2;
+        if (Data.DildoState >= 1 && Intensity > -1) {
+            Data.Modifier = -1;
+        } else if (Data.DildoState <= 0) {
+            Data.Modifier = 1;
+        } else if (Data.DildoState <= 1 && Intensity === -1) {
+            Data.Modifier = 1;
+            Data.Speed = 1;
+        }
+
+        Data.DildoState += Data.Modifier * Data.Speed * AnimationQualityRatio * TimeModifier;
+        if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
+
+        return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
+    }
+
+    function AssetsItemTorso触手服_LuziScriptDrawHook(data, originalFunction, drawData) {
+        originalFunction(drawData);
+
+        const Data = drawData.PersistentData();
+        const Properties = drawData.Item.Property || {};
+        const FrameTime = Player.GraphicsSettings ? Math.max(30, (Player.GraphicsSettings.AnimationQuality * 0.6)) : 30;
+        const Intensity = typeof Properties.Intensity === "number" ? Properties.Intensity : -1;
+        const FuckLength = 32;
+
+        if (typeof Data.FuckChangeTime !== "number") Data.FuckChangeTime = CommonTime() + FrameTime;
+        if (typeof Data.DildoState !== "number") Data.DildoState = 0;
+
+        if (Data.FuckChangeTime < CommonTime() && !(Intensity === -1 && FuckLength <= Data.DildoState)) {
+            Data.FuckChangeTime = CommonTime() + FrameTime;
+            AnimationRequestRefreshRate(drawData.C, FrameTime);
+            AnimationRequestDraw(drawData.C);
+        }
+    }
     // ================================================================================
     // ================================================================================
 
@@ -2031,3 +2364,5 @@
 
 // Player.Crafting = JSON.parse(LZString.decompressFromUTF16(制作道具数据文本));
 // console.log("已导入")
+
+
