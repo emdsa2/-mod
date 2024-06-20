@@ -1504,7 +1504,7 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, },
+                    { DrawImages: false, Property: {Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
                     { DrawImages: false, },
                     {
                         DrawImages: false,
@@ -1542,7 +1542,7 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, },
+                    { DrawImages: false, Property: {Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
                     { DrawImages: false, },
                     {
                         DrawImages: false,
@@ -1866,6 +1866,16 @@
                 ItemTorso触手服_LuziOptiond2: '触手插入',
                 ItemTorso触手服_LuziOptions0: '上衣打开',
                 ItemTorso触手服_LuziOptions1: '上衣关闭',
+				ItemTorso2触手服_LuziSelectBase: '选择配置',
+                ItemTorso2触手服_LuziSelect触手状态: '选择触手状态',
+                ItemTorso2触手服_LuziSelect上衣开关: '选择上衣开关',
+                ItemTorso2触手服_LuziModule触手状态: '选择触手状态',
+                ItemTorso2触手服_LuziModule上衣开关: '选择上衣开关',
+                ItemTorso2触手服_LuziOptiond0: '封闭阴部',
+                ItemTorso2触手服_LuziOptiond1: '暴露阴部',
+                ItemTorso2触手服_LuziOptiond2: '触手插入',
+                ItemTorso2触手服_LuziOptions0: '上衣打开',
+                ItemTorso2触手服_LuziOptions1: '上衣关闭',
                 ItemVulva更多有线跳蛋_LuziSelectBase: '选择配置',
                 ItemVulva更多有线跳蛋_LuziSelect跳蛋开关: '跳蛋开关',
                 ItemVulva更多有线跳蛋_LuziSelect跳蛋数量: '跳蛋数量',
@@ -1944,6 +1954,11 @@
                 ItemTorso触手服_LuziSetd2: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部,触手服下长出一只湿滑的触手插入了阴道.',
                 ItemTorso触手服_LuziSets0: 'TargetCharacterName的触手服缓慢变化.',
                 ItemTorso触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化.',
+                ItemTorso2触手服_LuziSetd0: 'TargetCharacterName的触手服下部的小口逐渐合上,粘连在一起.',
+                ItemTorso2触手服_LuziSetd1: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部.',
+                ItemTorso2触手服_LuziSetd2: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部,触手服下长出一只湿滑的触手插入了阴道.',
+                ItemTorso2触手服_LuziSets0: 'TargetCharacterName的触手服缓慢变化.',
+                ItemTorso2触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化.',
                 ItemVulva更多有线跳蛋_LuziSeto0: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为关闭.',
                 ItemVulva更多有线跳蛋_LuziSeto1: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为低.',
                 ItemVulva更多有线跳蛋_LuziSeto2: 'SourceCharacter拨动开关,将TargetCharacter的跳蛋设置为中.',
@@ -2028,7 +2043,36 @@
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
     }
+	window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
+        const Data = PersistentData();
+        if (typeof Data.DildoState !== "number") Data.DildoState = 0;
+        if (typeof Data.Modifier !== "number") Data.Modifier = 1;
 
+        //if (L === "DevicePleasureHolder") return { Y: Y + Data.DildoState };
+        if (L !== "触手" && L !== "触手背后") return;
+
+        const Properties = Property || {};
+        const Intensity = typeof Properties.Intensity === "number" ? Properties.Intensity : -1;
+
+
+        const FuckLength = 15;
+        const TimeModifier = 0.007;
+        const AnimationQualityRatio = (Player.GraphicsSettings ? Math.max(Player.GraphicsSettings.AnimationQuality * 0.6, 30) : 30) / 30;
+        Data.Speed = (Intensity + 1) * 2;
+        if (Data.DildoState >= 1 && Intensity > -1) {
+            Data.Modifier = -1;
+        } else if (Data.DildoState <= 0) {
+            Data.Modifier = 1;
+        } else if (Data.DildoState <= 1 && Intensity === -1) {
+            Data.Modifier = 1;
+            Data.Speed = 1;
+        }
+
+        Data.DildoState += Data.Modifier * Data.Speed * AnimationQualityRatio * TimeModifier;
+        if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
+
+        return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
+    }
     function AssetsItemTorso触手服_LuziScriptDrawHook(data, originalFunction, drawData) {
         originalFunction(drawData);
 
