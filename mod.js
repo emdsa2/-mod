@@ -63,7 +63,6 @@
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
 
-
     };
 
 
@@ -120,12 +119,10 @@
             }
 
             if (data.includes("_Luzi")) {
-                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
             if (data.includes("Assets/Female3DCG/BodyUpper") || data.includes("Assets/Female3DCG/BodyLower")) {
-                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
@@ -146,6 +143,7 @@
                 args[2] = 0;
             }
 
+            /*----------------拘束盒子----------------------*/
             if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Legs")) {
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Legs.png";
             }
@@ -163,8 +161,74 @@
             }
         }
 
+
+        /*----------------手套 BackBoxTie----------------------*/
+        if (
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/FishnetGloves_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/Gloves2_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/Gloves3_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_Small_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_Normal_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_Large_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_XLarge_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/HaremGlove_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/LatexElbowGloves_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/MistressGloves_")
+        ) {
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
         next(args);
     });
+
+
+    function updateAssetUrl(data, regexPattern) {
+        if (regexPattern.test(data)) {
+            return data.replace(/Assets/g, "https://emdsa2.github.io/-mod");
+        }
+        return data;
+    }
+
+
+    mod.hookFunction("GLDrawImage", 1, (args, next) => {
+        if (!args || typeof args[0] !== 'string') {
+            next(args);
+            return;
+        }
+
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeamlessCatsuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeamlessCatsuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/PilotSuit_(Small|Normal|Large|XLarge)_Layer1\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/ReverseBunnySuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/ReverseBunnySuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(LegsClosed|Spread)\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/PilotSuit_(Small|Normal|Large|XLarge)_Layer1\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|LegsClosed|Spread)\/PilotSuit_(Small|Normal|Large|XLarge)_Layer1\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/ReverseBunnySuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/ReverseBunnySuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeamlessCatsuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeamlessCatsuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeethroughSuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeethroughSuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        next(args);
+    });
+
+
 
     const PreviewICONS = Object.freeze({
 
@@ -210,12 +274,10 @@
             }
 
             if (data.includes("_Luzi")) {
-                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
             if (data.includes("阿巴阿巴")) {
-                let data = args[0];
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
             }
         }
@@ -227,7 +289,6 @@
         const data = args[6];
         if (typeof data === 'string') {
             if (data.includes("_Luzi")) {
-                let data = args[6];
                 args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
         }
@@ -757,7 +818,7 @@
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Yoked: 'Yoked', OverTheHead: 'OverTheHead', BackCuffs: 'BackCuffs', BackBoxTie: 'BackBoxTie', TapedHands: 'TapedHands', BackElbowTouch: 'BackElbowTouch' },
                     },
                     {
-                        AllowTypes: { f: 1 },              
+                        AllowTypes: { f: 1 },
                         Name: "触手服脚套", Priority: 15,
                         ParentGroup: "BodyLower",
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Kneel: 'Kneel', KneelingSpread: 'KneelingSpread', LegsClosed: 'LegsClosed' },
@@ -1020,7 +1081,7 @@
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Yoked: 'Yoked', OverTheHead: 'OverTheHead', BackCuffs: 'BackCuffs', BackBoxTie: 'BackBoxTie', TapedHands: 'TapedHands', BackElbowTouch: 'BackElbowTouch' },
                     },
                     {
-                        AllowTypes: { f: 1 },              
+                        AllowTypes: { f: 1 },
                         Name: "触手服脚套", Priority: 15,
                         ParentGroup: "BodyLower",
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Kneel: 'Kneel', KneelingSpread: 'KneelingSpread', LegsClosed: 'LegsClosed' },
@@ -1540,7 +1601,7 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: {Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
                     { DrawImages: false, },
                     {
                         DrawImages: false,
@@ -1605,7 +1666,7 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: {Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
                     { DrawImages: false, },
                     {
                         DrawImages: false,
@@ -2169,7 +2230,7 @@
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
     }
-	window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
+    window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
         const Data = PersistentData();
         if (typeof Data.DildoState !== "number") Data.DildoState = 0;
         if (typeof Data.Modifier !== "number") Data.Modifier = 1;

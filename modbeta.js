@@ -162,8 +162,74 @@
             }
         }
 
+
+        /*----------------手套 BackBoxTie----------------------*/
+        if (
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/FishnetGloves_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/Gloves2_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/Gloves3_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_Small_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_Normal_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_Large_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/GlovesFur_XLarge_Fabric") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/HaremGlove_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/LatexElbowGloves_") ||
+            data.includes("Assets/Female3DCG/Gloves/BackBoxTie/MistressGloves_")
+        ) {
+            args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
+        }
+
         next(args);
     });
+
+
+    function updateAssetUrl(data, regexPattern) {
+        if (regexPattern.test(data)) {
+            return data.replace(/Assets/g, "https://emdsa2.github.io/-mod");
+        }
+        return data;
+    }
+
+
+    mod.hookFunction("GLDrawImage", 1, (args, next) => {
+        if (!args || typeof args[0] !== 'string') {
+            next(args);
+            return;
+        }
+
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeamlessCatsuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeamlessCatsuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/PilotSuit_(Small|Normal|Large|XLarge)_Layer1\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/ReverseBunnySuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/ReverseBunnySuit_(Small|Normal|Large|XLarge)_Suit\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/Catsuit_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(LegsClosed|Spread)\/PilotSuit_(Small|Normal|Large|XLarge)_Layer4\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/PilotSuit_(Small|Normal|Large|XLarge)_Layer1\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|LegsClosed|Spread)\/PilotSuit_(Small|Normal|Large|XLarge)_Layer1\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/ReverseBunnySuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/ReverseBunnySuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeamlessCatsuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeamlessCatsuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeethroughSuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeethroughSuit_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        next(args);
+    });
+
+
 
     const PreviewICONS = Object.freeze({
 
