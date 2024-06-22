@@ -225,6 +225,17 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeethroughSuit_(Small|Normal|Large|XLarge)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/SuitLower\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SeethroughSuitZip_(Small|Normal|Large|XLarge)_Base\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(FootlessSocks1|LatexSocks1|Pantyhose1|Pantyhose2|Stockings1|Stockings2|Stockings3|Stockings4|VSocks1)_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/(FootlessSocks1|LatexSocks1|Pantyhose1|Pantyhose2|Stockings1|Stockings2|Stockings3|Stockings4|VSocks1)_(Small|Normal|Large|XLarge)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/GradientPantyhose_(Small|Normal|Large|XLarge)_Upper\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/GradientPantyhose_(Small|Normal|Large|XLarge)_Upper\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/GradientPantyhose_(Small|Normal|Large|XLarge)_Lower\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(LegsClosed|Spread)\/GradientPantyhose_(Small|Normal|Large|XLarge)_Lower\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/YuletideVelvetWarmth_(Small|Normal|Large|XLarge)_Sock\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/YuletideVelvetWarmth_(Small|Normal|Large|XLarge)_Sock\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/SocksStriped1_(Small|Normal|Large|XLarge)_(Dark|Light)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SocksStriped1_(Small|Normal|Large|XLarge)_(Dark|Light)\.png/);
+
         next(args);
     });
 
