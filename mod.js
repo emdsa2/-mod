@@ -1547,7 +1547,7 @@
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [E.BlockWardrobe, E.VulvaShaft],
+                            Effect: [/* E.BlockWardrobe, */E.VulvaShaft],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -1612,7 +1612,7 @@
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [E.BlockWardrobe, E.VulvaShaft],
+                            Effect: [/* E.BlockWardrobe, */ E.VulvaShaft],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
