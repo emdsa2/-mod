@@ -796,10 +796,16 @@
             {
                 Name: "触手服_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                Difficulty: 25,
+                Difficulty: 8,
+                AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
                 Prerequisite: ["HasBreasts"],
                 DynamicBeforeDraw: true,
                 DynamicScriptDraw: true,
+                RemoveTime: 5,
+                Time: 10,
+                Value: 30,
                 Layer: [
                     {
                         AllowTypes: { d: 0 },
@@ -819,11 +825,11 @@
                     {
                         AllowTypes: { m: 1 },
                         Name: "触手服嘴套", Priority: 15,
-                        ParentGroup: "ItemMouth",
+                        ParentGroup: "ItemHood",
                         PoseMapping: { AllFours: "", Hogtied: "", },
                     },
                     {
-                        AllowTypes: { h: 1 },
+                        AllowTypes: { h: [1, 2] },
                         ParentGroup: "BodyUpper",
                         Name: "触手服手套", Priority: 27,
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Yoked: 'Yoked', OverTheHead: 'OverTheHead', BackCuffs: 'BackCuffs', BackBoxTie: 'BackBoxTie', TapedHands: 'TapedHands', BackElbowTouch: 'BackElbowTouch' },
@@ -1059,10 +1065,16 @@
             {
                 Name: "触手服_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                Difficulty: 25,
+                Difficulty: 8,
+                AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
                 Prerequisite: ["HasBreasts"],
                 DynamicBeforeDraw: true,
                 DynamicScriptDraw: true,
+                RemoveTime: 5,
+                Time: 10,
+                Value: 30,
                 Layer: [
                     {
                         AllowTypes: { d: 0 },
@@ -1082,11 +1094,11 @@
                     {
                         AllowTypes: { m: 1 },
                         Name: "触手服嘴套", Priority: 15,
-                        ParentGroup: "ItemMouth",
+                        ParentGroup: "ItemHood",
                         PoseMapping: { AllFours: "", Hogtied: "", },
                     },
                     {
-                        AllowTypes: { h: 1 },
+                        AllowTypes: { h: [1, 2] },
                         ParentGroup: "BodyUpper",
                         Name: "触手服手套", Priority: 27,
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Yoked: 'Yoked', OverTheHead: 'OverTheHead', BackCuffs: 'BackCuffs', BackBoxTie: 'BackBoxTie', TapedHands: 'TapedHands', BackElbowTouch: 'BackElbowTouch' },
@@ -1619,7 +1631,7 @@
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [/* E.BlockWardrobe, */E.VulvaShaft],
+                            Effect: [E.VulvaShaft],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -1646,6 +1658,10 @@
                 Options: [
                     { DrawImages: false, },
                     { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"],},
+                        DrawImages: false, 
+                    },
                 ],
             },
             {
@@ -1684,7 +1700,7 @@
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [/* E.BlockWardrobe, */ E.VulvaShaft],
+                            Effect: [E.VulvaShaft],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -1711,6 +1727,10 @@
                 Options: [
                     { DrawImages: false, },
                     { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"],},
+                        DrawImages: false, 
+                    },
                 ],
             },
             {
@@ -2038,6 +2058,7 @@
                 ItemTorso触手服_LuziOptionm1: '嘴套显示',
                 ItemTorso触手服_LuziOptionh0: '手套隐藏',
                 ItemTorso触手服_LuziOptionh1: '手套显示',
+                ItemTorso触手服_LuziOptionh2: '束缚手臂',
                 ItemTorso触手服_LuziOptionf0: '脚套隐藏',
                 ItemTorso触手服_LuziOptionf1: '脚套显示',
                 ItemTorso2触手服_LuziSelectBase: '选择配置',
@@ -2060,6 +2081,7 @@
                 ItemTorso2触手服_LuziOptionm1: '嘴套显示',
                 ItemTorso2触手服_LuziOptionh0: '手套隐藏',
                 ItemTorso2触手服_LuziOptionh1: '手套显示',
+                ItemTorso2触手服_LuziOptionh2: '束缚手臂',
                 ItemTorso2触手服_LuziOptionf0: '脚套隐藏',
                 ItemTorso2触手服_LuziOptionf1: '脚套显示',
                 ItemVulva更多有线跳蛋_LuziSelectBase: '选择配置',
@@ -2142,6 +2164,7 @@
                 ItemTorso触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了胸部.',
                 ItemTorso触手服_LuziSeth0: 'TargetCharacterName的触手服缓慢变化,露出手臂.',
                 ItemTorso触手服_LuziSeth1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了手部.',
+                ItemTorso触手服_LuziSeth2: 'TargetCharacterName的触手服缓慢变化,强制将手臂束缚在身后.',
                 ItemTorso触手服_LuziSetf0: 'TargetCharacterName的触手服缓慢变化,露出腿部.',
                 ItemTorso触手服_LuziSetf1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了脚部.',
                 ItemTorso触手服_LuziSetm0: 'TargetCharacterName的触手服缓慢变化,露出嘴部.',
@@ -2153,6 +2176,7 @@
                 ItemTorso2触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了胸部.',
                 ItemTorso2触手服_LuziSeth0: 'TargetCharacterName的触手服缓慢变化,露出手臂.',
                 ItemTorso2触手服_LuziSeth1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了手部.',
+                ItemTorso2触手服_LuziSeth2: 'TargetCharacterName的触手服缓慢变化,强制将手臂束缚在身后.',
                 ItemTorso2触手服_LuziSetf0: 'TargetCharacterName的触手服缓慢变化,露出腿部.',
                 ItemTorso2触手服_LuziSetf1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了脚部.',
                 ItemTorso2触手服_LuziSetm0: 'TargetCharacterName的触手服缓慢变化,露出嘴部.',
