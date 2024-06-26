@@ -62,7 +62,6 @@
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
 
 
-
     };
 
 
@@ -119,12 +118,10 @@
             }
 
             if (data.includes("_Luzi")) {
-                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
             if (data.includes("Assets/Female3DCG/BodyUpper") || data.includes("Assets/Female3DCG/BodyLower")) {
-                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
@@ -145,6 +142,7 @@
                 args[2] = 0;
             }
 
+            /*----------------拘束盒子----------------------*/
             if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Legs")) {
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Legs.png";
             }
@@ -286,12 +284,10 @@
             }
 
             if (data.includes("_Luzi")) {
-                let data = args[0];
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
 
             if (data.includes("阿巴阿巴")) {
-                let data = args[0];
                 args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
             }
         }
@@ -303,7 +299,6 @@
         const data = args[6];
         if (typeof data === 'string') {
             if (data.includes("_Luzi")) {
-                let data = args[6];
                 args[6] = data.replace("Assets", "https://emdsa2.github.io/-mod");
             }
         }
@@ -800,10 +795,16 @@
             {
                 Name: "触手服_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                Difficulty: 25,
+                Difficulty: 8,
+                AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
                 Prerequisite: ["HasBreasts"],
                 DynamicBeforeDraw: true,
                 DynamicScriptDraw: true,
+                RemoveTime: 5,
+                Time: 10,
+                Value: 30,
                 Layer: [
                     {
                         AllowTypes: { d: 0 },
@@ -823,17 +824,17 @@
                     {
                         AllowTypes: { m: 1 },
                         Name: "触手服嘴套", Priority: 15,
-                        ParentGroup: "ItemMouth",
+                        ParentGroup: "ItemHood",
                         PoseMapping: { AllFours: "", Hogtied: "", },
                     },
                     {
-                        AllowTypes: { h: 1 },
+                        AllowTypes: { h: [1, 2] },
                         ParentGroup: "BodyUpper",
                         Name: "触手服手套", Priority: 27,
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Yoked: 'Yoked', OverTheHead: 'OverTheHead', BackCuffs: 'BackCuffs', BackBoxTie: 'BackBoxTie', TapedHands: 'TapedHands', BackElbowTouch: 'BackElbowTouch' },
                     },
                     {
-                        AllowTypes: { f: 1 },              
+                        AllowTypes: { f: 1 },
                         Name: "触手服脚套", Priority: 15,
                         ParentGroup: "BodyLower",
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Kneel: 'Kneel', KneelingSpread: 'KneelingSpread', LegsClosed: 'LegsClosed' },
@@ -1063,10 +1064,16 @@
             {
                 Name: "触手服_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                Difficulty: 25,
+                Difficulty: 8,
+                AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
                 Prerequisite: ["HasBreasts"],
                 DynamicBeforeDraw: true,
                 DynamicScriptDraw: true,
+                RemoveTime: 5,
+                Time: 10,
+                Value: 30,
                 Layer: [
                     {
                         AllowTypes: { d: 0 },
@@ -1086,17 +1093,17 @@
                     {
                         AllowTypes: { m: 1 },
                         Name: "触手服嘴套", Priority: 15,
-                        ParentGroup: "ItemMouth",
+                        ParentGroup: "ItemHood",
                         PoseMapping: { AllFours: "", Hogtied: "", },
                     },
                     {
-                        AllowTypes: { h: 1 },
+                        AllowTypes: { h: [1, 2] },
                         ParentGroup: "BodyUpper",
                         Name: "触手服手套", Priority: 27,
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Yoked: 'Yoked', OverTheHead: 'OverTheHead', BackCuffs: 'BackCuffs', BackBoxTie: 'BackBoxTie', TapedHands: 'TapedHands', BackElbowTouch: 'BackElbowTouch' },
                     },
                     {
-                        AllowTypes: { f: 1 },              
+                        AllowTypes: { f: 1 },
                         Name: "触手服脚套", Priority: 15,
                         ParentGroup: "BodyLower",
                         PoseMapping: { AllFours: 'Hide', Hogtied: 'Hide', Kneel: 'Kneel', KneelingSpread: 'KneelingSpread', LegsClosed: 'LegsClosed' },
@@ -1616,14 +1623,14 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: {Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
                     { DrawImages: false, },
                     {
                         DrawImages: false,
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [/* E.BlockWardrobe, */ E.VulvaShaft],
+                            Effect: [E.VulvaShaft],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -1650,6 +1657,10 @@
                 Options: [
                     { DrawImages: false, },
                     { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"],},
+                        DrawImages: false, 
+                    },
                 ],
             },
             {
@@ -1681,14 +1692,14 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: {Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
                     { DrawImages: false, },
                     {
                         DrawImages: false,
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [/* E.BlockWardrobe, */ E.VulvaShaft],
+                            Effect: [E.VulvaShaft],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -1715,6 +1726,10 @@
                 Options: [
                     { DrawImages: false, },
                     { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"],},
+                        DrawImages: false, 
+                    },
                 ],
             },
             {
@@ -2042,6 +2057,7 @@
                 ItemTorso触手服_LuziOptionm1: '嘴套显示',
                 ItemTorso触手服_LuziOptionh0: '手套隐藏',
                 ItemTorso触手服_LuziOptionh1: '手套显示',
+                ItemTorso触手服_LuziOptionh2: '束缚手臂',
                 ItemTorso触手服_LuziOptionf0: '脚套隐藏',
                 ItemTorso触手服_LuziOptionf1: '脚套显示',
                 ItemTorso2触手服_LuziSelectBase: '选择配置',
@@ -2064,6 +2080,7 @@
                 ItemTorso2触手服_LuziOptionm1: '嘴套显示',
                 ItemTorso2触手服_LuziOptionh0: '手套隐藏',
                 ItemTorso2触手服_LuziOptionh1: '手套显示',
+                ItemTorso2触手服_LuziOptionh2: '束缚手臂',
                 ItemTorso2触手服_LuziOptionf0: '脚套隐藏',
                 ItemTorso2触手服_LuziOptionf1: '脚套显示',
                 ItemVulva更多有线跳蛋_LuziSelectBase: '选择配置',
@@ -2146,6 +2163,7 @@
                 ItemTorso触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了胸部.',
                 ItemTorso触手服_LuziSeth0: 'TargetCharacterName的触手服缓慢变化,露出手臂.',
                 ItemTorso触手服_LuziSeth1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了手部.',
+                ItemTorso触手服_LuziSeth2: 'TargetCharacterName的触手服缓慢变化,强制将手臂束缚在身后.',
                 ItemTorso触手服_LuziSetf0: 'TargetCharacterName的触手服缓慢变化,露出腿部.',
                 ItemTorso触手服_LuziSetf1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了脚部.',
                 ItemTorso触手服_LuziSetm0: 'TargetCharacterName的触手服缓慢变化,露出嘴部.',
@@ -2157,6 +2175,7 @@
                 ItemTorso2触手服_LuziSets1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了胸部.',
                 ItemTorso2触手服_LuziSeth0: 'TargetCharacterName的触手服缓慢变化,露出手臂.',
                 ItemTorso2触手服_LuziSeth1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了手部.',
+                ItemTorso2触手服_LuziSeth2: 'TargetCharacterName的触手服缓慢变化,强制将手臂束缚在身后.',
                 ItemTorso2触手服_LuziSetf0: 'TargetCharacterName的触手服缓慢变化,露出腿部.',
                 ItemTorso2触手服_LuziSetf1: 'TargetCharacterName的触手服缓慢变化,生长覆盖了脚部.',
                 ItemTorso2触手服_LuziSetm0: 'TargetCharacterName的触手服缓慢变化,露出嘴部.',
@@ -2245,7 +2264,7 @@
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
     }
-	window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
+    window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
         const Data = PersistentData();
         if (typeof Data.DildoState !== "number") Data.DildoState = 0;
         if (typeof Data.Modifier !== "number") Data.Modifier = 1;
