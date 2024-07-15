@@ -851,6 +851,9 @@
                         AllowTypes: { d: 2 },
                         Name: "PussyMask", Priority: 14,
                         PoseMapping: { AllFours: "Hide", },
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
                     },
                     {
                         Name: "触手", Priority: 13,
@@ -1120,6 +1123,9 @@
                         AllowTypes: { d: 2 },
                         Name: "PussyMask", Priority: 14,
                         PoseMapping: { AllFours: "Hide", },
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
                     },
                     {
                         Name: "触手", Priority: 13,
