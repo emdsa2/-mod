@@ -1287,6 +1287,46 @@
                 Name: "树_Luzi", Random: false,
                 Top: -110, Left: -150,
             },
+            {
+                Name: "巨型玩偶_Luzi", Random: false,
+                Priority: 58,
+				Value: 40,
+				Difficulty: -2,
+				Time: 15,
+				RemoveTime: 10,
+				Top: 0,
+				AllowLock: true,
+				Extended: true,
+				MinOpacity: 0,
+				Opacity: 0,
+				SetPose: ["Kneel"],
+				Block: ["ItemAddon"],
+				Effect: [E.BlockWardrobe, E.Enclose, E.Freeze],
+                Layer: [
+                    { 
+                        Name: "背景", 
+                        Priority: 1, 
+                        MinOpacity: 1 ,
+                        
+                    },
+                    { 
+                        Name: "玩偶" ,
+                        Alpha: [
+							{
+                                Group: ["HairFront","HairBack"],
+								Masks: [
+									[0, 0, 155, 750],
+									[350, 0, 150, 750],
+									[155, 0, 255, 25],
+									[155, 725, 255, 25],
+									AssetLowerOverflowAlpha,
+								],
+							},
+						],
+                    },
+                    { Name: "围巾" },
+                ],
+            },
         ],
         ItemAddon: [
             {
@@ -1621,6 +1661,21 @@
             },
         ],
     };
+    AssetFemale3DCGExtended.ItemDevices.巨型玩偶_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        Options: [
+            {
+                Name: "熊熊",
+            },
+        ],
+        BaselineProperty: { Opacity: 0 },
+        ScriptHooks: {
+            Init: PropertyOpacityInit,
+            Load: PropertyOpacityLoad,
+			Draw: PropertyOpacityDraw,
+            Exit: PropertyOpacityExit,
+        },
+    },
     AssetFemale3DCGExtended.ItemTorso.触手服_Luzi = {
         Archetype: ExtendedArchetype.MODULAR,
         ChangeWhenLocked: false,
