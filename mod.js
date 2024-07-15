@@ -1327,6 +1327,42 @@
                     { Name: "围巾" },
                 ],
             },
+            {
+                Name: "拳击袋_Luzi", Random: false,
+                Top: 0, Left: 0,
+                AllowLock: true,
+                Hide: ["", "", ""],
+                SetPose: ["BackElbowTouch", "Kneel"],
+                Layer: [
+                    { Name: "链条前", Priority: 67,Top: -800, },
+                    { Name: "带子", Priority: 66, },
+                    { Name: "链条环", Priority: 65, },
+                    { Name: "沙袋前", Priority: 64, 
+                        Alpha: [
+							{
+								Masks: [
+									[0, 0, 500, 20], //Above
+									[0, 950, 500, 50], //Below
+									[0, 0, 160, 1000], //Left side is covered by lid
+									[360, 0, 135, 200], //Triangle approx of right side
+									[370, 200, 135, 1000],
+									[355, 500, 15, 500],
+									[350, 600, 5, 400],
+									[345, 700, 5, 300],
+									[340, 800, 5, 200],
+								],
+							},
+						],
+                    },
+                    { Name: "沙袋后", Priority: 1, },
+                    { Name: "链条后", Priority: 0, Top: -800,},
+                ],
+                OverrideHeight: {
+					Height: -100,
+					Priority: 41,
+					HeightRatioProportion: 0,
+				},
+            },
         ],
         ItemAddon: [
             {
