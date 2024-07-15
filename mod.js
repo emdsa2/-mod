@@ -527,6 +527,20 @@
                 ],
             },
         ],
+        ItemHands: [
+            {
+                Name: "拳击手套_Luzi", Random: false, Gender: "F",
+                PoseMapping: {
+                    Yoked: "Yoked", OverTheHead: "OverTheHead",
+                    BackBoxTie: "Hide",
+                    BackElbowTouch: "Hide",
+                    BackCuffs: "Hide",
+                    AllFours: "Hide",
+                },
+                Effect: [E.MergedFingers],
+                Hide: ["ItemHandheld"],
+            },
+        ],
         ItemHandheld: [
             {
                 Name: "电蚊拍_Luzi", Random: false,
