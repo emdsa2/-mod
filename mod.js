@@ -1315,7 +1315,7 @@
 				Opacity: 0,
 				SetPose: ["Kneel"],
 				Block: ["ItemAddon"],
-				Effect: [E.BlockWardrobe, E.Enclose, E.Freeze],
+				Effect: [E.BlockWardrobe, E.Freeze],
                 Layer: [
                     { 
                         Name: "背景", 
