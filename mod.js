@@ -1321,18 +1321,17 @@
                         Name: "背景", 
                         Priority: 1, 
                         MinOpacity: 1 ,
-                        
                     },
                     { 
                         Name: "玩偶" ,
                         Alpha: [
 							{
-                                Group: ["HairFront","HairBack"],
+                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
 								Masks: [
 									[0, 0, 155, 750],
 									[350, 0, 150, 750],
-									[155, 0, 255, 25],
-									[155, 725, 255, 25],
+									[155, 0, 255, 65],
+									[155, 700, 255, 30],
 									AssetLowerOverflowAlpha,
 								],
 							},
@@ -1345,6 +1344,9 @@
                 Name: "拳击袋_Luzi", Random: false,
                 Top: 0, Left: 0,
                 AllowLock: true,
+                Extended: true,
+                MinOpacity: 0,
+				Opacity: 0,
                 Hide: ["", "", ""],
                 SetPose: ["BackElbowTouch", "Kneel"],
                 Layer: [
@@ -1355,21 +1357,25 @@
                         Alpha: [
 							{
 								Masks: [
-									[0, 0, 500, 20], //Above
-									[0, 950, 500, 50], //Below
-									[0, 0, 160, 1000], //Left side is covered by lid
-									[360, 0, 135, 200], //Triangle approx of right side
+									[0, 0, 500, 35],
+									[0, 950, 500, 50], 
+									[0, 0, 130, 1000], 
 									[370, 200, 135, 1000],
-									[355, 500, 15, 500],
-									[350, 600, 5, 400],
-									[345, 700, 5, 300],
-									[340, 800, 5, 200],
 								],
 							},
 						],
                     },
-                    { Name: "沙袋后", Priority: 1, },
-                    { Name: "链条后", Priority: 0, Top: -800,},
+                    { Name: "沙袋后", Priority: 1, MinOpacity: 1, },
+                    { Name: "链条后", Priority: 0, Top: -800, MinOpacity: 1, },
+                    { Name: "相框", Priority: 67, MinOpacity: 1, AllowTypes: { typed: 1 },
+                        Alpha: [
+                        {
+                            Group: ["ItemDevices"],
+                            Masks: [
+                                [190, 100, 120, 120],
+                            ],
+                        },
+                    ],},
                 ],
                 OverrideHeight: {
 					Height: -100,
@@ -1714,9 +1720,21 @@
     AssetFemale3DCGExtended.ItemDevices.巨型玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
-            {
-                Name: "熊熊",
-            },
+            { Name: "熊熊", DrawImages: false, },
+        ],
+        BaselineProperty: { Opacity: 0.2 },
+        ScriptHooks: {
+            Init: PropertyOpacityInit,
+            Load: PropertyOpacityLoad,
+			Draw: PropertyOpacityDraw,
+            Exit: PropertyOpacityExit,
+        },
+    },
+    AssetFemale3DCGExtended.ItemDevices.拳击袋_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        Options: [
+            { Name: "无照片", DrawImages: false, },
+            { Name: "有照片", DrawImages: false, },
         ],
         BaselineProperty: { Opacity: 0 },
         ScriptHooks: {
