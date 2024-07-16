@@ -1352,8 +1352,8 @@
                 Layer: [
                     { Name: "链条前", Priority: 67,Top: -800, },
                     { Name: "带子", Priority: 66, },
-                    { Name: "链条环", Priority: 65, },
-                    { Name: "沙袋前", Priority: 64, 
+                    { Name: "链条环", Priority: 66, },
+                    { Name: "沙袋前", Priority: 64, AllowTypes: { typed: 0 },
                         Alpha: [
 							{
 								Masks: [
@@ -1367,15 +1367,20 @@
                     },
                     { Name: "沙袋后", Priority: 1, MinOpacity: 1, },
                     { Name: "链条后", Priority: 0, Top: -800, MinOpacity: 1, },
-                    { Name: "相框", Priority: 67, MinOpacity: 1, AllowTypes: { typed: 1 },
+                    { Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
                         Alpha: [
-                        {
-                            Group: ["ItemDevices"],
-                            Masks: [
-                                [190, 100, 120, 120],
-                            ],
-                        },
-                    ],},
+                            {
+                                Masks: [
+                                    [0, 0, 500, 35],
+                                    [0, 950, 500, 50], 
+                                    [0, 0, 130, 1000], 
+                                    [370, 200, 135, 1000],
+                                ],
+                            },
+                        ],
+                    },
+                    { Name: "照片框", Priority: 65, AllowTypes: { typed: 1 },},
+                    { Name: "胶带", Priority: 65, AllowTypes: { typed: 1 },},
                 ],
                 OverrideHeight: {
 					Height: -100,
