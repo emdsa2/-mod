@@ -1503,6 +1503,21 @@
                 },
                 DefaultColor: ["#000000"],
             },
+            {
+                Name: "番茄酱_Luzi", Random: false,
+                Top: 0, Left: 0,
+                Priority: 9,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
+            },
         ],
         BodyMarkings2_Luzi: [
             {
@@ -1536,6 +1551,21 @@
                     Hogtied: PoseType.HIDE,
                 },
                 DefaultColor: ["#000000"],
+            },
+            {
+                Name: "番茄酱_Luzi", Random: false,
+                Top: 0, Left: 0,
+                Priority: 9,
+                PoseMapping: {
+                    BackBoxTie: PoseType.DEFAULT,
+                    BackCuffs: PoseType.DEFAULT,
+                    BackElbowTouch: PoseType.DEFAULT,
+                    OverTheHead: PoseType.DEFAULT,
+                    TapedHands: PoseType.DEFAULT,
+                    Yoked: PoseType.DEFAULT,
+                    AllFours: PoseType.HIDE,
+                    Hogtied: PoseType.HIDE,
+                },
             },
         ],
     };
@@ -2719,6 +2749,5 @@
     // ================================================================================
 
 })();
-
 
 
