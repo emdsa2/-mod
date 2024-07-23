@@ -1302,6 +1302,60 @@
                 Top: -110, Left: -150,
             },
             {
+                Name: "独角兽玩偶_Luzi", Random: false,
+                Priority: 58,
+				Value: 40,
+				Difficulty: -2,
+				Time: 15,
+				RemoveTime: 10,
+				Top: -45,
+				AllowLock: true,
+				Extended: true,
+				MinOpacity: 0,
+				Opacity: 0,
+				SetPose: ["AllFours"],
+				Effect: [E.BlockWardrobe, E.Freeze],
+                Layer: [
+                    { Name: "身体", AllowTypes: { typed: [0, 1] }, 
+                        Alpha: [
+                            {
+                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
+								Masks: [
+                                    [0, 388, 500, 200],//下
+                                ],
+                            },
+                        ],
+                    },
+                    { Name: "背景", Priority: 6, MinOpacity: 1, AllowTypes: { typed: [0, 1] }, },
+                    { Name: "脚", AllowTypes: { typed: [0, 1] }, },
+                    { Name: "头背景", Priority: 6, MinOpacity: 1, AllowTypes: { typed: 0 }, },
+                    { Name: "头发后", AllowTypes: { typed: 0 }, },
+                    { Name: "耳朵外", AllowTypes: { typed: 0 }, },
+                    { Name: "耳朵内", AllowTypes: { typed: 0 }, },
+                    { Name: "头", AllowTypes: { typed: 0 }, 
+                        Alpha: [
+                            {
+                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
+								Masks: [
+                                    [0, 0, 500, 70],//上
+                                    [0, 0, 154, 400],//左
+                                    [350, 0, 200, 400],//右
+                                    [0, 160, 172, 75],//左中
+                                    [336, 170, 100, 65],//右中
+                                ],
+                            },
+                        ],
+                    },
+                    { Name: "头发前", AllowTypes: { typed: 0 }, },
+                    { Name: "眼白", AllowTypes: { typed: 0 }, },
+                    { Name: "瞳孔", AllowTypes: { typed: 0 }, },
+                    { Name: "眉毛", AllowTypes: { typed: 0 }, },
+                    { Name: "睫毛", AllowTypes: { typed: 0 }, },
+                    { Name: "角", AllowTypes: { typed: 0 }, },
+                    { Name: "高光", AllowTypes: { typed: 0 }, },
+                ],
+            },
+            {
                 Name: "巨型玩偶_Luzi", Random: false,
                 Priority: 58,
 				Value: 40,
@@ -1314,7 +1368,6 @@
 				MinOpacity: 0,
 				Opacity: 0,
 				SetPose: ["Kneel"],
-				Block: ["ItemAddon"],
 				Effect: [E.BlockWardrobe, E.Freeze],
                 Layer: [
                     { 
@@ -1356,11 +1409,12 @@
                     { Name: "沙袋前", Priority: 64, AllowTypes: { typed: 0 },
                         Alpha: [
 							{
+								Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
 								Masks: [
-									[0, 0, 500, 35],
-									[0, 950, 500, 50], 
-									[0, 0, 130, 1000], 
-									[370, 200, 135, 1000],
+									[0, 0, 500, 35],//上
+									[0, 717, 500, 70], //下
+									[0, 0, 130, 1000], //左
+									[370, 200, 135, 1000],//右
 								],
 							},
 						],
@@ -1370,9 +1424,10 @@
                     { Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
                         Alpha: [
                             {
-                                Masks: [
+                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
+								Masks: [
                                     [0, 0, 500, 35],
-                                    [0, 950, 500, 50], 
+                                    [0, 717, 500, 50], 
                                     [0, 0, 130, 1000], 
                                     [370, 200, 135, 1000],
                                 ],
@@ -1757,7 +1812,21 @@
         Options: [
             { Name: "熊熊", DrawImages: false, },
         ],
-        BaselineProperty: { Opacity: 0.2 },
+        BaselineProperty: { Opacity: 0.7 },
+        ScriptHooks: {
+            Init: PropertyOpacityInit,
+            Load: PropertyOpacityLoad,
+			Draw: PropertyOpacityDraw,
+            Exit: PropertyOpacityExit,
+        },
+    },
+    AssetFemale3DCGExtended.ItemDevices.独角兽玩偶_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        Options: [
+            { Name: "戴上头套", DrawImages: false, },
+            { Name: "摘掉头套", DrawImages: false, },
+        ],
+        BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
@@ -1771,7 +1840,7 @@
             { Name: "无照片", DrawImages: false, },
             { Name: "有照片", DrawImages: false, },
         ],
-        BaselineProperty: { Opacity: 0 },
+        BaselineProperty: { Opacity: 1 },
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
