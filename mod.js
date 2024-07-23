@@ -1326,6 +1326,7 @@
                             },
                         ],
                     },
+                    
                     { Name: "背景", Priority: 6, MinOpacity: 1, AllowTypes: { typed: [0, 1] }, },
                     { Name: "脚", AllowTypes: { typed: [0, 1] }, },
                     { Name: "头背景", Priority: 6, MinOpacity: 1, AllowTypes: { typed: 0 }, },
