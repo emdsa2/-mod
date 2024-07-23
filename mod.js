@@ -1337,7 +1337,7 @@
                             {
                                 Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
 								Masks: [
-                                    [0, 0, 500, 70],//上
+                                    [0, -200, 500, 270],//上
                                     [0, 0, 154, 400],//左
                                     [350, 0, 200, 400],//右
                                     [0, 160, 172, 75],//左中
