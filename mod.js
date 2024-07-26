@@ -1454,8 +1454,8 @@
                 Priority: 58,
                 SetPose: ["Kneel"],
                 Layer: [
-                    { Name: "轮子", MinOpacity: 1 },
-                    { Name: "背景", MinOpacity: 1 }, 
+                    { Name: "轮子", Priority: 1, MinOpacity: 1 },
+                    { Name: "背景", Priority: 2, MinOpacity: 1 }, 
                     { Name: "外框", MinOpacity: 1 }, 
                     { Name: "垃圾桶", 
                         Alpha: [
