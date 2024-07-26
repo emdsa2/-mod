@@ -1444,6 +1444,47 @@
 					HeightRatioProportion: 0,
 				},
             },
+            {
+                Name: "垃圾桶_Luzi", Random: false,
+                Top: 0, Left: 0,
+                AllowLock: true,
+                Extended: true,
+                MinOpacity: 0,
+				Opacity: 0,
+                Priority: 58,
+                SetPose: ["Kneel"],
+                Layer: [
+                    { Name: "轮子", MinOpacity: 1 },
+                    { Name: "背景", MinOpacity: 1 }, 
+                    { Name: "外框", MinOpacity: 1 }, 
+                    { Name: "垃圾桶", 
+                        Alpha: [
+							{
+								Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
+								Masks: [
+									[0, 695, 500, 70], //下
+									[0, 175, 160, 1000], //左
+									[340, 175, 135, 1000],//右
+								],
+							},
+						],
+                    },
+                    { Name: "盖子", AllowTypes: { typed: [1,2] }, 
+                        Alpha: [
+                            {
+                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
+								Masks: [
+                                    [0, 0, 500, 50],//上
+                                    [0, 0, 160, 1000], //左
+									[340, 0, 135, 1000],//右
+                                ],
+                            },
+                        ],
+                    },
+                    { Name: "挡板", AllowTypes: { typed: 1 }, },
+                    { Name: "图案", AllowTypes: { typed: 1 }, },
+                ],
+            },
         ],
         ItemAddon: [
             {
@@ -1828,6 +1869,21 @@
             { Name: "摘掉头套", DrawImages: false, },
         ],
         BaselineProperty: { Opacity: 0.7 },
+        ScriptHooks: {
+            Init: PropertyOpacityInit,
+            Load: PropertyOpacityLoad,
+			Draw: PropertyOpacityDraw,
+            Exit: PropertyOpacityExit,
+        },
+    },
+    AssetFemale3DCGExtended.ItemDevices.垃圾桶_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        Options: [
+            { Name: "打开盖子", DrawImages: false, },
+            { Name: "合上盖子", DrawImages: false, },
+            { Name: "打开挡板", DrawImages: false, },
+        ],
+        BaselineProperty: { Opacity: 1 },
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
