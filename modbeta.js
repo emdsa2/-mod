@@ -2442,7 +2442,11 @@
                 ItemDevices玻璃罐子_LuziOptiong0: '允许',
                 ItemDevices玻璃罐子_LuziOptiong1: '寸止',
                 ItemDevices玻璃罐子_LuziOptiong2: '拒绝',
-
+                ItemDevices垃圾桶_LuziSelect: '选择垃圾桶配置',
+                ItemDevices独角兽玩偶_LuziSelect: '选择独角兽玩偶配置',
+                ItemDevices巨型玩偶_LuziSelect: '选择巨型玩偶配置',
+                ItemDevices拳击袋_LuziSelect: '选择拳击袋配置',
+                
             };
 
             let addInterfaceCSV = {
@@ -2504,8 +2508,13 @@
                 ItemDevices玻璃罐子_LuziSetg0: 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮',
                 ItemDevices玻璃罐子_LuziSetg1: 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式',
                 ItemDevices玻璃罐子_LuziSetg2: 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式',
-
-
+                ItemDevices垃圾桶_LuziSet合上盖子: 'SourceCharacter合上了TargetCharacterName的盖子',
+                ItemDevices垃圾桶_LuziSet打开盖子: 'SourceCharacter打开了TargetCharacterName的盖子',
+                ItemDevices垃圾桶_LuziSet打开挡板: 'SourceCharacter打开了TargetCharacterName的挡板',
+                ItemDevices独角兽玩偶_LuziSet戴上头套: 'SourceCharacter戴上了TargetCharacterName的头套',
+                ItemDevices独角兽玩偶_LuziSet摘掉头套: 'SourceCharacter摘掉了TargetCharacterName的头套',
+                ItemDevices拳击袋_LuziSet有照片: 'SourceCharacter贴上了TargetCharacterName的照片',
+                ItemDevices拳击袋_LuziSet无照片: 'SourceCharacter摘掉了TargetCharacterName的照片',
             };
 
             Object.assign(TextAllScreenCache.get(AssetStringsPath).cache, addAssetStringSCV);
