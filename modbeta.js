@@ -1303,40 +1303,42 @@
             {
                 Name: "独角兽玩偶_Luzi", Random: false,
                 Priority: 58,
-				Value: 40,
-				Difficulty: -2,
-				Time: 15,
-				RemoveTime: 10,
-				Top: -45,
-				AllowLock: true,
-				Extended: true,
-				MinOpacity: 0,
-				Opacity: 0,
-				SetPose: ["AllFours"],
-				Effect: [E.BlockWardrobe, E.Freeze],
+                Value: 40,
+                Difficulty: -2,
+                Time: 15,
+                RemoveTime: 10,
+                Top: -45,
+                AllowLock: true,
+                Extended: true,
+                MinOpacity: 0,
+                Opacity: 0,
+                SetPose: ["AllFours"],
+                Effect: [E.BlockWardrobe, E.Freeze],
                 Layer: [
-                    { Name: "身体", AllowTypes: { typed: [0, 1] }, 
+                    {
+                        Name: "身体", AllowTypes: { typed: [0, 1] },
                         Alpha: [
                             {
-                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
                                     [0, 388, 500, 200],//下
                                 ],
                             },
                         ],
                     },
-                    
+
                     { Name: "背景", Priority: 6, MinOpacity: 1, AllowTypes: { typed: [0, 1] }, },
                     { Name: "脚", AllowTypes: { typed: [0, 1] }, },
                     { Name: "头背景", Priority: 6, MinOpacity: 1, AllowTypes: { typed: 0 }, },
                     { Name: "头发后", AllowTypes: { typed: 0 }, },
                     { Name: "耳朵外", AllowTypes: { typed: 0 }, },
                     { Name: "耳朵内", AllowTypes: { typed: 0 }, },
-                    { Name: "头", AllowTypes: { typed: 0 }, 
+                    {
+                        Name: "头", AllowTypes: { typed: 0 },
                         Alpha: [
                             {
-                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
                                     [0, -200, 500, 270],//上
                                     [0, 0, 154, 400],//左
                                     [350, 0, 200, 400],//右
@@ -1358,37 +1360,37 @@
             {
                 Name: "巨型玩偶_Luzi", Random: false,
                 Priority: 58,
-				Value: 40,
-				Difficulty: -2,
-				Time: 15,
-				RemoveTime: 10,
-				Top: 0,
-				AllowLock: true,
-				Extended: true,
-				MinOpacity: 0,
-				Opacity: 0,
-				SetPose: ["Kneel"],
-				Effect: [E.BlockWardrobe, E.Freeze],
+                Value: 40,
+                Difficulty: -2,
+                Time: 15,
+                RemoveTime: 10,
+                Top: 0,
+                AllowLock: true,
+                Extended: true,
+                MinOpacity: 0,
+                Opacity: 0,
+                SetPose: ["Kneel"],
+                Effect: [E.BlockWardrobe, E.Freeze],
                 Layer: [
-                    { 
-                        Name: "背景", 
-                        Priority: 1, 
-                        MinOpacity: 1 ,
+                    {
+                        Name: "背景",
+                        Priority: 1,
+                        MinOpacity: 1,
                     },
-                    { 
-                        Name: "玩偶" ,
+                    {
+                        Name: "玩偶",
                         Alpha: [
-							{
-                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
-									[0, 0, 155, 750],
-									[350, 0, 150, 750],
-									[155, 0, 255, 65],
-									[155, 700, 255, 30],
-									AssetLowerOverflowAlpha,
-								],
-							},
-						],
+                            {
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
+                                    [0, 0, 155, 750],
+                                    [350, 0, 150, 750],
+                                    [155, 0, 255, 65],
+                                    [155, 700, 255, 30],
+                                    AssetLowerOverflowAlpha,
+                                ],
+                            },
+                        ],
                     },
                     { Name: "围巾" },
                 ],
@@ -1399,49 +1401,51 @@
                 AllowLock: true,
                 Extended: true,
                 MinOpacity: 0,
-				Opacity: 0,
+                Opacity: 0,
                 Hide: ["", "", ""],
                 SetPose: ["BackElbowTouch", "Kneel"],
                 Layer: [
-                    { Name: "链条前", Priority: 67,Top: -800, },
+                    { Name: "链条前", Priority: 67, Top: -800, },
                     { Name: "带子", Priority: 66, },
                     { Name: "链条环", Priority: 66, },
-                    { Name: "沙袋前", Priority: 64, AllowTypes: { typed: 0 },
+                    {
+                        Name: "沙袋前", Priority: 64, AllowTypes: { typed: 0 },
                         Alpha: [
-							{
-								Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
-									[0, 0, 500, 35],//上
-									[0, 717, 500, 70], //下
-									[0, 0, 130, 1000], //左
-									[370, 200, 135, 1000],//右
-								],
-							},
-						],
+                            {
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
+                                    [0, 0, 500, 35],//上
+                                    [0, 717, 500, 70], //下
+                                    [0, 0, 130, 1000], //左
+                                    [370, 200, 135, 1000],//右
+                                ],
+                            },
+                        ],
                     },
                     { Name: "沙袋后", Priority: 1, MinOpacity: 1, },
                     { Name: "链条后", Priority: 0, Top: -800, MinOpacity: 1, },
-                    { Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
+                    {
+                        Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
                         Alpha: [
                             {
-                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
                                     [0, 0, 500, 35],
-                                    [0, 717, 500, 50], 
-                                    [0, 0, 130, 1000], 
+                                    [0, 717, 500, 50],
+                                    [0, 0, 130, 1000],
                                     [370, 200, 135, 1000],
                                 ],
                             },
                         ],
                     },
-                    { Name: "照片框", Priority: 65, AllowTypes: { typed: 1 },},
-                    { Name: "胶带", Priority: 65, AllowTypes: { typed: 1 },},
+                    { Name: "照片框", Priority: 65, AllowTypes: { typed: 1 }, },
+                    { Name: "胶带", Priority: 65, AllowTypes: { typed: 1 }, },
                 ],
                 OverrideHeight: {
-					Height: -100,
-					Priority: 41,
-					HeightRatioProportion: 0,
-				},
+                    Height: -100,
+                    Priority: 41,
+                    HeightRatioProportion: 0,
+                },
             },
             {
                 Name: "垃圾桶_Luzi", Random: false,
@@ -1449,33 +1453,35 @@
                 AllowLock: true,
                 Extended: true,
                 MinOpacity: 0,
-				Opacity: 0,
+                Opacity: 0,
                 Priority: 58,
                 SetPose: ["Kneel"],
                 Layer: [
                     { Name: "轮子", Priority: 1, MinOpacity: 1 },
-                    { Name: "背景", Priority: 2, MinOpacity: 1 }, 
-                    { Name: "外框", MinOpacity: 1 }, 
-                    { Name: "垃圾桶", 
-                        Alpha: [
-							{
-								Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
-									[0, 695, 500, 70], //下
-									[0, 175, 160, 1000], //左
-									[340, 175, 135, 1000],//右
-								],
-							},
-						],
-                    },
-                    { Name: "盖子", AllowTypes: { typed: [1,2] }, 
+                    { Name: "背景", Priority: 2, MinOpacity: 1 },
+                    { Name: "外框", MinOpacity: 1 },
+                    {
+                        Name: "垃圾桶",
                         Alpha: [
                             {
-                                Group: ["HairFront","HairBack","Bracelet","Cloth","ClothAccessory","ClothLower","Corset","Fluids","Garters","Gloves","HairAccessory","Hat","ItemArms","ItemBrest","ItemButt","ItemHandheld","ItemHead","ItemHood","ItemLegs","ItemMisc","ItemNeck","ItemNose","ItemPelvis","ItemTorso","LeftAnKlet","LeftHand","Mask","Mouth","Nipples","Panties","RightAnklet","RightHand","Shoes","Socks","SocksLeft","SocksRight","Suit","SuitLower","TailStraps","Wings","Bra","HairAccessory1","HairAccessory2","HairAccessory3",],
-								Masks: [
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
+                                    [0, 695, 500, 70], //下
+                                    [0, 175, 160, 1000], //左
+                                    [340, 175, 135, 1000],//右
+                                ],
+                            },
+                        ],
+                    },
+                    {
+                        Name: "盖子", AllowTypes: { typed: [1, 2] },
+                        Alpha: [
+                            {
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Masks: [
                                     [0, 0, 500, 50],//上
                                     [0, 0, 160, 1000], //左
-									[340, 0, 135, 1000],//右
+                                    [340, 0, 135, 1000],//右
                                 ],
                             },
                         ],
@@ -1857,10 +1863,10 @@
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
-			Draw: PropertyOpacityDraw,
+            Draw: PropertyOpacityDraw,
             Exit: PropertyOpacityExit,
         },
-    },
+    };
     AssetFemale3DCGExtended.ItemDevices.独角兽玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
@@ -1871,10 +1877,10 @@
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
-			Draw: PropertyOpacityDraw,
+            Draw: PropertyOpacityDraw,
             Exit: PropertyOpacityExit,
         },
-    },
+    };
     AssetFemale3DCGExtended.ItemDevices.垃圾桶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
@@ -1886,10 +1892,10 @@
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
-			Draw: PropertyOpacityDraw,
+            Draw: PropertyOpacityDraw,
             Exit: PropertyOpacityExit,
         },
-    },
+    };
     AssetFemale3DCGExtended.ItemDevices.拳击袋_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
@@ -1900,10 +1906,10 @@
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
-			Draw: PropertyOpacityDraw,
+            Draw: PropertyOpacityDraw,
             Exit: PropertyOpacityExit,
         },
-    },
+    };
     AssetFemale3DCGExtended.ItemTorso.触手服_Luzi = {
         Archetype: ExtendedArchetype.MODULAR,
         ChangeWhenLocked: false,
@@ -1948,8 +1954,8 @@
                     { DrawImages: false, },
                     { DrawImages: false, },
                     {
-                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"],},
-                        DrawImages: false, 
+                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"], },
+                        DrawImages: false,
                     },
                 ],
             },
@@ -2017,8 +2023,8 @@
                     { DrawImages: false, },
                     { DrawImages: false, },
                     {
-                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"],},
-                        DrawImages: false, 
+                        Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"], },
+                        DrawImages: false,
                     },
                 ],
             },
@@ -2229,6 +2235,7 @@
                     ['MISSING ASSETGROUP DESCRIPTION: Liquid2_Luzi', '🍔Liquid2_Luzi'],
                     ['MISSING ASSETGROUP DESCRIPTION: BodyMarkings2_Luzi', '🍔BodyMarkings2'],
                 ]);
+
                 let language = localStorage.getItem("BondageClubLanguage");
                 if ((language === "CN" || language === "TW")) {
                     AssetGroup.forEach(item => {
@@ -2259,6 +2266,74 @@
                             const description = descriptionMap2.get(item.Description);
                             if (description) {
                                 item.Description = description;
+                            }
+                        }
+                    });
+
+                    const descriptionMap = {
+                        "绷带头部": "Bandage Head",
+                        "毛毯头部": "Blanket Head",
+                        "蝴蝶结背饰": "Bow Back Accessory",
+                        "单边眼镜左": "Monocle Left",
+                        "单边眼镜右": "Monocle Right",
+                        "眼镜卡": "Glasses Card",
+                        "女仆装": "Maid Costume",
+                        "奶牛": "Cow",
+                        "圣诞": "Christmas",
+                        "踩脚袜": "Footstep Socks",
+                        "条纹袜": "Striped Socks",
+                        "条纹袜2": "Striped Socks 2",
+                        "乳胶衣上": "Latex Top",
+                        "乳胶衣下": "Latex Bottom",
+                        "鱼鱼尾": "Fish Tail",
+                        "淫纹": "Erotic Pattern",
+                        "穿戴式狗尾镜像": "Wearable Dog Tail",
+                        "白色穿戴式狼尾镜像": "White Wearable Wolf Tail",
+                        "穿戴式浅色猫尾镜像": "Light-colored Wearable Cat Tail",
+                        "穿戴式软小狗尾镜像": "Soft Wearable Puppy Tail",
+                        "大型穿戴式狼尾镜像": "Large Wearable Wolf Tail",
+                        "小型穿戴式狼尾镜像": "Small Wearable Wolf Tail",
+                        "小型穿戴式软猫尾镜像": "Small Soft Wearable Cat Tail",
+                        "穿戴式猫尾镜像": "Wearable Cat Tail",
+                        "拳击手套": "Boxing Gloves",
+                        "电蚊拍": "Electric Fly Swatter",
+                        "阿巴阿巴": "Aba Aba",
+                        "乳胶宠物拘束服": "Latex Pet Restraint Suit",
+                        "鞍": "Saddle",
+                        "缰绳": "Reins",
+                        "拘束套装": "Restraint Set",
+                        "胶带全身": "Tape Full Body",
+                        "睡袋改": "Modified Sleeping Bag",
+                        "全包毛毯改": "Fully Wrapped Blanket",
+                        "绷带全身": "Bandage Full Body",
+                        "触手服": "Tentacle Suit",
+                        "猪猪": "Piggy",
+                        "玻璃罐子": "Glass Jar",
+                        "床左边": "Left Side of Bed",
+                        "床右边": "Right Side of Bed",
+                        "窝瓜": "Pumpkin",
+                        "树": "Tree",
+                        "独角兽玩偶": "Unicorn Stuffed Toy",
+                        "巨型玩偶": "Giant Stuffed Toy",
+                        "拳击袋": "Boxing Bag",
+                        "垃圾桶": "Trash Can",
+                        "被子左边": "Left Side of Quilt",
+                        "被子右边": "Right Side of Quilt",
+                        "更多有线跳蛋": "More Wired Vibrators",
+                        "无": "None",
+                        "少": "Few",
+                        "中": "Medium",
+                        "刻度尺": "Ruler",
+                        "番茄酱": "Ketchup",
+                    };
+
+                    Asset.forEach(item => {
+                        if (item.Name.includes('_Luzi')) {
+                            const englishDescription = descriptionMap[item.Description];
+                            if (englishDescription) {
+                                item.Description = englishDescription; // 直接修改数组中的对象属性
+                            } else {
+                                console.log(`No English translation for: ${item.Description}`);
                             }
                         }
                     });
@@ -2326,7 +2401,7 @@
 
             // ========================================================
 
-            let addAssetStringSCV = {
+            let addAssetStringSCVCN = {
                 ItemTorso触手服_LuziSelectBase: '选择配置',
                 ItemTorso触手服_LuziSelect触手状态: '选择触手状态',
                 ItemTorso触手服_LuziSelect上衣开关: '选择上衣状态',
@@ -2446,10 +2521,10 @@
                 ItemDevices独角兽玩偶_LuziSelect: '选择独角兽玩偶配置',
                 ItemDevices巨型玩偶_LuziSelect: '选择巨型玩偶配置',
                 ItemDevices拳击袋_LuziSelect: '选择拳击袋配置',
-                
+
             };
 
-            let addInterfaceCSV = {
+            let addInterfaceCSVCN = {
                 ItemTorso触手服_LuziSetd0: 'TargetCharacterName的触手服下部的小口逐渐合上,粘连在一起.',
                 ItemTorso触手服_LuziSetd1: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部.',
                 ItemTorso触手服_LuziSetd2: 'TargetCharacterName的触手服下部裂开一个小口,露出阴部,触手服下长出一只湿滑的触手插入了阴道.',
@@ -2508,17 +2583,244 @@
                 ItemDevices玻璃罐子_LuziSetg0: 'SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮',
                 ItemDevices玻璃罐子_LuziSetg1: 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式',
                 ItemDevices玻璃罐子_LuziSetg2: 'SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式',
-                ItemDevices垃圾桶_LuziSet合上盖子: 'SourceCharacter合上了TargetCharacterName的盖子',
-                ItemDevices垃圾桶_LuziSet打开盖子: 'SourceCharacter打开了TargetCharacterName的盖子',
-                ItemDevices垃圾桶_LuziSet打开挡板: 'SourceCharacter打开了TargetCharacterName的挡板',
-                ItemDevices独角兽玩偶_LuziSet戴上头套: 'SourceCharacter戴上了TargetCharacterName的头套',
-                ItemDevices独角兽玩偶_LuziSet摘掉头套: 'SourceCharacter摘掉了TargetCharacterName的头套',
-                ItemDevices拳击袋_LuziSet有照片: 'SourceCharacter贴上了TargetCharacterName的照片',
-                ItemDevices拳击袋_LuziSet无照片: 'SourceCharacter摘掉了TargetCharacterName的照片',
+                ItemDevices垃圾桶_LuziSet合上盖子: 'SourceCharacter合上了DestinationCharacter的盖子',
+                ItemDevices垃圾桶_LuziSet打开盖子: 'SourceCharacter打开了DestinationCharacter的盖子',
+                ItemDevices垃圾桶_LuziSet打开挡板: 'SourceCharacter打开了DestinationCharacter的挡板',
+                ItemDevices独角兽玩偶_LuziSet戴上头套: 'SourceCharacter戴上了DestinationCharacter的头套',
+                ItemDevices独角兽玩偶_LuziSet摘掉头套: 'SourceCharacter摘掉了DestinationCharacter的头套',
+                ItemDevices拳击袋_LuziSet有照片: 'SourceCharacter贴上了DestinationCharacter的照片',
+                ItemDevices拳击袋_LuziSet无照片: 'SourceCharacter摘掉了DestinationCharacter的照片',
             };
 
-            Object.assign(TextAllScreenCache.get(AssetStringsPath).cache, addAssetStringSCV);
-            Object.assign(TextAllScreenCache.get(InterfaceStringsPath).cache, addInterfaceCSV);
+            let addAssetStringSCVEN = {
+                ItemTorso触手服_LuziSelectBase: 'Select Configuration',
+                ItemTorso触手服_LuziSelect触手状态: 'Select Tentacle Status',
+                ItemTorso触手服_LuziSelect上衣开关: 'Select Top Status',
+                ItemTorso触手服_LuziSelect手套开关: 'Select Glove Status',
+                ItemTorso触手服_LuziSelect嘴套开关: 'Select Mouth Cover Status',
+                ItemTorso触手服_LuziSelect脚套开关: 'Select Foot Cover Status',
+                ItemTorso触手服_LuziModule手套开关: 'Select Glove Status',
+                ItemTorso触手服_LuziModule嘴套开关: 'Select Mouth Cover Status',
+                ItemTorso触手服_LuziModule脚套开关: 'Select Foot Cover Status',
+                ItemTorso触手服_LuziModule触手状态: 'Select Tentacle Status',
+                ItemTorso触手服_LuziModule上衣开关: 'Select Top Status',
+                ItemTorso触手服_LuziOptiond0: 'Seal Genital Area',
+                ItemTorso触手服_LuziOptiond1: 'Expose Genital Area',
+                ItemTorso触手服_LuziOptiond2: 'Insert Tentacle',
+                ItemTorso触手服_LuziOptions0: 'Hide Top',
+                ItemTorso触手服_LuziOptions1: 'Display Top',
+                ItemTorso触手服_LuziOptionm0: 'Hide Mouth Cover',
+                ItemTorso触手服_LuziOptionm1: 'Display Mouth Cover',
+                ItemTorso触手服_LuziOptionh0: 'Hide Gloves',
+                ItemTorso触手服_LuziOptionh1: 'Display Gloves',
+                ItemTorso触手服_LuziOptionh2: 'Bind Arms',
+                ItemTorso触手服_LuziOptionf0: 'Hide Foot Covers',
+                ItemTorso触手服_LuziOptionf1: 'Display Foot Covers',
+                ItemTorso2触手服_LuziSelectBase: 'Select Configuration',
+                ItemTorso2触手服_LuziSelect触手状态: 'Select Tentacle Status',
+                ItemTorso2触手服_LuziSelect上衣开关: 'Select Top Status',
+                ItemTorso2触手服_LuziSelect手套开关: 'Select Glove Status',
+                ItemTorso2触手服_LuziSelect嘴套开关: 'Select Mouth Cover Status',
+                ItemTorso2触手服_LuziSelect脚套开关: 'Select Foot Cover Status',
+                ItemTorso2触手服_LuziModule手套开关: 'Select Glove Status',
+                ItemTorso2触手服_LuziModule嘴套开关: 'Select Mouth Cover Status',
+                ItemTorso2触手服_LuziModule脚套开关: 'Select Foot Cover Status',
+                ItemTorso2触手服_LuziModule触手状态: 'Select Tentacle Status',
+                ItemTorso2触手服_LuziModule上衣开关: 'Select Top Status',
+                ItemTorso2触手服_LuziOptiond0: 'Seal Genital Area',
+                ItemTorso2触手服_LuziOptiond1: 'Expose Genital Area',
+                ItemTorso2触手服_LuziOptiond2: 'Insert Tentacle',
+                ItemTorso2触手服_LuziOptions0: 'Hide Top',
+                ItemTorso2触手服_LuziOptions1: 'Display Top',
+                ItemTorso2触手服_LuziOptionm0: 'Hide Mouth Cover',
+                ItemTorso2触手服_LuziOptionm1: 'Display Mouth Cover',
+                ItemTorso2触手服_LuziOptionh0: 'Hide Gloves',
+                ItemTorso2触手服_LuziOptionh1: 'Display Gloves',
+                ItemTorso2触手服_LuziOptionh2: 'Bind Arms',
+                ItemTorso2触手服_LuziOptionf0: 'Hide Foot Covers',
+                ItemTorso2触手服_LuziOptionf1: 'Display Foot Covers',
+                ItemVulva更多有线跳蛋_LuziSelectBase: 'Select Configuration',
+                ItemVulva更多有线跳蛋_LuziSelect跳蛋开关: 'Select Vibrator Switch',
+                ItemVulva更多有线跳蛋_LuziSelect跳蛋数量: 'Select Vibrator Quantity',
+                ItemVulva更多有线跳蛋_LuziModule跳蛋开关: 'Select Vibrator Switch',
+                ItemVulva更多有线跳蛋_LuziModule跳蛋数量: 'Select Vibrator Quantity',
+                ItemVulva更多有线跳蛋_LuziOptionn0: '1 Vibrator',
+                ItemVulva更多有线跳蛋_LuziOptionn1: '2 Vibrators',
+                ItemVulva更多有线跳蛋_LuziOptionn2: '3 Vibrators',
+                ItemVulva更多有线跳蛋_LuziOptionn3: '4 Vibrators',
+                ItemVulva更多有线跳蛋_LuziOptionn4: '5 Vibrators',
+                ItemVulva更多有线跳蛋_LuziOptiono0: 'Off',
+                ItemVulva更多有线跳蛋_LuziOptiono1: 'Low',
+                ItemVulva更多有线跳蛋_LuziOptiono2: 'Medium',
+                ItemVulva更多有线跳蛋_LuziOptiono3: 'High',
+                ItemVulva更多有线跳蛋_LuziOptiono4: 'Maximum',
+                SuitLower鱼鱼尾_LuziSelectBase: 'Select Configuration',
+                SuitLower鱼鱼尾_LuziSelect鱼鳍: 'Set Fins',
+                SuitLower鱼鱼尾_LuziSelect鱼尾: 'Set Tail',
+                SuitLower鱼鱼尾_LuziModule鱼鳍: 'Fins',
+                SuitLower鱼鱼尾_LuziOptionq0: 'None',
+                SuitLower鱼鱼尾_LuziOptionq1: 'Present',
+                SuitLower鱼鱼尾_LuziModule鱼尾: 'Tail',
+                SuitLower鱼鱼尾_LuziOptionw0: 'Transparent',
+                SuitLower鱼鱼尾_LuziOptionw1: 'Opaque',
+                ItemTorso2拘束套装_LuziSelect: 'Select Configuration',
+                ItemTorso2拘束套装_LuziSet无: '',
+                ItemTorso2拘束套装_LuziSet乳胶衣: '',
+                ItemTorso2拘束套装_LuziSet透视紧身衣: '',
+                ItemTorso2拘束套装_LuziSet紧身衣: '',
+                ItemDevices窝瓜_LuziSelect: 'Select Configuration',
+                ItemDevices玻璃罐子_LuziSelectBase: 'Select Container Configuration',
+                ItemDevices玻璃罐子_LuziSelect窗户: 'Set Window',
+                ItemDevices玻璃罐子_LuziModule窗户: 'Window',
+                ItemDevices玻璃罐子_LuziOptionc0: 'None',
+                ItemDevices玻璃罐子_LuziOptionc1: 'Sealed',
+                ItemDevices玻璃罐子_LuziSelect腿部拘束: 'Set Leg Restraint',
+                ItemDevices玻璃罐子_LuziModule腿部拘束: 'Leg Restraint',
+                ItemDevices玻璃罐子_LuziOptiont0: 'None',
+                ItemDevices玻璃罐子_LuziOptiont1: 'Leg Restraint',
+                ItemDevices玻璃罐子_LuziSelect手臂拘束: 'Set Arm Restraint',
+                ItemDevices玻璃罐子_LuziModule手臂拘束: 'Arm Restraint',
+                ItemDevices玻璃罐子_LuziOptions0: 'None',
+                ItemDevices玻璃罐子_LuziOptions1: 'Arm Restraint',
+                ItemDevices玻璃罐子_LuziSelect管道: 'Set Tube',
+                ItemDevices玻璃罐子_LuziModule管道: 'Tube',
+                ItemDevices玻璃罐子_LuziOptiongz0: 'None',
+                ItemDevices玻璃罐子_LuziOptiongz1: 'Connect to Body',
+                ItemDevices玻璃罐子_LuziSelect液体: 'Set Liquid',
+                ItemDevices玻璃罐子_LuziModule液体: 'Liquid',
+                ItemDevices玻璃罐子_LuziOptionyt0: 'None',
+                ItemDevices玻璃罐子_LuziOptionyt1: 'Inject Liquid',
+                ItemDevices玻璃罐子_LuziSelect快感模块: 'Set Pleasure Module',
+                ItemDevices玻璃罐子_LuziModule快感模块: 'Pleasure Module',
+                ItemDevices玻璃罐子_LuziOptionk0: 'Off',
+                ItemDevices玻璃罐子_LuziOptionk1: 'Low',
+                ItemDevices玻璃罐子_LuziOptionk2: 'Moderate',
+                Devices玻璃罐子_LuziOptionk3: 'High',
+                ItemDevices玻璃罐子_LuziSelect声音模块: 'Set Sound Module',
+                ItemDevices玻璃罐子_LuziModule声音模块: 'Sound Module',
+                ItemDevices玻璃罐子_LuziOptionsd0: 'Silent',
+                ItemDevices玻璃罐子_LuziOptionsd1: 'Ambient Sounds',
+                ItemDevices玻璃罐子_LuziOptionsd2: 'Music',
+                ItemDevices玻璃罐子_LuziSelect温度模块: 'Set Temperature Module',
+                ItemDevices玻璃罐子_LuziModule温度模块: 'Temperature Module',
+                ItemDevices玻璃罐子_LuziOptiontm0: 'Room Temperature',
+                ItemDevices玻璃罐子_LuziOptiontm1: 'Warm',
+                ItemDevices玻璃罐子_LuziOptiontm2: 'Hot',
+                ItemDevices玻璃罐子_LuziOptiontm3: 'Cold',
+                ItemDevices玻璃罐子_LuziSelect电击模块: 'Set Electro Module',
+                ItemDevices玻璃罐子_LuziModule电击模块: 'Electro Module',
+                ItemDevices玻璃罐子_LuziOptiond0: 'Off',
+                ItemDevices玻璃罐子_LuziOptiond1: 'Low',
+                ItemDevices玻璃罐子_LuziOptiond2: 'Medium',
+                ItemDevices玻璃罐子_LuziOptiond3: 'High',
+                ItemDevices玻璃罐子_LuziSelect高潮锁: 'Set Orgasm Lock',
+                ItemDevices玻璃罐子_LuziModule高潮锁: 'Orgasm Lock',
+                ItemDevices玻璃罐子_LuziOptiong0: 'Allow',
+                ItemDevices玻璃罐子_LuziOptiong1: 'Edge',
+                ItemDevices玻璃罐子_LuziOptiong2: 'Deny',
+                ItemDevices垃圾桶_LuziSelect: 'Select Trash Bin Configuration',
+                ItemDevices独角兽玩偶_LuziSelect: 'Select Unicorn Doll Configuration',
+                ItemDevices巨型玩偶_LuziSelect: 'Select Giant Doll Configuration',
+                ItemDevices拳击袋_LuziSelect: 'Select Punching Bag Configuration',
+                ItemDevices独角兽玩偶_Luzi戴上头套: "Put on Headgear",
+                ItemDevices独角兽玩偶_Luzi摘掉头套: "Remove Headgear",
+                ItemDevices巨型玩偶_Luzi熊熊: "Bear",
+                ItemTorso2拘束套装_Luzi无: "No",
+                ItemTorso2拘束套装_Luzi乳胶衣: "Latex Suit",
+                ItemTorso2拘束套装_Luzi透视紧身衣: "Sheer Bodysuit",
+                ItemTorso2拘束套装_Luzi紧身衣: "Bodysuit",
+                ItemTorso拘束套装_Luzi无: "No",
+                ItemTorso拘束套装_Luzi乳胶衣: "Latex Suit",
+                ItemTorso拘束套装_Luzi透视紧身衣: "Sheer Bodysuit",
+                ItemTorso拘束套装_Luzi紧身衣: "Bodysuit",
+                ItemDevices窝瓜_Luzi没盖子: "No Lid",
+                ItemDevices窝瓜_Luzi有盖子: "With Lid",
+                ItemDevices垃圾桶_Luzi打开盖子: "Open Lid",
+                ItemDevices垃圾桶_Luzi合上盖子: "Close Lid",
+                ItemDevices垃圾桶_Luzi打开挡板: "Open Flap",
+                ItemDevices拳击袋_Luzi无照片: "No Photo",
+                ItemDevices拳击袋_Luzi有照片: "With Photo",
+
+            };
+
+            let addInterfaceCSVEN = {
+                ItemTorso触手服_LuziSetd0: 'The lower opening of TargetCharacterName\'s tentacle suit gradually closes and adheres together.',
+                ItemTorso触手服_LuziSetd1: 'A small opening in the lower part of TargetCharacterName\'s tentacle suit splits to reveal the genital area.',
+                ItemTorso触手服_LuziSetd2: 'A small opening in the lower part of TargetCharacterName\'s tentacle suit splits to reveal the genital area, and a slimy tentacle grows out from the suit and inserts into the vagina.',
+                ItemTorso触手服_LuziSets0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the chest.',
+                ItemTorso触手服_LuziSets1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the chest.',
+                ItemTorso触手服_LuziSeth0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the arms.',
+                ItemTorso触手服_LuziSeth1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the hands.',
+                ItemTorso触手服_LuziSeth2: 'The tentacle suit on TargetCharacterName slowly changes, forcibly binding the arms behind the back.',
+                ItemTorso触手服_LuziSetf0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the legs.',
+                ItemTorso触手服_LuziSetf1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the feet.',
+                ItemTorso触手服_LuziSetm0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the mouth.',
+                ItemTorso触手服_LuziSetm1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the mouth.',
+                ItemTorso2触手服_LuziSetd0: 'The lower opening of TargetCharacterName\'s tentacle suit gradually closes and adheres together.',
+                ItemTorso2触手服_LuziSetd1: 'A small opening in the lower part of TargetCharacterName\'s tentacle suit splits to reveal the genital area.',
+                ItemTorso2触手服_LuziSetd2: 'A small opening in the lower part of TargetCharacterName\'s tentacle suit splits to reveal the genital area, and a slimy tentacle grows out from the suit and inserts into the vagina.',
+                ItemTorso2触手服_LuziSets0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the chest.',
+                ItemTorso2触手服_LuziSets1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the chest.',
+                ItemTorso2触手服_LuziSeth0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the arms.',
+                ItemTorso2触手服_LuziSeth1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the hands.',
+                ItemTorso2触手服_LuziSeth2: 'The tentacle suit on TargetCharacterName slowly changes, forcibly binding the arms behind the back.',
+                ItemTorso2触手服_LuziSetf0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the legs.',
+                ItemTorso2触手服_LuziSetf1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the feet.',
+                ItemTorso2触手服_LuziSetm0: 'The tentacle suit on TargetCharacterName slowly changes, revealing the mouth.',
+                ItemTorso2触手服_LuziSetm1: 'The tentacle suit on TargetCharacterName slowly changes, growing over the mouth.',
+                ItemVulva更多有线跳蛋_LuziSeto0: 'SourceCharacter flicks the switch, setting TargetCharacter\'s vibrator egg to off.',
+                ItemVulva更多有线跳蛋_LuziSeto1: 'SourceCharacter flicks the switch, setting TargetCharacter\'s vibrator egg to low.',
+                ItemVulva更多有线跳蛋_LuziSeto2: 'SourceCharacter flicks the switch, setting TargetCharacter\'s vibrator egg to medium.',
+                ItemVulva更多有线跳蛋_LuziSeto3: 'SourceCharacter flicks the switch, setting TargetCharacter\'s vibrator egg to high.',
+                ItemVulva更多有线跳蛋_LuziSeto4: 'SourceCharacter flicks the switch, setting TargetCharacter\'s vibrator egg to maximum.',
+                ItemVulva更多有线跳蛋_LuziSetn0: 'SourceCharacter pulls out the vibrator egg from TargetCharacter\'s genitalia, leaving only one remaining.',
+                ItemVulva更多有线跳蛋_LuziSetn1: 'SourceCharacter fiddles with the wired vibrator egg, now there are two vibrator eggs inside TargetCharacter\'s vagina.',
+                ItemVulva更多有线跳蛋_LuziSetn2: 'SourceCharacter fiddles with the wired vibrator egg, now there are three vibrator eggs inside TargetCharacter\'s vagina.',
+                ItemVulva更多有线跳蛋_LuziSetn3: 'SourceCharacter fiddles with the wired vibrator egg, now there are four vibrator eggs inside TargetCharacter\'s vagina.',
+                ItemVulva更多有线跳蛋_LuziSetn4: 'SourceCharacter fiddles with the wired vibrator egg, now there are five vibrator eggs inside TargetCharacter\'s vagina.',
+                ItemDevices窝瓜_LuziSet没盖子: 'SourceCharacter pushes open the lid of DestinationCharacter.',
+                ItemDevices窝瓜_LuziSet有盖子: 'SourceCharacter covers DestinationCharacter with a lid.',
+                ItemDevices玻璃罐子_LuziSetc0: 'SourceCharacter opens DestinationCharacter\'s jar.',
+                ItemDevices玻璃罐子_LuziSetc1: 'SourceCharacter seals DestinationCharacter\'s jar.',
+                ItemDevices玻璃罐子_LuziSett0: "SourceCharacter removes the restraints from DestinationCharacter\'s legs.",
+                ItemDevices玻璃罐子_LuziSett1: "SourceCharacter binds DestinationCharacter\'s legs together.",
+                ItemDevices玻璃罐子_LuziSets0: "SourceCharacter removes the restraints from DestinationCharacter\'s wrists and elbows.",
+                ItemDevices玻璃罐子_LuziSets1: "SourceCharacter binds DestinationCharacter\'s wrists and elbows behind her back.",
+                ItemDevices玻璃罐子_LuziSetgz0: 'SourceCharacter removes the tube connected to DestinationCharacter\'s body.',
+                ItemDevices玻璃罐子_LuziSetgz1: 'SourceCharacter connects the tube into DestinationCharacter\'s body.',
+                ItemDevices玻璃罐子_LuziSetyt0: 'SourceCharacter drains the liquid from DestinationCharacter\'s body and the jar.',
+                ItemDevices玻璃罐子_LuziSetyt1: 'DestinationCharacter\'s body and the jar are filled with liquid.',
+                ItemDevices玻璃罐子_LuziSetk0: "The vibrating device inside DestinationCharacter stops vibrating.",
+                ItemDevices玻璃罐子_LuziSetk1: "The vibrating device inside DestinationCharacter teases gently.",
+                ItemDevices玻璃罐子_LuziSetk2: "The vibrating device inside DestinationCharacter hums softly.",
+                ItemDevices玻璃罐子_LuziSetk3: "The vibrating device inside DestinationCharacter vibrates fiercely.",
+                ItemDevices玻璃罐子_LuziSetk4: "The vibrating device inside DestinationCharacter vibrates at maximum speed.",
+                ItemDevices玻璃罐子_LuziSetd0: 'SourceCharacter turns off the vibrating device inside DestinationCharacter.',
+                ItemDevices玻璃罐子_LuziSetd1: 'SourceCharacter sets the electric shock device inside DestinationCharacter to level 1.',
+                ItemDevices玻璃罐子_LuziSetd2: 'SourceCharacter sets the electric shock device inside DestinationCharacter to level 2.',
+                ItemDevices玻璃罐子_LuziSetd3: 'SourceCharacter sets the electric shock device inside DestinationCharacter to level 3.',
+                ItemDevices玻璃罐子_LuziSetg0: 'SourceCharacter turns off the orgasm allowance setting of the vibrating device inside DestinationCharacter.',
+                ItemDevices玻璃罐子_LuziSetg1: 'SourceCharacter sets the vibrating device inside DestinationCharacter to edge play mode.',
+                ItemDevices玻璃罐子_LuziSetg2: 'SourceCharacter sets the vibrating device inside DestinationCharacter to denial mode.',
+                ItemDevices垃圾桶_LuziSet合上盖子: 'SourceCharacter closes the lid on DestinationCharacter.',
+                ItemDevices垃圾桶_LuziSet打开盖子: 'SourceCharacter opens the lid on DestinationCharacter.',
+                ItemDevices垃圾桶_LuziSet打开挡板: 'SourceCharacter opens the flap on DestinationCharacter.',
+                ItemDevices独角兽玩偶_LuziSet戴上头套: 'SourceCharacter puts on the headgear for DestinationCharacter.',
+                ItemDevices独角兽玩偶_LuziSet摘掉头套: 'SourceCharacter removes the headgear from DestinationCharacter.',
+                ItemDevices拳击袋_LuziSet有照片: 'SourceCharacter attaches a photo to DestinationCharacter.',
+                ItemDevices拳击袋_LuziSet无照片: 'SourceCharacter removes the photo from DestinationCharacter.',
+            };
+
+            let language = localStorage.getItem("BondageClubLanguage");
+            if (language === "CN" || language === "TW") {
+                Object.assign(TextAllScreenCache.get(AssetStringsPath).cache, addAssetStringSCVCN);
+                Object.assign(TextAllScreenCache.get(InterfaceStringsPath).cache, addInterfaceCSVCN);
+            } else {
+                Object.assign(TextAllScreenCache.get(AssetStringsPath).cache, addAssetStringSCVEN);
+                Object.assign(TextAllScreenCache.get(InterfaceStringsPath).cache, addInterfaceCSVEN);
+            }
+
+
             // ========================================================
             isAssetAdded = true;
         }
@@ -2661,13 +2963,15 @@
             let data = args[1];
             const Content = data.Content;
             // 检查 Content 是否含 "_Luzi"
-            if (Content.indexOf("_Luzi")) {
+            if (Content.indexOf("_Luzi") !== -1) {
                 // 在 PlayerDialog 映射中查找对应的消息
-                const msg = PlayerDialog.get(Content) || ""; // 如果找不到，则使用
+                const customKeyName = Content;
+                const msg = TextAllScreenCache.get(InterfaceStringsPath).cache[customKeyName] || "";
 
                 // 将修改后的消息添加到 Dictionary 中
                 data.Dictionary.push({
-                    Tag: "MISSING PLAYER DIALOG: " + Content, Text: msg,
+                    Tag: `MISSING TEXT IN "Interface.csv": ${Content}`,
+                    Text: msg,
                 });
             }
         }
