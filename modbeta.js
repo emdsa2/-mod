@@ -1549,6 +1549,91 @@
                 ],
             },
         ],
+        ItemBoots: [
+            {
+                Name: "隐形药水_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Hide: ["ItemHandheld", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Layer: [
+                    {
+                        Name: "下半身", Priority: 9,
+                        Top: {
+                            [PoseType.DEFAULT]: 460,
+                            KneelingSpread: 495,
+                            Kneel: 460,
+                            LegsClosed: 460,
+                            Spread: 460,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 65,
+                        },
+                        ParentGroup: "BodyLower",
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身", Priority: 9,
+                        Top: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 35,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 65,
+                        },
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            BackBoxTie: "BackBoxTie",
+                            BackCuffs: "BackCuffs",
+                            BackElbowTouch: "BackElbowTouch",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "Yoked",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+
+                    },
+                    {
+                        Name: "全身", Priority: 9,
+                        Top: {
+                            Hogtied: 500,
+                        },
+                        Left: 0,
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            AllFours: "AllFours",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+                ],
+                OverrideHeight: {
+                    Height: -450,
+                    Priority: 21,
+                    HeightRatioProportion: 0,
+                },
+
+            },
+        ],
         Liquid2_Luzi: [
             {
                 Name: "无_Luzi", Random: false,

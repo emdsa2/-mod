@@ -222,11 +222,11 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SocksStriped1_(Small|Normal|Large|XLarge)_(Dark|Light)\.png/);
 
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemDevices\/KabeshiriWall_(Asian|Black|White)_(Butt|Feet|Hands|Legs|Penis|Pussy)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Latex_(Open|Closed2|Closed|Latex)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips_(Open|Closed2|Closed)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips\.png/);
-      
+
 
         next(args);
     });
@@ -1548,6 +1548,91 @@
                         ParentGroup: "BodyLower",
                     },
                 ],
+            },
+        ],
+        ItemBoots: [
+            {
+                Name: "隐形药水_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Hide: ["ItemHandheld", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Layer: [
+                    {
+                        Name: "下半身", Priority: 9,
+                        Top: {
+                            [PoseType.DEFAULT]: 460,
+                            KneelingSpread: 495,
+                            Kneel: 460,
+                            LegsClosed: 460,
+                            Spread: 460,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 65,
+                        },
+                        ParentGroup: "BodyLower",
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身", Priority: 9,
+                        Top: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 35,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 65,
+                        },
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            BackBoxTie: "BackBoxTie",
+                            BackCuffs: "BackCuffs",
+                            BackElbowTouch: "BackElbowTouch",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "Yoked",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+
+                    },
+                    {
+                        Name: "全身", Priority: 9,
+                        Top: {
+                            Hogtied: 500,
+                        },
+                        Left: 0,
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            AllFours: "AllFours",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+                ],
+                OverrideHeight: {
+                    Height: -450,
+                    Priority: 21,
+                    HeightRatioProportion: 0,
+                },
+
             },
         ],
         Liquid2_Luzi: [
