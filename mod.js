@@ -222,6 +222,10 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SocksStriped1_(Small|Normal|Large|XLarge)_(Dark|Light)\.png/);
 
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemDevices\/KabeshiriWall_(Asian|Black|White)_(Butt|Feet|Hands|Legs|Penis|Pussy)\.png/);
+        
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Latex_(Open|Closed2|Closed|Latex)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips_(Open|Closed2|Closed)\.png/);
+      
 
         next(args);
     });
