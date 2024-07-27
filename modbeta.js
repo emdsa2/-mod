@@ -142,22 +142,7 @@
                 args[2] = 0;
             }
 
-            /*----------------拘束盒子----------------------*/
-            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Legs")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Legs.png";
-            }
-            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Butt")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Butt.png";
-            }
-            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Pussy")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Pussy.png";
-            }
-            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Hands")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Hands.png";
-            }
-            if (data.includes("Assets/Female3DCG/ItemDevices/KabeshiriWall_White_Feet")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemDevices/KabeshiriWall_White_Feet.png";
-            }
+
         }
 
 
@@ -235,8 +220,11 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/SocksStriped1_(Small|Normal|Large|XLarge)_(Dark|Light)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Socks\/(Kneel|KneelingSpread|LegsClosed|Spread)\/SocksStriped1_(Small|Normal|Large|XLarge)_(Dark|Light)\.png/);
 
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemDevices\/KabeshiriWall_(Asian|Black|White)_(Butt|Feet|Hands|Legs|Penis|Pussy)\.png/);
+
         next(args);
     });
+
 
 
 
