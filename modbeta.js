@@ -1765,7 +1765,7 @@
                         },
                     },
                     {
-                        Name: "手", Priority: 64,
+                        Name: "手", Priority: 26,
                         Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         InheritColor: "BodyUpper",
