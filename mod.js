@@ -1731,7 +1731,7 @@
                         {
                             BackBoxTie: "BackBoxTie",
                             BackCuffs: "BackCuffs",
-                            BackElbowTouch: "BackElbowTouch",
+                            BackElbowTouch: "Hide",
                             OverTheHead: "OverTheHead",
                             Yoked: "Yoked",
                             Hogtied: "Hide",
