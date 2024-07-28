@@ -1507,6 +1507,206 @@
                     { Name: "内" }
                 ],
             },
+            {
+                Name: "隐形药水_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Hide: ["ItemHandheld", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Layer: [
+                    {
+                        Name: "下半身", Priority: 9,
+                        Top: {
+                            [PoseType.DEFAULT]: 460,
+                            KneelingSpread: 460,
+                            Kneel: 460,
+                            LegsClosed: 460,
+                            Spread: 460,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        ParentGroup: "BodyLower",
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身", Priority: 9,
+                        Top: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            BackBoxTie: "BackBoxTie",
+                            BackCuffs: "BackCuffs",
+                            BackElbowTouch: "BackElbowTouch",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "Yoked",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+
+                    },
+                    {
+                        Name: "全身", Priority: 9,
+                        Top: {
+                            Hogtied: 500,
+                        },
+                        Left: 0,
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            AllFours: "AllFours",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+
+                    {
+                        Name: "透视紧身衣下半身", Priority: 13,
+                        Top: {
+                            [PoseType.DEFAULT]: 462,
+                            KneelingSpread: 462,
+                            Kneel: 462,
+                            LegsClosed: 462,
+                            Spread: 462,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        ParentGroup: "BodyLower",
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "透视紧身衣上半身", Priority: 13,
+                        Top: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            BackBoxTie: "BackBoxTie",
+                            BackCuffs: "BackCuffs",
+                            BackElbowTouch: "BackElbowTouch",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "Yoked",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+
+                    },
+                    {
+                        Name: "透视紧身衣全身", Priority: 13,
+                        Top: {
+                            Hogtied: 500,
+                        },
+                        Left: 0,
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            AllFours: "Hide",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+
+
+
+
+
+                    {
+                        Name: "脚链", Priority: 31,
+                        Top: {
+                            [PoseType.DEFAULT]: 460,
+                            KneelingSpread: 460,
+                            Kneel: 460,
+                            LegsClosed: 460,
+                            Spread: 460,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        ParentGroup: "BodyLower",
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "手链", Priority: 31,
+                        Top: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        Left: {
+                            [PoseType.DEFAULT]: 0,
+                            KneelingSpread: 0,
+                        },
+                        ParentGroup: "BodyUpper",
+                        PoseMapping:
+                        {
+                            BackBoxTie: "BackBoxTie",
+                            BackCuffs: "BackCuffs",
+                            BackElbowTouch: "Hide",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "Yoked",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+
+                    },
+
+
+
+
+                ],
+                OverrideHeight: {
+                    Height: -450,
+                    Priority: 21,
+                    HeightRatioProportion: 0,
+                },
+
+            },
         ],
         ItemVulva: [
             {
@@ -1548,208 +1748,6 @@
                         ParentGroup: "BodyLower",
                     },
                 ],
-            },
-        ],
-        ItemBoots: [
-            {
-                Name: "隐形药水_Luzi", Random: false, Gender: "F",
-                Top: 0, Left: 0,
-                Difficulty: 25,
-                Hide: ["ItemHandheld", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
-                Layer: [
-                    {
-                        Name: "下半身", Priority: 9,
-                        Top: {
-                            [PoseType.DEFAULT]: 460,
-                            KneelingSpread: 495,
-                            Kneel: 460,
-                            LegsClosed: 460,
-                            Spread: 460,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 65,
-                        },
-                        ParentGroup: "BodyLower",
-                        InheritColor: "BodyLower",
-                        HideColoring: true,
-                        ColorSuffix: { HEX_COLOR: "White" },
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "KneelingSpread",
-                            LegsClosed: "LegsClosed",
-                            Spread: "Spread",
-                            Hogtied: "Hide",
-                            AllFours: "Hide",
-                        },
-                    },
-                    {
-                        Name: "上半身", Priority: 9,
-                        Top: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 35,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 65,
-                        },
-                        ParentGroup: "BodyUpper",
-                        InheritColor: "BodyUpper",
-                        HideColoring: true,
-                        ColorSuffix: { HEX_COLOR: "White" },
-                        PoseMapping:
-                        {
-                            BackBoxTie: "BackBoxTie",
-                            BackCuffs: "BackCuffs",
-                            BackElbowTouch: "BackElbowTouch",
-                            OverTheHead: "OverTheHead",
-                            Yoked: "Yoked",
-                            Hogtied: "Hide",
-                            AllFours: "Hide",
-                        },
-
-                    },
-                    {
-                        Name: "全身", Priority: 9,
-                        Top: {
-                            Hogtied: 500,
-                        },
-                        Left: 0,
-                        ParentGroup: "BodyUpper",
-                        InheritColor: "BodyUpper",
-                        HideColoring: true,
-                        ColorSuffix: { HEX_COLOR: "White" },
-                        PoseMapping:
-                        {
-                            AllFours: "AllFours",
-                            Hogtied: "Hogtied",
-                        },
-                    },
-
-                    {
-                        Name: "透视紧身衣下半身", Priority: 13,
-                        Top: {
-                            [PoseType.DEFAULT]: 462,
-                            KneelingSpread: 497,
-                            Kneel: 462,
-                            LegsClosed: 462,
-                            Spread: 462,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 65,
-                        },
-                        ParentGroup: "BodyLower",
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "KneelingSpread",
-                            LegsClosed: "LegsClosed",
-                            Spread: "Spread",
-                            Hogtied: "Hide",
-                            AllFours: "Hide",
-                        },
-                    },
-                    {
-                        Name: "透视紧身衣上半身", Priority: 13,
-                        Top: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 35,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 65,
-                        },
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            BackBoxTie: "BackBoxTie",
-                            BackCuffs: "BackCuffs",
-                            BackElbowTouch: "BackElbowTouch",
-                            OverTheHead: "OverTheHead",
-                            Yoked: "Yoked",
-                            Hogtied: "Hide",
-                            AllFours: "Hide",
-                        },
-
-                    },
-                    {
-                        Name: "透视紧身衣全身", Priority: 13,
-                        Top: {
-                            Hogtied: 500,
-                        },
-                        Left: 0,
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            AllFours: "Hide",
-                            Hogtied: "Hogtied",
-                        },
-                    },
-
-
-
-
-
-                    {
-                        Name: "脚链", Priority: 31,
-                        Top: {
-                            [PoseType.DEFAULT]: 460,
-                            KneelingSpread: 495,
-                            Kneel: 460,
-                            LegsClosed: 460,
-                            Spread: 460,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 65,
-                        },
-                        ParentGroup: "BodyLower",
-                        PoseMapping:
-                        {
-                            Kneel: "Kneel",
-                            KneelingSpread: "KneelingSpread",
-                            LegsClosed: "LegsClosed",
-                            Spread: "Spread",
-                            Hogtied: "Hide",
-                            AllFours: "Hide",
-                        },
-                    },
-                    {
-                        Name: "手链", Priority: 31,
-                        Top: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 35,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 65,
-                        },
-                        ParentGroup: "BodyUpper",
-                        PoseMapping:
-                        {
-                            BackBoxTie: "BackBoxTie",
-                            BackCuffs: "BackCuffs",
-                            BackElbowTouch: "Hide",
-                            OverTheHead: "OverTheHead",
-                            Yoked: "Yoked",
-                            Hogtied: "Hide",
-                            AllFours: "Hide",
-                        },
-
-                    },
-
-
-
-
-                ],
-                OverrideHeight: {
-                    Height: -450,
-                    Priority: 21,
-                    HeightRatioProportion: 0,
-                },
-
             },
         ],
         Liquid2_Luzi: [
