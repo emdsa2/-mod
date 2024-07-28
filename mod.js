@@ -1780,7 +1780,7 @@
                             OverTheHead: "Hide",
                             Yoked: "Hide",
                             Hogtied: "Hide",
-                            AllFours: "Hide",
+                            AllFours: "AllFours",
                         },
                     },
                 ],
