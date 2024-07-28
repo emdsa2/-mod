@@ -1711,7 +1711,7 @@
                 Name: "人偶_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
-                Hide: ["Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Hide: ["Head", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
                 Layer: [
                     {
                         Name: "下半身", Priority: 9,
@@ -1782,6 +1782,10 @@
                             Hogtied: "Hide",
                             AllFours: "AllFours",
                         },
+                    },
+                    {
+                        Name: "钥匙孔", Priority: 10,
+                        Top: 0, Left: 0,
                     },
                 ],
             },

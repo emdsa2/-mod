@@ -1782,6 +1782,10 @@
                             AllFours: "AllFours",
                         },
                     },
+                    {
+                        Name: "钥匙孔", Priority: 10,
+                        Top: 0, Left: 0,
+                    },
                 ],
             },
         ],
