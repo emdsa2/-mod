@@ -1711,7 +1711,7 @@
                 Name: "人偶_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
-                Hide: ["Head", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Hide: ["Hands", "BodyLower", "BodyUpper", "BodyFull"],
                 Layer: [
                     {
                         Name: "下半身", Priority: 9,
