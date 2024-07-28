@@ -2520,6 +2520,7 @@
                         "中": "Medium",
                         "刻度尺": "Ruler",
                         "番茄酱": "Ketchup",
+                        "隐形药水": "potion of invisibility",
                     };
 
                     Asset.forEach(item => {
