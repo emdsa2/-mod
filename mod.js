@@ -1707,6 +1707,66 @@
                 },
 
             },
+            {
+                Name: "人偶_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                Difficulty: 25,
+                Hide: ["ItemHandheld", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Layer: [
+                    {
+                        Name: "下半身", Priority: 9,
+                        Top: 460, Left: 0,
+                        ParentGroup: "BodyLower",
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            Kneel: "Kneel",
+                            KneelingSpread: "KneelingSpread",
+                            LegsClosed: "LegsClosed",
+                            Spread: "Spread",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身", Priority: 9,
+                        Top: 0, Left: 0,
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            BackBoxTie: "BackBoxTie",
+                            BackCuffs: "BackCuffs",
+                            BackElbowTouch: "BackElbowTouch",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "Yoked",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+
+                    },
+                    {
+                        Name: "全身", Priority: 9,
+                        Top: {
+                            Hogtied: 500,
+                        },
+                        Left: 0,
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            AllFours: "AllFours",
+                            Hogtied: "Hogtied",
+                        },
+                    },
+                ],
+            },
         ],
         ItemVulva: [
             {
