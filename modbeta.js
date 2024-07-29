@@ -1750,10 +1750,7 @@
                     },
                     {
                         Name: "全身", Priority: 9,
-                        Top: {
-                            Hogtied: 500,
-                        },
-                        Left: 0,
+                        Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         InheritColor: "BodyUpper",
                         HideColoring: true,
