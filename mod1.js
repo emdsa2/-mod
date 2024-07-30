@@ -1512,6 +1512,7 @@
                 Top: 0, Left: 0,
                 Difficulty: 25,
                 Hide: ["ItemHandheld", "Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Extended: true,
                 Layer: [
                     {
                         Name: "下半身", Priority: 9,
@@ -1584,18 +1585,8 @@
                     },
 
                     {
-                        Name: "透视紧身衣下半身", Priority: 13,
-                        Top: {
-                            [PoseType.DEFAULT]: 462,
-                            KneelingSpread: 462,
-                            Kneel: 462,
-                            LegsClosed: 462,
-                            Spread: 462,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
+                        Name: "透视紧身衣下半身", Priority: 13, AllowTypes: { s: 1 },
+                        Top: 462, Left: 0,
                         ParentGroup: "BodyLower",
                         PoseMapping:
                         {
@@ -1608,15 +1599,8 @@
                         },
                     },
                     {
-                        Name: "透视紧身衣上半身", Priority: 13,
-                        Top: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
+                        Name: "透视紧身衣上半身", Priority: 13, AllowTypes: { s: 1 },
+                        Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         PoseMapping:
                         {
@@ -1631,7 +1615,7 @@
 
                     },
                     {
-                        Name: "透视紧身衣全身", Priority: 13,
+                        Name: "透视紧身衣全身", Priority: 13, AllowTypes: { s: 1 },
                         Top: {
                             Hogtied: 500,
                         },
@@ -1644,23 +1628,9 @@
                         },
                     },
 
-
-
-
-
                     {
-                        Name: "脚链", Priority: 31,
-                        Top: {
-                            [PoseType.DEFAULT]: 460,
-                            KneelingSpread: 460,
-                            Kneel: 460,
-                            LegsClosed: 460,
-                            Spread: 460,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
+                        Name: "脚链", Priority: 31, AllowTypes: { l: [1, 2] },
+                        Top: 460, Left: 0,
                         ParentGroup: "BodyLower",
                         PoseMapping:
                         {
@@ -1673,15 +1643,8 @@
                         },
                     },
                     {
-                        Name: "手链", Priority: 31,
-                        Top: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
+                        Name: "手链", Priority: 31, AllowTypes: { l: [1, 2] },
+                        Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         PoseMapping:
                         {
@@ -1696,8 +1659,14 @@
 
                     },
 
-
-
+                    {
+                        Name: "手链链子", Priority: 8, AllowTypes: { l: 2 },
+                        Top: -430, Left: 0,
+                    },
+                    {
+                        Name: "脚链链子", Priority: 8, AllowTypes: { l: 2 },
+                        Top: -430, Left: 0,
+                    },
 
                 ],
                 OverrideHeight: {
@@ -2320,6 +2289,49 @@
             },
         ],
     };
+    AssetFemale3DCGExtended.ItemAddon.隐形药水_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        ChangeWhenLocked: false,
+        Modules: [
+            {
+                Name: "紧身衣",
+                DrawImages: false,
+                Key: "s",
+                Options: [
+                    { DrawImages: false, },
+                    { DrawImages: false, },
+                ],
+            },
+            {
+                Name: "铐子",
+                DrawImages: false,
+                Key: "l",
+                Options: [
+                    { DrawImages: false, },
+                    { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 8, SetPose: ["OverTheHead", "KneelingSpread"], },
+                        Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
+                        Random: false,
+                        HasSubscreen: true,
+                        ArchetypeConfig: {
+                            Archetype: ExtendedArchetype.VARIABLEHEIGHT,
+                            MaxHeight: 0,
+                            MinHeight: -250,
+                            DrawData: {
+                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope" }],
+                            },
+                            DialogPrefix: {
+                                Chat: "SuspensionChange",
+                            },
+                        },
+                        DrawImages: false,
+                    },
+                ],
+            },
+
+        ],
+    };
 
     function mergeAddAssetIntoFemale3DCGAssets() { // 塞进 AssetFemale3DCG
         for (const groupName in addAsset) {
@@ -2616,6 +2628,17 @@
                 ItemDevices巨型玩偶_LuziSelect: '选择巨型玩偶配置',
                 ItemDevices拳击袋_LuziSelect: '选择拳击袋配置',
 
+                ItemAddon隐形药水_LuziSelectBase: '选择隐形药水配置',
+                ItemAddon隐形药水_LuziSelect紧身衣: '选择紧身衣',
+                ItemAddon隐形药水_LuziModule紧身衣: '紧身衣',
+                ItemAddon隐形药水_LuziOptions0: '无',
+                ItemAddon隐形药水_LuziOptions1: '透视紧身衣',
+                ItemAddon隐形药水_LuziSelect铐子: '选择铐子',
+                ItemAddon隐形药水_LuziModule铐子: '铐子',
+                ItemAddon隐形药水_LuziOptionl0: '无',
+                ItemAddon隐形药水_LuziOptionl1: '添加铁拷',
+                ItemAddon隐形药水_LuziOptionl2: '添加铁链高度',
+
             };
 
             let addInterfaceCSVCN = {
@@ -2684,6 +2707,13 @@
                 ItemDevices独角兽玩偶_LuziSet摘掉头套: 'SourceCharacter摘掉了DestinationCharacter的头套',
                 ItemDevices拳击袋_LuziSet有照片: 'SourceCharacter贴上了DestinationCharacter的照片',
                 ItemDevices拳击袋_LuziSet无照片: 'SourceCharacter摘掉了DestinationCharacter的照片',
+
+                ItemAddon隐形药水_LuziSets1: 'SourceCharacter脱掉了DestinationCharacter身上的紧身衣',
+                ItemAddon隐形药水_LuziSets0: 'SourceCharacter给DestinationCharacter穿上了紧身衣',
+                ItemAddon隐形药水_LuziSetl0: 'SourceCharacter移除了DestinationCharacter身上的铐子',
+                ItemAddon隐形药水_LuziSetl1: 'SourceCharacter在DestinationCharacter的四肢加上了铐子',
+                ItemAddon隐形药水_LuziSetl2: 'SourceCharacter将吊顶连连接在了DestinationCharacter的铐子上',
+
             };
 
             let addAssetStringSCVEN = {
@@ -2835,6 +2865,17 @@
                 ItemDevices拳击袋_Luzi无照片: "No Photo",
                 ItemDevices拳击袋_Luzi有照片: "With Photo",
 
+                ItemAddon隐形药水_LuziSelectBase: 'Select Invisibility Potion Configuration',
+                ItemAddon隐形药水_LuziSelect紧身衣: 'Select Bodysuit',
+                ItemAddon隐形药水_LuziModule紧身衣: 'Bodysuit',
+                ItemAddon隐形药水_LuziOptions0: 'None',
+                ItemAddon隐形药水_LuziOptions1: 'See-Through Bodysuit',
+                ItemAddon隐形药水_LuziSelect铐子: 'Select Handcuffs',
+                ItemAddon隐形药水_LuziModule铐子: 'Handcuffs',
+                ItemAddon隐形药水_LuziOptionl0: 'None',
+                ItemAddon隐形药水_LuziOptionl1: 'Add Iron Shackles',
+                ItemAddon隐形药水_LuziOptionl2: 'Add Chain Hoist',
+
             };
 
             let addInterfaceCSVEN = {
@@ -2903,6 +2944,13 @@
                 ItemDevices独角兽玩偶_LuziSet摘掉头套: 'SourceCharacter removes the headgear from DestinationCharacter.',
                 ItemDevices拳击袋_LuziSet有照片: 'SourceCharacter attaches a photo to DestinationCharacter.',
                 ItemDevices拳击袋_LuziSet无照片: 'SourceCharacter removes the photo from DestinationCharacter.',
+            
+                ItemAddon隐形药水_LuziSets1: 'SourceCharacter removed the bodysuit from DestinationCharacter',
+                ItemAddon隐形药水_LuziSets0: 'SourceCharacter put a bodysuit on DestinationCharacter',
+                ItemAddon隐形药水_LuziSetl0: 'SourceCharacter removed the handcuffs from DestinationCharacter',
+                ItemAddon隐形药水_LuziSetl1: 'SourceCharacter applied handcuffs to DestinationCharacter\'s limbs',
+                ItemAddon隐形药水_LuziSetl2: 'SourceCharacter attached the overhead hoist to DestinationCharacter\'s handcuffs',
+                
             };
 
             let language = localStorage.getItem("BondageClubLanguage");
