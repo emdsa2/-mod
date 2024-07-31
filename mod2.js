@@ -5431,7 +5431,7 @@
             "Control": "控制",
             "Flips target's screen.": "翻转目标的屏幕。",
             "Flip": "翻转",
-            
+
             "Dissolve clothes": "溶解衣物",
 
             "Makes the victim to lick your legs periodically (every minute)": "使受害者周期性地舔你的腿（每分钟一次）",
@@ -5450,22 +5450,22 @@
             "Allows you to literally become a target, you will be able to control your target. Very powerful spell.": "允许你真正成为目标，你将能够控制你的目标。非常强大的法术。",
             "Dissolve all target's clothes. You can craft potion bottle with 'obscene' in name or description and spill this potion on someone's head :D": "溶解目标的所有衣物。你可以制作带有‘猥亵’名称或描述的药水瓶，并将这种药水倒在某人的头上 :D",
 
-"spanking": "打屁股",
-" her, ": " 她，",
-"french kissing": "法式接吻",
-" her or using the ": "对她 或 使用 ",
-"remove enchantments": "移除魔法",
-" spell.": " 法术。",
+            "spanking": "打屁股",
+            " her, ": " 她，",
+            "french kissing": "法式接吻",
+            " her or using the ": "对她 或 使用 ",
+            "remove enchantments": "移除魔法",
+            " spell.": " 法术。",
 
-"'s sky shield is disabled": "的天空护盾已被禁用",
-"This spell is already in effect": "这个法术已经生效",
+            "'s sky shield is disabled": "的天空护盾已被禁用",
+            "This spell is already in effect": "这个法术已经生效",
 
-"Enter the names of the craft items, which will be able to cast spells, separated by ','": "输入能够施法的手工艺品名称，用 ',' 分隔。",
-"Comfirm": "确认",
-"Cancel": "取消",
+            "Enter the names of the craft items, which will be able to cast spells, separated by ','": "输入能够施法的手工艺品名称，用 ',' 分隔。",
+            "Comfirm": "确认",
+            "Cancel": "取消",
 
 
-"You can't interact": "你无法互动",
+            "You can't interact": "你无法互动",
 
 
             // "": "",
@@ -5515,7 +5515,7 @@
                     replaceTextNodes(myDiv);
                 } else if (myDivBCC) {
                     replaceTextNodes(myDivBCC);
-                } 
+                }
                 if (myDivbccPopup) {
                     replaceTextNodes(myDivbccPopup);
                 }
@@ -5806,30 +5806,75 @@
         { regex: /(.+) tugs (.+) and (.+) out of the room by (.+) tongues\./, replacement: "$1拽着$2和$3走出房间, 用$4的舌头." },
         { regex: /(.+) tries (.+) best to escape from (.+)'s grip\.\.\./, replacement: "$1竭尽全力从$3的控制中挣脱..." },
         { regex: /(.+)\'s eyes start to roll back with a groan as (.+) completely closes (.+) airway with (.+) hand\./, replacement: "$1的眼睛开始滚动, 发出呻吟声, 当$2用$4的手完全封闭$3的气道时." },
-    
 
-        // 移除魔法效果
-        { regex: /(.+) uses \"Remove enchantments\" spell on himself/, replacement: "$1 自己使用了 \"移除魔法\" 法术" },
-        { regex: /(.+) uses \"Remove enchantments\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"移除魔法\" 法术" },
-        { regex: /All spell effects were removed from (.+)/, replacement: "所有法术效果从 $1 身上被移除了" },
-
-        // 溶解衣物
-        { regex: /(.+) uses \"Dissolve clothes\" spell on himself/, replacement: "$1 自己使用了 \"溶解衣物\" 法术" },
-        { regex: /(.+) uses \"Dissolve clothes\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"溶解衣物\" 法术" },
-        { regex: /(.+)'s clothes were dissolved/, replacement: "$1 的衣物被溶解了" },
+        // BCC 
+        // 强制舔腿
+        { regex: /(.+) uses "Force lick legs" spell on (.+)/, replacement: "$1 对 $2 使用了 \"强制舔腿\" 法术" },
+        { regex: /(.+) gets on his knees and starts licking (.+) legs/, replacement: "$1 跪下并开始舔 $2 的腿" },
 
         // 催眠入睡
         { regex: /(.+) uses \"Put to sleep\" spell on himself/, replacement: "$1 自己使用了 \"催眠入睡\" 法术" },
         { regex: /(.+) uses \"Put to sleep\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"催眠入睡\" 法术" },
         { regex: /(.+) fell asleep, only hot kiss or hard spanking can wake his up/, replacement: "$1 睡着了，只有热烈的亲吻或严厉的打屁股才能唤醒他" },
 
+        // 移除魔法效果
+        { regex: /(.+) uses \"Remove enchantments\" spell on himself/, replacement: "$1 自己使用了 \"移除魔法\" 法术" },
+        { regex: /(.+) uses \"Remove enchantments\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"移除魔法\" 法术" },
+        { regex: /All spell effects were removed from (.+)/, replacement: "所有法术效果从 $1 身上被移除了" },
 
+        // 使其无助
+        { regex: /(.+) uses \"Make helpless\" spell on himself/, replacement: "$1 自己使用了 \"使无助\" 法术" },
+        { regex: /(.+) uses \"Make helpless\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"使无助\" 法术" },
+        { regex: /(.+) was enchanted, now he is totally helpless/, replacement: "$1 被施了魔法，现在他完全无助" },
+        // 制造幻觉
+        { regex: /(.+) uses \"Make hallucination\" spell on himself/, replacement: "$1 自己使用了 \"制造幻觉\" 法术" },
+        { regex: /(.+) uses \"Make hallucination\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"制造幻觉\" 法术" },
+        { regex: /(.+) was subject to hallucinations/, replacement: "$1 开始产生幻觉" },
 
+        // 使说猫语
+        { regex: /(.+) uses \"Make cat speech\" spell on himself/, replacement: "$1 自己使用了 \"让猫语\" 法术" },
+        { regex: /(.+) uses \"Make cat speech\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"让猫语\" 法术" },
+        { regex: /(.+) was forced to speak like a cat/, replacement: "$1 被迫像猫一样说话" },
 
+        // 使说婴儿语
+        { regex: /(.+) uses \"Make baby speech\" spell on himself/, replacement: "$1 自己使用了 \"让婴儿语\" 法术" },
+        { regex: /(.+) uses \"Make baby speech\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"让婴儿语\" 法术" },
+        { regex: /(.+) was forced to speak like a baby/, replacement: "$1 被迫像婴儿一样说话" },
 
+        // 使说小狗语
+        { regex: /(.+) uses \"Make puppy speech\" spell on himself/, replacement: "$1 自己使用了 \"让小狗语\" 法术" },
+        { regex: /(.+) uses \"Make puppy speech\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"让小狗语\" 法术" },
+        { regex: /(.+) was forced to speak like a puppy/, replacement: "$1 被迫像小狗一样说话" },
 
+        // 使说牛语
+        { regex: /(.+) uses \"Make cow speech\" spell on himself/, replacement: "$1 自己使用了 \"让牛语\" 法术" },
+        { regex: /(.+) uses \"Make cow speech\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"让牛语\" 法术" },
+        { regex: /(.+) was forced to speak like a cow/, replacement: "$1 被迫像牛一样说话" },
 
+        // 使目标感到情欲
+        { regex: /(.+) uses \"Maky horny\" spell on himself/, replacement: "$1 自己使用了 \"亢奋\" 法术" },
+        { regex: /(.+) uses \"Maky horny\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"亢奋\" 法术" },
+        { regex: /(.+) became very horny/, replacement: "$1 变得非常亢奋" },
 
+        // 剥夺声音
+        { regex: /(.+) uses \"Take away voice\" spell on himself/, replacement: "$1 自己使用了 \"剥夺声音\" 法术" },
+        { regex: /(.+) uses \"Take away voice\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"剥夺声音\" 法术" },
+        { regex: /(.+) lost his voice/, replacement: "$1 失去了声音" },
+
+        // 控制
+        { regex: /(.+) uses \"Control\" spell on himself/, replacement: "$1 自己使用了 \"自我控制\" 法术" },
+        { regex: /(.+) uses \"Control\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"控制\" 法术" },
+        { regex: /(.+) lost control of his body/, replacement: "$1 失去了对自己身体的控制" },
+
+        // 翻转
+        { regex: /(.+) uses \"Flip\" spell on himself/, replacement: "$1 自己使用了 \"翻转屏幕\" 法术" },
+        { regex: /(.+) uses \"Flip\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"翻转屏幕\" 法术" },
+        { regex: /(.+)'s screen was flipped/, replacement: "$1 的屏幕被翻转了" },
+
+        // 溶解衣物
+        { regex: /(.+) uses \"Dissolve clothes\" spell on himself/, replacement: "$1 自己使用了 \"溶解衣物\" 法术" },
+        { regex: /(.+) uses \"Dissolve clothes\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"溶解衣物\" 法术" },
+        { regex: /(.+)'s clothes were dissolved/, replacement: "$1 的衣物被溶解了" },
 
     ];
 
