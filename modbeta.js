@@ -65,34 +65,6 @@
     };
 
 
-    const ICONSSSSSSSS = {
-        "Assets/Female3DCG/Pussy/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Penis_White.png",
-        "Assets/Female3DCG/Pussy/Pussy1_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy1_White.png",
-        "Assets/Female3DCG/Pussy/Pussy2_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy2_White.png",
-        "Assets/Female3DCG/Pussy/Pussy3_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Pussy3_White.png",
-        "Assets/Female3DCG/Pussy/Hard/Penis_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Pussy/Hard/Penis_White.png",
-
-        "Assets/Female3DCG/Head/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_White.png",
-        "Assets/Female3DCG/Head/NoEars_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_White.png",
-        "Assets/Female3DCG/Head/SmallEars_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_White.png",
-        "Assets/Female3DCG/Head/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_Asian.png",
-        "Assets/Female3DCG/Head/NoEars_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_Asian.png",
-        "Assets/Female3DCG/Head/SmallEars_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_Asian.png",
-        "Assets/Female3DCG/Head/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/Default_Black.png",
-        "Assets/Female3DCG/Head/NoEars_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/NoEars_Black.png",
-        "Assets/Female3DCG/Head/SmallEars_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Head/SmallEars_Black.png",
-
-        "Assets/Female3DCG/Hands/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_White.png",
-        "Assets/Female3DCG/Hands/AllFours/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_White.png",
-        "Assets/Female3DCG/Hands/TapedHands/Default_White.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_White.png",
-        "Assets/Female3DCG/Hands/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_Asian.png",
-        "Assets/Female3DCG/Hands/AllFours/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Asian.png",
-        "Assets/Female3DCG/Hands/TapedHands/Default_Asian.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Asian.png",
-        "Assets/Female3DCG/Hands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/Default_Black.png",
-        "Assets/Female3DCG/Hands/AllFours/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/AllFours/Default_Black.png",
-        "Assets/Female3DCG/Hands/TapedHands/Default_Black.png": "https://emdsa2.github.io/-mod/Female3DCG/Hands/TapedHands/Default_Black.png",
-
-    };
     // =======================================================================================
 
     // #B28686
@@ -119,15 +91,6 @@
 
             if (data.includes("_Luzi")) {
                 args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-            }
-
-            if (data.includes("Assets/Female3DCG/BodyUpper") || data.includes("Assets/Female3DCG/BodyLower")) {
-                args[0] = data.replace("Assets", "https://emdsa2.github.io/-mod");
-            }
-
-
-            if (ICONSSSSSSSS[data]) {
-                args[0] = ICONSSSSSSSS[data];
             }
 
             if (data.includes("Socks/KneelingSpread/圣诞_Luzi")) {
@@ -180,6 +143,21 @@
             return;
         }
 
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Kneel|KneelingSpread|LegsClosed|Spread|AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
+        
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
+        
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/(Penis|Penis1|Penis2|Penis3)_(Asian|Black|White)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/Hard\/(Penis|PussyDark1|PussyDark2|PussyDark3|PussyLight1|PussyLight2|PussyLight3)\.png/);
+
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Head\/(Default|NoEars|SmallEars)_(Asian|Black|White)\.png/);
+
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Hands\/Default_(Asian|Black|White)\.png/);
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Hands\/(AllFours|TapedHands)\/Default_(Asian|Black|White)\.png/);
+
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/(BackBoxTie|BackCuffs|TapedHands|OverTheHead|Yoked)\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Suit\/SeethroughSuit_(Small|Normal|Large|XLarge)_Suit\.png/);
@@ -225,6 +203,7 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Latex_(Open|Closed2|Closed|Latex)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips_(Open|Closed2|Closed)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips\.png/);
+
 
         next(args);
     });
@@ -1614,16 +1593,19 @@
                     },
                     {
                         Name: "全身", Priority: 9,
-                        Top: {
-                            Hogtied: 500,
-                        },
-                        Left: 0,
+                        Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         InheritColor: "BodyUpper",
                         HideColoring: true,
                         ColorSuffix: { HEX_COLOR: "White" },
                         PoseMapping:
                         {
+                            [PoseType.DEFAULT]: "Hide",
+                            BackBoxTie: "Hide",
+                            BackCuffs: "Hide",
+                            BackElbowTouch: "Hide",
+                            OverTheHead: "Hide",
+                            Yoked: "Hide",
                             AllFours: "AllFours",
                             Hogtied: "Hogtied",
                         },
@@ -1772,6 +1754,12 @@
                         ColorSuffix: { HEX_COLOR: "White" },
                         PoseMapping:
                         {
+                            [PoseType.DEFAULT]: "Hide",
+                            BackBoxTie: "Hide",
+                            BackCuffs: "Hide",
+                            BackElbowTouch: "Hide",
+                            OverTheHead: "Hide",
+                            Yoked: "Hide",
                             AllFours: "AllFours",
                             Hogtied: "Hogtied",
                         },
