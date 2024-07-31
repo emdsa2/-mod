@@ -2211,7 +2211,7 @@
             let assetName = itemMisc.Asset.Name;
             return validAssetNames.has(assetName);
         }
-        return false; // 如果没有找到道具或者道具名称为空，则返回 false
+        return false; // 如果没有找到道具或者道具名称为空,则返回 false
     }
 
     function extractItemDescription(itemPosition) {
@@ -2358,7 +2358,7 @@
     CommandCombine(
         {
             Tag: "分享",
-            Description: "分享媒体链接，使用`/分享`获取帮助! ",
+            Description: "分享媒体链接,使用`/分享`获取帮助! ",
             Action: (parsed) => {
                 if (parsed === "") sendShareHelp();
                 else shareHandle(parsed);
@@ -2465,7 +2465,7 @@
         /** @type {string} */
         const msg = args[0];
         if (msg.startsWith('分享/ ')) {
-            ChatRoomSendLocal('媒体分享方式更改，其输入<span style="color: red;">/分享</span>查看帮助')
+            ChatRoomSendLocal('媒体分享方式更改,其输入<span style="color: red;">/分享</span>查看帮助')
             ElementValue("InputChat", "/分享");
             return; // 拦截后续处理
         };
@@ -4401,19 +4401,19 @@
             ["Filter by item group", "按项目组筛选"],
             ["Select All", "全选"],
             ["Select None", "取消全选"],
-            ["Preview female - only items: Page 1 / 1", "仅预览女性物品：第 1 页 / 1"],
+            ["Preview female - only items: Page 1 / 1", "仅预览女性物品:第 1 页 / 1"],
             ["Filter by BC version", "按 BC 版本筛选"],
             ["Version R102", "版本 R102"],
             ["All versions", "所有版本"],
             ["Show item group filter", "显示项目组筛选"],
-            ["Preview female - only items: Page 1 / 122", "仅预览女性物品：第 1 页 / 122"],
+            ["Preview female - only items: Page 1 / 122", "仅预览女性物品:第 1 页 / 122"],
             ["Use item", "使用物品"],
             ["Change item color", "更改物品颜色"],
-            ["Shop mode: Preview", "商店模式：预览"],
-            ["Buy female - only items: Page 1 / 1", "购买仅限女性物品：第 1 页 / 1"],
-            ["Shop mode: Buy", "商店模式：购买"],
-            ["Sell female - only items: Page 1 / 1", "出售仅限女性物品：第 1 页 / 1"],
-            ["Shop mode: Sell", "商店模式：出售"],
+            ["Shop mode: Preview", "商店模式:预览"],
+            ["Buy female - only items: Page 1 / 1", "购买仅限女性物品:第 1 页 / 1"],
+            ["Shop mode: Buy", "商店模式:购买"],
+            ["Sell female - only items: Page 1 / 1", "出售仅限女性物品:第 1 页 / 1"],
+            ["Shop mode: Sell", "商店模式:出售"],
 
 
             // LSCG
@@ -4731,9 +4731,9 @@
             ["Control Collar", "控制项圈"],
             ["Update Collar to Current", "将项圈更新为当前"],
             ["View next items", "查看下一项"],
-            ["Mode: Preview", "模式：预览"],
+            ["Mode: Preview", "模式:预览"],
             ["Sold", "已售"],
-            ["Mode: Shop", "模式：商店"],
+            ["Mode: Shop", "模式:商店"],
             ["Player money", "玩家金钱"],
             ["Underwear", "内衣"],
             ["Nude", "裸体"],
@@ -4744,7 +4744,39 @@
             ["Dispell", "解除"],
 
 
-
+            ["Allow LSCG Leashing:", "允许 LSCG 捆绑:"],
+            ["Allow custom leashing from LSCG activities such as hand-holding, hypnosis, etc.", "允许来自 LSCG 活动的自定义捆绑,如牵手、催眠等."],
+            ["Enable Suggestion Programming", "启用暗示修改"],
+            ["Allow Suggestion Removal", "允许移除暗示"],
+            ["Always Submit to Suggestions:", "永远服从暗示:"],
+            ["Always Submit to Member IDs:", "永远服从对象 ID:"],
+            ["Blocked Instructions:", "阻止的功能:"],
+            ["Orgasm", "高潮"],
+            ["Induce overwhelming pleasure in the subject.", "在对象身上引发压倒性的愉悦."],
+            ["If checked, your hypnotizer may induce hypnotic suggestions within you.", "如果选中,你的催眠师可以在你身上诱导催眠暗示."],
+            ["If checked, you can remove suggestions installed in you with '/lscg remove-suggestion' if you are not immersive and not on extreme difficulty.", "如果选中,如果你不是沉浸式并且不在极端难度下,你可以使用 '/lscg remove-suggestion' 移除安装在你身上的暗示."],
+            ["If checked, you will always submit to suggestions.", "如果选中,你将始终服从暗示."],
+            ["Comma separated list of member IDs. If empty will use standard Item Permissions. You will always submit to their suggestions.", "以逗号分隔的成员 ID 列表.如果为空,则使用标准项目权限.你将始终服从他们的暗示."],
+            ["Toggle which suggestion instructions you want to block on yourself.", "切换你想要自我阻止的暗示指令."],
+            ["Forget", "忘记"],
+            ["Remove a previous instruction from the subject.", "从对象移除先前的指令."],
+            ["Serve", "服务"],
+            ["Compel the subject to serve drinks.", "强迫对象提供饮料."],
+            ["Speak Phrase", "说出短语"],
+            ["Compel the subject to speak a phrase.", "强迫对象说出一个短语."],
+            ["Follow", "跟随"],
+            ["Compel the subject to follow someone. (Requires LSCG leashing enabled on both)", "强迫对象跟随某人.(需要双方都启用 LSCG 捆绑)"],
+            ["Assume Pose", "采取姿势"],
+            ["Compel the subject to assume a pose.", "强迫对象采取一个姿势."],
+            ["Strip", "脱衣"],
+            ["Make the subjects clothing uncomfortable.", "让对象的衣物变得不舒服."],
+            ["Perform Activity", "执行活动"],
+            ["Compel the subject to perform an activity.", "强迫对象执行一项活动."],
+            ["Insatiable", "永不满足"],
+            ["Infuse the subject with an endless arousal.", "注入对象无尽的兴奋."],
+            ["Denial", "拒绝"],
+            ["Prevent the subject from achieving orgasm.", "阻止对象达到高潮."],
+            ["[WCE] clear and reload the drawing cache of all characters", "[WCE] 清除并重新加载所有角色的绘图缓存"],
 
 
 
@@ -4950,103 +4982,110 @@
             // WCE
             ["Gagspeak & Anti-Garble", "恶作剧语言与防胡言乱语"],
             ["Improved whisper target handling", "改进的耳语目标处理"],
-            ["Automatically reset whisper target if they leave the room for more than one minute and after the first invalid whisper target warning message.", "如果目标离开房间超过一分钟或在首次无效耳语目标警告后，自动重置耳语目标。"],
-            ["Changes the online profile to support clickable links and embedded images.", "更改在线个人资料以支持可点击链接和嵌入式图片。"],
-            ["Automatically express arousal when performing an activity (requires Animation Engine).", "在进行活动时自动表达兴奋（需要动画引擎）。"],
-            ["Automatically express reactions to certain activities (requires Animation Engine).", "对某些活动自动表达反应（需要动画引擎）。"],
+            ["Automatically reset whisper target if they leave the room for more than one minute and after the first invalid whisper target warning message.", "如果目标离开房间超过一分钟或在首次无效耳语目标警告后,自动重置耳语目标."],
+            ["Changes the online profile to support clickable links and embedded images.", "更改在线个人资料以支持可点击链接和嵌入式图片."],
+            ["Automatically express arousal when performing an activity (requires Animation Engine).", "在进行活动时自动表达兴奋(需要动画引擎)."],
+            ["Automatically express reactions to certain activities (requires Animation Engine).", "对某些活动自动表达反应(需要动画引擎)."],
             ["WCE Settings - Appearance & Wardrobe", "WCE 设置 - 外观与衣橱"],
             ["[Beta] Allow configuring layer hiding in layering menu", "[Beta] 允许在分层菜单中配置隐藏层"],
             ["Enable option to copy color to all item's of the same type", "启用将颜色复制到所有同类型物品的选项"],
             ["Local Wardrobe (+288)", "本地衣橱 (+288)"],
             ["Confirm overriding wardrobe outfits", "确认覆盖衣橱套装"],
-            ["Allows you to configure which lower layers an item should hide or not (changes only visible to other WCE players).", "允许您配置物品应隐藏还是不隐藏哪些下层（更改仅对其他 WCE 玩家可见）。"],
-            ["Enable option to copy color to all item's of the same type.", "启用将颜色复制到所有同类型物品的选项。"],
-            ["Enables the Local Wardrobe - save 288 additional outfits on your device (not synced between devices, but shared between alts on the same device).", "启用本地衣橱 - 在您的设备上保存额外的 288 套服装（不同设备间不同步，但在同一设备上的替代角色间共享）。"],
-            ["When saving over an already existing wardrobe outfit you'll ask for confirmation, preventing accidentally overwriting outfits.", "当覆盖已存在的衣橱服装时，会要求确认，防止意外覆盖服装。"],
+            ["Allows you to configure which lower layers an item should hide or not (changes only visible to other WCE players).", "允许您配置物品应隐藏还是不隐藏哪些下层(更改仅对其他 WCE 玩家可见)."],
+            ["Enable option to copy color to all item's of the same type.", "启用将颜色复制到所有同类型物品的选项."],
+            ["Enables the Local Wardrobe - save 288 additional outfits on your device (not synced between devices, but shared between alts on the same device).", "启用本地衣橱 - 在您的设备上保存额外的 288 套服装(不同设备间不同步,但在同一设备上的替代角色间共享)."],
+            ["When saving over an already existing wardrobe outfit you'll ask for confirmation, preventing accidentally overwriting outfits.", "当覆盖已存在的衣橱服装时,会要求确认,防止意外覆盖服装."],
             ["Prevents other players from using layering on you", "阻止其他玩家对你使用分层"],
-            ["Prevents other WCE players to make Layering based changes to your character.", "阻止其他 WCE 玩家基于分层对你的角色做出修改。"],
-            ["Prevents certain other addon cheats from impacting your character.", "阻止某些其他插件作弊影响你的角色。"],
+            ["Prevents other WCE players to make Layering based changes to your character.", "阻止其他 WCE 玩家基于分层对你的角色做出修改."],
+            ["Prevents certain other addon cheats from impacting your character.", "阻止某些其他插件作弊影响你的角色."],
             ["WCE Settings - Gagspeak & Anti-Garble", "WCE 设置 - 恶作剧语言 & 防胡言乱语"],
             ["Anti Garble", "防胡言乱语"],
             ["Anti Garble chat options", "防胡言乱语聊天选项"],
-            ["Chat garble level:", "聊天胡言乱语程度："],
+            ["Chat garble level:", "聊天胡言乱语程度:"],
             ["none", "无"],
-            ["Chat stutters:", "聊天结巴："],
+            ["Chat stutters:", "聊天结巴:"],
             ["ignore", "忽略"],
-            ["Chat baby talk:", "聊天婴儿语："],
+            ["Chat baby talk:", "聊天婴儿语:"],
             ["remove", "移除"],
-            ["Whisper garble level:", "耳语胡言乱语程度："],
-            ["Whispers stutters:", "耳语结巴："],
-            ["Whispers baby talk:", "耳语婴儿语："],
-            ["Chat garble level: low", "聊天胡言乱语程度：低"],
-            ["Chat garble level: full", "聊天胡言乱语程度：完全"],
-            ["Chat stutters: remove", "聊天结巴：移除"],
-            ["Chat baby talk: ignore", "聊天婴儿语：忽略"],
-            ["Chat baby talk: preserve", "聊天婴儿语：保留"],
-            ["Whispers stutters: preserve", "耳语结巴：保留"],
-            ["Whispers stutters: remove", "耳语结巴：移除"],
-            ["Chat stutters: preserve", "聊天结巴：保留"],
-            ["Whisper garble level: low", "耳语胡言乱语程度：低"],
-            ["Whisper garble level: off", "耳语胡言乱语程度：关闭"],
-            ["Whispers baby talk: ignore", "耳语婴儿语：忽略"],
-            ["Whispers baby talk: preserve", "耳语婴儿语：保留"],
-            ["Enables the anti-garble system. Allowing you to send less garbled version of your messages together with the garbled one to others, who could read it in brackets.", "启用防胡言乱语系统。允许你将较少胡言乱语版本的消息与胡言乱语版本一起发送给其他人，他们可以在括号中阅读。"],
-            ["Adds quick options for your anti-garble settings to the chat input menu.", "在聊天输入菜单中添加防胡言乱语设置的快速选项。"],
-            ["Sends an ungarbled (or lower garbled up to the selected value) chat message together with the garbled messages, which is shown on the recipient side in brackets (defaults to full = no ungarbling).", "发送未胡言乱语（或根据选择值降低胡言乱语程度）的聊天消息，与胡言乱语消息一同发送，接收方将在括号中看到（默认为完全胡言乱语=无解胡言乱语）。"],
-            ["Chat garble level: none (send a fully ungarbled message to the recipient, shown in brackets)", "聊天胡言乱语程度：无（向接收方发送完全未胡言乱语的消息，显示在括号中）"],
-            ["Controls if stutters in chat messages are always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制聊天消息中的结巴是否总是被移除、忽略（只有在应用了其他解胡言乱语时才移除）或保留。"],
-            ["Chat stutters: ignore (remove chat stutters if ungarbling gag speech, but ignore it if it's the only effect)", "聊天结巴：忽略（如果解胡言乱语则移除聊天结巴，但如果这是唯一效果，则忽略它）"],
-            ["Controls if baby talk in chat messages is always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制聊天消息中的婴儿语是否总是被移除、忽略（只有在应用了其他解胡言乱语时才移除）或保留。"],
-            ["Chat baby talk: remove (always remove chat baby talk, even if it is the only effect)", "聊天婴儿语：移除（始终移除聊天婴儿语，即使它是唯一的效果）"],
-            ["Sends an ungarbled (or lower garbled) whisper message together with the garbled messages, which is shown on the recipient side in brackets. (off = only sending the ungarbled messages as the original).", "发送未胡言乱语（或较低程度胡言乱语）的耳语消息，与胡言乱语消息一同发送，接收方将在括号中看到。（关闭=仅以原始形式发送未胡言乱语的消息）。"],
-            ["Whisper garble level: none (send a fully ungarbled whisper to the recipient, shown in brackets)", "耳语胡言乱语程度：无（向接收方发送完全未胡言乱语的耳语，显示在括号中）"],
-            ["Controls if stutters in whispers are always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制耳语中的结巴是否总是被移除、忽略（只有在应用了其他解胡言乱语时才移除）或保留。"],
-            ["Whispers stutters: ignore (remove whispers stutters if ungarbling gag speech, but ignore it if it's the only effect)", "耳语结巴：忽略（如果解胡言乱语则移除耳语结巴，但如果这是唯一效果，则忽略它）"],
-            ["Controls if baby talk in whispers is always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制耳语中的婴儿语是否总是被移除、忽略（只有在应用了其他解胡言乱语时才移除）或保留。"],
-            ["Whispers baby talk: remove (always remove whispers baby talk, even if it is the only effect)", "耳语婴儿语：移除（始终移除耳语婴儿语，即使它是唯一的效果）"],
+            ["Whisper garble level:", "耳语胡言乱语程度:"],
+            ["Whispers stutters:", "耳语结巴:"],
+            ["Whispers baby talk:", "耳语婴儿语:"],
+            ["Chat garble level: low", "聊天胡言乱语程度:低"],
+            ["Chat garble level: full", "聊天胡言乱语程度:完全"],
+            ["Chat stutters: remove", "聊天结巴:移除"],
+            ["Chat baby talk: ignore", "聊天婴儿语:忽略"],
+            ["Chat baby talk: preserve", "聊天婴儿语:保留"],
+            ["Whispers stutters: preserve", "耳语结巴:保留"],
+            ["Whispers stutters: remove", "耳语结巴:移除"],
+            ["Chat stutters: preserve", "聊天结巴:保留"],
+            ["Whisper garble level: low", "耳语胡言乱语程度:低"],
+            ["Whisper garble level: off", "耳语胡言乱语程度:关闭"],
+            ["Whispers baby talk: ignore", "耳语婴儿语:忽略"],
+            ["Whispers baby talk: preserve", "耳语婴儿语:保留"],
+            ["Enables the anti-garble system. Allowing you to send less garbled version of your messages together with the garbled one to others, who could read it in brackets.", "启用防胡言乱语系统.允许你将较少胡言乱语版本的消息与胡言乱语版本一起发送给其他人,他们可以在括号中阅读."],
+            ["Adds quick options for your anti-garble settings to the chat input menu.", "在聊天输入菜单中添加防胡言乱语设置的快速选项."],
+            ["Sends an ungarbled (or lower garbled up to the selected value) chat message together with the garbled messages, which is shown on the recipient side in brackets (defaults to full = no ungarbling).", "发送未胡言乱语(或根据选择值降低胡言乱语程度)的聊天消息,与胡言乱语消息一同发送,接收方将在括号中看到(默认为完全胡言乱语=无解胡言乱语)."],
+            ["Chat garble level: none (send a fully ungarbled message to the recipient, shown in brackets)", "聊天胡言乱语程度:无(向接收方发送完全未胡言乱语的消息,显示在括号中)"],
+            ["Controls if stutters in chat messages are always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制聊天消息中的结巴是否总是被移除、忽略(只有在应用了其他解胡言乱语时才移除)或保留."],
+            ["Chat stutters: ignore (remove chat stutters if ungarbling gag speech, but ignore it if it's the only effect)", "聊天结巴:忽略(如果解胡言乱语则移除聊天结巴,但如果这是唯一效果,则忽略它)"],
+            ["Controls if baby talk in chat messages is always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制聊天消息中的婴儿语是否总是被移除、忽略(只有在应用了其他解胡言乱语时才移除)或保留."],
+            ["Chat baby talk: remove (always remove chat baby talk, even if it is the only effect)", "聊天婴儿语:移除(始终移除聊天婴儿语,即使它是唯一的效果)"],
+            ["Sends an ungarbled (or lower garbled) whisper message together with the garbled messages, which is shown on the recipient side in brackets. (off = only sending the ungarbled messages as the original).", "发送未胡言乱语(或较低程度胡言乱语)的耳语消息,与胡言乱语消息一同发送,接收方将在括号中看到.(关闭=仅以原始形式发送未胡言乱语的消息)."],
+            ["Whisper garble level: none (send a fully ungarbled whisper to the recipient, shown in brackets)", "耳语胡言乱语程度:无(向接收方发送完全未胡言乱语的耳语,显示在括号中)"],
+            ["Controls if stutters in whispers are always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制耳语中的结巴是否总是被移除、忽略(只有在应用了其他解胡言乱语时才移除)或保留."],
+            ["Whispers stutters: ignore (remove whispers stutters if ungarbling gag speech, but ignore it if it's the only effect)", "耳语结巴:忽略(如果解胡言乱语则移除耳语结巴,但如果这是唯一效果,则忽略它)"],
+            ["Controls if baby talk in whispers is always removed, ignored (only removed if other ungarbling applied) or preserved.", "控制耳语中的婴儿语是否总是被移除、忽略(只有在应用了其他解胡言乱语时才移除)或保留."],
+            ["Whispers baby talk: remove (always remove whispers baby talk, even if it is the only effect)", "耳语婴儿语:移除(始终移除耳语婴儿语,即使它是唯一的效果)"],
             ["full", "完全"],
-            ["Chat garble level: full (always only sends the full garbled message, no ungarbled message in brackets)", "聊天胡言乱语程度：完全（始终仅发送完全胡言乱语的消息，括号中没有未胡言乱语的消息）"],
-            ["Chat garble level: high", "聊天胡言乱语程度：高"],
+            ["Chat garble level: full (always only sends the full garbled message, no ungarbled message in brackets)", "聊天胡言乱语程度:完全(始终仅发送完全胡言乱语的消息,括号中没有未胡言乱语的消息)"],
+            ["Chat garble level: high", "聊天胡言乱语程度:高"],
             ["high", "高"],
-            ["Chat garble level: high (send a partly ungarbled message, which is only garbled up to the high garbel level 5)", "聊天胡言乱语程度：高（发送部分未胡言乱语的消息，仅胡言乱语至高胡言乱语等级5）"],
-            ["Chat garble level: medium", "聊天胡言乱语程度：中"],
+            ["Chat garble level: high (send a partly ungarbled message, which is only garbled up to the high garbel level 5)", "聊天胡言乱语程度:高(发送部分未胡言乱语的消息,仅胡言乱语至高胡言乱语等级5)"],
+            ["Chat garble level: medium", "聊天胡言乱语程度:中"],
             ["medium", "中"],
-            ["Chat garble level: medium (send a partly ungarbled message, which is only garbled up to the medium garbel level 3)", "聊天胡言乱语程度：中（发送部分未胡言乱语的消息，仅胡言乱语至中胡言乱语等级3）"],
+            ["Chat garble level: medium (send a partly ungarbled message, which is only garbled up to the medium garbel level 3)", "聊天胡言乱语程度:中(发送部分未胡言乱语的消息,仅胡言乱语至中胡言乱语等级3)"],
             ["low", "低"],
-            ["Chat garble level: low (send a partly ungarbled message, which is only garbled up to the low garbel level 1)", "聊天胡言乱语程度：低（发送部分未胡言乱语的消息，仅胡言乱语至低胡言乱语等级1）"],
-            ["Chat garble level: none", "聊天胡言乱语程度：无"],
-            ["Chat stutters: remove (always remove chat stutters, even if it is the only effect)", "聊天结巴：移除（始终移除聊天结巴，即使它是唯一的效果）"],
+            ["Chat garble level: low (send a partly ungarbled message, which is only garbled up to the low garbel level 1)", "聊天胡言乱语程度:低(发送部分未胡言乱语的消息,仅胡言乱语至低胡言乱语等级1)"],
+            ["Chat garble level: none", "聊天胡言乱语程度:无"],
+            ["Chat stutters: remove (always remove chat stutters, even if it is the only effect)", "聊天结巴:移除(始终移除聊天结巴,即使它是唯一的效果)"],
             ["preserve", "保留"],
-            ["Chat stutters: preserve (always preserve chat stutters in the ungarbled text in brackets)", "聊天结巴：保留（始终在括号中的未胡言乱语文本中保留聊天结巴）"],
-            ["Chat stutters: ignore", "聊天结巴：忽略"],
-            ["Chat baby talk: preserve (always preserve chat baby talk in the ungarbled text in brackets)", "聊天婴儿语：保留（始终在括号中的未胡言乱语文本中保留聊天婴儿语）"],
-            ["Chat baby talk: ignore (remove chat baby talk if ungarbling gag speech, but ignore it if it's the only effect)", "聊天婴儿语：忽略（如果解胡言乱语则移除聊天婴儿语，但如果它是唯一效果，则忽略它）"],
-            ["Chat baby talk: remove", "聊天婴儿语：移除"],
+            ["Chat stutters: preserve (always preserve chat stutters in the ungarbled text in brackets)", "聊天结巴:保留(始终在括号中的未胡言乱语文本中保留聊天结巴)"],
+            ["Chat stutters: ignore", "聊天结巴:忽略"],
+            ["Chat baby talk: preserve (always preserve chat baby talk in the ungarbled text in brackets)", "聊天婴儿语:保留(始终在括号中的未胡言乱语文本中保留聊天婴儿语)"],
+            ["Chat baby talk: ignore (remove chat baby talk if ungarbling gag speech, but ignore it if it's the only effect)", "聊天婴儿语:忽略(如果解胡言乱语则移除聊天婴儿语,但如果它是唯一效果,则忽略它)"],
+            ["Chat baby talk: remove", "聊天婴儿语:移除"],
             ["off", "关闭"],
-            ["Whisper garble level: off (don't garble whisper messages at all, normal message is ungarbled, no message in brackets)", "耳语胡言乱语程度：关闭（根本不胡言乱语耳语消息，正常消息未胡言乱语，括号中没有消息）"],
-            ["Whisper garble level: full", "耳语胡言乱语程度：完全"],
-            ["Whisper garble level: full (always only sends the full garbled whisper, no ungarbled message in brackets)", "耳语胡言乱语程度：完全（始终仅发送完全胡言乱语的耳语，括号中没有未胡言乱语的消息）"],
-            ["Whisper garble level: high", "耳语胡言乱语程度：高"],
-            ["Whisper garble level: high (send a partly ungarbled whisper, which is only garbled up to the high garbel level 5)", "耳语胡言乱语程度：高（发送部分未胡言乱语的耳语，仅胡言乱语至高胡言乱语等级5）"],
-            ["Whisper garble level: medium", "耳语胡言乱语程度：中"],
-            ["Whisper garble level: medium (send a partly ungarbled whisper, which is only garbled up to the medium garbel level 3)", "耳语胡言乱语程度：中（发送部分未胡言乱语的耳语，仅胡言乱语至中胡言乱语等级3）"],
-            ["Whisper garble level: low (send a partly ungarbled whisper, which is only garbled up to the low garbel level 1)", "耳语胡言乱语程度：低（发送部分未胡言乱语的耳语，仅胡言乱语至低胡言乱语等级1）"],
-            ["Whisper garble level: none", "耳语胡言乱语程度：无"],
-            ["Whispers stutters: preserve (always preserve whispers stutters in the ungarbled text in brackets)", "耳语结巴：保留（始终在括号中的未胡言乱语文本中保留耳语结巴）"],
-            ["Whispers stutters: remove (always remove whispers stutters, even if it is the only effect)", "耳语结巴：移除（始终移除耳语结巴，即使它是唯一的效果）"],
-            ["Whispers stutters: ignore", "耳语结巴：忽略"],
-            ["Whispers baby talk: ignore (remove whispers baby talk if ungarbling gag speech, but ignore it if it's the only effect)", "耳语婴儿语：忽略（如果解胡言乱语则移除耳语婴儿语，但如果它是唯一效果，则忽略它）"],
-            ["Whispers baby talk: preserve (always preserve whispers baby talk in the ungarbled text in brackets)", "耳语婴儿语：保留（始终在括号中的未胡言乱语文本中保留耳语婴儿语）"],
-            ["Whispers baby talk: remove", "耳语婴儿语：移除"],
+            ["Whisper garble level: off (don't garble whisper messages at all, normal message is ungarbled, no message in brackets)", "耳语胡言乱语程度:关闭(根本不胡言乱语耳语消息,正常消息未胡言乱语,括号中没有消息)"],
+            ["Whisper garble level: full", "耳语胡言乱语程度:完全"],
+            ["Whisper garble level: full (always only sends the full garbled whisper, no ungarbled message in brackets)", "耳语胡言乱语程度:完全(始终仅发送完全胡言乱语的耳语,括号中没有未胡言乱语的消息)"],
+            ["Whisper garble level: high", "耳语胡言乱语程度:高"],
+            ["Whisper garble level: high (send a partly ungarbled whisper, which is only garbled up to the high garbel level 5)", "耳语胡言乱语程度:高(发送部分未胡言乱语的耳语,仅胡言乱语至高胡言乱语等级5)"],
+            ["Whisper garble level: medium", "耳语胡言乱语程度:中"],
+            ["Whisper garble level: medium (send a partly ungarbled whisper, which is only garbled up to the medium garbel level 3)", "耳语胡言乱语程度:中(发送部分未胡言乱语的耳语,仅胡言乱语至中胡言乱语等级3)"],
+            ["Whisper garble level: low (send a partly ungarbled whisper, which is only garbled up to the low garbel level 1)", "耳语胡言乱语程度:低(发送部分未胡言乱语的耳语,仅胡言乱语至低胡言乱语等级1)"],
+            ["Whisper garble level: none", "耳语胡言乱语程度:无"],
+            ["Whispers stutters: preserve (always preserve whispers stutters in the ungarbled text in brackets)", "耳语结巴:保留(始终在括号中的未胡言乱语文本中保留耳语结巴)"],
+            ["Whispers stutters: remove (always remove whispers stutters, even if it is the only effect)", "耳语结巴:移除(始终移除耳语结巴,即使它是唯一的效果)"],
+            ["Whispers stutters: ignore", "耳语结巴:忽略"],
+            ["Whispers baby talk: ignore (remove whispers baby talk if ungarbling gag speech, but ignore it if it's the only effect)", "耳语婴儿语:忽略(如果解胡言乱语则移除耳语婴儿语,但如果它是唯一效果,则忽略它)"],
+            ["Whispers baby talk: preserve (always preserve whispers baby talk in the ungarbled text in brackets)", "耳语婴儿语:保留(始终在括号中的未胡言乱语文本中保留耳语婴儿语)"],
+            ["Whispers baby talk: remove", "耳语婴儿语:移除"],
             ["WCE Settings - Performance", "WCE 设置 - 性能"],
             ["Adds a clear / reload drawing cache button", "添加清除/重新加载绘图缓存按钮"],
-            ["Adds a button to the chat room menu to clear and reload the drawing cache of all characters, helping to fix buged / non-loaded assets.", "在聊天室菜单中添加一个按钮，用于清除和重新加载所有角色的绘图缓存，有助于修复错误/未加载的资源。"],
+            ["Adds a button to the chat room menu to clear and reload the drawing cache of all characters, helping to fix buged / non-loaded assets.", "在聊天室菜单中添加一个按钮,用于清除和重新加载所有角色的绘图缓存,有助于修复错误/未加载的资源."],
             ["WCE Settings - Misc", "WCE 设置 - 其他"],
-            ["Share a list of your installed addons with other WCE users in the room, visible via /versions chat command.", "通过 /versions 聊天命令与其他房间内的 WCE 用户共享你安装的插件列表。"],
+            ["Share a list of your installed addons with other WCE users in the room, visible via /versions chat command.", "通过 /versions 聊天命令与其他房间内的 WCE 用户共享你安装的插件列表."],
             ["WCE Settings - Cheats", "WCE 设置 - 作弊"],
             ["Anti Deafen", "防聋"],
-            ["Show original messages in brackets while deafened.", "在被致聋时，在括号中显示原始消息。"],
-            ["Allows the game to control your real vibrators. For a list of supported vibrators see https://buttplug.io", "允许游戏控制你的真实震动器。有关支持的震动器列表，请参见 https://buttplug.io"],
+            ["Show original messages in brackets while deafened.", "在被致聋时,在括号中显示原始消息."],
+            ["Allows the game to control your real vibrators. For a list of supported vibrators see https://buttplug.io", "允许游戏控制你的真实震动器.有关支持的震动器列表,请参见 https://buttplug.io"],
+
+
+            // BCC
+            ["BCC Dark Magic", "BCC 黑暗魔法"],
+
+
+
 
             // ["- BCAR+ Reactions -", "- BCAR+ 反应 -"],
             // [`-  -`, `-  -`],
@@ -5289,10 +5328,10 @@
                         args[0] = args[0].replace(/MBS\: Show new (.+) items/, "MBS:显示新的$1项目");
                     }
                     if (args[0].indexOf("Buy new ") !== -1) {
-                        args[0] = args[0].replace(/Buy new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
+                        args[0] = args[0].replace(/Buy new (.+) items\: Page (.+)/, "购买新的 $1 项:第 $2 页");
                     }
                     if (args[0].indexOf("Preview new ") !== -1) {
-                        args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项：第 $2 页");
+                        args[0] = args[0].replace(/Preview new (.+) items\: Page (.+)/, "购买新的 $1 项:第 $2 页");
                     }
                 }
 
@@ -5301,12 +5340,13 @@
                 //     console.log(args[0]);
                 //     printedTextMap.set(args[0], true);
                 // }
+
             }
         };
 
         const textsToTranslate = {
             "#fusam-addon-manager-header > h1": "插件管理器",
-            "#fusam-addon-manager-body > p": "关于安全性的说明：尽管被发现是恶意的插件会从插件管理器中移除, 但仍然有可能有一些漏网的鱼鱼",
+            "#fusam-addon-manager-body > p": "关于安全性的说明:尽管被发现是恶意的插件会从插件管理器中移除, 但仍然有可能有一些漏网的鱼鱼",
             "#fusam-show-button": "插件管理器",
             "#fusam-addon-manager-close": "保存",
         };
@@ -5358,13 +5398,13 @@
             "by Nemesea": "由 Nemesea 制作",
             "A large collection of cheats, quality of life improvements, and a moaner script": "一大堆作弊、提高游戏品质的改进和呻吟者脚本.",
             "NotifyPlus": "改进提醒 (NotifyPlus)",
-            "Improve the Name Mentioned notification in the original BC. Use keywords for mentioning names according to different roles. (Note: source code unavailable)": "改进BC原本提醒中的提到名字的规则.按照不同的身份配置提到名字的触发关键词.(注：源代码不可用)",
+            "Improve the Name Mentioned notification in the original BC. Use keywords for mentioning names according to different roles. (Note: source code unavailable)": "改进BC原本提醒中的提到名字的规则.按照不同的身份配置提到名字的触发关键词.(注:源代码不可用)",
             "TTS and Morse": "TTS 和 Morse (TTS and Morse)",
             "by KatKammand": "由 KatKammand 制作",
             "Text-to-speech reading for chat messages, and some buttplug.io + morse functionalities.": "聊天文字转语音阅读, 以及一些 buttplug.io + morse 功能.",
             "Chat Auto Translator Script": "聊天自动翻译脚本 (Chat Auto Translator Script)",
             "by Ciber, dDeepLb and KatKammand": "由 Ciber, dDeepLb 和 KatKammand 制作",
-            "Addon that auto-translates the chat to the language you want. 130+ Languages available. Commands: /ttoggle to toggle the translator on and off. And /tlang": "将聊天自动翻译为您想要的语言的插件.有 130 多种语言可用.命令：/ttoggle 切换翻译器的开关./tlang ",
+            "Addon that auto-translates the chat to the language you want. 130+ Languages available. Commands: /ttoggle to toggle the translator on and off. And /tlang": "将聊天自动翻译为您想要的语言的插件.有 130 多种语言可用.命令:/ttoggle 切换翻译器的开关./tlang ",
             ", to change the language used.": "用于更改所使用的语言.",
             "Device": "本设备启用",
             "Account": "当前账户开启",
@@ -5372,7 +5412,62 @@
             "stable": "稳定版",
             "dev": "开发版",
 
-            // "": "",
+            "You can't use this spell on yourself": "你不能对自己使用这个咒语",
+            "You don't have magic wand in your hands": "你手中没有魔法棒",
+            "Use spell on ": "目标 → ",
+            "Description": "描述",
+            "Force lick legs": "强制舔腿",
+            "Put to sleep": "催眠入睡",
+            "Remove enchantments": "移除魔法",
+            "Destroy sky shield": "摧毁天空护盾",
+            "Make helpless": "使其无助",
+            "Make hallucination": "制造幻觉",
+            "Make cat speech": "使说猫语",
+            "Make baby speech": "使说婴儿语",
+            "Make puppy speech": "使说小狗语",
+            "Make cow speech": "使说牛语",
+            "Make horny": "激发情欲",
+            "Take away voice": "剥夺声音",
+            "Control": "控制",
+            "Flips target's screen.": "翻转目标的屏幕。",
+            "Flip": "翻转",
+            
+            "Dissolve clothes": "溶解衣物",
+
+            "Makes the victim to lick your legs periodically (every minute)": "使受害者周期性地舔你的腿（每分钟一次）",
+            "Puts target sleep. While target is sleeping, she cannot send messages, interact with anything and move, to wake up the target, try ": "使目标进入睡眠。当目标在睡觉时，她无法发送消息、与任何事物互动或移动，要唤醒目标，请尝试 ",
+            "Removes all spell effects from the target.": "移除目标身上所有的法术效果。",
+            "Hits the sky shield, owner will deal 20 damage, lovers - 10 damage, others - 5 damage for every hit on target.": "攻击天空护盾，主人将造成20点伤害，爱人造成10点伤害，其他人每次攻击目标造成5点伤害。",
+            "Makes target helpless. Prevents the target from using any cheat commands and restricts movement and interaction.": "使目标变得无助。阻止目标使用任何作弊命令，并限制其移动和互动。",
+            "Confuses target. Target will see the wrong senders in the chat and will be very confused.": "使目标困惑。目标将在聊天中看到错误的发送者，并会非常困惑。",
+            "Makes the target to speak like a cat, meow ": "使目标像猫一样说话，喵",
+            "Makes the target to speak like a baby, guga ": "使目标像婴儿一样说话，咕嘎",
+            "Makes the target to speak like a puppy, woof ": "使目标像小狗一样说话，汪",
+            "Makes the target to speak like a cow, moo ": "使目标像牛一样说话，哞",
+            "Makes target horny": "使目标感到情欲",
+            "Maky horny": "使目标感到情欲",
+            "Takes away the voice of the target. The target will lose the ability to speak.": "夺走目标的声音。目标将失去说话的能力。",
+            "Allows you to literally become a target, you will be able to control your target. Very powerful spell.": "允许你真正成为目标，你将能够控制你的目标。非常强大的法术。",
+            "Dissolve all target's clothes. You can craft potion bottle with 'obscene' in name or description and spill this potion on someone's head :D": "溶解目标的所有衣物。你可以制作带有‘猥亵’名称或描述的药水瓶，并将这种药水倒在某人的头上 :D",
+
+"spanking": "打屁股",
+" her, ": " 她，",
+"french kissing": "法式接吻",
+" her or using the ": "对她 或 使用 ",
+"remove enchantments": "移除魔法",
+" spell.": " 法术。",
+
+"'s sky shield is disabled": "的天空护盾已被禁用",
+"This spell is already in effect": "这个法术已经生效",
+
+"Enter the names of the craft items, which will be able to cast spells, separated by ','": "输入能够施法的手工艺品名称，用 ',' 分隔。",
+"Comfirm": "确认",
+"Cancel": "取消",
+
+
+"You can't interact": "你无法互动",
+
+
             // "": "",
             // console.log(1)
 
@@ -5413,14 +5508,34 @@
                     }
                 }
                 const myDiv = document.querySelector("#fusam-addon-manager-body");
+                const myDivBCC = document.querySelector("#bccFullScreen");
+                const myDivbccPopup = document.querySelector("#bccPopup");
+
                 if (myDiv) {
-                    // 调用递归函数替换文本内容
                     replaceTextNodes(myDiv);
+                } else if (myDivBCC) {
+                    replaceTextNodes(myDivBCC);
+                } 
+                if (myDivbccPopup) {
+                    replaceTextNodes(myDivbccPopup);
                 }
             }
             replaceLabels(args);
             next(args);
         });
+
+
+        // const myDiv = document.querySelector("#fusam-addon-manager-body");
+        // const myDivBCC = document.querySelector("#bccFullScreen");
+        // if (myDiv || myDivBCC) {
+        //     // 调用递归函数替换文本内容
+        //     replaceTextNodes(myDiv);
+        // }
+
+
+
+
+
 
         笨蛋Luzi.hookFunction("DrawTextFit", 10, (args, next) => {
             replaceLabels(args);
@@ -5639,8 +5754,8 @@
         { regex: /(.+) struggles in (.+) bindings, unable to reach (.+)'s collar controls\./, replacement: "$1在$2约束下挣扎, 无法触及$3的项圈控制装置." },
         { regex: /(.+) presses a button on (.+) collar\./, replacement: "$1按下$2项圈上的一个按钮." },
         { regex: /(.+) presses a button on (.+)'s collar\./, replacement: "$1按下$2的项圈上的一个按钮." },
-        { regex: /(.+)\'s collar beeps and a computerized voice says "Access Denied\./, replacement: "$1的项圈发出嘟嘟声, 电脑化的声音说：“访问被拒绝.”" },
-        { regex: /(.+)\'s collar chimes and a computerized voice reads out\:\nCurrent Level\: (.+)\.\.\.\nCorrective Cycles: (.+)\.\.\.\nTighten Trigger\: \'(.+)\'\.\.\.\nLoosen Trigger\: \'(.+)\'\.\.\.\nRemote Access\: (.+)\.\.\./, replacement: "$1的项圈响起提示音, 电脑化的声音读出：\n当前水平：$2...\n校正周期：$3...\n收紧触发器：“$4”...\n放松触发器：“$5”...\n远程访问：$6.." },
+        { regex: /(.+)\'s collar beeps and a computerized voice says "Access Denied\./, replacement: "$1的项圈发出嘟嘟声, 电脑化的声音说:“访问被拒绝.”" },
+        { regex: /(.+)\'s collar chimes and a computerized voice reads out\:\nCurrent Level\: (.+)\.\.\.\nCorrective Cycles: (.+)\.\.\.\nTighten Trigger\: \'(.+)\'\.\.\.\nLoosen Trigger\: \'(.+)\'\.\.\.\nRemote Access\: (.+)\.\.\./, replacement: "$1的项圈响起提示音, 电脑化的声音读出:\n当前水平:$2...\n校正周期:$3...\n收紧触发器:“$4”...\n放松触发器:“$5”...\n远程访问:$6.." },
         { regex: /(.+) gives (.+) (.+) to (.+)\./, replacement: "$1给$2$3给$4." },
         { regex: /(.+) slowly waves (.+) (.+) in an intricate pattern, making sure (.+) follows along with (.+) (.+)/, replacement: "$1慢慢地挥动着$2$3以复杂的图案, 确保$4跟着他们的$5$6." },
         { regex: /(.+) repeats an indecipherable phrase, touching (.+) (.+) to (.+)'s (.+)/, replacement: "$1重复着一个难以理解的短语, 把$2$3碰到$4的$5." },
@@ -5691,7 +5806,33 @@
         { regex: /(.+) tugs (.+) and (.+) out of the room by (.+) tongues\./, replacement: "$1拽着$2和$3走出房间, 用$4的舌头." },
         { regex: /(.+) tries (.+) best to escape from (.+)'s grip\.\.\./, replacement: "$1竭尽全力从$3的控制中挣脱..." },
         { regex: /(.+)\'s eyes start to roll back with a groan as (.+) completely closes (.+) airway with (.+) hand\./, replacement: "$1的眼睛开始滚动, 发出呻吟声, 当$2用$4的手完全封闭$3的气道时." },
+    
+
+        // 移除魔法效果
+        { regex: /(.+) uses \"Remove enchantments\" spell on himself/, replacement: "$1 自己使用了 \"移除魔法\" 法术" },
+        { regex: /(.+) uses \"Remove enchantments\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"移除魔法\" 法术" },
+        { regex: /All spell effects were removed from (.+)/, replacement: "所有法术效果从 $1 身上被移除了" },
+
+        // 溶解衣物
+        { regex: /(.+) uses \"Dissolve clothes\" spell on himself/, replacement: "$1 自己使用了 \"溶解衣物\" 法术" },
+        { regex: /(.+) uses \"Dissolve clothes\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"溶解衣物\" 法术" },
+        { regex: /(.+)'s clothes were dissolved/, replacement: "$1 的衣物被溶解了" },
+
+        // 催眠入睡
+        { regex: /(.+) uses \"Put to sleep\" spell on himself/, replacement: "$1 自己使用了 \"催眠入睡\" 法术" },
+        { regex: /(.+) uses \"Put to sleep\" spell on (.+)/, replacement: "$1 对 $2 使用了 \"催眠入睡\" 法术" },
+        { regex: /(.+) fell asleep, only hot kiss or hard spanking can wake his up/, replacement: "$1 睡着了，只有热烈的亲吻或严厉的打屁股才能唤醒他" },
+
+
+
+
+
+
+
+
+
     ];
+
 
 
 
