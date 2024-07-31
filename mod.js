@@ -147,10 +147,10 @@
 
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Kneel|KneelingSpread|LegsClosed|Spread|AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/(Penis|Penis1|Penis2|Penis3)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/Hard\/(Penis|PussyDark1|PussyDark2|PussyDark3|PussyLight1|PussyLight2|PussyLight3)\.png/);
 
@@ -347,11 +347,11 @@
                     {
                         Name: "蝴蝶结",
                         PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
+                            TapedHands: PoseType.DEFAULT,
+                            Yoked: PoseType.DEFAULT, OverTheHead: PoseType.DEFAULT,
+                            BackBoxTie: PoseType.DEFAULT,
+                            BackElbowTouch: PoseType.DEFAULT,
+                            BackCuffs: PoseType.DEFAULT,
                         },
                     },
                 ],
@@ -364,21 +364,21 @@
                     {
                         Name: "衣服", Priority: 26,
                         PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
+                            TapedHands: PoseType.DEFAULT,
+                            Yoked: PoseType.DEFAULT, OverTheHead: PoseType.DEFAULT,
+                            BackBoxTie: PoseType.DEFAULT,
+                            BackElbowTouch: PoseType.DEFAULT,
+                            BackCuffs: PoseType.DEFAULT,
                         },
                     },
                     {
                         Name: "边缘", Priority: 26,
                         PoseMapping: {
-                            TapedHands: "",
-                            Yoked: "", OverTheHead: "",
-                            BackBoxTie: "",
-                            BackElbowTouch: "",
-                            BackCuffs: "",
+                            TapedHands: PoseType.DEFAULT,
+                            Yoked: PoseType.DEFAULT, OverTheHead: PoseType.DEFAULT,
+                            BackBoxTie: PoseType.DEFAULT,
+                            BackElbowTouch: PoseType.DEFAULT,
+                            BackCuffs: PoseType.DEFAULT,
                         },
                     },
                 ],
@@ -440,15 +440,15 @@
                 Name: "鱼鱼尾_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0, Extended: true,
                 OverrideHeight: { Height: 30, Priority: 19, },
-                PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Kneel", Kneel: "Kneel", },
+                PoseMapping: { Spread: PoseType.DEFAULT, LegsClosed: PoseType.DEFAULT, KneelingSpread: "Kneel", Kneel: "Kneel", },
                 Hide: ["BodyLower", "Socks", "SocksLeft", "SocksRight", "RightAnklet", "LeftAnklet", "Pussy"],
                 Layer: [
                     { Name: "鱼尾上", Priority: 22 },
                     { Name: "鱼尾下不透明2", Priority: 22, AllowTypes: { w: 1 }, CopyLayerColor: "鱼尾下不透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
                     { Name: "鱼尾下透明2", Priority: 22, AllowTypes: { w: 0 }, CopyLayerColor: "鱼尾下透明", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
                     { Name: "鱼尾下骨架2", Priority: 22, CopyLayerColor: "鱼尾下骨架", PoseMapping: { Spread: "Hide", LegsClosed: "Hide", KneelingSpread: "Kneel", Kneel: "Kneel", }, },
-                    { Name: "鱼尾下不透明", Priority: 22, AllowTypes: { w: 1 }, PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Hide", Kneel: "Hide", }, },
-                    { Name: "鱼尾下透明", Priority: 22, AllowTypes: { w: 0 }, PoseMapping: { Spread: "", LegsClosed: "", KneelingSpread: "Hide", Kneel: "Hide", }, },
+                    { Name: "鱼尾下不透明", Priority: 22, AllowTypes: { w: 1 }, PoseMapping: { Spread: PoseType.DEFAULT, LegsClosed: PoseType.DEFAULT, KneelingSpread: "Hide", Kneel: "Hide", }, },
+                    { Name: "鱼尾下透明", Priority: 22, AllowTypes: { w: 0 }, PoseMapping: { Spread: PoseType.DEFAULT, LegsClosed: PoseType.DEFAULT, KneelingSpread: "Hide", Kneel: "Hide", }, },
                     { Name: "鱼尾下骨架", Priority: 22 },
                     { Name: "鱼尾鱼鳍上透明", Priority: 22, AllowTypes: { q: 1 } },
                     { Name: "鱼尾鱼鳍上骨架", Priority: 22, AllowTypes: { q: 1 } },
@@ -674,7 +674,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                     {
@@ -683,7 +683,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                     {
@@ -692,7 +692,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                     {
@@ -701,7 +701,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                 ],
@@ -720,8 +720,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -740,8 +740,8 @@
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
                 Layer: [
-                    { Name: "上", Priority: 35, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 0, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 35, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 0, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -757,8 +757,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -774,8 +774,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -811,7 +811,7 @@
                         AllowTypes: { m: 1 },
                         Name: "触手服嘴套", Priority: 15,
                         ParentGroup: "ItemHood",
-                        PoseMapping: { AllFours: "", Hogtied: "", },
+                        PoseMapping: { AllFours: PoseType.DEFAULT, Hogtied: PoseType.DEFAULT, },
                     },
                     {
                         AllowTypes: { h: [1, 2] },
@@ -946,7 +946,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                     {
@@ -955,7 +955,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                     {
@@ -964,7 +964,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                     {
@@ -973,7 +973,7 @@
                         PoseMapping:
                         {
                             BackElbowTouch: "BackElbowTouch",
-                            Hogtied: "",
+                            Hogtied: PoseType.DEFAULT,
                         },
                     },
                 ],
@@ -992,8 +992,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -1012,8 +1012,8 @@
                 Prerequisite: ["HasBreasts"],
                 SelfUnlock: false,
                 Layer: [
-                    { Name: "上", Priority: 35, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 0, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 35, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 0, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -1029,8 +1029,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -1046,8 +1046,8 @@
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
                 Layer: [
-                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: "", }, },
-                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: "", }, },
+                    { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT, }, },
+                    { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT, }, },
                 ],
             },
             {
@@ -1083,7 +1083,7 @@
                         AllowTypes: { m: 1 },
                         Name: "触手服嘴套", Priority: 15,
                         ParentGroup: "ItemHood",
-                        PoseMapping: { AllFours: "", Hogtied: "", },
+                        PoseMapping: { AllFours: PoseType.DEFAULT, Hogtied: PoseType.DEFAULT, },
                     },
                     {
                         AllowTypes: { h: [1, 2] },
@@ -1374,7 +1374,6 @@
                 Extended: true,
                 MinOpacity: 0,
                 Opacity: 0,
-                Hide: ["", "", ""],
                 SetPose: ["BackElbowTouch", "Kneel"],
                 Layer: [
                     { Name: "链条前", Priority: 67, Top: -800, },
@@ -1467,7 +1466,7 @@
                 Top: 0, Left: 0,
                 Layer: [
                     {
-                        Name: "床垫",Priority: 1,
+                        Name: "床垫", Priority: 1,
                     },
                     {
                         Name: "床带上", Priority: 24,
@@ -1478,30 +1477,30 @@
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "环上",Priority: 24,
+                        Name: "环上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "环下",Priority: 24,
+                        Name: "环下", Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "拉链",Priority: 24,
+                        Name: "拉链", Priority: 24,
                     },
                     {
-                        Name: "拘束带上",Priority: 53,
+                        Name: "拘束带上", Priority: 53,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "拘束带下",Priority: 53,
+                        Name: "拘束带下", Priority: 53,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "乳胶上",Priority: 24,
+                        Name: "乳胶上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "乳胶下",Priority: 24,
+                        Name: "乳胶下", Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                 ],
@@ -1537,7 +1536,7 @@
                 Name: "隐形药水_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
-                Hide: ["ItemHandheld", "Hands", "Bracelet","LeftHand","RightHand","SocksRight","SocksLeft","BodyLower", "BodyUpper", "BodyFull"],
+                Hide: ["ItemHandheld", "Hands", "Bracelet", "LeftHand", "RightHand", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper", "BodyFull"],
                 Extended: true,
                 Layer: [
                     {
@@ -1981,8 +1980,26 @@
                     Hogtied: PoseType.HIDE,
                 },
             },
+            {
+                Name: "缩小(地)_Luzi", Visible: false, Zoom: 0.5,
+                OverrideHeight: {
+                    Height: 25,
+                    Priority: 51,
+                    HeightRatioProportion: 0.5,
+                },
+            },
+            {
+                Name: "缩小(空)_Luzi", Visible: false, Zoom: 0.5,
+                OverrideHeight: {
+                    Height: 25,
+                    Priority: 51,
+                    HeightRatioProportion: 0.5,
+                },
+            },
         ],
+
     };
+
 
     const addAssetGroup = {
         Liquid2_Luzi: [
@@ -2731,7 +2748,7 @@
                         "刻度尺": "Ruler",
                         "番茄酱": "Ketchup",
                         "隐形药水": "potion of invisibility",
-                        "乳胶带床":"Latex belt bed",
+                        "乳胶带床": "Latex belt bed",
                     };
 
                     Asset.forEach(item => {
@@ -2952,7 +2969,7 @@
                 ItemAddon隐形药水_LuziModule自定义高度: '调整高度',
                 ItemAddon隐形药水_LuziOptionlll0: '无',
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
-                
+
 
 
             };
@@ -3674,6 +3691,71 @@
 
     // ================================================================================
     // ================================================================================
+    // 好厉害的Saki！
+    // 定义一个布尔变量，用于标记是否处于绘制角色的过程中
+    let InDrawCharacter = false;
+
+    let DrawCharacterCounter = false;
+
+    // 定义一个变量，用于存储当前正在绘制的角色引用
+    let CurrentDrawCharacter = null;
+
+    mod.hookFunction("DrawCharacter", 10, (args, next) => {
+        // 标记开始绘制角色
+        InDrawCharacter = true
+        // 存储当前绘制的角色
+        CurrentDrawCharacter = args[0];
+        // 继续执行原始的DrawCharacter函数
+        next(args);
+        // 绘制完成后，清除当前角色引用
+        CurrentDrawCharacter = null;
+        // 标记结束绘制角色
+        InDrawCharacter = false;
+    });
+
+    // 定义一个对象来存储不同道具的调整参数
+    const assetAdjustments = {
+        // "缩小(地)_Luzi": { widthMultiplier: 2, heightMultiplier: 2, offsetXMultiplier: 4, offsetYMultiplier: 2 },
+        "缩小(地)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
+        "缩小(空)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
+    };
+    
+    
+    function adjustImageForAssets(args, next) {
+        // 获取绘图 X Y 宽高
+        let X = args[2];
+        let Y = args[3];
+        let Width = args[4].Width;
+        let Height = args[4].Height;
+
+        // 如果当前处于绘制角色的过程中
+        if (InDrawCharacter) {
+            // 检查当前角色的所有道具
+            CurrentDrawCharacter.Appearance.forEach(asset => {
+                const adjustment = assetAdjustments[asset.Asset.Name];
+                if (adjustment) {
+                    // 如果绘图对象未定义，则初始化为空对象
+                    if (args[4] == undefined) args[4] = {};
+
+                    // 调整绘图位置和尺寸
+                    X = X + Width / adjustment.offsetXMultiplier;
+                    Y = Y + Height / adjustment.offsetYMultiplier;
+
+                    Width = Width / adjustment.widthMultiplier;
+                    Height = Height / adjustment.heightMultiplier;
+
+                    // 更新绘图对象的宽度和高度
+                    Object.assign(args[4], { Width, Height });
+                }
+            });
+        }
+
+        // 调用原始的DrawImageEx函数，传入调整后的参数
+        next([args[0], args[1], X, Y, args[4]]);
+    }
+
+    // 注册hook
+    mod.hookFunction("DrawImageEx", 10, adjustImageForAssets);
 
 })();
 
