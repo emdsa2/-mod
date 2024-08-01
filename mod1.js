@@ -3470,27 +3470,21 @@
     let CRCharacter;
     mod.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const data = args[0];
-        if (data.Content === '╰(*°▽°*)╯BETA' && data.Type === 'Hidden') {
+        if (data.Type !== 'Hidden') return next(args);
+
             CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            // console.log(CRCharacter)
-            if (CRCharacter) {
+            if (!CRCharacter) return next(args);
+
+            if (data.Content === '╰(*°▽°*)╯BETA') {
                 CRCharacter.ECHOBETA = true;
             }
-        }
-        if (data.Content === '╰(*°▽°*)╯' && data.Type === 'Hidden') {
-            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            // console.log(CRCharacter)
-            if (CRCharacter) {
+        if (data.Content === '╰(*°▽°*)╯') {
                 CRCharacter.ECHO = true;
             }
-        }
-        if (data.Content === '(._.)' && data.Type === 'Hidden') {
-            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            // console.log(CRCharacter)
-            if (CRCharacter) {
+        if (data.Content === '(._.)') {
                 CRCharacter.ECHO2 = true;
             }
-        }
+        
         next(args);
     });
 
