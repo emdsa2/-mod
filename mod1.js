@@ -39,7 +39,6 @@
     });
 
     const ICONSSSSSSS = {
-
         "Assets/Female3DCG/Socks/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/CowPrintedSocks_Small.png",
         "Assets/Female3DCG/Socks/LegsClosed/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/LegsClosed_CowPrintedSocks_Small.png",
         "Assets/Female3DCG/Socks/Spread/CowPrintedSocks_Small.png": "https://emdsa2.github.io/-mod/image/Spread_CowPrintedSocks_Small.png",
@@ -60,8 +59,6 @@
         "Assets/Female3DCG/Socks/Spread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Spread_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/Kneel/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/Kneel_CowPrintedSocks_XLarge.png",
         "Assets/Female3DCG/Socks/KneelingSpread/CowPrintedSocks_XLarge.png": "https://emdsa2.github.io/-mod/image/KneelingSpread_CowPrintedSocks_XLarge.png",
-
-
     };
 
     // =======================================================================================
@@ -144,10 +141,10 @@
 
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Kneel|KneelingSpread|LegsClosed|Spread|AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/(Penis|Penis1|Penis2|Penis3)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/Hard\/(Penis|PussyDark1|PussyDark2|PussyDark3|PussyLight1|PussyLight2|PussyLight3)\.png/);
 
@@ -257,7 +254,7 @@
             }
 
             if (data.includes("阿巴阿巴")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png";
             }
         }
 
@@ -405,9 +402,10 @@
         ],
         Suit: [
             {
-                Name: "乳胶衣上_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
+                Name: "乳胶衣上_Luzi",
                 Random: false,
+                Gender: "F",
+                Top: -110, Left: 0,
                 Prerequisite: ["HasBreasts"],
                 Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"],
                 Layer: [
@@ -427,9 +425,10 @@
         ],
         SuitLower: [
             {
-                Name: "乳胶衣下_Luzi", Random: false, Gender: "F",
-                Top: -110, Left: 0,
+                Name: "乳胶衣下_Luzi",
                 Random: false,
+                Gender: "F",
+                Top: -110, Left: 0,
                 Prerequisite: ["HasVagina"],
                 Attribute: ["SuitLower"],
             },
@@ -704,14 +703,15 @@
                 ],
             },
             {
-                Name: "胶带全身_Luzi", Gender: "F", Random: false,
+                Name: "胶带全身_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 Audio: "DuctTapeRollShort",
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -722,7 +722,9 @@
                 ],
             },
             {
-                Name: "睡袋改_Luzi", Gender: "F", Random: false,
+                Name: "睡袋改_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -731,7 +733,6 @@
                 AllowLock: true,
                 AllowTighten: true,
                 DrawLocks: false,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -742,14 +743,15 @@
                 ],
             },
             {
-                Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
+                Name: "全包毛毯改_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -759,14 +761,15 @@
                 ],
             },
             {
-                Name: "绷带全身_Luzi", Gender: "F", Random: false,
+                Name: "绷带全身_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -776,7 +779,9 @@
                 ],
             },
             {
-                Name: "触手服_Luzi", Random: false, Gender: "F",
+                Name: "触手服_Luzi",
+                Random: false,
+                Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 8,
                 AllowLock: true,
@@ -854,7 +859,9 @@
         ],
         ItemTorso2: [
             {
-                Name: "拘束套装_Luzi", Random: false, Gender: "F",
+                Name: "拘束套装_Luzi",
+                Random: false,
+                Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -976,14 +983,15 @@
                 ],
             },
             {
-                Name: "胶带全身_Luzi", Gender: "F", Random: false,
+                Name: "胶带全身_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 Audio: "DuctTapeRollShort",
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -994,7 +1002,9 @@
                 ],
             },
             {
-                Name: "睡袋改_Luzi", Gender: "F", Random: false,
+                Name: "睡袋改_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1003,7 +1013,6 @@
                 AllowLock: true,
                 AllowTighten: true,
                 DrawLocks: false,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1014,14 +1023,15 @@
                 ],
             },
             {
-                Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
+                Name: "全包毛毯改_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1031,14 +1041,15 @@
                 ],
             },
             {
-                Name: "绷带全身_Luzi", Gender: "F", Random: false,
+                Name: "绷带全身_Luzi",
+                Gender: "F",
+                Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1048,7 +1059,9 @@
                 ],
             },
             {
-                Name: "触手服_Luzi", Random: false, Gender: "F",
+                Name: "触手服_Luzi",
+                Random: false,
+                Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 8,
                 AllowLock: true,
@@ -1126,7 +1139,8 @@
         ],
         ItemDevices: [
             {
-                Name: "猪猪_Luzi", Random: false,
+                Name: "猪猪_Luzi",
+                Random: false,
                 Top: -110, Left: 0,
                 SetPose: ["KneelingSpread"],
                 AllowActivePose: ["KneelingSpread"],
@@ -1138,7 +1152,9 @@
                 ],
             },
             {
-                Name: "玻璃罐子_Luzi", Random: false, Gender: "F",
+                Name: "玻璃罐子_Luzi",
+                Random: false,
+                Gender: "F",
                 Top: -110, Left: 0,
                 AllowLock: true,
                 Difficulty: 50,
@@ -1169,7 +1185,8 @@
                     { Name: "吊顶链", Priority: 5, AllowTypes: { s: 1 } },],
             },
             {
-                Name: "床左边_Luzi", Random: false,
+                Name: "床左边_Luzi",
+                Random: false,
                 Top: -260, Left: 0,
                 Priority: 1,
                 Difficulty: -20,
@@ -1202,7 +1219,8 @@
                 ]
             },
             {
-                Name: "床右边_Luzi", Random: false,
+                Name: "床右边_Luzi",
+                Random: false,
                 Top: -260, Left: -110,
                 Priority: 1,
                 Difficulty: -20,
@@ -1235,7 +1253,8 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi", Random: false,
+                Name: "窝瓜_Luzi",
+                Random: false,
                 Top: 140, Left: 0,
                 Fetish: ["Pet"],
                 Difficulty: -25,
@@ -1266,11 +1285,13 @@
                 ],
             },
             {
-                Name: "树_Luzi", Random: false,
+                Name: "树_Luzi",
+                Random: false,
                 Top: -110, Left: -150,
             },
             {
-                Name: "独角兽玩偶_Luzi", Random: false,
+                Name: "独角兽玩偶_Luzi",
+                Random: false,
                 Priority: 58,
                 Value: 40,
                 Difficulty: -2,
@@ -1303,7 +1324,8 @@
                     { Name: "耳朵外", AllowTypes: { typed: 0 }, },
                     { Name: "耳朵内", AllowTypes: { typed: 0 }, },
                     {
-                        Name: "头", AllowTypes: { typed: 0 },
+                        Name: "头",
+                        AllowTypes: { typed: 0 },
                         Alpha: [
                             {
                                 Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
@@ -1327,7 +1349,8 @@
                 ],
             },
             {
-                Name: "巨型玩偶_Luzi", Random: false,
+                Name: "巨型玩偶_Luzi",
+                Random: false,
                 Priority: 58,
                 Value: 40,
                 Difficulty: -2,
@@ -1365,7 +1388,8 @@
                 ],
             },
             {
-                Name: "拳击袋_Luzi", Random: false,
+                Name: "拳击袋_Luzi",
+                Random: false,
                 Top: 0, Left: 0,
                 AllowLock: true,
                 Extended: true,
@@ -1393,7 +1417,9 @@
                     { Name: "沙袋后", Priority: 1, MinOpacity: 1, },
                     { Name: "链条后", Priority: 0, Top: -800, MinOpacity: 1, },
                     {
-                        Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
+                        Name: "沙袋前框",
+                        Priority: 65,
+                        AllowTypes: { typed: 1 },
                         Alpha: [
                             {
                                 Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
@@ -1416,7 +1442,8 @@
                 },
             },
             {
-                Name: "垃圾桶_Luzi", Random: false,
+                Name: "垃圾桶_Luzi",
+                Random: false,
                 Top: 0, Left: 0,
                 AllowLock: true,
                 Extended: true,
@@ -1459,11 +1486,12 @@
                 ],
             },
             {
-                Name: "乳胶带床_Luzi", Random: false,
+                Name: "乳胶带床_Luzi",
+                Random: false,
                 Top: 0, Left: 0,
                 Layer: [
                     {
-                        Name: "床垫",Priority: 1,
+                        Name: "床垫", Priority: 1,
                     },
                     {
                         Name: "床带上", Priority: 24,
@@ -1474,30 +1502,36 @@
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "环上",Priority: 24,
+                        Name: "环上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "环下",Priority: 24,
+                        Name: "环下",
+                        Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "拉链",Priority: 24,
+                        Name: "拉链",
+                        Priority: 24,
                     },
                     {
-                        Name: "拘束带上",Priority: 53,
+                        Name: "拘束带上",
+                        Priority: 53,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "拘束带下",Priority: 53,
+                        Name: "拘束带下",
+                        Priority: 53,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "乳胶上",Priority: 24,
+                        Name: "乳胶上",
+                        Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "乳胶下",Priority: 24,
+                        Name: "乳胶下",
+                        Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                 ],
@@ -1533,7 +1567,7 @@
                 Name: "隐形药水_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
-                Hide: ["ItemHandheld", "Hands", "Bracelet","LeftHand","RightHand","SocksRight","SocksLeft","BodyLower", "BodyUpper", "BodyFull"],
+                Hide: ["ItemHandheld", "Hands", "Bracelet", "LeftHand", "RightHand", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper", "BodyFull"],
                 Extended: true,
                 Layer: [
                     {
@@ -2037,15 +2071,15 @@
         Modules: [
             {
                 Name: "窗户", Key: "c", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Prone", "Freeze", "Enclose",], }, },],
+                Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Freeze", "Enclose",], }, },],
             },
             {
                 Name: "腿部拘束", Key: "t", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Prone", "Freeze", "Mounted"], }, },],
+                Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Freeze", "Mounted"], }, },],
             },
             {
                 Name: "手臂拘束", Key: "s", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 18, SetPose: ["BackElbowTouch"], Effect: ["Prone", "Freeze", "Block", "Mounted"], OverrideHeight: { Height: 0, Priority: 60 }, }, },],
+                Options: [{}, { Property: { Difficulty: 18, SetPose: ["BackElbowTouch"], Effect: ["Freeze", "Block", "Mounted"], OverrideHeight: { Height: 0, Priority: 60 }, }, },],
             },
             {
                 Name: "管道", Key: "gz", DrawImages: false,
@@ -2168,7 +2202,23 @@
                 Name: "跳蛋开关",
                 DrawImages: false,
                 Key: "o",
-                Options: [{ Property: { Intensity: -1, Effect: ["Egged"] } }, { Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 5, Effect: ["Egged", "Vibrating"] } },],
+                Options: [
+                    {
+                        Property: { Intensity: -1, Effect: ["Egged"] }
+                    },
+                    {
+                        Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] }
+                    },
+                    {
+                        Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] }
+                    },
+                    {
+                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] }
+                    },
+                    {
+                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] }
+                    },
+                ],
             },
             {
                 Name: "跳蛋数量",
@@ -2181,7 +2231,7 @@
     AssetFemale3DCGExtended.ItemDevices.巨型玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
-            { Name: "熊熊", DrawImages: false, },
+            { Name: "熊熊" },
         ],
         BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
@@ -2194,8 +2244,8 @@
     AssetFemale3DCGExtended.ItemDevices.独角兽玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
-            { Name: "戴上头套", DrawImages: false, },
-            { Name: "摘掉头套", DrawImages: false, },
+            { Name: "戴上头套" },
+            { Name: "摘掉头套" },
         ],
         BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
@@ -2208,9 +2258,9 @@
     AssetFemale3DCGExtended.ItemDevices.垃圾桶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
-            { Name: "打开盖子", DrawImages: false, },
-            { Name: "合上盖子", DrawImages: false, },
-            { Name: "打开挡板", DrawImages: false, },
+            { Name: "打开盖子" },
+            { Name: "合上盖子" },
+            { Name: "打开挡板" },
         ],
         BaselineProperty: { Opacity: 1 },
         ScriptHooks: {
@@ -2223,8 +2273,8 @@
     AssetFemale3DCGExtended.ItemDevices.拳击袋_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
         Options: [
-            { Name: "无照片", DrawImages: false, },
-            { Name: "有照片", DrawImages: false, },
+            { Name: "无照片" },
+            { Name: "有照片" },
         ],
         BaselineProperty: { Opacity: 1 },
         ScriptHooks: {
@@ -2243,10 +2293,9 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
-                    { DrawImages: false, },
+                    { Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    {},
                     {
-                        DrawImages: false,
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
@@ -2266,8 +2315,8 @@
                 DrawImages: false,
                 Key: "s",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2275,11 +2324,10 @@
                 DrawImages: false,
                 Key: "h",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                     {
                         Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"], },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2288,8 +2336,8 @@
                 DrawImages: false,
                 Key: "m",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2297,8 +2345,8 @@
                 DrawImages: false,
                 Key: "f",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
         ],
@@ -2312,10 +2360,9 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
-                    { DrawImages: false, },
+                    { Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    {},
                     {
-                        DrawImages: false,
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
@@ -2335,8 +2382,8 @@
                 DrawImages: false,
                 Key: "s",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2344,11 +2391,10 @@
                 DrawImages: false,
                 Key: "h",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                     {
                         Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"], },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2357,8 +2403,8 @@
                 DrawImages: false,
                 Key: "m",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2366,8 +2412,8 @@
                 DrawImages: false,
                 Key: "f",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
         ],
@@ -2381,8 +2427,12 @@
                 DrawImages: false,
                 Key: "s",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.Block], },
+                    },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.Block], },
+                    },
                 ],
             },
             {
@@ -2390,15 +2440,13 @@
                 DrawImages: false,
                 Key: "l",
                 Options: [
-                    { DrawImages: false, },
+                    {},
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedArms], },
-                        DrawImages: false,
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedArms], SetPose: ["OverTheHead"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        Random: false,
                         HasSubscreen: true,
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VARIABLEHEIGHT,
@@ -2411,7 +2459,6 @@
                                 Chat: "SuspensionChange",
                             },
                         },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2420,20 +2467,17 @@
                 DrawImages: false,
                 Key: "ll",
                 Options: [
-                    { DrawImages: false, },
+                    {},
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], },
-                        DrawImages: false,
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        DrawImages: false,
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2442,7 +2486,7 @@
                 DrawImages: false,
                 Key: "lll",
                 Options: [
-                    { DrawImages: false, },
+                    {},
                     {
                         HasSubscreen: true,
                         ArchetypeConfig: {
@@ -2456,7 +2500,6 @@
                                 Chat: "SuspensionChange",
                             },
                         },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2795,7 +2838,7 @@
                 ItemAddon隐形药水_LuziModule自定义高度: '调整高度',
                 ItemAddon隐形药水_LuziOptionlll0: '无',
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
-                
+
 
 
             };
@@ -3472,19 +3515,19 @@
         const data = args[0];
         if (data.Type !== 'Hidden') return next(args);
 
-            CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
-            if (!CRCharacter) return next(args);
+        CRCharacter = ChatRoomCharacterDrawlist.find(C => C.MemberNumber === data.Sender);
+        if (!CRCharacter) return next(args);
 
-            if (data.Content === '╰(*°▽°*)╯BETA') {
-                CRCharacter.ECHOBETA = true;
-            }
+        if (data.Content === '╰(*°▽°*)╯BETA') {
+            CRCharacter.ECHOBETA = true;
+        }
         if (data.Content === '╰(*°▽°*)╯') {
-                CRCharacter.ECHO = true;
-            }
+            CRCharacter.ECHO = true;
+        }
         if (data.Content === '(._.)') {
-                CRCharacter.ECHO2 = true;
-            }
-        
+            CRCharacter.ECHO2 = true;
+        }
+
         next(args);
     });
 
@@ -3510,7 +3553,7 @@
 
     // ================================================================================
     // ================================================================================
-        // ================================================================================
+    // ================================================================================
     // ================================================================================
     // 好厉害的Saki！
     // 定义一个布尔变量，用于标记是否处于绘制角色的过程中
@@ -3540,7 +3583,7 @@
         "缩小(地)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
         "缩小(空)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
     };
-    
+
     // 注册hook
     mod.hookFunction("DrawImageEx", 10, (args, next) => {
         let [source, canvas, X, Y, options] = args;
