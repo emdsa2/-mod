@@ -1,7 +1,7 @@
-https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Activity2.user.js   // 动作拓展 Action Expansion 
-https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Cloth2.user.js      // 服装拓展 Clothing Expansion
-https://github.com/emdsa2/-mod/raw/main/BC_Cloth_beta.user.js            // 服装拓展beta Clothing Expansion beta
-https://github.com/emdsa2/-mod/raw/main/BC_Cloth_NoHamburg.user.js       // 服装拓展 无🍔版  Clothing Expansion no 🍔 version
+https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Activity2.user.js   // 动作拓展 Action Expansion  
+https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Cloth2.user.js      // 服装拓展 Clothing Expansion  
+https://github.com/emdsa2/-mod/raw/main/BC_Cloth_beta.user.js            // 服装拓展beta Clothing Expansion beta  
+https://github.com/emdsa2/-mod/raw/main/BC_Cloth_NoHamburg.user.js       // 服装拓展 无🍔版  Clothing Expansion no 🍔 version  
 
 wiki: https://github.com/emdsa2/-mod/wiki
 
