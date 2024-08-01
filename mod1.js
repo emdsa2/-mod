@@ -261,7 +261,7 @@
             }
         }
 
-        next(args);
+        return next(args);
     });
 
     mod.hookFunction('DrawButton', 1, (args, next) => {
