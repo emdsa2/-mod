@@ -3535,13 +3535,11 @@
         "缩小(空)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
     };
     
-    
-    function adjustImageForAssets(args, next) {
-        // 获取绘图 X Y 宽高
-        let X = args[2];
-        let Y = args[3];
-        let Width = args[4].Width;
-        let Height = args[4].Height;
+    // 注册hook
+    mod.hookFunction("DrawImageEx", 10, (args, next) => {
+        let [source, canvas, X, Y, options] = args;
+        let Width = options.Width;
+        let Height = options.Height;
 
         // 如果当前处于绘制角色的过程中
         if (InDrawCharacter) {
@@ -3550,7 +3548,7 @@
                 const adjustment = assetAdjustments[asset.Asset.Name];
                 if (adjustment) {
                     // 如果绘图对象未定义，则初始化为空对象
-                    if (args[4] == undefined) args[4] = {};
+                    if (options == undefined) options = {};
 
                     // 调整绘图位置和尺寸
                     X = X + Width / adjustment.offsetXMultiplier;
@@ -3560,20 +3558,13 @@
                     Height = Height / adjustment.heightMultiplier;
 
                     // 更新绘图对象的宽度和高度
-                    Object.assign(args[4], { Width, Height });
+                    Object.assign(options, { Width, Height });
                 }
             });
         }
 
-        // 调用原始的DrawImageEx函数，传入调整后的参数
-        next([args[0], args[1], X, Y, args[4]]);
-
         InDrawCharacter = false;
-    }
-
-    // 注册hook
-    mod.hookFunction("DrawImageEx", 10, adjustImageForAssets);
-
+        // 调用原始的DrawImageEx函数，传入调整后的参数
+        return next([source, canvas, X, Y, options]);
+    });
 })();
-
-
