@@ -2474,21 +2474,28 @@
         }
     }
 
+    /**
+     * @param {AssetGroupBodyName | AssetGroupItemName | "ItemScript"} assetgroupName 
+     * @param {string} assetName 
+     */
     function AssetAdd_Luzi(assetgroupName, assetName) { // 加载道具
-        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
-        let asset = assetGroup.Asset.find(asset => asset.Name === assetName)
-        let G = AssetGroupMap.get(assetgroupName)
+        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName);
+        let asset = assetGroup.Asset.find(asset => typeof asset !== "string" && asset.Name === assetName);
+        if (typeof asset === "string") return;
+        let G = AssetGroupMap.get(assetgroupName);
         AssetAdd(G, asset, AssetFemale3DCGExtended);
     }
 
     function addExtraExpressionsToAssets() {
         var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi",];
         var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
+        //@ts-ignore
         GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
 
         AssetGroup.forEach(A => {
             if (A.Name === "Emoticon") {
                 var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi",];
+                //@ts-ignore
                 A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
                 // console.log(A.AllowExpression)
             }
@@ -2498,10 +2505,10 @@
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
-            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
-            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0]);
+            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0]);
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0]);
+            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0]);
 
             addExtraExpressionsToAssets();
             mergeAddAssetIntoFemale3DCGAssets();
@@ -2516,6 +2523,7 @@
                 const assetDescription = Asset.filter(item => item.Name && item.Name.includes('_Luzi'));
                 assetDescription.forEach(item => {
                     if (item.Name) {
+                        //@ts-ignore
                         item.Description = item.Name.replace('_Luzi', '');
                     }
                 });
@@ -2537,6 +2545,7 @@
                         if (item.Name) {
                             const description = descriptionMap.get(item.Name);
                             if (description) {
+                                //@ts-ignore
                                 item.Description = description;
                             }
                         }
@@ -2545,6 +2554,7 @@
                         if (item.Description) {
                             const description = descriptionMap.get(item.Description);
                             if (description) {
+                                //@ts-ignore
                                 item.Description = description;
                             }
                         }
@@ -2554,12 +2564,14 @@
                         if (item.Name) {
                             const description = descriptionMap2.get(item.Name);
                             if (description) {
+                                //@ts-ignore
                                 item.Description = description;
                             }
                         }
                         if (item.Description) {
                             const description = descriptionMap2.get(item.Description);
                             if (description) {
+                                //@ts-ignore
                                 item.Description = description;
                             }
                         }
@@ -2628,6 +2640,7 @@
                         if (item.Name.includes('_Luzi')) {
                             const englishDescription = descriptionMap[item.Description];
                             if (englishDescription) {
+                                //@ts-ignore
                                 item.Description = englishDescription; // 直接修改数组中的对象属性
                             } else {
                                 console.log(`No English translation for: ${item.Description}`);
@@ -3154,6 +3167,7 @@
     });
 
     // ==================================触手服动画钩子================================
+    //@ts-ignore
     window.AssetsItemTorso触手服_LuziBeforeDraw = function AssetsItemTorso触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
         const Data = PersistentData();
         if (typeof Data.DildoState !== "number") Data.DildoState = 0;
@@ -3183,7 +3197,8 @@
         if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
-    }
+    };
+    //@ts-ignore
     window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
         const Data = PersistentData();
         if (typeof Data.DildoState !== "number") Data.DildoState = 0;
@@ -3213,7 +3228,7 @@
         if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
-    }
+    };
     function AssetsItemTorso触手服_LuziScriptDrawHook(data, originalFunction, drawData) {
         originalFunction(drawData);
 
@@ -3425,7 +3440,7 @@
         ServerSend("ChatRoomChat", {
             Content: `${text}`,
             Type: "Hidden",
-        })
+        });
     };
 
     mod.hookFunction("ChatRoomSync", 10, (args, next) => {
@@ -3443,13 +3458,13 @@
     });
 
     mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
-        let data = args[0]
+        let data = args[0];
         if (data.Content === 'ServerEnter') {
             setTimeout(() => {
                 Hidden("╰(*°▽°*)╯");
             }, 2000);
         }
-        next(args)
+        next(args);
     });
 
     let CRCharacter;
@@ -3517,7 +3532,7 @@
 
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         // 标记开始绘制角色
-        InDrawCharacter = true
+        InDrawCharacter = true;
         // 存储当前绘制的角色
         CurrentDrawCharacter = args[0];
         // 继续执行原始的DrawCharacter函数
