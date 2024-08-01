@@ -3776,6 +3776,8 @@
 
         // 调用原始的DrawImageEx函数，传入调整后的参数
         next([args[0], args[1], X, Y, args[4]]);
+
+        InDrawCharacter = false;
     }
 
     // 注册hook
