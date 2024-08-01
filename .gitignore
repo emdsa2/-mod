@@ -1,1 +1,3 @@
 otherTool/
+node_modules/
+package-lock.json

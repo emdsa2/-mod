@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+		"module": "commonjs",
+		"target": "ES2021",
+		"lib": ["es2021", "dom", "DOM.Iterable"],
+		"checkJs": true,
+		"types": [],
+	},
+  "include": [
+    "node_modules/bc-stubs/bc/**/*.d.ts",
+    ".types/*.d.ts",
+    "**/*.js",
+    "**/*.ts",
+  ],
+}

@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "bc-stubs": "^106.0.0",
+    "bondage-club-mod-sdk": "^1.2.0"
+  }
+}
