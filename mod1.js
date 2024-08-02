@@ -1486,12 +1486,23 @@
                 ],
             },
             {
-                Name: "乳胶带床_Luzi",
-                Random: false,
+                Name: "乳胶带床_Luzi", Random: false,
                 Top: 0, Left: 0,
+                DefaultColor: [
+                    // "Default",
+                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "", "Default", "Default", "Default", "Default", "Default", "Default"],
                 Layer: [
+                    // {
+                    //     Name: "外壳盖子关闭", Priority: 1,
+                    // },
+                    {
+                        Name: "外壳盖子打开", Priority: 1,
+                    },
                     {
                         Name: "床垫", Priority: 1,
+                    },
+                    {
+                        Name: "外壳", Priority: 1,
                     },
                     {
                         Name: "床带上", Priority: 24,
@@ -1502,36 +1513,41 @@
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "环上", Priority: 24,
+                        Name: "床环上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "环下",
-                        Priority: 24,
+                        Name: "床环下", Priority: 24,
+                        ParentGroup: "BodyLower",
+                    },
+
+                    {
+                        Name: "拉链", Priority: 24,
+                    },
+                    {
+                        Name: "绳子", Priority: 24,
+                    },
+                    {
+                        Name: "圆环", Priority: 24,
+                    },
+                    {
+                        Name: "内衬", Priority: 24,
+                    },
+
+                    {
+                        Name: "拘束带上", Priority: 53,
+                        ParentGroup: "BodyUpper",
+                    },
+                    {
+                        Name: "拘束带下", Priority: 53,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "拉链",
-                        Priority: 24,
-                    },
-                    {
-                        Name: "拘束带上",
-                        Priority: 53,
+                        Name: "乳胶上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "拘束带下",
-                        Priority: 53,
-                        ParentGroup: "BodyLower",
-                    },
-                    {
-                        Name: "乳胶上",
-                        Priority: 24,
-                        ParentGroup: "BodyUpper",
-                    },
-                    {
-                        Name: "乳胶下",
-                        Priority: 24,
+                        Name: "乳胶下", Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                 ],
