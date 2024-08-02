@@ -3713,9 +3713,6 @@
 
     // ================================================================================
     // ================================================================================
-        // ================================================================================
-    // ================================================================================
-    // 好厉害的Saki！
     // 定义一个布尔变量，用于标记是否处于绘制角色的过程中
     let InDrawCharacter = false;
 
@@ -3726,7 +3723,7 @@
 
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         // 标记开始绘制角色
-        InDrawCharacter = true
+        InDrawCharacter = true;
         // 存储当前绘制的角色
         CurrentDrawCharacter = args[0];
         // 继续执行原始的DrawCharacter函数
@@ -3743,14 +3740,13 @@
         "缩小(地)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
         "缩小(空)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
     };
-    
-    
-    function adjustImageForAssets(args, next) {
-        // 获取绘图 X Y 宽高
-        let X = args[2];
-        let Y = args[3];
-        let Width = args[4].Width;
-        let Height = args[4].Height;
+
+    // 注册hook
+    mod.hookFunction("DrawImageEx", 10, (args, next) => {
+        let [source, canvas, X, Y, options] = args;
+        if (!options?.Width || !options?.Height) return next(args);
+        let Width = options.Width;
+        let Height = options.Height;
 
         // 如果当前处于绘制角色的过程中
         if (InDrawCharacter) {
@@ -3759,7 +3755,7 @@
                 const adjustment = assetAdjustments[asset.Asset.Name];
                 if (adjustment) {
                     // 如果绘图对象未定义，则初始化为空对象
-                    if (args[4] == undefined) args[4] = {};
+                    if (options == undefined) options = {};
 
                     // 调整绘图位置和尺寸
                     X = X + Width / adjustment.offsetXMultiplier;
@@ -3769,21 +3765,15 @@
                     Height = Height / adjustment.heightMultiplier;
 
                     // 更新绘图对象的宽度和高度
-                    Object.assign(args[4], { Width, Height });
+                    Object.assign(options, { Width, Height });
                 }
             });
         }
 
         InDrawCharacter = false;
-
         // 调用原始的DrawImageEx函数，传入调整后的参数
-        return next([args[0], args[1], X, Y, args[4]]);
-    }
-
-    // 注册hook
-    mod.hookFunction("DrawImageEx", 10, adjustImageForAssets);
-
-
+        return next([source, canvas, X, Y, options]);
+    });
 })();
 // 22 6 -10 _Asian
 // -4 30 -38 _Black
