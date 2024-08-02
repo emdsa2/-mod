@@ -1453,6 +1453,7 @@
             {
                 Name: "乳胶带床_Luzi", Random: false,
                 Top: 0, Left: 0,
+                Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 DefaultColor: ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default"],
                 Layer: [
