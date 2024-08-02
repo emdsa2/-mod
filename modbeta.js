@@ -1459,6 +1459,17 @@
                 Layer: [
                     {
                         Name: "外壳盖子关闭", Priority: 60, AllowTypes: { g: 2 },
+                        Alpha: [
+                            {
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
+                                Masks: [
+                                    [0, -100, 500, 150],//上
+                                    [0, 695, 500, 120], //下
+                                    [0, 0, 160, 1000], //左
+                                    [340, 0, 135, 1000],//右
+                                ],
+                            },
+                        ],
                     },
                     {
                         Name: "外壳", Priority: 1,
@@ -1989,20 +2000,10 @@
                 },
             },
             {
-                Name: "缩小(地)_Luzi", Visible: false, Zoom: 0.5,
-                OverrideHeight: {
-                    Height: 25,
-                    Priority: 51,
-                    HeightRatioProportion: 0.5,
-                },
+                Name: "缩小(地)_Luzi", Visible: false, Random: false,
             },
             {
-                Name: "缩小(空)_Luzi", Visible: false, Zoom: 0.5,
-                OverrideHeight: {
-                    Height: 25,
-                    Priority: 51,
-                    HeightRatioProportion: 0.5,
-                },
+                Name: "缩小(空)_Luzi", Visible: false, Random: false,
             },
         ],
     };

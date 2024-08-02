@@ -3818,5 +3818,3 @@
         return next([source, canvas, X, Y, options]);
     });
 })();
-
-
