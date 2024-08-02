@@ -409,7 +409,6 @@
             {
                 Name: "乳胶衣上_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
-                Random: false,
                 Prerequisite: ["HasBreasts"],
                 Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"],
                 Layer: [
@@ -431,7 +430,6 @@
             {
                 Name: "乳胶衣下_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
-                Random: false,
                 Prerequisite: ["HasVagina"],
                 Attribute: ["SuitLower"],
             },
@@ -713,7 +711,6 @@
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 Audio: "DuctTapeRollShort",
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -733,7 +730,6 @@
                 AllowLock: true,
                 AllowTighten: true,
                 DrawLocks: false,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -751,7 +747,6 @@
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -768,7 +763,6 @@
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -985,7 +979,6 @@
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 Audio: "DuctTapeRollShort",
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -1005,7 +998,6 @@
                 AllowLock: true,
                 AllowTighten: true,
                 DrawLocks: false,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1023,7 +1015,6 @@
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1040,7 +1031,6 @@
                 Time: 30,
                 RemoveTime: 40,
                 AllowTighten: true,
-                Random: false,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
                 Prerequisite: ["HasBreasts"],
@@ -1463,13 +1453,17 @@
             {
                 Name: "乳胶带床_Luzi", Random: false,
                 Top: 0, Left: 0,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
                 DefaultColor: [
                     // "Default",
-                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "", "Default", "Default", "Default", "Default", "Default", "Default"],
+                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default", "Default"],
                 Layer: [
                     // {
                     //     Name: "外壳盖子关闭", Priority: 1,
                     // },
+                    {
+                        Name: "外壳", Priority: 1,
+                    },
                     {
                         Name: "外壳盖子打开", Priority: 1,
                     },
@@ -1477,38 +1471,33 @@
                         Name: "床垫", Priority: 1,
                     },
                     {
-                        Name: "外壳", Priority: 1,
-                    },
-                    {
-                        Name: "床带上", Priority: 24,
+                        Name: "床带上", Priority: 1,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "床带下", Priority: 24,
+                        Name: "床带下", Priority: 1,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "床环上", Priority: 24,
+                        Name: "床环上", Priority: 1,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "床环下", Priority: 24,
+                        Name: "床环下", Priority: 1,
                         ParentGroup: "BodyLower",
                     },
-
                     {
-                        Name: "拉链", Priority: 24,
+                        Name: "内衬", Priority: 25,
                     },
                     {
-                        Name: "绳子", Priority: 24,
+                        Name: "圆环", Priority: 25,
                     },
                     {
-                        Name: "圆环", Priority: 24,
+                        Name: "绳子", Priority: 25,
                     },
                     {
-                        Name: "内衬", Priority: 24,
+                        Name: "拉链", Priority: 25,
                     },
-
                     {
                         Name: "拘束带上", Priority: 53,
                         ParentGroup: "BodyUpper",
@@ -1526,8 +1515,6 @@
                         ParentGroup: "BodyLower",
                     },
                 ],
-
-
             },
 
         ],
@@ -2019,7 +2006,6 @@
                 },
             },
         ],
-
     };
 
 

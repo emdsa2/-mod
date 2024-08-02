@@ -402,9 +402,7 @@
         ],
         Suit: [
             {
-                Name: "乳胶衣上_Luzi",
-                Random: false,
-                Gender: "F",
+                Name: "乳胶衣上_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
                 Prerequisite: ["HasBreasts"],
                 Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"],
@@ -425,9 +423,7 @@
         ],
         SuitLower: [
             {
-                Name: "乳胶衣下_Luzi",
-                Random: false,
-                Gender: "F",
+                Name: "乳胶衣下_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
                 Prerequisite: ["HasVagina"],
                 Attribute: ["SuitLower"],
@@ -703,9 +699,7 @@
                 ],
             },
             {
-                Name: "胶带全身_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "胶带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -722,9 +716,7 @@
                 ],
             },
             {
-                Name: "睡袋改_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "睡袋改_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -743,9 +735,7 @@
                 ],
             },
             {
-                Name: "全包毛毯改_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -761,9 +751,7 @@
                 ],
             },
             {
-                Name: "绷带全身_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "绷带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -779,9 +767,7 @@
                 ],
             },
             {
-                Name: "触手服_Luzi",
-                Random: false,
-                Gender: "F",
+                Name: "触手服_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 8,
                 AllowLock: true,
@@ -859,9 +845,7 @@
         ],
         ItemTorso2: [
             {
-                Name: "拘束套装_Luzi",
-                Random: false,
-                Gender: "F",
+                Name: "拘束套装_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
                 Effect: [E.Block, E.BlockWardrobe, E.Slow],
@@ -983,9 +967,7 @@
                 ],
             },
             {
-                Name: "胶带全身_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "胶带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1002,9 +984,7 @@
                 ],
             },
             {
-                Name: "睡袋改_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "睡袋改_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1023,9 +1003,7 @@
                 ],
             },
             {
-                Name: "全包毛毯改_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "全包毛毯改_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1041,9 +1019,7 @@
                 ],
             },
             {
-                Name: "绷带全身_Luzi",
-                Gender: "F",
-                Random: false,
+                Name: "绷带全身_Luzi", Gender: "F", Random: false,
                 Top: 0, Left: 0,
                 Difficulty: 10,
                 SelfBondage: 6,
@@ -1059,9 +1035,7 @@
                 ],
             },
             {
-                Name: "触手服_Luzi",
-                Random: false,
-                Gender: "F",
+                Name: "触手服_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 8,
                 AllowLock: true,
@@ -1139,8 +1113,7 @@
         ],
         ItemDevices: [
             {
-                Name: "猪猪_Luzi",
-                Random: false,
+                Name: "猪猪_Luzi", Random: false,
                 Top: -110, Left: 0,
                 SetPose: ["KneelingSpread"],
                 AllowActivePose: ["KneelingSpread"],
@@ -1152,9 +1125,7 @@
                 ],
             },
             {
-                Name: "玻璃罐子_Luzi",
-                Random: false,
-                Gender: "F",
+                Name: "玻璃罐子_Luzi", Random: false, Gender: "F",
                 Top: -110, Left: 0,
                 AllowLock: true,
                 Difficulty: 50,
@@ -1185,8 +1156,7 @@
                     { Name: "吊顶链", Priority: 5, AllowTypes: { s: 1 } },],
             },
             {
-                Name: "床左边_Luzi",
-                Random: false,
+                Name: "床左边_Luzi", Random: false,
                 Top: -260, Left: 0,
                 Priority: 1,
                 Difficulty: -20,
@@ -1219,8 +1189,7 @@
                 ]
             },
             {
-                Name: "床右边_Luzi",
-                Random: false,
+                Name: "床右边_Luzi", Random: false,
                 Top: -260, Left: -110,
                 Priority: 1,
                 Difficulty: -20,
@@ -1253,8 +1222,7 @@
                 ]
             },
             {
-                Name: "窝瓜_Luzi",
-                Random: false,
+                Name: "窝瓜_Luzi", Random: false,
                 Top: 140, Left: 0,
                 Fetish: ["Pet"],
                 Difficulty: -25,
@@ -1285,13 +1253,11 @@
                 ],
             },
             {
-                Name: "树_Luzi",
-                Random: false,
+                Name: "树_Luzi", Random: false,
                 Top: -110, Left: -150,
             },
             {
-                Name: "独角兽玩偶_Luzi",
-                Random: false,
+                Name: "独角兽玩偶_Luzi", Random: false,
                 Priority: 58,
                 Value: 40,
                 Difficulty: -2,
@@ -1324,8 +1290,7 @@
                     { Name: "耳朵外", AllowTypes: { typed: 0 }, },
                     { Name: "耳朵内", AllowTypes: { typed: 0 }, },
                     {
-                        Name: "头",
-                        AllowTypes: { typed: 0 },
+                        Name: "头", AllowTypes: { typed: 0 },
                         Alpha: [
                             {
                                 Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
@@ -1349,8 +1314,7 @@
                 ],
             },
             {
-                Name: "巨型玩偶_Luzi",
-                Random: false,
+                Name: "巨型玩偶_Luzi", Random: false,
                 Priority: 58,
                 Value: 40,
                 Difficulty: -2,
@@ -1388,8 +1352,7 @@
                 ],
             },
             {
-                Name: "拳击袋_Luzi",
-                Random: false,
+                Name: "拳击袋_Luzi", Random: false,
                 Top: 0, Left: 0,
                 AllowLock: true,
                 Extended: true,
@@ -1417,9 +1380,7 @@
                     { Name: "沙袋后", Priority: 1, MinOpacity: 1, },
                     { Name: "链条后", Priority: 0, Top: -800, MinOpacity: 1, },
                     {
-                        Name: "沙袋前框",
-                        Priority: 65,
-                        AllowTypes: { typed: 1 },
+                        Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
                         Alpha: [
                             {
                                 Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
@@ -1442,8 +1403,7 @@
                 },
             },
             {
-                Name: "垃圾桶_Luzi",
-                Random: false,
+                Name: "垃圾桶_Luzi", Random: false,
                 Top: 0, Left: 0,
                 AllowLock: true,
                 Extended: true,
@@ -1488,13 +1448,17 @@
             {
                 Name: "乳胶带床_Luzi", Random: false,
                 Top: 0, Left: 0,
+                SetPose: ["BackElbowTouch", "LegsClosed"],
                 DefaultColor: [
                     // "Default",
-                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "", "Default", "Default", "Default", "Default", "Default", "Default"],
+                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default", "Default"],
                 Layer: [
                     // {
                     //     Name: "外壳盖子关闭", Priority: 1,
                     // },
+                    {
+                        Name: "外壳", Priority: 1,
+                    },
                     {
                         Name: "外壳盖子打开", Priority: 1,
                     },
@@ -1502,38 +1466,33 @@
                         Name: "床垫", Priority: 1,
                     },
                     {
-                        Name: "外壳", Priority: 1,
-                    },
-                    {
-                        Name: "床带上", Priority: 24,
+                        Name: "床带上", Priority: 1,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "床带下", Priority: 24,
+                        Name: "床带下", Priority: 1,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "床环上", Priority: 24,
+                        Name: "床环上", Priority: 1,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "床环下", Priority: 24,
+                        Name: "床环下", Priority: 1,
                         ParentGroup: "BodyLower",
                     },
-
                     {
-                        Name: "拉链", Priority: 24,
+                        Name: "内衬", Priority: 25,
                     },
                     {
-                        Name: "绳子", Priority: 24,
+                        Name: "圆环", Priority: 25,
                     },
                     {
-                        Name: "圆环", Priority: 24,
+                        Name: "绳子", Priority: 25,
                     },
                     {
-                        Name: "内衬", Priority: 24,
+                        Name: "拉链", Priority: 25,
                     },
-
                     {
                         Name: "拘束带上", Priority: 53,
                         ParentGroup: "BodyUpper",
@@ -1551,8 +1510,6 @@
                         ParentGroup: "BodyLower",
                     },
                 ],
-
-
             },
 
         ],
