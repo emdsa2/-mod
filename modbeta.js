@@ -2784,6 +2784,7 @@
                         "刻度尺": "Ruler",
                         "番茄酱": "Ketchup",
                         "隐形药水": "potion of invisibility",
+                        "乳胶带床": "Latex belt bed",
                     };
 
                     Asset.forEach(item => {
