@@ -9,6 +9,7 @@
 // @grant        none
 // @license      MIT
 // ==/UserScript==
+//@ts-nocheck
 (function () {
     'use strict';
     // =======================================================================================
@@ -1454,18 +1455,16 @@
                 Name: "乳胶带床_Luzi", Random: false,
                 Top: 0, Left: 0,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
-                DefaultColor: [
-                    // "Default",
-                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default", "Default"],
+                DefaultColor: ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default"],
                 Layer: [
-                    // {
-                    //     Name: "外壳盖子关闭", Priority: 1,
-                    // },
+                    {
+                        Name: "外壳盖子关闭", Priority: 60, AllowTypes: { g: 2 },
+                    },
                     {
                         Name: "外壳", Priority: 1,
                     },
                     {
-                        Name: "外壳盖子打开", Priority: 1,
+                        Name: "外壳盖子打开", Priority: 1, AllowTypes: { g: 1 },
                     },
                     {
                         Name: "床垫", Priority: 1,
@@ -2050,15 +2049,15 @@
         Modules: [
             {
                 Name: "窗户", Key: "c", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Prone", "Freeze", "Enclose",], }, },],
+                Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Freeze", "Enclose",], }, },],
             },
             {
                 Name: "腿部拘束", Key: "t", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Prone", "Freeze", "Mounted"], }, },],
+                Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Freeze", "Mounted"], }, },],
             },
             {
                 Name: "手臂拘束", Key: "s", DrawImages: false,
-                Options: [{}, { Property: { Difficulty: 18, SetPose: ["BackElbowTouch"], Effect: ["Prone", "Freeze", "Block", "Mounted"], OverrideHeight: { Height: 0, Priority: 60 }, }, },],
+                Options: [{}, { Property: { Difficulty: 18, SetPose: ["BackElbowTouch"], Effect: ["Freeze", "Block", "Mounted"], OverrideHeight: { Height: 0, Priority: 60 }, }, },],
             },
             {
                 Name: "管道", Key: "gz", DrawImages: false,
@@ -2166,11 +2165,13 @@
         Modules: [
             {
                 Name: "鱼鳍", Key: "q",
-                Options: [{}, {}],
+                DrawImages: false,
+                Options: [{}, {},],
             },
             {
                 Name: "鱼尾", Key: "w",
-                Options: [{}, {}],
+                DrawImages: false,
+                Options: [{}, {},],
             },
         ],
     };
@@ -2181,7 +2182,23 @@
                 Name: "跳蛋开关",
                 DrawImages: false,
                 Key: "o",
-                Options: [{ Property: { Intensity: -1, Effect: ["Egged"] } }, { Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] } }, { Property: { Intensity: 5, Effect: ["Egged", "Vibrating"] } },],
+                Options: [
+                    {
+                        Property: { Intensity: -1, Effect: ["Egged",], }
+                    },
+                    {
+                        Property: { Intensity: 0, Effect: ["Egged", "Vibrating",], }
+                    },
+                    {
+                        Property: { Intensity: 1, Effect: ["Egged", "Vibrating",], }
+                    },
+                    {
+                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating",], }
+                    },
+                    {
+                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating",], }
+                    },
+                ],
             },
             {
                 Name: "跳蛋数量",
@@ -2193,8 +2210,9 @@
     };
     AssetFemale3DCGExtended.ItemDevices.巨型玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "熊熊", DrawImages: false, },
+            { Name: "熊熊", },
         ],
         BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
@@ -2206,9 +2224,10 @@
     };
     AssetFemale3DCGExtended.ItemDevices.独角兽玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "戴上头套", DrawImages: false, },
-            { Name: "摘掉头套", DrawImages: false, },
+            { Name: "戴上头套", },
+            { Name: "摘掉头套", },
         ],
         BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
@@ -2220,10 +2239,11 @@
     };
     AssetFemale3DCGExtended.ItemDevices.垃圾桶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "打开盖子", DrawImages: false, },
-            { Name: "合上盖子", DrawImages: false, },
-            { Name: "打开挡板", DrawImages: false, },
+            { Name: "打开盖子", },
+            { Name: "合上盖子", },
+            { Name: "打开挡板", },
         ],
         BaselineProperty: { Opacity: 1 },
         ScriptHooks: {
@@ -2235,11 +2255,12 @@
     };
     AssetFemale3DCGExtended.ItemDevices.拳击袋_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "无照片", DrawImages: false, },
-            { Name: "有照片", DrawImages: false, },
+            { Name: "无照片", },
+            { Name: "有照片", },
         ],
-        BaselineProperty: { Opacity: 1 },
+        BaselineProperty: { Opacity: 1, },
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
@@ -2256,14 +2277,13 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
-                    { DrawImages: false, },
+                    { Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    {},
                     {
-                        DrawImages: false,
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [E.VulvaShaft],
+                            Effect: [E.VulvaShaft,],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -2279,8 +2299,8 @@
                 DrawImages: false,
                 Key: "s",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2288,11 +2308,10 @@
                 DrawImages: false,
                 Key: "h",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                     {
                         Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"], },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2301,8 +2320,8 @@
                 DrawImages: false,
                 Key: "m",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2310,8 +2329,8 @@
                 DrawImages: false,
                 Key: "f",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
         ],
@@ -2325,10 +2344,9 @@
                 DrawImages: false,
                 Key: "d",
                 Options: [
-                    { DrawImages: false, Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
-                    { DrawImages: false, },
+                    { Property: { Block: ['ItemVulva', 'ItemVulvaPiercings', 'ItemButt'], } },
+                    {},
                     {
-                        DrawImages: false,
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
@@ -2348,8 +2366,8 @@
                 DrawImages: false,
                 Key: "s",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2357,11 +2375,10 @@
                 DrawImages: false,
                 Key: "h",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                     {
                         Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"], },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2370,8 +2387,8 @@
                 DrawImages: false,
                 Key: "m",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
             {
@@ -2379,8 +2396,8 @@
                 DrawImages: false,
                 Key: "f",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {},
+                    {},
                 ],
             },
         ],
@@ -2394,8 +2411,12 @@
                 DrawImages: false,
                 Key: "s",
                 Options: [
-                    { DrawImages: false, },
-                    { DrawImages: false, },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.Block], },
+                    },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.Block], },
+                    },
                 ],
             },
             {
@@ -2403,28 +2424,25 @@
                 DrawImages: false,
                 Key: "l",
                 Options: [
-                    { DrawImages: false, },
+                    {},
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedArms], },
-                        DrawImages: false,
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedArms], SetPose: ["OverTheHead"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        Random: false,
                         HasSubscreen: true,
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VARIABLEHEIGHT,
                             MaxHeight: 0,
                             MinHeight: -250,
                             DrawData: {
-                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope" }],
+                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope", }],
                             },
                             DialogPrefix: {
                                 Chat: "SuspensionChange",
                             },
                         },
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2433,20 +2451,17 @@
                 DrawImages: false,
                 Key: "ll",
                 Options: [
-                    { DrawImages: false, },
+                    {},
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], },
-                        DrawImages: false,
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        DrawImages: false,
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        DrawImages: false,
                     },
                 ],
             },
@@ -2455,7 +2470,7 @@
                 DrawImages: false,
                 Key: "lll",
                 Options: [
-                    { DrawImages: false, },
+                    {},
                     {
                         HasSubscreen: true,
                         ArchetypeConfig: {
@@ -2469,12 +2484,28 @@
                                 Chat: "SuspensionChange",
                             },
                         },
-                        DrawImages: false,
                     },
                 ],
             },
 
 
+        ],
+    };
+    AssetFemale3DCGExtended.ItemDevices.乳胶带床_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        ChangeWhenLocked: false,
+        Modules: [
+            {
+                Name: "盖子",
+                DrawImages: false,
+                Key: "g",
+                Options: [
+                    { Name: "无盖子", },
+                    { Name: "有盖子", },
+                    { Name: "关上盖子", },
+                ],
+
+            },
         ],
     };
 
@@ -2979,7 +3010,11 @@
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
 
 
-
+                ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
+                ItemDevices乳胶带床_LuziModule盖子: '盖子',
+                ItemDevices乳胶带床_LuziOptiong0: '无',
+                ItemDevices乳胶带床_LuziOptiong1: '添加盖子',
+                ItemDevices乳胶带床_LuziOptiong2: '盖上盖子',
             };
 
             let addInterfaceCSVCN = {
@@ -3061,10 +3096,12 @@
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
 
-
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter调整DestinationCharacter的高度',
 
+                ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter盖上了DestinationCharacter的盖子',
             };
 
             let addAssetStringSCVEN = {
@@ -3239,6 +3276,12 @@
                 ItemAddon隐形药水_LuziOptionlll0: 'None',
                 ItemAddon隐形药水_LuziOptionlll1: 'Custom Height',
 
+                
+                ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
+                ItemDevices乳胶带床_LuziModule盖子: '盖子',
+                ItemDevices乳胶带床_LuziOptiong0: '无',
+                ItemDevices乳胶带床_LuziOptiong1: '添加盖子',
+                ItemDevices乳胶带床_LuziOptiong2: '盖上盖子',
             };
 
             let addInterfaceCSVEN = {
@@ -3323,6 +3366,9 @@
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter restored DestinationCharacter\'s height',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter adjusted DestinationCharacter\'s height',
 
+                ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter盖上了DestinationCharacter的盖子',
             };
 
             let language = localStorage.getItem("BondageClubLanguage");

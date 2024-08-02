@@ -9,7 +9,7 @@
 // @grant        none
 // @license      MIT
 // ==/UserScript==
-
+//@ts-nocheck
 (function () {
     'use strict';
     /** @type {ModSDKGlobalAPI} *///@ts-ignore
@@ -1449,18 +1449,16 @@
                 Name: "乳胶带床_Luzi", Random: false,
                 Top: 0, Left: 0,
                 SetPose: ["BackElbowTouch", "LegsClosed"],
-                DefaultColor: [
-                    // "Default",
-                    "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default", "Default"],
+                DefaultColor: ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "#000000", "Default", "Default", "Default", "Default", "Default"],
                 Layer: [
-                    // {
-                    //     Name: "外壳盖子关闭", Priority: 1,
-                    // },
+                    {
+                        Name: "外壳盖子关闭", Priority: 60, AllowTypes: { g: 2 },
+                    },
                     {
                         Name: "外壳", Priority: 1,
                     },
                     {
-                        Name: "外壳盖子打开", Priority: 1,
+                        Name: "外壳盖子打开", Priority: 1, AllowTypes: { g: 1 },
                     },
                     {
                         Name: "床垫", Priority: 1,
@@ -2160,11 +2158,13 @@
         Modules: [
             {
                 Name: "鱼鳍", Key: "q",
-                Options: [{}, {}],
+                DrawImages: false,
+                Options: [{}, {},],
             },
             {
                 Name: "鱼尾", Key: "w",
-                Options: [{}, {}],
+                DrawImages: false,
+                Options: [{}, {},],
             },
         ],
     };
@@ -2177,19 +2177,19 @@
                 Key: "o",
                 Options: [
                     {
-                        Property: { Intensity: -1, Effect: ["Egged"] }
+                        Property: { Intensity: -1, Effect: ["Egged",], }
                     },
                     {
-                        Property: { Intensity: 0, Effect: ["Egged", "Vibrating"] }
+                        Property: { Intensity: 0, Effect: ["Egged", "Vibrating",], }
                     },
                     {
-                        Property: { Intensity: 1, Effect: ["Egged", "Vibrating"] }
+                        Property: { Intensity: 1, Effect: ["Egged", "Vibrating",], }
                     },
                     {
-                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] }
+                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating",], }
                     },
                     {
-                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating"] }
+                        Property: { Intensity: 3, Effect: ["Egged", "Vibrating",], }
                     },
                 ],
             },
@@ -2203,8 +2203,9 @@
     };
     AssetFemale3DCGExtended.ItemDevices.巨型玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "熊熊" },
+            { Name: "熊熊", },
         ],
         BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
@@ -2216,9 +2217,10 @@
     };
     AssetFemale3DCGExtended.ItemDevices.独角兽玩偶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "戴上头套" },
-            { Name: "摘掉头套" },
+            { Name: "戴上头套", },
+            { Name: "摘掉头套", },
         ],
         BaselineProperty: { Opacity: 0.7 },
         ScriptHooks: {
@@ -2230,10 +2232,11 @@
     };
     AssetFemale3DCGExtended.ItemDevices.垃圾桶_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "打开盖子" },
-            { Name: "合上盖子" },
-            { Name: "打开挡板" },
+            { Name: "打开盖子", },
+            { Name: "合上盖子", },
+            { Name: "打开挡板", },
         ],
         BaselineProperty: { Opacity: 1 },
         ScriptHooks: {
@@ -2245,11 +2248,12 @@
     };
     AssetFemale3DCGExtended.ItemDevices.拳击袋_Luzi = {
         Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
         Options: [
-            { Name: "无照片" },
-            { Name: "有照片" },
+            { Name: "无照片", },
+            { Name: "有照片", },
         ],
-        BaselineProperty: { Opacity: 1 },
+        BaselineProperty: { Opacity: 1, },
         ScriptHooks: {
             Init: PropertyOpacityInit,
             Load: PropertyOpacityLoad,
@@ -2272,7 +2276,7 @@
                         HasSubscreen: true,
                         Prerequisite: ["AccessVulva", "VulvaEmpty"],
                         Property: {
-                            Effect: [E.VulvaShaft],
+                            Effect: [E.VulvaShaft,],
                         },
                         ArchetypeConfig: {
                             Archetype: ExtendedArchetype.VIBRATING,
@@ -2426,7 +2430,7 @@
                             MaxHeight: 0,
                             MinHeight: -250,
                             DrawData: {
-                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope" }],
+                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope", }],
                             },
                             DialogPrefix: {
                                 Chat: "SuspensionChange",
@@ -2478,6 +2482,23 @@
             },
 
 
+        ],
+    };
+    AssetFemale3DCGExtended.ItemDevices.乳胶带床_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        ChangeWhenLocked: false,
+        Modules: [
+            {
+                Name: "盖子",
+                DrawImages: false,
+                Key: "g",
+                Options: [
+                    { Name: "无盖子", },
+                    { Name: "有盖子", },
+                    { Name: "关上盖子", },
+                ],
+
+            },
         ],
     };
 
@@ -2813,7 +2834,11 @@
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
 
 
-
+                ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
+                ItemDevices乳胶带床_LuziModule盖子: '盖子',
+                ItemDevices乳胶带床_LuziOptiong0: '无',
+                ItemDevices乳胶带床_LuziOptiong1: '添加盖子',
+                ItemDevices乳胶带床_LuziOptiong2: '盖上盖子',
             };
 
             let addInterfaceCSVCN = {
@@ -2895,10 +2920,12 @@
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
 
-
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter调整DestinationCharacter的高度',
 
+                ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter盖上了DestinationCharacter的盖子',
             };
 
             let addAssetStringSCVEN = {
@@ -3073,6 +3100,12 @@
                 ItemAddon隐形药水_LuziOptionlll0: 'None',
                 ItemAddon隐形药水_LuziOptionlll1: 'Custom Height',
 
+                
+                ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
+                ItemDevices乳胶带床_LuziModule盖子: '盖子',
+                ItemDevices乳胶带床_LuziOptiong0: '无',
+                ItemDevices乳胶带床_LuziOptiong1: '添加盖子',
+                ItemDevices乳胶带床_LuziOptiong2: '盖上盖子',
             };
 
             let addInterfaceCSVEN = {
@@ -3157,6 +3190,9 @@
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter restored DestinationCharacter\'s height',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter adjusted DestinationCharacter\'s height',
 
+                ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter盖上了DestinationCharacter的盖子',
             };
 
             let language = localStorage.getItem("BondageClubLanguage");
