@@ -1281,7 +1281,7 @@
                         Name: "身体", AllowTypes: { typed: [0, 1] },
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
                                     [0, 388, 500, 200],//下
                                 ],
@@ -1299,7 +1299,7 @@
                         Name: "头", AllowTypes: { typed: 0 },
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
                                     [0, -200, 500, 270],//上
                                     [0, 0, 154, 400],//左
@@ -1343,7 +1343,7 @@
                         Name: "玩偶",
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
                                     [0, 0, 155, 750],
                                     [350, 0, 150, 750],
@@ -1373,10 +1373,10 @@
                         Name: "沙袋前", Priority: 64, AllowTypes: { typed: 0 },
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
-                                    [0, 0, 500, 35],//上
-                                    [0, 717, 500, 70], //下
+                                    [0, -100, 500, 135],//上
+                                    [0, 717, 500, 120], //下
                                     [0, 0, 130, 1000], //左
                                     [370, 200, 135, 1000],//右
                                 ],
@@ -1389,10 +1389,10 @@
                         Name: "沙袋前框", Priority: 65, AllowTypes: { typed: 1 },
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
-                                    [0, 0, 500, 35],
-                                    [0, 717, 500, 50],
+                                    [0, -100, 500, 135],
+                                    [0, 717, 500, 120],
                                     [0, 0, 130, 1000],
                                     [370, 200, 135, 1000],
                                 ],
@@ -1425,9 +1425,9 @@
                         Name: "垃圾桶",
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
-                                    [0, 695, 500, 70], //下
+                                    [0, 695, 500, 120], //下
                                     [0, 175, 160, 1000], //左
                                     [340, 175, 135, 1000],//右
                                 ],
@@ -1438,9 +1438,9 @@
                         Name: "盖子", AllowTypes: { typed: [1, 2] },
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
                                 Masks: [
-                                    [0, 0, 500, 50],//上
+                                    [0, -100, 500, 150],//上
                                     [0, 0, 160, 1000], //左
                                     [340, 0, 135, 1000],//右
                                 ],
@@ -1460,6 +1460,17 @@
                 Layer: [
                     {
                         Name: "外壳盖子关闭", Priority: 60, AllowTypes: { g: 2 },
+                        Alpha: [
+                            {
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
+                                Masks: [
+                                    [0, -100, 500, 150],//上
+                                    [0, 695, 500, 120], //下
+                                    [0, 0, 160, 1000], //左
+                                    [340, 0, 135, 1000],//右
+                                ],
+                            },
+                        ],
                     },
                     {
                         Name: "外壳", Priority: 1,
