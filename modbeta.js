@@ -3047,7 +3047,7 @@
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
 
 
-                ItemAddon隐形药水_LuziSetll0: 'SourceCharacter还原DestinationCharacter的高度',
+                ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter调整DestinationCharacter的高度',
 
             };
@@ -3305,7 +3305,7 @@
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter connected the hoist to DestinationCharacter\'s legs',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter connected the hoist to DestinationCharacter\'s legs',
 
-                ItemAddon隐形药水_LuziSetll0: 'SourceCharacter restored DestinationCharacter\'s height',
+                ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter restored DestinationCharacter\'s height',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter adjusted DestinationCharacter\'s height',
 
             };
