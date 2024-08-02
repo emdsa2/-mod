@@ -3004,7 +3004,7 @@
                 ItemAddon隐形药水_LuziOptionlll0: '无',
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
 
-
+                ItemDevices乳胶带床_LuziSelectBase: '选择乳胶带床',
                 ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
                 ItemDevices乳胶带床_LuziModule盖子: '盖子',
                 ItemDevices乳胶带床_LuziOptiong0: '无',
