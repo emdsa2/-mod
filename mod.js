@@ -2617,13 +2617,13 @@
     }
 
     function addExtraExpressionsToAssets() {
-        var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi",];
+        var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi", "洗澡_Luzi",];
         var GroupEmoticon = AssetFemale3DCG.filter(A => A.Group === "Emoticon");
         GroupEmoticon[0].AllowExpression = [...GroupEmoticon[0].AllowExpression, ...Emoticon内容];
 
         AssetGroup.forEach(A => {
             if (A.Name === "Emoticon") {
-                var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi",];
+                var Emoticon内容 = ["车车_Luzi", "衣架_Luzi", "电话_Luzi", "灯泡_Luzi", "警告_Luzi", "心_Luzi", "画画_Luzi", "符号_Luzi", "视频_Luzi", "洗澡_Luzi",];
                 A.AllowExpression = [...A.AllowExpression, ...Emoticon内容];
                 // console.log(A.AllowExpression)
             }
