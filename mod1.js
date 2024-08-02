@@ -3587,6 +3587,8 @@
     // 注册hook
     mod.hookFunction("DrawImageEx", 10, (args, next) => {
         let [source, canvas, X, Y, options] = args;
+
+        if (!options?.Width || !options?.Height) return next(args);
         let Width = options.Width;
         let Height = options.Height;
 

@@ -144,10 +144,10 @@
 
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(Kneel|KneelingSpread|LegsClosed|Spread|AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(Small|Normal|Large|XLarge)_(Asian|Black|White)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/(BodyUpper|BodyLower)\/(AllFours|Hogtied|BackBoxTie|BackCuffs|BackElbowTouch|TapedHands|OverTheHead|Yoked)\/(FlatSmall|FlatMedium)_(Asian|Black|White)\.png/);
-        
+
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/(Penis|Penis1|Penis2|Penis3)_(Asian|Black|White)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/Pussy\/Hard\/(Penis|PussyDark1|PussyDark2|PussyDark3|PussyLight1|PussyLight2|PussyLight3)\.png/);
 
@@ -258,7 +258,7 @@
             }
 
             if (data.includes("阿巴阿巴")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png";
             }
         }
 
@@ -1464,7 +1464,7 @@
                 Top: 0, Left: 0,
                 Layer: [
                     {
-                        Name: "床垫",Priority: 1,
+                        Name: "床垫", Priority: 1,
                     },
                     {
                         Name: "床带上", Priority: 24,
@@ -1475,30 +1475,30 @@
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "环上",Priority: 24,
+                        Name: "环上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "环下",Priority: 24,
+                        Name: "环下", Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "拉链",Priority: 24,
+                        Name: "拉链", Priority: 24,
                     },
                     {
-                        Name: "拘束带上",Priority: 53,
+                        Name: "拘束带上", Priority: 53,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "拘束带下",Priority: 53,
+                        Name: "拘束带下", Priority: 53,
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "乳胶上",Priority: 24,
+                        Name: "乳胶上", Priority: 24,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "乳胶下",Priority: 24,
+                        Name: "乳胶下", Priority: 24,
                         ParentGroup: "BodyLower",
                     },
                 ],
@@ -1534,7 +1534,7 @@
                 Name: "隐形药水_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
-                Hide: ["ItemHandheld", "Hands", "Bracelet","LeftHand","RightHand","SocksRight","SocksLeft","BodyLower", "BodyUpper", "BodyFull"],
+                Hide: ["ItemHandheld", "Hands", "Bracelet", "LeftHand", "RightHand", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper", "BodyFull"],
                 Extended: true,
                 Layer: [
                     {
@@ -2476,9 +2476,9 @@
     }
 
     function AssetAdd_Luzi(assetgroupName, assetName) { // 加载道具
-        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
-        let asset = assetGroup.Asset.find(asset => asset.Name === assetName)
-        let G = AssetGroupMap.get(assetgroupName)
+        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName);
+        let asset = assetGroup.Asset.find(asset => asset.Name === assetName);
+        let G = AssetGroupMap.get(assetgroupName);
         AssetAdd(G, asset, AssetFemale3DCGExtended);
     }
 
@@ -2589,10 +2589,10 @@
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
-            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
-            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0]);
+            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0]);
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0]);
+            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0]);
 
             addExtraOutfitsToAssets();
             addExtraOutfitsToAssets2();
@@ -2962,7 +2962,7 @@
                 ItemAddon隐形药水_LuziModule自定义高度: '调整高度',
                 ItemAddon隐形药水_LuziOptionlll0: '无',
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
-                
+
 
 
             };
@@ -3363,7 +3363,7 @@
         if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
-    }
+    };
     window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
         const Data = PersistentData();
         if (typeof Data.DildoState !== "number") Data.DildoState = 0;
@@ -3393,7 +3393,7 @@
         if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
-    }
+    };
     function AssetsItemTorso触手服_LuziScriptDrawHook(data, originalFunction, drawData) {
         originalFunction(drawData);
 
@@ -3709,7 +3709,7 @@
 
     // ================================================================================
     // ================================================================================
-        // ================================================================================
+    // ================================================================================
     // ================================================================================
     // 好厉害的Saki！
     // 定义一个布尔变量，用于标记是否处于绘制角色的过程中
@@ -3722,7 +3722,7 @@
 
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         // 标记开始绘制角色
-        InDrawCharacter = true
+        InDrawCharacter = true;
         // 存储当前绘制的角色
         CurrentDrawCharacter = args[0];
         // 继续执行原始的DrawCharacter函数
@@ -3739,14 +3739,14 @@
         "缩小(地)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
         "缩小(空)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
     };
-    
-    
-    function adjustImageForAssets(args, next) {
-        // 获取绘图 X Y 宽高
-        let X = args[2];
-        let Y = args[3];
-        let Width = args[4].Width;
-        let Height = args[4].Height;
+
+
+    mod.hookFunction("DrawImageEx", 10, (args, next) => {
+        let [source, canvas, X, Y, options] = args;
+
+        if (!options?.Width || !options?.Height) return next(args);
+        let Width = options.Width;
+        let Height = options.Height;
 
         // 如果当前处于绘制角色的过程中
         if (InDrawCharacter) {
@@ -3755,7 +3755,7 @@
                 const adjustment = assetAdjustments[asset.Asset.Name];
                 if (adjustment) {
                     // 如果绘图对象未定义，则初始化为空对象
-                    if (args[4] == undefined) args[4] = {};
+                    if (options == undefined) options = {};
 
                     // 调整绘图位置和尺寸
                     X = X + Width / adjustment.offsetXMultiplier;
@@ -3765,21 +3765,15 @@
                     Height = Height / adjustment.heightMultiplier;
 
                     // 更新绘图对象的宽度和高度
-                    Object.assign(args[4], { Width, Height });
+                    Object.assign(options, { Width, Height });
                 }
             });
         }
 
         InDrawCharacter = false;
-
         // 调用原始的DrawImageEx函数，传入调整后的参数
-        return next([args[0], args[1], X, Y, args[4]]);
-    }
-
-    // 注册hook
-    mod.hookFunction("DrawImageEx", 10, adjustImageForAssets);
-
-
+        return next([source, canvas, X, Y, options]);
+    });
 })();
 // 22 6 -10 _Asian
 // -4 30 -38 _Black

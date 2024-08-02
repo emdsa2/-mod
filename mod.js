@@ -259,7 +259,7 @@
             }
 
             if (data.includes("阿巴阿巴")) {
-                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png"
+                args[0] = "https://emdsa2.github.io/-mod/Female3DCG/ItemHandheld/Preview/阿巴阿巴_Luzi.png";
             }
         }
 
@@ -2479,9 +2479,9 @@
     }
 
     function AssetAdd_Luzi(assetgroupName, assetName) { // 加载道具
-        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName)
-        let asset = assetGroup.Asset.find(asset => asset.Name === assetName)
-        let G = AssetGroupMap.get(assetgroupName)
+        let assetGroup = AssetFemale3DCG.find(asset => asset.Group === assetgroupName);
+        let asset = assetGroup.Asset.find(asset => asset.Name === assetName);
+        let G = AssetGroupMap.get(assetgroupName);
         AssetAdd(G, asset, AssetFemale3DCGExtended);
     }
 
@@ -2592,10 +2592,10 @@
     let isAssetAdded = false;
     mod.hookFunction('LoginResponse', 0, (args, next) => {
         if (!isAssetAdded) {
-            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0])
-            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0])
-            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0])
+            AssetFemale3DCG.push(addAssetGroup.Liquid2_Luzi[0]);
+            AssetFemale3DCG.push(addAssetGroup.BodyMarkings2_Luzi[0]);
+            AssetGroupAdd("Female3DCG", addAssetGroup.Liquid2_Luzi[0]);
+            AssetGroupAdd("Female3DCG", addAssetGroup.BodyMarkings2_Luzi[0]);
 
             addExtraOutfitsToAssets();
             addExtraOutfitsToAssets2();
@@ -3369,7 +3369,7 @@
         if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
-    }
+    };
     window.AssetsItemTorso2触手服_LuziBeforeDraw = function AssetsItemTorso2触手服_LuziBeforeDraw({ PersistentData, L, X, Y, Property }) {
         const Data = PersistentData();
         if (typeof Data.DildoState !== "number") Data.DildoState = 0;
@@ -3399,7 +3399,7 @@
         if (AnimationQualityRatio > FuckLength) Data.DildoState = Math.random();
 
         return { Y: Y + FuckLength * (-Math.cos(Data.DildoState * 2 * Math.PI)) };
-    }
+    };
     function AssetsItemTorso触手服_LuziScriptDrawHook(data, originalFunction, drawData) {
         originalFunction(drawData);
 
@@ -3611,7 +3611,7 @@
         ServerSend("ChatRoomChat", {
             Content: `${text}`,
             Type: "Hidden",
-        })
+        });
     };
 
     mod.hookFunction("ChatRoomSync", 10, (args, next) => {
@@ -3629,13 +3629,13 @@
     });
 
     mod.hookFunction("ChatRoomMessage", 10, (args, next) => {
-        let data = args[0]
+        let data = args[0];
         if (data.Content === 'ServerEnter') {
             setTimeout(() => {
                 Hidden("╰(*°▽°*)╯");
             }, 2000);
         }
-        next(args)
+        next(args);
     });
 
     let CRCharacter;
@@ -3698,7 +3698,7 @@
 
     mod.hookFunction("DrawCharacter", 10, (args, next) => {
         // 标记开始绘制角色
-        InDrawCharacter = true
+        InDrawCharacter = true;
         // 存储当前绘制的角色
         CurrentDrawCharacter = args[0];
         // 继续执行原始的DrawCharacter函数
@@ -3715,14 +3715,14 @@
         "缩小(地)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
         "缩小(空)_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
     };
-    
-    
-    function adjustImageForAssets(args, next) {
-        // 获取绘图 X Y 宽高
-        let X = args[2];
-        let Y = args[3];
-        let Width = args[4].Width;
-        let Height = args[4].Height;
+
+
+    mod.hookFunction("DrawImageEx", 10, (args, next) => {
+        let [source, canvas, X, Y, options] = args;
+
+        if (!options?.Width || !options?.Height) return next(args);
+        let Width = options.Width;
+        let Height = options.Height;
 
         // 如果当前处于绘制角色的过程中
         if (InDrawCharacter) {
@@ -3731,7 +3731,7 @@
                 const adjustment = assetAdjustments[asset.Asset.Name];
                 if (adjustment) {
                     // 如果绘图对象未定义，则初始化为空对象
-                    if (args[4] == undefined) args[4] = {};
+                    if (options == undefined) options = {};
 
                     // 调整绘图位置和尺寸
                     X = X + Width / adjustment.offsetXMultiplier;
@@ -3741,19 +3741,15 @@
                     Height = Height / adjustment.heightMultiplier;
 
                     // 更新绘图对象的宽度和高度
-                    Object.assign(args[4], { Width, Height });
+                    Object.assign(options, { Width, Height });
                 }
             });
         }
+
         InDrawCharacter = false;
-
         // 调用原始的DrawImageEx函数，传入调整后的参数
-        return next([args[0], args[1], X, Y, args[4]]);
-    }
-
-    // 注册hook
-    mod.hookFunction("DrawImageEx", 10, adjustImageForAssets);
-
+        return next([source, canvas, X, Y, options]);
+    });
 })();
 
 
