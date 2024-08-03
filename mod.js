@@ -575,7 +575,7 @@
             {
                 Name: "鞍_Luzi",
                 Random: false,
-                SetPose: ["AllFours"],
+                // SetPose: ["AllFours"],
                 AllowActivePose: ["AllFours"],
             },
             {
@@ -2001,20 +2001,10 @@
                 },
             },
             {
-                Name: "缩小(地)_Luzi", Visible: false, Zoom: 0.5,
-                OverrideHeight: {
-                    Height: 25,
-                    Priority: 51,
-                    HeightRatioProportion: 0.5,
-                },
+                Name: "缩小(地)_Luzi", Visible: false, Random: false,
             },
             {
-                Name: "缩小(空)_Luzi", Visible: false, Zoom: 0.5,
-                OverrideHeight: {
-                    Height: 25,
-                    Priority: 51,
-                    HeightRatioProportion: 0.5,
-                },
+                Name: "缩小(空)_Luzi", Visible: false, Random: false,
             },
         ],
     };

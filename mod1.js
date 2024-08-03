@@ -569,7 +569,7 @@
             {
                 Name: "鞍_Luzi",
                 Random: false,
-                SetPose: ["AllFours"],
+                // SetPose: ["AllFours"],
                 AllowActivePose: ["AllFours"],
             },
             {
