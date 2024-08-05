@@ -1452,6 +1452,7 @@
             },
             {
                 Name: "乳胶带床_Luzi", Random: false,
+                AllowLock: true,
                 Top: 0, Left: 0,
                 Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
                 SetPose: ["BackElbowTouch", "LegsClosed"],
@@ -1526,7 +1527,53 @@
                     },
                 ],
             },
-
+            {
+                Name: "开腿展示架_Luzi", Random: false,
+                Top: 0, Left: 0,
+                AllowLock: true,
+                Extended: true,
+                // Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
+                Hide: ["BodyLower",],
+                Layer: [
+                    {
+                        Name: "框架抬手", Priority: 1, AllowTypes: { o: 1 },
+                    },
+                    {
+                        Name: "框架", Priority: 1, AllowTypes: { o: 0 },
+                    },
+                    {
+                        Name: "下半身开腿", Priority: 7,
+                        ParentGroup: "BodyLower",
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                    },
+                    {
+                        Name: "手固定", Priority: 50, AllowTypes: { o: 1 },
+                        ParentGroup: "BodyUpper",
+                    },
+                    {
+                        Name: "腿固定", Priority: 50,
+                        ParentGroup: "BodyLower",
+                    },
+                    {
+                        Name: "身体固定", Priority: 50,
+                        ParentGroup: "BodyUpper",
+                    },
+                    {
+                        Name: "嘴巴固定", Priority: 50, AllowTypes: { g: 1 },
+                    },
+                    {
+                        Name: "脖子固定", Priority: 50,
+                    },
+                    {
+                        Name: "下体棒子", Priority: 13, AllowTypes: { v: 1 },
+                    },
+                    {
+                        Name: "链条", Priority: 1, Top: -760, Left: 0,
+                    },
+                ],
+            },
         ],
         ItemAddon: [
             {
@@ -2505,6 +2552,60 @@
                     { Name: "关上盖子", },
                 ],
 
+            },
+        ],
+    };
+    AssetFemale3DCGExtended.ItemDevices.开腿展示架_Luzi = {
+        Archetype: ExtendedArchetype.MODULAR,
+        ChangeWhenLocked: false,
+        Modules: [
+            {
+                Name: "姿势",
+                DrawImages: false,
+                Key: "o",
+                Options: [
+                    { Name: "手背后", Property: { SetPose: ["BackElbowTouch", "KneelingSpread"], }, },
+                    { Name: "手抬起", Property: { SetPose: ["OverTheHead", "KneelingSpread"], }, },
+                ],
+            },
+            {
+                Name: "嘴巴固定",
+                DrawImages: false,
+                Key: "g",
+                Options: [
+                    { Name: "无", },
+                    { Name: "有", },
+                ],
+            },
+            {
+                Name: "下体棒子",
+                DrawImages: false,
+                Key: "v",
+                Options: [
+                    { Name: "无", },
+                    { Name: "有", },
+                ],
+            },
+            {
+                Name: "自定义高度",
+                DrawImages: false,
+                Options: [
+                    {},
+                    {
+                        HasSubscreen: true,
+                        ArchetypeConfig: {
+                            Archetype: ExtendedArchetype.VARIABLEHEIGHT,
+                            MaxHeight: 0,
+                            MinHeight: -250,
+                            DrawData: {
+                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope" }],
+                            },
+                            DialogPrefix: {
+                                Chat: "SuspensionChange",
+                            },
+                        },
+                    },
+                ],
             },
         ],
     };
