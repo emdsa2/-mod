@@ -1528,7 +1528,7 @@
                 AllowLock: true,
                 Extended: true,
                 // Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
-                Hide: ["BodyLower",],
+                Hide: ["BodyLower", "ItemLegs", "ItemFeet", "ItemBoots", "Shoes", "Garters", "LeftAnklet", "RightAnklet", "SocksLeft", "SocksRight", "Socks", "SuitLower"],
                 Layer: [
                     {
                         Name: "框架抬手", Priority: 1, AllowTypes: { o: 1 },

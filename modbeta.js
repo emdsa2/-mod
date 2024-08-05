@@ -1462,7 +1462,7 @@
                         Name: "外壳盖子关闭", Priority: 60, AllowTypes: { g: 2 },
                         Alpha: [
                             {
-                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3","Cloth_笨笨笨蛋Luzi2","Cloth_笨笨蛋Luzi","ClothLower_笨笨笨蛋Luzi2","ClothLower_笨笨蛋Luzi",],
+                                Group: ["HairFront", "HairBack", "Bracelet", "Cloth", "ClothAccessory", "ClothLower", "Corset", "Fluids", "Garters", "Gloves", "HairAccessory", "Hat", "ItemArms", "ItemBrest", "ItemButt", "ItemHandheld", "ItemHead", "ItemHood", "ItemLegs", "ItemMisc", "ItemNeck", "ItemNose", "ItemPelvis", "ItemTorso", "LeftAnKlet", "LeftHand", "Mask", "Mouth", "Nipples", "Panties", "RightAnklet", "RightHand", "Shoes", "Socks", "SocksLeft", "SocksRight", "Suit", "SuitLower", "TailStraps", "Wings", "Bra", "HairAccessory1", "HairAccessory2", "HairAccessory3", "Cloth_笨笨笨蛋Luzi2", "Cloth_笨笨蛋Luzi", "ClothLower_笨笨笨蛋Luzi2", "ClothLower_笨笨蛋Luzi",],
                                 Masks: [
                                     [0, -100, 500, 150],//上
                                     [0, 695, 500, 120], //下
@@ -1533,7 +1533,7 @@
                 AllowLock: true,
                 Extended: true,
                 // Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
-                Hide: ["BodyLower",],
+                Hide: ["BodyLower", "ItemLegs", "ItemFeet", "ItemBoots", "Shoes", "Garters", "LeftAnklet", "RightAnklet", "SocksLeft", "SocksRight", "Socks", "SuitLower"],
                 Layer: [
                     {
                         Name: "框架抬手", Priority: 1, AllowTypes: { o: 1 },
