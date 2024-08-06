@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "allowJs": true,
+        "lib": [
+            "es2021",
+            "dom",
+        ]
+    },
+    "include": [
+        "src/**/*.js",
+        "src/Typedef.d.ts",
+        "node_modules/bc-stubs/bc/**/*.d.ts"
+    ]
+}

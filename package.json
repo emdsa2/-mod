@@ -1,6 +1,15 @@
 {
+  "name": "echo-bc-mod-collection",
+  "version": "1.0.0",
+  "scripts": {
+    "build_subs": "pnpm -r build",
+    "dev_build": "pnpm build_subs --configDebug && pnpm copy_res",
+    "copy_res": "copyfiles -u 1 \"resources/**/*.png\" \"resources/**/*.mp3\" public",
+    "build": "pnpm copy_res && pnpm build_subs"
+  },
+  "author": "Echo",
   "devDependencies": {
-    "bc-stubs": "^106.0.0",
-    "bondage-club-mod-sdk": "^1.2.0"
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.1"
   }
 }
