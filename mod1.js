@@ -1855,7 +1855,7 @@
                 Name: "蜘蛛_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: -156,
                 Difficulty: 25,
-                Hide: ["Pussy", "BodyLower", "BodyFull"],
+                Hide: ["Pussy", "BodyLower"],
                 // Extended: true,
                 Layer: [
                     {
@@ -1886,6 +1886,53 @@
                     Priority: 21,
                     HeightRatioProportion: 0,
                 },
+            },
+            {
+                Name: "后背_Luzi", Random: false, Gender: "F",
+                Top: 0, Left: 0,
+                SetPose: ["OverTheHead", [PoseType.DEFAULT],],
+                Hide: ["Hands", "BodyLower", "BodyUpper", "Pussy", "Nipples", "ItemNipples", "ItemNipplesPiercings"],
+                Layer: [
+                    {
+                        Name: "下半身", Priority: 9,
+                        Top: 460, Left: 0,
+                        ParentGroup: "BodyLower",
+                        InheritColor: "BodyLower",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            [PoseType.DEFAULT]: [PoseType.DEFAULT],
+                            Kneel: [PoseType.DEFAULT],
+                            KneelingSpread: [PoseType.DEFAULT],
+                            LegsClosed: [PoseType.DEFAULT],
+                            Spread: [PoseType.DEFAULT],
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                    {
+                        Name: "上半身", Priority: 9,
+                        Top: 0, Left: 0,
+                        ParentGroup: "BodyUpper",
+                        InheritColor: "BodyUpper",
+                        HideColoring: true,
+                        ColorSuffix: { HEX_COLOR: "White" },
+                        PoseMapping:
+                        {
+                            [PoseType.DEFAULT]: "OverTheHead",
+                            BackBoxTie: "OverTheHead",
+                            BackCuffs: "OverTheHead",
+                            BackElbowTouch: "OverTheHead",
+                            OverTheHead: "OverTheHead",
+                            Yoked: "OverTheHead",
+                            Hogtied: "Hide",
+                            AllFours: "Hide",
+                        },
+                    },
+                ],
+
+
             },
         ],
         ItemVulva: [
