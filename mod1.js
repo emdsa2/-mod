@@ -200,6 +200,9 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips_(Open|Closed2|Closed)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips\.png/);
 
+        // 后发
+        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/HairBack\/HairBack51\.png/);
+
 
         next(args);
     });
@@ -1890,7 +1893,7 @@
             {
                 Name: "后背_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                SetPose: ["OverTheHead",],
+                SetPose: ["OverTheHead", "Yoked", "LegsClosed",],
                 Hide: ["Hands", "BodyLower", "BodyUpper", "Pussy", "Nipples", "ItemNipples", "ItemNipplesPiercings"],
                 Layer: [
                     {
@@ -1904,7 +1907,7 @@
                         {
                             Kneel: "Hide",
                             KneelingSpread: "Hide",
-                            LegsClosed: "Hide",
+                            LegsClosed: "LegsClosed",
                             Spread: "Hide",
                             Hogtied: "Hide",
                             AllFours: "Hide",
@@ -1923,7 +1926,7 @@
                             BackCuffs: "OverTheHead",
                             BackElbowTouch: "OverTheHead",
                             OverTheHead: "OverTheHead",
-                            Yoked: "OverTheHead",
+                            Yoked: "Yoked",
                             Hogtied: "Hide",
                             AllFours: "Hide",
                         },
