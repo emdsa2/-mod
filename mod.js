@@ -1899,7 +1899,7 @@
             {
                 Name: "后背_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                SetPose: ["OverTheHead", "Yoked", "LegsClosed",],
+                SetPose: ["OverTheHead", "Yoked",],
                 Hide: ["Hands", "BodyLower", "BodyUpper", "Pussy", "Nipples", "ItemNipples", "ItemNipplesPiercings"],
                 Layer: [
                     {
