@@ -1890,7 +1890,7 @@
             {
                 Name: "后背_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                SetPose: ["OverTheHead", [PoseType.DEFAULT],],
+                SetPose: ["OverTheHead",],
                 Hide: ["Hands", "BodyLower", "BodyUpper", "Pussy", "Nipples", "ItemNipples", "ItemNipplesPiercings"],
                 Layer: [
                     {
@@ -1902,7 +1902,6 @@
                         ColorSuffix: { HEX_COLOR: "White" },
                         PoseMapping:
                         {
-                            [PoseType.DEFAULT]: [PoseType.DEFAULT],
                             Kneel: [PoseType.DEFAULT],
                             KneelingSpread: [PoseType.DEFAULT],
                             LegsClosed: [PoseType.DEFAULT],
