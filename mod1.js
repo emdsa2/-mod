@@ -200,8 +200,6 @@
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips_(Open|Closed2|Closed)\.png/);
         args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/ItemArms\/(Kneel|AllFours)\/ShinyPetSuit_(Small|Normal|Large|XLarge)_Zips\.png/);
 
-        // 后发
-        args[0] = updateAssetUrl(args[0], /Assets\/Female3DCG\/HairBack\/HairBack51\.png/);
 
 
         next(args);
@@ -1893,8 +1891,8 @@
             {
                 Name: "后背_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                SetPose: ["OverTheHead", "Yoked",],
-                Hide: ["Hands", "BodyLower", "BodyUpper", "Pussy", "Nipples", "ItemNipples", "ItemNipplesPiercings"],
+                SetPose: ["OverTheHead", "Yoked", "BaseLower", "LegsClosed"],
+                Hide: ["Hands", "BodyLower", "BodyUpper", "Pussy", "Nipples", "ItemNipples", "ItemNipplesPiercings", 'Cloth', 'ClothAccessory', 'Necklace', 'Suit', 'ClothLower', 'SuitLower', 'Bra', 'Corset', 'Panties', 'Socks', 'SocksRight', 'SocksLeft', 'RightAnklet', 'LeftAnklet', 'Garters', 'Shoes', 'TailStraps', 'Wings', 'BodyMarkings', 'Cloth_笨笨蛋Luzi', 'ClothAccessory_笨笨蛋Luzi', 'Necklace_笨笨蛋Luzi', 'ClothLower_笨笨蛋Luzi', 'Bra_笨笨蛋Luzi', 'Panties_笨笨蛋Luzi', 'Shoes_笨笨蛋Luzi', 'Hat_笨笨蛋Luzi', 'HairAccessory3_笨笨蛋Luzi', 'Gloves_笨笨蛋Luzi', 'Mask_笨笨蛋Luzi', 'Wings_笨笨蛋Luzi', 'Cloth_笨笨笨蛋Luzi2', 'ClothLower_笨笨笨蛋Luzi2',],
                 Layer: [
                     {
                         Name: "下半身", Priority: 9,
@@ -1930,6 +1928,18 @@
                             Hogtied: "Hide",
                             AllFours: "Hide",
                         },
+                    },
+                    {
+                        Name: "纸袋", Priority: 70,
+                        Top: 0, Left: 0,
+                    },
+                    {
+                        Name: "纸", Priority: 70,
+                        Top: 0, Left: 0,
+                    },
+                    {
+                        Name: "胶带", Priority: 70,
+                        Top: 0, Left: 0,
                     },
                 ],
 
