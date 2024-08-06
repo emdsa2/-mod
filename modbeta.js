@@ -1906,10 +1906,10 @@
                         ColorSuffix: { HEX_COLOR: "White" },
                         PoseMapping:
                         {
-                            Kneel: [PoseType.DEFAULT],
-                            KneelingSpread: [PoseType.DEFAULT],
-                            LegsClosed: [PoseType.DEFAULT],
-                            Spread: [PoseType.DEFAULT],
+                            Kneel: "Hide",
+                            KneelingSpread: "Hide",
+                            LegsClosed: "Hide",
+                            Spread: "Hide",
                             Hogtied: "Hide",
                             AllFours: "Hide",
                         },
@@ -1923,7 +1923,6 @@
                         ColorSuffix: { HEX_COLOR: "White" },
                         PoseMapping:
                         {
-                            [PoseType.DEFAULT]: "OverTheHead",
                             BackBoxTie: "OverTheHead",
                             BackCuffs: "OverTheHead",
                             BackElbowTouch: "OverTheHead",
