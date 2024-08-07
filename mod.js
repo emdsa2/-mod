@@ -1500,7 +1500,7 @@
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "内衬", Priority: 25,
+                        Name: "内衬", Priority: 24,
                     },
                     {
                         Name: "圆环", Priority: 25,
@@ -1509,7 +1509,7 @@
                         Name: "绳子", Priority: 25,
                     },
                     {
-                        Name: "拉链", Priority: 25,
+                        Name: "拉链", Priority: 24,
                     },
                     {
                         Name: "拘束带上", Priority: 53,
@@ -1520,11 +1520,11 @@
                         ParentGroup: "BodyLower",
                     },
                     {
-                        Name: "乳胶上", Priority: 24,
+                        Name: "乳胶上", Priority: 23,
                         ParentGroup: "BodyUpper",
                     },
                     {
-                        Name: "乳胶下", Priority: 24,
+                        Name: "乳胶下", Priority: 23,
                         ParentGroup: "BodyLower",
                     },
                 ],
