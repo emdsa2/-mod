@@ -1761,8 +1761,8 @@
                         Top: 460, Left: 0,
                     },
                     {
-                        Name: "吊顶链", Priority: 30, AllowTypes: { lll: [2] },
-                        Top: 460, Left: 0,
+                        Name: "吊顶链", Priority: 0, AllowTypes: { lll: [2] },
+                        Top: -400, Left: -10,
                     },
                 
                 ],
