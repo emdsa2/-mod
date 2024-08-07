@@ -1532,7 +1532,12 @@
             {
                 Name: "开腿展示架_Luzi", Random: false,
                 Top: 0, Left: 0,
+                Difficulty: 8,
                 AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
+                RemoveTime: 5,
+                Time: 10,
                 Extended: true,
                 Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed, E.OneWayEnclose],
                 Hide: ["BodyLower", "ItemLegs", "ItemFeet", "ItemBoots", "Shoes", "Garters", "LeftAnklet", "RightAnklet", "SocksLeft", "SocksRight", "Socks", "SuitLower"],
