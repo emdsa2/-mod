@@ -2657,6 +2657,7 @@
             {
                 Name: "自定义高度",
                 DrawImages: false,
+                Key: "d",
                 Options: [
                     {},
                     {
@@ -2848,6 +2849,7 @@
                         "番茄酱": "Ketchup",
                         "隐形药水": "potion of invisibility",
                         "乳胶带床": "Latex belt bed",
+                        "开腿展示架": "Leg Spread Display Stand",
                     };
 
                     Asset.forEach(item => {
@@ -3019,6 +3021,31 @@
                 ItemDevices乳胶带床_LuziOptiong0: '无',
                 ItemDevices乳胶带床_LuziOptiong1: '添加盖子',
                 ItemDevices乳胶带床_LuziOptiong2: '盖上盖子',
+
+
+                ItemDevices开腿展示架_LuziSelectBase: '选择开腿展示架配置',
+
+                ItemDevices开腿展示架_LuziSelect姿势: '选择姿势',
+                ItemDevices开腿展示架_LuziModule姿势: '姿势',
+                ItemDevices开腿展示架_LuziOptiono0: '背后',
+                ItemDevices开腿展示架_LuziOptiono1: '抬手',
+
+                ItemDevices开腿展示架_LuziSelect嘴巴固定: '选择嘴部拘束',
+                ItemDevices开腿展示架_LuziModule嘴巴固定: '嘴部拘束',
+                ItemDevices开腿展示架_LuziOptiong0: '无',
+                ItemDevices开腿展示架_LuziOptiong1: '添加嘴部拘束',
+
+                ItemDevices开腿展示架_LuziSelect下体棒子: '选择阴部道具',
+                ItemDevices开腿展示架_LuziModule下体棒子: '阴部道具',
+                ItemDevices开腿展示架_LuziOptionv0: '无',
+                ItemDevices开腿展示架_LuziOptionv1: '添加阴部道具',
+
+                ItemDevices开腿展示架_LuziSelect自定义高度: '设置高度',
+                ItemDevices开腿展示架_LuziModule自定义高度: '调整高度',
+                ItemDevices开腿展示架_LuziOptiond0: '无',
+                ItemDevices开腿展示架_LuziOptiond1: '自定义高度',
+
+
             };
 
             let addInterfaceCSVCN = {
@@ -3110,6 +3137,21 @@
                 ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
                 ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
                 ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter盖上了DestinationCharacter的盖子',
+
+
+                ItemDevices开腿展示架_LuziSeto1: 'SourceCharacter修改了DestinationCharacter的手部拘束',
+                ItemDevices开腿展示架_LuziSeto0: 'SourceCharacter修改了DestinationCharacter的手部拘束',
+
+                ItemDevices开腿展示架_LuziSetg0: 'SourceCharacter移除了DestinationCharacter嘴部的拘束',
+                ItemDevices开腿展示架_LuziSetg1: 'SourceCharacter添加了DestinationCharacter嘴部的拘束',
+
+                ItemDevices开腿展示架_LuziSetv0: 'SourceCharacter移除了DestinationCharacter阴部的道具',
+                ItemDevices开腿展示架_LuziSetv1: 'SourceCharacter添加了DestinationCharacter阴部的道具',
+
+                ItemDevices开腿展示架_LuziSetd0: 'SourceCharacter还原DestinationCharacter的高度',
+                ItemDevices开腿展示架_LuziSetd1: 'SourceCharacter调整DestinationCharacter的高度',
+
+
             };
 
             let addAssetStringSCVEN = {
@@ -3215,7 +3257,7 @@
                 ItemDevices玻璃罐子_LuziOptionk0: 'Off',
                 ItemDevices玻璃罐子_LuziOptionk1: 'Low',
                 ItemDevices玻璃罐子_LuziOptionk2: 'Moderate',
-                Devices玻璃罐子_LuziOptionk3: 'High',
+                ItemDevices玻璃罐子_LuziOptionk3: 'High',
                 ItemDevices玻璃罐子_LuziSelect声音模块: 'Set Sound Module',
                 ItemDevices玻璃罐子_LuziModule声音模块: 'Sound Module',
                 ItemDevices玻璃罐子_LuziOptionsd0: 'Silent',
@@ -3272,7 +3314,7 @@
                 ItemAddon隐形药水_LuziOptionl1: 'Add Iron Shackles',
                 ItemAddon隐形药水_LuziOptionl2: 'Adjust Chain Height',
                 ItemAddon隐形药水_LuziOptionl3: 'Add Iron Chain (Hands Cuffed Behind)',
-    
+
                 ItemAddon隐形药水_LuziSelect铐子腿: 'Select Leg Cuffs',
                 ItemAddon隐形药水_LuziModule铐子腿: 'Leg Cuffs',
                 ItemAddon隐形药水_LuziOptionll0: 'None',
@@ -3294,6 +3336,31 @@
                 ItemDevices乳胶带床_LuziOptiong0: 'None',
                 ItemDevices乳胶带床_LuziOptiong1: 'Add Cover',
                 ItemDevices乳胶带床_LuziOptiong2: 'Close Cover',
+
+
+
+                ItemDevices开腿展示架SelectBase: 'Select Leg Spread Display Configuration',
+
+                ItemDevices开腿展示架Select_Pose: 'Select Pose',
+                ItemDevices开腿展示架Module_Pose: 'Pose',
+                ItemDevices开腿展示架Optiono0: 'Behind Back',
+                ItemDevices开腿展示架Optiono1: 'Lift Hands',
+
+                ItemDevices开腿展示架Select_MouthRestraint: 'Select Mouth Restraint',
+                ItemDevices开腿展示架Module_MouthRestraint: 'Mouth Restraint',
+                ItemDevices开腿展示架Optiong0: 'None',
+                ItemDevices开腿展示架Optiong1: 'Add Mouth Restraint',
+
+                ItemDevices开腿展示架Select_GenitalProp: 'Select Genital Prop',
+                ItemDevices开腿展示架Module_GenitalProp: 'Genital Prop',
+                ItemDevices开腿展示架Optionv0: 'None',
+                ItemDevices开腿展示架Optionv1: 'Add Genital Prop',
+
+                ItemDevices开腿展示架Select_CustomHeight: 'Set Height',
+                ItemDevices开腿展示架Module_CustomHeight: 'Adjust Height',
+                ItemDevices开腿展示架Optiond0: 'None',
+                ItemDevices开腿展示架Optiond1: 'Custom Height',
+
             };
 
             let addInterfaceCSVEN = {
@@ -3385,6 +3452,19 @@
                 ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter removes DestinationCharacter\'s cover',
                 ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter adds DestinationCharacter\'s cover',
                 ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter closes DestinationCharacter\'s cover',
+
+
+                ItemDevices开腿展示架Seto1: 'SourceCharacter modifies DestinationCharacter\'s hand restraints',
+                ItemDevices开腿展示架Seto0: 'SourceCharacter modifies DestinationCharacter\'s hand restraints',
+
+                ItemDevices开腿展示架Setg0: 'SourceCharacter removes DestinationCharacter\'s mouth restraint',
+                ItemDevices开腿展示架Setg1: 'SourceCharacter adds DestinationCharacter\'s mouth restraint',
+
+                ItemDevices开腿展示架Setv0: 'SourceCharacter removes DestinationCharacter\'s genital prop',
+                ItemDevices开腿展示架Setv1: 'SourceCharacter adds DestinationCharacter\'s genital prop',
+
+                ItemDevices开腿展示架Setd0: 'SourceCharacter resets DestinationCharacter\'s height',
+                ItemDevices开腿展示架Setd1: 'SourceCharacter adjusts DestinationCharacter\'s height',
             };
 
             let language = localStorage.getItem("BondageClubLanguage");
