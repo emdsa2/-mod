@@ -1616,17 +1616,7 @@
                 Layer: [
                     {
                         Name: "下半身", Priority: 9,
-                        Top: {
-                            [PoseType.DEFAULT]: 460,
-                            KneelingSpread: 460,
-                            Kneel: 460,
-                            LegsClosed: 460,
-                            Spread: 460,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
+                        Top: 460, Left: 0,
                         ParentGroup: "BodyLower",
                         InheritColor: "BodyLower",
                         HideColoring: true,
@@ -1643,14 +1633,7 @@
                     },
                     {
                         Name: "上半身", Priority: 9,
-                        Top: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
-                        Left: {
-                            [PoseType.DEFAULT]: 0,
-                            KneelingSpread: 0,
-                        },
+                        Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         InheritColor: "BodyUpper",
                         HideColoring: true,
