@@ -2544,20 +2544,8 @@
                         Property: { Difficulty: 8, Effect: [E.CuffedArms], },
                     },
                     {
-                        Property: { Difficulty: 8, Effect: [E.CuffedArms], SetPose: ["OverTheHead"], },
+                        Property: { Difficulty: 8, Effect: [E.CuffedArms, E.Mounted], SetPose: ["OverTheHead"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
-                        HasSubscreen: true,
-                        ArchetypeConfig: {
-                            Archetype: ExtendedArchetype.VARIABLEHEIGHT,
-                            MaxHeight: 0,
-                            MinHeight: -250,
-                            DrawData: {
-                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope", }],
-                            },
-                            DialogPrefix: {
-                                Chat: "SuspensionChange",
-                            },
-                        },
                     },
                 ],
             },
@@ -2571,15 +2559,15 @@
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], },
                     },
                     {
-                        Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
+                        Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                     },
                     {
-                        Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
+                        Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                     },
                     {
-                        Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["Suspension", "KneelingSpread"], },
+                        Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["Suspension", "KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                     },
                 ],
