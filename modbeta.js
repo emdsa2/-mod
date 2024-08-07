@@ -1604,7 +1604,9 @@
                 Name: "隐形药水_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
                 Difficulty: 25,
-                Hide: ["ItemHandheld", "Hands", "Bracelet", "LeftHand", "RightHand", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper", "BodyFull"],
+                AllowLock: true,
+                Effect: [E.Slow],
+                Hide: ["ItemHandheld", "Hands", "Bracelet", "LeftHand", "RightHand", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper",],
                 Extended: true,
                 Layer: [
                     {
@@ -1724,7 +1726,7 @@
                         },
                     },
                     {
-                        Name: "脚链", Priority: 31, AllowTypes: { ll: [1, 2, 3] },
+                        Name: "脚链", Priority: 31, AllowTypes: { ll: [1, 2, 3, 4] },
                         Top: 460, Left: 0,
                         ParentGroup: "BodyLower",
                         PoseMapping:
@@ -1762,7 +1764,7 @@
                         Top: -430, Left: 0,
                     },
                     {
-                        Name: "脚链链子反", Priority: 8, AllowTypes: { ll: 3 },
+                        Name: "脚链链子反", Priority: 8, AllowTypes: { ll: [3, 4] },
                         Top: 530, Left: 0,
                     },
                 ],
@@ -1775,8 +1777,9 @@
             {
                 Name: "人偶_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
+                AllowLock: true,
                 Difficulty: 25,
-                Hide: ["Hands", "BodyLower", "BodyUpper", "BodyFull"],
+                Hide: ["Hands", "BodyLower", "BodyUpper",],
                 Layer: [
                     {
                         Name: "下半身", Priority: 9,
@@ -2569,6 +2572,10 @@
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["KneelingSpread"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                     },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.CuffedFeet], SetPose: ["Suspension", "KneelingSpread"], },
+                        Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
+                    },
                 ],
             },
             {
@@ -3161,13 +3168,14 @@
                 ItemAddon隐形药水_LuziOptionll1: '添加铁拷',
                 ItemAddon隐形药水_LuziOptionll2: '添加铁链(朝上)',
                 ItemAddon隐形药水_LuziOptionll3: '添加铁链(朝下)',
+                ItemAddon隐形药水_LuziOptionll4: '添加铁链(朝下反向)',
 
                 ItemAddon隐形药水_LuziSelect自定义高度: '设置高度',
                 ItemAddon隐形药水_LuziModule自定义高度: '调整高度',
                 ItemAddon隐形药水_LuziOptionlll0: '无',
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
 
-                ItemDevices乳胶带床_LuziSelectBase: '选择乳胶带床',
+
                 ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
                 ItemDevices乳胶带床_LuziModule盖子: '盖子',
                 ItemDevices乳胶带床_LuziOptiong0: '无',
@@ -3253,6 +3261,7 @@
                 ItemAddon隐形药水_LuziSetll1: 'SourceCharacter在DestinationCharacter的腿上加上了铐子',
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
+                ItemAddon隐形药水_LuziSetll4: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上,将DestinationCharacter头朝下吊了起来',
 
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter调整DestinationCharacter的高度',
@@ -3428,13 +3437,14 @@
                 ItemAddon隐形药水_LuziOptionll1: 'Add Iron Shackles',
                 ItemAddon隐形药水_LuziOptionll2: 'Adjust Chain Height',
                 ItemAddon隐形药水_LuziOptionll3: 'Adjust Chain Height',
+                ItemAddon隐形药水_LuziOptionll4: 'Add Chain (Reversed Downward)',
 
                 ItemAddon隐形药水_LuziSelect自定义高度: 'Set Height',
                 ItemAddon隐形药水_LuziModule自定义高度: 'Adjust Height',
                 ItemAddon隐形药水_LuziOptionlll0: 'None',
                 ItemAddon隐形药水_LuziOptionlll1: 'Custom Height',
 
-
+                ItemDevices乳胶带床_LuziSelectBase: '选择乳胶带床',
                 ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
                 ItemDevices乳胶带床_LuziModule盖子: '盖子',
                 ItemDevices乳胶带床_LuziOptiong0: '无',
@@ -3520,6 +3530,7 @@
                 ItemAddon隐形药水_LuziSetll1: 'SourceCharacter applied cuffs to DestinationCharacter\'s legs',
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter connected the hoist to DestinationCharacter\'s legs',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter connected the hoist to DestinationCharacter\'s legs',
+                ItemAddon隐形药水_LuziSetll4: 'SourceCharacter attached the hanging chain to DestinationCharacter\'s legs, suspending them head-down',
 
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter restored DestinationCharacter\'s height',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter adjusted DestinationCharacter\'s height',
