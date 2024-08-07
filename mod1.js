@@ -1935,17 +1935,22 @@
                         },
                     },
                     {
-                        Name: "纸袋", Priority: 70,
+                        Name: "纸袋", Priority: 70, AllowTypes: { typed: 0 },
                         Top: 0, Left: 0,
                     },
                     {
-                        Name: "纸", Priority: 70,
+                        Name: "纸", Priority: 70, AllowTypes: { typed: 0 },
                         Top: 0, Left: 0,
                     },
                     {
-                        Name: "胶带", Priority: 70,
+                        Name: "胶带", Priority: 70, AllowTypes: { typed: 0 },
                         Top: 0, Left: 0,
                     },
+                    {
+                        Name: "麻袋头罩", Priority: 70, AllowTypes: { typed: 1 },
+                        Top: 0, Left: 0,
+                    },
+
                 ],
 
 
@@ -2683,6 +2688,14 @@
             },
         ],
     };
+    AssetFemale3DCGExtended.ItemAddon.后背_Luzi = {
+        Archetype: ExtendedArchetype.TYPED,
+        DrawImages: false,
+        Options: [
+            { Name: "纸袋", },
+            { Name: "麻袋头罩", Property: { Block: ["ItemEars", "ItemMouth", "ItemMouth2", "ItemMouth3", "ItemHead", "ItemNose",], Hide: ["HairFront", "HairBack", "Glasses", "ItemMouth", "ItemMouth2", "ItemMouth3", "HairAccessory1", "HairAccessory2", "HairAccessory3", "Hat", "Mask", "ItemEars", "ItemHead",], }, },
+        ],
+    };
 
     function mergeAddAssetIntoFemale3DCGAssets() { // 塞进 AssetFemale3DCG
         for (const groupName in addAsset) {
@@ -3050,7 +3063,7 @@
                 ItemDevices开腿展示架_LuziOptiond0: '无',
                 ItemDevices开腿展示架_LuziOptiond1: '自定义高度',
 
-
+                ItemAddon后背_LuziSelect: '选择后背配置',
             };
 
             let addInterfaceCSVCN = {
@@ -3156,7 +3169,8 @@
                 ItemDevices开腿展示架_LuziSetd0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemDevices开腿展示架_LuziSetd1: 'SourceCharacter调整DestinationCharacter的高度',
 
-
+                ItemAddon后背_LuziSet纸袋: 'SourceCharacter在DestinationCharacter的头上套上了纸袋',
+                ItemAddon后背_LuziSet麻袋头罩: 'SourceCharacter在DestinationCharacter的头上套上了麻袋',
             };
 
             let addAssetStringSCVEN = {
