@@ -1534,14 +1534,14 @@
                 Top: 0, Left: 0,
                 AllowLock: true,
                 Extended: true,
-                // Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
+                Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed, E.OneWayEnclose],
                 Hide: ["BodyLower", "ItemLegs", "ItemFeet", "ItemBoots", "Shoes", "Garters", "LeftAnklet", "RightAnklet", "SocksLeft", "SocksRight", "Socks", "SuitLower"],
                 Layer: [
                     {
-                        Name: "框架抬手", Priority: 1, AllowTypes: { o: 1 },
+                        Name: "框架抬手", Priority: 2, AllowTypes: { o: 1 },
                     },
                     {
-                        Name: "框架", Priority: 1, AllowTypes: { o: 0 },
+                        Name: "框架", Priority: 2, AllowTypes: { o: 0 },
                     },
                     {
                         Name: "下半身开腿", Priority: 7,
