@@ -1714,7 +1714,7 @@
                         },
                     },
                     {
-                        Name: "脚链", Priority: 31, AllowTypes: { ll: [1, 2, 3, 4] },
+                        Name: "脚链", Priority: 31, AllowTypes: { ll: [1, 2, 3, 4, 5] },
                         Top: 460, Left: 0,
                         ParentGroup: "BodyLower",
                         PoseMapping:
@@ -1728,7 +1728,7 @@
                         },
                     },
                     {
-                        Name: "手链", Priority: 31, AllowTypes: { l: [1, 2] },
+                        Name: "手链", Priority: 31, AllowTypes: { l: [1, 2, 3] },
                         Top: 0, Left: 0,
                         ParentGroup: "BodyUpper",
                         PoseMapping:
@@ -1755,6 +1755,14 @@
                         Name: "脚链链子反", Priority: 8, AllowTypes: { ll: [3, 4] },
                         Top: 530, Left: 0,
                     },
+
+                    {
+                        Name: "脚链拘束", Priority: 30, AllowTypes: { ll: [5] },
+                        Top: 460, Left: 0,
+                    },
+
+                    
+
                 ],
                 OverrideHeight: {
                     Height: -450,
@@ -2530,6 +2538,10 @@
                         Property: { Difficulty: 8, Effect: [E.CuffedArms, E.Mounted], SetPose: ["OverTheHead"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                     },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.CuffedArms, E.Mounted], SetPose: ["BackElbowTouch"], },
+                        Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
+                    },
                 ],
             },
             {
@@ -2551,6 +2563,10 @@
                     },
                     {
                         Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["Suspension", "KneelingSpread"], },
+                        Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
+                    },
+                    {
+                        Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["Kneel"], },
                         Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                     },
                 ],
@@ -3139,7 +3155,8 @@
                 ItemAddon隐形药水_LuziModule铐子手: '手部铐子',
                 ItemAddon隐形药水_LuziOptionl0: '无',
                 ItemAddon隐形药水_LuziOptionl1: '添加铁拷',
-                ItemAddon隐形药水_LuziOptionl2: '添加铁链高度',
+                ItemAddon隐形药水_LuziOptionl2: '添加铁链(向上吊起来)',
+                ItemAddon隐形药水_LuziOptionl3: '添加铁链(手向后铐起来)',
 
                 ItemAddon隐形药水_LuziSelect铐子腿: '选择腿部铐子',
                 ItemAddon隐形药水_LuziModule铐子腿: '腿部铐子',
@@ -3148,6 +3165,7 @@
                 ItemAddon隐形药水_LuziOptionll2: '添加铁链(朝上)',
                 ItemAddon隐形药水_LuziOptionll3: '添加铁链(朝下)',
                 ItemAddon隐形药水_LuziOptionll4: '添加铁链(朝下反向)',
+                ItemAddon隐形药水_LuziOptionll5: '添加铁链(合并)',
 
                 ItemAddon隐形药水_LuziSelect自定义高度: '设置高度',
                 ItemAddon隐形药水_LuziModule自定义高度: '调整高度',
@@ -3234,13 +3252,15 @@
 
                 ItemAddon隐形药水_LuziSetl0: 'SourceCharacter移除了DestinationCharacter身上的铐子',
                 ItemAddon隐形药水_LuziSetl1: 'SourceCharacter在DestinationCharacter的手臂加上了铐子',
-                ItemAddon隐形药水_LuziSetl2: 'SourceCharacter将吊顶连连接在了DestinationCharacter手臂上',
+                ItemAddon隐形药水_LuziSetl2: 'SourceCharacter将吊顶链连接在了DestinationCharacter手臂上',
+                ItemAddon隐形药水_LuziSetl3: 'SourceCharacter将的DestinationCharacter的手拷在一起',
 
                 ItemAddon隐形药水_LuziSetll0: 'SourceCharacter移除了DestinationCharacter身上的铐子',
                 ItemAddon隐形药水_LuziSetll1: 'SourceCharacter在DestinationCharacter的腿上加上了铐子',
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上',
                 ItemAddon隐形药水_LuziSetll4: 'SourceCharacter将吊顶连连接在了DestinationCharacter的腿上,将DestinationCharacter头朝下吊了起来',
+                ItemAddon隐形药水_LuziSetll5: 'SourceCharacter将DestinationCharacter的腿拷在一起',
 
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter调整DestinationCharacter的高度',
@@ -3409,7 +3429,8 @@
                 ItemAddon隐形药水_LuziOptionl0: 'None',
                 ItemAddon隐形药水_LuziOptionl1: 'Add Iron Shackles',
                 ItemAddon隐形药水_LuziOptionl2: 'Adjust Chain Height',
-
+                ItemAddon隐形药水_LuziOptionl3: 'Add Iron Chain (Hands Cuffed Behind)',
+    
                 ItemAddon隐形药水_LuziSelect铐子腿: 'Select Leg Cuffs',
                 ItemAddon隐形药水_LuziModule铐子腿: 'Leg Cuffs',
                 ItemAddon隐形药水_LuziOptionll0: 'None',
@@ -3417,18 +3438,19 @@
                 ItemAddon隐形药水_LuziOptionll2: 'Adjust Chain Height',
                 ItemAddon隐形药水_LuziOptionll3: 'Adjust Chain Height',
                 ItemAddon隐形药水_LuziOptionll4: 'Add Chain (Reversed Downward)',
+                ItemAddon隐形药水_LuziOptionll5: 'Add Iron Chain (Merge)',
 
                 ItemAddon隐形药水_LuziSelect自定义高度: 'Set Height',
                 ItemAddon隐形药水_LuziModule自定义高度: 'Adjust Height',
                 ItemAddon隐形药水_LuziOptionlll0: 'None',
                 ItemAddon隐形药水_LuziOptionlll1: 'Custom Height',
 
-                ItemDevices乳胶带床_LuziSelectBase: '选择乳胶带床',
-                ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
-                ItemDevices乳胶带床_LuziModule盖子: '盖子',
-                ItemDevices乳胶带床_LuziOptiong0: '无',
-                ItemDevices乳胶带床_LuziOptiong1: '添加盖子',
-                ItemDevices乳胶带床_LuziOptiong2: '盖上盖子',
+                ItemDevices乳胶带床_LuziSelectBase: 'Select Latex Bed',
+                ItemDevices乳胶带床_LuziSelect盖子: 'Select Cover',
+                ItemDevices乳胶带床_LuziModule盖子: 'Cover',
+                ItemDevices乳胶带床_LuziOptiong0: 'None',
+                ItemDevices乳胶带床_LuziOptiong1: 'Add Cover',
+                ItemDevices乳胶带床_LuziOptiong2: 'Close Cover',
             };
 
             let addInterfaceCSVEN = {
@@ -3504,19 +3526,21 @@
                 ItemAddon隐形药水_LuziSetl0: 'SourceCharacter removed the cuffs from DestinationCharacter',
                 ItemAddon隐形药水_LuziSetl1: 'SourceCharacter applied cuffs to DestinationCharacter\'s arms',
                 ItemAddon隐形药水_LuziSetl2: 'SourceCharacter connected the hoist to DestinationCharacter\'s arms',
+                ItemAddon隐形药水_LuziSetl3: 'SourceCharacter cuffs DestinationCharacter\'s hands together',
 
                 ItemAddon隐形药水_LuziSetll0: 'SourceCharacter removed the cuffs from DestinationCharacter',
                 ItemAddon隐形药水_LuziSetll1: 'SourceCharacter applied cuffs to DestinationCharacter\'s legs',
                 ItemAddon隐形药水_LuziSetll2: 'SourceCharacter connected the hoist to DestinationCharacter\'s legs',
                 ItemAddon隐形药水_LuziSetll3: 'SourceCharacter connected the hoist to DestinationCharacter\'s legs',
                 ItemAddon隐形药水_LuziSetll4: 'SourceCharacter attached the hanging chain to DestinationCharacter\'s legs, suspending them head-down',
+                ItemAddon隐形药水_LuziSetll5: 'SourceCharacter cuffs DestinationCharacter\'s legs together',
 
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter restored DestinationCharacter\'s height',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter adjusted DestinationCharacter\'s height',
 
-                ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
-                ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
-                ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter盖上了DestinationCharacter的盖子',
+                ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter removes DestinationCharacter\'s cover',
+                ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter adds DestinationCharacter\'s cover',
+                ItemDevices乳胶带床_LuziSetg2: 'SourceCharacter closes DestinationCharacter\'s cover',
             };
 
             let language = localStorage.getItem("BondageClubLanguage");
