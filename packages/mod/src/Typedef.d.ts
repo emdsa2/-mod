@@ -13,7 +13,7 @@ type ExtendType<T, From, To> = {
 }
 
 // 扩展身体部位名称
-type CustomGroupName = AssetGroupName | `${AssetGroupBodyName}_笨笨蛋Luzi` | `${AssetGroupBodyName}_笨笨笨蛋Luzi2` | Liquid2_Luzi | BodyMarkings2_Luzi;
+type CustomGroupName = AssetGroupName | `${AssetGroupBodyName}_笨笨蛋Luzi` | `${AssetGroupBodyName}_笨笨笨蛋Luzi2` | "Liquid2_Luzi" | "BodyMarkings2_Luzi";
 
 // 自定义身体部位定义，支持扩展的身体部位名称
 type CustomGroupDefinition = ExtendType<AssetGroupDefinition, AssetGroupName, CustomGroupName>;
@@ -25,11 +25,16 @@ type CustomGroupedAssetDefinitions = Partial<Record<CustomGroupName, CustomAsset
 
 type CustomDialog = Record<string, string>;
 
-type CustomDialogSet = Partial<Record<ServerChatRoomLanguage, CustomDialog>>;
+type TranslationCustomDialog = Partial<Record<ServerChatRoomLanguage, CustomDialog>>;
 
-type CustomDialogEntry = Partial<Record<ServerChatRoomLanguage, string>>;
+type TranslationEntry = Partial<Record<ServerChatRoomLanguage, string>>;
+
+type TranslationRecord<T extends string, U> = Partial<Record<ServerChatRoomLanguage, Partial<Record<T, U>>>>;
 
 type Function = (...args: any[]) => any;
 
 type AssetOverrideLeaf = string | AssetOverrideContainer;
 type AssetOverrideContainer = Record<string, AssetOverrideLeaf>;
+
+
+type CopyGroupInfo = { name: CustomGroupName, mirror: AssetGroupName, description?: TranslationEntry }  

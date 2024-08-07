@@ -135,7 +135,7 @@ const extended = {
     ChangeWhenLocked: false,
 };
 
-/** @type {CustomDialogSet} */
+/** @type {TranslationCustomDialog} */
 const customDialog = {
     CN: {
         ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter推开了DestinationCharacter的盖子",

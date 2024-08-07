@@ -292,7 +292,7 @@ const extened = {
     ],
 };
 
-/**@type {CustomDialogSet} */
+/**@type {TranslationCustomDialog} */
 const dialog = {
     CN: {
         ItemAddon隐形药水_LuziSets1: "SourceCharacter脱掉了DestinationCharacter身上的紧身衣",

@@ -105,7 +105,7 @@ const extended = {
     },
 };
 
-/** @type {CustomDialogSet} */
+/** @type {TranslationCustomDialog} */
 const dialog = {
     CN: {
         ItemDevices巨型玩偶_LuziSelect: "选择巨型玩偶配置",
