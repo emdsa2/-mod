@@ -1759,9 +1759,11 @@
                         Name: "脚链拘束", Priority: 30, AllowTypes: { ll: [5] },
                         Top: 460, Left: 0,
                     },
-
-                    
-
+                    {
+                        Name: "吊顶链", Priority: 30, AllowTypes: { lll: [2] },
+                        Top: 460, Left: 0,
+                    },
+                
                 ],
                 OverrideHeight: {
                     Height: -450,
@@ -2589,6 +2591,20 @@
                             },
                         },
                     },
+                    {
+                        HasSubscreen: true,
+                        ArchetypeConfig: {
+                            Archetype: ExtendedArchetype.VARIABLEHEIGHT,
+                            MaxHeight: 0,
+                            MinHeight: -250,
+                            DrawData: {
+                                elementData: [{ position: [1140, 650, 100, 500], icon: "rope" }],
+                            },
+                            DialogPrefix: {
+                                Chat: "SuspensionChange",
+                            },
+                        },
+                    },
                 ],
             },
 
@@ -3167,7 +3183,7 @@
                 ItemAddon隐形药水_LuziModule自定义高度: '调整高度',
                 ItemAddon隐形药水_LuziOptionlll0: '无',
                 ItemAddon隐形药水_LuziOptionlll1: '自定义高度',
-
+                ItemAddon隐形药水_LuziOptionlll2: '自定义高度(吊顶链)',
 
                 ItemDevices乳胶带床_LuziSelect盖子: '选择盖子',
                 ItemDevices乳胶带床_LuziModule盖子: '盖子',
@@ -3260,6 +3276,7 @@
 
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter还原DestinationCharacter的高度',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter调整DestinationCharacter的高度',
+                ItemAddon隐形药水_LuziSetlll2: 'SourceCharacter在DestinationCharacter的身上使用了吊顶连',
 
                 ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter去掉了DestinationCharacter的盖子',
                 ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter加上了DestinationCharacter的盖子',
@@ -3440,6 +3457,7 @@
                 ItemAddon隐形药水_LuziModule自定义高度: 'Adjust Height',
                 ItemAddon隐形药水_LuziOptionlll0: 'None',
                 ItemAddon隐形药水_LuziOptionlll1: 'Custom Height',
+                ItemAddon隐形药水_LuziOptionlll2: 'Custom Height',
 
                 ItemDevices乳胶带床_LuziSelectBase: 'Select Latex Bed',
                 ItemDevices乳胶带床_LuziSelect盖子: 'Select Cover',
@@ -3533,6 +3551,7 @@
 
                 ItemAddon隐形药水_LuziSetlll0: 'SourceCharacter restored DestinationCharacter\'s height',
                 ItemAddon隐形药水_LuziSetlll1: 'SourceCharacter adjusted DestinationCharacter\'s height',
+                ItemAddon隐形药水_LuziSetlll2: 'SourceCharacter adjusted DestinationCharacter\'s height',
 
                 ItemDevices乳胶带床_LuziSetg0: 'SourceCharacter removes DestinationCharacter\'s cover',
                 ItemDevices乳胶带床_LuziSetg1: 'SourceCharacter adds DestinationCharacter\'s cover',
