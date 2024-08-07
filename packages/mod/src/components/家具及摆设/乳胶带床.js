@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item} */
+/** @type { CustomAssetDefinition} */
 const asset = {
     Name: "乳胶带床_Luzi",
     Random: false,
@@ -175,11 +175,41 @@ const extended = {
             Name: "盖子",
             DrawImages: false,
             Key: "g",
-            Options: [{ Name: "无盖子" }, { Name: "有盖子" }, { Name: "关上盖子" }],
+            Options: [{}, {}, {}],
         },
     ],
 };
 
+const dialog = {
+    CN: {
+        ItemDevicess乳胶带床_LuziSelectBase: "选择配置",
+
+        ItemDevices乳胶带床_LuziSelect盖子: "选择盖子",
+        ItemDevices乳胶带床_LuziModule盖子: "盖子",
+        ItemDevices乳胶带床_LuziOptiong0: "无",
+        ItemDevices乳胶带床_LuziOptiong1: "添加盖子",
+        ItemDevices乳胶带床_LuziOptiong2: "盖上盖子",
+
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter去掉了DestinationCharacter的盖子",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter加上了DestinationCharacter的盖子",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter盖上了DestinationCharacter的盖子",
+    },
+    EN: {
+        ItemDevices乳胶带床_LuziSelectBase: "Select Configuration",
+
+        ItemDevices乳胶带床_LuziSelect盖子: "Select Cover",
+        ItemDevices乳胶带床_LuziModule盖子: "Cover",
+        ItemDevices乳胶带床_LuziOptiong0: "None",
+        ItemDevices乳胶带床_LuziOptiong1: "Add Cover",
+        ItemDevices乳胶带床_LuziOptiong2: "Close Cover",
+
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter removed DestinationCharacter's cover",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added DestinationCharacter's cover",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter's cover",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addCustomDialog(dialog);
 }

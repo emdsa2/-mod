@@ -17,13 +17,13 @@
         "Assets", "Audio"
       ]
     },
-    "componentDir": "src/components"
+    "componentDir": "src/components",
+    "loaderName": "BC_Cloth2.user.js"
   },
-  "bcModInfo": {
-    "name": "服装拓展",
-    "fullName": "服装拓展"
-  },
+  "displayName": "服装拓展",
+  "modFullName": "服装拓展完整名",
   "author": "Echo",
+  "description": "服装拓展加载脚本描述",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",

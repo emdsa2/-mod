@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item} */
+/** @type {CustomAssetDefinition} */
 const asset = {
     Name: "蜘蛛_Luzi",
     Random: false,
@@ -8,7 +8,7 @@ const asset = {
     Top: 0,
     Left: -156,
     Difficulty: 25,
-    Hide: ["Pussy", "BodyLower", "BodyFull"],
+    Hide: ["Pussy", "BodyLower"],
     // Extended: true,
     Layer: [
         {

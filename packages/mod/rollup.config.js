@@ -1,54 +1,89 @@
 const commonjs = require("@rollup/plugin-commonjs");
 const resolve = require("@rollup/plugin-node-resolve");
 const replace = require("@rollup/plugin-replace");
+const copy = require("rollup-plugin-copy");
 const terser = require("@rollup/plugin-terser");
-const path = require("path");
-const fs = require("fs");
 const package = require("./package.json");
 
-const { relativePath, collectComponents, buildModInfo, readAssetsMapping } = require("../rollup.tools");
+const {
+    relativePath,
+    collectComponents,
+    buildModInfo,
+    buildLoaderInfo,
+    readAssetsMapping,
+} = require("../rollup.tools");
 
 const modInfo = buildModInfo(package);
 
+const loaderInfo = buildLoaderInfo(package);
+
 const buildDestDir = `${process.env.INIT_CWD}/public/`;
 
-const resolveRelativeDir = relativePath(".", __dirname);
+const curDirRelative = relativePath(".", __dirname);
 
 const rSetting = package.rollupSetting;
 
-const mainInputFile = `${resolveRelativeDir}/${rSetting.input}`;
+const mainInputFile = `${curDirRelative}/${rSetting.input}`;
 
 const default_config = (debug) => ({
     input: `${mainInputFile}`,
     output: {
         file: `${buildDestDir}/${rSetting.output}`,
         format: "iife",
-        sourcemap: debug ? false : "inline",
+        sourcemap: "inline",
         banner: ``,
     },
     treeshake: true,
 });
 
-const componentsImports = collectComponents(rSetting.componentDir, resolveRelativeDir, rSetting.componentDir);
+const componentsImports = collectComponents(rSetting.componentDir, curDirRelative, rSetting.componentDir);
 
 const assetMapping = JSON.stringify(readAssetsMapping(rSetting.assets.location, rSetting.assets.assets));
 
-const defaultPluins = [
+const copySetting = (baseURL) => [
+    copy({
+        targets: [
+            {
+                src: `${curDirRelative}/loader.user.js`,
+                dest: buildDestDir,
+                rename: loaderInfo.file_name,
+                transform: (contents, filename) =>
+                    contents
+                        .toString()
+                        .replace(
+                            "__base_url__",
+                            `${baseURL.endsWith("/") ? baseURL.substring(0, baseURL.length - 1) : baseURL}`
+                        )
+                        .replace("__description__", loaderInfo.description)
+                        .replace("__name__", modInfo.name)
+                        .replace("__author__", loaderInfo.author)
+                        .replace("__script_file__", rSetting.output),
+            },
+        ],
+    }),
+];
+
+const defaultPluins = (baseURL) => [
     replace({
-        __mod_name__: modInfo.name,
-        __mod_full_name__: modInfo.fullName,
-        __mod_version__: modInfo.version,
-        __repo__: modInfo.repo,
+        __mod_name__: `"${modInfo.name}"`,
+        __mod_full_name__: `"${modInfo.fullName}"`,
+        __mod_version__: `"${modInfo.version}"`,
+        __repo__: modInfo.repo ? `"${modInfo.repo}"` : "undefined",
         __rollup_imports__: componentsImports.imports,
         __rollup_setup__: componentsImports.setups,
         __asset_overrides__: assetMapping,
+        __base_url__: `"${baseURL}"`,
         preventAssignment: false,
     }),
     commonjs(),
     resolve({ browser: true }),
 ];
 
-const plugins = (debug) => (debug ? defaultPluins : [...defaultPluins, terser({ sourceMap: true })]);
+const plugins = (debug, baseURL) => {
+    const base = [...copySetting(baseURL), ...defaultPluins(baseURL)];
+    if (!debug) base.push(terser.terser());
+    return base;
+};
 
 const log = (msg) => {
     console.log(`[${modInfo.name}] ${msg}`);
@@ -56,9 +91,15 @@ const log = (msg) => {
 
 module.exports = (cliArgs) => {
     const debug = !!cliArgs.configDebug;
-    const deploy = cliArgs.configDeploy;
+    const baseURL = cliArgs.configBaseURL;
 
     if (debug) log("Debug mode enabled");
+    if (!baseURL) throw new Error("No deploy site specified");
 
-    return { ...default_config(debug), plugins: plugins(debug) };
+    const baseURL_ = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
+
+    log(`Deploying to ${baseURL_}`);
+    log(`Build time: ${new Date().toLocaleString("zh-CN", { hour12: false })}`);
+
+    return { ...default_config(debug), plugins: plugins(debug, baseURL) };
 };

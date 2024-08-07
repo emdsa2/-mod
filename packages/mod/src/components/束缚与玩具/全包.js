@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item[]} */
+/** @type {CustomAssetDefinition[]} */
 const head_assets = [
     {
         Name: "绷带头部_Luzi",
@@ -22,7 +22,7 @@ const head_assets = [
     },
 ];
 
-/** @type {AssetDefinition.Item[]} */
+/** @type {CustomAssetDefinition[]} */
 const assets = [
     {
         Name: "胶带全身_Luzi",
@@ -109,7 +109,6 @@ const assets = [
 export default function () {
     AssetManager.addGroupedAssets({
         ItemTorso: assets,
-        ItemTorso2: assets,
         ItemHood: head_assets,
     });
 }

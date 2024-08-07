@@ -37,10 +37,12 @@ const asset = {
                         "Fluids",
                         "Garters",
                         "Gloves",
-                        "HairAccessory",
+                        "HairAccessory1",
+                        "HairAccessory2",
+                        "HairAccessory3",
                         "Hat",
                         "ItemArms",
-                        "ItemBrest",
+                        "ItemBreast",
                         "ItemButt",
                         "ItemHandheld",
                         "ItemHead",
@@ -51,7 +53,7 @@ const asset = {
                         "ItemNose",
                         "ItemPelvis",
                         "ItemTorso",
-                        "LeftAnKlet",
+                        "LeftAnklet",
                         "LeftHand",
                         "Mask",
                         "Mouth",
@@ -103,6 +105,17 @@ const extended = {
     },
 };
 
+/** @type {CustomDialogSet} */
+const dialog = {
+    CN: {
+        ItemDevices巨型玩偶_LuziSelect: "选择巨型玩偶配置",
+    },
+    EN: {
+        ItemDevices巨型玩偶_LuziSelect: "Select Giant Doll Configuration",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addCustomDialog(dialog);
 }

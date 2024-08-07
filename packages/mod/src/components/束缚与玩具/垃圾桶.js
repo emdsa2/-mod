@@ -31,10 +31,12 @@ const asset = {
                         "Fluids",
                         "Garters",
                         "Gloves",
-                        "HairAccessory",
+                        "HairAccessory1",
+                        "HairAccessory2",
+                        "HairAccessory3",
                         "Hat",
                         "ItemArms",
-                        "ItemBrest",
+                        "ItemBreast",
                         "ItemButt",
                         "ItemHandheld",
                         "ItemHead",
@@ -45,7 +47,7 @@ const asset = {
                         "ItemNose",
                         "ItemPelvis",
                         "ItemTorso",
-                        "LeftAnKlet",
+                        "LeftAnklet",
                         "LeftHand",
                         "Mask",
                         "Mouth",
@@ -94,10 +96,12 @@ const asset = {
                         "Fluids",
                         "Garters",
                         "Gloves",
-                        "HairAccessory",
+                        "HairAccessory1",
+                        "HairAccessory2",
+                        "HairAccessory3",
                         "Hat",
                         "ItemArms",
-                        "ItemBrest",
+                        "ItemBreast",
                         "ItemButt",
                         "ItemHandheld",
                         "ItemHead",
@@ -108,7 +112,7 @@ const asset = {
                         "ItemNose",
                         "ItemPelvis",
                         "ItemTorso",
-                        "LeftAnKlet",
+                        "LeftAnklet",
                         "LeftHand",
                         "Mask",
                         "Mouth",
@@ -159,6 +163,31 @@ const extended = {
     },
 };
 
+/** @type {CustomDialogSet} */
+const dialog = {
+    CN: {
+        ItemDevices垃圾桶_LuziSelect: "选择垃圾桶配置",
+        ItemDevices垃圾桶_Luzi打开盖子: "打开盖子",
+        ItemDevices垃圾桶_Luzi合上盖子: "合上盖子",
+        ItemDevices垃圾桶_Luzi打开挡板: "打开挡板",
+
+        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter合上了DestinationCharacter的盖子",
+        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter打开了DestinationCharacter的盖子",
+        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter打开了DestinationCharacter的挡板",
+    },
+    EN: {
+        ItemDevices垃圾桶_LuziSelect: "Select Trash Bin Configuration",
+        ItemDevices垃圾桶_Luzi打开盖子: "Open Lid",
+        ItemDevices垃圾桶_Luzi合上盖子: "Close Lid",
+        ItemDevices垃圾桶_Luzi打开挡板: "Open Flap",
+
+        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter closed DestinationCharacter's lid",
+        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter opened DestinationCharacter's lid",
+        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter opened DestinationCharacter's baffle",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addCustomDialog(dialog);
 }

@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item} */
+/** @type {CustomAssetDefinition} */
 const asset = {
     Name: "鱼鱼尾_Luzi",
     Random: false,
@@ -122,5 +122,5 @@ const translations = {
 };
 
 export default function () {
-    AssetManager.addAsset("SuitLower", asset, extended, { icons, descriptions, translations });
+    AssetManager.addAsset("SuitLower", asset, extended);
 }

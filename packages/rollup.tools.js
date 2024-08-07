@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 /**
- * @brief 分析相对路径，与path.relative()不同的是，返回的路径会保持"./"开头
+ * 分析相对路径，与path.relative()不同的是，返回的路径会保持"./"开头
  * @param {string} from
  * @param {string} to
  * @returns {string}
@@ -14,7 +14,7 @@ function relativePath(from, to) {
 }
 
 /**
- * @brief 收集组件，生成import语句和setup语句
+ * 收集组件，生成import语句和setup语句
  * @param { string } componentsDir 组件目录
  * @param { string } baseDir 组件目录是一组相对目录，这些目录的基础目录
  * @param { string } importStartDir import语句的起始目录
@@ -57,28 +57,41 @@ function collectComponents(componentsDir, baseDir, importStartDir) {
 }
 
 /**
- * @brief 从package.json中构建mod信息
+ * 从package.json中构建mod信息
  * @param {Object} packageObj 通过require()加载的package.json对象
- * @returns { { name: string, fullName: string, version: string, repo: string } }
+ * @returns { { name: string, fullName: string, version: string, repo?: string } }
  */
 function buildModInfo(packageObj) {
     return {
-        name: `"${packageObj.bcModInfo.name}"`,
-        fullName: `"${packageObj.bcModInfo.fullName}"`,
-        version: `"${packageObj.version}"`,
+        name: `${packageObj.displayName}`,
+        fullName: `${packageObj.modFullName}`,
+        version: `${packageObj.version}`,
         repo: (() => {
-            if (!packageObj.repository || !packageObj.repository.url) return "undefined";
+            if (!packageObj.repository || !packageObj.repository.url) return undefined;
             if (packageObj.repository.url.startsWith("git+"))
-                return `"${packageObj.repository.url.replace("git+", "").replace(".git", "")}"`;
-            return `"${packageObj.repository.url.replace(".git", "")}"`;
+                return `${packageObj.repository.url.replace("git+", "").replace(".git", "")}`;
+            return `${packageObj.repository.url.replace(".git", "")}`;
         })(),
+    };
+}
+
+/**
+ * 从package.json中构建loader信息
+ * @param {Object} packageObj 通过require()加载的package.json对象
+ * @returns { { file_name: string, author: string, description: string, scriptID: string} }
+ */
+function buildLoaderInfo(packageObj) {
+    return {
+        file_name: `${packageObj.rollupSetting.loaderName}`,
+        author: `${packageObj.author}`,
+        description: `${packageObj.description}`,
     };
 }
 
 /**
  * @typedef { string | AssetOverrideContainer } AssetOverrideLeaf
  * @typedef { Record<string, AssetOverrideLeaf> } AssetOverrideContainer
- * @brief 读取assets映射
+ * 读取assets映射
  * @param {string} startDir 基础目录
  * @param {string[]} assetDirs 资源目录
  * @returns { AssetOverrideContainer } 资源映射表
@@ -92,7 +105,6 @@ function readAssetsMapping(startDir, assetDirs) {
         let dirs = path.dirname(fpath).split(/\\|\//);
         let file = path.basename(fpath);
 
-        console.log(`[Assets] Found asset: ${fpath}, map : ${JSON.stringify(dirs)}`);
         while (dirs.length > 0) {
             const cur = dirs.shift();
             if (cur === ".") continue;
@@ -113,4 +125,4 @@ function readAssetsMapping(startDir, assetDirs) {
     return assets;
 }
 
-module.exports = { relativePath, collectComponents, buildModInfo, readAssetsMapping };
+module.exports = { relativePath, collectComponents, buildModInfo, buildLoaderInfo, readAssetsMapping };

@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item} */
+/** @type {CustomAssetDefinition} */
 const asset = {
     Name: "奶牛_Luzi",
     Random: false,

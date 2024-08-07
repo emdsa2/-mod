@@ -16,6 +16,18 @@ import bcModSdk from "bondage-club-mod-sdk";
  * @typedef {import('bondage-club-mod-sdk').PatchHook<RetType>} PatchHook
  */
 
+/**
+ * @param {()=>void | undefined} loaded
+ * @param {()=>void | undefined} unloaded
+ */
+function SwichIfPlayer(loaded = undefined, unloaded = undefined) {
+    if (window["Player"] != undefined && window["Player"]["MemberNumber"] != undefined) {
+        loaded?.();
+    } else {
+        unloaded?.();
+    }
+}
+
 export default class ModManager {
     /** @type {ModSDKModAPI | undefined} */
     static modManager = undefined;
@@ -46,22 +58,25 @@ export default class ModManager {
             });
         }
 
-        if (window["Player"] != undefined && window["Player"]["MemberNumber"] != undefined) {
-            this.waitPlayerHookList.forEach((hook) => {
-                ModManager.modManager.hookFunction(hook.funcName, hook.priority, hook.hook);
-            });
-        } else {
-            ModManager.modManager.hookFunction("LoginResponse", 0, (args, next) => {
-                next(args);
+        SwichIfPlayer(
+            () => {
                 this.waitPlayerHookList.forEach((hook) => {
                     ModManager.modManager.hookFunction(hook.funcName, hook.priority, hook.hook);
                 });
-            });
-        }
+            },
+            () => {
+                ModManager.modManager.hookFunction("LoginResponse", 0, (args, next) => {
+                    next(args);
+                    this.waitPlayerHookList.forEach((hook) => {
+                        ModManager.modManager.hookFunction(hook.funcName, hook.priority, hook.hook);
+                    });
+                });
+            }
+        );
     }
 
     /**
-     * @brief 补丁函数
+     * 补丁函数
      * @param {any} functionName
      * @param {Record<string, string|null>} patch
      */
@@ -74,7 +89,7 @@ export default class ModManager {
     }
 
     /**
-     * @brief 注册一个钩子函数
+     * 注册一个钩子函数
      * @template {string} TFunctionName
      * @param {TFunctionName} funcName
      * @param {number} priority
@@ -89,22 +104,25 @@ export default class ModManager {
     }
 
     /**
-     * @brief 注册一个依赖玩家的钩子函数
+     * 注册一个依赖玩家的钩子函数
      * @template {string} TFunctionName
      * @param {TFunctionName} funcName
      * @param {number} priority
      * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
      */
     static hookPlayerFunction(funcName, priority, hook) {
-        if (ModManager.modManager) {
-            ModManager.modManager.hookFunction(funcName, priority, hook);
-        } else {
-            ModManager.waitPlayerHookList.push({ funcName, priority, hook });
-        }
+        SwichIfPlayer(
+            () => {
+                ModManager.modManager.hookFunction(funcName, priority, hook);
+            },
+            () => {
+                ModManager.waitPlayerHookList.push({ funcName, priority, hook });
+            }
+        );
     }
 
     /**
-     * @brief 注册全局函数
+     * 注册全局函数
      * @param {string} funcName
      * @param {Function} func
      */

@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item[]} */
+/** @type {CustomAssetDefinition[]} */
 const assets = [
     {
         Name: "穿戴式狗尾镜像_Luzi",
@@ -74,5 +74,6 @@ const icons = {
 };
 
 export default function () {
-    AssetManager.addAssets("TailStraps", assets, icons);
+    AssetManager.addAssets("TailStraps", assets);
+    AssetManager.addImgMapping(icons);
 }

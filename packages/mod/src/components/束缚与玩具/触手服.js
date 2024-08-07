@@ -51,7 +51,7 @@ function beforeDraw({ PersistentData, L, X, Y, Property }) {
     return { Y: Y + FuckLength * -Math.cos(Data.DildoState * 2 * Math.PI) };
 }
 
-/** @type {AssetDefinition.Item} */
+/** @type {CustomAssetDefinition} */
 const asset = {
     Name: "触手服_Luzi",
     Random: false,
@@ -157,7 +157,7 @@ const asset = {
     ],
 };
 
-/** @type {AssetArchetypeConfig} */
+/** @type {ModularItemConfig} */
 const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
@@ -167,13 +167,17 @@ const extended = {
             DrawImages: false,
             Key: "d",
             Options: [
-                { Property: { Block: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"] } },
+                {
+                    Property: { Block: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"] },
+                },
                 {},
                 {
                     HasSubscreen: true,
-                    Prerequisite: ["AccessVulva", "VulvaEmpty"],
+                    Prerequisite: ["AccessVulva", "VulvaEmpty", "AccessButt", "ButtEmpty"],
+                    Block: ["ItemVulva", "ItemButt"],
                     Property: {
-                        Effect: [E.VulvaShaft],
+                        Effect: [E.VulvaShaft, E.Vibrating, E.IsPlugged],
+                        Intensity: 2,
                     },
                     ArchetypeConfig: {
                         Archetype: ExtendedArchetype.VIBRATING,
@@ -199,6 +203,7 @@ const extended = {
                 {},
                 {
                     Property: { Difficulty: 13, SetPose: ["BackElbowTouch"], Effect: ["Block"] },
+                    Block: ["ItemArms", "ItemHands"],
                 },
             ],
         },
@@ -206,7 +211,13 @@ const extended = {
             Name: "嘴套开关",
             DrawImages: false,
             Key: "m",
-            Options: [{}, {}],
+            Options: [
+                {},
+                {
+                    // 只阻挡最里层的嘴部
+                    Block: ["ItemMouth"],
+                },
+            ],
         },
         {
             Name: "脚套开关",
@@ -217,8 +228,33 @@ const extended = {
     ],
 };
 
-const descriptions = {
+/** @type {CustomDialogSet} */
+const dialogs = {
     CN: {
+        ItemTorso触手服_LuziSelectBase: "选择配置",
+        ItemTorso触手服_LuziSelect触手状态: "选择触手状态",
+        ItemTorso触手服_LuziSelect上衣开关: "选择上衣状态",
+        ItemTorso触手服_LuziSelect手套开关: "选择手套状态",
+        ItemTorso触手服_LuziSelect嘴套开关: "选择嘴套状态",
+        ItemTorso触手服_LuziSelect脚套开关: "选择脚套状态",
+        ItemTorso触手服_LuziModule手套开关: "选择手套状态",
+        ItemTorso触手服_LuziModule嘴套开关: "选择嘴套状态",
+        ItemTorso触手服_LuziModule脚套开关: "选择脚套状态",
+        ItemTorso触手服_LuziModule触手状态: "选择触手状态",
+        ItemTorso触手服_LuziModule上衣开关: "选择上衣状态",
+        ItemTorso触手服_LuziOptiond0: "封闭阴部",
+        ItemTorso触手服_LuziOptiond1: "暴露阴部",
+        ItemTorso触手服_LuziOptiond2: "触手插入",
+        ItemTorso触手服_LuziOptions0: "上衣隐藏",
+        ItemTorso触手服_LuziOptions1: "上衣显示",
+        ItemTorso触手服_LuziOptionm0: "嘴套隐藏",
+        ItemTorso触手服_LuziOptionm1: "嘴套显示",
+        ItemTorso触手服_LuziOptionh0: "手套隐藏",
+        ItemTorso触手服_LuziOptionh1: "手套显示",
+        ItemTorso触手服_LuziOptionh2: "束缚手臂",
+        ItemTorso触手服_LuziOptionf0: "脚套隐藏",
+        ItemTorso触手服_LuziOptionf1: "脚套显示",
+
         ItemTorso触手服_LuziSetd0: "TargetCharacterName的触手服下部的小口逐渐合上,粘连在一起.",
         ItemTorso触手服_LuziSetd1: "TargetCharacterName的触手服下部裂开一个小口,露出阴部.",
         ItemTorso触手服_LuziSetd2:
@@ -232,21 +268,32 @@ const descriptions = {
         ItemTorso触手服_LuziSetf1: "TargetCharacterName的触手服缓慢变化,生长覆盖了脚部.",
         ItemTorso触手服_LuziSetm0: "TargetCharacterName的触手服缓慢变化,露出嘴部.",
         ItemTorso触手服_LuziSetm1: "TargetCharacterName的触手服缓慢变化,生长覆盖嘴部.",
-        ItemTorso2触手服_LuziSetd0: "TargetCharacterName的触手服下部的小口逐渐合上,粘连在一起.",
-        ItemTorso2触手服_LuziSetd1: "TargetCharacterName的触手服下部裂开一个小口,露出阴部.",
-        ItemTorso2触手服_LuziSetd2:
-            "TargetCharacterName的触手服下部裂开一个小口,露出阴部,触手服下长出一只湿滑的触手插入了阴道.",
-        ItemTorso2触手服_LuziSets0: "TargetCharacterName的触手服缓慢变化,露出胸部.",
-        ItemTorso2触手服_LuziSets1: "TargetCharacterName的触手服缓慢变化,生长覆盖了胸部.",
-        ItemTorso2触手服_LuziSeth0: "TargetCharacterName的触手服缓慢变化,露出手臂.",
-        ItemTorso2触手服_LuziSeth1: "TargetCharacterName的触手服缓慢变化,生长覆盖了手部.",
-        ItemTorso2触手服_LuziSeth2: "TargetCharacterName的触手服缓慢变化,强制将手臂束缚在身后.",
-        ItemTorso2触手服_LuziSetf0: "TargetCharacterName的触手服缓慢变化,露出腿部.",
-        ItemTorso2触手服_LuziSetf1: "TargetCharacterName的触手服缓慢变化,生长覆盖了脚部.",
-        ItemTorso2触手服_LuziSetm0: "TargetCharacterName的触手服缓慢变化,露出嘴部.",
-        ItemTorso2触手服_LuziSetm1: "TargetCharacterName的触手服缓慢变化,生长覆盖嘴部.",
     },
     EN: {
+        ItemTorso触手服_LuziSelectBase: "Select Configuration",
+        ItemTorso触手服_LuziSelect触手状态: "Select Tentacle Status",
+        ItemTorso触手服_LuziSelect上衣开关: "Select Top Status",
+        ItemTorso触手服_LuziSelect手套开关: "Select Glove Status",
+        ItemTorso触手服_LuziSelect嘴套开关: "Select Mouth Cover Status",
+        ItemTorso触手服_LuziSelect脚套开关: "Select Foot Cover Status",
+        ItemTorso触手服_LuziModule手套开关: "Select Glove Status",
+        ItemTorso触手服_LuziModule嘴套开关: "Select Mouth Cover Status",
+        ItemTorso触手服_LuziModule脚套开关: "Select Foot Cover Status",
+        ItemTorso触手服_LuziModule触手状态: "Select Tentacle Status",
+        ItemTorso触手服_LuziModule上衣开关: "Select Top Status",
+        ItemTorso触手服_LuziOptiond0: "Seal Genital Area",
+        ItemTorso触手服_LuziOptiond1: "Expose Genital Area",
+        ItemTorso触手服_LuziOptiond2: "Insert Tentacle",
+        ItemTorso触手服_LuziOptions0: "Hide Top",
+        ItemTorso触手服_LuziOptions1: "Display Top",
+        ItemTorso触手服_LuziOptionm0: "Hide Mouth Cover",
+        ItemTorso触手服_LuziOptionm1: "Display Mouth Cover",
+        ItemTorso触手服_LuziOptionh0: "Hide Gloves",
+        ItemTorso触手服_LuziOptionh1: "Display Gloves",
+        ItemTorso触手服_LuziOptionh2: "Bind Arms",
+        ItemTorso触手服_LuziOptionf0: "Hide Foot Covers",
+        ItemTorso触手服_LuziOptionf1: "Display Foot Covers",
+
         ItemTorso触手服_LuziSetd0:
             "The lower opening of TargetCharacterName's tentacle suit gradually closes and adheres together.",
         ItemTorso触手服_LuziSetd1:
@@ -263,27 +310,12 @@ const descriptions = {
         ItemTorso触手服_LuziSetf1: "The tentacle suit on TargetCharacterName slowly changes, growing over the feet.",
         ItemTorso触手服_LuziSetm0: "The tentacle suit on TargetCharacterName slowly changes, revealing the mouth.",
         ItemTorso触手服_LuziSetm1: "The tentacle suit on TargetCharacterName slowly changes, growing over the mouth.",
-        ItemTorso2触手服_LuziSetd0:
-            "The lower opening of TargetCharacterName's tentacle suit gradually closes and adheres together.",
-        ItemTorso2触手服_LuziSetd1:
-            "A small opening in the lower part of TargetCharacterName's tentacle suit splits to reveal the genital area.",
-        ItemTorso2触手服_LuziSetd2:
-            "A small opening in the lower part of TargetCharacterName's tentacle suit splits to reveal the genital area, and a slimy tentacle grows out from the suit and inserts into the vagina.",
-        ItemTorso2触手服_LuziSets0: "The tentacle suit on TargetCharacterName slowly changes, revealing the chest.",
-        ItemTorso2触手服_LuziSets1: "The tentacle suit on TargetCharacterName slowly changes, growing over the chest.",
-        ItemTorso2触手服_LuziSeth0: "The tentacle suit on TargetCharacterName slowly changes, revealing the arms.",
-        ItemTorso2触手服_LuziSeth1: "The tentacle suit on TargetCharacterName slowly changes, growing over the hands.",
-        ItemTorso2触手服_LuziSeth2:
-            "The tentacle suit on TargetCharacterName slowly changes, forcibly binding the arms behind the back.",
-        ItemTorso2触手服_LuziSetf0: "The tentacle suit on TargetCharacterName slowly changes, revealing the legs.",
-        ItemTorso2触手服_LuziSetf1: "The tentacle suit on TargetCharacterName slowly changes, growing over the feet.",
-        ItemTorso2触手服_LuziSetm0: "The tentacle suit on TargetCharacterName slowly changes, revealing the mouth.",
-        ItemTorso2触手服_LuziSetm1: "The tentacle suit on TargetCharacterName slowly changes, growing over the mouth.",
     },
 };
 
 export default function () {
-    AssetManager.addAsset("ItemAddon", asset, extended, { descriptions });
+    AssetManager.addAsset("ItemTorso", asset, extended);
+    AssetManager.addCustomDialog(dialogs);
+    // 使用CopyConfig设置后，只需要设置一次
     ModManager.globalFunction("AssetsItemTorso触手服_LuziBeforeDraw", beforeDraw);
-    ModManager.globalFunction("AssetsItemTorso2触手服_LuziBeforeDraw", beforeDraw);
 }

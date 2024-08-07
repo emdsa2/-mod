@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item} */
+/** @type {CustomAssetDefinition} */
 const asset = {
     Name: "拘束套装_Luzi",
     Random: false,
@@ -127,7 +127,7 @@ const asset = {
     ],
 };
 
-/** @type {AssetArchetypeConfig} */
+/** @type { TypedItemConfig } */
 const extended = {
     Archetype: ExtendedArchetype.TYPED,
     ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
@@ -156,7 +156,7 @@ const icons = {
     "Screens/Inventory/ItemTorso/拘束套装_Luzi/紧身衣.png": "https://emdsa2.github.io/-mod/image/空.png",
 };
 
-const descriptions = {
+const dialogs = {
     CN: {
         ItemTorso2拘束套装_LuziSelect: "选择配置",
         ItemTorso2拘束套装_LuziSet无: "",
@@ -174,6 +174,7 @@ const descriptions = {
 };
 
 export default function () {
-    AssetManager.addAsset("ItemTorso", asset, extended, { icons, descriptions });
-    AssetManager.addAsset("ItemTorso2", asset, extended, { icons, descriptions });
+    AssetManager.addAsset("ItemTorso", asset, extended);
+    AssetManager.addImgMapping(icons);
+    AssetManager.addCustomDialog(dialogs);
 }

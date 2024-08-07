@@ -1,6 +1,5 @@
 import AssetManager from "../assetManager";
-
-const { default: ModManager } = require("../modManager");
+import ModManager from "../modManager";
 
 const reduceTag1 = "缩小(地)_Luzi";
 const reduceTag2 = "缩小(空)_Luzi";
@@ -12,7 +11,7 @@ const assetAdjustments = {
     [reduceTag2]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
 };
 
-/** @type {AssetDefinition.Item[]} */
+/** @type {CustomAssetDefinition[]} */
 const assets = [
     {
         Name: reduceTag1,

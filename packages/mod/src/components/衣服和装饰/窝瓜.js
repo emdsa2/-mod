@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {AssetDefinition.Item} */
+/** @type {CustomAssetDefinition} */
 const asset = {
     Name: "窝瓜_Luzi",
     Random: false,
@@ -79,7 +79,23 @@ const icons = {
     "Screens/Inventory/ItemDevices/窝瓜_Luzi/有盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
 };
 
+/** @type {CustomDialogSet} */
+const dialog = {
+    CN: {
+        ItemDevices窝瓜_LuziSelect: "选择窝配置",
+
+        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter推开了DestinationCharacter的盖子",
+        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter盖上了DestinationCharacter的盖子",
+    },
+    EN: {
+        ItemDevices窝瓜_LuziSelect: "Select Configuration",
+        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter pushes open the lid of DestinationCharacter.",
+        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter covers DestinationCharacter with a lid.",
+    },
+};
+
 export default function () {
-    AssetManager.addAsset("ItemTorso", asset, extended, icons);
-    AssetManager.addAsset("ItemTorso2", asset, extended, icons);
+    AssetManager.addAsset("ItemTorso", asset, extended);
+    AssetManager.addAsset("ItemTorso2", asset, extended);
+    AssetManager.addImgMapping(icons);
 }

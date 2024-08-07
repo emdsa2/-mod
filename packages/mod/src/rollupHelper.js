@@ -8,3 +8,5 @@ export const ModInfo = {
 
 /** @type { AssetOverrideContainer } */
 export const assetOverrides = __asset_overrides__;
+
+export const baseURL = __base_url__;
