@@ -1603,8 +1603,12 @@
             {
                 Name: "隐形药水_Luzi", Random: false, Gender: "F",
                 Top: 0, Left: 0,
-                Difficulty: 25,
+                Difficulty: 8,
                 AllowLock: true,
+                AllowTighten: true,
+                DrawLocks: false,
+                RemoveTime: 5,
+                Time: 10,
                 Effect: [E.Slow],
                 Hide: ["ItemHandheld", "Hands", "Bracelet", "LeftHand", "RightHand", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper",],
                 Extended: true,
