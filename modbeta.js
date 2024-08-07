@@ -1540,7 +1540,7 @@
                 Time: 10,
                 Extended: true,
                 Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed, E.OneWayEnclose],
-                Hide: ["BodyLower", "ItemLegs", "ItemFeet", "ItemBoots", "Shoes", "Garters", "LeftAnklet", "RightAnklet", "SocksLeft", "SocksRight", "Socks", "SuitLower"],
+                Hide: ["ItemHandheld", "BodyLower", "ItemLegs", "ItemFeet", "ItemBoots", "Shoes", "Garters", "LeftAnklet", "RightAnklet", "SocksLeft", "SocksRight", "Socks", "SuitLower"],
                 Layer: [
                     {
                         Name: "框架抬手", Priority: 2, AllowTypes: { o: 1 },
