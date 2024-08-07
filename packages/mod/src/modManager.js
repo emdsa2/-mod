@@ -28,48 +28,45 @@ function SwichIfPlayer(loaded = undefined, unloaded = undefined) {
     }
 }
 
-export default class ModManager {
-    /** @type {ModSDKModAPI | undefined} */
-    static modManager = undefined;
+/** @type {ModSDKModAPI | undefined} */
+let mMod = undefined;
 
-    /** @type { {funcName:any, priority:number, hook:PatchHook<any>} [] }*/
+export default class ModManager {
+    static get mod() {
+        return mMod;
+    }
+
+    /** @type { (()=>void) [] }*/
     static hookList = [];
-    /** @type { {funcName:any, priority:number, hook:PatchHook<any>} [] }*/
+    /** @type { (()=>void) [] }*/
     static waitPlayerHookList = [];
-    /** @type { {functionName:any, patch:Record<string, string|null>} [] }*/
+    /** @type { (()=>void) []  }*/
     static patchList = [];
+
+    /**
+     * @param {(()=>void)[]} list
+     * @param {()=>void} work
+     */
+    static push(list, work) {
+        if (ModManager.mod) work();
+        list.push(work);
+    }
 
     /**
      * 注册mod
      * @param {ModSDKModInfo} modinfo
      */
     static init(modinfo) {
-        ModManager.modManager = bcModSdk.registerMod(modinfo);
-
-        if (this.patchList.length > 0) {
-            this.patchList.forEach((patch) => {
-                ModManager.modManager.patchFunction(patch.functionName, patch.patch);
-            });
-        }
-
-        if (this.hookList.length > 0) {
-            this.hookList.forEach((hook) => {
-                ModManager.modManager.hookFunction(hook.funcName, hook.priority, hook.hook);
-            });
-        }
+        mMod = bcModSdk.registerMod(modinfo);
+        this.patchList.forEach((patch) => patch());
+        this.hookList.forEach((hook) => hook());
 
         SwichIfPlayer(
+            () => this.waitPlayerHookList.forEach((hook) => hook()),
             () => {
-                this.waitPlayerHookList.forEach((hook) => {
-                    ModManager.modManager.hookFunction(hook.funcName, hook.priority, hook.hook);
-                });
-            },
-            () => {
-                ModManager.modManager.hookFunction("LoginResponse", 0, (args, next) => {
+                ModManager.mod.hookFunction("LoginResponse", 0, (args, next) => {
                     next(args);
-                    this.waitPlayerHookList.forEach((hook) => {
-                        ModManager.modManager.hookFunction(hook.funcName, hook.priority, hook.hook);
-                    });
+                    this.waitPlayerHookList.forEach((hook) => hook());
                 });
             }
         );
@@ -81,11 +78,7 @@ export default class ModManager {
      * @param {Record<string, string|null>} patch
      */
     static patchFunction(functionName, patch) {
-        if (ModManager.modManager) {
-            ModManager.modManager.patchFunction(functionName, patch);
-        } else {
-            ModManager.patchList.push({ functionName, patch });
-        }
+        ModManager.push(ModManager.patchList, () => ModManager.mod.patchFunction(functionName, patch));
     }
 
     /**
@@ -96,11 +89,7 @@ export default class ModManager {
      * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
      */
     static hookFunction(funcName, priority, hook) {
-        if (ModManager.modManager) {
-            ModManager.modManager.hookFunction(funcName, priority, hook);
-        } else {
-            ModManager.hookList.push({ funcName, priority, hook });
-        }
+        ModManager.push(this.hookList, () => ModManager.mod.hookFunction(funcName, priority, hook));
     }
 
     /**
@@ -111,14 +100,8 @@ export default class ModManager {
      * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
      */
     static hookPlayerFunction(funcName, priority, hook) {
-        SwichIfPlayer(
-            () => {
-                ModManager.modManager.hookFunction(funcName, priority, hook);
-            },
-            () => {
-                ModManager.waitPlayerHookList.push({ funcName, priority, hook });
-            }
-        );
+        const work = () => ModManager.mod.hookFunction(funcName, priority, hook);
+        SwichIfPlayer(work, () => ModManager.push(ModManager.waitPlayerHookList, work));
     }
 
     /**

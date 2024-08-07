@@ -3,93 +3,97 @@ import { assetOverrides, baseURL } from "./rollupHelper";
 
 /**
  * @typedef { {icons?: Record<string,string>, descriptions?: CustomDialogSet, translations?: CustomDialogSet} } ConfigData;
- * @typedef { {asset:CustomAssetDefinition, extended?:AssetArchetypeConfig} } AssetInitItem
  */
 
-function addAssetRaw(group, asset, extended) {}
+/**
+ * 添加物品
+ * @param {AssetGroup} group
+ * @param {CustomAssetDefinition} asset
+ * @param {ExtendedItemMainConfig} extendedConfig
+ * @param {CustomDialogEntry} [name]
+ */
+function addAssetRaw(group, asset, extendedConfig, name = undefined) {
+    AssetAdd(group, /** @type {AssetDefinition} */ (asset), extendedConfig);
+
+    if (!AssetManager.names[group.Name]) AssetManager.names[group.Name] = {};
+
+    AssetManager.names[group.Name][asset.Name] = name ?? { CN: asset.Name.replace("_Luzi", "") };
+
+    AssetManager.flagCustomAsset(group.Name, asset.Name);
+}
+
+/**
+ * 在两个组添加物品，第二个组作为第一个组的镜像
+ * 第二组为undefined则如同只在第一组添加
+ * @param {AssetGroup} group1
+ * @param {AssetGroup | undefined} group2
+ * @param {CustomAssetDefinition} asset
+ * @param {AssetArchetypeConfig} extended
+ * @param {CustomDialogEntry} [name]
+ */
+function addAssetWithMirror(group1, group2, asset, extended = undefined, name = undefined) {
+    const extendedConfig = extended ? { [group1.Name]: { [asset.Name]: extended } } : {};
+    addAssetRaw(group1, asset, extendedConfig, name);
+
+    if (group2) {
+        const config = extended
+            ? {
+                  [group1.Name]: {
+                      [asset.Name]: extended,
+                  },
+                  [group2.Name]: {
+                      [asset.Name]: /** @type {AssetArchetypeConfig} */ ({
+                          Archetype: extended.Archetype,
+                          CopyConfig: {
+                              GroupName: group1.Name,
+                              AssetName: asset.Name,
+                          },
+                      }),
+                  },
+              }
+            : {};
+
+        addAssetRaw(group2, asset, config);
+    }
+}
+
+/**
+ * 添加物品
+ * @param {CustomGroupName} group
+ * @param {CustomAssetDefinition} asset
+ * @param {AssetArchetypeConfig} [extended]
+ * @param {CustomDialogEntry} [name]
+ */
+function addAssetBase(group, asset, extended = undefined, name = undefined) {
+    const group_obj = AssetGroupGet("Female3DCG", group);
+
+    const second_grp = group === "ItemTorso" && (AssetGroupGet("Female3DCG", "ItemTorso2") || undefined);
+
+    addAssetWithMirror(group_obj, second_grp, asset, extended, name);
+}
 
 export default class AssetManager {
-    /** @type {Record<string, AssetInitItem[]>} */
-    static groupInitList = {};
-
-    /** @type {Record<string, string>} */
+    /** @type {Record<CustomGroupName, Record<string, CustomDialogEntry>>} */
     static names = {};
 
     /**
      * 添加物品，如果添加的是ItemTorso或ItemTorso2，会自动添加镜像
-     * @param { AssetGroupName } group 物品组
+     * @param { CustomGroupName } group 物品组
      * @param { CustomAssetDefinition } asset 物品定义
      * @param { AssetArchetypeConfig } [extended] 可选设置物品扩展属性
-     * @param { string } [name] 可选设置物品名字
+     * @param { CustomDialogEntry } [name] 可选设置物品名字
      */
     static addAsset(group, asset, extended = undefined, name = undefined) {
-        const group_obj = AssetGroupGet("Female3DCG", group);
-
-        if (group_obj) {
-            /**@type {ExtendedItemMainConfig} */
-            const extendedConfig = extended
-                ? {
-                      [group]: {
-                          [asset.Name]: extended,
-                      },
-                  }
-                : {};
-            AssetAdd(group_obj, asset, extendedConfig);
-        } else {
-            if (!this.groupInitList[group]) {
-                this.groupInitList[group] = [];
-            }
-            this.groupInitList[group].push({ asset, extended });
-        }
-
-        if (name) {
-            this.names[asset.Name] = name;
-        } else {
-            this.names[asset.Name] = asset.Name.replace("_Luzi", "");
-        }
-
-        AssetManager.flagCustomAsset(group, asset.Name);
-
-        /** @type { (group_obj: AssetGroup, asset: CustomAssetDefinition, extended?:AssetArchetypeConfig ) => void } */
-        const addTorsoMirror = (group_obj, asset, extended) => {
-            if (!extended) AssetAdd(group_obj, asset, {});
-            else {
-                AssetAdd(group_obj, asset, {
-                    ItemTorso: {
-                        [asset.Name]: extended,
-                    },
-                    ItemTorso2: {
-                        [asset.Name]: /** @type {AssetArchetypeConfig} */ ({
-                            Archetype: extended.Archetype,
-                            CopyConfig: {
-                                GroupName: "ItemTorso",
-                                AssetName: asset.Name,
-                            },
-                        }),
-                    },
-                });
-            }
-            AssetManager.flagCustomAsset(group_obj.Name, asset.Name);
-        };
-
-        if (group === "ItemTorso") {
-            const group_obj = AssetGroupGet("Female3DCG", "ItemTorso2");
-            addTorsoMirror(group_obj, asset, extended);
-        } else if (group === "ItemTorso2") {
-            const group_obj = AssetGroupGet("Female3DCG", "ItemTorso");
-            addTorsoMirror(group_obj, asset, extended);
-        }
+        addAssetBase(group, asset, extended, name);
     }
 
     /**
      * 添加很多物品
-     * @param { AssetGroupName } group
+     * @param { CustomGroupName } group
      * @param { CustomAssetDefinition[] } assets
      */
     static addAssets(group, assets) {
-        assets.forEach((asset) => {
-            this.addAsset(group, asset);
-        });
+        assets.forEach((asset) => addAssetBase(group, asset));
     }
 
     /**
@@ -98,21 +102,20 @@ export default class AssetManager {
      */
     static addGroupedAssets(groupedAssets) {
         Object.entries(groupedAssets).forEach(([group, assets]) => {
-            AssetManager.addAssets(/** @type {AssetGroupName} */ (group), assets);
+            AssetManager.addAssets(group, assets);
         });
     }
 
     /**
      * 添加一个物品的扩展设置
-     *
-     * @param {AssetGroupName} groupName
+     * @param {CustomGroupName} groupName
      * @param {string} assetName
      * @param {AssetArchetypeConfig} extendedConfig
      */
     static addExtendedSetting(groupName, assetName, extendedConfig) {
         const A = AssetGet("Female3DCG", groupName, assetName);
         if (A == null) {
-            console.warn(`Asset ${groupName}/${assetName} not found`);
+            console.warn(`Asset ${groupName}:${assetName} not found`);
             return;
         }
         const assetBaseConfig = AssetFindExtendedConfig({ [assetName]: extendedConfig }, groupName, assetName);
@@ -127,14 +130,6 @@ export default class AssetManager {
      */
     static addGroup(groupDefinition) {
         AssetGroupAdd("Female3DCG", /** @type {AssetGroupDefinition} */ (groupDefinition));
-
-        const groupName = groupDefinition.Group;
-        if (this.groupInitList[groupName]) {
-            this.groupInitList[groupName].forEach((item) => {
-                AssetManager.addAsset(/** @type {AssetGroupName} */ (groupName), item.asset, item.extended);
-            });
-            delete this.groupInitList[groupName];
-        }
     }
 
     /** @type {CustomDialogSet} */
@@ -232,8 +227,10 @@ export default class AssetManager {
 
             Object.entries(AssetManager.customAssetFlag).forEach(([group, assets]) => {
                 assets.forEach((asset) => {
+                    const group_repo = AssetManager.names[asset.Group.Name] || {};
+                    const target_repo = group_repo[TranslationLanguage] || group_repo["CN"] || {};
                     /** @type {Mutable<Asset>}*/ (asset).Description =
-                        AssetManager.names[asset.Name] || asset.Name.replace("_Luzi", "");
+                        target_repo[asset.Name] || asset.Name.replace("_Luzi", "");
                 });
             });
         });

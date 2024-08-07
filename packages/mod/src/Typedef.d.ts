@@ -27,6 +27,8 @@ type CustomDialog = Record<string, string>;
 
 type CustomDialogSet = Partial<Record<ServerChatRoomLanguage, CustomDialog>>;
 
+type CustomDialogEntry = Partial<Record<ServerChatRoomLanguage, string>>;
+
 type Function = (...args: any[]) => any;
 
 type AssetOverrideLeaf = string | AssetOverrideContainer;

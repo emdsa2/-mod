@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "build_subs": "pnpm -r build",
-    "dev_build": "pnpm copy_res && pnpm build_subs --configDebug --configBaseURL \"http://localhost:8080/\"",
+    "build": "pnpm copy_res && pnpm build_subs --configDebug --configBaseURL \"http://localhost:8080/\"",
     "copy_res": "copyfiles -u 1 \"resources/**/*.png\" \"resources/**/*.mp3\" public",
-    "build": "pnpm copy_res && pnpm build_subs",
+    "release": "pnpm copy_res && pnpm build_subs",
     "serve": "http-server -p 8080 --cors public"
   },
   "author": "Echo",
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "http-server": "^14.1.1"
-  }
+  },
+  "packageManager": "pnpm@9.7.0"
 }

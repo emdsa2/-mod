@@ -19,7 +19,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: |
@@ -32,7 +32,7 @@ jobs:
             PAGE_URL="https://$USER_NAME.github.io/$REPO_NAME/"
           fi
 
-          pnpm build --configBaseURL $PAGE_URL
+          pnpm release --configBaseURL $PAGE_URL
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

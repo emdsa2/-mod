@@ -111,7 +111,9 @@ function readAssetsMapping(startDir, assetDirs) {
             if (!curDir[cur]) curDir[cur] = {};
             curDir = curDir[cur];
         }
-        curDir[file] = 0;
+
+        if (typeof curDir[file] === "number") curDir += 1;
+        else curDir[file] = 1;
     }
 
     while (workingDir.length > 0) {
