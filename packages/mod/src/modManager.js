@@ -28,6 +28,13 @@ function SwichIfPlayer(loaded = undefined, unloaded = undefined) {
     }
 }
 
+/** @type { (()=>void) [] }*/
+const hookList = [];
+/** @type { (()=>void) [] }*/
+const waitPlayerHookList = [];
+/** @type { (()=>void) []  }*/
+const patchList = [];
+
 /** @type {ModSDKModAPI | undefined} */
 let mMod = undefined;
 
@@ -35,13 +42,6 @@ export default class ModManager {
     static get mod() {
         return mMod;
     }
-
-    /** @type { (()=>void) [] }*/
-    static hookList = [];
-    /** @type { (()=>void) [] }*/
-    static waitPlayerHookList = [];
-    /** @type { (()=>void) []  }*/
-    static patchList = [];
 
     /**
      * @param {(()=>void)[]} list
@@ -58,15 +58,15 @@ export default class ModManager {
      */
     static init(modinfo) {
         mMod = bcModSdk.registerMod(modinfo);
-        this.patchList.forEach((patch) => patch());
-        this.hookList.forEach((hook) => hook());
+        patchList.forEach((patch) => patch());
+        hookList.forEach((hook) => hook());
 
         SwichIfPlayer(
-            () => this.waitPlayerHookList.forEach((hook) => hook()),
+            () => waitPlayerHookList.forEach((hook) => hook()),
             () => {
                 ModManager.mod.hookFunction("LoginResponse", 0, (args, next) => {
                     next(args);
-                    this.waitPlayerHookList.forEach((hook) => hook());
+                    waitPlayerHookList.forEach((hook) => hook());
                 });
             }
         );
@@ -78,7 +78,17 @@ export default class ModManager {
      * @param {Record<string, string|null>} patch
      */
     static patchFunction(functionName, patch) {
-        ModManager.push(ModManager.patchList, () => ModManager.mod.patchFunction(functionName, patch));
+        ModManager.push(patchList, () => ModManager.mod.patchFunction(functionName, patch));
+    }
+
+    /**
+     * 调用原始函数
+     * @template {string} TFunctionName
+     * @param {TFunctionName} functionName
+     * @param {[...Parameters<GetDotedPathType<TFunctionName>>]} args
+     */
+    static invokeOriginal(functionName, ...args) {
+        return ModManager.mod.callOriginal(functionName, args);
     }
 
     /**
@@ -89,7 +99,7 @@ export default class ModManager {
      * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
      */
     static hookFunction(funcName, priority, hook) {
-        ModManager.push(this.hookList, () => ModManager.mod.hookFunction(funcName, priority, hook));
+        ModManager.push(hookList, () => ModManager.mod.hookFunction(funcName, priority, hook));
     }
 
     /**
@@ -101,7 +111,7 @@ export default class ModManager {
      */
     static hookPlayerFunction(funcName, priority, hook) {
         const work = () => ModManager.mod.hookFunction(funcName, priority, hook);
-        SwichIfPlayer(work, () => ModManager.push(ModManager.waitPlayerHookList, work));
+        SwichIfPlayer(work, () => ModManager.push(waitPlayerHookList, work));
     }
 
     /**

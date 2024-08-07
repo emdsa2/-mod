@@ -6,5 +6,4 @@ import { setup } from "./components";
 
 ModManager.init(ModInfo);
 AssetManager.init();
-
-AssetManager.queueSetup(() => setup());
+setup();
