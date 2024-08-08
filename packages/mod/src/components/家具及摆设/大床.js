@@ -114,7 +114,6 @@ const translations = {
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
 
-    // FIXME 角色预览显示不正确
     // 拓展绘图空间
     ModManager.patchFunction("GLDrawLoad", {
         "GLDrawCanvas.width = 1000;": "GLDrawCanvas.width = 2000;",
@@ -134,10 +133,6 @@ export default function () {
         "500 * HeightRatio * Zoom": "1000 * HeightRatio * Zoom",
         "TempCanvas.canvas.width = CanvasDrawWidth;": "TempCanvas.canvas.width = CanvasDrawWidth * 2;",
     });
-
-    // ModManager.patchFunction("DrawCharacterSegment", {
-    //     "DrawCanvasSegment(C.Canvas, Left": "DrawCanvasSegment(C.Canvas, Left + 250",
-    // });
 
     ModManager.afterInit(async () => {
         function sleep(ms) {
