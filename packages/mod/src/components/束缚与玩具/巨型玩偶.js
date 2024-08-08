@@ -117,12 +117,11 @@ const dialog = {
 };
 
 const translations = {
-    EN: {
-        巨型玩偶: "Giant Stuffed Toy",
-    },
+    CN: "巨型玩偶",
+    EN: "Giant Stuffed Toy",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }

@@ -189,12 +189,11 @@ const dialog = {
 };
 
 const translations = {
-    EN: {
-        拳击袋: "Boxing Bag",
-    },
+    CN: "拳击袋",
+    EN: "Boxing Bag",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }

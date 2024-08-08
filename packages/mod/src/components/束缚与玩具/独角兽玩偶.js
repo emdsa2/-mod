@@ -185,8 +185,7 @@ const dialog = {
         ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter摘掉了DestinationCharacter的头套",
     },
     EN: {
-        
-        ItemDevices独角兽玩偶_LuziSelect: 'Select Unicorn Doll Configuration',
+        ItemDevices独角兽玩偶_LuziSelect: "Select Unicorn Doll Configuration",
         ItemDevices独角兽玩偶_Luzi戴上头套: "Put on Headgear",
         ItemDevices独角兽玩偶_Luzi摘掉头套: "Remove Headgear",
         ItemDevices独角兽玩偶_LuziSet戴上头套: "SourceCharacter puts on the headgear for DestinationCharacter.",
@@ -194,13 +193,9 @@ const dialog = {
     },
 };
 
-const translations = {
-    EN: {
-        独角兽玩偶: "Unicorn Stuffed Toy",
-    },
-};
+const translations = { CN: "独角兽玩偶", EN: "Unicorn Stuffed Toy" };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }

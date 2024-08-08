@@ -94,14 +94,10 @@ const dialog = {
     },
 };
 
-const translations = {
-    EN: {
-        窝瓜: "Pumpkin",
-    },
-};
+const translations = { CN: "窝瓜", EN: "Pumpkin" };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
     AssetManager.addImgMapping(icons);
 }

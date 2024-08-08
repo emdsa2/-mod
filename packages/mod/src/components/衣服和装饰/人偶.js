@@ -96,12 +96,8 @@ const asset = {
     ],
 };
 
-const translations = {
-    EN: {
-        人偶: "Puppet",
-    },
-};
+const translations = { CN: "人偶", EN: "Puppet" };
 
 export default function () {
-    AssetManager.addAsset("ItemAddon", asset);
+    AssetManager.addAsset("ItemAddon", asset, undefined, translations);
 }

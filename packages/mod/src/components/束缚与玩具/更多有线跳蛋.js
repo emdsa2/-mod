@@ -157,12 +157,11 @@ const dialog = {
 };
 
 const translations = {
-    EN: {
-        更多有线跳蛋: "More Wired Vibrators",
-    },
+    CN: "更多有线跳蛋",
+    EN: "More Wired Vibrators",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemVulva", asset, extended);
+    AssetManager.addAsset("ItemVulva", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }

@@ -313,14 +313,10 @@ const dialogs = {
     },
 };
 
-const translations = {
-    EN: {
-        触手服: "Tentacle Suit",
-    },
-};
+const translations = { CN: "触手服", EN: "Tentacle Suit" };
 
 export default function () {
-    AssetManager.addAsset("ItemTorso", asset, extended);
+    AssetManager.addAsset("ItemTorso", asset, extended, translations);
     AssetManager.addCustomDialog(dialogs);
     // 使用CopyConfig设置后，只需要设置一次
     ModManager.globalFunction("AssetsItemTorso触手服_LuziBeforeDraw", beforeDraw);

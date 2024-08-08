@@ -210,12 +210,11 @@ const dialog = {
 };
 
 const translations = {
-    EN: {
-        乳胶带床: "Latex belt bed",
-    },
+    CN: "乳胶带床",
+    EN: "Latex belt bed",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }

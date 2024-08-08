@@ -287,12 +287,11 @@ const customDialog = {
 };
 
 const translations = {
-    EN: {
-        玻璃罐子: "Glass Jar",
-    },
+    CN: "玻璃罐子",
+    EN: "Glass Jar",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(customDialog);
 }

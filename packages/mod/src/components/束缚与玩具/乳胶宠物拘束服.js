@@ -33,11 +33,10 @@ const asset = {
 };
 
 const translations = {
-    EN: {
-        乳胶宠物拘束服: "Latex Pet Restraint Suit",
-    },
+    CN: "乳胶宠物拘束服",
+    EN: "Latex Pet Restraint Suit",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemArms", asset);
+    AssetManager.addAsset("ItemArms", asset, undefined, translations);
 }

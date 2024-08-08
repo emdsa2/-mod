@@ -188,12 +188,11 @@ const dialog = {
 };
 
 const translations = {
-    EN: {
-        垃圾桶: "Trash Can",
-    },
+    CN: "垃圾桶",
+    EN: "Trash Can",
 };
 
 export default function () {
-    AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }
