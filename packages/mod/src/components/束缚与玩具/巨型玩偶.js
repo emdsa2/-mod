@@ -111,6 +111,7 @@ const dialog = {
         ItemDevices巨型玩偶_LuziSelect: "选择巨型玩偶配置",
     },
     EN: {
+        ItemDevices巨型玩偶_Luzi熊熊: "Bear",
         ItemDevices巨型玩偶_LuziSelect: "Select Giant Doll Configuration",
     },
 };

@@ -138,8 +138,6 @@ const extended = {
 /** @type {TranslationCustomDialog} */
 const customDialog = {
     CN: {
-        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter推开了DestinationCharacter的盖子",
-        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter盖上了DestinationCharacter的盖子",
         ItemDevices玻璃罐子_LuziSetc0: "SourceCharacter打开了DestinationCharacter的罐子",
         ItemDevices玻璃罐子_LuziSetc1: "SourceCharacter封上了DestinationCharacter的罐子",
         ItemDevices玻璃罐子_LuziSett0: "SourceCharacter移除了DestinationCharacter双腿的拘束",
@@ -162,13 +160,6 @@ const customDialog = {
         ItemDevices玻璃罐子_LuziSetg0: "SourceCharacter关闭了插在DestinationCharacter体内的振动装置设置为允许高潮",
         ItemDevices玻璃罐子_LuziSetg1: "SourceCharacter将插在DestinationCharacter体内的振动装置设置为寸止模式",
         ItemDevices玻璃罐子_LuziSetg2: "SourceCharacter将插在DestinationCharacter体内的振动装置设置为拒绝模式",
-        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter合上了DestinationCharacter的盖子",
-        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter打开了DestinationCharacter的盖子",
-        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter打开了DestinationCharacter的挡板",
-        ItemDevices独角兽玩偶_LuziSet戴上头套: "SourceCharacter戴上了DestinationCharacter的头套",
-        ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter摘掉了DestinationCharacter的头套",
-        ItemDevices拳击袋_LuziSet有照片: "SourceCharacter贴上了DestinationCharacter的照片",
-        ItemDevices拳击袋_LuziSet无照片: "SourceCharacter摘掉了DestinationCharacter的照片",
 
         ItemDevices玻璃罐子_LuziSelectBase: "选择罐子配置",
         ItemDevices玻璃罐子_LuziSelect窗户: "设置窗户",

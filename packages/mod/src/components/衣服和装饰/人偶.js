@@ -7,6 +7,7 @@ const asset = {
     Gender: "F",
     Top: 0,
     Left: 0,
+    AllowLock: true,
     Difficulty: 25,
     Hide: ["Hands", "BodyLower", "BodyUpper"],
     Layer: [

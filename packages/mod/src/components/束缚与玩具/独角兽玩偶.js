@@ -185,7 +185,10 @@ const dialog = {
         ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter摘掉了DestinationCharacter的头套",
     },
     EN: {
-        ItemDevices独角兽玩偶_LuziSelect: "Select Unicorn Doll Configuration",
+        
+        ItemDevices独角兽玩偶_LuziSelect: 'Select Unicorn Doll Configuration',
+        ItemDevices独角兽玩偶_Luzi戴上头套: "Put on Headgear",
+        ItemDevices独角兽玩偶_Luzi摘掉头套: "Remove Headgear",
         ItemDevices独角兽玩偶_LuziSet戴上头套: "SourceCharacter puts on the headgear for DestinationCharacter.",
         ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter removes the headgear from DestinationCharacter.",
     },

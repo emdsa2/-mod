@@ -129,7 +129,7 @@ const asset = {
         },
         {
             Name: "内衬",
-            Priority: 25,
+            Priority: 24,
         },
         {
             Name: "圆环",
@@ -141,7 +141,7 @@ const asset = {
         },
         {
             Name: "拉链",
-            Priority: 25,
+            Priority: 24,
         },
         {
             Name: "拘束带上",
@@ -155,12 +155,12 @@ const asset = {
         },
         {
             Name: "乳胶上",
-            Priority: 24,
+            Priority: 23,
             ParentGroup: "BodyUpper",
         },
         {
             Name: "乳胶下",
-            Priority: 24,
+            Priority: 23,
             ParentGroup: "BodyLower",
         },
     ],

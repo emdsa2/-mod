@@ -165,6 +165,11 @@ const dialogs = {
         ItemTorso2拘束套装_LuziSet紧身衣: "",
     },
     EN: {
+        ItemTorso2拘束套装_Luzi无: "No",
+        ItemTorso2拘束套装_Luzi乳胶衣: "Latex Suit",
+        ItemTorso2拘束套装_Luzi透视紧身衣: "Sheer Bodysuit",
+        ItemTorso2拘束套装_Luzi紧身衣: "Bodysuit",
+
         ItemTorso2拘束套装_LuziSelect: "Select Configuration",
         ItemTorso2拘束套装_LuziSet无: "",
         ItemTorso2拘束套装_LuziSet乳胶衣: "",
