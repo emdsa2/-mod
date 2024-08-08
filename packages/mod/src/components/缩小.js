@@ -7,8 +7,8 @@ const reduceTag2 = "缩小(空)_Luzi";
 // 定义一个对象来存储不同道具的调整参数
 const assetAdjustments = {
     // "缩小(地)_Luzi": { widthMultiplier: 2, heightMultiplier: 2, offsetXMultiplier: 4, offsetYMultiplier: 2 },
-    [reduceTag1]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
-    [reduceTag2]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
+    [reduceTag1]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 6, offsetYMultiplier: 1.5 },
+    [reduceTag2]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 6, offsetYMultiplier: 10 },
 };
 
 /** @type {CustomAssetDefinition[]} */
@@ -82,5 +82,5 @@ export default function () {
         return next([source, canvas, X, Y, options]);
     });
 
-    AssetManager.addAssets("ItemDevices", assets);
+    AssetManager.addAssets("BodyMarkings2_Luzi", assets);
 }

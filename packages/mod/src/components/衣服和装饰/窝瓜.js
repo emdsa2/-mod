@@ -95,7 +95,6 @@ const dialog = {
 };
 
 export default function () {
-    AssetManager.addAsset("ItemTorso", asset, extended);
-    AssetManager.addAsset("ItemTorso2", asset, extended);
+    AssetManager.addAsset("ItemDevices", asset, extended);
     AssetManager.addImgMapping(icons);
 }
