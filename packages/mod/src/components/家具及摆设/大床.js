@@ -99,7 +99,7 @@ const translations = {
         床右边: "Right Side of Bed",
     },
 };
-
+// TODO saki赶快修这个
 export default function () {
     AssetManager.addGroupedAssets(assets);
 
