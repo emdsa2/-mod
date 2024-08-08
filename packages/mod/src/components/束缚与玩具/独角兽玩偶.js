@@ -194,6 +194,12 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        独角兽玩偶: "Unicorn Stuffed Toy",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
     AssetManager.addCustomDialog(dialog);

@@ -94,7 +94,14 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        窝瓜: "Pumpkin",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
+    AssetManager.addCustomDialog(dialog);
     AssetManager.addImgMapping(icons);
 }

@@ -178,6 +178,12 @@ const dialogs = {
     },
 };
 
+const translations = {
+    EN: {
+        拘束套装: "Restraint Set",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemTorso", asset, extended);
     AssetManager.addImgMapping(icons);

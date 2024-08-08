@@ -89,6 +89,12 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        后背: "back",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, extended);
     AssetManager.addCustomDialog(dialog);

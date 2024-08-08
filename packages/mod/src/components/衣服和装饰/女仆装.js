@@ -45,6 +45,12 @@ const asset = {
     ],
 };
 
+const translations = {
+    EN: {
+        女仆装: "Maid Costume",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("Cloth", asset);
 }

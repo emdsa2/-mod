@@ -313,6 +313,12 @@ const dialogs = {
     },
 };
 
+const translations = {
+    EN: {
+        触手服: "Tentacle Suit",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemTorso", asset, extended);
     AssetManager.addCustomDialog(dialogs);

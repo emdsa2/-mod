@@ -20,6 +20,12 @@ const assets = {
     ],
 };
 
+const translations = {
+    EN: {
+        猪猪: "Piggy",
+    },
+};
+
 export default function () {
     AssetManager.addGroupedAssets(assets);
 }

@@ -91,6 +91,15 @@ const assets = {
     ],
 };
 
+const translations = {
+    EN: {
+        被子左边: "Left Side of Quilt",
+        被子右边: "Right Side of Quilt",
+        床左边: "Left Side of Bed",
+        床右边: "Right Side of Bed",
+    },
+};
+
 export default function () {
     AssetManager.addGroupedAssets(assets);
 

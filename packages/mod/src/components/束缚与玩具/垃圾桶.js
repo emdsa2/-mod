@@ -187,6 +187,12 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        垃圾桶: "Trash Can",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
     AssetManager.addCustomDialog(dialog);

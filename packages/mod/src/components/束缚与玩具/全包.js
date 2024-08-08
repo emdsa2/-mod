@@ -106,6 +106,18 @@ const assets = [
     },
 ];
 
+const translations = {
+    EN: {
+        绷带头部: "Bandage Head",
+        毛毯头部: "Blanket Head",
+
+        胶带全身: "Tape Full Body",
+        睡袋改: "Modified Sleeping Bag",
+        全包毛毯改: "Fully Wrapped Blanket",
+        绷带全身: "Bandage Full Body",
+    },
+};
+
 export default function () {
     AssetManager.addGroupedAssets({
         ItemTorso: assets,

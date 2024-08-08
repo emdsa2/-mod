@@ -218,6 +218,12 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        开腿展示架: "Leg Spread Display Stand",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
     AssetManager.addCustomDialog(dialog);

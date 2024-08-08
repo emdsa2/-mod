@@ -73,6 +73,19 @@ const icons = {
         "Assets/Female3DCG/TailStraps/Preview/TailStrap.png",
 };
 
+const translations = {
+    EN: {
+        穿戴式狗尾镜像: "Wearable Dog Tail",
+        白色穿戴式狼尾镜像: "White Wearable Wolf Tail",
+        穿戴式浅色猫尾镜像: "Light-colored Wearable Cat Tail",
+        穿戴式软小狗尾镜像: "Soft Wearable Puppy Tail",
+        大型穿戴式狼尾镜像: "Large Wearable Wolf Tail",
+        小型穿戴式狼尾镜像: "Small Wearable Wolf Tail",
+        小型穿戴式软猫尾镜像: "Small Soft Wearable Cat Tail",
+        穿戴式猫尾镜像: "Wearable Cat Tail",
+    },
+};
+
 export default function () {
     AssetManager.addAssets("TailStraps", assets);
     AssetManager.addImgMapping(icons);

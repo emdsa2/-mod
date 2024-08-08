@@ -388,6 +388,13 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        隐形药水: "potion of invisibility",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, extened);
+    AssetManager.addCustomDialog(dialog);
 }

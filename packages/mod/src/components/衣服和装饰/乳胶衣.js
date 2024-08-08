@@ -41,6 +41,13 @@ const assets = {
     ],
 };
 
+const translations = {
+    EN: {
+        乳胶衣上: "Latex Top",
+        乳胶衣下: "Latex Bottom",
+    },
+};
+
 export default function () {
     AssetManager.addGroupedAssets(assets);
 }

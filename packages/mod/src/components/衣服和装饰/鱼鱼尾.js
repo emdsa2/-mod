@@ -123,4 +123,5 @@ const translations = {
 
 export default function () {
     AssetManager.addAsset("SuitLower", asset, extended);
+    AssetManager.addCustomDialog(descriptions);
 }

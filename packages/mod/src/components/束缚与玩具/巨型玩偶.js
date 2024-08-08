@@ -116,6 +116,12 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        巨型玩偶: "Giant Stuffed Toy",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
     AssetManager.addCustomDialog(dialog);

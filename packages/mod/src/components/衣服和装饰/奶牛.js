@@ -36,6 +36,12 @@ const asset = {
     ],
 };
 
+const translations = {
+    EN: {
+        奶牛: "Cow",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("Cloth", asset);
 }

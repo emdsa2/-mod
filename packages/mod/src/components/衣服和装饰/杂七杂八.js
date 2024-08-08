@@ -205,6 +205,35 @@ const assets = {
     ],
 };
 
+const translations = {
+    EN: {
+        蝴蝶结背饰: "Bow Back Accessory",
+
+        单边眼镜左: "Monocle Left",
+        单边眼镜右: "Monocle Right",
+        眼镜卡: "Glasses Card",
+
+        圣诞: "Christmas",
+        踩脚袜: "Footstep Socks",
+        条纹袜: "Striped Socks",
+        条纹袜2: "Striped Socks 2",
+
+        淫纹: "Erotic Pattern",
+        刻度尺: "Ruler",
+        番茄酱: "Ketchup",
+
+        拳击手套: "Boxing Gloves",
+
+        电蚊拍: "Electric Fly Swatter",
+        阿巴阿巴: "Aba Aba",
+    
+        鞍: "Saddle",
+        缰绳: "Reins",
+        
+        树: "Tree",
+    },
+};
+
 export default function () {
     AssetManager.addGroupedAssets(assets);
 }

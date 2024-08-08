@@ -188,6 +188,12 @@ const dialog = {
     },
 };
 
+const translations = {
+    EN: {
+        拳击袋: "Boxing Bag",
+    },
+};
+
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended);
     AssetManager.addCustomDialog(dialog);
