@@ -60,7 +60,11 @@ function addAssetWithMirror(group1, group2, asset, extended = undefined, descrip
 function addAssetBase(group, asset, extended = undefined, description = undefined) {
     const group_obj = AssetGroupGet("Female3DCG", /** @type {AssetGroupName}*/ (group));
 
-    const second_grp = group === "ItemTorso" && (AssetGroupGet("Female3DCG", "ItemTorso2") || undefined);
+    const second_grp = (() => {
+        if (group === "ItemTorso2") return AssetGroupGet("Female3DCG", "ItemTorso");
+        if (group === "ItemTorso") return AssetGroupGet("Female3DCG", "ItemTorso2");
+        return undefined;
+    })();
 
     addAssetWithMirror(group_obj, second_grp, asset, extended, description);
 }

@@ -138,8 +138,11 @@ export default function () {
 
     ModManager.hookFunction("DrawCharacter", 1, (args, next) => {
         do {
-            if (!inChatRoomCharacterViewDraw) break;
             const [C, X, Y, Zoom] = args;
+            if (C.Canvas.width === 500) C.Canvas.width = 1000;
+            if (C.CanvasBlink.width === 500) C.CanvasBlink.width = 1000;
+
+            if (!inChatRoomCharacterViewDraw) break;
 
             const device = InventoryGet(C, "ItemDevices");
             if (!device) break;
