@@ -1,6 +1,23 @@
 {
+  "name": "echo-bc-mod-collection",
+  "version": "1.0.0",
+  "scripts": {
+    "build:dev": "pnpm -r build --configDebug --configBaseURL \"http://localhost:8080/\"",
+    "build": "pnpm build:res && pnpm build:dev",
+    "build:res": "copyfiles -u 1 \"resources/**/*.png\" \"resources/**/*.mp3\" public",
+    "release": "pnpm copy_res && pnpm build_subs",
+    "page:readme": "node build_readme.js",
+    "page:images": "copyfiles -u 1 \"image/*.png\" public",
+    "page:all": "pnpm page:readme && pnpm page:images",
+    "serve": "http-server -p 8080 --cors public"
+  },
+  "author": "Echo",
   "devDependencies": {
-    "bc-stubs": "^106.0.0",
-    "bondage-club-mod-sdk": "^1.2.0"
-  }
+    "copyfiles": "^2.4.1",
+    "fs-extra": "^11.2.0",
+    "github-markdown-css": "^5.6.1",
+    "http-server": "^14.1.1",
+    "marked": "^14.0.0"
+  },
+  "packageManager": "pnpm@9.7.0"
 }

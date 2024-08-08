@@ -1,0 +1,100 @@
+import AssetManager from "../../assetManager";
+
+/** @type {CustomAssetDefinition} */
+const asset = {
+    Name: "人偶_Luzi",
+    Random: false,
+    Gender: "F",
+    Top: 0,
+    Left: 0,
+    Difficulty: 25,
+    Hide: ["Hands", "BodyLower", "BodyUpper"],
+    Layer: [
+        {
+            Name: "下半身",
+            Priority: 9,
+            Top: 460,
+            Left: 0,
+            ParentGroup: "BodyLower",
+            InheritColor: "BodyLower",
+            HideColoring: true,
+            ColorSuffix: { HEX_COLOR: "White" },
+            PoseMapping: {
+                Kneel: "Kneel",
+                KneelingSpread: "KneelingSpread",
+                LegsClosed: "LegsClosed",
+                Spread: "Spread",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            },
+        },
+        {
+            Name: "上半身",
+            Priority: 9,
+            Top: 0,
+            Left: 0,
+            ParentGroup: "BodyUpper",
+            InheritColor: "BodyUpper",
+            HideColoring: true,
+            ColorSuffix: { HEX_COLOR: "White" },
+            PoseMapping: {
+                BackBoxTie: "BackBoxTie",
+                BackCuffs: "BackCuffs",
+                BackElbowTouch: "BackElbowTouch",
+                OverTheHead: "OverTheHead",
+                Yoked: "Yoked",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            },
+        },
+        {
+            Name: "全身",
+            Priority: 9,
+            Top: 0,
+            Left: 0,
+            ParentGroup: "BodyUpper",
+            InheritColor: "BodyUpper",
+            HideColoring: true,
+            ColorSuffix: { HEX_COLOR: "White" },
+            PoseMapping: {
+                [PoseType.DEFAULT]: "Hide",
+                BackBoxTie: "Hide",
+                BackCuffs: "Hide",
+                BackElbowTouch: "Hide",
+                OverTheHead: "Hide",
+                Yoked: "Hide",
+                AllFours: "AllFours",
+                Hogtied: "Hogtied",
+            },
+        },
+        {
+            Name: "手",
+            Priority: 26,
+            Top: 0,
+            Left: 0,
+            ParentGroup: "BodyUpper",
+            InheritColor: "BodyUpper",
+            HideColoring: true,
+            ColorSuffix: { HEX_COLOR: "White" },
+            PoseMapping: {
+                BackBoxTie: "Hide",
+                BackCuffs: "Hide",
+                BackElbowTouch: "Hide",
+                OverTheHead: "Hide",
+                Yoked: "Hide",
+                Hogtied: "Hide",
+                AllFours: "AllFours",
+            },
+        },
+        {
+            Name: "钥匙孔",
+            Priority: 10,
+            Top: 0,
+            Left: 0,
+        },
+    ],
+};
+
+export default function () {
+    AssetManager.addAsset("ItemAddon", asset);
+}

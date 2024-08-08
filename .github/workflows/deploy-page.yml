@@ -1,0 +1,44 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Pages
+        run: pnpm pages:all
+
+      - name: Build
+        run: |
+          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)
+          USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 1)
+
+          if [ $REPO_NAME = "$USER_NAME.github.io" ]; then
+            PAGE_URL="https://$USER_NAME.github.io/"
+          else
+            PAGE_URL="https://$USER_NAME.github.io/$REPO_NAME/"
+          fi
+
+          pnpm release --configBaseURL $PAGE_URL
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
