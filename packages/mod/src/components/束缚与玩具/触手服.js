@@ -318,4 +318,5 @@ export default function () {
     AssetManager.addCustomDialog(dialogs);
     // 使用CopyConfig设置后，只需要设置一次
     ModManager.globalFunction("AssetsItemTorso触手服_LuziBeforeDraw", beforeDraw);
+    ModManager.globalFunction("AssetsItemTorso2触手服_LuziBeforeDraw", beforeDraw);
 }

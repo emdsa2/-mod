@@ -17,6 +17,10 @@ export function registerCustomGroup(group, groupDef, extendedConfig) {
     customGroups[group] = { groupDef, extendedConfig };
 }
 
+export function getCustomGroups() {
+    return customGroups;
+}
+
 export function setupCustomGroups() {
     ModManager.hookFunction("AssetLoad", 1, (args, next) => {
         let [definitions, familiy, extConfig] = args;

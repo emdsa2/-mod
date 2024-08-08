@@ -29,6 +29,8 @@ function SwichIfPlayer(loaded = undefined, unloaded = undefined) {
 }
 
 /** @type { (()=>void) [] }*/
+const afterInitList = [];
+/** @type { (()=>void) [] }*/
 const hookList = [];
 /** @type { (()=>void) [] }*/
 const waitPlayerHookList = [];
@@ -58,18 +60,29 @@ export default class ModManager {
      */
     static init(modinfo) {
         mMod = bcModSdk.registerMod(modinfo);
-        patchList.forEach((patch) => patch());
-        hookList.forEach((hook) => hook());
+        while (patchList.length > 0) patchList.shift()();
+        while (hookList.length > 0) hookList.shift()();
 
         SwichIfPlayer(
-            () => waitPlayerHookList.forEach((hook) => hook()),
+            () => {
+                while (waitPlayerHookList.length > 0) waitPlayerHookList.shift()();
+            },
             () => {
                 ModManager.mod.hookFunction("LoginResponse", 0, (args, next) => {
                     next(args);
-                    waitPlayerHookList.forEach((hook) => hook());
+                    while (waitPlayerHookList.length > 0) waitPlayerHookList.shift()();
                 });
             }
         );
+        while (afterInitList.length > 0) afterInitList.shift()();
+    }
+
+    /**
+     * 添加一个初始化后回调
+     * @param {()=>void} work
+     */
+    static afterInit(work) {
+        ModManager.push(afterInitList, work);
     }
 
     /**

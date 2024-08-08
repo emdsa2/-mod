@@ -1,5 +1,6 @@
 import ModManager from "../modManager";
 import { getCustomAssets } from "./customAssets";
+import { getCustomGroups } from "./customGroups";
 
 /** @type { TranslationRecord<CustomGroupName, Record<string, string>> } */
 const assetNames = {};
@@ -93,11 +94,40 @@ export function addCustomDialog(dialog) {
     });
 }
 
+/**
+ * 获取自定义对话
+ * @param {string} language 语言
+ * @param {string} dialog 对话标签
+ * @returns { string | undefined } 对话翻译
+ */
+function getCustomDialog(language, dialog) {
+    const lang_repo = customDialog[language] || customDialog["CN"] || {};
+    return lang_repo[dialog];
+}
+
 /** @type { Record<string, string> } */
 const mirrorGroups = {};
 
+/**
+ * 设置一个组的镜像组
+ * @param { CustomGroupName } newGroup
+ * @param { AssetGroupName } copyFrom
+ */
 export function mirrorGroupAssetDescription(newGroup, copyFrom) {
     mirrorGroups[newGroup] = copyFrom;
+}
+
+/**
+ * 还原镜像身体组的对话
+ * @param {string} dialog
+ */
+function reflectDialog(dialog) {
+    for (const [key, value] of Object.entries(mirrorGroups)) {
+        if (dialog.startsWith(key)) {
+            return dialog.replace(key, value);
+        }
+    }
+    return dialog;
 }
 
 export function setupTranslation() {
@@ -121,6 +151,18 @@ export function setupTranslation() {
             });
         });
 
+        AssetGroup.filter((g) => g.Name in getCustomGroups()).forEach((g) => {
+            /** @type {Mutable<AssetGroup>} */ (g).DynamicGroupName = /** @type {AssetGroupName} */ (
+                mirrorGroups[g.Name] || g.Name
+            );
+        });
+
+        Asset.filter((a) => a.Group.Name in getCustomGroups()).forEach((a) => {
+            /** @type {Mutable<Asset>} */ (a).DynamicGroupName = /** @type {AssetGroupName} */ (
+                mirrorGroups[a.Group.Name] || a.Group.Name
+            );
+        });
+
         Object.entries(mirrorGroups).forEach(([newGroup, copyFrom]) => {
             Asset.forEach((asset) => {
                 if (asset.Group.Name === newGroup) {
@@ -135,12 +177,7 @@ export function setupTranslation() {
     });
 
     ModManager.hookFunction("AssetTextGet", 1, (args, next) => {
-        return (
-            ((key) => {
-                const lang = TranslationLanguage == "TW" ? "CN" : TranslationLanguage;
-                const dialogs = customDialog[lang] || customDialog["CN"];
-                return dialogs && dialogs[key];
-            })(args[0]) || next(args)
-        );
+        args[0] = reflectDialog(args[0]);
+        return getCustomDialog(TranslationLanguage, args[0]) || next(args);
     });
 }
