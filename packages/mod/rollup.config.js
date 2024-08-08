@@ -85,7 +85,7 @@ const defaultPluins = (baseURL) => [
 
 const plugins = (debug, baseURL) => {
     const base = [...copySetting(baseURL), ...defaultPluins(baseURL)];
-    if (!debug) base.push(terser.terser());
+    if (!debug) base.push(terser({ sourceMap: true }));
     return base;
 };
 
