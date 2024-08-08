@@ -205,35 +205,86 @@ const assets = {
     ],
 };
 
+/** @type { Translation.GroupedEntries } */
 const translations = {
+    CN: {
+        Wings: {
+            蝴蝶结背饰_Luzi: "蝴蝶结背饰",
+        },
+        Glasses: {
+            单边眼镜左_Luzi: "单边眼镜左",
+            单边眼镜右_Luzi: "单边眼镜右",
+            眼镜卡_Luzi: "眼镜卡",
+        },
+        Socks: {
+            圣诞_Luzi: "圣诞",
+            踩脚袜_Luzi: "踩脚袜",
+            条纹袜_Luzi: "条纹袜",
+            条纹袜2_Luzi: "条纹袜2",
+        },
+        Panties: {
+            淫纹_Luzi: "淫纹",
+        },
+        BodyMarkings: {
+            淫纹_Luzi: "淫纹",
+            刻度尺_Luzi: "刻度尺",
+            番茄酱_Luzi: "番茄酱",
+        },
+        ItemHands: {
+            拳击手套_Luzi: "拳击手套",
+        },
+        ItemHandheld: {
+            电蚊拍_Luzi: "电蚊拍",
+            阿巴阿巴_Luzi: "阿巴阿巴",
+        },
+        ItemTorso: {
+            鞍_Luzi: "鞍",
+            缰绳_Luzi: "缰绳",
+        },
+        ItemDevices: {
+            树_Luzi: "树",
+        },
+    },
     EN: {
-        蝴蝶结背饰: "Bow Back Accessory",
-
-        单边眼镜左: "Monocle Left",
-        单边眼镜右: "Monocle Right",
-        眼镜卡: "Glasses Card",
-
-        圣诞: "Christmas",
-        踩脚袜: "Footstep Socks",
-        条纹袜: "Striped Socks",
-        条纹袜2: "Striped Socks 2",
-
-        淫纹: "Erotic Pattern",
-        刻度尺: "Ruler",
-        番茄酱: "Ketchup",
-
-        拳击手套: "Boxing Gloves",
-
-        电蚊拍: "Electric Fly Swatter",
-        阿巴阿巴: "Aba Aba",
-    
-        鞍: "Saddle",
-        缰绳: "Reins",
-        
-        树: "Tree",
+        Wings: {
+            蝴蝶结背饰_Luzi: "Bow Back Accessory",
+        },
+        Glasses: {
+            单边眼镜左_Luzi: "Monocle Left",
+            单边眼镜右_Luzi: "Monocle Right",
+            眼镜卡_Luzi: "Glasses Card",
+        },
+        Socks: {
+            圣诞_Luzi: "Christmas",
+            踩脚袜_Luzi: "Footstep Socks",
+            条纹袜_Luzi: "Striped Socks",
+            条纹袜2_Luzi: "Striped Socks 2",
+        },
+        Panties: {
+            淫纹_Luzi: "Lewd Crest",
+        },
+        BodyMarkings: {
+            淫纹_Luzi: "Lewd Crest",
+            刻度尺_Luzi: "Ruler",
+            番茄酱_Luzi: "Ketchup",
+        },
+        ItemHands: {
+            拳击手套_Luzi: "Boxing Gloves",
+        },
+        ItemHandheld: {
+            电蚊拍_Luzi: "Electric Fly Swatter",
+            阿巴阿巴_Luzi: "Aba Aba",
+        },
+        ItemTorso: {
+            鞍_Luzi: "Saddle",
+            缰绳_Luzi: "Reins",
+        },
+        ItemDevices: {
+            树_Luzi: "Tree",
+        },
     },
 };
 
 export default function () {
-    AssetManager.addGroupedAssets(assets);
+    AssetManager.addGroupedAssets(assets, translations);
 }
