@@ -71,25 +71,13 @@ const assets = {
             DefaultColor: ["#E975A0"],
         },
     ],
-    Liquid2_Luzi: [
-        {
-            Name: "无_Luzi", Random: false,
-        },
-        {
-            Name: "少_Luzi", Random: false,
-            Priority: 9,
-            DefaultColor: ["#D9DCFF"],
-        },
-        {
-            Name: "中_Luzi", Random: false,
-            Priority: 9,
-            DefaultColor: ["#D9DCFF"],
-        },
-    ],
     BodyMarkings: [
         {
-            Name: "淫纹_Luzi", Random: false, Gender: "F",
-            Top: -110, Left: 0,
+            Name: "淫纹_Luzi",
+            Random: false,
+            Gender: "F",
+            Top: -110,
+            Left: 0,
             Priority: 9,
             PoseMapping: {
                 BackBoxTie: PoseType.DEFAULT,
@@ -104,8 +92,11 @@ const assets = {
             DefaultColor: ["#E975A0"],
         },
         {
-            Name: "刻度尺_Luzi", Random: false, Gender: "F",
-            Top: 0, Left: 0,
+            Name: "刻度尺_Luzi",
+            Random: false,
+            Gender: "F",
+            Top: 0,
+            Left: 0,
             Priority: 9,
             PoseMapping: {
                 BackBoxTie: PoseType.DEFAULT,
@@ -120,8 +111,10 @@ const assets = {
             DefaultColor: ["#000000"],
         },
         {
-            Name: "番茄酱_Luzi", Random: false,
-            Top: 0, Left: 0,
+            Name: "番茄酱_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
             Priority: 9,
             PoseMapping: {
                 BackBoxTie: PoseType.DEFAULT,
@@ -134,56 +127,6 @@ const assets = {
                 Hogtied: PoseType.HIDE,
             },
         },
-    ],
-    BodyMarkings2_Luzi: [
-        {
-            Name: "淫纹_Luzi", Random: false, Gender: "F",
-            Top: -110, Left: 0,
-            Priority: 9,
-            PoseMapping: {
-                BackBoxTie: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-            },
-            DefaultColor: ["#E975A0"],
-        },
-        {
-            Name: "刻度尺_Luzi", Random: false, Gender: "F",
-            Top: 0, Left: 0,
-            Priority: 9,
-            PoseMapping: {
-                BackBoxTie: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-            },
-            DefaultColor: ["#000000"],
-        },
-        {
-            Name: "番茄酱_Luzi", Random: false,
-            Top: 0, Left: 0,
-            Priority: 9,
-            PoseMapping: {
-                BackBoxTie: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-            },
-        },
-
     ],
     ItemHands: [
         {
