@@ -96,6 +96,22 @@ const groups = [
 
 /** @type {CopyGroupInfo[]} */
 const copyGroups = [
+    // {
+    //     name: "Liquid2_Luzi",
+    //     mirror: "Liquid2_Luzi",
+    //     description: {
+    //         CN: "🍔液体",
+    //         EN: "🍔Liquid",
+    //     },
+    // },
+    // {
+    //     name: "BodyMarkings2_Luzi",
+    //     mirror: "BodyMarkings2_Luzi",
+    //     description: {
+    //         CN: "🍔身体涂画2",
+    //         EN: "🍔BodyMarkings2",
+    //     },
+    // },
     {
         name: "Cloth_笨笨蛋Luzi",
         mirror: "Cloth",
