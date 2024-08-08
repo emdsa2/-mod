@@ -138,7 +138,7 @@ const extended = {
     ],
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemDevices开腿展示架_LuziSelectBase: "选择开腿展示架配置",

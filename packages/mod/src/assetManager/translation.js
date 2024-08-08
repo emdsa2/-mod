@@ -2,7 +2,7 @@ import ModManager from "../modManager";
 import { getCustomAssets } from "./customAssets";
 import { getCustomGroups } from "./customGroups";
 
-/** @type { TranslationRecord<CustomGroupName, Record<string, string>> } */
+/** @type { Translation.CustomRecord<CustomGroupName, Record<string, string>> } */
 const assetNames = {};
 
 /**
@@ -19,15 +19,34 @@ export function setAssetDescription(language, group, asset, description) {
 }
 
 /**
+ * 添加很多物品描述(显示名称)
+ * @param { Translation.GroupedEntries | undefined } entries 翻译条目，必须提供
+ */
+export function setManyAssetDescriptionEntries(entries) {
+    if (!entries) return;
+    Object.entries(entries).forEach(([lang, value]) => {
+        Object.entries(value).forEach(([group, content]) => {
+            Object.entries(content).forEach(([assetName, desc]) => {
+                setAssetDescription(
+                    /** @type {ServerChatRoomLanguage} */ (lang),
+                    /** @type {CustomGroupName} */ (group),
+                    assetName,
+                    desc
+                );
+            });
+        });
+    });
+}
+
+/**
  * 添加物品描述(显示名称)
  * @param { CustomGroupName } group 身体组
  * @param { string } asset 物品名
- * @param { TranslationEntry | undefined } [entries] 翻译条目，如果不提供则使用默认值
+ * @param { Translation.Entry} entries 翻译条目，如果不提供则使用默认值
  */
-export function setAssetDescriptionEntries(group, asset, entries = undefined) {
-    if (!entries) entries = { CN: asset.replace("_Luzi", "") };
-    Object.entries(entries).forEach(([key, value]) => {
-        setAssetDescription(/** @type {ServerChatRoomLanguage} */ (key), group, asset, value);
+export function setAssetDescriptionEntries(group, asset, entries) {
+    Object.entries(entries).forEach(([lang, desc]) => {
+        setAssetDescription(/** @type {ServerChatRoomLanguage} */ (lang), group, asset, desc);
     });
 }
 
@@ -39,18 +58,18 @@ export function setAssetDescriptionEntries(group, asset, entries = undefined) {
  * @returns { string | undefined } 物品描述(显示名称)
  */
 export function getAssetDescription(language, group, asset) {
-    const lang_repo = assetNames[language] || assetNames["CN"] || {};
-    const group_repo = lang_repo[group] || {};
-    return group_repo[asset];
+    /** @type { (lang: string, group: CustomGroupName, asset: string) => string | undefined } */
+    const getDescRaw = (lang, group, asset) => assetNames[lang]?.[group]?.[asset];
+    return getDescRaw(language, group, asset) || getDescRaw("CN", group, asset);
 }
 
-/** @type { TranslationCustomDialog } */
+/** @type { Translation.Dialog } */
 const groupNames = {};
 
 /**
  * 添加身体组描述(显示名称)
  * @param { CustomGroupName } group 身体组
- * @param { TranslationEntry | undefined } [entries] 翻译条目，如果不提供则使用默认值
+ * @param { Translation.Entry | undefined } [entries] 翻译条目，如果不提供则使用默认值
  */
 export function setGroupDescription(group, entries = undefined) {
     if (!entries) entries = { CN: group.replace("_Luzi", "") };
@@ -71,12 +90,12 @@ export function getGroupDescription(language, group) {
     return lang_repo[group];
 }
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const customDialog = {};
 
 /**
  * 添加自定义对话，如果包含ItemTorso或ItemTorso2，会自动添加镜像
- * @param {TranslationCustomDialog} dialog
+ * @param {Translation.Dialog} dialog
  */
 export function addCustomDialog(dialog) {
     Object.entries(dialog).forEach(([key, value]) => {

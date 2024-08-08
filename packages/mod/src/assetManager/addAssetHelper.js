@@ -7,11 +7,12 @@ import { setAssetDescriptionEntries } from "./translation";
  * @param {AssetGroup} group
  * @param {CustomAssetDefinition} asset
  * @param {ExtendedItemMainConfig} extendedConfig
- * @param {TranslationEntry} [description]
+ * @param {Translation.Entry} [description]
  */
 function addAssetRaw(group, asset, extendedConfig, description = undefined) {
     AssetAdd(group, /** @type {AssetDefinition} */ (asset), extendedConfig);
     if (description) setAssetDescriptionEntries(group.Name, asset.Name, description);
+    else setAssetDescriptionEntries(group.Name, asset.Name, { CN: asset.Name.replace(/_.*?Luzi$/, "") });
     flagCustomAsset(group.Name, asset.Name);
 }
 
@@ -22,7 +23,7 @@ function addAssetRaw(group, asset, extendedConfig, description = undefined) {
  * @param {AssetGroup | undefined} group2
  * @param {CustomAssetDefinition} asset
  * @param {AssetArchetypeConfig} extended
- * @param {TranslationEntry} [description]
+ * @param {Translation.Entry} [description]
  */
 function addAssetWithMirror(group1, group2, asset, extended = undefined, description = undefined) {
     const extendedConfig = extended ? { [group1.Name]: { [asset.Name]: extended } } : {};
@@ -55,7 +56,7 @@ function addAssetWithMirror(group1, group2, asset, extended = undefined, descrip
  * @param {CustomGroupName} group
  * @param {CustomAssetDefinition} asset
  * @param {AssetArchetypeConfig} [extended]
- * @param {TranslationEntry} [description]
+ * @param {Translation.Entry} [description]
  */
 function addAssetBase(group, asset, extended = undefined, description = undefined) {
     const group_obj = AssetGroupGet("Female3DCG", /** @type {AssetGroupName}*/ (group));
@@ -74,7 +75,7 @@ function addAssetBase(group, asset, extended = undefined, description = undefine
  * @param {CustomGroupName} group
  * @param {CustomAssetDefinition} asset
  * @param {AssetArchetypeConfig} [extended]
- * @param {TranslationEntry} [description]
+ * @param {Translation.Entry} [description]
  */
 export function addAsset(group, asset, extended = undefined, description = undefined) {
     queueAfterAssetLoad(() => addAssetBase(group, asset, extended, description));

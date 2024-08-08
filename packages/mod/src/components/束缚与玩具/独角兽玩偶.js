@@ -177,7 +177,7 @@ const extended = {
     },
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemDevices独角兽玩偶_LuziSelect: "选择独角兽玩偶配置",

@@ -106,21 +106,40 @@ const assets = [
     },
 ];
 
+/** @type {Translation.GroupedEntries} */
 const translations = {
+    CN: {
+        ItemHood: {
+            绷带头部_Luzi: "绷带头部",
+            毛毯头部_Luzi: "毛毯头部",
+        },
+        ItemTorso: {
+            胶带全身_Luzi: "胶带全身",
+            睡袋改_Luzi: "睡袋改",
+            全包毛毯改_Luzi: "全包毛毯改",
+            绷带全身_Luzi: "绷带全身",
+        },
+    },
     EN: {
-        绷带头部: "Bandage Head",
-        毛毯头部: "Blanket Head",
-
-        胶带全身: "Tape Full Body",
-        睡袋改: "Modified Sleeping Bag",
-        全包毛毯改: "Fully Wrapped Blanket",
-        绷带全身: "Bandage Full Body",
+        ItemHood: {
+            绷带头部_Luzi: "Bandage Head",
+            毛毯头部_Luzi: "Blanket Head",
+        },
+        ItemTorso: {
+            胶带全身_Luzi: "Tape Full Body",
+            睡袋改_Luzi: "Modified Sleeping Bag",
+            全包毛毯改_Luzi: "Fully Wrapped Blanket",
+            绷带全身_Luzi: "Bandage Full Body",
+        },
     },
 };
 
 export default function () {
-    AssetManager.addGroupedAssets({
-        ItemTorso: assets,
-        ItemHood: head_assets,
-    });
+    AssetManager.addGroupedAssets(
+        {
+            ItemTorso: assets,
+            ItemHood: head_assets,
+        },
+        translations
+    );
 }

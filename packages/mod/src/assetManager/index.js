@@ -4,7 +4,7 @@ import { setupCustomAssets } from "./customAssets";
 import { setupCustomGroups } from "./customGroups";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { queueAfterAssetLoad, setupQueue } from "./setupQueue";
-import { addCustomDialog, setGroupDescription, setupTranslation } from "./translation";
+import { addCustomDialog, setManyAssetDescriptionEntries, setupTranslation } from "./translation";
 
 export default class AssetManager {
     /**
@@ -12,29 +12,24 @@ export default class AssetManager {
      * @param { CustomGroupName } group 物品组
      * @param { CustomAssetDefinition } asset 物品定义
      * @param { AssetArchetypeConfig } [extended] 可选设置物品扩展属性
-     * @param { TranslationEntry } [description] 可选设置物品名字
+     * @param { Translation.Entry } [description] 可选设置物品名字翻译
      */
     static addAsset(group, asset, extended = undefined, description = undefined) {
         addAsset(group, asset, extended, description);
     }
 
     /**
-     * 添加很多物品
-     * @param { CustomGroupName } group
-     * @param { CustomAssetDefinition[] } assets
-     */
-    static addAssets(group, assets) {
-        assets.forEach((asset) => addAsset(group, asset));
-    }
-
-    /**
      * 添加很多区域的很多物品
-     * @param { CustomGroupedAssetDefinitions } groupedAssets
+     * @param { CustomGroupedAssetDefinitions } groupedAssets 很多很多物品！
+     * @param { Translation.GroupedEntries } [description] 很多很多物品的名字翻译！
      */
-    static addGroupedAssets(groupedAssets) {
+    static addGroupedAssets(groupedAssets, description = undefined) {
         Object.entries(groupedAssets).forEach(([group, assets]) => {
-            AssetManager.addAssets(/**@type {CustomGroupName}*/ (group), assets);
+            assets.forEach((asset) => {
+                addAsset(/**@type {CustomGroupName}*/ (group), asset);
+            });
         });
+        setManyAssetDescriptionEntries(description);
     }
 
     /**
@@ -49,7 +44,7 @@ export default class AssetManager {
 
     /**
      * 添加自定义对话，如果包含ItemTorso或ItemTorso2，会自动添加镜像
-     * @param {TranslationCustomDialog} dialog
+     * @param {Translation.Dialog} dialog
      */
     static addCustomDialog(dialog) {
         addCustomDialog(dialog);
@@ -66,7 +61,7 @@ export default class AssetManager {
     /**
      * 添加新的身体组
      * @param {CustomGroupDefinition} groupDef
-     * @param {TranslationEntry} [description]
+     * @param {Translation.Entry} [description]
      */
     static addGroup(groupDef, description = undefined) {
         addGroup(groupDef, description);
@@ -76,7 +71,7 @@ export default class AssetManager {
      * 添加新的身体组，从已有组复制配置
      * @param { CustomGroupName } newGroup
      * @param { AssetGroupName } copyFrom
-     * @param { TranslationEntry } [description]
+     * @param { Translation.Entry } [description]
      */
     static addCopyGroup(newGroup, copyFrom, description = undefined) {
         addCopyGroup(newGroup, copyFrom, description);

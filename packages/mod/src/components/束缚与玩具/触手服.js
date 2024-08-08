@@ -228,7 +228,7 @@ const extended = {
     ],
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialogs = {
     CN: {
         ItemTorso触手服_LuziSelectBase: "选择配置",

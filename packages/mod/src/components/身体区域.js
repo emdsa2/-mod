@@ -1,117 +1,113 @@
 import AssetManager from "../assetManager";
 
-/** @type { CustomGroupDefinition[]} */
+/** @type { {groupDef: CustomGroupDefinition, description: Translation.Entry }[]} */
 const groups = [
     {
-        Group: "Liquid2_Luzi",
-        ParentGroup: "BodyLower",
-        PoseMapping: { ...AssetPoseMapping.BodyLower },
-        Priority: 53,
-        Left: 0,
-        Top: 0,
-        Asset: [
-            {
-                Name: "无_Luzi",
-                Random: false,
-            },
-            {
-                Name: "少_Luzi",
-                Random: false,
-                Priority: 9,
-                DefaultColor: ["#D9DCFF"],
-            },
-            {
-                Name: "中_Luzi",
-                Random: false,
-                Priority: 9,
-                DefaultColor: ["#D9DCFF"],
-            },
-        ],
+        groupDef: {
+            Group: "Liquid2_Luzi",
+            ParentGroup: "BodyLower",
+            PoseMapping: { ...AssetPoseMapping.BodyLower },
+            Priority: 53,
+            Left: 0,
+            Top: 0,
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+                {
+                    Name: "少_Luzi",
+                    Random: false,
+                    Priority: 9,
+                    DefaultColor: ["#D9DCFF"],
+                },
+                {
+                    Name: "中_Luzi",
+                    Random: false,
+                    Priority: 9,
+                    DefaultColor: ["#D9DCFF"],
+                },
+            ],
+        },
+        description: {
+            CN: "🍔液体",
+            EN: "🍔Liquid",
+        },
     },
     {
-        Group: "BodyMarkings2_Luzi",
-        Priority: 9,
-        Clothing: true,
-        Default: false,
-        Random: false,
-        Asset: [
-            {
-                Name: "淫纹_Luzi",
-                Random: false,
-                Gender: "F",
-                Top: -110,
-                Left: 0,
-                Priority: 9,
-                PoseMapping: {
-                    BackBoxTie: PoseType.DEFAULT,
-                    BackCuffs: PoseType.DEFAULT,
-                    BackElbowTouch: PoseType.DEFAULT,
-                    OverTheHead: PoseType.DEFAULT,
-                    TapedHands: PoseType.DEFAULT,
-                    Yoked: PoseType.DEFAULT,
-                    AllFours: PoseType.HIDE,
-                    Hogtied: PoseType.HIDE,
+        groupDef: {
+            Group: "BodyMarkings2_Luzi",
+            Priority: 9,
+            Clothing: true,
+            Default: false,
+            Random: false,
+            Asset: [
+                {
+                    Name: "淫纹_Luzi",
+                    Random: false,
+                    Gender: "F",
+                    Top: -110,
+                    Left: 0,
+                    Priority: 9,
+                    PoseMapping: {
+                        BackBoxTie: PoseType.DEFAULT,
+                        BackCuffs: PoseType.DEFAULT,
+                        BackElbowTouch: PoseType.DEFAULT,
+                        OverTheHead: PoseType.DEFAULT,
+                        TapedHands: PoseType.DEFAULT,
+                        Yoked: PoseType.DEFAULT,
+                        AllFours: PoseType.HIDE,
+                        Hogtied: PoseType.HIDE,
+                    },
+                    DefaultColor: ["#E975A0"],
                 },
-                DefaultColor: ["#E975A0"],
-            },
-            {
-                Name: "刻度尺_Luzi",
-                Random: false,
-                Gender: "F",
-                Top: 0,
-                Left: 0,
-                Priority: 9,
-                PoseMapping: {
-                    BackBoxTie: PoseType.DEFAULT,
-                    BackCuffs: PoseType.DEFAULT,
-                    BackElbowTouch: PoseType.DEFAULT,
-                    OverTheHead: PoseType.DEFAULT,
-                    TapedHands: PoseType.DEFAULT,
-                    Yoked: PoseType.DEFAULT,
-                    AllFours: PoseType.HIDE,
-                    Hogtied: PoseType.HIDE,
+                {
+                    Name: "刻度尺_Luzi",
+                    Random: false,
+                    Gender: "F",
+                    Top: 0,
+                    Left: 0,
+                    Priority: 9,
+                    PoseMapping: {
+                        BackBoxTie: PoseType.DEFAULT,
+                        BackCuffs: PoseType.DEFAULT,
+                        BackElbowTouch: PoseType.DEFAULT,
+                        OverTheHead: PoseType.DEFAULT,
+                        TapedHands: PoseType.DEFAULT,
+                        Yoked: PoseType.DEFAULT,
+                        AllFours: PoseType.HIDE,
+                        Hogtied: PoseType.HIDE,
+                    },
+                    DefaultColor: ["#000000"],
                 },
-                DefaultColor: ["#000000"],
-            },
-            {
-                Name: "番茄酱_Luzi",
-                Random: false,
-                Top: 0,
-                Left: 0,
-                Priority: 9,
-                PoseMapping: {
-                    BackBoxTie: PoseType.DEFAULT,
-                    BackCuffs: PoseType.DEFAULT,
-                    BackElbowTouch: PoseType.DEFAULT,
-                    OverTheHead: PoseType.DEFAULT,
-                    TapedHands: PoseType.DEFAULT,
-                    Yoked: PoseType.DEFAULT,
-                    AllFours: PoseType.HIDE,
-                    Hogtied: PoseType.HIDE,
+                {
+                    Name: "番茄酱_Luzi",
+                    Random: false,
+                    Top: 0,
+                    Left: 0,
+                    Priority: 9,
+                    PoseMapping: {
+                        BackBoxTie: PoseType.DEFAULT,
+                        BackCuffs: PoseType.DEFAULT,
+                        BackElbowTouch: PoseType.DEFAULT,
+                        OverTheHead: PoseType.DEFAULT,
+                        TapedHands: PoseType.DEFAULT,
+                        Yoked: PoseType.DEFAULT,
+                        AllFours: PoseType.HIDE,
+                        Hogtied: PoseType.HIDE,
+                    },
                 },
-            },
-        ],
+            ],
+        },
+        description: {
+            CN: "🍔身体涂画2",
+            EN: "🍔BodyMarkings2",
+        },
     },
 ];
-// TODO saki赶快修这个
+
 /** @type {CopyGroupInfo[]} */
 const copyGroups = [
-    // {
-    //     name: "Liquid2_Luzi",
-    //     mirror: "Liquid2_Luzi",
-    //     description: {
-    //         CN: "🍔液体",
-    //         EN: "🍔Liquid",
-    //     },
-    // },
-    // {
-    //     name: "BodyMarkings2_Luzi",
-    //     mirror: "BodyMarkings2_Luzi",
-    //     description: {
-    //         CN: "🍔身体涂画2",
-    //         EN: "🍔BodyMarkings2",
-    //     },
-    // },
     {
         name: "Cloth_笨笨蛋Luzi",
         mirror: "Cloth",
@@ -228,7 +224,7 @@ const copyGroups = [
 
 export default function () {
     groups.forEach((definition) => {
-        AssetManager.addGroup(definition);
+        AssetManager.addGroup(definition.groupDef, definition.description);
     });
 
     copyGroups.forEach((definition) => {

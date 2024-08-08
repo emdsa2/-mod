@@ -25,12 +25,6 @@ const assets = [
     },
 ];
 
-// const translations = {
-//     EN: {
-        
-//     },
-// };
-
 export default function () {
     // ================================================================================
     // ================================================================================
@@ -88,5 +82,5 @@ export default function () {
         return next([source, canvas, X, Y, options]);
     });
 
-    AssetManager.addAssets("BodyMarkings2_Luzi", assets);
+    AssetManager.addGroupedAssets({ BodyMarkings2_Luzi: assets });
 }

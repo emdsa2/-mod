@@ -149,7 +149,7 @@ const extended = {
     ],
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemAddon后背_LuziSelect: "选择后背配置",

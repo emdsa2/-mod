@@ -86,7 +86,7 @@ const extended = {
     ],
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemVulva更多有线跳蛋_LuziSelectBase: "选择配置",

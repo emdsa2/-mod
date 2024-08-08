@@ -73,20 +73,35 @@ const icons = {
         "Assets/Female3DCG/TailStraps/Preview/TailStrap.png",
 };
 
+/** @type { Translation.GroupedEntries } */
 const translations = {
+    CN: {
+        TailStraps: {
+            穿戴式狗尾镜像_Luzi: "穿戴式狗尾镜像",
+            白色穿戴式狼尾镜像_Luzi: "白色穿戴式狼尾镜像",
+            穿戴式浅色猫尾镜像_Luzi: "穿戴式浅色猫尾镜像",
+            穿戴式软小狗尾镜像_Luzi: "穿戴式软小狗尾镜像",
+            大型穿戴式狼尾镜像_Luzi: "大型穿戴式狼尾镜像",
+            小型穿戴式狼尾镜像_Luzi: "小型穿戴式狼尾镜像",
+            小型穿戴式软猫尾镜像_Luzi: "小型穿戴式软猫尾镜像",
+            穿戴式猫尾镜像_Luzi: "穿戴式猫尾镜像",
+        },
+    },
     EN: {
-        穿戴式狗尾镜像: "Wearable Dog Tail",
-        白色穿戴式狼尾镜像: "White Wearable Wolf Tail",
-        穿戴式浅色猫尾镜像: "Light-colored Wearable Cat Tail",
-        穿戴式软小狗尾镜像: "Soft Wearable Puppy Tail",
-        大型穿戴式狼尾镜像: "Large Wearable Wolf Tail",
-        小型穿戴式狼尾镜像: "Small Wearable Wolf Tail",
-        小型穿戴式软猫尾镜像: "Small Soft Wearable Cat Tail",
-        穿戴式猫尾镜像: "Wearable Cat Tail",
+        TailStraps: {
+            穿戴式狗尾镜像_Luzi: "Wearable Dog Tail",
+            白色穿戴式狼尾镜像_Luzi: "White Wearable Wolf Tail",
+            穿戴式浅色猫尾镜像_Luzi: "Light-colored Wearable Cat Tail",
+            穿戴式软小狗尾镜像_Luzi: "Soft Wearable Puppy Tail",
+            大型穿戴式狼尾镜像_Luzi: "Large Wearable Wolf Tail",
+            小型穿戴式狼尾镜像_Luzi: "Small Wearable Wolf Tail",
+            小型穿戴式软猫尾镜像_Luzi: "Small Soft Wearable Cat Tail",
+            穿戴式猫尾镜像_Luzi: "Wearable Cat Tail",
+        },
     },
 };
 
 export default function () {
-    AssetManager.addAssets("TailStraps", assets);
+    AssetManager.addGroupedAssets({ TailStraps: assets }, translations);
     AssetManager.addImgMapping(icons);
 }

@@ -79,7 +79,7 @@ const icons = {
     "Screens/Inventory/ItemDevices/窝瓜_Luzi/有盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemDevices窝瓜_LuziSelect: "选择窝配置",

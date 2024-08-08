@@ -20,12 +20,20 @@ const assets = {
     ],
 };
 
+/** @type { Translation.GroupedEntries } */
 const translations = {
+    CN: {
+        ItemDevices: {
+            猪猪_Luzi: "猪猪",
+        },
+    },
     EN: {
-        猪猪: "Piggy",
+        ItemDevices: {
+            猪猪_Luzi: "Piggy",
+        },
     },
 };
 
 export default function () {
-    AssetManager.addGroupedAssets(assets);
+    AssetManager.addGroupedAssets(assets, translations);
 }

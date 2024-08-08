@@ -91,18 +91,30 @@ const assets = {
     ],
 };
 
+/** @type {Translation.GroupedEntries} */
 const translations = {
+    CN: {
+        ItemDevices: {
+            被子左边_Luzi: "被子左边",
+            被子右边_Luzi: "被子右边",
+            床左边_Luzi: "床左边",
+            床右边_Luzi: "床右边",
+        },
+    },
     EN: {
-        被子左边: "Left Side of Quilt",
-        被子右边: "Right Side of Quilt",
-        床左边: "Left Side of Bed",
-        床右边: "Right Side of Bed",
+        ItemDevices: {
+            被子左边_Luzi: "Left Side of Quilt",
+            被子右边_Luzi: "Right Side of Quilt",
+            床左边_Luzi: "Left Side of Bed",
+            床右边_Luzi: "Right Side of Bed",
+        },
     },
 };
-// TODO saki赶快修这个
-export default function () {
-    AssetManager.addGroupedAssets(assets);
 
+export default function () {
+    AssetManager.addGroupedAssets(assets, translations);
+
+    // FIXME 角色预览显示不正确
     // 拓展绘图空间
     ModManager.patchFunction("GLDrawLoad", {
         "GLDrawCanvas.width = 1000;": "GLDrawCanvas.width = 2000;",
@@ -123,9 +135,9 @@ export default function () {
         "TempCanvas.canvas.width = CanvasDrawWidth;": "TempCanvas.canvas.width = CanvasDrawWidth * 2;",
     });
 
-    ModManager.patchFunction("DrawCharacterSegment", {
-        "DrawCanvasSegment(C.Canvas, Left": "DrawCanvasSegment(C.Canvas, Left + 250",
-    });
+    // ModManager.patchFunction("DrawCharacterSegment", {
+    //     "DrawCanvasSegment(C.Canvas, Left": "DrawCanvasSegment(C.Canvas, Left + 250",
+    // });
 
     ModManager.afterInit(async () => {
         function sleep(ms) {

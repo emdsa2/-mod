@@ -174,7 +174,7 @@ const extended = {
     },
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemDevices拳击袋_LuziSelect: "选择拳击袋配置",

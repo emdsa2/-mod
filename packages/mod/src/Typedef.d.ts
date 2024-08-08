@@ -25,11 +25,50 @@ type CustomGroupedAssetDefinitions = Partial<Record<CustomGroupName, CustomAsset
 
 type CustomDialog = Record<string, string>;
 
-type TranslationCustomDialog = Partial<Record<ServerChatRoomLanguage, CustomDialog>>;
+namespace Translation {
 
-type TranslationEntry = Partial<Record<ServerChatRoomLanguage, string>>;
+    type CustomRecord<T extends string, U> = Partial<Record<ServerChatRoomLanguage, Partial<Record<T, U>>>>;
 
-type TranslationRecord<T extends string, U> = Partial<Record<ServerChatRoomLanguage, Partial<Record<T, U>>>>;
+    /**
+     * 物品描述翻译条目
+     * @example 
+     * { CN: "中文名字", EN: "English Name" }
+     */
+    type Entry = Partial<Record<ServerChatRoomLanguage, string>>;
+
+    /**
+     * 自定义的对话条目
+     * 
+     * @example 
+     * // 为对话条目 "ItemTorso抚摸" 定义翻译
+     * { 
+     *   CN: {
+     *      "ItemTorso抚摸":"抚摸"
+     *   }, 
+     *   EN: {
+     *      "ItemTorso抚摸":"Caresse"
+     *   } 
+     * }
+     * 
+     */
+    type Dialog = Partial<Record<ServerChatRoomLanguage, CustomDialog>>;
+
+
+    /**
+     * 按组分类的，含有很多物品的，描述翻译条目
+     * @example
+     * // 为 "ItemDevices" 组的 "物品名字_Luzi" 物品定义翻译
+     * { 
+     *     CN: {
+     *         "ItemDevices" : { "物品名字_Luzi": "中文名字"}
+     *     },
+     *     EN: {
+     *         "ItemDevices" : { "物品名字_Luzi": "English Name"}
+     *    }
+     * }
+     */
+    type GroupedEntries = CustomRecord<CustomGroupName, Record<string, string>>;
+}
 
 type Function = (...args: any[]) => any;
 

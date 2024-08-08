@@ -163,7 +163,7 @@ const extended = {
     },
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const dialog = {
     CN: {
         ItemDevices垃圾桶_LuziSelect: "选择垃圾桶配置",

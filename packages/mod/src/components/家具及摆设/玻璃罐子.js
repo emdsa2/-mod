@@ -135,7 +135,7 @@ const extended = {
     ChangeWhenLocked: false,
 };
 
-/** @type {TranslationCustomDialog} */
+/** @type {Translation.Dialog} */
 const customDialog = {
     CN: {
         ItemDevices玻璃罐子_LuziSetc0: "SourceCharacter打开了DestinationCharacter的罐子",
