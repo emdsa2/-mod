@@ -5,5 +5,4 @@ import { ModInfo } from "./rollupHelper";
 import { setup } from "./components";
 
 ModManager.init(ModInfo);
-AssetManager.init();
-setup();
+AssetManager.init(setup);

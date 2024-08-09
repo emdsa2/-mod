@@ -1,4 +1,5 @@
 import AssetManager from "../../assetManager";
+import { Path } from "../../path";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -75,8 +76,8 @@ const extended = {
 
 /** @type {Record<string, string>} */
 const icons = {
-    "Screens/Inventory/ItemDevices/窝瓜_Luzi/没盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/ItemDevices/窝瓜_Luzi/有盖子.png": "https://emdsa2.github.io/-mod/image/空.png",
+    "Screens/Inventory/ItemDevices/窝瓜_Luzi/没盖子.png": Path.空png,
+    "Screens/Inventory/ItemDevices/窝瓜_Luzi/有盖子.png": Path.空png,
 };
 
 /** @type {Translation.Dialog} */

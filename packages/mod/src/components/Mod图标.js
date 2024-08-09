@@ -1,20 +1,21 @@
 import ModManager from "../modManager";
+import { Path } from "../path";
 
 const status = Object.freeze({
     echo: {
         msg: "╰(*°▽°*)╯",
         flag: "ECHO",
-        img: "https://emdsa2.github.io/-mod/image/服装拓展.png",
+        img: Path.resolve("image/服装拓展.png"),
     },
     echoBeta: {
         msg: "╰(*°▽°*)╯BETA",
         flag: "ECHOBETA",
-        img: "https://emdsa2.github.io/-mod/image/服装拓展beta.png",
+        img: Path.resolve("image/服装拓展beta.png"),
     },
     echo2: {
         msg: "(._.)",
         flag: "ECHO2",
-        img: "https://emdsa2.github.io/-mod/image/动作拓展.png",
+        img: Path.resolve("image/动作拓展.png"),
     },
 });
 

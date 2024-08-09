@@ -1,4 +1,5 @@
 import AssetManager from "../../assetManager";
+import { Path } from "../../path";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -150,10 +151,10 @@ const extended = {
 
 /** @type {Record<string, string>} */
 const icons = {
-    "Screens/Inventory/ItemTorso/拘束套装_Luzi/无.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/ItemTorso/拘束套装_Luzi/乳胶衣.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/ItemTorso/拘束套装_Luzi/透视紧身衣.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/ItemTorso/拘束套装_Luzi/紧身衣.png": "https://emdsa2.github.io/-mod/image/空.png",
+    "Screens/Inventory/ItemTorso/拘束套装_Luzi/无.png": Path.空png,
+    "Screens/Inventory/ItemTorso/拘束套装_Luzi/乳胶衣.png": Path.空png,
+    "Screens/Inventory/ItemTorso/拘束套装_Luzi/透视紧身衣.png": Path.空png,
+    "Screens/Inventory/ItemTorso/拘束套装_Luzi/紧身衣.png": Path.空png,
 };
 
 const dialogs = {
