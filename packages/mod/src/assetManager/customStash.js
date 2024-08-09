@@ -45,3 +45,30 @@ export function getCustomGroups() {
 export function getCustomAssets() {
     return customAssets;
 }
+
+export function enableCustomAssets() {
+    let dialogBuildFlag = false;
+    ModManager.hookFunction("DialogInventoryBuild", 1, (args, next) => {
+        if (args[2]) return next(args);
+
+        dialogBuildFlag = true;
+        next(args);
+        dialogBuildFlag = false;
+    });
+
+    ModManager.hookFunction("DialogInventoryAdd", 1, (args, next) => {
+        next(args);
+        if (dialogBuildFlag) {
+            dialogBuildFlag = false;
+
+            const groupName = args[1].Asset.Group.Name;
+            const added = new Set(DialogInventory.map((item) => item.Asset.Name));
+
+            if (customAssets[groupName]) {
+                Object.entries(customAssets[groupName])
+                    .filter(([assetName]) => !added.has(assetName))
+                    .forEach(([_, asset]) => DialogInventoryAdd(args[0], { Asset: asset }, false));
+            }
+        }
+    });
+}

@@ -4,6 +4,7 @@ import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
 import { addCustomDialog, setupCustomDialog } from "./dialog";
 import { setupEntries } from "./entries";
+import { enableCustomAssets } from "./customStash";
 
 export default class AssetManager {
     /**
@@ -86,6 +87,8 @@ export default class AssetManager {
         setupImgMapping();
         setupCustomDialog();
         setupEntries();
+
+        enableCustomAssets();
 
         componentSetup();
         runSetupLoad();
