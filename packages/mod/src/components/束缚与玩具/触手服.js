@@ -67,7 +67,6 @@ const asset = {
     DynamicScriptDraw: true,
     RemoveTime: 5,
     Time: 10,
-    Value: 30,
     Layer: [
         {
             AllowTypes: { d: 0 },

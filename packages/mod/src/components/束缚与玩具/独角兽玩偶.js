@@ -5,7 +5,6 @@ const asset = {
     Name: "独角兽玩偶_Luzi",
     Random: false,
     Priority: 58,
-    Value: 40,
     Difficulty: -2,
     Time: 15,
     RemoveTime: 10,
