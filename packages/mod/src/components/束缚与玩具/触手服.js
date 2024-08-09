@@ -314,6 +314,7 @@ const dialogs = {
 
 const translations = { CN: "触手服", EN: "Tentacle Suit" };
 
+// FIXME 触手服不显示
 export default function () {
     AssetManager.addAsset("ItemTorso", asset, extended, translations);
     AssetManager.addCustomDialog(dialogs);
