@@ -1,4 +1,5 @@
 import AssetManager from "../../assetManager";
+import { Path } from "../../path";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -84,10 +85,10 @@ const extended = {
 
 /** @type {Record<string, string>} */
 const icons = {
-    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q0.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q1.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w0.png": "https://emdsa2.github.io/-mod/image/空.png",
-    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w1.png": "https://emdsa2.github.io/-mod/image/空.png",
+    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q0.png": Path.空png,
+    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/q1.png": Path.空png,
+    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w0.png": Path.空png,
+    "Screens/Inventory/SuitLower/鱼鱼尾_Luzi/w1.png": Path.空png,
 };
 
 const descriptions = {
@@ -120,4 +121,5 @@ const translations = { CN: "鱼鱼尾", EN: "Fish Tail" };
 export default function () {
     AssetManager.addAsset("SuitLower", asset, extended, translations);
     AssetManager.addCustomDialog(descriptions);
+    AssetManager.addImgMapping(icons);
 }
