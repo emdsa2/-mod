@@ -42,12 +42,24 @@ const assets = {
 };
 
 const translations = {
+    CN: {
+        Suit: {
+            乳胶衣上_Luzi: "乳胶衣上",
+        },
+        SuitLower: {
+            乳胶衣下_Luzi: "乳胶衣下",
+        },
+    },
     EN: {
-        乳胶衣上: "Latex Top",
-        乳胶衣下: "Latex Bottom",
+        Suit: {
+            乳胶衣上_Luzi: "Latex Top",
+        },
+        SuitLower: {
+            乳胶衣下_Luzi: "Latex Bottom",
+        },
     },
 };
 
 export default function () {
-    AssetManager.addGroupedAssets(assets);
+    AssetManager.addGroupedAssets(assets, translations);
 }
