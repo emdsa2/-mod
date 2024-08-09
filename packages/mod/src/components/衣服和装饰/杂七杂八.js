@@ -33,13 +33,6 @@ const assets = {
     ],
     Socks: [
         {
-            Name: "圣诞_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-            Layer: [{ Name: "袜子" }, { Name: "绒毛" }],
-        },
-        {
             Name: "踩脚袜_Luzi",
             Random: false,
             Top: 0,
