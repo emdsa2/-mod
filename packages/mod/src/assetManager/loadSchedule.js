@@ -1,5 +1,6 @@
 import log from "../log";
 import ModManager from "../modManager";
+import { getCustomAssets, getCustomGroups } from "./customStash";
 
 let isGroupLoaded = false;
 
@@ -136,15 +137,18 @@ export function requireGroup(group, resolve) {
  */
 export function runSetupLoad() {
     const mLoadGroup = () => {
+        log.info(`加载开始`);
+        const time = Date.now();
         // 先执行所有的直接加载事件（一般是自定义的组加载）
         runGroupLoad();
         isGroupLoaded = true;
-
         // 加载所有的 AssetDefine 和 ExtenedConfig
         AssetGroup.forEach((group) => runAssetDefsLoad(group));
-
         // 再执行所有组的加载完整事件（一般是通过 requireGroup 添加的自定义的物品加载）
         AssetGroup.forEach((group) => runAssetLoad(group));
+
+        const time2 = Date.now();
+        log.info(`加载完成，耗时 ${time2 - time}ms`);
     };
 
     if (AssetGroup.length > 50) {
