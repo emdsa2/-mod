@@ -1,7 +1,7 @@
 import { loadAsset } from "./assetUtils";
 import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
-import { setupLoadSchedule } from "./loadSchedule";
+import { runSetupLoad } from "./loadSchedule";
 import { addCustomDialog, setupCustomDialog } from "./dialog";
 import { setupEntries } from "./entries";
 
@@ -67,11 +67,17 @@ export default class AssetManager {
         mirrorGroup(newGroup, copyFrom, description);
     }
 
-    static init() {
+    /**
+     * 初始化，并且添加自定义的组件功能
+     * @param {FuncWork} componentSetup
+     */
+    static init(componentSetup) {
         // 初始化所有功能，顺序基本无所谓
         setupImgMapping();
-        setupLoadSchedule();
         setupCustomDialog();
         setupEntries();
+
+        componentSetup();
+        runSetupLoad();
     }
 }

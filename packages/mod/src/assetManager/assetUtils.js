@@ -19,7 +19,7 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
         if (extendedConfig) AssetConfig.add(extendedConfig);
     });
 
-    requireGroup(groupName).then((groupObj) => {
+    requireGroup(groupName, (groupObj) => {
         // 注意，每个镜像身体组都会调用一次这个函数，因此不能使用外面的 groupName
         // 使用 const shadowing 避免这个问题
         const groupName2 = groupObj.Name;

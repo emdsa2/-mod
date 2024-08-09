@@ -95,21 +95,21 @@ export function pushAssetLoadEvent(group, work) {
 /**
  * @param {AssetGroup} group
  */
-function runAssetLoadEvent(group) {
+function runAssetLoad(group) {
     if (assetLoadWorks[group.Name]) {
         while (assetLoadWorks[group.Name].length > 0) assetLoadWorks[group.Name].shift()(group);
     }
 }
 
 const missingGroups = new Set();
+
 /**
- * 获得身体组，通过Promise机制保证加载完成。此方法会通过多次调用来实现镜像组的加载。
+ * 要求一个组加载完成，并在加载完成后执行回调（可能会多次执行，对每个镜像执行一次）
  * @param { CustomGroupName } group
- * @returns { Promise<AssetGroup> }
+ * @param { (group: AssetGroup) => void } resolve
  */
-export function requireGroup(group) {
-    const wk = (resolve) => {
-        // FIXME 镜像组不一定完成加载，扔回事件队列
+export function requireGroup(group, resolve) {
+    const wk = (resolve_) => {
         const mirrors = resolveMirror(group);
         const unresolved = mirrors.find(({ group }) => !group);
         if (unresolved) {
@@ -118,24 +118,23 @@ export function requireGroup(group) {
                 return;
             }
             missingGroups.add(unresolved.name);
-            pushAssetLoadEvent(unresolved.name, (groupObj) => wk(resolve));
+            pushAssetLoadEvent(unresolved.name, (groupObj) => wk(resolve_));
             return;
         }
-
-        mirrors.forEach(({ name, group }) => resolve(group));
+        mirrors.forEach(({ name, group }) => resolve_(group));
     };
 
     if (isGroupLoaded) {
-        return new Promise((resolve) => wk(resolve));
+        wk(resolve);
     } else {
-        return new Promise((resolve) => pushAssetLoadEvent(group, (groupObj) => wk(resolve)));
+        pushAssetLoadEvent(group, (groupObj) => wk(resolve));
     }
 }
 
 /**
  * 初始化身体组加载过程的事件，确保在加载完成后执行
  */
-export function setupLoadSchedule() {
+export function runSetupLoad() {
     const mLoadGroup = () => {
         // 先执行所有的直接加载事件（一般是自定义的组加载）
         runGroupLoad();
@@ -145,7 +144,7 @@ export function setupLoadSchedule() {
         AssetGroup.forEach((group) => runAssetDefsLoad(group));
 
         // 再执行所有组的加载完整事件（一般是通过 requireGroup 添加的自定义的物品加载）
-        AssetGroup.forEach((group) => runAssetLoadEvent(group));
+        AssetGroup.forEach((group) => runAssetLoad(group));
     };
 
     if (AssetGroup.length > 50) {
