@@ -1,7 +1,8 @@
+import log from "../log";
 import { AssetConfig, ParsedAsset, resolveStringAsset } from "./assetConfigs";
 import { CustomAssetAdd } from "./customStash";
 import { Entries, resolveEntry } from "./entries";
-import { pushDefsLoad, requireGroup } from "./loadSchedule";
+import { pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
 
 /**
  * 添加物品
@@ -40,4 +41,30 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
         // 将名称注册到entry管理中，如果游戏通过异步加载获取名称，在entry管理中修正
         Entries.setAsset(groupName, assetDefRes.Name, solidDesc);
     });
+}
+
+/** @type { Partial<Record<CustomGroupName, Set<string>>> } */
+const missingAsset = {};
+/**
+ * 修改物品
+ * @param { CustomGroupName } groupName 身体组名字
+ * @param {string} assetName 物品名字
+ * @param { FuncWork<[Mutable<AssetGroup>,Mutable<Asset>]> } work
+ */
+export function modifyAsset(groupName, assetName, work) {
+    const wk = (groupObj) => {
+        const asset = AssetGet("Female3DCG", groupObj.Name, assetName);
+        if (!asset) {
+            if (!missingAsset[groupName]) missingAsset[groupName] = new Set();
+            if (missingAsset[groupName].has(assetName)) {
+                log.error(`Asset ${groupName}:${assetName} not found`);
+                return;
+            } else {
+                missingAsset[groupName].add(assetName);
+                pushAssetLoadEvent(groupName, wk);
+            }
+        } else work(groupObj, asset);
+    };
+
+    pushAssetLoadEvent(groupName, wk);
 }

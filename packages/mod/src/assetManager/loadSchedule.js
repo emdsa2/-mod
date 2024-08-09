@@ -55,10 +55,10 @@ export function resolvePreimage(group) {
     return rMirrorPreimage[group];
 }
 
-/** @type { Partial<Record<CustomGroupName, FuncWork<AssetGroup>[]>> } */
+/** @type { Partial<Record<CustomGroupName, FuncWork<[AssetGroup]>[]>> } */
 const assetDefsLoadWorks = {};
 
-/** @param {FuncWork<AssetGroup>} work */
+/** @param {FuncWork<[AssetGroup]>} work */
 export function pushDefsLoad(group, work) {
     const grp = AssetGroupGet("Female3DCG", /** @type { AssetGroupName } */ (group));
     if (isGroupLoaded && grp) work(grp);
@@ -75,13 +75,13 @@ function runAssetDefsLoad(group) {
     }
 }
 
-/** @type { Partial<Record<CustomGroupName, FuncWork<AssetGroup>[]>> } */
+/** @type { Partial<Record<CustomGroupName, FuncWork<[AssetGroup]>[]>> } */
 const assetLoadWorks = {};
 
 /**
  * 添加一个物品加载事件
  * @param { CustomGroupName } group
- * @param { FuncWork<AssetGroup> } work
+ * @param { FuncWork<[AssetGroup]> } work
  */
 export function pushAssetLoadEvent(group, work) {
     const grp = AssetGroupGet("Female3DCG", /** @type { AssetGroupName } */ (group));

@@ -1,4 +1,4 @@
-import { loadAsset } from "./assetUtils";
+import { loadAsset, modifyAsset } from "./assetUtils";
 import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
@@ -30,6 +30,16 @@ export default class AssetManager {
                 loadAsset(/**@type {CustomGroupName}*/ (group), asset, { description });
             });
         });
+    }
+
+    /**
+     *
+     * @param { CustomGroupName } group 身体组名字
+     * @param {string} asset 物品名字
+     * @param { FuncWork<[Mutable<AssetGroup>, Mutable<Asset>]> } work
+     */
+    static modifyAsset(group, asset, work) {
+        modifyAsset(group, asset, work);
     }
 
     /**
