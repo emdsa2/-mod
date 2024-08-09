@@ -8,7 +8,9 @@ const groupLoadWorks = [];
 /** @type { Set<CustomGroupName> } */
 const TorsoMirror = new Set(/** @type {CustomGroupName[]} */ (["ItemTorso", "ItemTorso2"]));
 /** @type {Partial<Record<CustomGroupName, Set<CustomGroupName>>>} */
-const mirrorGroups = { ItemTorso: TorsoMirror, ItemTorso2: TorsoMirror };
+const mMirrorGroups = { ItemTorso: TorsoMirror, ItemTorso2: TorsoMirror };
+/** @type {Partial<Record<CustomGroupName, CustomGroupName>>} */
+const rMirrorPreimage = {};
 
 /** @param {FuncWork} work */
 export function pushGroupLoad(work) {
@@ -28,8 +30,9 @@ function runGroupLoad() {
  * @param {CustomGroupName} to
  */
 export function registerMirror(from, to) {
-    if (!mirrorGroups[from]) mirrorGroups[from] = new Set();
-    mirrorGroups[from].add(to);
+    if (!mMirrorGroups[from]) mMirrorGroups[from] = new Set();
+    mMirrorGroups[from].add(to);
+    rMirrorPreimage[to] = from;
 }
 
 /**
@@ -37,11 +40,19 @@ export function registerMirror(from, to) {
  * @param {CustomGroupName} group
  * @returns { { name: CustomGroupName, group: AssetGroup }[] }
  */
-function resolveMirror(group) {
-    return ((mirrorGroups[group] && Array.from(mirrorGroups[group])) || [group]).map((gname) => ({
+export function resolveMirror(group) {
+    return ((mMirrorGroups[group] && Array.from(mMirrorGroups[group])) || [group]).map((gname) => ({
         name: gname,
         group: AssetGroupGet("Female3DCG", /** @type {AssetGroupName}*/ (gname)),
     }));
+}
+
+/**
+ * @param {CustomGroupName} group
+ * @returns {CustomGroupName | undefined}
+ */
+export function resolvePreimage(group) {
+    return rMirrorPreimage[group];
 }
 
 /** @type { Partial<Record<CustomGroupName, FuncWork<AssetGroup>[]>> } */

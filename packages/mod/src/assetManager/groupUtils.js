@@ -31,7 +31,7 @@ export function loadGroup(groupDef, { description, dynamicName } = {}) {
     });
 }
 
-/** @type {Set<CustomGroupName} */
+/** @type {Set<CustomGroupName>} */
 const missingGroup = new Set();
 
 /**
@@ -55,6 +55,7 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
             return;
         }
 
+        // TODO 镜像组时，镜像可能还没翻译
         registerMirror(copyFrom, newGroup);
 
         const soldDesc = description || { CN: newGroup.replace(/_.*?Luzi$/, "") };
