@@ -19,7 +19,7 @@ type CustomGroupName = AssetGroupName | `${AssetGroupBodyName}_笨笨蛋Luzi` | 
 type CustomGroupDefinition = ExtendType<AssetGroupDefinition, AssetGroupName, CustomGroupName>;
 
 // 自定义物品定义，支持扩展的身体部位名称
-type CustomAssetDefinition = ExtendType<AssetDefinition, AssetGroupName, CustomGroupName>;
+type CustomAssetDefinition = ExtendType<AssetDefinition.Item | AssetDefinition.Appearance, AssetGroupName, CustomGroupName>;
 
 type CustomGroupedAssetDefinitions = Partial<Record<CustomGroupName, CustomAssetDefinition[]>>;
 
@@ -70,7 +70,7 @@ namespace Translation {
     type GroupedEntries = CustomRecord<CustomGroupName, Record<string, string>>;
 }
 
-type Function = (...args: any[]) => any;
+type FuncWork<T = void> = T extends void ? () => void : (arg: T) => void;
 
 type AssetOverrideLeaf = string | AssetOverrideContainer;
 type AssetOverrideContainer = Record<string, AssetOverrideLeaf>;

@@ -1,4 +1,5 @@
 import bcModSdk from "bondage-club-mod-sdk";
+import log from "./log";
 
 /**
  * @template {string} TFunctionName
@@ -16,25 +17,29 @@ import bcModSdk from "bondage-club-mod-sdk";
  * @typedef {import('bondage-club-mod-sdk').PatchHook<RetType>} PatchHook
  */
 
+/** @type { (FuncWork) [] }*/
+const afterInitList = [];
+/** @type { (FuncWork) [] }*/
+const hookList = [];
+/** @type { (FuncWork) [] }*/
+const waitPlayerHookList = [];
+
+function PlayerLoaded() {
+    return window["Player"] != undefined && typeof window["Player"]["MemberNumber"] === "number";
+}
+
 /**
- * @param {()=>void | undefined} loaded
- * @param {()=>void | undefined} unloaded
+ * @param {FuncWork} work
  */
-function SwichIfPlayer(loaded = undefined, unloaded = undefined) {
-    if (window["Player"] != undefined && window["Player"]["MemberNumber"] != undefined) {
-        loaded?.();
+function PlayerHook(work) {
+    if (PlayerLoaded()) {
+        waitPlayerHookList.push(work);
     } else {
-        unloaded?.();
+        work();
     }
 }
 
-/** @type { (()=>void) [] }*/
-const afterInitList = [];
-/** @type { (()=>void) [] }*/
-const hookList = [];
-/** @type { (()=>void) [] }*/
-const waitPlayerHookList = [];
-/** @type { (()=>void) []  }*/
+/** @type { (FuncWork) []  }*/
 const patchList = [];
 
 /** @type {ModSDKModAPI | undefined} */
@@ -46,8 +51,8 @@ export default class ModManager {
     }
 
     /**
-     * @param {(()=>void)[]} list
-     * @param {()=>void} work
+     * @param {(FuncWork)[]} list
+     * @param {FuncWork} work
      */
     static push(list, work) {
         if (ModManager.mod) work();
@@ -63,23 +68,25 @@ export default class ModManager {
         while (patchList.length > 0) patchList.shift()();
         while (hookList.length > 0) hookList.shift()();
 
-        SwichIfPlayer(
-            () => {
-                while (waitPlayerHookList.length > 0) waitPlayerHookList.shift()();
-            },
-            () => {
-                ModManager.mod.hookFunction("LoginResponse", 0, (args, next) => {
-                    next(args);
-                    while (waitPlayerHookList.length > 0) waitPlayerHookList.shift()();
-                });
-            }
-        );
+        const wk = () => {
+            while (waitPlayerHookList.length > 0) waitPlayerHookList.shift()();
+        };
+
+        if (PlayerLoaded()) {
+            wk();
+        } else {
+            ModManager.mod.hookFunction("LoginResponse", 0, (args, next) => {
+                next(args);
+                wk();
+            });
+        }
+
         while (afterInitList.length > 0) afterInitList.shift()();
     }
 
     /**
-     * 添加一个初始化后回调
-     * @param {()=>void} work
+     * 添加一个初始化后回调，在mod初始化时执行。如果mod已经初始化，则立即执行。
+     * @param {FuncWork} work
      */
     static afterInit(work) {
         ModManager.push(afterInitList, work);
@@ -101,7 +108,8 @@ export default class ModManager {
      * @param {[...Parameters<GetDotedPathType<TFunctionName>>]} args
      */
     static invokeOriginal(functionName, ...args) {
-        return ModManager.mod.callOriginal(functionName, args);
+        if (!ModManager.mod) return window[/** @type {string} */ (functionName)]?.(...args);
+        else return ModManager.mod.callOriginal(functionName, args);
     }
 
     /**
@@ -116,30 +124,29 @@ export default class ModManager {
     }
 
     /**
-     * 注册一个依赖玩家的钩子函数
+     * 注册一个依赖玩家的钩子函数，会等待玩家数据加载完成才执行。如果玩家数据已加载，则立即执行。
      * @template {string} TFunctionName
      * @param {TFunctionName} funcName
      * @param {number} priority
      * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
      */
     static hookPlayerFunction(funcName, priority, hook) {
-        const work = () => ModManager.mod.hookFunction(funcName, priority, hook);
-        SwichIfPlayer(work, () => ModManager.push(waitPlayerHookList, work));
+        PlayerHook(() => ModManager.mod.hookFunction(funcName, priority, hook));
     }
 
     /**
-     * 注册全局函数
+     * 注册全局函数（可以通过window访问）
      * @param {string} funcName
      * @param {Function} func
      */
     static globalFunction(funcName, func) {
         if (typeof func != "function") {
-            console.warn("globalFunction: param is not a function");
+            log.warn("globalFunction: param is not a function");
         }
         if (window[funcName] == undefined) {
             window[funcName] = func;
         } else if (window[funcName] != func) {
-            console.warn(`globalFunction: ${funcName} is already defined`);
+            log.warn(`globalFunction: ${funcName} is already defined`);
         }
     }
 }

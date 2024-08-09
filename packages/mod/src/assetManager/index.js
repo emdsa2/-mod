@@ -1,10 +1,9 @@
-import { addAsset, addExtendedConfig } from "./addAssetHelper";
-import { addCopyGroup, addGroup } from "./addGroupHelper";
-import { setupCustomAssets } from "./customAssets";
-import { setupCustomGroups } from "./customGroups";
+import { loadAsset } from "./assetUtils";
+import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
-import { queueAfterAssetLoad, setupQueue } from "./setupQueue";
-import { addCustomDialog, setManyAssetDescriptionEntries, setupTranslation } from "./translation";
+import { setupLoadSchedule } from "./loadSchedule";
+import { addCustomDialog, setupCustomDialog } from "./dialog";
+import { setupEntries } from "./entries";
 
 export default class AssetManager {
     /**
@@ -15,31 +14,22 @@ export default class AssetManager {
      * @param { Translation.Entry } [description] 可选设置物品名字翻译
      */
     static addAsset(group, asset, extended = undefined, description = undefined) {
-        addAsset(group, asset, extended, description);
+        const extendedConfig = extended && { [group]: { [asset.Name]: extended } };
+        loadAsset(group, asset, { extendedConfig, description });
     }
 
     /**
      * 添加很多区域的很多物品
      * @param { CustomGroupedAssetDefinitions } groupedAssets 很多很多物品！
-     * @param { Translation.GroupedEntries } [description] 很多很多物品的名字翻译！
+     * @param { Translation.GroupedEntries } [descriptions] 很多很多物品的名字翻译！
      */
-    static addGroupedAssets(groupedAssets, description = undefined) {
+    static addGroupedAssets(groupedAssets, descriptions = undefined) {
         Object.entries(groupedAssets).forEach(([group, assets]) => {
             assets.forEach((asset) => {
-                addAsset(/**@type {CustomGroupName}*/ (group), asset);
+                const description = descriptions?.[group]?.[asset.Name];
+                loadAsset(/**@type {CustomGroupName}*/ (group), asset, { description });
             });
         });
-        setManyAssetDescriptionEntries(description);
-    }
-
-    /**
-     * 添加一个物品的扩展设置
-     * @param {CustomGroupName} groupName
-     * @param {string} assetName
-     * @param {AssetArchetypeConfig} extendedConfig
-     */
-    static addExtendedConfig(groupName, assetName, extendedConfig) {
-        addExtendedConfig(groupName, assetName, extendedConfig);
     }
 
     /**
@@ -64,7 +54,7 @@ export default class AssetManager {
      * @param {Translation.Entry} [description]
      */
     static addGroup(groupDef, description = undefined) {
-        addGroup(groupDef, description);
+        loadGroup(groupDef, { description });
     }
 
     /**
@@ -74,22 +64,14 @@ export default class AssetManager {
      * @param { Translation.Entry } [description]
      */
     static addCopyGroup(newGroup, copyFrom, description = undefined) {
-        addCopyGroup(newGroup, copyFrom, description);
-    }
-
-    /**
-     * 添加物品初始化函数。具体而言，在物品加载后、物品描述加载前。
-     * @param {()=>void} setup
-     */
-    static queueSetup(setup) {
-        queueAfterAssetLoad(setup);
+        mirrorGroup(newGroup, copyFrom, description);
     }
 
     static init() {
+        // 初始化所有功能，顺序基本无所谓
         setupImgMapping();
-        setupQueue();
-        setupTranslation();
-        setupCustomGroups();
-        setupCustomAssets();
+        setupLoadSchedule();
+        setupCustomDialog();
+        setupEntries();
     }
 }
