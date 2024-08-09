@@ -41,11 +41,17 @@ export function setupImgMapping() {
         "Img.src = url;": 'Img.crossOrigin = "Anonymous";\n\t\tImg.src = url;',
     });
 
-    // 图片映射
-    // 典型过程如下：
-    // Assets/Female3DCG/Cloth_笨笨蛋Luzi/Kneel/礼服_Luzi_Large_Bottom.png
-    // -> Assets/Female3DCG/Cloth/Kneel/礼服_Luzi_Large_Bottom.png
-    // -> https://example.com/Assets/Female3DCG/Cloth/Kneel/礼服_Luzi_Large_Bottom.png
+    /**
+     * 图片映射
+     *
+     * 典型过程如下：
+     *
+     * Assets/Female3DCG/Cloth_笨笨蛋Luzi/Kneel/礼服_Luzi_Large_Bottom.png
+     *
+     * -> Assets/Female3DCG/Cloth/Kneel/礼服_Luzi_Large_Bottom.png
+     *
+     * -> ${baseURL}/Assets/Female3DCG/Cloth/Kneel/礼服_Luzi_Large_Bottom.png
+     */
     const mapImgSrc = (src) => {
         if (typeof src !== "string") return src;
 
@@ -66,7 +72,7 @@ export function setupImgMapping() {
         return src;
     };
 
-    ModManager.hookFunction("DrawImageResize", 1, (args, next) => {
+    ModManager.hookFunction("DrawImageEx", 1, (args, next) => {
         args[0] = mapImgSrc(args[0]);
         return next(args);
     });
@@ -76,7 +82,7 @@ export function setupImgMapping() {
         return next(args);
     });
 
-    ModManager.hookFunction("DrawImageCanvas", 1, (args, next) => {
+    ModManager.hookFunction("DrawGetImage", 2, (args, next) => {
         args[0] = mapImgSrc(args[0]);
         return next(args);
     });

@@ -1,5 +1,6 @@
 import ModManager from "../modManager";
 import { getCustomAssets, getCustomGroups } from "./customStash";
+import { resolvePreimage } from "./loadSchedule";
 
 /**
  * 按语言解析翻译条目
@@ -72,7 +73,9 @@ function groupEntryString(group) {
 }
 
 export function setupEntries() {
-    ModManager.hookFunction("TranslationAsset", 1, (args, next) => {
+    // 在基础发生异步加载之后，
+    // 重新翻译一遍镜像组基础物品的描述，只考虑镜像组目标是基础组的自定义组
+    ModManager.hookFunction("TranslationAssetProcess", 1, (args, next) => {
         next(args);
 
         Object.entries(getCustomGroups()).forEach(([groupName, group]) => {
@@ -84,5 +87,20 @@ export function setupEntries() {
                 /** @type {Mutable<Asset>} */ (asset).Description = assetEntryString(asset.Group.Name, asset.Name);
             });
         });
+
+        Object.entries(getCustomAssets())
+            .map(([group, asset]) => ({
+                group,
+                asset,
+                from: /** @type {AssetGroupName} */ (resolvePreimage(/**@type {CustomGroupName} */ (group))),
+            }))
+            .filter(({ from }) => from !== undefined)
+            .forEach(({ group, asset, from }) => {
+                Object.entries(asset).forEach(([name, asset]) => {
+                    const fromAsset = AssetGet("Female3DCG", from, name);
+                    if (!fromAsset) return;
+                    /** @type {Mutable<Asset>} */ (asset).Description = fromAsset.Description;
+                });
+            });
     });
 }

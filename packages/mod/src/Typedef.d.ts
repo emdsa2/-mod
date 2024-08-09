@@ -70,7 +70,7 @@ namespace Translation {
     type GroupedEntries = CustomRecord<CustomGroupName, Record<string, string>>;
 }
 
-type FuncWork<T = void> = T extends void ? () => void : (arg: T) => void;
+type FuncWork<Args extends any[] = []> = (...args: Args) => void;
 
 type AssetOverrideLeaf = string | AssetOverrideContainer;
 type AssetOverrideContainer = Record<string, AssetOverrideLeaf>;
