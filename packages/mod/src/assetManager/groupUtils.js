@@ -11,8 +11,9 @@ import { resolveStringAsset } from "./assetConfigs";
  * @param { Object } param
  * @param { Translation.Entry } [param.description]
  * @param { CustomGroupName } [param.dynamicName]
+ * @param { AssetGroup } [param.preimage]
  */
-export function loadGroup(groupDef, { description, dynamicName } = {}) {
+export function loadGroup(groupDef, { description, dynamicName, preimage } = {}) {
     pushGroupLoad(() => {
         const solidDesc = description || { CN: groupDef.Group.replace(/_.*?Luzi$/, "") };
         CustomGroupAdd("Female3DCG", /** @type { AssetGroupDefinition }*/ (groupDef)).then((grp) => {
@@ -23,6 +24,7 @@ export function loadGroup(groupDef, { description, dynamicName } = {}) {
             (groupDef).Asset.forEach((asset) => {
                 loadAsset(groupDef.Group, /** @type {CustomAssetDefinition} */ (resolveStringAsset(asset)), {
                     dynamicName,
+                    preimage,
                 });
             });
         });
@@ -42,7 +44,8 @@ const missingGroup = new Set();
 export function mirrorGroup(newGroup, copyFrom, description = undefined) {
     const wk = () => {
         const fromDef = AssetFemale3DCG.find((def) => def.Group === copyFrom);
-        if (!fromDef) {
+        const fromGrp = AssetGroupGet("Female3DCG", /** @type { AssetGroupName }*/ (copyFrom));
+        if (!fromDef || !fromGrp) {
             // 两次找不到组，说明组不存在，或者循环依赖，直接抛弃
             if (missingGroup.has(fromDef.Group)) {
                 log.error(`Group ${fromDef.Group} not found`);
@@ -55,7 +58,6 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
             return;
         }
 
-        // TODO 镜像组时，镜像可能还没翻译
         registerMirror(copyFrom, newGroup);
 
         const soldDesc = description || { CN: newGroup.replace(/_.*?Luzi$/, "") };
@@ -68,6 +70,7 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
             {
                 description: soldDesc,
                 dynamicName: fromDef.Group,
+                preimage: fromGrp,
             }
         );
     };

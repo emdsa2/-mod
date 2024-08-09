@@ -73,7 +73,9 @@ function groupEntryString(group) {
 }
 
 export function setupEntries() {
-    ModManager.hookFunction("TranslationAsset", 1, (args, next) => {
+    // 在基础发生异步加载之后，
+    // 重新翻译一遍镜像组基础物品的描述，只考虑镜像组目标是基础组的自定义组
+    ModManager.hookFunction("TranslationAssetProcess", 1, (args, next) => {
         next(args);
 
         Object.entries(getCustomGroups()).forEach(([groupName, group]) => {
@@ -85,11 +87,6 @@ export function setupEntries() {
                 /** @type {Mutable<Asset>} */ (asset).Description = assetEntryString(asset.Group.Name, asset.Name);
             });
         });
-    });
-
-    // 在基础发生异步加载之后，重新翻译一遍镜像组基础物品的描述，只考虑镜像组目标是基础组的自定义组
-    ModManager.hookFunction("TranslationAssetProcess", 1, (args, next) => {
-        next(args);
 
         Object.entries(getCustomAssets())
             .map(([group, asset]) => ({
