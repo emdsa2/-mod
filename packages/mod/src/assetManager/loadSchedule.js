@@ -30,7 +30,7 @@ function runGroupLoad() {
  * @param {CustomGroupName} to
  */
 export function registerMirror(from, to) {
-    if (!mMirrorGroups[from]) mMirrorGroups[from] = new Set();
+    if (!mMirrorGroups[from]) mMirrorGroups[from] = new Set([from]);
     mMirrorGroups[from].add(to);
     rMirrorPreimage[to] = from;
 }
