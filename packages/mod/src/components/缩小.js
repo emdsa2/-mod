@@ -17,6 +17,7 @@ const assets = [
         Name: reduceTag1,
         Visible: false,
         Random: false,
+        Effect: [E.Slow],
     },
     {
         Name: reduceTag2,
