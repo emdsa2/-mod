@@ -21,6 +21,8 @@ type CustomGroupDefinition = ExtendType<AssetGroupDefinition, AssetGroupName, Cu
 // 自定义物品定义，支持扩展的身体部位名称
 type CustomAssetDefinition = ExtendType<AssetDefinition.Item | AssetDefinition.Appearance, AssetGroupName, CustomGroupName>;
 
+type CustomImageMapping = Record<string, string>;
+
 type CustomGroupedAssetDefinitions = Partial<Record<CustomGroupName, CustomAssetDefinition[]>>;
 
 type CustomDialog = Record<string, string>;

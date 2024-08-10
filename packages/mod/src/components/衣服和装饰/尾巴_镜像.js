@@ -103,5 +103,5 @@ const translations = {
 
 export default function () {
     AssetManager.addGroupedAssets({ TailStraps: assets }, translations);
-    AssetManager.addImgMapping(icons);
+    AssetManager.addImageMapping(icons);
 }

@@ -186,6 +186,6 @@ const translations = {
 
 export default function () {
     AssetManager.addAsset("ItemTorso", asset, extended, translations);
-    AssetManager.addImgMapping(icons);
+    AssetManager.addImageMapping(icons);
     AssetManager.addCustomDialog(dialogs);
 }

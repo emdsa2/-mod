@@ -121,5 +121,5 @@ const translations = { CN: "鱼鱼尾", EN: "Fish Tail" };
 export default function () {
     AssetManager.addAsset("SuitLower", asset, extended, translations);
     AssetManager.addCustomDialog(descriptions);
-    AssetManager.addImgMapping(icons);
+    AssetManager.addImageMapping(icons);
 }
