@@ -31,26 +31,6 @@ const assets = {
             Layer: [{ Name: "眼镜", Priority: 56 }],
         },
     ],
-    Socks: [
-        {
-            Name: "踩脚袜_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-        },
-        {
-            Name: "条纹袜_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-        },
-        {
-            Name: "条纹袜2_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-        },
-    ],
     Panties: [
         {
             Name: "淫纹_Luzi",
