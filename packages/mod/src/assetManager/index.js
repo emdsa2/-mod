@@ -53,9 +53,9 @@ export default class AssetManager {
 
     /**
      * 添加自定义图片映射
-     * @param { Record<string,string> } mappings
+     * @param { CustomImageMapping } mappings
      */
-    static addImgMapping(mappings) {
+    static addImageMapping(mappings) {
         addImgMapping(mappings);
     }
 
