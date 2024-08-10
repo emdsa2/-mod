@@ -140,11 +140,11 @@ const assets = {
                 },
                 {
                     Name: "鞋垫",
-                    Priority: 0,
+                    Priority: 1,
                 },
                 {
                     Name: "鞋底",
-                    Priority: 0,
+                    Priority: 1,
                 },
             ],
         },
