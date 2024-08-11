@@ -8,35 +8,72 @@ declare const __asset_overrides__: AssetOverrideContainer;
 declare const __rollup_imports__: string[];
 declare const __rollup_setup__: string[];
 
-type ExtendType<T, From, To> = {
-    [K in keyof T]: T[K] extends From ? To : ExtendType<T[K], From, To>;
+/** 扩展的身体组（非物品）名称 */
+type CustomGroupBodyName = AssetGroupBodyName | `${AssetGroupBodyName}_笨笨蛋Luzi` | `${AssetGroupBodyName}_笨笨笨蛋Luzi2` | "Liquid2_Luzi" | "BodyMarkings2_Luzi";
+
+/** 扩展身体组名称 */
+type CustomGroupName = AssetGroupItemName | CustomGroupBodyName | AssetGroupScriptName;
+
+namespace _ {
+    /** 将 T 类型中的 From 类型 *递归地* 替换为 To 类型。主要用于把 AssetGroupName 替换为 CustomGroupName。*/
+    type ExtendType<T, From, To> = { [K in keyof T]: T[K] extends From ? To : ExtendType<T[K], From, To>; }
+
+    /** 将 S 类型中的 K 指定的属性的类型替换为 T 类型。 */
+    type SetType<S, K extends keyof T, T> = Omit<S, K> & { [P in K]: T };
+
+    /** 等效于Partial<Record<K,T>>，写太多写累了 */
+    type PRecord<K extends string, T> = { [P in K]?: T };
+
+    /** 不同身体组的定义类型 */
+    namespace CGroupDef {
+        type Item = _.SetType<_.ExtendType<AssetGroupDefinition.Item, AssetGroupName, CustomGroupName>, "Group", AssetGroupItemName>;
+        type Appearance = _.SetType<_.ExtendType<AssetGroupDefinition.Appearance, AssetGroupName, CustomGroupName>, "Group", CustomGroupBodyName>
+        type Script = AssetGroupDefinition.Script;
+    }
+
+    /** 不同身体组的物品定义类型 */
+    namespace CAssetDef {
+        type Item = _.ExtendType<AssetDefinition.Item, AssetGroupName, CustomGroupName>;
+        type Appearance = _.ExtendType<AssetDefinition.Appearance, AssetGroupName, CustomGroupName>;
+        type Script = AssetDefinition.Script;
+    }
+
+    type GroupedAssetType = { [K in CustomGroupName]?:
+        K extends AssetGroupItemName ? CAssetDef.Item[] :
+        K extends CustomGroupBodyName ? CAssetDef.Appearance[] :
+        K extends AssetGroupScriptName ? CAssetDef.Script[] :
+        never
+    }
 }
 
-// 扩展身体部位名称
-type CustomGroupName = AssetGroupName | `${AssetGroupBodyName}_笨笨蛋Luzi` | `${AssetGroupBodyName}_笨笨笨蛋Luzi2` | "Liquid2_Luzi" | "BodyMarkings2_Luzi";
 
-// 自定义身体部位定义，支持扩展的身体部位名称
-type CustomGroupDefinition = ExtendType<AssetGroupDefinition, AssetGroupName, CustomGroupName>;
+/** 自定义身体组定义，支持扩展的身体组名称 */
+type CustomGroupDefinition = _.CGroupDef.Item | _.CGroupDef.Appearance | _.CGroupDef.Script;
 
-// 自定义物品定义，支持扩展的身体部位名称
-type CustomAssetDefinition = ExtendType<AssetDefinition.Item | AssetDefinition.Appearance, AssetGroupName, CustomGroupName>;
+/** 自定义道具物品定义 */
+type CustomAssetDefinitionItem = _.CAssetDef.Item;
 
+/** 自定义外观物品定义 */
+type CustomAssetDefinitionAppearance = _.CAssetDef.Appearance;
+
+/** 自定义物品定义，支持扩展的身体组名称 */
+type CustomAssetDefinition = CustomAssetDefinitionItem | CustomAssetDefinitionAppearance | _.CAssetDef.Script;
+
+/** 按照身体组分类的物品定义 */
+type CustomGroupedAssetDefinitions = _.GroupedAssetType;
+
+/** 自定义图片映射 */
 type CustomImageMapping = Record<string, string>;
 
-type CustomGroupedAssetDefinitions = Partial<Record<CustomGroupName, CustomAssetDefinition[]>>;
-
-type CustomDialog = Record<string, string>;
-
 namespace Translation {
-
-    type CustomRecord<T extends string, U> = Partial<Record<ServerChatRoomLanguage, Partial<Record<T, U>>>>;
+    type CustomRecord<T extends string, U> = _.PRecord<ServerChatRoomLanguage, _.PRecord<T, U>>;
 
     /**
      * 物品描述翻译条目
      * @example 
      * { CN: "中文名字", EN: "English Name" }
      */
-    type Entry = Partial<Record<ServerChatRoomLanguage, string>>;
+    type Entry = _.PRecord<ServerChatRoomLanguage, string>;
 
     /**
      * 自定义的对话条目
@@ -53,7 +90,7 @@ namespace Translation {
      * }
      * 
      */
-    type Dialog = Partial<Record<ServerChatRoomLanguage, CustomDialog>>;
+    type Dialog = _.PRecord<ServerChatRoomLanguage, CustomDialog>;
 
 
     /**

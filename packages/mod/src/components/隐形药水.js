@@ -74,7 +74,7 @@ const asset = {
             HideColoring: true,
             ColorSuffix: { HEX_COLOR: "White" },
             PoseMapping: {
-                [PoseType.DEFAULT]: "Hide",
+                // [PoseType.DEFAULT]: "Hide", // TODO 这行设置似乎没用，但有类型错误
                 BackBoxTie: "Hide",
                 BackCuffs: "Hide",
                 BackElbowTouch: "Hide",

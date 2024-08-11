@@ -2,7 +2,8 @@
   "name": "echo-bc-mod-collection",
   "version": "1.0.0",
   "scripts": {
-    "build:dev": "pnpm build:res && pnpm -r build --configDebug --configBaseURL \"http://localhost:8080/\"",
+    "type-check": "pnpm -r type-check",
+    "build:dev": "pnpm type-check && pnpm build:res && pnpm -r build --configDebug --configBaseURL \"http://localhost:8080/\"",
     "build": "pnpm build:res && pnpm -r build",
     "build:res": "copyfiles -u 1 \"resources/**/*.png\" \"resources/**/*.mp3\" \"resources/**/*.js\" public",
     "release": "pnpm build:res && pnpm -r build",
@@ -17,7 +18,8 @@
     "fs-extra": "^11.2.0",
     "github-markdown-css": "^5.6.1",
     "http-server": "^14.1.1",
-    "marked": "^14.0.0"
+    "marked": "^14.0.0",
+    "typescript": "^5.5.4"
   },
   "packageManager": "pnpm@9.7.0"
 }

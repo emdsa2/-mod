@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {CustomAssetDefinition[]} */
+/** @type {CustomAssetDefinitionAppearance[]} */
 const assets = [
     {
         Name: "穿戴式狗尾镜像_Luzi",

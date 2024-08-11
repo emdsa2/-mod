@@ -1,6 +1,6 @@
 import AssetManager from "../../assetManager";
 
-/** @type {CustomAssetDefinition[]} */
+/** @type { CustomAssetDefinitionItem[] } */
 const head_assets = [
     {
         Name: "绷带头部_Luzi",
@@ -22,7 +22,7 @@ const head_assets = [
     },
 ];
 
-/** @type {CustomAssetDefinition[]} */
+/** @type { CustomAssetDefinitionItem[] } */
 const assets = [
     {
         Name: "胶带全身_Luzi",

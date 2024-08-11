@@ -11,7 +11,7 @@ const assetAdjustments = {
     [reduceTag2]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 6, offsetYMultiplier: 10 },
 };
 
-/** @type {CustomAssetDefinition[]} */
+/** @type { CustomAssetDefinitionAppearance[]} */
 const assets = [
     {
         Name: reduceTag1,

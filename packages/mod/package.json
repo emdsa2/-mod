@@ -2,6 +2,7 @@
   "name": "mod",
   "version": "0.2.0",
   "scripts": {
+    "type-check": "tsc --noEmit --allowJs --checkJs -p jsconfig.json",
     "build": "rollup -c rollup.config.js"
   },
   "repository": {
@@ -9,12 +10,13 @@
     "url": "https://github.com/emdsa2/-mod"
   },
   "rollupSetting": {
-    "output":"mod.js",
-    "input":"src/main.js",
+    "output": "mod.js",
+    "input": "src/main.js",
     "assets": {
-      "location" : "../../resources",
+      "location": "../../resources",
       "assets": [
-        "Assets", "Audio"
+        "Assets",
+        "Audio"
       ]
     },
     "componentDir": "src/components",
