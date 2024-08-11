@@ -13,7 +13,7 @@ const asset = {
             Name: "牌子", Priority: 1,
         },
         {
-            Name: "笨蛋", Priority: 1,
+            Name: "笨蛋", Priority: 2,
             AllowTypes: { typed: [1] }
         },
     ],
