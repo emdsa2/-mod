@@ -50,8 +50,8 @@ const dialog = {
         ItemHandheld阿巴阿巴_Luzi阿巴AK: "阿巴AK",
         
         ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter移除了DestinationCharacter的阿巴阿巴.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter切换DestinationCharacter的阿巴阿巴.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter切换DestinationCharacter的阿巴AK.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter切换DestinationCharacter阿巴阿巴.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter切换DestinationCharacter阿巴AK.",
     },
     EN: {
         ItemHandheld阿巴阿巴_LuziSelect: "Select Aba Aba",
@@ -75,6 +75,48 @@ export default function () {
 
 // FIXME Saki快修这个！
 // mod.hookFunction("ServerSend", 5, (args, next) => {
+//     if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
+//         let data = args[1];
+//         let Dictionary = data.Dictionary;
+//         if (Dictionary) {
+//             if (Dictionary[3]?.AssetName?.includes('_Luzi')) {
+//                 if (data.Content === "ActionUse") {
+//                     let AssetName = Dictionary[3].AssetName;
+//                     data.Dictionary.push({
+//                         Tag: `NextAsset`, Text: AssetName.replace('_Luzi', '')
+//                     });
+//                 };
+//                 if (data.Content === "ActionRemove") {
+//                     let AssetName = Dictionary[3].AssetName;
+//                     data.Dictionary.push({
+//                         Tag: `PrevAsset`, Text: AssetName.replace('_Luzi', '')
+//                     });
+//                 };
+//             }
+//         };
+//         if (Dictionary[3]?.AssetName?.includes('_Luzi')) {
+//             if (data.Content === "ActionSwap") {
+//                 let Dictionary = data.Dictionary;
+//                 if (Dictionary) {
+//                     let AssetName = Dictionary[3].AssetName;
+//                     data.Dictionary.push({
+//                         Tag: `PrevAsset`, Text: AssetName.replace('_Luzi', '')
+//                     });
+//                 };
+//             }
+//         };
+//         if (Dictionary[4]?.AssetName?.includes('_Luzi')) {
+//             if (data.Content === "ActionSwap") {
+//                 let Dictionary = data.Dictionary;
+//                 if (Dictionary) {
+//                     let AssetName = Dictionary[4].AssetName;
+//                     data.Dictionary.push({
+//                         Tag: `NextAsset`, Text: AssetName.replace('_Luzi', '')
+//                     });
+//                 };
+//             }
+//         };
+//     }
 //     if (args[0] == "ChatRoomChat" && args[1]?.Type == "Action") {
 //         let data = args[1];
 //         const Content = data.Content;
