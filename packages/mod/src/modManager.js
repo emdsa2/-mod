@@ -149,4 +149,22 @@ export default class ModManager {
             log.warn(`globalFunction: ${funcName} is already defined`);
         }
     }
+
+    /**
+     * 注册一个全局函数，函数名字随机生成
+     * @template { any[] } T
+     * @template R
+     * @param {*} funcPrefix
+     * @param {(...T)=>R} func
+     * @returns
+     */
+    static randomGlobalFunction(funcPrefix, func) {
+        const genName = (prefix) => prefix + Math.random().toString(16).substring(2);
+        let funcName = genName(funcPrefix);
+        while (window[funcName] != undefined) {
+            funcName = genName(funcPrefix);
+        }
+        window[funcName] = /** @type {any} */ (func);
+        return funcName;
+    }
 }

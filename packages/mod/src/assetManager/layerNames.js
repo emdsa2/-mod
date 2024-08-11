@@ -54,8 +54,7 @@ export function addLayerNames(group, assetDef, { entries, noOverride } = {}) {
 
 // 创建一个异步任务，等待ItemColorLayerNames加载完成后，将缓存的图层名称写入ItemColorLayerNames
 export function setupLayerNameLoad() {
-    const FuncK = `InjectFunction${Date.now()}`;
-    ModManager.globalFunction(FuncK, (cacheGetter) => {
+    const FuncK = ModManager.randomGlobalFunction("LayerNameInject", (cacheGetter) => {
         cache = cacheGetter;
     });
     ModManager.patchFunction("ItemColorLoad", {

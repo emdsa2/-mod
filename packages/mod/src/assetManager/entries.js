@@ -1,5 +1,5 @@
 import ModManager from "../modManager";
-import { getCustomAssets, getCustomGroups } from "./customStash";
+import { checkItemCustomed, getCustomAssets, getCustomGroups } from "./customStash";
 import { resolvePreimage } from "./loadSchedule";
 
 /**
@@ -102,5 +102,21 @@ export function setupEntries() {
                     /** @type {Mutable<Asset>} */ (asset).Description = fromAsset.Description;
                 });
             });
+    });
+
+    const ActionFunc = ModManager.randomGlobalFunction(
+        "CustomDialogInject",
+        (dictionary, _, __, PrevItem, NextItem) => {
+            [
+                ["PrevAsset", PrevItem],
+                ["NextAsset", NextItem],
+            ]
+                .map(([key, value]) => [key, value, checkItemCustomed(value)])
+                .forEach(([key, _, promise]) => promise.then((item) => dictionary.text(key, item.Asset.Description)));
+        }
+    );
+
+    ModManager.patchFunction("ChatRoomPublishAction", {
+        "ChatRoomCharacterItemUpdate(C);": `${ActionFunc}(dictionary, C, Action, PrevItem, NextItem);\nChatRoomCharacterItemUpdate(C);`,
     });
 }

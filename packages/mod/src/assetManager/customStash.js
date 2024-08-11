@@ -72,3 +72,23 @@ export function enableCustomAssets() {
         }
     });
 }
+
+/**
+ * 判断是否为自定义物品
+ * @param {Item | null} item
+ */
+export function checkItemCustomed(item) {
+    if (
+        item &&
+        item.Asset &&
+        item.Asset.Group.Name in customAssets &&
+        item.Asset.Name in customAssets[item.Asset.Group.Name]
+    )
+        return {
+            then: (cb) => cb(item),
+        };
+    else
+        return {
+            then: (cb) => {},
+        };
+}
