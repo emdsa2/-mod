@@ -5,6 +5,7 @@ import { runSetupLoad } from "./loadSchedule";
 import { addCustomDialog, setupCustomDialog } from "./dialog";
 import { setupEntries } from "./entries";
 import { enableCustomAssets } from "./customStash";
+import { addLayerNames, setupLayerNameLoad } from "./layerNames";
 
 export default class AssetManager {
     /**
@@ -79,6 +80,16 @@ export default class AssetManager {
     }
 
     /**
+     * 添加自定义的图层名字
+     * @param {CustomGroupName} group 身体组名字
+     * @param {CustomAssetDefinition} assetDef 物品定义
+     * @param {Translation.CustomRecord<string,string>} entries 图层-名字，按照语言分组
+     */
+    static addLayerNames(group, assetDef, entries) {
+        addLayerNames(group, assetDef, { entries });
+    }
+
+    /**
      * 初始化，并且添加自定义的组件功能
      * @param {FuncWork} componentSetup
      */
@@ -87,6 +98,7 @@ export default class AssetManager {
         setupImgMapping();
         setupCustomDialog();
         setupEntries();
+        setupLayerNameLoad();
 
         enableCustomAssets();
 

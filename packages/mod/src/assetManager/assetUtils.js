@@ -2,6 +2,7 @@ import log from "../log";
 import { AssetConfig, ParsedAsset, resolveStringAsset } from "./assetConfigs";
 import { CustomAssetAdd } from "./customStash";
 import { Entries, resolveEntry } from "./entries";
+import { addLayerNames } from "./layerNames";
 import { pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
 
 /**
@@ -32,11 +33,17 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
 
         // 先在这里设置一遍显示名称
         CustomAssetAdd(groupObj, assetDefRes, AssetConfig.value).then((asset) => {
+            if (dynamicName) asset.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
+
             if (preimage) {
                 const preimageAsset = AssetGet("Female3DCG", preimage.Name, assetDefRes.Name);
                 asset.Description = preimageAsset.Description;
-            } else asset.Description = resolveEntry(solidDesc);
-            if (dynamicName) asset.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
+            } else {
+                asset.Description = resolveEntry(solidDesc);
+                addLayerNames(asset.DynamicGroupName, /** @type {CustomAssetDefinition}*/ (assetDefRes), {
+                    noOverride: true,
+                });
+            }
         });
         // 将名称注册到entry管理中，如果游戏通过异步加载获取名称，在entry管理中修正
         Entries.setAsset(groupName, assetDefRes.Name, solidDesc);

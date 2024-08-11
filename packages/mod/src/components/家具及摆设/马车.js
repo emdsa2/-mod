@@ -8,6 +8,20 @@ const assets = {
             Name: "马车_Luzi",
             Random: false,
             Top: 0,Left: 0,
+            Layer: [
+                {
+                    Name: "前",
+                    Priority: 19,
+                },
+                {
+                    Name: "中",
+                    Priority: 18,
+                },
+                {
+                    Name: "后",
+                    Priority: 0,
+                },
+            ],
         },
         {
             Name: "马_Luzi",
