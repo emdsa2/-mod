@@ -185,42 +185,6 @@ const assets = {
                 AllFours: "Hide",
             },
         },
-        {
-            Name: "阿巴阿巴_Luzi",
-            Random: false,
-            Top: -110,
-            Left: 0,
-            Fetish: ["Sadism"],
-            // AllowActivity: ["ShockItem"],
-            // ActivityAudio: ["Shocks"],
-            PoseMapping: {
-                TapedHands: "Hide",
-                Yoked: "Hide",
-                OverTheHead: "Hide",
-                BackBoxTie: "Hide",
-                BackElbowTouch: "Hide",
-                BackCuffs: "Hide",
-                AllFours: "Hide",
-            },
-        },
-        {
-            Name: "阿巴阿巴2_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-            Fetish: ["Sadism"],
-            // AllowActivity: ["ShockItem"],
-            // ActivityAudio: ["Shocks"],
-            PoseMapping: {
-                TapedHands: "Hide",
-                Yoked: "Hide",
-                OverTheHead: "Hide",
-                BackBoxTie: "Hide",
-                BackElbowTouch: "Hide",
-                BackCuffs: "Hide",
-                AllFours: "Hide",
-            },
-        },
     ],
     
     //TODO Saki (鞍缰绳)
@@ -279,8 +243,6 @@ const translations = {
         },
         ItemHandheld: {
             电蚊拍_Luzi: "电蚊拍",
-            阿巴阿巴_Luzi: "阿巴阿巴",
-            阿巴阿巴2_Luzi: "阿巴阿巴2",
         },
         ItemTorso: {
             鞍_Luzi: "鞍",
@@ -321,8 +283,6 @@ const translations = {
         },
         ItemHandheld: {
             电蚊拍_Luzi: "Electric Fly Swatter",
-            阿巴阿巴_Luzi: "Aba Aba",
-            阿巴阿巴2_Luzi: "Aba Aba2",
         },
         ItemTorso: {
             鞍_Luzi: "Saddle",
