@@ -186,6 +186,7 @@ const assets = {
                 BackBoxTie: "Hide",
                 BackElbowTouch: "Hide",
                 BackCuffs: "Hide",
+                Hogtied: "Hide",
                 AllFours: "Hide",
             },
             Effect: [E.MergedFingers],
