@@ -172,6 +172,7 @@ const assets = {
             Random: false,
             Top: -110,
             Left: 0,
+            ParentGroup: null,
             Fetish: ["Sadism"],
             AllowActivity: ["ShockItem"],
             ActivityAudio: ["Shocks"],

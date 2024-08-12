@@ -51,47 +51,47 @@ const translations = {
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
 
-    // 调整绘制位置
-    let inChatRoomCharacterViewDraw = false;
-    ModManager.hookFunction("ChatRoomCharacterViewLoopCharacters", 1, (args, next) => {
-        inChatRoomCharacterViewDraw = true;
-        next(args);
-        inChatRoomCharacterViewDraw = false;
-    });
+    // // 调整绘制位置
+    // let inChatRoomCharacterViewDraw = false;
+    // ModManager.hookFunction("ChatRoomCharacterViewLoopCharacters", 1, (args, next) => {
+    //     inChatRoomCharacterViewDraw = true;
+    //     next(args);
+    //     inChatRoomCharacterViewDraw = false;
+    // });
 
-    ModManager.hookFunction("DrawCharacter", 1, (args, next) => {
-        do {
-            const [C, X, Y, Zoom] = args;
-            if (C.Canvas.width === 500) C.Canvas.width = 1000;
-            if (C.CanvasBlink.width === 500) C.CanvasBlink.width = 1000;
+    // ModManager.hookFunction("DrawCharacter", 1, (args, next) => {
+    //     do {
+    //         const [C, X, Y, Zoom] = args;
+    //         if (C.Canvas.width === 500) C.Canvas.width = 1000;
+    //         if (C.CanvasBlink.width === 500) C.CanvasBlink.width = 1000;
 
-            if (!inChatRoomCharacterViewDraw) break;
+    //         if (!inChatRoomCharacterViewDraw) break;
 
-            const device = InventoryGet(C, "ItemDevices");
-            if (!device) break;
-            if (device.Asset.Name === assets.ItemDevices[0].Name) {
-                const idx = ChatRoomCharacterDrawlist.indexOf(C);
-                if (
-                    idx < 0 ||
-                    idx === ChatRoomCharacterDrawlist.length - 1 ||
-                    idx === ChatRoomCharacterViewCharactersPerRow - 1
-                )
-                    break;
-                const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx + 1], "ItemDevices");
-                if (!other_device) break;
-                if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
-                    return next([C, X + 145, Y, Zoom]);
-                }
-            } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
-                const idx = ChatRoomCharacterDrawlist.indexOf(C);
-                if (idx < 0 || idx === 0 || idx === ChatRoomCharacterViewCharactersPerRow) break;
-                const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx - 1], "ItemDevices");
-                if (!other_device) break;
-                if (other_device.Asset.Name === assets.ItemDevices[0].Name) {
-                    return next([C, X - 145, Y, Zoom]);
-                }
-            }
-        } while (false);
-        next(args);
-    });
+    //         const device = InventoryGet(C, "ItemDevices");
+    //         if (!device) break;
+    //         if (device.Asset.Name === assets.ItemDevices[0].Name) {
+    //             const idx = ChatRoomCharacterDrawlist.indexOf(C);
+    //             if (
+    //                 idx < 0 ||
+    //                 idx === ChatRoomCharacterDrawlist.length - 1 ||
+    //                 idx === ChatRoomCharacterViewCharactersPerRow - 1
+    //             )
+    //                 break;
+    //             const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx + 1], "ItemDevices");
+    //             if (!other_device) break;
+    //             if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
+    //                 return next([C, X + 145, Y, Zoom]);
+    //             }
+    //         } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
+    //             const idx = ChatRoomCharacterDrawlist.indexOf(C);
+    //             if (idx < 0 || idx === 0 || idx === ChatRoomCharacterViewCharactersPerRow) break;
+    //             const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx - 1], "ItemDevices");
+    //             if (!other_device) break;
+    //             if (other_device.Asset.Name === assets.ItemDevices[0].Name) {
+    //                 return next([C, X - 145, Y, Zoom]);
+    //             }
+    //         }
+    //     } while (false);
+    //     next(args);
+    // });
 }

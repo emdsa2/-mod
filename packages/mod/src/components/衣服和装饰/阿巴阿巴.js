@@ -6,6 +6,7 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
+    ParentGroup: null,
     Extended: true,
     Fetish: ["Sadism"],
     // AllowActivity: ["ShockItem"],
