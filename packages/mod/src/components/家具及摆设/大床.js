@@ -1,4 +1,5 @@
 import AssetManager from "../../assetManager";
+import { unit } from "../../func";
 import ModManager from "../../modManager";
 
 /** @type {CustomGroupedAssetDefinitions} */
@@ -114,82 +115,34 @@ const translations = {
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
 
-    // 拓展绘图空间
-    ModManager.patchFunction("GLDrawLoad", {
-        "GLDrawCanvas.width = 1000;": "GLDrawCanvas.width = 2000;",
-        "GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);":
-            "GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 2000, CanvasDrawHeight, 0);",
-    });
-    ModManager.patchFunction("GLDrawAppearanceBuild", {
-        "const blinkOffset = 500;": "const blinkOffset = 1000;",
-        "GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 1000, CanvasDrawHeight, 0);":
-            "GLDrawClearRect(GLDrawCanvas.GL, 0, 0, 2000, CanvasDrawHeight, 0);",
-    });
-    ModManager.patchFunction("CommonDrawCanvasPrepare", {
-        ".width = 500;": ".width = 1000;",
-        "clearRect(0, 0, 500, CanvasDrawHeight)": "clearRect(0, 0, 1000, CanvasDrawHeight)",
-    });
-    ModManager.patchFunction("DrawCharacter", {
-        "500 * HeightRatio * Zoom": "1000 * HeightRatio * Zoom",
-        "TempCanvas.canvas.width = CanvasDrawWidth;": "TempCanvas.canvas.width = CanvasDrawWidth * 2;",
-    });
-    // FIXME Saki快修这个！ （还缺少 画布整体向左平移 ，角色整体向右平移）
-    //   👆修好了            
-    // patchFunction("DrawCharacterSegment", { // 👈要加上
-    //     'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250', // <- 衣柜缩略图 向左回正
-    // });
+    ModManager.progressiveHook("DrawCharacter", 1)
+        .inside("ChatRoomCharacterViewLoopCharacters")
+        .inject((args, next) => {
+            const C = args[0];
+            unit(InventoryGet(C, "ItemDevices")).then((device) => {
+                if (device.Asset.Name === assets.ItemDevices[0].Name) {
+                    const idx = ChatRoomCharacterDrawlist.indexOf(C);
+                    if (
+                        idx < 0 ||
+                        idx === ChatRoomCharacterDrawlist.length - 1 ||
+                        idx === ChatRoomCharacterViewCharactersPerRow - 1
+                    )
+                        return;
+                    const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx + 1], "ItemDevices");
+                    if (!other_device) return;
 
-    ModManager.afterInit(async () => {
-        function sleep(ms) {
-            return new Promise((resolve) => setTimeout(resolve, ms));
-        }
-        while (window.GLDrawCanvas === undefined) {
-            await sleep(100);
-        }
-        GLDrawResetCanvas();
-    });
-
-    // 调整绘制位置
-    let inChatRoomCharacterViewDraw = false;
-    ModManager.hookFunction("ChatRoomCharacterViewLoopCharacters", 1, (args, next) => {
-        inChatRoomCharacterViewDraw = true;
-        next(args);
-        inChatRoomCharacterViewDraw = false;
-    });
-
-    ModManager.hookFunction("DrawCharacter", 1, (args, next) => {
-        do {
-            const [C, X, Y, Zoom] = args;
-            if (C.Canvas.width === 500) C.Canvas.width = 1000;
-            if (C.CanvasBlink.width === 500) C.CanvasBlink.width = 1000;
-
-            if (!inChatRoomCharacterViewDraw) break;
-
-            const device = InventoryGet(C, "ItemDevices");
-            if (!device) break;
-            if (device.Asset.Name === assets.ItemDevices[0].Name) {
-                const idx = ChatRoomCharacterDrawlist.indexOf(C);
-                if (
-                    idx < 0 ||
-                    idx === ChatRoomCharacterDrawlist.length - 1 ||
-                    idx === ChatRoomCharacterViewCharactersPerRow - 1
-                )
-                    break;
-                const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx + 1], "ItemDevices");
-                if (!other_device) break;
-                if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
-                    return next([C, X + 145, Y, Zoom]);
+                    if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
+                        args[1] += 145;
+                    }
+                } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
+                    const idx = ChatRoomCharacterDrawlist.indexOf(C);
+                    if (idx < 0 || idx === 0 || idx === ChatRoomCharacterViewCharactersPerRow) return;
+                    const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx - 1], "ItemDevices");
+                    if (!other_device) return;
+                    if (other_device.Asset.Name === assets.ItemDevices[0].Name) {
+                        args[1] -= 145;
+                    }
                 }
-            } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
-                const idx = ChatRoomCharacterDrawlist.indexOf(C);
-                if (idx < 0 || idx === 0 || idx === ChatRoomCharacterViewCharactersPerRow) break;
-                const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx - 1], "ItemDevices");
-                if (!other_device) break;
-                if (other_device.Asset.Name === assets.ItemDevices[0].Name) {
-                    return next([C, X - 145, Y, Zoom]);
-                }
-            }
-        } while (false);
-        next(args);
-    });
+            });
+        });
 }

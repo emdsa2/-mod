@@ -1,10 +1,10 @@
 /**
- *
- * @template T
- * @param {()=>T} func
+ * 发出monad的声音！
+ * @template  T
+ * @param {(()=>T) | T} fValue
  */
-export function unit(func) {
-    const value = func();
+export function unit(fValue) {
+    const value = typeof fValue === "function" ? /** @type {()=>T}*/ (fValue)() : fValue;
     const empty_unit = {
         then: (cb) => empty_unit,
     };
@@ -17,15 +17,20 @@ export function unit(func) {
     } else return empty_unit;
 }
 
+/**
+ * 你必须睡一会儿
+ * @param {number} ms 毫秒
+ * @returns {Promise<void>}
+ */
 export function sleepFor(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
- *
- * @param {()=>boolean} test
- * @param {number} interval
- * @returns
+ * 你必须睡到满足条件为止
+ * @param {()=>boolean} test 测试条件
+ * @param {number} interval 间隔时间
+ * @returns {Promise<void>}
  */
 export function sleepUntil(test, interval = 100) {
     return new Promise((resolve) => {

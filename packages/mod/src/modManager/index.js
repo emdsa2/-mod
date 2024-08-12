@@ -125,7 +125,7 @@ export default class ModManager {
     }
 
     /**
-     * 注册一个连续钩子函数
+     * 酷炫地按步骤来组装钩子函数！
      * @template {string} TFunctionName
      * @param {TFunctionName} funcName
      * @param {number} [priority]

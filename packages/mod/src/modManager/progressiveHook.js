@@ -51,9 +51,6 @@ export class ProgressiveHook {
 
     /** @type {workType[]} */
     workList = [];
-    /** @type {mReturnType} */
-    result = undefined;
-    hasResult = false;
 
     /**  @param {Hookable<any>} hookMng */
     constructor(hookMng) {
@@ -66,27 +63,30 @@ export class ProgressiveHook {
      * @returns { mReturnType}
      */
     run(args, next) {
+        let hasResult = false;
+        /** @type {mReturnType} */
+        let result = undefined;
         for (const work of this.workList) {
             if (work.value === "inject") {
                 work.work(args, next);
             } else if (work.value === "next") {
-                this.result = next(args);
-                this.hasResult = true;
+                result = next(args);
+                hasResult = true;
             } else if (work.value === "override") {
-                this.result = work.work(args, next);
-                this.hasResult = true;
+                result = work.work(args, next);
+                hasResult = true;
             } else if (work.value === "flag") {
                 if (!work.flag) break;
                 if (work.once) work.flag = false;
             }
         }
 
-        if (this.hasResult) return this.result;
+        if (hasResult) return result;
         else return next(args);
     }
 
     /**
-     * 添加下一步的步骤，如同执行原函数，如果有这个步骤，则不会在末尾自动调用next()
+     * 添加下一步的步骤，如同执行原函数，并设置Result。如果Result被设置，则不会在末尾自动调用next()。
      */
     next() {
         this.workList.push({ value: "next" });
@@ -94,7 +94,7 @@ export class ProgressiveHook {
     }
 
     /**
-     * 添加一个注入步骤，可以在其中修改参数或产生其他副作用。注意，这个步骤不会覆盖原函数，在步骤末尾会自动调用next()。
+     * 添加一个注入步骤，可以在其中修改参数或产生其他副作用。注意，这个步骤不会设置Result，在步骤末尾会自动调用next()。
      * @param { FuncType<void> } func
      */
     inject(func) {
@@ -126,7 +126,7 @@ export class ProgressiveHook {
     }
 
     /**
-     * 覆盖原函数，如果有这个步骤，则不会在末尾自动调用next()
+     * 覆盖原函数，并将返回值作为Result。如果Result被设置，则不会在末尾自动调用next()。
      * @param { FuncType<mReturnType> } func
      */
     override(func) {
