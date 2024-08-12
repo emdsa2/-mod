@@ -133,6 +133,11 @@ export default function () {
         "500 * HeightRatio * Zoom": "1000 * HeightRatio * Zoom",
         "TempCanvas.canvas.width = CanvasDrawWidth;": "TempCanvas.canvas.width = CanvasDrawWidth * 2;",
     });
+    // FIXME Saki快修这个！ （还缺少 画布整体向左平移 ，角色整体向右平移）
+    //   👆修好了            
+    // patchFunction("DrawCharacterSegment", { // 👈要加上
+    //     'DrawCanvasSegment(C.Canvas, Left': 'DrawCanvasSegment(C.Canvas, Left + 250', // <- 衣柜缩略图 向左回正
+    // });
 
     ModManager.afterInit(async () => {
         function sleep(ms) {
