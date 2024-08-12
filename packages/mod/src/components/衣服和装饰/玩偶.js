@@ -9,7 +9,7 @@ const asset = {
     ParentGroup: null,
     Priority: 24,
     PoseMapping: {
-        TapedHands: "Hide",
+        TapedHands: "TapedHands",
         Yoked: "Hide",
         OverTheHead: "Hide",
         BackBoxTie: "Hide",
