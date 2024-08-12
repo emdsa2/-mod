@@ -130,6 +130,15 @@ const asset = {
             Priority: 27,
             AllowTypes: { c: 6 },
         },
+
+        // 猫州猫庭府玩偶
+        {
+            Name: "Axa",
+            Top: 0,
+            Left: 0,
+            Priority: 27,
+            AllowTypes: { f: 1 },
+        },
     ],
 };
 
@@ -162,6 +171,12 @@ const extended = {
             DrawImages: false,
             Key: "c",
             Options: [{}, {}, {}, {}],
+        },
+        {
+            Name: "猫州猫庭府玩偶",
+            DrawImages: false,
+            Key: "f",
+            Options: [{}, {}],
         },
     ],
 };
@@ -223,6 +238,13 @@ const dialogs = {
         ItemMisc玩偶_LuziSetc6: "SourceCharacter给了DestinationCharacter一只可爱的居x玩偶.",
 
 
+        ItemMisc玩偶_LuziSelect猫州猫庭府玩偶: "选择猫州猫庭府玩偶",
+        ItemMisc玩偶_LuziModule猫州猫庭府玩偶: "猫州猫庭府玩偶",
+        ItemMisc玩偶_LuziOptionf0: "空",
+        ItemMisc玩偶_LuziOptionf1: "Axa",
+
+        ItemMisc玩偶_LuziSetf0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
+        ItemMisc玩偶_LuziSetf1: "SourceCharacter给了DestinationCharacter一只可爱的Axa玩偶.",
 
 
     },
@@ -276,6 +298,13 @@ const dialogs = {
         ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只可爱的PumpkinPie玩偶.",
         ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只可爱的Lux玩偶.",
 
+        ItemMisc玩偶_LuziSelect猫州猫庭府玩偶: "选择猫州猫庭府玩偶",
+        ItemMisc玩偶_LuziModule猫州猫庭府玩偶: "猫州猫庭府玩偶",
+        ItemMisc玩偶_LuziOptionf0: "空",
+        ItemMisc玩偶_LuziOptionf1: "Axa",
+
+        ItemMisc玩偶_LuziSetf0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
+        ItemMisc玩偶_LuziSetf1: "SourceCharacter给了DestinationCharacter一只可爱的Axa玩偶.",
 
     },
 
