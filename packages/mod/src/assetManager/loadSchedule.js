@@ -154,9 +154,8 @@ export function runSetupLoad() {
     if (AssetGroup.length > 50) {
         mLoadGroup();
     } else {
-        ModManager.hookFunction("AssetLoadAll", 1, (args, next) => {
-            next(args);
-            mLoadGroup();
-        });
+        ModManager.progressiveHook("AssetLoadAll", 1)
+            .next()
+            .inject(() => mLoadGroup());
     }
 }

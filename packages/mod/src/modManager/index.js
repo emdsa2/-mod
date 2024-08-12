@@ -1,5 +1,6 @@
 import bcModSdk from "bondage-club-mod-sdk";
-import log from "./log";
+import log from "../log";
+import { ProgressiveHook } from "./progressiveHook";
 
 /**
  * @template {string} TFunctionName
@@ -121,6 +122,20 @@ export default class ModManager {
      */
     static hookFunction(funcName, priority, hook) {
         ModManager.push(hookList, () => ModManager.mod.hookFunction(funcName, priority, hook));
+    }
+
+    /**
+     * 注册一个连续钩子函数
+     * @template {string} TFunctionName
+     * @param {TFunctionName} funcName
+     * @param {number} [priority]
+     * @returns {ProgressiveHook<TFunctionName>}
+     */
+    static progressiveHook(funcName, priority = 1) {
+        /** @type {ProgressiveHook<TFunctionName>} */
+        const hook = new ProgressiveHook(ModManager);
+        ModManager.hookFunction(funcName, priority, (args, next) => hook.run(args, next));
+        return hook;
     }
 
     /**

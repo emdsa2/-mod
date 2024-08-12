@@ -35,13 +35,15 @@ function getCustomDialog(language, dialog) {
 }
 
 export function setupCustomDialog() {
-    ModManager.hookFunction("AssetTextGet", 1, (args, next) => {
-        return getCustomDialog(TranslationLanguage, args[0]) || next(args);
-    });
-    ModManager.hookFunction("ChatRoomPublishCustomAction", 1, (args, next) => {
-        const [msg, _, Dictionary] = args;
-        const tDialog = getCustomDialog(TranslationLanguage, msg);
-        if (tDialog) Dictionary.push({ Tag: `MISSING TEXT IN "Interface.csv": ${msg}`, Text: tDialog });
-        return next(args);
-    });
+    ModManager.progressiveHook("AssetTextGet").override(
+        (args, next) => getCustomDialog(TranslationLanguage, args[0]) || next(args)
+    );
+
+    ModManager.progressiveHook("ChatRoomPublishCustomAction")
+        .inject((args, next) => {
+            const [msg, _, Dictionary] = args;
+            const tDialog = getCustomDialog(TranslationLanguage, msg);
+            if (tDialog) Dictionary.push({ Tag: `MISSING TEXT IN "Interface.csv": ${msg}`, Text: tDialog });
+        })
+        .next();
 }

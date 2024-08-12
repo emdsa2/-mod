@@ -72,18 +72,11 @@ export function setupImgMapping() {
         return src;
     };
 
-    ModManager.hookFunction("DrawImageEx", 1, (args, next) => {
-        args[0] = mapImgSrc(args[0]);
-        return next(args);
-    });
-
-    ModManager.hookFunction("GLDrawImage", 1, (args, next) => {
-        args[0] = mapImgSrc(args[0]);
-        return next(args);
-    });
-
-    ModManager.hookFunction("DrawGetImage", 2, (args, next) => {
-        args[0] = mapImgSrc(args[0]);
-        return next(args);
-    });
+    ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
+        (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) => {
+            ModManager.progressiveHook(fn, 1)
+                .inject((args, next) => (args[0] = mapImgSrc(args[0])))
+                .next();
+        }
+    );
 }

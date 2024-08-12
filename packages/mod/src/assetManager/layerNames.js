@@ -3,6 +3,7 @@
  * @typedef { {desc:Translation.Entry, fallback:string , noOverride:boolean} } LayerNameDetails
  */
 
+import { unit } from "../func";
 import ModManager from "../modManager";
 
 /** @type {  Map<CustomLayerNameKey, LayerNameDetails>} */
@@ -60,12 +61,18 @@ export function setupLayerNameLoad() {
     ModManager.patchFunction("ItemColorLoad", {
         "ItemColorLayerNames = new TextCache": `${FuncK}(()=>ItemColorLayerNames);\nItemColorLayerNames = new TextCache`,
     });
-    ModManager.hookFunction("ItemColorLoad", 1, (args, next) => {
-        next(args);
-        if (cache?.()?.cache) {
-            layerNames.forEach((value, ckeys) => {
-                pushLayerName(/** @type {CustomLayerNameKey} */ (ckeys), value.desc, value.fallback, value.noOverride);
-            });
-        }
-    });
+    ModManager.progressiveHook("ItemColorLoad", 1)
+        .next()
+        .inject(() =>
+            unit(() => cache?.()?.cache).then((_) => {
+                layerNames.forEach((value, ckeys) => {
+                    pushLayerName(
+                        /** @type {CustomLayerNameKey} */ (ckeys),
+                        value.desc,
+                        value.fallback,
+                        value.noOverride
+                    );
+                });
+            })
+        );
 }
