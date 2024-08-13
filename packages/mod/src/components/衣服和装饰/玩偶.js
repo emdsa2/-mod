@@ -187,7 +187,7 @@ const extended = {
             Name: "芷窝玩偶",
             DrawImages: false,
             Key: "z",
-            Options: [{}, {}, {}, {}, {}],
+            Options: [{}, {}, {}, {}, {}, {}],
         },
         {
             Name: "Catnest玩偶",
