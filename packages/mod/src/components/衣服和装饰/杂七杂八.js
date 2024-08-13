@@ -148,45 +148,36 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: "BodyUpper",
+            ParentGroup: null,
             PoseMapping: {
                 BackBoxTie: "Hide",
                 BackCuffs: "Hide",
                 BackElbowTouch: "Hide",
                 OverTheHead: "Hide",
-                Yoked: "Hide",
+                Yoked: "Yoked",
                 Hogtied: "Hide",
                 AllFours: "Hide",
             },
-            // Layer: [
-            //     {
-            //         Name: "高光",
-            //         Priority: 18,
-            //     },
-            // ],
+            Layer: [
+                {
+                    Name: "袖子",
+                    Priority: 36,
+                },
+                {
+                    Name: "渐变",
+                    Priority: 35,
+                },
+                {
+                    Name: "花纹",
+                    Priority: 37,
+                },
+            ],
         },
     ],
 
     ItemHands: [
         {
             Name: "拳击手套_Luzi",
-            Random: false,
-            Gender: "F",
-            ParentGroup: null,
-            PoseMapping: {
-                Yoked: "Yoked",
-                OverTheHead: "OverTheHead",
-                BackBoxTie: "Hide",
-                BackElbowTouch: "Hide",
-                BackCuffs: "Hide",
-                Hogtied: "Hide",
-                AllFours: "Hide",
-            },
-            Effect: [E.MergedFingers],
-            Hide: ["ItemHandheld"],
-        },
-        {
-            Name: "伊偶_Luzi",
             Random: false,
             Gender: "F",
             ParentGroup: null,
@@ -222,6 +213,26 @@ const assets = {
                 BackCuffs: "Hide",
                 AllFours: "Hide",
             },
+        },
+        {
+            Name: "伊偶_Luzi",
+            Random: false,
+            Gender: "F",
+            Top: {
+                OverTheHead: -100,
+            },
+            ParentGroup: null,
+            PoseMapping: {
+                Yoked: "Yoked",
+                OverTheHead: "OverTheHead",
+                BackBoxTie: "Hide",
+                BackElbowTouch: "Hide",
+                BackCuffs: "Hide",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            },
+            Effect: [E.MergedFingers],
+            Hide: ["ItemHandheld"],
         },
     ],
 
@@ -284,6 +295,7 @@ const translations = {
         },
         ItemHandheld: {
             电蚊拍_Luzi: "电蚊拍",
+            伊偶_Luzi: "伊偶",
         },
         ItemTorso: {
             鞍_Luzi: "鞍",
@@ -324,6 +336,7 @@ const translations = {
         },
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",
+            伊偶_Luzi: "Yi Doll",
         },
         ItemHandheld: {
             电蚊拍_Luzi: "Electric Fly Swatter",
