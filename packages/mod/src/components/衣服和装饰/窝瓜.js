@@ -1,5 +1,5 @@
-import AssetManager from "../../assetManager";
-import { Path } from "../../path";
+import AssetManager from "@mod-utils/AssetManager";
+import { Path } from "@mod-utils/path";
 
 /** @type {CustomAssetDefinition} */
 const asset = {

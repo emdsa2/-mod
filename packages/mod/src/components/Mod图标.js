@@ -1,5 +1,5 @@
-import ModManager from "../modManager";
-import { Path } from "../path";
+import ModManager from "@mod-utils/ModManager";
+import { Path } from "@mod-utils/path";
 
 const status = Object.freeze({
     echo: {

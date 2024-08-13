@@ -1,4 +1,4 @@
-import AssetManager from "../../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type { CustomGroupedAssetDefinitions }} */
 const assets = {
@@ -113,14 +113,7 @@ const assets = {
                 LegsClosed: "LegsClosed",
                 Spread: "Hide",
             },
-            DefaultColor: [
-                "#FFFFFF",
-                "#FFFFFF",
-                "#000000",
-                "#000000",
-                "#000000",
-                "#000000",
-            ],
+            DefaultColor: ["#FFFFFF", "#FFFFFF", "#000000", "#000000", "#000000", "#000000"],
             Layer: [
                 {
                     Name: "高光",
@@ -174,7 +167,6 @@ const assets = {
         },
     ],
 
-
     ItemHands: [
         {
             Name: "拳击手套_Luzi",
@@ -214,7 +206,7 @@ const assets = {
             },
         },
     ],
-    
+
     //TODO Saki (鞍缰绳)
     ItemTorso: [
         {

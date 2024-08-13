@@ -1,4 +1,4 @@
-import ModManager from "../modManager";
+import ModManager from "../ModManager";
 import { assetOverrides, baseURL } from "../rollupHelper";
 
 /** @type {Record<string,string>} */

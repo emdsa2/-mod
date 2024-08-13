@@ -1,4 +1,4 @@
-import ModManager from "../modManager";
+import ModManager from "../ModManager";
 
 /** @type {Translation.Dialog} */
 const customDialog = {};

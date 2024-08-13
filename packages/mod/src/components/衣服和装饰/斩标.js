@@ -1,4 +1,4 @@
-import AssetManager from "../../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -10,11 +10,13 @@ const asset = {
     Fetish: ["Sadism"],
     Layer: [
         {
-            Name: "牌子", Priority: 1,
+            Name: "牌子",
+            Priority: 1,
         },
         {
-            Name: "笨蛋", Priority: 2,
-            AllowTypes: { typed: [1] }
+            Name: "笨蛋",
+            Priority: 2,
+            AllowTypes: { typed: [1] },
         },
     ],
 };
@@ -22,7 +24,7 @@ const asset = {
 const extended = {
     Archetype: ExtendedArchetype.TYPED,
     DrawImages: false,
-    Options: [{ Name: "无" }, { Name: "笨蛋" },],
+    Options: [{ Name: "无" }, { Name: "笨蛋" }],
 };
 
 /** @type {Translation.Dialog} */
@@ -34,7 +36,6 @@ const dialog = {
 
         ItemMisc斩标_LuziSet无: "SourceCharacter擦掉了DestinationCharacter斩标上的字.",
         ItemMisc斩标_LuziSet笨蛋: "SourceCharacter在DestinationCharacter斩标上写上了笨蛋.",
-
     },
     EN: {
         ItemMisc斩标_LuziSelect: "Select Aba Aba",

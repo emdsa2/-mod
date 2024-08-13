@@ -1,6 +1,6 @@
-import AssetManager from "../../assetManager";
-import { unit } from "../../func";
-import ModManager from "../../modManager";
+import { unit } from "@mod-utils/fp";
+import ModManager from "@mod-utils/ModManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {

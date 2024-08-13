@@ -1,4 +1,4 @@
-import AssetManager from "../../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type { CustomAssetDefinitionItem[] } */
 const head_assets = [

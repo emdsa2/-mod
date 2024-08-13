@@ -1,5 +1,5 @@
-import AssetManager from "../../assetManager";
-import ModManager from "../../modManager";
+import AssetManager from "@mod-utils/AssetManager";
+import ModManager from "@mod-utils/ModManager";
 
 function scriptDrawHook(data, originalFunction, drawData) {
     originalFunction(drawData);

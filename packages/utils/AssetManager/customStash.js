@@ -1,4 +1,4 @@
-import ModManager from "../modManager";
+import ModManager from "../ModManager";
 
 /** @type {Partial<Record<CustomGroupName, AssetGroup>>} */
 const customGroups = {};

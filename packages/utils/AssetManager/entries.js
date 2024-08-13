@@ -1,4 +1,4 @@
-import ModManager from "../modManager";
+import ModManager from "../ModManager";
 import { checkItemCustomed, getCustomAssets, getCustomGroups } from "./customStash";
 import { resolvePreimage } from "./loadSchedule";
 

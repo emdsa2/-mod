@@ -9,8 +9,8 @@
     "url": "https://github.com/emdsa2/-mod"
   },
   "rollupSetting": {
-    "output":"mod2.js",
-    "input":"src/main.js",
+    "output": "mod2.js",
+    "input": "src/main.js",
     "loaderName": "BC_Activity2.user.js"
   },
   "displayName": "动作拓展",
@@ -26,6 +26,7 @@
     "bondage-club-mod-sdk": "^1.2.0",
     "rollup": "^4.20.0",
     "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-copy": "^3.5.0"
+    "rollup-plugin-copy": "^3.5.0",
+    "@rollup/plugin-alias": "^5.1.0"
   }
 }

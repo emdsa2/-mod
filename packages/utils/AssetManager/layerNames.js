@@ -3,8 +3,8 @@
  * @typedef { {desc:Translation.Entry, fallback:string , noOverride:boolean} } LayerNameDetails
  */
 
-import { unit } from "../func";
-import ModManager from "../modManager";
+import { unit } from "../fp";
+import ModManager from "../ModManager";
 
 /** @type {  Map<CustomLayerNameKey, LayerNameDetails>} */
 const layerNames = new Map();

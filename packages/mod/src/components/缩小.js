@@ -1,5 +1,5 @@
-import AssetManager from "../assetManager";
-import ModManager from "../modManager";
+import AssetManager from "@mod-utils/AssetManager";
+import ModManager from "@mod-utils/ModManager";
 
 const reduceTag1 = "缩小(地)_Luzi";
 const reduceTag2 = "缩小(空)_Luzi";

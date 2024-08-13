@@ -1,4 +1,4 @@
-import AssetManager from "../../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type { CustomGroupedAssetDefinitions }} */
 const assets = {
@@ -74,7 +74,6 @@ const assets = {
             Left: 0,
         },
     ],
-
 };
 
 /** @type { Translation.GroupedEntries } */

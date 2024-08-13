@@ -1,5 +1,5 @@
-import AssetManager from "../../assetManager";
-import ModManager from "../../modManager";
+import ModManager from "@mod-utils/ModManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -7,7 +7,8 @@ const assets = {
         {
             Name: "马车_Luzi",
             Random: false,
-            Top: 0,Left: 0,
+            Top: 0,
+            Left: 0,
             Layer: [
                 {
                     Name: "前",
@@ -26,8 +27,8 @@ const assets = {
         {
             Name: "马_Luzi",
             Random: false,
-            Top: 0,Left: 0,
-
+            Top: 0,
+            Left: 0,
         },
     ],
 };

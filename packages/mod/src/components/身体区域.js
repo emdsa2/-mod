@@ -1,4 +1,4 @@
-import AssetManager from "../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type { {groupDef: CustomGroupDefinition, description: Translation.Entry }[]} */
 const groups = [

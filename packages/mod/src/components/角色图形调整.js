@@ -1,5 +1,5 @@
-import { sleepUntil } from "../func";
-import ModManager from "../modManager";
+import { sleepUntil } from "@mod-utils/sleep";
+import ModManager from "@mod-utils/ModManager";
 
 export default function () {
     // 拓展绘图空间

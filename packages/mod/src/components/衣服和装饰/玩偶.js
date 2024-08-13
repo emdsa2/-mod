@@ -1,4 +1,4 @@
-import AssetManager from "../../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -65,7 +65,6 @@ const asset = {
             AllowTypes: { s: 4 },
         },
 
-
         // 芷窝
         {
             Name: "Ttong",
@@ -102,7 +101,6 @@ const asset = {
             Priority: 27,
             AllowTypes: { z: 5 },
         },
-
 
         // Catnest
         {
@@ -168,7 +166,6 @@ const asset = {
     ],
 };
 
-
 /** @type {ModularItemConfig} */
 const extended = {
     Archetype: ExtendedArchetype.MODULAR,
@@ -226,7 +223,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetd1: "SourceCharacter给了DestinationCharacter一只可爱的Saki玩偶.",
         ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
 
-
         ItemMisc玩偶_LuziSelect狼窝玩偶: "选择狼窝玩偶",
         ItemMisc玩偶_LuziModule狼窝玩偶: "狼窝玩偶",
         ItemMisc玩偶_LuziOptions0: "空",
@@ -239,7 +235,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSets2: "SourceCharacter给了DestinationCharacter一只可爱的Ada玩偶.",
         ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSets4: "SourceCharacter给了DestinationCharacter一只可爱的Reisigure玩偶.",
-
 
         ItemMisc玩偶_LuziSelect芷窝玩偶: "选择芷窝玩偶",
         ItemMisc玩偶_LuziModule芷窝玩偶: "芷窝玩偶",
@@ -273,7 +268,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetc5: "SourceCharacter给了DestinationCharacter一只可爱的Lux玩偶.",
         ItemMisc玩偶_LuziSetc6: "SourceCharacter给了DestinationCharacter一只可爱的居x玩偶.",
 
-
         ItemMisc玩偶_LuziSelect猫州猫庭府玩偶: "选择猫州猫庭府玩偶",
         ItemMisc玩偶_LuziModule猫州猫庭府玩偶: "猫州猫庭府玩偶",
         ItemMisc玩偶_LuziOptionf0: "空",
@@ -282,7 +276,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetf0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetf1: "SourceCharacter给了DestinationCharacter一只可爱的Axa玩偶.",
 
-
         ItemMisc玩偶_LuziSelect路过的玩偶: "选择路过的玩偶",
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",
         ItemMisc玩偶_LuziOptionl0: "空",
@@ -290,7 +283,6 @@ const dialogs = {
 
         ItemMisc玩偶_LuziSetl0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetl1: "SourceCharacter给了DestinationCharacter一只路过的li玩偶.",
-
     },
     EN: {
         ItemMisc玩偶_LuziSelectBase: "选择房间",
@@ -303,7 +295,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetd1: "SourceCharacter给了DestinationCharacter一只可爱的Saki玩偶.",
         ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
 
-
         ItemMisc玩偶_LuziSelect狼窝玩偶: "选择狼窝玩偶",
         ItemMisc玩偶_LuziModule狼窝玩偶: "狼窝玩偶",
         ItemMisc玩偶_LuziOptions0: "空",
@@ -316,7 +307,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSets2: "SourceCharacter给了DestinationCharacter一只可爱的Ada玩偶.",
         ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSets4: "SourceCharacter给了DestinationCharacter一只可爱的Reisigure玩偶.",
-
 
         ItemMisc玩偶_LuziSelect芷窝玩偶: "选择芷窝玩偶",
         ItemMisc玩偶_LuziModule芷窝玩偶: "芷窝玩偶",
@@ -350,7 +340,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetc5: "SourceCharacter给了DestinationCharacter一只可爱的Lux玩偶.",
         ItemMisc玩偶_LuziSetc6: "SourceCharacter给了DestinationCharacter一只可爱的居x玩偶.",
 
-
         ItemMisc玩偶_LuziSelect猫州猫庭府玩偶: "选择猫州猫庭府玩偶",
         ItemMisc玩偶_LuziModule猫州猫庭府玩偶: "猫州猫庭府玩偶",
         ItemMisc玩偶_LuziOptionf0: "空",
@@ -359,7 +348,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetf0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetf1: "SourceCharacter给了DestinationCharacter一只可爱的Axa玩偶.",
 
-
         ItemMisc玩偶_LuziSelect路过的玩偶: "选择路过的玩偶",
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",
         ItemMisc玩偶_LuziOptionl0: "空",
@@ -367,9 +355,7 @@ const dialogs = {
 
         ItemMisc玩偶_LuziSetl0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetl1: "SourceCharacter给了DestinationCharacter一只路过的li玩偶.",
-
     },
-
 };
 
 const translations = { CN: "玩偶", EN: "Doll" };

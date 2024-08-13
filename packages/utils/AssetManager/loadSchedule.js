@@ -1,5 +1,5 @@
 import log from "../log";
-import ModManager from "../modManager";
+import ModManager from "../ModManager";
 import { getCustomAssets, getCustomGroups } from "./customStash";
 
 let isGroupLoaded = false;

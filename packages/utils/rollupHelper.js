@@ -1,4 +1,5 @@
 /** @type {import("bondage-club-mod-sdk").ModSDKModInfo} */
+
 export const ModInfo = {
     name: __mod_name__,
     fullName: __mod_full_name__,

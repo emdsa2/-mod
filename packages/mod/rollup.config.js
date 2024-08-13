@@ -4,6 +4,7 @@ const replace = require("@rollup/plugin-replace");
 const copy = require("rollup-plugin-copy");
 const terser = require("@rollup/plugin-terser");
 const packageJSON = require("./package.json");
+const alias = require("@rollup/plugin-alias");
 
 const {
     relativePath,
@@ -78,6 +79,12 @@ const defaultPluins = (baseURL) => [
         __asset_overrides__: assetMapping,
         __base_url__: `"${baseURL}"`,
         preventAssignment: false,
+    }),
+    alias({
+        entries: {
+            "@mod-utils": `${__dirname}/../utils`,
+            "bondage-club-mod-sdk": `${__dirname}/node_modules/bondage-club-mod-sdk`,
+        },
     }),
     commonjs(),
     resolve({ browser: true }),

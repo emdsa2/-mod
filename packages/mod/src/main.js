@@ -1,6 +1,6 @@
-import AssetManager from "./assetManager";
-import ModManager from "./modManager";
-import { ModInfo } from "./rollupHelper";
+import AssetManager from "@mod-utils/AssetManager";
+import ModManager from "@mod-utils/ModManager";
+import { ModInfo } from "@mod-utils/rollupHelper";
 
 import { setup } from "./components";
 

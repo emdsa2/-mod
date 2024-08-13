@@ -5,11 +5,17 @@
         "lib": [
             "es2021",
             "dom",
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@mod-utils/*": ["../utils/*"],
+            "bondage-club-mod-sdk": ["node_modules/bondage-club-mod-sdk"]
+        }
     },
     "include": [
+        "../utils/**/*.js",
         "src/**/*.js",
-        "src/Typedef.d.ts",
+        "../utils/Typedef.d.ts",
         "node_modules/bc-stubs/bc/**/*.d.ts"
     ]
 }

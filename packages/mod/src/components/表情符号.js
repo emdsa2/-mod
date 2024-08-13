@@ -1,4 +1,4 @@
-import AssetManager from "../assetManager";
+import AssetManager from "@mod-utils/AssetManager";
 
 const Emoticon内容 = [
     "车车_Luzi",
