@@ -41,12 +41,18 @@ export class ProgressiveHook {
      */
 
     /**
-     * @typedef { {value: "inject", work: FuncType<void>} } injectWork
+     * @typedef { FuncType<void> } InjectFuncType
+     * @typedef { FuncType<mReturnType> } HookFuncType
+     */
+
+    /**
+     * @typedef { {value: "inject", work: InjectFuncType} } injectWork
      * @typedef { {value: "next"} } nextWork
-     * @typedef { {value:"override", work: FuncType<mReturnType> } } overrideWork
-     * @typedef { {value:"flag", flag: boolean, once: boolean} } flagWork
+     * @typedef { {value: "override", work: HookFuncType } } overrideWork
+     * @typedef { {value: "flag", flag: boolean, once: boolean} } flagWork
+     * @typedef { {value: "check", work: FuncType<boolean>} } checkWork
      *
-     * @typedef { injectWork | nextWork | overrideWork | flagWork} workType
+     * @typedef { injectWork | nextWork | overrideWork | flagWork | checkWork } workType
      */
 
     /** @type {workType[]} */
@@ -78,6 +84,8 @@ export class ProgressiveHook {
             } else if (work.value === "flag") {
                 if (!work.flag) break;
                 if (work.once) work.flag = false;
+            } else if (work.value === "check") {
+                if (!work.work(args, next)) break;
             }
         }
 
@@ -95,7 +103,7 @@ export class ProgressiveHook {
 
     /**
      * 添加一个注入步骤，可以在其中修改参数或产生其他副作用。注意，这个步骤不会设置Result，在步骤末尾会自动调用next()。
-     * @param { FuncType<void> } func
+     * @param { InjectFuncType } func
      */
     inject(func) {
         this.workList.push({ value: "inject", work: func });
@@ -126,8 +134,18 @@ export class ProgressiveHook {
     }
 
     /**
+     * 添加一个检查步骤，如果返回false，则停止执行后续步骤。
+     * @param { FuncType<boolean> } func
+     * @returns {this}
+     */
+    when(func) {
+        this.workList.push({ value: "check", work: func });
+        return this;
+    }
+
+    /**
      * 覆盖原函数，并将返回值作为Result。如果Result被设置，则不会在末尾自动调用next()。
-     * @param { FuncType<mReturnType> } func
+     * @param { HookFuncType } func
      */
     override(func) {
         this.workList.push({ value: "override", work: func });

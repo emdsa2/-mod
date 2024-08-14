@@ -4,7 +4,7 @@ import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
 import { addCustomDialog, setupCustomDialog } from "./dialog";
 import { pickEntry, setupEntries } from "./entries";
-import { enableCustomAssets } from "./customStash";
+import { enableCustomAssets, getCustomAssets } from "./customStash";
 import { addLayerNames, setupLayerNameLoad } from "./layerNames";
 
 export default class AssetManager {
@@ -88,6 +88,15 @@ export default class AssetManager {
      */
     static addLayerNames(group, assetDef, entries) {
         addLayerNames(group, assetDef, { entries });
+    }
+
+    /**
+     * 检查物品是否是自定义物品
+     * @param {Asset} asset 物品
+     * @returns {boolean} 如果是自定义物品返回true
+     */
+    static assetIsCustomed(asset) {
+        return getCustomAssets()[asset.Group.Name]?.[asset.Name] !== undefined;
     }
 
     /**
