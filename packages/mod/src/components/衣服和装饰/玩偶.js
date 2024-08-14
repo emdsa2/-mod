@@ -163,6 +163,13 @@ const asset = {
             Priority: 27,
             AllowTypes: { l: 1 },
         },
+        {
+            Name: "YouXiang",
+            Top: 0,
+            Left: 0,
+            Priority: 27,
+            AllowTypes: { l: 2 },
+        },
     ],
 };
 
@@ -205,7 +212,7 @@ const extended = {
             Name: "路过的玩偶",
             DrawImages: false,
             Key: "l",
-            Options: [{}, {}],
+            Options: [{}, {}, {}],
         },
     ],
 };
@@ -280,9 +287,12 @@ const dialogs = {
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",
         ItemMisc玩偶_LuziOptionl0: "空",
         ItemMisc玩偶_LuziOptionl1: "li",
+        ItemMisc玩偶_LuziOptionl2: "YouXiang",
 
         ItemMisc玩偶_LuziSetl0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetl1: "SourceCharacter给了DestinationCharacter一只路过的li玩偶.",
+        ItemMisc玩偶_LuziSetl2: "SourceCharacter给了DestinationCharacter一只路过的YouXiang玩偶.",
+    
     },
     EN: {
         ItemMisc玩偶_LuziSelectBase: "选择房间",
@@ -352,9 +362,11 @@ const dialogs = {
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",
         ItemMisc玩偶_LuziOptionl0: "空",
         ItemMisc玩偶_LuziOptionl1: "li",
+        ItemMisc玩偶_LuziOptionl2: "YouXiang",
 
         ItemMisc玩偶_LuziSetl0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetl1: "SourceCharacter给了DestinationCharacter一只路过的li玩偶.",
+        ItemMisc玩偶_LuziSetl2: "SourceCharacter给了DestinationCharacter一只路过的YouXiang玩偶.",
     },
 };
 
