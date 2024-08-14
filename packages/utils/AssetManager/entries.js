@@ -10,6 +10,22 @@ export function resolveEntry(entryItem) {
     return entryItem[TranslationLanguage] || entryItem["CN"];
 }
 
+/**
+ * 从一大堆条目里面挑出来需要的！
+ * @param {CustomGroupName} group
+ * @param {string} asset
+ * @param {Translation.GroupedEntries} groupedEntry
+ * @returns {Translation.Entry}
+ */
+export function pickEntry(group, asset, groupedEntry) {
+    return Object.entries(groupedEntry)
+        .map(([lang, entries]) => [lang, entries[group]?.[asset]])
+        .reduce((prev, /** @type {[ ServerChatRoomLanguage, string | undefined ]} */ cv) => {
+            if (cv[1]) prev[cv[0]] = cv[1];
+            return prev;
+        }, /** @type {Translation.Entry} */ ({}));
+}
+
 /** @type {Translation.GroupedEntries} */
 const customAssetEntries = {};
 

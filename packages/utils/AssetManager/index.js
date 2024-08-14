@@ -3,7 +3,7 @@ import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
 import { addCustomDialog, setupCustomDialog } from "./dialog";
-import { setupEntries } from "./entries";
+import { pickEntry, setupEntries } from "./entries";
 import { enableCustomAssets } from "./customStash";
 import { addLayerNames, setupLayerNameLoad } from "./layerNames";
 
@@ -28,8 +28,9 @@ export default class AssetManager {
     static addGroupedAssets(groupedAssets, descriptions = undefined) {
         Object.entries(groupedAssets).forEach(([group, assets]) => {
             assets.forEach((asset) => {
-                const description = descriptions?.[group]?.[asset.Name];
-                loadAsset(/**@type {CustomGroupName}*/ (group), asset, { description });
+                const groupName = /** @type {CustomGroupName} */ (group);
+                const description = descriptions && pickEntry(groupName, asset.Name, descriptions);
+                loadAsset(groupName, asset, { description });
             });
         });
     }
