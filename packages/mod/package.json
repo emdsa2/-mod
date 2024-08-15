@@ -16,7 +16,8 @@
       "location": "../../resources",
       "assets": [
         "Assets",
-        "Audio"
+        "Audio",
+        "Screens"
       ]
     },
     "componentDir": "src/components",
