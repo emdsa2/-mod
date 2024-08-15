@@ -2,22 +2,6 @@ import bcModSdk from "bondage-club-mod-sdk";
 import log from "../log";
 import { ProgressiveHook } from "./progressiveHook";
 
-/**
- * @template {string} TFunctionName
- * @typedef {import('bondage-club-mod-sdk').GetDotedPathType<typeof globalThis,TFunctionName>} GetDotedPathType
- *
- */
-
-/**
- * @typedef {import('bondage-club-mod-sdk').ModSDKModInfo} ModSDKModInfo
- * @typedef {import('bondage-club-mod-sdk').ModSDKModAPI} ModSDKModAPI
- */
-
-/**
- * @template {import("bondage-club-mod-sdk").AnyFunction} RetType
- * @typedef {import('bondage-club-mod-sdk').PatchHook<RetType>} PatchHook
- */
-
 /** @type { (FuncWork) [] }*/
 const afterInitList = [];
 /** @type { (FuncWork) [] }*/
@@ -43,7 +27,7 @@ function PlayerHook(work) {
 /** @type { (FuncWork) []  }*/
 const patchList = [];
 
-/** @type {ModSDKModAPI | undefined} */
+/** @type { ModManagerInterface.ModSDKModAPI | undefined} */
 let mMod = undefined;
 
 export default class ModManager {
@@ -62,7 +46,7 @@ export default class ModManager {
 
     /**
      * 注册mod
-     * @param {ModSDKModInfo} modinfo
+     * @param { ModManagerInterface.ModSDKModInfo } modinfo
      */
     static init(modinfo) {
         mMod = bcModSdk.registerMod(modinfo);
@@ -106,7 +90,7 @@ export default class ModManager {
      * 调用原始函数
      * @template {string} TFunctionName
      * @param {TFunctionName} functionName
-     * @param {[...Parameters<GetDotedPathType<TFunctionName>>]} args
+     * @param {ModManagerInterface.FunctionArguments<TFunctionName>} args
      */
     static invokeOriginal(functionName, ...args) {
         if (!ModManager.mod) return window[/** @type {string} */ (functionName)]?.(...args);
@@ -118,7 +102,7 @@ export default class ModManager {
      * @template {string} TFunctionName
      * @param {TFunctionName} funcName
      * @param {number} priority
-     * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
+     * @param {ModManagerInterface.HookFunction<TFunctionName>} hook
      */
     static hookFunction(funcName, priority, hook) {
         ModManager.push(hookList, () => ModManager.mod.hookFunction(funcName, priority, hook));
@@ -143,7 +127,7 @@ export default class ModManager {
      * @template {string} TFunctionName
      * @param {TFunctionName} funcName
      * @param {number} priority
-     * @param {PatchHook<GetDotedPathType<TFunctionName>>} hook
+     * @param {ModManagerInterface.HookFunction<TFunctionName>} hook
      */
     static hookPlayerFunction(funcName, priority, hook) {
         PlayerHook(() => ModManager.mod.hookFunction(funcName, priority, hook));
