@@ -89,38 +89,47 @@ function groupEntryString(group) {
 }
 
 export function setupEntries() {
-    // 在基础发生异步加载之后，
-    // 重新翻译一遍镜像组基础物品的描述，只考虑镜像组目标是基础组的自定义组
-    ModManager.progressiveHook("TranslationAssetProcess")
-        .next()
-        .inject(() =>
-            Object.entries(getCustomGroups()).forEach(([groupName, group]) => {
-                /** @type {Mutable<AssetGroup>} */ (group).Description = groupEntryString(group.Name);
-            })
-        )
-        .inject(() =>
-            Object.entries(getCustomAssets()).forEach(([group, assets]) => {
-                Object.entries(assets).forEach(([name, asset]) => {
-                    /** @type {Mutable<Asset>} */ (asset).Description = assetEntryString(asset.Group.Name, asset.Name);
-                });
-            })
-        )
-        .inject(() =>
-            Object.entries(getCustomAssets())
-                .map(([group, asset]) => ({
-                    group,
+    // bc有三个加载阶段
+    // 阶段1: 加载asset
+    // 阶段2: 加载csv描述
+    // 阶段3: 加载翻译
+    // 为了保证翻译的正确性，需要在每个阶段都重新加载一遍自定义文本
+
+    const assignDesc = (obj, desc) => {
+        /** @type { { Description : string } } */ (obj).Description = desc;
+    };
+
+    const loadAssetEntries = () => {
+        // 自定义组描述
+        Object.values(getCustomGroups()).forEach((group) => assignDesc(group, groupEntryString(group.Name)));
+
+        // 自定义物品描述
+        Object.values(getCustomAssets())
+            .map((asset) => Object.values(asset))
+            .flat()
+            .forEach((asset) => assignDesc(asset, assetEntryString(asset.Group.Name, asset.Name)));
+
+        // 镜像组描述
+        Object.entries(getCustomAssets())
+            .map(([group, asset]) => ({
+                group: resolvePreimage(/**@type {CustomGroupName} */ (group)),
+                asset,
+            }))
+            .filter(({ group }) => !!group)
+            .map(({ group, asset }) =>
+                Object.entries(asset).map(([assetName, asset]) => ({
                     asset,
-                    from: /** @type {AssetGroupName} */ (resolvePreimage(/**@type {CustomGroupName} */ (group))),
+                    fromAsset: AssetGet("Female3DCG", /** @type {AssetGroupName} */ (group), assetName),
                 }))
-                .filter(({ from }) => from !== undefined)
-                .forEach(({ group, asset, from }) => {
-                    Object.entries(asset).forEach(([name, asset]) => {
-                        const fromAsset = AssetGet("Female3DCG", from, name);
-                        if (!fromAsset) return;
-                        /** @type {Mutable<Asset>} */ (asset).Description = fromAsset.Description;
-                    });
-                })
-        );
+            )
+            .flat()
+            .filter(({ fromAsset }) => !!fromAsset)
+            .forEach(({ asset, fromAsset }) => assignDesc(asset, fromAsset.Description));
+    };
+    // 加载csv描述
+    ModManager.progressiveHook("AssetBuildDescription").next().inject(loadAssetEntries);
+    // 加载翻译阶段
+    ModManager.progressiveHook("TranslationAssetProcess").next().inject(loadAssetEntries);
 
     const ActionFunc = ModManager.randomGlobalFunction(
         "CustomDialogInject",
