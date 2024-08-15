@@ -189,13 +189,13 @@ const extended = {
         },
         {
             Name: "上衣开关",
-            DrawImages: false,
+            // DrawImages: false,
             Key: "s",
             Options: [{}, {}],
         },
         {
             Name: "手套开关",
-            DrawImages: false,
+            // DrawImages: false,
             Key: "h",
             Options: [
                 {},
