@@ -1,6 +1,7 @@
 import log from "../log";
 import { Entries, resolveEntry } from "./entries";
-import { pushGroupLoad, registerMirror } from "./loadSchedule";
+import { pushGroupLoad } from "./loadSchedule";
+import { registerMirror } from "./mirrorGroup";
 import { CustomGroupAdd } from "./customStash";
 import { loadAsset } from "./assetUtils";
 import { resolveStringAsset } from "./assetConfigs";

@@ -1,5 +1,5 @@
 import log from "../log";
-import { resolveMirror } from "./loadSchedule";
+import { resolveMirror } from "./mirrorGroup";
 
 export class AssetConfig {
     /**

@@ -1,17 +1,11 @@
 import log from "../log";
 import ModManager from "../ModManager";
-import { getCustomAssets, getCustomGroups } from "./customStash";
+import { resolveMirror } from "./mirrorGroup";
 
 let isGroupLoaded = false;
 
 /** @type {FuncWork[]} */
 const groupLoadWorks = [];
-/** @type { Set<CustomGroupName> } */
-const TorsoMirror = new Set(/** @type {CustomGroupName[]} */ (["ItemTorso", "ItemTorso2"]));
-/** @type {Partial<Record<CustomGroupName, Set<CustomGroupName>>>} */
-const mMirrorGroups = { ItemTorso: TorsoMirror, ItemTorso2: TorsoMirror };
-/** @type {Partial<Record<CustomGroupName, CustomGroupName>>} */
-const rMirrorPreimage = {};
 
 /** @param {FuncWork} work */
 export function pushGroupLoad(work) {
@@ -21,39 +15,6 @@ export function pushGroupLoad(work) {
 
 function runGroupLoad() {
     while (groupLoadWorks.length > 0) groupLoadWorks.shift()();
-}
-
-/**
- * 注册镜像组，用于自动添加镜像物品。默认具有ItemTorso和ItemTorso2的镜像组。
- * 注意，将 `Cloth_Luzi` 组镜像到 `Cloth` 组时，不会自动将 `Cloth` 组镜像到 `Cloth_Luzi` 组。
- * 这样允许镜像组单独注册独立的物品。
- * @param {CustomGroupName} from
- * @param {CustomGroupName} to
- */
-export function registerMirror(from, to) {
-    if (!mMirrorGroups[from]) mMirrorGroups[from] = new Set([from]);
-    mMirrorGroups[from].add(to);
-    rMirrorPreimage[to] = from;
-}
-
-/**
- * 分析镜像组
- * @param {CustomGroupName} group
- * @returns { { name: CustomGroupName, group: AssetGroup }[] }
- */
-export function resolveMirror(group) {
-    return ((mMirrorGroups[group] && Array.from(mMirrorGroups[group])) || [group]).map((gname) => ({
-        name: gname,
-        group: AssetGroupGet("Female3DCG", /** @type {AssetGroupName}*/ (gname)),
-    }));
-}
-
-/**
- * @param {CustomGroupName} group
- * @returns {CustomGroupName | undefined}
- */
-export function resolvePreimage(group) {
-    return rMirrorPreimage[group];
 }
 
 /** @type { Partial<Record<CustomGroupName, FuncWork<[AssetGroup]>[]>> } */

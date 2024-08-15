@@ -1,6 +1,6 @@
 import ModManager from "../ModManager";
 import { checkItemCustomed, getCustomAssets, getCustomGroups } from "./customStash";
-import { resolvePreimage } from "./loadSchedule";
+import { resolvePreimage } from "./mirrorGroup";
 
 /**
  * 按语言解析翻译条目
