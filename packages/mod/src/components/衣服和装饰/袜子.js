@@ -65,6 +65,18 @@ const assets = {
                 },
             ],
         },
+        {
+            Name: "露趾袜_Luzi",
+            Random: false,
+            Top: 0,
+            Left: {
+                BaseLower: 0,
+                Kneel: 0,
+                KneelingSpread: 30,
+                LegsClosed: 0,
+                Spread: 0,
+            },
+        },
     ],
     SuitLower: [
         {
@@ -80,7 +92,11 @@ const assets = {
 const translations = {
     CN: {
         Socks: {
+            踩脚袜_Luzi: "踩脚袜",
+            条纹袜_Luzi: "条纹袜",
+            条纹袜2_Luzi: "条纹袜2",
             丝袜_Luzi: "丝袜",
+            露趾袜_Luzi: "露趾袜",
         },
         SuitLower: {
             丝袜_Luzi: "丝袜",
@@ -88,7 +104,11 @@ const translations = {
     },
     EN: {
         Socks: {
+            踩脚袜_Luzi: "Footstep Socks",
+            条纹袜_Luzi: "Striped Socks",
+            条纹袜2_Luzi: "Striped Socks 2",
             丝袜_Luzi: "Silk Stockings",
+            露趾袜_Luzi:"Stirrup Thigh High Socks"
         },
         SuitLower: {
             丝袜_Luzi: "Silk Stockings",
