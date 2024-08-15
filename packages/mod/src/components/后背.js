@@ -163,7 +163,7 @@ const dialog = {
     },
 };
 
-const translations = { CN: "后背", EN: "back" };
+const translations = { CN: "后背", EN: "Back-body" };
 
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, extended, translations);

@@ -211,7 +211,7 @@ const dialog = {
 
 const translations = {
     CN: "乳胶带床",
-    EN: "Latex belt bed",
+    EN: "Latex-belt Bed",
 };
 
 export default function () {

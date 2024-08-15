@@ -122,14 +122,14 @@ const translations = {
     },
     EN: {
         ItemHood: {
-            绷带头部_Luzi: "Bandage Head",
-            毛毯头部_Luzi: "Blanket Head",
+            绷带头部_Luzi: "Head Bandage",
+            毛毯头部_Luzi: "Head Blanket",
         },
         ItemTorso: {
             胶带全身_Luzi: "Tape Full Body",
             睡袋改_Luzi: "Modified Sleeping Bag",
             全包毛毯改_Luzi: "Fully Wrapped Blanket",
-            绷带全身_Luzi: "Bandage Full Body",
+            绷带全身_Luzi: "Full Body Bandage",
         },
     },
 };

@@ -47,7 +47,7 @@ const dialog = {
     },
 };
 
-const translations = { CN: "斩标", EN: "Aba Aba" };
+const translations = { CN: "斩标", EN: "Behead Marking" };
 
 export default function () {
     AssetManager.addAsset("ItemMisc", asset, extended, translations);

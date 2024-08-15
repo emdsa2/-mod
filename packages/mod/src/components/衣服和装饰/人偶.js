@@ -95,7 +95,7 @@ const asset = {
     ],
 };
 
-const translations = { CN: "人偶", EN: "Puppet" };
+const translations = { CN: "人偶", EN: "Ball Joint Doll" };
 
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, undefined, translations);

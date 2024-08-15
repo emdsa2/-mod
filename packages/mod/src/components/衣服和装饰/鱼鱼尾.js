@@ -116,7 +116,7 @@ const descriptions = {
     },
 };
 
-const translations = { CN: "鱼鱼尾", EN: "Fish Tail" };
+const translations = { CN: "鱼鱼尾", EN: "Fishy Tail" };
 
 export default function () {
     AssetManager.addAsset("SuitLower", asset, extended, translations);

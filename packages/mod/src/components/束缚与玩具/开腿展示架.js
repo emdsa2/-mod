@@ -214,7 +214,7 @@ const dialog = {
 
 const translations = {
     CN: "开腿展示架",
-    EN: "Leg Spread Display Stand",
+    EN: "Leg-Spread Display Stand",
 };
 
 export default function () {

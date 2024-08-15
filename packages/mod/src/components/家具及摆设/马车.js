@@ -43,8 +43,8 @@ const translations = {
     },
     EN: {
         ItemDevices: {
-            马车: "马车",
-            马: "马",
+            马车: "Carriage",
+            马: "Horse",
         },
     },
 };

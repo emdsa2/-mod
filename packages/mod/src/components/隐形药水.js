@@ -414,7 +414,7 @@ const dialog = {
     },
 };
 
-const translations = { CN: "隐形药水", EN: "potion of invisibility" };
+const translations = { CN: "隐形药水", EN: "Potion of Invisibility" };
 
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, extened, translations);

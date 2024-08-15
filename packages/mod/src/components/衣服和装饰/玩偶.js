@@ -20,43 +20,43 @@ const asset = {
     },
     Layer: [
         // 玩具店
-        { Name: "Saki", AllowTypes: { d: 1 }, },
-        { Name: "Luzi", AllowTypes: { d: 2 }, },
+        { Name: "Saki", AllowTypes: { d: 1 } },
+        { Name: "Luzi", AllowTypes: { d: 2 } },
 
         // 狼窝
-        { Name: "吉娜", AllowTypes: { s: 1 }, },
-        { Name: "Ada", AllowTypes: { s: 2 }, },
-        { Name: "Luzi2", AllowTypes: { s: 3 }, },
-        { Name: "Reisigure", AllowTypes: { s: 4 }, },
-        { Name: "Atlantis", AllowTypes: { s: 5 }, },
-        { Name: "Xin", AllowTypes: { s: 6 }, },
+        { Name: "吉娜", AllowTypes: { s: 1 } },
+        { Name: "Ada", AllowTypes: { s: 2 } },
+        { Name: "Luzi2", AllowTypes: { s: 3 } },
+        { Name: "Reisigure", AllowTypes: { s: 4 } },
+        { Name: "Atlantis", AllowTypes: { s: 5 } },
+        { Name: "Xin", AllowTypes: { s: 6 } },
 
         // 芷窝
-        { Name: "Ttong", AllowTypes: { z: 1 }, },
-        { Name: "ZforShort", AllowTypes: { z: 2 }, },
-        { Name: "Gin", AllowTypes: { z: 3 }, },
-        { Name: "Echo", AllowTypes: { z: 4 }, },
-        { Name: "ᐛ", AllowTypes: { z: 5 }, },
-        { Name: "ᐖ", AllowTypes: { z: 6 }, },
+        { Name: "Ttong", AllowTypes: { z: 1 } },
+        { Name: "ZforShort", AllowTypes: { z: 2 } },
+        { Name: "Gin", AllowTypes: { z: 3 } },
+        { Name: "Echo", AllowTypes: { z: 4 } },
+        { Name: "ᐛ", AllowTypes: { z: 5 } },
+        { Name: "ᐖ", AllowTypes: { z: 6 } },
 
         // Catnest
-        { Name: "XinLian", AllowTypes: { c: 1 }, },
-        { Name: "Zheiyun", AllowTypes: { c: 2 }, },
-        { Name: "Cyäegha", AllowTypes: { c: 3 }, },
-        { Name: "PumpkinPie", AllowTypes: { c: 4 }, },
-        { Name: "Lux", AllowTypes: { c: 5 }, },
-        { Name: "居x", AllowTypes: { c: 6 }, },
-        { Name: "Caius", AllowTypes: { c: 7 }, },
-        { Name: "Neko", AllowTypes: { c: 8 }, },
+        { Name: "XinLian", AllowTypes: { c: 1 } },
+        { Name: "Zheiyun", AllowTypes: { c: 2 } },
+        { Name: "Cyäegha", AllowTypes: { c: 3 } },
+        { Name: "PumpkinPie", AllowTypes: { c: 4 } },
+        { Name: "Lux", AllowTypes: { c: 5 } },
+        { Name: "居x", AllowTypes: { c: 6 } },
+        { Name: "Caius", AllowTypes: { c: 7 } },
+        { Name: "Neko", AllowTypes: { c: 8 } },
 
         // 猫州猫庭府玩偶
-        { Name: "Axa", AllowTypes: { f: 1 }, },
-        { Name: "Shirayuki", AllowTypes: { f: 2 }, },
-        { Name: "向归夜", AllowTypes: { f: 3 }, },
+        { Name: "Axa", AllowTypes: { f: 1 } },
+        { Name: "Shirayuki", AllowTypes: { f: 2 } },
+        { Name: "向归夜", AllowTypes: { f: 3 } },
 
         // 路过的玩偶
-        { Name: "li", AllowTypes: { l: 1 }, },
-        { Name: "YouXiang", AllowTypes: { l: 2 }, },
+        { Name: "li", AllowTypes: { l: 1 } },
+        { Name: "YouXiang", AllowTypes: { l: 2 } },
     ],
 };
 
@@ -285,7 +285,7 @@ const dialogs = {
     },
 };
 
-const translations = { CN: "玩偶", EN: "Doll" };
+const translations = { CN: "玩偶", EN: "Plushies" };
 
 export default function () {
     AssetManager.addAsset("ItemMisc", asset, extended, translations);
