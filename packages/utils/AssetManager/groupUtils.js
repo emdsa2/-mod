@@ -45,6 +45,7 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
     const wk = () => {
         const fromDef = AssetFemale3DCG.find((def) => def.Group === copyFrom);
         const fromGrp = AssetGroupGet("Female3DCG", /** @type { AssetGroupName }*/ (copyFrom));
+        const fromExt = AssetFemale3DCGExtended[copyFrom];
         if (!fromDef || !fromGrp) {
             // 两次找不到组，说明组不存在，或者循环依赖，直接抛弃
             if (missingGroup.has(fromDef.Group)) {
@@ -73,6 +74,7 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
                 preimage: fromGrp,
             }
         );
+        AssetFemale3DCGExtended[newGroup] = fromExt;
     };
     pushGroupLoad(wk);
 }

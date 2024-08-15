@@ -1,19 +1,24 @@
 import log from "../log";
+import { resolveMirror } from "./loadSchedule";
 
 export class AssetConfig {
+    /**
+     * @param {ExtendedItemMainConfig} extendedConfig
+     * @returns
+     */
     static add(extendedConfig) {
-        Object.entries(extendedConfig).forEach(([groupName, assets]) => {
-            Object.entries(assets).forEach(([assetName, config]) => {
-                if (AssetFemale3DCGExtended[groupName]?.[assetName])
-                    log.warn(`Asset ${groupName}:${assetName} already has an extended config!`);
-                else {
-                    if (!AssetFemale3DCGExtended[groupName])
-                        AssetFemale3DCGExtended[groupName] = { [assetName]: config };
-                    else AssetFemale3DCGExtended[groupName][assetName] = config;
-                }
-            });
-        });
-        return AssetFemale3DCGExtended;
+        Object.entries(extendedConfig).forEach(([groupName, assets]) =>
+            Object.entries(assets).forEach(([assetName, config]) =>
+                resolveMirror(/** @type {CustomGroupName}*/ (groupName)).forEach(({ name }) => {
+                    if (AssetFemale3DCGExtended[name]?.[assetName])
+                        log.warn(`Asset ${name}:${assetName} already has an extended config!`);
+                    else {
+                        if (!AssetFemale3DCGExtended[name]) AssetFemale3DCGExtended[name] = { [assetName]: config };
+                        else AssetFemale3DCGExtended[name][assetName] = config;
+                    }
+                })
+            )
+        );
     }
     static get value() {
         return AssetFemale3DCGExtended;
