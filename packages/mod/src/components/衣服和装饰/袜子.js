@@ -8,7 +8,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: {
-                [PoseType.DEFAULT]: 0,
+                BaseLower: 0,
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
@@ -26,7 +26,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: {
-                [PoseType.DEFAULT]: 0,
+                BaseLower: 0,
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
@@ -48,7 +48,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: {
-                [PoseType.DEFAULT]: 0,
+                BaseLower: 0,
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,

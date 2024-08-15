@@ -41,13 +41,13 @@ const extended = {
 const dialog = {
     CN: {
         斜肩上衣_Luzi_LuziSelect: "选择斜肩上衣配置",
-        斜肩上衣_Luzi_Luzi左: "左",
-        斜肩上衣_Luzi_Luzi右: "右",
+        斜肩上衣_Luzi_左: "左",
+        斜肩上衣_Luzi_右: "右",
     },
     EN: {
         斜肩上衣_Luzi_LuziSelect: "Select Off-the-shoulder top",
-        斜肩上衣_Luzi_Luzi左: "Left",
-        斜肩上衣_Luzi_Luzi右: "Right",
+        斜肩上衣_Luzi_左: "Left",
+        斜肩上衣_Luzi_右: "Right",
     },
 };
 
