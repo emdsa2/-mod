@@ -159,23 +159,28 @@ const icons = {
 
 const dialogs = {
     CN: {
-        ItemTorso2拘束套装_LuziSelect: "选择配置",
-        ItemTorso2拘束套装_LuziSet无: "",
-        ItemTorso2拘束套装_LuziSet乳胶衣: "",
-        ItemTorso2拘束套装_LuziSet透视紧身衣: "",
-        ItemTorso2拘束套装_LuziSet紧身衣: "",
+        ItemTorso拘束套装_Luzi无: "无",
+        ItemTorso拘束套装_Luzi乳胶衣: "乳胶衣",
+        ItemTorso拘束套装_Luzi透视紧身衣: "透视紧身衣",
+        ItemTorso拘束套装_Luzi紧身衣: "紧身衣",
+
+        ItemTorso拘束套装_LuziSelect: "选择配置",
+        ItemTorso拘束套装_LuziSet无: "",
+        ItemTorso拘束套装_LuziSet乳胶衣: "",
+        ItemTorso拘束套装_LuziSet透视紧身衣: "",
+        ItemTorso拘束套装_LuziSet紧身衣: "",
     },
     EN: {
-        ItemTorso2拘束套装_Luzi无: "No",
-        ItemTorso2拘束套装_Luzi乳胶衣: "Latex Suit",
-        ItemTorso2拘束套装_Luzi透视紧身衣: "Sheer Bodysuit",
-        ItemTorso2拘束套装_Luzi紧身衣: "Bodysuit",
+        ItemTorso拘束套装_Luzi无: "No",
+        ItemTorso拘束套装_Luzi乳胶衣: "Latex Suit",
+        ItemTorso拘束套装_Luzi透视紧身衣: "Sheer Bodysuit",
+        ItemTorso拘束套装_Luzi紧身衣: "Bodysuit",
 
-        ItemTorso2拘束套装_LuziSelect: "Select Configuration",
-        ItemTorso2拘束套装_LuziSet无: "",
-        ItemTorso2拘束套装_LuziSet乳胶衣: "",
-        ItemTorso2拘束套装_LuziSet透视紧身衣: "",
-        ItemTorso2拘束套装_LuziSet紧身衣: "",
+        ItemTorso拘束套装_LuziSelect: "Select Configuration",
+        ItemTorso拘束套装_LuziSet无: "",
+        ItemTorso拘束套装_LuziSet乳胶衣: "",
+        ItemTorso拘束套装_LuziSet透视紧身衣: "",
+        ItemTorso拘束套装_LuziSet紧身衣: "",
     },
 };
 

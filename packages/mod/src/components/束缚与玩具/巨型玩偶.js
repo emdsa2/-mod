@@ -107,6 +107,7 @@ const extended = {
 /** @type {Translation.Dialog} */
 const dialog = {
     CN: {
+        ItemDevices巨型玩偶_Luzi熊熊: "熊熊",
         ItemDevices巨型玩偶_LuziSelect: "选择巨型玩偶配置",
     },
     EN: {

@@ -84,12 +84,15 @@ const icons = {
 const dialog = {
     CN: {
         ItemDevices窝瓜_LuziSelect: "选择窝配置",
-
+        ItemDevices窝瓜_Luzi没盖子: "推开盖子",
+        ItemDevices窝瓜_Luzi有盖子: "盖上盖子",
         ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter推开了DestinationCharacter的盖子",
         ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter盖上了DestinationCharacter的盖子",
     },
     EN: {
         ItemDevices窝瓜_LuziSelect: "Select Configuration",
+        ItemDevices窝瓜_Luzi没盖子: "Push open the lid",
+        ItemDevices窝瓜_Luzi有盖子: "Close the lid",
         ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter pushes open the lid of DestinationCharacter.",
         ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter covers DestinationCharacter with a lid.",
     },

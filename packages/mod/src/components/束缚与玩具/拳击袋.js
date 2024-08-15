@@ -178,11 +178,15 @@ const extended = {
 const dialog = {
     CN: {
         ItemDevices拳击袋_LuziSelect: "选择拳击袋配置",
+        ItemDevices拳击袋_Luzi有照片: "贴上照片",
+        ItemDevices拳击袋_Luzi无照片: "摘掉照片",
         ItemDevices拳击袋_LuziSet有照片: "SourceCharacter贴上了DestinationCharacter的照片",
         ItemDevices拳击袋_LuziSet无照片: "SourceCharacter摘掉了DestinationCharacter的照片",
     },
     EN: {
         ItemDevices拳击袋_LuziSelect: "Select Punching Bag Configuration",
+        ItemDevices拳击袋_Luzi有照片: "Attach Photo",
+        ItemDevices拳击袋_Luzi无照片: "Remove Photo",
         ItemDevices拳击袋_LuziSet有照片: "SourceCharacter attaches a photo to DestinationCharacter.",
         ItemDevices拳击袋_LuziSet无照片: "SourceCharacter removes the photo from DestinationCharacter.",
     },

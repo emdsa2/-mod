@@ -180,6 +180,8 @@ const extended = {
 const dialog = {
     CN: {
         ItemDevices独角兽玩偶_LuziSelect: "选择独角兽玩偶配置",
+        ItemDevices独角兽玩偶_Luzi戴上头套: "戴上头套",
+        ItemDevices独角兽玩偶_Luzi摘掉头套: "摘掉头套",
         ItemDevices独角兽玩偶_LuziSet戴上头套: "SourceCharacter戴上了DestinationCharacter的头套",
         ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter摘掉了DestinationCharacter的头套",
     },
