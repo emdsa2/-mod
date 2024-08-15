@@ -21,7 +21,7 @@ const asset = {
     DefaultColor: ["#545454", "#BC8B84"],
     Alpha: [
         {
-            Group: ["BodyUpper", "BodyLower", "SuitLower", "Suit"],
+            Group: ["BodyUpper", "BodyLower", "SuitLower", "Suit", "ItemAddon"],
             Masks: [
                 [190, 370, 10, 10],
                 [300, 370, 10, 10],
