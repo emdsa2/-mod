@@ -174,7 +174,23 @@ const assets = {
             ],
         },
     ],
-
+    ItemMisc: [
+        {
+            Name: "汉堡_Luzi",
+            Random: false,
+            Gender: "F",
+            ParentGroup: null,
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
+        },
+    ],
     ItemHands: [
         {
             Name: "拳击手套_Luzi",
@@ -290,6 +306,9 @@ const translations = {
         Bracelet: {
             广袖_Luzi: "广袖",
         },
+        ItemMisc:{
+            汉堡_Luzi: "汉堡",
+        },
         ItemHands: {
             拳击手套_Luzi: "拳击手套",
         },
@@ -333,6 +352,9 @@ const translations = {
         },
         Bracelet: {
             广袖_Luzi: "Wide sleeve",
+        },
+        ItemMisc:{
+            汉堡_Luzi: "Hamburg",
         },
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",
