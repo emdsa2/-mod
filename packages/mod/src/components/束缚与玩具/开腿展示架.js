@@ -178,23 +178,23 @@ const dialog = {
     EN: {
         ItemDevices开腿展示架_LuziSelectBase: "Select Leg Spread Display Configuration",
 
-        ItemDevices开腿展示架_LuziSelect_Pose: "Select Pose",
-        ItemDevices开腿展示架_LuziModule_Pose: "Pose",
+        ItemDevices开腿展示架_LuziSelect姿势: "Select Pose",
+        ItemDevices开腿展示架_LuziModule姿势: "Pose",
         ItemDevices开腿展示架_LuziOptiono0: "Behind Back",
         ItemDevices开腿展示架_LuziOptiono1: "Lift Hands",
 
-        ItemDevices开腿展示架_LuziSelect_MouthRestraint: "Select Mouth Restraint",
-        ItemDevices开腿展示架_LuziModule_MouthRestraint: "Mouth Restraint",
+        ItemDevices开腿展示架_LuziSelect嘴巴固定: "Select Mouth Restraint",
+        ItemDevices开腿展示架_LuziModule嘴巴固定: "Mouth Restraint",
         ItemDevices开腿展示架_LuziOptiong0: "None",
         ItemDevices开腿展示架_LuziOptiong1: "Add Mouth Restraint",
 
-        ItemDevices开腿展示架_LuziSelect_GenitalProp: "Select Genital Prop",
-        ItemDevices开腿展示架_LuziModule_GenitalProp: "Genital Prop",
+        ItemDevices开腿展示架_LuziSelect下体棒子: "Select Genital Prop",
+        ItemDevices开腿展示架_LuziModule下体棒子: "Genital Prop",
         ItemDevices开腿展示架_LuziOptionv0: "None",
         ItemDevices开腿展示架_LuziOptionv1: "Add Genital Prop",
 
-        ItemDevices开腿展示架_LuziSelect_CustomHeight: "Set Height",
-        ItemDevices开腿展示架_LuziModule_CustomHeight: "Adjust Height",
+        ItemDevices开腿展示架_LuziSelect自定义高度: "Set Height",
+        ItemDevices开腿展示架_LuziModule自定义高度: "Adjust Height",
         ItemDevices开腿展示架_LuziOptiond0: "None",
         ItemDevices开腿展示架_LuziOptiond1: "Custom Height",
 
