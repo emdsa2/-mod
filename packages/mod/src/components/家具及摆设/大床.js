@@ -95,17 +95,21 @@ const assets = {
 /** @type {Translation.GroupedEntries} */
 const translations = {
     CN: {
-        ItemDevices: {
+        ItemAddon: {
             被子左边_Luzi: "被子左边",
             被子右边_Luzi: "被子右边",
+        },
+        ItemDevices: {
             床左边_Luzi: "床左边",
             床右边_Luzi: "床右边",
         },
     },
     EN: {
-        ItemDevices: {
+        ItemAddon: {
             被子左边_Luzi: "Left Side of Quilt",
             被子右边_Luzi: "Right Side of Quilt",
+        },
+        ItemDevices: {
             床左边_Luzi: "Left Side of Bed",
             床右边_Luzi: "Right Side of Bed",
         },
