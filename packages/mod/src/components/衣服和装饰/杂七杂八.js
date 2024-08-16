@@ -174,23 +174,6 @@ const assets = {
             ],
         },
     ],
-    ItemMisc: [
-        {
-            Name: "汉堡_Luzi",
-            Random: false,
-            Gender: "F",
-            ParentGroup: null,
-            PoseMapping: {
-                Yoked: "BaseUpper",
-                OverTheHead: "BaseUpper",
-                BackBoxTie: "BaseUpper",
-                BackElbowTouch: "BaseUpper",
-                BackCuffs: "BaseUpper",
-                Hogtied: "BaseUpper",
-                AllFours: "BaseUpper",
-            },
-        },
-    ],
     ItemHands: [
         {
             Name: "拳击手套_Luzi",
@@ -250,6 +233,21 @@ const assets = {
             Effect: [E.MergedFingers],
             Hide: ["ItemHandheld"],
         },
+        {
+            Name: "汉堡_Luzi",
+            Random: false,
+            Gender: "F",
+            ParentGroup: null,
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
+        },
     ],
 
     //TODO Saki (鞍缰绳)
@@ -306,15 +304,13 @@ const translations = {
         Bracelet: {
             广袖_Luzi: "广袖",
         },
-        ItemMisc:{
-            汉堡_Luzi: "汉堡",
-        },
         ItemHands: {
             拳击手套_Luzi: "拳击手套",
         },
         ItemHandheld: {
             电蚊拍_Luzi: "电蚊拍",
             伊偶_Luzi: "伊偶",
+            汉堡_Luzi: "汉堡",
         },
         ItemTorso: {
             鞍_Luzi: "鞍",
@@ -353,12 +349,10 @@ const translations = {
         Bracelet: {
             广袖_Luzi: "Wide sleeve",
         },
-        ItemMisc:{
-            汉堡_Luzi: "Hamburg",
-        },
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",
             伊偶_Luzi: "Yi Doll",
+            汉堡_Luzi: "Hamburg",
         },
         ItemHandheld: {
             电蚊拍_Luzi: "Electric Fly Swatter",
