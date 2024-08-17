@@ -21,7 +21,7 @@ const asset = {
     DefaultColor: ["#545454", "#BC8B84"],
     Alpha: [
         {
-            Group: ["BodyUpper", "BodyLower", "SuitLower", "Suit", "ItemAddon"],
+            Group: ["BodyUpper", "BodyLower", "Cloth", "ClothLower", "SuitLower", "Suit", "ItemAddon", "Bra", "Socks", "Panties", 'Cloth_笨笨蛋Luzi', 'ClothLower_笨笨蛋Luzi', 'Cloth_笨笨笨蛋Luzi2', 'ClothLower_笨笨笨蛋Luzi2', 'Panties_笨笨蛋Luzi', 'Bra_笨笨蛋Luzi', 'Shoes_笨笨蛋Luzi',],
             Masks: [
                 [190, 370, 10, 10],
                 [300, 370, 10, 10],
