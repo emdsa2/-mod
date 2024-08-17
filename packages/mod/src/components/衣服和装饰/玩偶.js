@@ -53,6 +53,8 @@ const asset = {
         { Name: "Axa", AllowTypes: { f: 1 } },
         { Name: "Shirayuki", AllowTypes: { f: 2 } },
         { Name: "向归夜", AllowTypes: { f: 3 } },
+        { Name: "Nail", AllowTypes: { f: 4 } },
+        { Name: "Nekonya蓝", AllowTypes: { f: 5 } },
 
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
@@ -93,7 +95,7 @@ const extended = {
             Name: "猫州猫庭府玩偶",
             DrawImages: false,
             Key: "f",
-            Options: [{}, {}, {}, {}],
+            Options: [{}, {}, {}, {}, {}, {}],
         },
         {
             Name: "路过的玩偶",
@@ -179,10 +181,14 @@ const dialogs = {
         ItemMisc玩偶_LuziOptionf1: "Axa",
         ItemMisc玩偶_LuziOptionf2: "Shirayuki",
         ItemMisc玩偶_LuziOptionf3: "向归夜",
+        ItemMisc玩偶_LuziOptionf4: "Nail",
+        ItemMisc玩偶_LuziOptionf5: "Nekonya(蓝)",
         ItemMisc玩偶_LuziSetf0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetf1: "SourceCharacter给了DestinationCharacter一只可爱的Axa玩偶.",
         ItemMisc玩偶_LuziSetf2: "SourceCharacter给了DestinationCharacter一只可爱的Shirayuki玩偶.",
         ItemMisc玩偶_LuziSetf3: "SourceCharacter给了DestinationCharacter一只可爱的向归夜玩偶.",
+        ItemMisc玩偶_LuziSetf4: "SourceCharacter给了DestinationCharacter一只可爱的Luzi玩偶.",
+        ItemMisc玩偶_LuziSetf5: "SourceCharacter给了DestinationCharacter一只可爱的Nekonya(蓝)玩偶.",
 
         ItemMisc玩偶_LuziSelect路过的玩偶: "选择路过的玩偶",
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",

@@ -52,16 +52,7 @@ const assets = {
             Top: -110,
             Left: 0,
             Priority: 9,
-            PoseMapping: {
-                BackBoxTie: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-            },
+            ParentGroup: null,
             DefaultColor: ["#E975A0"],
         },
         {
@@ -71,16 +62,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 9,
-            PoseMapping: {
-                BackBoxTie: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-            },
+            ParentGroup: null,
             DefaultColor: ["#000000"],
         },
         {
@@ -89,16 +71,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 9,
-            PoseMapping: {
-                BackBoxTie: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-            },
+            ParentGroup: null,
         },
     ],
     Shoes: [
@@ -236,7 +209,8 @@ const assets = {
         {
             Name: "汉堡_Luzi",
             Random: false,
-            Gender: "F",
+            Top: 0,
+            Left: 2,
             ParentGroup: null,
             PoseMapping: {
                 Yoked: "BaseUpper",

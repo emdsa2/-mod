@@ -8,39 +8,28 @@ const asset = {
     Top: 0,
     Left: 0,
     Prerequisite: ["HasBreasts"],
+    PoseMapping: {
+        TapedHands: "BaseUpper",
+        Yoked: "BaseUpper",
+        OverTheHead: "BaseUpper",
+        BackBoxTie: "BaseUpper",
+        BackElbowTouch: "BaseUpper",
+        BackCuffs: "BaseUpper",
+        AllFours: "Hide",
+        Hogtied: "Hide",
+    },
     Layer: [
         {
             Name: "裙子",
-            PoseMapping: {
-                TapedHands: "BackElbowTouch",
-                Yoked: "BackElbowTouch",
-                OverTheHead: "BackElbowTouch",
-                BackBoxTie: "BackElbowTouch",
-                BackElbowTouch: "BackElbowTouch",
-                BackCuffs: "BackElbowTouch",
-            },
+            Priority: 26,
         },
         {
             Name: "围裙",
-            PoseMapping: {
-                TapedHands: "BackElbowTouch",
-                Yoked: "BackElbowTouch",
-                OverTheHead: "BackElbowTouch",
-                BackBoxTie: "BackElbowTouch",
-                BackElbowTouch: "BackElbowTouch",
-                BackCuffs: "BackElbowTouch",
-            },
+            Priority: 26,
         },
         {
             Name: "蝴蝶结",
-            PoseMapping: {
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-            },
+            Priority: 26,
         },
     ],
 };

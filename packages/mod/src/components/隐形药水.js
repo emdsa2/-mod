@@ -55,35 +55,16 @@ const asset = {
             HideColoring: true,
             ColorSuffix: { HEX_COLOR: "White" },
             PoseMapping: {
+                TapedHands: "BaseUpper",
                 BackBoxTie: "BackBoxTie",
                 BackCuffs: "BackCuffs",
                 BackElbowTouch: "BackElbowTouch",
                 OverTheHead: "OverTheHead",
                 Yoked: "Yoked",
-                Hogtied: "Hide",
-                AllFours: "Hide",
-            },
-        },
-        {
-            Name: "全身",
-            Priority: 9,
-            Top: 0,
-            Left: 0,
-            ParentGroup: "BodyUpper",
-            InheritColor: "BodyUpper",
-            HideColoring: true,
-            ColorSuffix: { HEX_COLOR: "White" },
-            PoseMapping: {
-                BackBoxTie: "Hide",
-                BackCuffs: "Hide",
-                BackElbowTouch: "Hide",
-                OverTheHead: "Hide",
-                Yoked: "Hide",
-                AllFours: "AllFours",
                 Hogtied: "Hogtied",
+                AllFours: "AllFours",
             },
         },
-
         {
             Name: "透视紧身衣下半身",
             Priority: 13,
@@ -96,8 +77,6 @@ const asset = {
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
                 Spread: "Spread",
-                Hogtied: "Hide",
-                AllFours: "Hide",
             },
         },
         {
@@ -118,20 +97,6 @@ const asset = {
             },
         },
         {
-            Name: "透视紧身衣全身",
-            Priority: 13,
-            AllowTypes: { s: 1 },
-            Top: {
-                Hogtied: 500,
-            },
-            Left: 0,
-            ParentGroup: "BodyUpper",
-            PoseMapping: {
-                AllFours: "Hide",
-                Hogtied: "Hogtied",
-            },
-        },
-        {
             Name: "脚链",
             Priority: 31,
             AllowTypes: { ll: [1, 2, 3, 4, 5] },
@@ -143,8 +108,6 @@ const asset = {
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
                 Spread: "Spread",
-                Hogtied: "Hide",
-                AllFours: "Hide",
             },
         },
         {

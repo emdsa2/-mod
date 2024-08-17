@@ -8,30 +8,24 @@ const asset = {
     Top: 0,
     Left: 0,
     Prerequisite: ["HasBreasts"],
+    PoseMapping: {
+        TapedHands: "BaseUpper",
+        Yoked: "BaseUpper",
+        OverTheHead: "BaseUpper",
+        BackBoxTie: "BaseUpper",
+        BackElbowTouch: "BaseUpper",
+        BackCuffs: "BaseUpper",
+        AllFours: "Hide",
+        Hogtied: "Hide",
+    },
     Layer: [
         {
             Name: "衣服",
             Priority: 26,
-            PoseMapping: {
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-            },
         },
         {
             Name: "边缘",
             Priority: 26,
-            PoseMapping: {
-                TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-            },
         },
     ],
 };

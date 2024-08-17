@@ -33,14 +33,14 @@ const extended = {
 /** @type {Translation.Dialog} */
 const dialog = {
     CN: {
-        斜肩上衣_Luzi_LuziSelect: "选择斜肩上衣配置",
-        斜肩上衣_Luzi_左: "左",
-        斜肩上衣_Luzi_右: "右",
+        Cloth斜肩上衣_Luzi_LuziSelect: "选择斜肩上衣配置",
+        Cloth斜肩上衣_Luzi_左: "左",
+        Cloth斜肩上衣_Luzi_右: "右",
     },
     EN: {
-        斜肩上衣_Luzi_LuziSelect: "Select Off-the-shoulder top",
-        斜肩上衣_Luzi_左: "Left",
-        斜肩上衣_Luzi_右: "Right",
+        Cloth斜肩上衣_Luzi_LuziSelect: "Select Off-the-shoulder top",
+        Cloth斜肩上衣_Luzi_左: "Left",
+        Cloth斜肩上衣_Luzi_右: "Right",
     },
 };
 
