@@ -28,13 +28,6 @@ const extended = {
     Archetype: ExtendedArchetype.TYPED,
     DrawImages: false,
     Options: [{ Name: "左" }, { Name: "右" }],
-    BaselineProperty: { Opacity: 1 },
-    ScriptHooks: {
-        Init: PropertyOpacityInit,
-        Load: PropertyOpacityLoad,
-        Draw: PropertyOpacityDraw,
-        Exit: PropertyOpacityExit,
-    },
 };
 
 /** @type {Translation.Dialog} */
