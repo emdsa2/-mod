@@ -46,11 +46,12 @@ const assets = {
             Gender: "F",
             Top: 0,
             Left: 0,
-            DefaultColor: ["#9E9E9E", "#9E9E9E"],
+            // DefaultColor: ["#9E9E9E", "#9E9E9E"],
             Layer: [
                 {
                     Name: "手部",
                     ParentGroup: "BodyUpper",
+                    Priority: 27,
                     PoseMapping: {
                         TapedHands: "TapedHands",
                         Yoked: "Yoked",
