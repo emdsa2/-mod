@@ -158,6 +158,11 @@ const asset = {
             },
             Left: {
                 BaseUpper: 0,
+                BackBoxTie: 0,
+                BackCuffs: 0,
+                BackElbowTouch: 0,
+                OverTheHead: 0,
+                Yoked: 0,
                 LegsClosed: -62,
             },
         },
