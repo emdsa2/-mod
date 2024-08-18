@@ -3,50 +3,50 @@ import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
-    ItemDevices: [
-        {
-            Name: "马车_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-            Layer: [
-                {
-                    Name: "前",
-                    Priority: 19,
-                },
-                {
-                    Name: "中",
-                    Priority: 18,
-                },
-                {
-                    Name: "后",
-                    Priority: 0,
-                },
-            ],
-        },
-        {
-            Name: "马_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-        },
-    ],
+    // ItemDevices: [
+    //     {
+    //         Name: "马车_Luzi",
+    //         Random: false,
+    //         Top: 0,
+    //         Left: 0,
+    //         Layer: [
+    //             {
+    //                 Name: "前",
+    //                 Priority: 19,
+    //             },
+    //             {
+    //                 Name: "中",
+    //                 Priority: 18,
+    //             },
+    //             {
+    //                 Name: "后",
+    //                 Priority: 0,
+    //             },
+    //         ],
+    //     },
+    //     {
+    //         Name: "马_Luzi",
+    //         Random: false,
+    //         Top: 0,
+    //         Left: 0,
+    //     },
+    // ],
 };
 
 /** @type {Translation.GroupedEntries} */
 const translations = {
-    CN: {
-        ItemDevices: {
-            马车: "马车",
-            马: "马",
-        },
-    },
-    EN: {
-        ItemDevices: {
-            马车: "Carriage",
-            马: "Horse",
-        },
-    },
+    // CN: {
+    //     ItemDevices: {
+    //         马车: "马车",
+    //         马: "马",
+    //     },
+    // },
+    // EN: {
+    //     ItemDevices: {
+    //         马车: "Carriage",
+    //         马: "Horse",
+    //     },
+    // },
 };
 
 export default function () {
