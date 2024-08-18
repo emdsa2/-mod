@@ -136,7 +136,18 @@ export default function () {
                     if (!other_device) return;
 
                     if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
-                        args[1] += 145;
+                        if (ChatRoomCharacterDrawlist.length == 2) {
+                            args[1] += 245;
+                        }
+                        if (ChatRoomCharacterDrawlist.length == 3) {
+                            args[1] += 115;
+                        }
+                        if (ChatRoomCharacterDrawlist.length == 4) {
+                            args[1] += 45;
+                        }
+                        if (ChatRoomCharacterDrawlist.length >= 5) {
+                            args[1] += 15;
+                        }
                     }
                 } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
                     const idx = ChatRoomCharacterDrawlist.indexOf(C);
