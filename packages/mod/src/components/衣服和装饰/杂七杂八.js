@@ -222,6 +222,68 @@ const assets = {
                 AllFours: "BaseUpper",
             },
         },
+        {
+            Name: "棒棒糖_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
+            Layer: [
+                {
+                    Name: "棒子",
+                    Priority: 55,
+                },
+                {
+                    Name: "糖",
+                    Priority: 55,
+                },
+                {
+                    Name: "条纹",
+                    Priority: 55,
+                },
+            ],
+        },
+    ],
+    ItemMouth: [
+        {
+            Name: "棒棒糖_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
+            Layer: [
+                {
+                    Name: "棒子",
+                    Priority: 55,
+                },
+                {
+                    Name: "糖",
+                    Priority: 55,
+                },
+                {
+                    Name: "条纹",
+                    Priority: 55,
+                },
+            ],
+        },
     ],
 
     //TODO Saki (鞍缰绳)
