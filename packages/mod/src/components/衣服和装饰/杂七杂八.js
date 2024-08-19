@@ -410,9 +410,11 @@ const translations = {
             伊偶_Luzi: "伊偶",
             汉堡_Luzi: "汉堡",
             棒棒糖_Luzi: "棒棒糖",
+            烤鱼_Luzi: "烤鱼",
         },
         ItemMouth: {
             棒棒糖_Luzi: "棒棒糖",
+            烤鱼_Luzi: "烤鱼",
         },
         ItemHood: {
             汉堡_Luzi: "汉堡",
@@ -459,9 +461,11 @@ const translations = {
             伊偶_Luzi: "Yi Doll",
             汉堡_Luzi: "Hamburg",
             棒棒糖_Luzi: "Lollipop",
+            烤鱼_Luzi: "Cooked Fish",
         },
         ItemMouth: {
             棒棒糖_Luzi: "Lollipop",
+            烤鱼_Luzi: "Cooked Fish",
         },
         ItemHood: {
             汉堡_Luzi: "Hamburg",
