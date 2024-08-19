@@ -37,6 +37,10 @@ function collectComponents(componentsDir, baseDir, importStartDir) {
                 if (file.isDirectory()) dirWork.push(`${dir}/${file.name}`);
                 else if (file.isFile() && file.name.endsWith(".js")) {
                     if (file.name === "index.js") return;
+                    const content = fs
+                        .readFileSync(`${dir}/${file.name}`, "utf8")
+                        .replace(/\/\/.*\n?|\/\*.*\*\//gm, "");
+                    if (!content.match(/export\s+default\s+function\s*\(/)) return;
                     const fileName = file.name.replace(".js", "");
                     files.push({ name: fileName, path: `${rDir}/${fileName}` });
                 }

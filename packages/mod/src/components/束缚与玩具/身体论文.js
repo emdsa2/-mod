@@ -7,11 +7,8 @@ import ModManager from "@mod-utils/ModManager";
  * @param {Function} originalFunction - 原始的绘制函数
  * @param {Object} modData - MOD特定的数据对象，包含各种绘制相关的属性和函数
  */
-function afterDrawHook(data, originalFunction, {
-    C, A, CA, X, Y, drawCanvas, drawCanvasBlink, AlphaMasks, L, Color
-}) {
-    if (L !== "Text")
-        return;
+function afterDrawHook(data, originalFunction, { C, A, CA, X, Y, drawCanvas, drawCanvasBlink, AlphaMasks, L, Color }) {
+    if (L !== "Text") return;
 
     // 设置临时画布
     const Height = 65;
@@ -81,7 +78,7 @@ function afterDrawHook(data, originalFunction, {
     const [text1, text2, text3] = [CA.Property.Text, CA.Property.Text2, CA.Property.Text3];
 
     // 在临时画布上绘制文本
-    const ctx = TempCanvas.getContext('2d');
+    const ctx = TempCanvas.getContext("2d");
     DynamicDrawText(text1, ctx, Width / 2, Height / 2 - 10, drawOptions);
     DynamicDrawText(text2, ctx, Width / 2, Height / 2, drawOptions);
     DynamicDrawText(text3, ctx, Width / 2, Height / 2 + 10, drawOptions);
@@ -110,9 +107,7 @@ const asset = {
     },
     Extended: true,
     DynamicAfterDraw: true,
-    DefaultColor: [
-        "#000000",
-    ],
+    DefaultColor: ["#000000"],
     Layer: [
         {
             Name: "Text",
@@ -122,7 +117,7 @@ const asset = {
             AllowTypes: { t: 1 },
         },
     ],
-}
+};
 
 /** @type {ModularItemConfig} */
 const extended = {
@@ -179,7 +174,7 @@ const extended = {
         },
     ],
     BaselineProperty: { Text: "", Text2: "", Text3: "" },
-}
+};
 
 /** @type {Translation.Dialog} */
 const dialogs = {
@@ -195,8 +190,8 @@ const dialogs = {
 
 const translations = { CN: "身体论文", EN: "身体论文" };
 
-export default function () {
-    ModManager.globalFunction(`AssetsBodyMarkings2_Luzi身体论文_LuziAfterDraw`, afterDrawHook);
-    AssetManager.addAsset("BodyMarkings2_Luzi", asset, extended, translations);
-    AssetManager.addCustomDialog(dialogs);
-}
+// export default function () {
+//     ModManager.globalFunction(`AssetsBodyMarkings2_Luzi身体论文_LuziAfterDraw`, afterDrawHook);
+//     AssetManager.addAsset("BodyMarkings2_Luzi", asset, extended, translations);
+//     AssetManager.addCustomDialog(dialogs);
+// }
