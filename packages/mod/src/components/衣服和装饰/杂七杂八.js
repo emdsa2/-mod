@@ -285,7 +285,24 @@ const assets = {
             ],
         },
     ],
-
+    ItemHood: [
+        {
+            Name: "汉堡_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 2,
+            ParentGroup: null,
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
+        },
+    ],
     //TODO Saki (鞍缰绳)
     ItemTorso: [
         {
@@ -347,6 +364,13 @@ const translations = {
             电蚊拍_Luzi: "电蚊拍",
             伊偶_Luzi: "伊偶",
             汉堡_Luzi: "汉堡",
+            棒棒糖_Luzi: "棒棒糖",
+        },
+        ItemMouth: {
+            棒棒糖_Luzi: "棒棒糖",
+        },
+        ItemHood: {
+            汉堡_Luzi: "汉堡",
         },
         ItemTorso: {
             鞍_Luzi: "鞍",
@@ -388,6 +412,13 @@ const translations = {
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",
             伊偶_Luzi: "Yi Doll",
+            汉堡_Luzi: "Hamburg",
+            棒棒糖_Luzi: "Lollipop",
+        },
+        ItemMouth: {
+            棒棒糖_Luzi: "Lollipop",
+        },
+        ItemHood: {
             汉堡_Luzi: "Hamburg",
         },
         ItemHandheld: {
