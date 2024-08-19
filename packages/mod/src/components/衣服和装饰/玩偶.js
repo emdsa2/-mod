@@ -38,7 +38,8 @@ const asset = {
         { Name: "Echo", AllowTypes: { z: 4 } },
         { Name: "ᐛ", AllowTypes: { z: 5 } },
         { Name: "ᐖ", AllowTypes: { z: 6 } },
-
+        { Name: "芙缇娅", AllowTypes: { z: 7 } },
+        
         // Catnest
         { Name: "XinLian", AllowTypes: { c: 1 } },
         { Name: "Zheiyun", AllowTypes: { c: 2 } },
@@ -59,6 +60,7 @@ const asset = {
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
         { Name: "YouXiang", AllowTypes: { l: 2 } },
+        { Name: "Lilian", AllowTypes: { l: 3 } },
     ],
 };
 
@@ -83,7 +85,7 @@ const extended = {
             Name: "芷窝玩偶",
             DrawImages: false,
             Key: "z",
-            Options: [{}, {}, {}, {}, {}, {}, {}],
+            Options: [{}, {}, {}, {}, {}, {}, {}, {}],
         },
         {
             Name: "Catnest玩偶",
@@ -101,7 +103,7 @@ const extended = {
             Name: "路过的玩偶",
             DrawImages: false,
             Key: "l",
-            Options: [{}, {}, {}],
+            Options: [{}, {}, {}, {}],
         },
     ],
 };
@@ -118,7 +120,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetd0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetd1: "SourceCharacter给了DestinationCharacter一只可爱的Saki玩偶.",
         ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
-
         ItemMisc玩偶_LuziSelect狼窝玩偶: "选择狼窝玩偶",
         ItemMisc玩偶_LuziModule狼窝玩偶: "狼窝玩偶",
         ItemMisc玩偶_LuziOptions0: "空",
@@ -135,7 +136,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSets4: "SourceCharacter给了DestinationCharacter一只可爱的Reisigure玩偶.",
         ItemMisc玩偶_LuziSets5: "SourceCharacter给了DestinationCharacter一只可爱的Atlantis玩偶.",
         ItemMisc玩偶_LuziSets6: "SourceCharacter给了DestinationCharacter一只可爱的Xin玩偶.",
-
         ItemMisc玩偶_LuziSelect芷窝玩偶: "选择芷窝玩偶",
         ItemMisc玩偶_LuziModule芷窝玩偶: "芷窝玩偶",
         ItemMisc玩偶_LuziOptionz0: "空",
@@ -145,6 +145,7 @@ const dialogs = {
         ItemMisc玩偶_LuziOptionz4: "Echo",
         ItemMisc玩偶_LuziOptionz5: "ᐛ",
         ItemMisc玩偶_LuziOptionz6: "ᐖ",
+        ItemMisc玩偶_LuziOptionz7: "芙缇娅",
         ItemMisc玩偶_LuziSetz0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetz1: "SourceCharacter给了DestinationCharacter一只可爱的Ttong玩偶.",
         ItemMisc玩偶_LuziSetz2: "SourceCharacter给了DestinationCharacter一只可爱的ZforShort玩偶.",
@@ -152,7 +153,7 @@ const dialogs = {
         ItemMisc玩偶_LuziSetz4: "SourceCharacter给了DestinationCharacter一只可爱的Echo玩偶.",
         ItemMisc玩偶_LuziSetz5: "SourceCharacter给了DestinationCharacter一只可爱的ᐛ玩偶.",
         ItemMisc玩偶_LuziSetz6: "SourceCharacter给了DestinationCharacter一只可爱的ᐖ玩偶.",
-
+        ItemMisc玩偶_LuziSetz7: "SourceCharacter给了DestinationCharacter一只可爱的芙缇娅玩偶.",
         ItemMisc玩偶_LuziSelectCatnest玩偶: "选择Catnest玩偶",
         ItemMisc玩偶_LuziModuleCatnest玩偶: "Catnest玩偶",
         ItemMisc玩偶_LuziOptionc0: "空",
@@ -164,7 +165,6 @@ const dialogs = {
         ItemMisc玩偶_LuziOptionc6: "居x",
         ItemMisc玩偶_LuziOptionc7: "Caius",
         ItemMisc玩偶_LuziOptionc8: "Neko",
-
         ItemMisc玩偶_LuziSetc0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetc1: "SourceCharacter给了DestinationCharacter一只可爱的XinLian玩偶.",
         ItemMisc玩偶_LuziSetc2: "SourceCharacter给了DestinationCharacter一只可爱的Zheiyun玩偶.",
@@ -174,7 +174,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetc6: "SourceCharacter给了DestinationCharacter一只可爱的居x玩偶.",
         ItemMisc玩偶_LuziSetc7: "SourceCharacter给了DestinationCharacter一只可爱的Caius玩偶.",
         ItemMisc玩偶_LuziSetc8: "SourceCharacter给了DestinationCharacter一只可爱的Neko玩偶.",
-
         ItemMisc玩偶_LuziSelect猫州猫庭府玩偶: "选择猫州猫庭府玩偶",
         ItemMisc玩偶_LuziModule猫州猫庭府玩偶: "猫州猫庭府玩偶",
         ItemMisc玩偶_LuziOptionf0: "空",
@@ -189,16 +188,16 @@ const dialogs = {
         ItemMisc玩偶_LuziSetf3: "SourceCharacter给了DestinationCharacter一只可爱的向归夜玩偶.",
         ItemMisc玩偶_LuziSetf4: "SourceCharacter给了DestinationCharacter一只可爱的Nail玩偶.",
         ItemMisc玩偶_LuziSetf5: "SourceCharacter给了DestinationCharacter一只可爱的Nekonya(蓝)玩偶.",
-
         ItemMisc玩偶_LuziSelect路过的玩偶: "选择路过的玩偶",
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",
         ItemMisc玩偶_LuziOptionl0: "空",
         ItemMisc玩偶_LuziOptionl1: "li",
         ItemMisc玩偶_LuziOptionl2: "YouXiang",
-
+        ItemMisc玩偶_LuziOptionl3: "Lilian",
         ItemMisc玩偶_LuziSetl0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetl1: "SourceCharacter给了DestinationCharacter一只路过的li玩偶.",
         ItemMisc玩偶_LuziSetl2: "SourceCharacter给了DestinationCharacter一只可爱的YouXiang玩偶.",
+        ItemMisc玩偶_LuziSetl3: "SourceCharacter给了DestinationCharacter一只可爱的Lilian玩偶.",
     },
     EN: {
         ItemMisc玩偶_LuziSelectBase: "选择房间",
@@ -210,7 +209,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetd0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetd1: "SourceCharacter给了DestinationCharacter一只可爱的Saki玩偶.",
         ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
-
         ItemMisc玩偶_LuziSelect狼窝玩偶: "选择狼窝玩偶",
         ItemMisc玩偶_LuziModule狼窝玩偶: "狼窝玩偶",
         ItemMisc玩偶_LuziOptions0: "空",
@@ -227,7 +225,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSets4: "SourceCharacter给了DestinationCharacter一只可爱的Reisigure玩偶.",
         ItemMisc玩偶_LuziSets5: "SourceCharacter给了DestinationCharacter一只可爱的Atlantis玩偶.",
         ItemMisc玩偶_LuziSets6: "SourceCharacter给了DestinationCharacter一只可爱的Xin玩偶.",
-
         ItemMisc玩偶_LuziSelect芷窝玩偶: "选择芷窝玩偶",
         ItemMisc玩偶_LuziModule芷窝玩偶: "芷窝玩偶",
         ItemMisc玩偶_LuziOptionz0: "空",
@@ -237,7 +234,7 @@ const dialogs = {
         ItemMisc玩偶_LuziOptionz4: "Echo",
         ItemMisc玩偶_LuziOptionz5: "ᐛ",
         ItemMisc玩偶_LuziOptionz6: "ᐖ",
-
+        ItemMisc玩偶_LuziOptionz7: "芙缇娅",
         ItemMisc玩偶_LuziSetz0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetz1: "SourceCharacter给了DestinationCharacter一只可爱的Ttong玩偶.",
         ItemMisc玩偶_LuziSetz2: "SourceCharacter给了DestinationCharacter一只可爱的ZforShort玩偶.",
@@ -245,7 +242,7 @@ const dialogs = {
         ItemMisc玩偶_LuziSetz4: "SourceCharacter给了DestinationCharacter一只可爱的Echo玩偶.",
         ItemMisc玩偶_LuziSetz5: "SourceCharacter给了DestinationCharacter一只可爱的ᐛ玩偶.",
         ItemMisc玩偶_LuziSetz6: "SourceCharacter给了DestinationCharacter一只可爱的ᐖ玩偶.",
-
+        ItemMisc玩偶_LuziSetz7: "SourceCharacter给了DestinationCharacter一只可爱的芙缇娅玩偶.",
         ItemMisc玩偶_LuziSelectCatnest玩偶: "选择Catnest玩偶",
         ItemMisc玩偶_LuziModuleCatnest玩偶: "Catnest玩偶",
         ItemMisc玩偶_LuziOptionc0: "空",
@@ -257,7 +254,6 @@ const dialogs = {
         ItemMisc玩偶_LuziOptionc6: "居x",
         ItemMisc玩偶_LuziOptionc7: "Caius",
         ItemMisc玩偶_LuziOptionc8: "Neko",
-
         ItemMisc玩偶_LuziSetc0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetc1: "SourceCharacter给了DestinationCharacter一只可爱的XinLian玩偶.",
         ItemMisc玩偶_LuziSetc2: "SourceCharacter给了DestinationCharacter一只可爱的Zheiyun玩偶.",
@@ -267,7 +263,6 @@ const dialogs = {
         ItemMisc玩偶_LuziSetc6: "SourceCharacter给了DestinationCharacter一只可爱的居x玩偶.",
         ItemMisc玩偶_LuziSetc7: "SourceCharacter给了DestinationCharacter一只可爱的Caius玩偶.",
         ItemMisc玩偶_LuziSetc8: "SourceCharacter给了DestinationCharacter一只可爱的Neko玩偶.",
-        
         ItemMisc玩偶_LuziSelect猫州猫庭府玩偶: "选择猫州猫庭府玩偶",
         ItemMisc玩偶_LuziModule猫州猫庭府玩偶: "猫州猫庭府玩偶",
         ItemMisc玩偶_LuziOptionf0: "空",
@@ -282,16 +277,16 @@ const dialogs = {
         ItemMisc玩偶_LuziSetf3: "SourceCharacter给了DestinationCharacter一只可爱的向归夜玩偶.",
         ItemMisc玩偶_LuziSetf4: "SourceCharacter给了DestinationCharacter一只可爱的Nail玩偶.",
         ItemMisc玩偶_LuziSetf5: "SourceCharacter给了DestinationCharacter一只可爱的Nekonya(蓝)玩偶.",
-
         ItemMisc玩偶_LuziSelect路过的玩偶: "选择路过的玩偶",
         ItemMisc玩偶_LuziModule路过的玩偶: "路过的玩偶",
         ItemMisc玩偶_LuziOptionl0: "空",
         ItemMisc玩偶_LuziOptionl1: "li",
         ItemMisc玩偶_LuziOptionl2: "YouXiang",
-
+        ItemMisc玩偶_LuziOptionl3: "Lilian",
         ItemMisc玩偶_LuziSetl0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
         ItemMisc玩偶_LuziSetl1: "SourceCharacter给了DestinationCharacter一只路过的li玩偶.",
         ItemMisc玩偶_LuziSetl2: "SourceCharacter给了DestinationCharacter一只可爱的YouXiang玩偶.",
+        ItemMisc玩偶_LuziSetl3: "SourceCharacter给了DestinationCharacter一只可爱的Lilian玩偶.",
     },
 };
 
