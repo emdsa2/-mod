@@ -255,6 +255,32 @@ const assets = {
                 },
             ],
         },
+        {
+            Name: "烤鱼_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,  
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
+            Layer: [
+                {
+                    Name: "竹签",
+                    Priority: 55,
+                },
+                {
+                    Name: "鱼",
+                    Priority: 55,
+                },
+            ],
+        },
     ],
     ItemMouth: [
         {
@@ -286,6 +312,22 @@ const assets = {
                     Priority: 55,
                 },
             ],
+        },
+        {
+            Name: "烤鱼_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,  
+            PoseMapping: {
+                Yoked: "BaseUpper",
+                OverTheHead: "BaseUpper",
+                BackBoxTie: "BaseUpper",
+                BackElbowTouch: "BaseUpper",
+                BackCuffs: "BaseUpper",
+                Hogtied: "BaseUpper",
+                AllFours: "BaseUpper",
+            },
         },
     ],
     ItemHood: [
