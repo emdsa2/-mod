@@ -212,7 +212,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 2,
-            ParentGroup: "BodyUpper",            
+            ParentGroup: null,            
             PoseMapping: {
                 TapedHands: "BaseUpper",
                 Yoked: "Hide",
@@ -262,7 +262,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: "BodyUpper",  
+            ParentGroup: null,  
             PoseMapping: {
                 Yoked: "BaseUpper",
                 OverTheHead: "BaseUpper",
@@ -294,7 +294,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 2,
-            ParentGroup: "BodyUpper",  
+            ParentGroup: null,  
             PoseMapping: {
                 Yoked: "BaseUpper",
                 OverTheHead: "BaseUpper",
