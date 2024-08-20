@@ -147,7 +147,7 @@ namespace ModManagerInterface {
     type InjectFunction<T extends string> = (...args: [Parameters<HookFunction<T>>]) => void;
     type CheckFunction<T extends string> = (...args: [Parameters<HookFunction<T>>]) => boolean;
 
-    type Hookable = {
+    type HookableMod = {
         hookFunction<T extends string>(funcName: T, priority: number, hook: HookFunction<T>): void;
     };
 }
@@ -160,4 +160,74 @@ namespace ProgressiveHookInterface {
     type CheckWork<T extends string> = { value: "check"; work: ModManager.CheckFunction<T> };
 
     type WorkType<T extends string> = InjectWork<T> | NextWork<T> | OverrideWork<T> | FlagWork<T> | CheckWork<T>;
+}
+
+type CustomActivityPrerequisite =
+    | ActivityPrerequisite
+    | "HasTail"
+    | "HasWings"
+    | "HasLeash"
+    | "HasCatTail"
+    | "HasTentacles"
+    | "HasPawMittens"
+    | "HasPetSuit"
+    | "HasKennel"
+    | "HasItemVulvaPiercings"
+    | "HasItemVulva"
+    | "HasSword"
+    | "HasScissors"
+    | "HasCloth"
+    | "HasNoCloth"
+    | "HasNoClothLower"
+    | "HasBra"
+    | "HasPanties"
+    | "HasSocks"
+    | "HasSaddle"
+    | "HasBed"
+    | "SuitLower鱼鱼尾_Luzi"
+    | "阿巴阿巴_Luzi";
+
+type CustomActivity = Omit<Activity, "Name" | "Prerequisite" | "ActivityID"> & {
+    Name: string;
+    Prerequisite: CustomActivityPrerequisite[];
+};
+
+namespace ActivityManagerInterface {
+    type ActivityTriggerMode = "OnSelf" | "OtherOnSelf" | "OnOther" | "any";
+
+    interface ICustomActivityPrerequisite {
+        readonly name: CustomPrereq;
+        test(acting: Character, acted: Character, group: AssetGroup): boolean;
+    }
+
+    interface IActivityRunnable {
+        run?: (player: PlayerCharacter, sender: Character, info: ActivityInfo) => void;
+    }
+
+    interface ICustomActivity extends IActivityRunnable {
+        readonly mode: ActivityTriggerMode;
+        readonly onBodyparts?: AssetGroupItemName[];
+        readonly activity: CustomActivity;
+        readonly image?: string;
+        readonly reuseImage?: string;
+        readonly label?: Translation.CustomRecord<CustomGroupName, string>;
+        readonly description?: Translation.CustomRecord<CustomGroupName, string>;
+    }
+
+    interface IActivityModifier extends Required<IActivityRunnable> {
+        readonly name: ActivityName;
+    }
+
+    interface ActivityInfo {
+        SourceCharacter: { MemberNumber: number };
+        TargetCharacter: { MemberNumber: number };
+        ActivityGroup: AssetGroupName;
+        ActivityName: string;
+        Asset?: {
+            AssetName: string;
+            CraftName: string;
+            GroupName: AssetGroupItemName;
+        };
+        BCDictionary: any[];
+    }
 }

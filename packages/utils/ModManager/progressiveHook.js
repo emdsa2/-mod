@@ -7,7 +7,7 @@ export class ProgressiveHook {
     workList = [];
 
     /**
-     * @param { ModManagerInterface.Hookable } hookMng
+     * @param { ModManagerInterface.HookableMod } hookMng
      */
     constructor(hookMng) {
         this.hookMng = hookMng;
