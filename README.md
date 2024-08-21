@@ -1,11 +1,30 @@
-https://emdsa2.github.io/-mod/BC_Cloth2.user.js          // 服装拓展beta Clothing Expansion beta  
-https://emdsa2.github.io/-mod/BC_Activity2.user.js          // 动作拓展beta Action Expansion  beta  
+# Mod Overview
 
-https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Activity2.user.js   // 动作拓展 Action Expansion  
-https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Cloth2.user.js      // 服装拓展 Clothing Expansion  
-https://github.com/emdsa2/-mod/raw/main/BC_Cloth_NoHamburg.user.js       // 服装拓展 无🍔版  Clothing Expansion no 🍔 version  
+This mod introduces various enhancements to the game, including additional clothing and activities.
+
+## Links
+
+| Description                 | Link                                                  |
+|-----------------------------|-------------------------------------------------------|
+| Clothing Expansion Beta     | [Clothing Expansion Beta](https://emdsa2.github.io/-mod/BC_Cloth2.user.js) |
+| Action Expansion Beta       | [Action Expansion Beta](https://emdsa2.github.io/-mod/BC_Activity2.user.js) |
+| Action Expansion            | [Action Expansion](https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Activity2.user.js) |
+| Clothing Expansion          | [Clothing Expansion](https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Cloth2.user.js) |
+
+## Installation Script
+
+```javascript
+(function() {
+  const n = document.createElement('script');
+  n.setAttribute('type', 'text/javascript');
+  n.setAttribute('src', 'https://emdsa2.github.io/-mod/BC_Cloth2.user.js?t=' + Date.now());
+  n.onload = function() { n.remove(); };
+  document.head.appendChild(n);
+})();
+```
 
 wiki: https://github.com/emdsa2/-mod/wiki
+
 
 ## Add-on Menu Overview
 
