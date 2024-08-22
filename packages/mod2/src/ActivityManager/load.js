@@ -6,7 +6,7 @@ let queueLoaded = false;
 /**
  * @param {FuncWork} fn
  */
-export function pushWork(fn) {
+export function pushLoad(fn) {
     if (!queueLoaded) registerQueue.push(fn);
     else fn();
 }
@@ -14,7 +14,7 @@ export function pushWork(fn) {
 /**
  * @param {()=>boolean} criteria
  */
-export function waitLoad(criteria) {
+export function setupLoad(criteria) {
     if (queueLoaded) return;
     (async () => {
         sleepUntil(() => criteria());

@@ -54,12 +54,12 @@ namespace _ {
 
     type GroupedAssetType = {
         [K in CustomGroupName]?: K extends AssetGroupItemName
-            ? CAssetDef.Item[]
-            : K extends CustomGroupBodyName
-            ? CAssetDef.Appearance[]
-            : K extends AssetGroupScriptName
-            ? CAssetDef.Script[]
-            : never;
+        ? CAssetDef.Item[]
+        : K extends CustomGroupBodyName
+        ? CAssetDef.Appearance[]
+        : K extends AssetGroupScriptName
+        ? CAssetDef.Script[]
+        : never;
     };
 }
 
@@ -192,26 +192,35 @@ type CustomActivity = Omit<Activity, "Name" | "Prerequisite" | "ActivityID"> & {
     Prerequisite: CustomActivityPrerequisite[];
 };
 
+namespace Translation {
+    type ActivityEntry = _.PRecord<ServerChatRoomLanguage, _.PRecord<AssetGroupItemName, string>>;
+}
+
 namespace ActivityManagerInterface {
-    type ActivityTriggerMode = "OnSelf" | "OtherOnSelf" | "OnOther" | "any";
+    type ActivityDialogKey = `Chat${"Other" | "Self"}-${AssetGroupItemName}-${CustomActivity["Name"]}`;
+
+    type ActivityRunnableTriggerMode = "OnSelf" | "OtherOnSelf" | "OnOther" | "any";
+
+    type PrerequisiteCheckFunction = (...args: ModManagerInterface.FunctionArguments<"ActivityCheckPrerequisite">) => boolean;
 
     interface ICustomActivityPrerequisite {
-        readonly name: CustomPrereq;
-        test(acting: Character, acted: Character, group: AssetGroup): boolean;
+        readonly name: CustomActivityPrerequisite;
+        readonly test: PrerequisiteCheckFunction;
     }
 
     interface IActivityRunnable {
+        readonly mode?: ActivityRunnableTriggerMode;
         run?: (player: PlayerCharacter, sender: Character, info: ActivityInfo) => void;
     }
 
     interface ICustomActivity extends IActivityRunnable {
-        readonly mode: ActivityTriggerMode;
-        readonly onBodyparts?: AssetGroupItemName[];
         readonly activity: CustomActivity;
         readonly image?: string;
         readonly reuseImage?: string;
-        readonly label?: Translation.CustomRecord<CustomGroupName, string>;
-        readonly description?: Translation.CustomRecord<CustomGroupName, string>;
+        readonly label?: Translation.ActivityEntry | Translation.Entry;
+        readonly dialog?: Translation.ActivityEntry | Translation.Entry;
+        readonly labelSelf?: Translation.ActivityEntry | Translation.Entry;
+        readonly dialogSelf?: Translation.ActivityEntry | Translation.Entry;
     }
 
     interface IActivityModifier extends Required<IActivityRunnable> {

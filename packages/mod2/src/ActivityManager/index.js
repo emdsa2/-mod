@@ -2,6 +2,9 @@ import ModManager from "@mod-utils/ModManager";
 import { sleepUntil } from "@mod-utils/sleep";
 import { ModInfo } from "@mod-utils/rollupHelper";
 import { makeChatRoomMsgHandler, pushHandler } from "./handlers";
+import { pushLoad, setupLoad } from "./load";
+import { addAcvitityEntry, setupEntry } from "./entries";
+import { addPrerequisites, setupPrereq } from "./prereq";
 
 /** @type { _.PRecord<CustomActivityPrerequisite, ActivityManagerInterface.ICustomActivityPrerequisite> } */
 const prereqMap = {};
@@ -15,10 +18,10 @@ let queueLoaded = false;
 export class ActivityManager {
     /**
      * 添加一个自定义的动作前提条件
-     * @param { _.PRecord<CustomActivityPrerequisite, ActivityManagerInterface.ICustomActivityPrerequisite> } prereqs
+     * @param { ActivityManagerInterface.ICustomActivityPrerequisite[] } prereqs
      */
     static addPrerequisites(prereqs) {
-        Object.assign(prereqMap, prereqs);
+        prereqs.forEach((p) => addPrerequisites(p));
     }
 
     /**
@@ -27,15 +30,12 @@ export class ActivityManager {
      * @returns {void}
      */
     static addCustomActivity(act) {
-        customActMap[act.activity.Name] = act;
-        if (!queueLoaded) {
-            registerQueue.push(() => {
-                ActivityFemale3DCG.push(/** @type {Activity}*/ (act.activity));
-                ActivityFemale3DCGOrdering.push(/** @type {ActivityName}*/ (act.activity.Name));
-            });
-        }
-
-        pushHandler(act.activity.Name, act);
+        pushLoad(() => {
+            ActivityFemale3DCG.push(/** @type {Activity}*/ (act.activity));
+            ActivityFemale3DCGOrdering.push(/** @type {ActivityName}*/ (act.activity.Name));
+            addAcvitityEntry(act);
+            pushHandler(act.activity.Name, act);
+        });
     }
 
     /**
@@ -68,11 +68,9 @@ export class ActivityManager {
             while (registerQueue.length > 0) registerQueue.shift()();
         })();
 
-        ModManager.hookFunction("ActivityCheckPrerequisite", 1, (args, next) => {
-            const [prereq, acting, acted, group] = args;
-            const cusPrereq = prereqMap[prereq];
-            if (cusPrereq) return cusPrereq.test(acting, acted, group);
-            return next(args);
-        });
+        setupLoad(() => Array.isArray(ActivityFemale3DCG));
+
+        setupEntry();
+        setupPrereq();
     }
 }
