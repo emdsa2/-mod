@@ -55,7 +55,7 @@ const dialog = {
         ItemHandheld阿巴阿巴_Luzi无: "无",
         ItemHandheld阿巴阿巴_Luzi阿巴阿巴: "阿巴阿巴",
         ItemHandheld阿巴阿巴_Luzi阿巴AK: "阿巴AK",
-        ItemHandheld阿巴阿巴_Luzi阿巴鸡腿: "鸡腿",
+        ItemHandheld阿巴阿巴_Luzi鸡腿: "鸡腿",
 
         ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter移除了DestinationCharacter的阿巴阿巴.",
         ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter给了DestinationCharacter一个阿巴阿巴.",
@@ -67,7 +67,7 @@ const dialog = {
         ItemHandheld阿巴阿巴_Luzi无: "None",
         ItemHandheld阿巴阿巴_Luzi阿巴阿巴: "Aba Aba",
         ItemHandheld阿巴阿巴_Luzi阿巴AK: "Aba AK",
-        ItemHandheld阿巴阿巴_Luzi阿巴鸡腿: "Drumstick",
+        ItemHandheld阿巴阿巴_Luzi鸡腿: "Drumstick",
 
         ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter removed AbaAba from DestinationCharacter.",
         ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter toggled AbaAba for DestinationCharacter.",
