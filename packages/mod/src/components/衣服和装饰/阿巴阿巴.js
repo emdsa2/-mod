@@ -58,9 +58,9 @@ const dialog = {
         ItemHandheld阿巴阿巴_Luzi阿巴鸡腿: "鸡腿",
 
         ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter移除了DestinationCharacter的阿巴阿巴.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter切换DestinationCharacter阿巴阿巴.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter切换DestinationCharacter阿巴AK.",
-        ItemHandheld阿巴阿巴_LuziSet鸡腿: "SourceCharacter切换DestinationCharacter鸡腿.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter给了DestinationCharacter一个阿巴阿巴.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter给了DestinationCharacter一个阿巴AK.",
+        ItemHandheld阿巴阿巴_LuziSet鸡腿: "SourceCharacter给了DestinationCharacter一个鸡腿.",
     },
     EN: {
         ItemHandheld阿巴阿巴_LuziSelect: "Select Aba Aba",
