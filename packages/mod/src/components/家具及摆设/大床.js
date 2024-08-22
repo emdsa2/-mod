@@ -1,4 +1,4 @@
-import { unit } from "@mod-utils/fp";
+import { Option } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
 import AssetManager from "@mod-utils/AssetManager";
 
@@ -123,7 +123,7 @@ export default function () {
         .inside("ChatRoomCharacterViewLoopCharacters")
         .inject((args, next) => {
             const C = args[0];
-            unit(InventoryGet(C, "ItemDevices")).then((device) => {
+            Option(InventoryGet(C, "ItemDevices")).value_then((device) => {
                 if (device.Asset.Name === assets.ItemDevices[0].Name) {
                     const idx = ChatRoomCharacterDrawlist.indexOf(C);
                     if (
