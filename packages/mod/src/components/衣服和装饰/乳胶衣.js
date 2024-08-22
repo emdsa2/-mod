@@ -24,7 +24,7 @@ const assets = {
                         BackCuffs: "Hide",
                     },
                 },
-                { Name: "上衣", Priority: 14 },
+                { Name: "上衣", Priority: 14, },
             ],
         },
     ],
