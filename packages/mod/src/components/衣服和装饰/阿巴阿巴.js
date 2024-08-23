@@ -12,7 +12,7 @@ const asset = {
     // AllowActivity: ["ShockItem"],
     // ActivityAudio: ["Shocks"],
     PoseMapping: {
-        TapedHands: "Hide",
+        TapedHands: PoseType.DEFAULT,
         Yoked: "Hide",
         OverTheHead: "Hide",
         BackBoxTie: "Hide",
