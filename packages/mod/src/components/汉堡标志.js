@@ -1,5 +1,6 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
+import { ModInfo } from "@mod-utils/rollupHelper";
 
 const hanburgerIcon = `data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 G3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAEEUlEQVRoge2Zz28bRRTHP7Pr
@@ -26,7 +27,7 @@ PMrnpTehAAAAAElFTkSuQmCC`;
 export default function () {
     const iconSize = 50;
     const margin = 5;
-    const hoverText = "服装拓展";
+    const hoverText = ModInfo.name;
 
     const func = (args, next) => {
         const [x, y, asset, { Width, Height }] = args;

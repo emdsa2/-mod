@@ -3,7 +3,7 @@
  * @typedef { {desc:Translation.Entry, fallback:string , noOverride:boolean} } LayerNameDetails
  */
 
-import { unit } from "../fp";
+import { Option } from "../fp";
 import ModManager from "../ModManager";
 
 /** @type {  Map<CustomLayerNameKey, LayerNameDetails>} */
@@ -64,7 +64,7 @@ export function setupLayerNameLoad() {
     ModManager.progressiveHook("ItemColorLoad", 1)
         .next()
         .inject(() =>
-            unit(() => cache?.()?.cache).then((_) => {
+            Option(() => cache?.()?.cache).value_then((_) => {
                 layerNames.forEach((value, ckeys) => {
                     pushLayerName(
                         /** @type {CustomLayerNameKey} */ (ckeys),
