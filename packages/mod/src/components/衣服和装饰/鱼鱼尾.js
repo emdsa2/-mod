@@ -25,8 +25,8 @@ const asset = {
             PoseMapping: {
                 Kneel: "Kneel",
                 KneelingSpread: "Kneel",
-                LegsClosed: "LegsClosed",
-                Spread: "Spread",
+                LegsClosed: PoseType.DEFAULT,
+                Spread: PoseType.DEFAULT,
             },
         },
         {
@@ -42,7 +42,7 @@ const asset = {
                 BackBoxTie: "Hide",
                 BackElbowTouch: "Hide",
                 BackCuffs: "Hide",
-                Hogtied: "Hogtied",
+                Hogtied: "Hide",
                 AllFours: "Hide",
             },
         },
