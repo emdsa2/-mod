@@ -141,9 +141,9 @@ function flagStatus(data) {
 
 function drawStatus(drawArgs) {
     const [C, CharX, CharY, Zoom] = drawArgs;
-    const state = Object.values(status).find((s) => C[s.flag]);
-    if (!state) return;
-    DrawImageResize(state.img, CharX + 420 * Zoom, CharY + 5, 35 * Zoom, 35 * Zoom);
+    Object.values(status)
+        .filter((s) => C[s.flag])
+        .forEach((s) => DrawImageResize(s.img, CharX + 420 * Zoom, CharY + 5, 35 * Zoom, 35 * Zoom));
 }
 
 function sendHidden(text) {

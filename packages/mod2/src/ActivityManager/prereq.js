@@ -8,7 +8,7 @@ const prereqMap = {};
 /**
  * @param { ActivityManagerInterface.ICustomActivityPrerequisite } prereq
  */
-export function addPrerequisites(prereq) {
+export function addPrerequisite(prereq) {
     prereqMap[prereq.name] = prereq;
 }
 

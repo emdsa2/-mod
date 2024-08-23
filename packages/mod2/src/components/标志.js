@@ -1,6 +1,6 @@
 import ModManager from "@mod-utils/ModManager";
 import { ModInfo } from "@mod-utils/rollupHelper";
-import ActivityManager from "src/ActivityManager";
+import ActivityManager from "../ActivityManager";
 
 const hanburgerIcon = `data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 G3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAEEUlEQVRoge2Zz28bRRTHP7Pr
@@ -29,7 +29,7 @@ export default function () {
     const margin = 5;
     const hoverText = ModInfo.name;
 
-    const gfunc = ModManager.globalFunction("DrawAct", (x, y, w, h, act) => {
+    const gfunc = ModManager.randomGlobalFunction("DrawAct", (x, y, w, h, act) => {
         if (ActivityManager.activityIsCustom(act)) {
             const iconX = x + (w || DrawAssetPreviewDefaultWidth) - iconSize - margin;
             const iconY = y + (h || DrawAssetPreviewDefaultHeight) - iconSize - margin - 40;

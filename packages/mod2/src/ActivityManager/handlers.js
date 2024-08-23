@@ -6,19 +6,31 @@ const actHandlers = {};
 
 /**
  *
- * @param {string} ModName
+ * @param {string} handlerKey
  * @returns {ChatRoomMessageHandler}
  */
-export function makeChatRoomMsgHandler(ModName) {
+export function makeChatRoomMsgHandler(handlerKey) {
     return {
-        Description: `[${ModName}] Activity Manager`,
+        Description: `[${handlerKey}] Activity Manager`,
         Priority: 1024,
         Callback: (data, sender, msg, metadata) => {
             if (Player && Player.MemberNumber) {
                 const pl = Player;
                 if (data.Type === "Activity" && data.Dictionary) {
-                    const d = ActivityDeconstruct(data.Dictionary);
-                    if (d) actHandlers[d.ActivityName]?.run?.(pl, sender, d);
+                    (() => {
+                        const d = ActivityDeconstruct(data.Dictionary);
+                        if (!d) return;
+                        const runner = actHandlers[d.ActivityName];
+                        if (!runner?.run) return;
+                        if (runner.mode === "OnOther" && d.TargetCharacter === Player.MemberNumber) return;
+                        if (runner.mode === "OnSelf" && d.TargetCharacter !== Player.MemberNumber) return;
+                        if (
+                            runner.mode === "OtherOnSelf" &&
+                            !(d.SourceCharacter !== Player.MemberNumber && d.TargetCharacter === Player.MemberNumber)
+                        )
+                            return;
+                        runner.run(pl, sender, d);
+                    })();
                 }
             }
             return false;

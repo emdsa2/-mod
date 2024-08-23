@@ -200,7 +200,7 @@ namespace Translation {
 namespace ActivityManagerInterface {
     type ActivityDialogKey = `Chat${"Other" | "Self"}-${AssetGroupItemName}-${CustomActivity["Name"]}`;
 
-    type ActivityRunnableTriggerMode = "OnSelf" | "OtherOnSelf" | "OnOther" | "any";
+    type ActivityRunnableTriggerMode = "OnSelf" | "OtherOnSelf" | "OnOther";
 
     type PrerequisiteCheckFunction = (...args: ModManagerInterface.FunctionArguments<"ActivityCheckPrerequisite">) => boolean;
 
@@ -216,10 +216,13 @@ namespace ActivityManagerInterface {
 
     interface ICustomActivity extends IActivityRunnable {
         readonly activity: CustomActivity;
-        readonly image?: string;
-        readonly reuseImage?: string;
+
+        // 提供一个字符串时，代表使用对应的动作的图片。提供[组名, 物品名]时，代表使用对应的物品的图片。
+        readonly useImage?: [AssetGroupName, string] | ActivityName;
+        // 对他人使用动作的动作名称
         readonly label?: Translation.ActivityEntry | Translation.Entry;
         readonly dialog?: Translation.ActivityEntry | Translation.Entry;
+        // 对自己使用动作的动作名称，如果没有定义则使用 label
         readonly labelSelf?: Translation.ActivityEntry | Translation.Entry;
         readonly dialogSelf?: Translation.ActivityEntry | Translation.Entry;
     }
@@ -229,8 +232,8 @@ namespace ActivityManagerInterface {
     }
 
     interface ActivityInfo {
-        SourceCharacter: { MemberNumber: number };
-        TargetCharacter: { MemberNumber: number };
+        SourceCharacter: number;
+        TargetCharacter: number;
         ActivityGroup: AssetGroupName;
         ActivityName: string;
         Asset?: {
@@ -238,7 +241,7 @@ namespace ActivityManagerInterface {
             CraftName: string;
             GroupName: AssetGroupItemName;
         };
-        BCDictionary: any[];
+        BCDictionary: ChatMessageDictionaryEntry[];
     }
 }
 

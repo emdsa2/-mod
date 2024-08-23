@@ -4,26 +4,23 @@
  * @returns {ActivityManagerInterface.ActivityInfo | undefined}
  */
 export function ActivityDeconstruct(dict) {
-    let SourceCharacter, TargetCharacter, ActivityGroup, ActivityName, Asset;
-    for (let v of dict) {
-        if (v["TargetCharacter"] !== undefined) TargetCharacter = { MemberNumber: v["TargetCharacter"] };
-        else if (v["SourceCharacter"] !== undefined) SourceCharacter = { MemberNumber: v["SourceCharacter"] };
-        else if (v["ActivityName"] !== undefined) ActivityName = v["ActivityName"];
-        else if (v["Tag"] === "FocusAssetGroup") ActivityGroup = v["FocusGroupName"];
-        else if (v["Tag"] === "ActivityAsset") {
-            Asset = {
-                AssetName: v["AssetName"],
-                CraftName: v["CraftName"],
-                GroupName: v["GroupName"],
+    const ret = dict.reduce((pv, cv) => {
+        if (cv["TargetCharacter"] !== undefined) pv.TargetCharacter = cv["TargetCharacter"];
+        else if (cv["SourceCharacter"] !== undefined) pv.SourceCharacter = cv["SourceCharacter"];
+        else if (cv["ActivityName"] !== undefined) pv.ActivityName = cv["ActivityName"];
+        else if (cv["Tag"] === "FocusAssetGroup") pv.ActivityGroup = cv["FocusGroupName"];
+        else if (cv["Tag"] === "ActivityAsset") {
+            pv.Asset = {
+                AssetName: cv["AssetName"],
+                CraftName: cv["CraftName"],
+                GroupName: cv["GroupName"],
             };
         }
-    }
-    if (
-        SourceCharacter === undefined ||
-        TargetCharacter === undefined ||
-        ActivityGroup === undefined ||
-        ActivityName === undefined
-    )
-        return undefined;
-    return { SourceCharacter, TargetCharacter, ActivityGroup, ActivityName, Asset, BCDictionary: dict };
+
+        return pv;
+    }, /** @type { Partial<ActivityManagerInterface.ActivityInfo> } */ ({}));
+
+    return [ret.TargetCharacter, ret.SourceCharacter, ret.ActivityName, ret.ActivityGroup].some((x) => x === undefined)
+        ? undefined
+        : /** @type { ActivityManagerInterface.ActivityInfo } */ (ret);
 }

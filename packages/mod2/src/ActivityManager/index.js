@@ -1,8 +1,9 @@
 import { pushHandler } from "./handlers";
 import { pushLoad, setupLoad } from "./load";
 import { addAcvitityEntry, setupEntry } from "./entries";
-import { addPrerequisites, setupPrereq } from "./prereq";
+import { addPrerequisite, setupPrereq } from "./prereq";
 import { addCustomActivity, testCustomActivity } from "./stash";
+import { addActivityImageMapping, setupImgMapping } from "./image";
 
 export default class ActivityManager {
     /**
@@ -10,7 +11,7 @@ export default class ActivityManager {
      * @param { ActivityManagerInterface.ICustomActivityPrerequisite[] } prereqs
      */
     static addPrerequisites(prereqs) {
-        prereqs.forEach((p) => addPrerequisites(p));
+        pushLoad(() => prereqs.forEach((p) => addPrerequisite(p)));
     }
 
     /**
@@ -25,6 +26,10 @@ export default class ActivityManager {
             addAcvitityEntry(act);
             pushHandler(act.activity.Name, act);
             addCustomActivity(act);
+
+            if (typeof act.useImage === "string") addActivityImageMapping({ [act.activity.Name]: act.useImage });
+            else if (Array.isArray(act.useImage))
+                addActivityImageMapping({ [act.activity.Name]: act.useImage[1] }, act.useImage[0]);
         });
     }
 
@@ -51,18 +56,22 @@ export default class ActivityManager {
      * @param {ActivityManagerInterface.IActivityModifier} modifier
      */
     static modifyActivity(modifier) {
-        pushHandler(modifier.name, modifier);
+        pushLoad(() => pushHandler(modifier.name, modifier));
     }
 
-    static init() {
+    static init(loadFunc) {
         setupLoad(
             () =>
                 Array.isArray(ActivityFemale3DCG) &&
+                ActivityFemale3DCG.length > 0 &&
                 Array.isArray(ActivityFemale3DCGOrdering) &&
                 Array.isArray(ChatRoomMessageHandlers)
         );
 
+        pushLoad(() => loadFunc());
+
         setupEntry();
         setupPrereq();
+        setupImgMapping();
     }
 }

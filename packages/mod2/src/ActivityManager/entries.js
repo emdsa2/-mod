@@ -1,4 +1,4 @@
-import { RecordEntries, RecordFlatten } from "@mod-utils/fp";
+import { RecordEntries, RecordMap } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
 import { Option } from "@mod-utils/fp";
 
@@ -13,13 +13,14 @@ const entries = {};
  * @param {string} activityName
  */
 function addGroupEntry(prefix, src, selfOther, activityName) {
-    RecordEntries(src).forEach(([lang, grouped]) => {
-        (entries[lang] = RecordFlatten(
-            grouped,
-            (groupName) => `${prefix}Chat${selfOther}-${groupName}-${activityName}`
-        )),
-            entries[lang] || {};
-    });
+    RecordEntries(src).forEach(
+        ([lang, grouped]) =>
+            (entries[lang] = RecordMap(
+                grouped,
+                (groupName) => `${prefix}Chat${selfOther}-${groupName}-${activityName}`,
+                entries[lang] || {}
+            ))
+    );
 }
 
 /**
@@ -58,7 +59,7 @@ function addEntryBranch(prefix, src, selfOther, activityName, groups) {
  * @returns { src is Translation.Entry }
  */
 function isTranslationEntry(src) {
-    return Object.entries(src).some((v) => typeof v === "string");
+    return Object.values(src).some((v) => typeof v === "string");
 }
 
 /**
@@ -69,8 +70,10 @@ export function addAcvitityEntry(src) {
     const { activity, label, labelSelf, dialog, dialogSelf } = src;
     const { Name, Target, TargetSelf } = activity;
 
-    addEntryBranch("Label-", label, "Other", Name, Target);
-    addEntryBranch("", dialog, "Other", Name, Target);
+    const dlabel = label ?? { CN: Name };
+
+    addEntryBranch("Label-", dlabel, "Other", Name, Target);
+    Option(dialog).value_then((d) => addEntryBranch("", d, "Other", Name, Target));
 
     const tGroups = (() => {
         if (typeof TargetSelf === "boolean" && TargetSelf) return Target;
@@ -78,8 +81,8 @@ export function addAcvitityEntry(src) {
         return [];
     })();
 
-    addEntryBranch("Label-", labelSelf, "Self", Name, tGroups);
-    addEntryBranch("", dialogSelf, "Self", Name, tGroups);
+    Option(labelSelf || label).value_then((l) => addEntryBranch("Label-", l, "Self", Name, tGroups));
+    Option(dialogSelf || dialog).value_then((ds) => addEntryBranch("", ds, "Self", Name, tGroups));
 }
 
 export function setupEntry() {
@@ -97,3 +100,5 @@ export function setupEntry() {
             Option(resolve(args[0])).value_then((v) => Dictionary.push({ Tag: Content, Text: v }));
         });
 }
+
+window["CustomEntry"] = () => entries;

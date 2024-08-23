@@ -10,6 +10,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemNeck"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "歪头",
             EN: "Tilt Head",
@@ -27,6 +28,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemNeck"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "环视周围",
             EN: "Look Around",
@@ -43,6 +45,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemHead"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "上下打量",
             EN: "Size Up",
@@ -60,6 +63,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHead"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "闭上眼睛",
             EN: "Close Eyes",
@@ -77,6 +81,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHead"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "眼睛呆滞",
             EN: "Blank Stare",
@@ -94,6 +99,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHead"],
         },
+        useImage: "MoanGagWhimper",
         labelSelf: {
             CN: "眼睛湿润",
             EN: "Watery Eyes",
@@ -111,6 +117,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHead"],
         },
+        useImage: "MoanGagWhimper",
         labelSelf: {
             CN: "流眼泪",
             EN: "Tear Up",
@@ -128,6 +135,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemMouth"],
         },
+        useImage: "Kiss",
         labelSelf: {
             CN: "张开嘴",
             EN: "Open Mouth",
@@ -144,6 +152,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemNeck"],
         },
+        useImage: "MoanGagWhimper",
         labelSelf: {
             CN: "吞咽口水",
             EN: "Swallow Saliva",
@@ -161,6 +170,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemMouth"],
         },
+        useImage: "MoanGagWhimper",
         labelSelf: {
             CN: "流口水",
             EN: "Drool",
@@ -178,6 +188,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemMouth"],
         },
+        useImage: "MoanGagGroan",
         labelSelf: {
             CN: "轻声喘息",
             EN: "Softly Pant",
@@ -195,6 +206,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemMouth"],
         },
+        useImage: "Kiss",
         labelSelf: {
             CN: "打哈欠",
             EN: "Yawn",
@@ -212,6 +224,7 @@ const activities = [
             Target: ["ItemHands"],
             TargetSelf: true,
         },
+        useImage: "MasturbateTongue",
         label: {
             CN: "舔手",
             EN: "Lick Hand",
@@ -237,6 +250,7 @@ const activities = [
             Target: ["ItemHands"],
             TargetSelf: true,
         },
+        useImage: "MasturbateTongue",
         label: {
             CN: "舔手指",
             EN: "Lick Fingers",
@@ -262,6 +276,7 @@ const activities = [
             Target: ["ItemHands"],
             TargetSelf: true,
         },
+        useImage: "MasturbateTongue",
         label: {
             CN: "吮吸手指",
             EN: "Suck on Fingers",
@@ -286,6 +301,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemMouth"],
         },
+        useImage: "MasturbateTongue",
         label: {
             CN: "舔脸",
             EN: "Lick Face",
@@ -303,6 +319,7 @@ const activities = [
             Target: ["ItemBoots"],
             TargetSelf: true,
         },
+        useImage: "MasturbateTongue",
         label: {
             CN: "舔脚",
             EN: "Lick Feet",
@@ -328,6 +345,7 @@ const activities = [
             Target: ["ItemHands"],
             TargetSelf: true,
         },
+        useImage: "Kiss",
         label: {
             CN: "嗅手",
             EN: "Sniff",
@@ -353,6 +371,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "跪下",
             EN: "Kneel Down",
@@ -370,6 +389,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "站起来",
             EN: "Stand Up",
@@ -387,6 +407,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "跪着张开腿",
             EN: "Kneel with Legs Spread",
@@ -404,6 +425,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "跪着并拢腿",
             EN: "Kneel with Legs Closed",
@@ -421,6 +443,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "趴下",
             EN: "Lie Down",
@@ -438,6 +461,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "四肢着地",
             EN: "All Fours",
@@ -455,6 +479,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "起身跪下",
             EN: "Get Up and Kneel",
@@ -471,6 +496,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemBoots"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "爬到脚边",
             EN: "Crawl to Feet",
@@ -487,6 +513,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
+        useImage: "PoliteKiss",
         label: {
             CN: "蹭大腿",
             EN: "Nuzzle Thigh",
@@ -503,6 +530,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemFeet"],
         },
+        useImage: "PoliteKiss",
         label: {
             CN: "蹭小腿",
             EN: "Nuzzle Shin",
@@ -520,6 +548,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Kick",
         labelSelf: {
             CN: "踮起双脚",
             EN: "Stand on Tiptoes",
@@ -537,6 +566,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "摇晃脚踝",
             EN: "Wiggle Ankles",
@@ -554,6 +584,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Kick",
         labelSelf: {
             CN: "伸出脚",
             EN: "Extend Leg",
@@ -571,6 +602,7 @@ const activities = [
             MaxProgressSelf: 50,
             Target: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "掰开双腿",
             EN: "Spread Legs",
@@ -589,6 +621,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "夹紧双腿",
             EN: "Squeeze Legs",
@@ -604,6 +637,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemMouth"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "脚托起下巴",
             EN: "Foot on Chin",
@@ -621,6 +655,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: "Caress",
         label: {
             CN: "戳脸",
             EN: "Poke Face",
@@ -646,6 +681,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: "Pinch",
         label: {
             CN: "捏脸",
             EN: "Pinch Face",
@@ -671,6 +707,7 @@ const activities = [
             Target: ["ItemArms"],
             TargetSelf: true,
         },
+        useImage: "Caress",
         label: {
             CN: "戳手臂",
             EN: "Poke Arm",
@@ -696,6 +733,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: "Wiggle",
         label: {
             CN: "揉脸",
             EN: "Rub Face",
@@ -721,6 +759,7 @@ const activities = [
             Target: ["ItemArms"],
             TargetSelf: true,
         },
+        useImage: "Wiggle",
         label: {
             CN: "摇晃手臂",
             EN: "Shake Arms",
@@ -745,6 +784,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemTorso"],
         },
+        useImage: "Slap",
         label: {
             CN: "轻推",
             EN: "Light Push",
@@ -761,6 +801,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemBoots"],
         },
+        useImage: "Caress",
         label: {
             CN: "托起脚",
             EN: "Lift Foot",
@@ -778,6 +819,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHands"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "扭动手腕",
             EN: "Twist Wrists",
@@ -795,6 +837,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHead"],
         },
+        useImage: "Pull",
         labelSelf: {
             CN: "挠头",
             EN: "Scratch Head",
@@ -811,6 +854,7 @@ const activities = [
             Target: ["ItemEars"],
             TargetSelf: true,
         },
+        useImage: "HandGag",
         label: {
             CN: "盖住耳朵",
             EN: "Cover Ears",
@@ -834,6 +878,7 @@ const activities = [
             Target: ["ItemHead"],
             TargetSelf: true,
         },
+        useImage: "HandGag",
         label: {
             CN: "遮住眼睛",
             EN: "Cover Eyes",
@@ -859,6 +904,7 @@ const activities = [
             Target: ["ItemHead"],
             TargetSelf: true,
         },
+        useImage: "HandGag",
         label: {
             CN: "捂住头",
             EN: "Cover Head",
@@ -884,6 +930,7 @@ const activities = [
             Target: ["ItemVulva"],
             TargetSelf: true,
         },
+        useImage: "HandGag",
         label: {
             CN: "捂住下体",
             EN: "Cover Groin",
@@ -909,6 +956,7 @@ const activities = [
             Target: ["ItemButt"],
             TargetSelf: true,
         },
+        useImage: "MasturbateHand",
         label: {
             CN: "掀开裙子",
             EN: "Lift Skirt",
@@ -933,6 +981,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemHands"],
         },
+        useImage: "Slap",
         label: {
             CN: "挥手",
             EN: "Wave Hand",
@@ -950,6 +999,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHands"],
         },
+        useImage: "Caress",
         labelSelf: {
             CN: "伸出手",
             EN: "Reach Out Hand",
@@ -967,6 +1017,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBreast"],
         },
+        useImage: "Pull",
         labelSelf: {
             CN: "捂住胸",
             EN: "Cover Chest",
@@ -983,6 +1034,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemMouth"],
         },
+        useImage: "Caress",
         label: {
             CN: "手托起下巴",
             EN: "Hand under Chin",
@@ -999,6 +1051,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemNeck"],
         },
+        useImage: "MasturbateHand",
         label: {
             CN: "拽链子",
             EN: "Pull Chain",
@@ -1015,6 +1068,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemHead"],
         },
+        useImage: "Pinch",
         label: {
             CN: "弹额头",
             EN: "Flick Forehead",
@@ -1031,6 +1085,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemVulvaPiercings"],
         },
+        useImage: "Pinch",
         label: {
             CN: "弹阴蒂",
             EN: "Flick Clitoris",
@@ -1047,6 +1102,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
+        useImage: "Caress",
         label: {
             CN: "抱腿",
             EN: "Hug Legs",
@@ -1063,6 +1119,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemPelvis"],
         },
+        useImage: "Pull",
         label: {
             CN: "拉扯衣角",
             EN: "Tug Clothes",
@@ -1079,6 +1136,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemHead"],
         },
+        useImage: "Slap",
         label: {
             CN: "拍头",
         },
@@ -1095,6 +1153,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemButt"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "摇晃尾巴",
             EN: "Wag Tail",
@@ -1112,6 +1171,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemButt"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "竖起尾巴",
             EN: "Raise Tail",
@@ -1129,6 +1189,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemButt"],
         },
+        useImage: "Bite",
         labelSelf: {
             CN: "炸毛",
             EN: "Puff Up",
@@ -1146,6 +1207,7 @@ const activities = [
             Target: ["ItemButt"],
             TargetSelf: true,
         },
+        useImage: "MasturbateTongue",
         label: {
             CN: "舔尾巴",
             EN: "Lick Tail",
@@ -1171,6 +1233,7 @@ const activities = [
             Target: ["ItemButt"],
             TargetSelf: true,
         },
+        useImage: "Caress",
         label: {
             CN: "轻抚尾巴",
             EN: "Gently Stroke Tail",
@@ -1196,6 +1259,7 @@ const activities = [
             Target: ["ItemButt"],
             TargetSelf: true,
         },
+        useImage: "Kiss",
         label: {
             CN: "尾巴叼在嘴里",
             EN: "Hold Tail in Mouth",
@@ -1221,6 +1285,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemButt"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "抬起屁股",
             EN: "Lift Buttocks",
@@ -1238,6 +1303,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemArms"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "扇动翅膀",
             EN: "Flap Wings",
@@ -1254,6 +1320,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemTorso"],
         },
+        useImage: "SistersHug",
         label: {
             CN: "躲到身后",
             EN: "Hide Behind",
@@ -1270,6 +1337,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemTorso"],
         },
+        useImage: "SistersHug",
         label: {
             CN: "移动到身后",
             EN: "Move Behind",
@@ -1286,6 +1354,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemNeck"],
         },
+        useImage: "RestHead",
         label: {
             CN: "下巴搭在肩膀上",
             EN: "Chin on Shoulder",
@@ -1302,6 +1371,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemNeck"],
         },
+        useImage: "Slap",
         label: {
             CN: "手臂搭在肩膀上",
             EN: "Arm on Shoulder",
@@ -1318,6 +1388,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemTorso"],
         },
+        useImage: "SistersHug",
         label: {
             CN: "搂腰",
             EN: "Embrace Waist",
@@ -1335,6 +1406,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemTorso"],
         },
+        useImage: "Choke",
         labelSelf: {
             CN: "叉腰",
             EN: "Put Hands on Hips",
@@ -1352,6 +1424,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemTorso"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "身体颤抖",
             EN: "Body Trembles",
@@ -1369,6 +1442,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemTorso"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "身体抽搐",
             EN: "Body Twitches",
@@ -1386,6 +1460,7 @@ const activities = [
             Target: ["ItemBreast"],
             TargetSelf: true,
         },
+        useImage: "Wiggle",
         label: {
             CN: "托起乳房",
             EN: "Lift Breasts",
@@ -1411,6 +1486,7 @@ const activities = [
             Target: ["ItemNipples"],
             TargetSelf: true,
         },
+        useImage: "Pinch",
         label: {
             CN: "揉搓乳头",
             EN: "Rub Nipples",
@@ -1436,6 +1512,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "揉搓乳头",
             EN: "Rub Nipples",
@@ -1453,6 +1530,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "摇晃双腿",
             EN: "Shake Legs",
@@ -1470,6 +1548,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemVulva"],
         },
+        useImage: "MoanGagWhimper",
         labelSelf: {
             CN: "流出液体",
             EN: "Liquid Flows",
@@ -1487,6 +1566,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemVulva"],
         },
+        useImage: "MoanGagWhimper",
         labelSelf: {
             CN: "失禁",
             EN: "Incontinence",
@@ -1504,6 +1584,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHead"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "撇眼",
             EN: "Roll Eyes",
@@ -1521,6 +1602,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemBoots"],
         },
+        useImage: "Step",
         labelSelf: {
             CN: "跺脚",
             EN: "Stamp Feet",
@@ -1538,6 +1620,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHood"],
         },
+        useImage: "Caress",
         labelSelf: {
             CN: "撩头发",
             EN: "Toss Hair",
@@ -1555,6 +1638,7 @@ const activities = [
             Target: ["ItemVulva"],
             TargetSelf: true,
         },
+        useImage: "MasturbateHand",
         label: {
             CN: "手指插进阴道",
             EN: "Insert Finger into Vagina",
@@ -1580,6 +1664,7 @@ const activities = [
             Target: ["ItemVulva"],
             TargetSelf: true,
         },
+        useImage: "MasturbateHand",
         label: {
             CN: "拔出自己的手指",
             EN: "Remove Finger",
@@ -1605,6 +1690,7 @@ const activities = [
             Target: ["ItemVulva"],
             TargetSelf: true,
         },
+        useImage: "Grope",
         label: {
             CN: "蠕动手指",
             EN: "Wriggle Finger",
@@ -1630,6 +1716,7 @@ const activities = [
             Target: ["ItemVulva"],
             TargetSelf: true,
         },
+        useImage: "Pinch",
         label: {
             CN: "快速抽插",
             EN: "Quickly Thrust",
@@ -1655,6 +1742,7 @@ const activities = [
             Target: ["ItemVulvaPiercings"],
             TargetSelf: true,
         },
+        useImage: "Pinch",
         label: {
             CN: "钩住阴蒂环",
             EN: "Hook Clitoral Piercing",
@@ -1680,6 +1768,7 @@ const activities = [
             Target: ["ItemVulvaPiercings"],
             TargetSelf: true,
         },
+        useImage: "Pinch",
         label: {
             CN: "拉扯阴蒂环",
             EN: "Tug Clitoral Piercing",
@@ -1704,6 +1793,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemBoots"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "宠物服爬到脚边",
             EN: "Pet Crawls to Feet",
@@ -1720,6 +1810,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemFeet"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "宠物服蹭小腿",
             EN: "Pet Rubs Legs",
@@ -1736,6 +1827,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "宠物服蹭大腿",
             EN: "Pet Rubs Legs",
@@ -1753,6 +1845,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "宠物服趴下",
             EN: "Pet Lies Down",
@@ -1770,6 +1863,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemLegs"],
         },
+        useImage: "Wiggle",
         labelSelf: {
             CN: "宠物服跪立",
             EN: "Pet Kneels",
@@ -1786,6 +1880,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemArms"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "宠物服扑",
             EN: "Pet Pounces",
@@ -1802,6 +1897,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemHands"],
         },
+        useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪挠手",
             EN: "Cat Scratches Hand",
@@ -1818,6 +1914,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemArms"],
         },
+        useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪挠手臂",
             EN: "Cat Scratches Arm",
@@ -1835,6 +1932,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemHands"],
         },
+        useImage: ["ItemHands", "PawMittens"],
         labelSelf: {
             CN: "猫爪舔手",
             EN: "Cat Licks Paw",
@@ -1852,6 +1950,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪戳脸",
             EN: "Cat Pokes Face",
@@ -1877,6 +1976,7 @@ const activities = [
             Target: ["ItemNose"],
             TargetSelf: true,
         },
+        useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪戳鼻子",
             EN: "Cat Pokes Nose",
@@ -1902,6 +2002,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪揉脸",
             EN: "Cat Rubs Face",
@@ -1927,6 +2028,7 @@ const activities = [
             Target: ["ItemNose"],
             TargetSelf: true,
         },
+        useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪揉鼻子",
             EN: "Cat Rubs Nose",
@@ -1952,6 +2054,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemArms"],
         },
+        useImage: ["ItemDevices", "PawMittens"],
         labelSelf: {
             CN: "撞笼子",
             EN: "Bump into Cage",
@@ -1969,6 +2072,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemMouth"],
         },
+        useImage: ["ItemDevices", "PawMittens"],
         labelSelf: {
             CN: "咬笼子",
             EN: "Bite Cage",
@@ -1986,6 +2090,7 @@ const activities = [
             Target: [],
             TargetSelf: ["ItemArms"],
         },
+        useImage: ["ItemDevices", "PawMittens"],
         labelSelf: {
             CN: "摇晃笼子",
             EN: "Shake Cage",
@@ -2003,6 +2108,7 @@ const activities = [
             Target: ["ItemNeck"],
             TargetSelf: true,
         },
+        useImage: ["ItemHandheld", "Sword"],
         label: {
             CN: "泡沫剑架在脖子上",
             EN: "Foam Sword Rests on the Neck",
@@ -2027,6 +2133,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemMouth"],
         },
+        useImage: ["ItemHandheld", "Sword"],
         label: {
             CN: "泡沫剑拍脸",
             EN: "Foam Sword Hits the Face",
@@ -2038,137 +2145,13 @@ const activities = [
     },
     {
         activity: {
-            Name: "剪刀剪掉上衣",
-            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
-            MaxProgress: 50,
-            Target: ["ItemTorso"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "剪刀剪掉上衣",
-            EN: "Scissors Cut Off the Top",
-        },
-        dialog: {
-            CN: "SourceCharacter用剪刀剪掉了TargetCharacter的上衣.",
-            EN: "SourceCharacter Cuts Off TargetCharacter's Top with Scissors.",
-        },
-        labelSelf: {
-            CN: "剪刀剪掉上衣",
-            EN: "Scissors Cut Off the Top",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter用剪刀剪掉了自己的上衣.",
-            EN: "SourceCharacter Cuts Off own Top with Scissors.",
-        },
-    },
-    {
-        activity: {
-            Name: "剪刀剪掉下衣",
-            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
-            MaxProgress: 50,
-            Target: ["ItemPelvis"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "剪刀剪掉下衣",
-            EN: "Scissors Cut Off the Bottom",
-        },
-        dialog: {
-            CN: "SourceCharacter用剪刀剪掉了TargetCharacter的下衣.",
-            EN: "SourceCharacter Cuts Off TargetCharacter's Bottom with Scissors.",
-        },
-        labelSelf: {
-            CN: "剪刀剪掉下衣",
-            EN: "Scissors Cut Off the Bottom",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter用剪刀剪掉了自己的下衣.",
-            EN: "SourceCharacter Cuts Off own Bottom with Scissors.",
-        },
-    },
-    {
-        activity: {
-            Name: "剪刀剪掉胸罩",
-            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
-            MaxProgress: 50,
-            Target: ["ItemBreast"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "剪刀剪掉胸罩",
-            EN: "Scissors Cut Off the Bra",
-        },
-        dialog: {
-            CN: "SourceCharacter用剪刀剪掉了TargetCharacter的胸罩.",
-            EN: "SourceCharacter Cuts Off TargetCharacter's Bra with Scissors.",
-        },
-        labelSelf: {
-            CN: "剪刀剪掉胸罩",
-            EN: "Scissors Cut Off the Bra",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter用剪刀剪掉了自己的胸罩.",
-            EN: "SourceCharacter Cuts Off own Bra with Scissors.",
-        },
-    },
-    {
-        activity: {
-            Name: "剪刀剪掉内裤",
-            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
-            MaxProgress: 50,
-            Target: ["ItemVulvaPiercings"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "剪刀剪掉内裤",
-            EN: "Scissors Cut Off the Underwear",
-        },
-        dialog: {
-            CN: "SourceCharacter用剪刀剪掉了TargetCharacter的内裤.",
-            EN: "SourceCharacter Cuts Off TargetCharacter's Underwear with Scissors.",
-        },
-        labelSelf: {
-            CN: "剪刀剪掉内裤",
-            EN: "Scissors Cut Off the Underwear",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter用剪刀剪掉了自己的内裤.",
-            EN: "SourceCharacter Cuts Off own Underwear with Scissors.",
-        },
-    },
-    {
-        activity: {
-            Name: "剪刀剪掉袜子",
-            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
-            MaxProgress: 50,
-            Target: ["ItemBoots"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "剪刀剪掉袜子",
-            EN: "Scissors Cut Off the Socks",
-        },
-        dialog: {
-            CN: "SourceCharacter用剪刀剪掉了TargetCharacter的袜子.",
-            EN: "SourceCharacter Cuts Off TargetCharacter's Socks with Scissors.",
-        },
-        labelSelf: {
-            CN: "剪刀剪掉袜子",
-            EN: "Scissors Cut Off the Socks",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter用剪刀剪掉了自己的袜子.",
-            EN: "SourceCharacter Cuts Off own Socks with Scissors.",
-        },
-    },
-    {
-        activity: {
             Name: "舔触手",
             Prerequisite: ["TargetHasTentacles"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemMouth"],
         },
+        useImage: ["TailStraps", "Tentacles"],
         labelSelf: {
             CN: "舔触手",
             EN: "Lick Tentacles",
@@ -2186,6 +2169,7 @@ const activities = [
             Target: ["ItemHead"],
             TargetSelf: true,
         },
+        useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手摸头",
             EN: "Tentacles Pet Head",
@@ -2211,6 +2195,7 @@ const activities = [
             Target: ["ItemNose"],
             TargetSelf: true,
         },
+        useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手戳鼻子",
             EN: "Tentacles Poke Nose",
@@ -2236,6 +2221,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手戳脸",
             EN: "Tentacles Poke Face",
@@ -2261,6 +2247,7 @@ const activities = [
             Target: ["ItemNose"],
             TargetSelf: true,
         },
+        useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手揉鼻子",
             EN: "Tentacles Rub Nose",
@@ -2286,6 +2273,7 @@ const activities = [
             Target: ["ItemButt"],
             TargetSelf: true,
         },
+        useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手掀裙子",
         },
@@ -2307,6 +2295,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手揉脸",
             EN: "Tentacles Rub Face",
@@ -2332,6 +2321,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾揉脸",
             EN: "Fish Tail Rubs Face",
@@ -2357,6 +2347,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾戳脸",
             EN: "Fish Tail Pokes Face",
@@ -2382,6 +2373,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾抚脸",
             EN: "Fish Tail Caresses Face",
@@ -2406,6 +2398,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾担膝盖",
             EN: "Fish Tail Rests on Knee",
@@ -2423,6 +2416,7 @@ const activities = [
             Target: ["ItemBreast"],
             TargetSelf: true,
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾揉乳房",
             EN: "Fish Tail Rubs Chest",
@@ -2448,6 +2442,7 @@ const activities = [
             Target: ["ItemMouth"],
             TargetSelf: true,
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾扇风",
             EN: "Fish Tail Fans",
@@ -2473,6 +2468,7 @@ const activities = [
             Target: ["ItemNipples"],
             TargetSelf: true,
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾戳乳头",
             EN: "Fish Tail Pokes Nipple",
@@ -2497,6 +2493,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemHands"],
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾碰手",
             EN: "Fish Tail Touches Hand",
@@ -2513,6 +2510,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
+        useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾抚弄大腿",
             EN: "Fish Tail Strokes Thigh",
@@ -2529,6 +2527,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemArms"],
         },
+        useImage: ["ItemDevices", "Bed"],
         label: {
             CN: "躺上去",
             EN: "Lie Down",
@@ -2545,6 +2544,7 @@ const activities = [
             MaxProgress: 50,
             Target: ["ItemTorso"],
         },
+        useImage: "Wiggle",
         label: {
             CN: "骑上去",
             EN: "Ride On",
@@ -2552,237 +2552,6 @@ const activities = [
         dialog: {
             CN: "SourceCharacter骑在TargetCharacter的背上.",
             EN: "SourceCharacter Rides on TargetCharacter's Back.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击乳房",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemBreast"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击乳房",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的乳房.",
-        },
-        labelSelf: {
-            CN: "射击乳房",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的乳房.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击屁股",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemButt"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击屁股",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的屁股.",
-        },
-        labelSelf: {
-            CN: "射击屁股",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的屁股.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击脸",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemMouth"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击脸",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脸.",
-        },
-        labelSelf: {
-            CN: "射击脸",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的脸.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击腰",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemTorso"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击腰",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的腰.",
-        },
-        labelSelf: {
-            CN: "射击腰",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的腰.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击耳朵",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemEars"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击耳朵",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的耳朵.",
-        },
-        labelSelf: {
-            CN: "射击耳朵",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的耳朵.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击手臂",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemArms"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击手臂",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的手臂.",
-        },
-        labelSelf: {
-            CN: "射击手臂",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的手臂.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击脖子",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemNeck"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击脖子",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脖子.",
-        },
-        labelSelf: {
-            CN: "射击脖子",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的脖子.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击头",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemHead"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击头",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的头.",
-        },
-        labelSelf: {
-            CN: "射击头",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的头.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击眉心",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemHead"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击眉心",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹正中TargetCharacter的眉心!",
-        },
-        labelSelf: {
-            CN: "射击眉心",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的眉心.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击鼻子",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemNose"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击鼻子",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的鼻子.",
-        },
-        labelSelf: {
-            CN: "射击鼻子",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的鼻子.",
-        },
-    },
-    {
-        activity: {
-            Name: "射击肚子",
-            Prerequisite: ["Need阿巴阿巴_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemPelvis"],
-            TargetSelf: true,
-        },
-        label: {
-            CN: "射击肚子",
-        },
-        dialog: {
-            CN: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的肚子.",
-        },
-        labelSelf: {
-            CN: "射击肚子",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter举起枪瞄准PronounPossessive自己的肚子.",
         },
     },
 ];

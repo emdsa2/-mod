@@ -52,12 +52,13 @@ export function RecordEntries(src) {
  * @template {string} T
  * @template {string} U
  * @param {Partial<Record<T, string>>} src
- * @param {(T)=>U} keyFunc
+ * @param {(arg:T)=>U} keyFunc
+ * @param {Partial<Record<U,string>>} [init]
  * @returns {Partial<Record<U,string>>}
  */
-export function RecordFlatten(src, keyFunc) {
+export function RecordMap(src, keyFunc, init = {}) {
     return RecordEntries(src).reduce((pv, [key, value]) => {
         pv[keyFunc(key)] = value;
         return pv;
-    }, /** @type {Partial<Record<U,string>>}*/ ({}));
+    }, init);
 }
