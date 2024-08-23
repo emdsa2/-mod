@@ -41,8 +41,6 @@ const asset = {
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
                 Spread: "Spread",
-                Hogtied: "Hide",
-                AllFours: "Hide",
             },
         },
         {
@@ -71,6 +69,7 @@ const asset = {
             AllowTypes: { s: 1 },
             Top: 462,
             Left: 0,
+            CopyLayerColor: "透视紧身衣上半身",
             ParentGroup: "BodyLower",
             PoseMapping: {
                 Kneel: "Kneel",
@@ -102,6 +101,7 @@ const asset = {
             AllowTypes: { ll: [1, 2, 3, 4, 5] },
             Top: 460,
             Left: 0,
+            CopyLayerColor: "手链",
             ParentGroup: "BodyLower",
             PoseMapping: {
                 Kneel: "Kneel",
@@ -133,6 +133,7 @@ const asset = {
             AllowTypes: { l: 2 },
             Top: -430,
             Left: 0,
+            CopyLayerColor: "吊顶链",
         },
         {
             Name: "脚链链子",
@@ -140,6 +141,7 @@ const asset = {
             AllowTypes: { ll: 2 },
             Top: -430,
             Left: 0,
+            CopyLayerColor: "吊顶链",
         },
         {
             Name: "脚链链子反",
@@ -147,6 +149,7 @@ const asset = {
             AllowTypes: { ll: [3, 4] },
             Top: 530,
             Left: 0,
+            CopyLayerColor: "吊顶链",
         },
         {
             Name: "脚链拘束",
@@ -154,6 +157,7 @@ const asset = {
             AllowTypes: { ll: [5] },
             Top: 460,
             Left: 0,
+            CopyLayerColor: "吊顶链",
         },
         {
             Name: "吊顶链",
