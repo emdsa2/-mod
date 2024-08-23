@@ -144,8 +144,8 @@ namespace ModManagerInterface {
     type FunctionType<T extends string> = Parameters<HookFunction<T>>[1];
     type FunctionReturnType<T extends string> = ReturnType<HookFunction<T>>;
 
-    type InjectFunction<T extends string> = (...args: [Parameters<HookFunction<T>>]) => void;
-    type CheckFunction<T extends string> = (...args: [Parameters<HookFunction<T>>]) => boolean;
+    type InjectFunction<T extends string> = (...args: Parameters<HookFunction<T>>) => void;
+    type CheckFunction<T extends string> = (...args: Parameters<HookFunction<T>>) => boolean;
 
     type HookableMod = {
         hookFunction<T extends string>(funcName: T, priority: number, hook: HookFunction<T>): void;
@@ -241,3 +241,5 @@ namespace ActivityManagerInterface {
         BCDictionary: any[];
     }
 }
+
+declare function ServerSend<T = keyof ClientToServerEvents>(Message: T, ...args: Parameters<ClientToServerEvents[T]>): void;

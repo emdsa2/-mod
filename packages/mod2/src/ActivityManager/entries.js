@@ -83,16 +83,17 @@ export function addAcvitityEntry(src) {
 }
 
 export function setupEntry() {
-    ModManager.hookFunction("ActivityDictionaryText", 1, (args, next) => {
-        return ((tag) => entries[TranslationLanguage]?.[tag] ?? entries["CN"][tag])(args[0]) || next(args);
-    });
+    /** @type {(string) => undefined | string} */
+    const resolve = (tag) => entries[TranslationLanguage]?.[tag] ?? entries["CN"]?.[tag];
+
+    ModManager.hookFunction("ActivityDictionaryText", 1, (args, next) => resolve(args[0]) || next(args));
 
     ModManager.progressiveHook("ServerSend", 1)
         .inside("ActivityRun")
         .inject((args, next) => {
-            const { Content, Dictionary } = args;
-            Option(entries[TranslationLanguage]?.[Content] ?? entries["CN"][Content]).value_then((v) => {
-                Dictionary.push({ Tag: Content, Text: v });
-            });
+            const { Content, Dictionary } = /** @type { Parameters<ClientToServerEvents["ChatRoomChat"]>[0] } */ (
+                args[1]
+            );
+            Option(resolve(args[0])).value_then((v) => Dictionary.push({ Tag: Content, Text: v }));
         });
 }
