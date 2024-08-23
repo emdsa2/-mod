@@ -583,7 +583,7 @@ const activities = [
     {
         activity: {
             Name: "夹紧双腿",
-            Prerequisite: ["HasItemVulva"],
+            Prerequisite: ["TargetHasItemVulva"],
             MaxProgress: 50,
             MaxProgressSelf: 500,
             Target: [],
@@ -995,7 +995,7 @@ const activities = [
     {
         activity: {
             Name: "拽链子",
-            Prerequisite: ["UseHands", "UseArms", "HasLeash"],
+            Prerequisite: ["UseHands", "UseArms", "TargetHasLeash"],
             MaxProgress: 50,
             Target: ["ItemNeck"],
         },
@@ -1090,7 +1090,7 @@ const activities = [
     {
         activity: {
             Name: "摇晃尾巴",
-            Prerequisite: ["HasTail"],
+            Prerequisite: ["TargetHasTail"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemButt"],
@@ -1107,7 +1107,7 @@ const activities = [
     {
         activity: {
             Name: "竖起尾巴",
-            Prerequisite: ["HasCatTail"],
+            Prerequisite: ["TargetHasCatTail"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemButt"],
@@ -1124,7 +1124,7 @@ const activities = [
     {
         activity: {
             Name: "炸毛",
-            Prerequisite: ["HasCatTail"],
+            Prerequisite: ["TargetHasCatTail"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemButt"],
@@ -1141,7 +1141,7 @@ const activities = [
     {
         activity: {
             Name: "舔尾巴",
-            Prerequisite: ["HasCatTail"],
+            Prerequisite: ["TargetHasCatTail"],
             MaxProgress: 50,
             Target: ["ItemButt"],
             TargetSelf: true,
@@ -1166,7 +1166,7 @@ const activities = [
     {
         activity: {
             Name: "轻抚尾巴",
-            Prerequisite: ["HasTail"],
+            Prerequisite: ["TargetHasTail"],
             MaxProgress: 50,
             Target: ["ItemButt"],
             TargetSelf: true,
@@ -1191,7 +1191,7 @@ const activities = [
     {
         activity: {
             Name: "尾巴叼在嘴里",
-            Prerequisite: ["HasCatTail"],
+            Prerequisite: ["TargetHasCatTail"],
             MaxProgress: 50,
             Target: ["ItemButt"],
             TargetSelf: true,
@@ -1233,7 +1233,7 @@ const activities = [
     {
         activity: {
             Name: "扇动翅膀",
-            Prerequisite: ["HasWings"],
+            Prerequisite: ["TargetHasWings"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemArms"],
@@ -1431,7 +1431,7 @@ const activities = [
     {
         activity: {
             Name: "揉搓乳头",
-            Prerequisite: ["HasItemVulva"],
+            Prerequisite: ["TargetHasItemVulva"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemLegs"],
@@ -1465,7 +1465,7 @@ const activities = [
     {
         activity: {
             Name: "流出液体",
-            Prerequisite: ["HasItemVulva"],
+            Prerequisite: ["TargetHasItemVulva"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemVulva"],
@@ -1482,7 +1482,7 @@ const activities = [
     {
         activity: {
             Name: "失禁",
-            Prerequisite: ["HasItemVulva"],
+            Prerequisite: ["TargetHasItemVulva"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemVulva"],
@@ -1650,7 +1650,7 @@ const activities = [
     {
         activity: {
             Name: "钩住阴蒂环",
-            Prerequisite: ["UseHands", "HasItemVulvaPiercings"],
+            Prerequisite: ["UseHands", "TargetHasItemVulvaPiercings"],
             MaxProgress: 50,
             Target: ["ItemVulvaPiercings"],
             TargetSelf: true,
@@ -1675,7 +1675,7 @@ const activities = [
     {
         activity: {
             Name: "拉扯阴蒂环",
-            Prerequisite: ["UseHands", "HasItemVulvaPiercings"],
+            Prerequisite: ["UseHands", "TargetHasItemVulvaPiercings"],
             MaxProgress: 50,
             Target: ["ItemVulvaPiercings"],
             TargetSelf: true,
@@ -1700,7 +1700,7 @@ const activities = [
     {
         activity: {
             Name: "宠物服爬到脚边",
-            Prerequisite: ["HasPetSuit"],
+            Prerequisite: ["NeedPetSuit"],
             MaxProgress: 50,
             Target: ["ItemBoots"],
         },
@@ -1716,7 +1716,7 @@ const activities = [
     {
         activity: {
             Name: "宠物服蹭小腿",
-            Prerequisite: ["HasPetSuit"],
+            Prerequisite: ["NeedPetSuit"],
             MaxProgress: 50,
             Target: ["ItemFeet"],
         },
@@ -1732,7 +1732,7 @@ const activities = [
     {
         activity: {
             Name: "宠物服蹭大腿",
-            Prerequisite: ["HasPetSuit"],
+            Prerequisite: ["NeedPetSuit"],
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
@@ -1748,7 +1748,7 @@ const activities = [
     {
         activity: {
             Name: "宠物服趴下",
-            Prerequisite: ["HasPetSuit"],
+            Prerequisite: ["NeedPetSuit"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemLegs"],
@@ -1765,7 +1765,7 @@ const activities = [
     {
         activity: {
             Name: "宠物服跪立",
-            Prerequisite: ["HasPetSuit"],
+            Prerequisite: ["NeedPetSuit"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemLegs"],
@@ -1782,7 +1782,7 @@ const activities = [
     {
         activity: {
             Name: "宠物服扑",
-            Prerequisite: ["HasPetSuit"],
+            Prerequisite: ["NeedPetSuit"],
             MaxProgress: 50,
             Target: ["ItemArms"],
         },
@@ -1798,7 +1798,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪挠手",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: ["ItemHands"],
         },
@@ -1814,7 +1814,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪挠手臂",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: ["ItemArms"],
         },
@@ -1830,7 +1830,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪舔手",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemHands"],
@@ -1847,7 +1847,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪戳脸",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -1872,7 +1872,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪戳鼻子",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: ["ItemNose"],
             TargetSelf: true,
@@ -1897,7 +1897,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪揉脸",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -1922,7 +1922,7 @@ const activities = [
     {
         activity: {
             Name: "猫爪揉鼻子",
-            Prerequisite: ["HasPawMittens"],
+            Prerequisite: ["NeedPawMittens"],
             MaxProgress: 50,
             Target: ["ItemNose"],
             TargetSelf: true,
@@ -1947,7 +1947,7 @@ const activities = [
     {
         activity: {
             Name: "撞笼子",
-            Prerequisite: ["HasKennel"],
+            Prerequisite: ["NeedKennel"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemArms"],
@@ -1964,7 +1964,7 @@ const activities = [
     {
         activity: {
             Name: "咬笼子",
-            Prerequisite: ["HasKennel"],
+            Prerequisite: ["NeedKennel"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemMouth"],
@@ -1981,7 +1981,7 @@ const activities = [
     {
         activity: {
             Name: "摇晃笼子",
-            Prerequisite: ["HasKennel"],
+            Prerequisite: ["NeedKennel"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemArms"],
@@ -1998,7 +1998,7 @@ const activities = [
     {
         activity: {
             Name: "泡沫剑架在脖子上",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemNeck"],
             TargetSelf: true,
@@ -2023,7 +2023,7 @@ const activities = [
     {
         activity: {
             Name: "泡沫剑拍脸",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
         },
@@ -2039,7 +2039,7 @@ const activities = [
     {
         activity: {
             Name: "剪刀剪掉上衣",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemTorso"],
             TargetSelf: true,
@@ -2064,7 +2064,7 @@ const activities = [
     {
         activity: {
             Name: "剪刀剪掉下衣",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemPelvis"],
             TargetSelf: true,
@@ -2089,7 +2089,7 @@ const activities = [
     {
         activity: {
             Name: "剪刀剪掉胸罩",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemBreast"],
             TargetSelf: true,
@@ -2114,7 +2114,7 @@ const activities = [
     {
         activity: {
             Name: "剪刀剪掉内裤",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemVulvaPiercings"],
             TargetSelf: true,
@@ -2139,7 +2139,7 @@ const activities = [
     {
         activity: {
             Name: "剪刀剪掉袜子",
-            Prerequisite: ["UseHands", "UseArms", "HasSword"],
+            Prerequisite: ["UseHands", "UseArms", "NeedSword"],
             MaxProgress: 50,
             Target: ["ItemBoots"],
             TargetSelf: true,
@@ -2164,7 +2164,7 @@ const activities = [
     {
         activity: {
             Name: "舔触手",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["TargetHasTentacles"],
             MaxProgress: 50,
             Target: [],
             TargetSelf: ["ItemMouth"],
@@ -2181,7 +2181,7 @@ const activities = [
     {
         activity: {
             Name: "触手摸头",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["NeedTentacles"],
             MaxProgress: 50,
             Target: ["ItemHead"],
             TargetSelf: true,
@@ -2206,7 +2206,7 @@ const activities = [
     {
         activity: {
             Name: "触手戳鼻子",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["NeedTentacles"],
             MaxProgress: 50,
             Target: ["ItemNose"],
             TargetSelf: true,
@@ -2231,7 +2231,7 @@ const activities = [
     {
         activity: {
             Name: "触手戳脸",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["NeedTentacles"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2256,7 +2256,7 @@ const activities = [
     {
         activity: {
             Name: "触手揉鼻子",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["NeedTentacles"],
             MaxProgress: 50,
             Target: ["ItemNose"],
             TargetSelf: true,
@@ -2281,7 +2281,7 @@ const activities = [
     {
         activity: {
             Name: "触手掀裙子",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["NeedTentacles"],
             MaxProgress: 50,
             Target: ["ItemButt"],
             TargetSelf: true,
@@ -2302,7 +2302,7 @@ const activities = [
     {
         activity: {
             Name: "触手揉脸",
-            Prerequisite: ["HasTentacles"],
+            Prerequisite: ["NeedTentacles"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2327,7 +2327,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾揉脸",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2352,7 +2352,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾戳脸",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2377,7 +2377,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾抚脸",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2402,7 +2402,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾担膝盖",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi", "TargetKneeling"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi", "TargetKneeling"],
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
@@ -2418,7 +2418,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾揉乳房",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemBreast"],
             TargetSelf: true,
@@ -2443,7 +2443,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾扇风",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2468,7 +2468,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾戳乳头",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemNipples"],
             TargetSelf: true,
@@ -2493,7 +2493,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾碰手",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemHands"],
         },
@@ -2509,7 +2509,7 @@ const activities = [
     {
         activity: {
             Name: "鱼尾抚弄大腿",
-            Prerequisite: ["SuitLower鱼鱼尾_Luzi"],
+            Prerequisite: ["NeedSuitLower鱼鱼尾_Luzi"],
             MaxProgress: 50,
             Target: ["ItemLegs"],
         },
@@ -2525,7 +2525,7 @@ const activities = [
     {
         activity: {
             Name: "躺上去",
-            Prerequisite: ["HasBed"],
+            Prerequisite: ["NeedBed_Luzi"],
             MaxProgress: 50,
             Target: ["ItemArms"],
         },
@@ -2541,7 +2541,7 @@ const activities = [
     {
         activity: {
             Name: "骑上去",
-            Prerequisite: ["HasSaddle"],
+            Prerequisite: ["NeedSaddle_Luzi"],
             MaxProgress: 50,
             Target: ["ItemTorso"],
         },
@@ -2557,7 +2557,7 @@ const activities = [
     {
         activity: {
             Name: "射击乳房",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemBreast"],
             TargetSelf: true,
@@ -2578,7 +2578,7 @@ const activities = [
     {
         activity: {
             Name: "射击屁股",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemButt"],
             TargetSelf: true,
@@ -2599,7 +2599,7 @@ const activities = [
     {
         activity: {
             Name: "射击脸",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemMouth"],
             TargetSelf: true,
@@ -2620,7 +2620,7 @@ const activities = [
     {
         activity: {
             Name: "射击腰",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemTorso"],
             TargetSelf: true,
@@ -2641,7 +2641,7 @@ const activities = [
     {
         activity: {
             Name: "射击耳朵",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemEars"],
             TargetSelf: true,
@@ -2662,7 +2662,7 @@ const activities = [
     {
         activity: {
             Name: "射击手臂",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemArms"],
             TargetSelf: true,
@@ -2683,7 +2683,7 @@ const activities = [
     {
         activity: {
             Name: "射击脖子",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemNeck"],
             TargetSelf: true,
@@ -2704,7 +2704,7 @@ const activities = [
     {
         activity: {
             Name: "射击头",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemHead"],
             TargetSelf: true,
@@ -2725,7 +2725,7 @@ const activities = [
     {
         activity: {
             Name: "射击眉心",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemHead"],
             TargetSelf: true,
@@ -2746,7 +2746,7 @@ const activities = [
     {
         activity: {
             Name: "射击鼻子",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemNose"],
             TargetSelf: true,
@@ -2767,7 +2767,7 @@ const activities = [
     {
         activity: {
             Name: "射击肚子",
-            Prerequisite: ["阿巴阿巴_Luzi"],
+            Prerequisite: ["Need阿巴阿巴_Luzi"],
             MaxProgress: 50,
             Target: ["ItemPelvis"],
             TargetSelf: true,

@@ -161,19 +161,19 @@ function delayedSendHidden(text) {
 
 export default function () {
     ModManager.hookFunction("ChatRoomSync", 10, (args, next) => {
-        delayedSendHidden(status.echo.msg);
+        delayedSendHidden(status.echo2.msg);
         next(args);
     });
 
     ModManager.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
-        delayedSendHidden(status.echo.msg);
+        delayedSendHidden(status.echo2.msg);
         next(args);
     });
 
     ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
         let data = args[0];
         if (data.Content === "ServerEnter") {
-            delayedSendHidden(status.echo.msg);
+            delayedSendHidden(status.echo2.msg);
         }
         next(args);
     });

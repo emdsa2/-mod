@@ -1,5 +1,6 @@
 import { RecordEntries, RecordFlatten } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
+import { Option } from "@mod-utils/fp";
 
 /** @type { _.PRecord<ServerChatRoomLanguage, Record<ActivityManagerInterface.ActivityDialogKey, string>> } */
 const entries = {};
@@ -22,7 +23,6 @@ function addGroupEntry(prefix, src, selfOther, activityName) {
 }
 
 /**
- * 添加动作翻译条目
  * @param { "Label-" | "" } prefix
  * @param { Translation.Entry } src
  * @param { "Self" | "Other" } selfOther
@@ -62,7 +62,7 @@ function isTranslationEntry(src) {
 }
 
 /**
- *
+ * 添加动作翻译条目
  * @param {ActivityManagerInterface.ICustomActivity} src
  */
 export function addAcvitityEntry(src) {
@@ -84,6 +84,15 @@ export function addAcvitityEntry(src) {
 
 export function setupEntry() {
     ModManager.hookFunction("ActivityDictionaryText", 1, (args, next) => {
-        return entries[args[0]] || next(args);
+        return ((tag) => entries[TranslationLanguage]?.[tag] ?? entries["CN"][tag])(args[0]) || next(args);
     });
+
+    ModManager.progressiveHook("ServerSend", 1)
+        .inside("ActivityRun")
+        .inject((args, next) => {
+            const { Content, Dictionary } = args;
+            Option(entries[TranslationLanguage]?.[Content] ?? entries["CN"][Content]).value_then((v) => {
+                Dictionary.push({ Tag: Content, Text: v });
+            });
+        });
 }
