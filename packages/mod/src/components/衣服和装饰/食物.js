@@ -20,19 +20,11 @@ const assets = {
                 Hogtied: PoseType.DEFAULT,
                 AllFours: PoseType.DEFAULT,
             },
+            Priority: 55,
             Layer: [
-                {
-                    Name: "棒子",
-                    Priority: 55,
-                },
-                {
-                    Name: "糖",
-                    Priority: 55,
-                },
-                {
-                    Name: "条纹",
-                    Priority: 55,
-                },
+                { Name: "棒子", },
+                { Name: "糖", },
+                { Name: "条纹", },
             ],
         },
         {
@@ -40,6 +32,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
+            Priority: 55,
             ParentGroup: null,
             Effect: [E.BlockMouth],
             PoseMapping: {
@@ -58,6 +51,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
+            Priority: 55,
             ParentGroup: null,
             Effect: [E.BlockMouth],
             PoseMapping: {
