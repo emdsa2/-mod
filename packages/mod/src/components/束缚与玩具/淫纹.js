@@ -118,7 +118,7 @@ const asset = {
     Random: false,
     Top: -110,
     Left: 0,
-    Priority: 30,
+    Priority: 10,
     AllowLock: true,
     DrawLocks: false,
     Extended: true,
@@ -132,7 +132,12 @@ const asset = {
         {
             Name: "淫纹",
             ParentGroup: "ItemMisc",
-
+        },
+        {
+            Name: "发光",
+            Priority: 44,
+            ParentGroup: "ItemMisc",
+            AllowTypes: { typed: [1, 2, 3] },
         },
     ],
 };
