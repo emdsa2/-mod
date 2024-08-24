@@ -330,6 +330,102 @@ const assets = {
             },
         },
     ],
+    ItemMouth2: [
+        {
+            Name: "棒棒糖_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,  
+            PoseMapping: {
+                Yoked: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
+                AllFours: PoseType.DEFAULT,
+            },
+            Layer: [
+                {
+                    Name: "棒子",
+                    Priority: 55,
+                },
+                {
+                    Name: "糖",
+                    Priority: 55,
+                },
+                {
+                    Name: "条纹",
+                    Priority: 55,
+                },
+            ],
+        },
+        {
+            Name: "烤鱼_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,  
+            PoseMapping: {
+                Yoked: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
+                AllFours: PoseType.DEFAULT,
+            },
+        },
+    ],
+    ItemMouth3: [
+        {
+            Name: "棒棒糖_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,  
+            PoseMapping: {
+                Yoked: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
+                AllFours: PoseType.DEFAULT,
+            },
+            Layer: [
+                {
+                    Name: "棒子",
+                    Priority: 55,
+                },
+                {
+                    Name: "糖",
+                    Priority: 55,
+                },
+                {
+                    Name: "条纹",
+                    Priority: 55,
+                },
+            ],
+        },
+        {
+            Name: "烤鱼_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,  
+            PoseMapping: {
+                Yoked: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
+                AllFours: PoseType.DEFAULT,
+            },
+        },
+    ],
     ItemHood: [
         {
             Name: "汉堡_Luzi",

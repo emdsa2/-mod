@@ -39,6 +39,7 @@ const asset = {
         { Name: "ᐛ", AllowTypes: { z: 5 } },
         { Name: "ᐖ", AllowTypes: { z: 6 } },
         { Name: "芙缇娅", AllowTypes: { z: 7 } },
+        { Name: "芷小童", AllowTypes: { z: 8 } },
         
         // Catnest
         { Name: "XinLian", AllowTypes: { c: 1 } },
@@ -139,7 +140,7 @@ const dialogs = {
         ItemMisc玩偶_LuziSelect芷窝玩偶: "选择芷窝玩偶",
         ItemMisc玩偶_LuziModule芷窝玩偶: "芷窝玩偶",
         ItemMisc玩偶_LuziOptionz0: "空",
-        ItemMisc玩偶_LuziOptionz1: "Ttong",
+        ItemMisc玩偶_LuziOptionz1: "芷童",
         ItemMisc玩偶_LuziOptionz2: "ZforShort",
         ItemMisc玩偶_LuziOptionz3: "Gin",
         ItemMisc玩偶_LuziOptionz4: "Echo",
@@ -147,7 +148,7 @@ const dialogs = {
         ItemMisc玩偶_LuziOptionz6: "ᐖ",
         ItemMisc玩偶_LuziOptionz7: "芙缇娅",
         ItemMisc玩偶_LuziSetz0: "SourceCharacter移除了DestinationCharacter手上的玩偶.",
-        ItemMisc玩偶_LuziSetz1: "SourceCharacter给了DestinationCharacter一只可爱的Ttong玩偶.",
+        ItemMisc玩偶_LuziSetz1: "SourceCharacter给了DestinationCharacter一只可爱的芷童玩偶.",
         ItemMisc玩偶_LuziSetz2: "SourceCharacter给了DestinationCharacter一只可爱的ZforShort玩偶.",
         ItemMisc玩偶_LuziSetz3: "SourceCharacter给了DestinationCharacter一只可爱的Gin玩偶.",
         ItemMisc玩偶_LuziSetz4: "SourceCharacter给了DestinationCharacter一只可爱的Echo玩偶.",

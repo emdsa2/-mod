@@ -14,7 +14,8 @@ type CustomGroupBodyName =
     | `${AssetGroupBodyName}_笨笨蛋Luzi`
     | `${AssetGroupBodyName}_笨笨笨蛋Luzi2`
     | "Liquid2_Luzi"
-    | "BodyMarkings2_Luzi";
+    | "BodyMarkings2_Luzi"
+    | "身体痕迹_Luzi";
 
 /** 扩展身体组名称 */
 type CustomGroupName = AssetGroupItemName | CustomGroupBodyName | AssetGroupScriptName;

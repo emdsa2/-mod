@@ -12,10 +12,6 @@ const groups = [
             Top: 0,
             Asset: [
                 {
-                    Name: "无_Luzi",
-                    Random: false,
-                },
-                {
                     Name: "少_Luzi",
                     Random: false,
                     Priority: 9,
@@ -32,6 +28,46 @@ const groups = [
         description: {
             CN: "🍔液体",
             EN: "🍔Liquid",
+        },
+    },
+    {
+        groupDef: {
+            Group: "身体痕迹_Luzi",
+            Priority: 10,
+            Clothing: true,
+            Default: false,
+            Random: false,
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: [
+                "Default",
+                "#cccccc",
+                "#aaaaaa",
+                "#888888",
+                "#666666",
+                "#444444",
+                "#222222",
+                "#aa8080",
+                "#80aa80",
+                "#8080aa",
+                "#aaaa80",
+                "#80aaaa",
+                "#aa80aa",
+                "#cc3333",
+                "#33cc33",
+                "#3333cc",
+                "#cccc33",
+                "#33cccc",
+                "#cc33cc",
+            ],
+        },
+        description: {
+            CN: "🍔鞭痕测试",
+            EN: "🍔鞭痕测试",
         },
     },
 ];
