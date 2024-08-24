@@ -1,5 +1,6 @@
 import AssetManager from "@mod-utils/AssetManager";
 
+
 /** @type {CustomAssetDefinition} */
 const asset = {
     Name: "女巫帽子_Luzi",
@@ -7,6 +8,7 @@ const asset = {
     Gender: "F",
     Top: -220,
     Left: 0,
+    DefaultColor: ["#111111","#111111","#111111","#111111","#5e5c5c","#828282","#f1c4c4","#A9AFAF",],
     Layer: [
         {
             Name: "帽尖",
@@ -35,6 +37,7 @@ const asset = {
             Name: "帽尖2",
             Priority: 60,
             AllowTypes: { z: 0 },
+            CopyLayerColor: "帽尖",
         },
         {
             Name: "帽檐",
