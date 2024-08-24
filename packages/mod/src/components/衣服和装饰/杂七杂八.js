@@ -289,6 +289,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,  
+            Effect: [E.BlockMouth],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -319,6 +320,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,  
+            Effect: [E.BlockMouth],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -337,6 +339,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,  
+            Effect: [E.BlockMouth],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -367,6 +370,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,  
+            Effect: [E.BlockMouth],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -385,6 +389,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,  
+            Effect: [E.BlockMouth],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -415,6 +420,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,  
+            Effect: [E.BlockMouth],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -513,6 +519,14 @@ const translations = {
             棒棒糖_Luzi: "棒棒糖",
             烤鱼_Luzi: "烤鱼",
         },
+        ItemMouth2: {
+            棒棒糖_Luzi: "棒棒糖",
+            烤鱼_Luzi: "烤鱼",
+        },
+        ItemMouth3: {
+            棒棒糖_Luzi: "棒棒糖",
+            烤鱼_Luzi: "烤鱼",
+        },
         ItemHood: {
             汉堡_Luzi: "汉堡",
         },
@@ -561,6 +575,14 @@ const translations = {
             烤鱼_Luzi: "Cooked Fish",
         },
         ItemMouth: {
+            棒棒糖_Luzi: "Lollipop",
+            烤鱼_Luzi: "Cooked Fish",
+        },
+        ItemMouth2: {
+            棒棒糖_Luzi: "Lollipop",
+            烤鱼_Luzi: "Cooked Fish",
+        },
+        ItemMouth3: {
             棒棒糖_Luzi: "Lollipop",
             烤鱼_Luzi: "Cooked Fish",
         },
