@@ -33,7 +33,8 @@ const prereqStorage = {
     NeedBed_Luzi: (prereq, acting, acted, group) => InventoryIsItemInList(acting, "ItemDevices", ["床右边_Luzi"]),
     NeedSuitLower鱼鱼尾_Luzi: (prereq, acting, acted, group) =>
         InventoryIsItemInList(acting, "ItemLegs", ["鱼鱼尾_Luzi"]),
-    Need阿巴阿巴_Luzi: (prereq, acting, acted, group) => InventoryIsItemInList(acting, "ItemLegs", ["阿巴阿巴_Luzi"]),
+    Need阿巴阿巴_Luzi: (prereq, acting, acted, group) =>
+        InventoryIsItemInList(acting, "ItemHandheld", ["阿巴阿巴_Luzi"]),
 };
 
 export default function () {

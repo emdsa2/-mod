@@ -17,18 +17,17 @@ export function addImgMapping(mappings) {
 /**
  * 添加自定义动作图片映射
  * @param {_.PRecord<string , string>} mappings
- * @param { "activity" | AssetGroupName } category
+ * @param { "Activity" | AssetGroupName } category
  */
-export function addActivityImageMapping(mappings, category = "activity") {
-    if (category === "activity") {
+export function addActivityImageMapping(mappings, category = "Activity") {
+    if (category === "Activity") {
         Object.entries(mappings).forEach(([key, value]) => {
-            // Assets/Female3DCG/Activity/%E5%8F%89%E8%85%B0.png
             imageMapping[`Assets/Female3DCG/Activity/${key}.png`] = `Assets/Female3DCG/Activity/${value}.png`;
         });
     } else {
         Object.entries(mappings).forEach(([key, value]) => {
             imageMapping[
-                `Assets/Female3DCG/${category}/${key}.png`
+                `Assets/Female3DCG/Activity/${key}.png`
             ] = `Assets/Female3DCG/${category}/Preview/${value}.png`;
         });
     }
