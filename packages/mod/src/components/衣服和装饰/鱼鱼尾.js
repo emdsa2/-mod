@@ -6,8 +6,6 @@ const asset = {
     Name: "鱼鱼尾_Luzi",
     Random: false,
     Gender: "F",
-    Top: -110,
-    Left: 0,
     Extended: true,
     OverrideHeight: { Height: 30, Priority: 19 },
     PoseMapping: {
@@ -20,6 +18,8 @@ const asset = {
     Layer: [
         {
             Name: "鱼尾下半身",
+            Top: -110,
+            Left: 0,
             Priority: 22,
             ParentGroup: "BodyLower",
             PoseMapping: {
@@ -31,6 +31,8 @@ const asset = {
         },
         {
             Name: "鱼尾趴下",
+            Top: -110,
+            Left: 0,
             Priority: 22,
             ParentGroup: "BodyUpper",
             CopyLayerColor: "鱼尾下半身",
@@ -42,7 +44,7 @@ const asset = {
                 BackBoxTie: "Hide",
                 BackElbowTouch: "Hide",
                 BackCuffs: "Hide",
-                Hogtied: "Hide",
+                Hogtied: "Hogtied",
                 AllFours: "Hide",
             },
         },
@@ -90,7 +92,7 @@ const descriptions = {
 const translations = { CN: "鱼鱼尾", EN: "Fishy Tail" };
 
 export default function () {
-    // AssetManager.addAsset("SuitLower", asset, extended, translations);
-    // AssetManager.addCustomDialog(descriptions);
-    // AssetManager.addImageMapping(icons);
+    AssetManager.addAsset("SuitLower", asset, extended, translations);
+    AssetManager.addCustomDialog(descriptions);
+    AssetManager.addImageMapping(icons);
 }
