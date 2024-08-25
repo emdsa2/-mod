@@ -78,6 +78,14 @@ export default class ModManager {
     }
 
     /**
+     * 添加一个玩家登录后回调，在玩家登录后执行。如果玩家已经登录，则立即执行。
+     * @param {FuncWork} work
+     */
+    static afterPlayerLogin(work) {
+        ModManager.push(waitPlayerHookList, work);
+    }
+
+    /**
      * 补丁函数
      * @param {any} functionName
      * @param {Record<string, string|null>} patch

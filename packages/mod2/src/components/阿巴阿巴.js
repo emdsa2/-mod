@@ -1,3 +1,4 @@
+import { Path } from "@mod-utils/path";
 import ActivityManager from "../ActivityManager";
 
 /** @type { ActivityManagerInterface.ICustomActivity } */
@@ -20,6 +21,10 @@ const activity = {
             "ItemPelvis",
         ],
         TargetSelf: true,
+    },
+    run: (player, sender, info) => {
+        // 不论是谁都要播放一下音效
+        AudioPlayInstantSound(Path.resolve("Audio/阿巴阿巴.mp3"));
     },
     useImage: ["ItemHandheld", "阿巴阿巴_Luzi"],
     label: {
