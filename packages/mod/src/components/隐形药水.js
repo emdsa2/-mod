@@ -142,6 +142,7 @@ const asset = {
             Name: "手链遮罩小号",
             HasImage: false,
             AllowTypes: { a: [0] },
+            CopyLayerColor: "手链",
             Alpha: [
                 {
                     Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
@@ -180,6 +181,7 @@ const asset = {
             Name: "手链遮罩中号",
             HasImage: false,
             AllowTypes: { a: [1] },
+            CopyLayerColor: "手链",
             Alpha: [
                 {
                     Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
@@ -228,6 +230,7 @@ const asset = {
             Name: "手链遮罩大号",
             HasImage: false,
             AllowTypes: { a: [2] },
+            CopyLayerColor: "手链",
             Alpha: [
                 {
                     Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
@@ -282,6 +285,7 @@ const asset = {
             HasImage: false,
             Priority: 31,
             AllowTypes: { a: [3] },
+            CopyLayerColor: "手链",
             Alpha: [
                 {
                     Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
