@@ -9,7 +9,7 @@ class 高潮数据 {
         this.高潮次数 = 0;
 
         if (player.ExtensionSettings[dataKey]) {
-            const data = JSON.parse(LZString.decompressFromBase64(Player.ExtensionSettings[dataKey]));
+            const data = player.ExtensionSettings[dataKey][高潮数据.name];
             this.高潮开关 = data.高潮开关 || this.高潮开关;
             this.高潮次数 = data.高潮次数 || this.高潮次数;
         }
@@ -24,6 +24,7 @@ class 高潮数据 {
     reset({ 高潮开关, 高潮次数 } = {}) {
         this.高潮开关 = 高潮开关 || this.高潮开关;
         this.高潮次数 = 高潮次数 || this.高潮次数;
+        this.save();
     }
 
     increase() {
@@ -66,6 +67,7 @@ export function 高潮数据开关() {
 export default function () {
     ModManager.afterPlayerLogin(() => {
         data = new 高潮数据(Player);
+
         const olddata = /** @type {any} */ (Player.OnlineSettings).ECHO;
         if (olddata) {
             // 如果存在旧数据

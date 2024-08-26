@@ -1,4 +1,3 @@
-import ModManager from "@mod-utils/ModManager";
 import { ModInfo } from "@mod-utils/rollupHelper";
 
 const dataKey = `ECHO${ModInfo.name}`;
@@ -20,5 +19,3 @@ export function 读取制作物品() {
         }
     }
 }
-
-export default function () {}

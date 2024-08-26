@@ -15,6 +15,15 @@ export default class ActivityManager {
     }
 
     /**
+     * 判断一个动作名称是否可用
+     * @param {string} name
+     * @returns {boolean}
+     */
+    static checkActivityAvailability(name) {
+        return ActivityFemale3DCGOrdering.includes(/** @type {ActivityName}*/ (name));
+    }
+
+    /**
      * 添加一个自定义的动作
      * @param {ActivityManagerInterface.ICustomActivity} act
      * @returns {void}

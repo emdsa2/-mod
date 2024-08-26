@@ -2,12 +2,29 @@ import bcModSdk from "bondage-club-mod-sdk";
 import log from "../log";
 import { ProgressiveHook } from "./progressiveHook";
 
-/** @type { (FuncWork) [] }*/
-const afterInitList = [];
-/** @type { (FuncWork) [] }*/
-const hookList = [];
-/** @type { (FuncWork) [] }*/
-const waitPlayerHookList = [];
+class WorkList {
+    constructor(done = false) {
+        this.done = done;
+        this.list = [];
+    }
+
+    run() {
+        this.done = true;
+        while (this.list.length > 0) this.list.shift()();
+    }
+
+    /**
+     * @param {FuncWork} work
+     */
+    push(work) {
+        if (this.done) work();
+        else this.list.push(work);
+    }
+}
+const afterInitList = new WorkList();
+const hookList = new WorkList();
+const waitPlayerHookList = new WorkList();
+const patchList = new WorkList();
 
 function PlayerLoaded() {
     return window["Player"] != undefined && typeof window["Player"]["MemberNumber"] === "number";
@@ -24,9 +41,6 @@ function PlayerHook(work) {
     }
 }
 
-/** @type { (FuncWork) []  }*/
-const patchList = [];
-
 /** @type { ModManagerInterface.ModSDKModAPI | undefined} */
 let mMod = undefined;
 
@@ -36,11 +50,10 @@ export default class ModManager {
     }
 
     /**
-     * @param {(FuncWork)[]} list
+     * @param {WorkList} list
      * @param {FuncWork} work
      */
     static push(list, work) {
-        if (ModManager.mod) work();
         list.push(work);
     }
 
@@ -50,12 +63,10 @@ export default class ModManager {
      */
     static init(modinfo) {
         mMod = bcModSdk.registerMod(modinfo);
-        while (patchList.length > 0) patchList.shift()();
-        while (hookList.length > 0) hookList.shift()();
+        patchList.run();
+        hookList.run();
 
-        const wk = () => {
-            while (waitPlayerHookList.length > 0) waitPlayerHookList.shift()();
-        };
+        const wk = () => waitPlayerHookList.run();
 
         if (PlayerLoaded()) {
             wk();
@@ -66,7 +77,7 @@ export default class ModManager {
             });
         }
 
-        while (afterInitList.length > 0) afterInitList.shift()();
+        afterInitList.run();
     }
 
     /**
