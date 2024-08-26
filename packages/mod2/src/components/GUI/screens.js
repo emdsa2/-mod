@@ -1,7 +1,8 @@
 import ActivityManager from "src/ActivityManager";
-import { 保存制作物品, 读取制作物品 } from "../保存制作物品";
-import { 设置高潮数据, 高潮数据开关 } from "../保存高潮";
+import { 保存制作物品, 读取制作物品 } from "../保存数据/保存制作物品";
+import { 设置高潮数据, 高潮数据开关 } from "../保存数据/保存高潮";
 import { flying_pig } from "./flying_pig";
+import { activityName, 动作数据管理 } from "../保存数据/保存动作";
 
 const GUIScreen = {
     /** @type { Subscreen | null } */
@@ -109,13 +110,13 @@ class 自定义动作设置 extends BaseSubscreen {
             }
         }
         // DrawButton(80, 210, 160, 100, "", "#646464", "");
-        const name = getInputElementById("笨蛋Luzi_activityName")?.value || "";
-        const targetSelftext = getInputElementById("笨蛋Luzi_targetSelfText")?.value || "";
-        const targettext = getInputElementById("笨蛋Luzi_targetText")?.value || "";
-        let targetSelf = Player.FocusGroup?.Name || "";
-        let target = Player.FocusGroup?.Name || "";
-
-        const activityInfo2 = { name, targetSelf, target, targetSelftext, targettext };
+        const activityInfo2 = {
+            Name: getInputElementById("笨蛋Luzi_activityName")?.value || "",
+            Target: Player.FocusGroup?.Name || "",
+            TargetSelf: Player.FocusGroup?.Name || "",
+            Dialog: getInputElementById("笨蛋Luzi_targetSelfText")?.value || "",
+            DialogSelf: getInputElementById("笨蛋Luzi_targetSelfText")?.value || "",
+        };
 
         if (MouseIn(80, 210, 160, 100)) {
             DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 232, 90, 50);
@@ -174,7 +175,7 @@ class 自定义动作设置 extends BaseSubscreen {
                     DrawButton(1560, 328, 80, 60, "👉", "White", "");
                     DrawButton(1660, 328, 80, 60, "🚻", "White", "");
 
-                    target = "";
+                    delete activityInfo2.Target;
                 } else {
                     移除清空输入框("笨蛋Luzi_targetSelfText");
                 }
@@ -190,7 +191,7 @@ class 自定义动作设置 extends BaseSubscreen {
                     DrawButton(1560, 328, 80, 60, "👉", "White", "");
                     DrawButton(1660, 328, 80, 60, "🚻", "White", "");
 
-                    targetSelf = "";
+                    delete activityInfo2.TargetSelf;
                 } else {
                     移除清空输入框("笨蛋Luzi_targetText");
                 }
@@ -213,18 +214,18 @@ class 自定义动作设置 extends BaseSubscreen {
                 DrawButton(1730, 720, 80, 60, "🚻", "White", "");
             }
 
-            if (Player.FocusGroup && Player.FocusGroup.Name && name) {
+            if (Player.FocusGroup && Player.FocusGroup.Name && activityInfo2.Name) {
                 if (MouseIn(1770, 460, 150, 80)) {
                     // 获取用户输入的动作名字
                     const name = getInputElementById("笨蛋Luzi_activityName")?.value || "";
                     if (name.length === 0) return;
-                    const resultname = `笨蛋笨Luzi_${name}`;
+                    const nName = activityName(name);
 
                     // 检查是否存在重复的动作名字
-                    if (ActivityManager.checkActivityAvailability(resultname)) {
+                    if (ActivityManager.checkActivityAvailability(nName)) {
                         DrawText(`动作名字已存在!`, 1850, 400, "red"); // 绘制一个文本元素
                     }
-                    if (!ActivityManager.checkActivityAvailability(resultname)) {
+                    if (!ActivityManager.checkActivityAvailability(nName)) {
                         DrawText(`新建动作`, 1850, 400, "White"); // 绘制一个文本元素
                     }
                 }
@@ -234,7 +235,7 @@ class 自定义动作设置 extends BaseSubscreen {
                 }
                 if (this.新建动作) {
                     DrawButton(1770, 460, 150, 80, "✪ ω ✪", "White", "");
-                    createActivity2(activityInfo2);
+                    动作数据管理()?.增加动作(activityInfo2);
                     this.新建动作 = false;
                 }
             }
@@ -269,7 +270,7 @@ class 自定义动作设置 extends BaseSubscreen {
     }
     click() {
         if (MouseIn(114, 75, 90, 90)) {
-            笨蛋LZActivity();
+            动作数据管理()?.保存();
             console.log("已存储进个人设置");
             this.exit();
         }
@@ -357,14 +358,15 @@ class 自定义动作设置 extends BaseSubscreen {
 
             if (MouseIn(1770, 460, 150, 80)) {
                 let name = getInputElementById("笨蛋Luzi_activityName")?.value || ""; // 获取用户输入的动作名字
+                const nName = activityName(name);
                 // 检查是否存在重复的动作名字
-                if (ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
+                if (ActivityFemale3DCGOrdering.includes(nName)) {
                     this.新建动作 = false;
                 }
 
-                if (!ActivityFemale3DCGOrdering.includes("笨蛋笨Luzi_" + name)) {
+                if (!ActivityFemale3DCGOrdering.includes(nName)) {
                     this.新建动作 = true;
-                    笨蛋LZActivity();
+                    动作数据管理()?.保存();
                     console.log("已存储进个人设置");
                 }
             }
@@ -405,24 +407,14 @@ class 自定义动作设置 extends BaseSubscreen {
                 var regex2 = new RegExp(this.动作[this.当前动作索引] + "$");
                 ActivityDictionary = ActivityDictionary.filter((subArray) => !regex2.test(subArray[0]));
 
-                笨蛋LZActivity();
+                动作数据管理()?.保存();
                 console.log("已存储进个人设置");
             }
             if (MouseIn(1600, 720, 90, 90)) {
-                ActivityFemale3DCG = ActivityFemale3DCG.filter((obj) => !obj.Name.includes("笨蛋笨Luzi_"));
-                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter((item) => !item.includes("笨蛋笨Luzi_"));
-                ActivityDictionary = ActivityDictionary.filter((subArray) => !subArray[0].includes("笨蛋笨Luzi_"));
-                Player.OnlineSettings.ECHO.炉子ActivityDictionary = "";
-                Player.OnlineSettings.ECHO.炉子ActivityFemale3DCG = "";
-                Player.OnlineSettings.ECHO.炉子ActivityFemale3DCGOrdering = "";
-                ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
+                动作数据管理()?.清空();
                 console.log("已全部清空");
             }
         }
-
-        // console.log(ActivityFemale3DCG.filter(obj => obj.Name.includes("笨蛋笨Luzi_")))
-        // console.log(ActivityFemale3DCGOrdering.filter(item => item.includes("笨蛋笨Luzi_")))
-        // console.log(ActivityDictionary.filter(subArray => subArray[0].includes("笨蛋笨Luzi_")))
     }
     unload() {
         移除清空输入框("笨蛋Luzi_activityName");

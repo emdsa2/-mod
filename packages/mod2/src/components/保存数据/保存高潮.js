@@ -1,18 +1,14 @@
 import ModManager from "@mod-utils/ModManager";
-import { ModInfo } from "@mod-utils/rollupHelper";
-
-const dataKey = `ECHO${ModInfo.name}`;
+import { load, save } from "./dataAccess";
 
 class 高潮数据 {
-    constructor(player) {
+    constructor() {
         this.高潮开关 = false;
         this.高潮次数 = 0;
 
-        if (player.ExtensionSettings[dataKey]) {
-            const data = player.ExtensionSettings[dataKey][高潮数据.name];
-            this.高潮开关 = data.高潮开关 || this.高潮开关;
-            this.高潮次数 = data.高潮次数 || this.高潮次数;
-        }
+        const data = load(高潮数据.name);
+        this.高潮开关 = data.高潮开关 || this.高潮开关;
+        this.高潮次数 = data.高潮次数 || this.高潮次数;
     }
 
     /**
@@ -21,16 +17,16 @@ class 高潮数据 {
      * @param {boolean} [param0.高潮开关] 高潮开关
      * @param {number} [param0.高潮次数] 高潮次数
      */
-    reset({ 高潮开关, 高潮次数 } = {}) {
+    设置值({ 高潮开关, 高潮次数 } = {}) {
         this.高潮开关 = 高潮开关 || this.高潮开关;
         this.高潮次数 = 高潮次数 || this.高潮次数;
-        this.save();
+        this.保存();
     }
 
-    increase() {
+    增加() {
         if (this.高潮开关) {
             this.高潮次数++;
-            this.save();
+            this.保存();
         }
     }
 
@@ -41,11 +37,8 @@ class 高潮数据 {
         };
     }
 
-    save() {
-        Player.ExtensionSettings[dataKey] = Object.assign(Player.ExtensionSettings[dataKey] || {}, {
-            [高潮数据.name]: this.data(),
-        });
-        ServerPlayerExtensionSettingsSync(dataKey);
+    保存() {
+        save(高潮数据.name, this.data());
     }
 }
 
@@ -57,7 +50,7 @@ let data = undefined;
  * @param { { 高潮开关?:boolean, 高潮次数?:number } } param0
  */
 export function 设置高潮数据(param0) {
-    data?.reset(param0);
+    data?.设置值(param0);
 }
 
 export function 高潮数据开关() {
@@ -66,14 +59,14 @@ export function 高潮数据开关() {
 
 export default function () {
     ModManager.afterPlayerLogin(() => {
-        data = new 高潮数据(Player);
+        data = new 高潮数据();
 
         const olddata = /** @type {any} */ (Player.OnlineSettings).ECHO;
         if (olddata) {
             // 如果存在旧数据
             const { 高潮开关, 高潮次数 } = olddata;
             if (高潮开关 !== undefined || 高潮次数 !== undefined) {
-                data.reset(olddata);
+                data.设置值(olddata);
             }
             delete Player.OnlineSettings["ECHO"];
             ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
@@ -90,7 +83,7 @@ export default function () {
     ModManager.hookFunction("ActivityOrgasmStart", 1, (args, next) => {
         const [C] = args;
         if (C.IsPlayer() && !ActivityOrgasmRuined) {
-            data?.increase();
+            data?.增加();
         }
         next(args);
     });

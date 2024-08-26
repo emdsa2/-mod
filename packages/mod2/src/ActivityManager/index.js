@@ -42,6 +42,11 @@ export default class ActivityManager {
         });
     }
 
+    static removeCustomActivity(name) {
+        ActivityFemale3DCG = ActivityFemale3DCG.filter((act) => act.Name !== name);
+        ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter((act) => act !== name);
+    }
+
     /**
      * 判断一个动作是否是自定义的
      * @param { string } name
