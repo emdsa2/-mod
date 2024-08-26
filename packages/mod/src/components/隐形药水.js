@@ -84,14 +84,14 @@ const asset = {
             },
             Alpha: [
                 {
-                    Group: ["SuitLower", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
+                    Group: ["SuitLower", "Garters", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
                     Masks: [
                         [100, 570, 300, 430],
                     ],
                     Pose: ["BaseLower", "LegsClosed", "Kneel"],
                 },
                 {
-                    Group: ["SuitLower", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
+                    Group: ["SuitLower", "Garters", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
                     Masks: [
                         [100, 500, 62, 100],
                         [337, 500, 62, 100],
@@ -623,4 +623,4 @@ export default function () {
     //     next(args);
     // });
 }
-        // CharacterRefresh(C, true);
+// CharacterRefresh(C, true);
