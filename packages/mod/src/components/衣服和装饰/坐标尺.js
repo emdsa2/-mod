@@ -19,7 +19,7 @@ const asset = {
     ],
 };
 
-const translations = { CN: "坐标尺", EN: "坐标尺" };
+const translations = { CN: "坐牢尺", EN: "坐牢尺" };
 
 export default function () {
     AssetManager.addAsset("BodyMarkings2_Luzi", asset, undefined, translations);
