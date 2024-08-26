@@ -7,6 +7,7 @@ const asset = {
     Gender: "F",
     Top: 0,
     Left: 0,
+    Extended: true,
     Prerequisite: ["HasBreasts"],
     PoseMapping: {
         TapedHands: "TapedHands",

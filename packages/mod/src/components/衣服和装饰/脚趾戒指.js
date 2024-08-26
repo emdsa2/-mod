@@ -7,6 +7,7 @@ const asset = {
     Gender: "F",
     Top: 0,
     Left: 0,
+    Extended: true,
     DefaultColor: ["#9B9897", "#9B9897", "#9B9897", "#9B9897", "#9B9897", "#9B9897", "#9B9897", "#9B9897", "#9B9897", "#9B9897"],
     PoseMapping: {
         BaseLower: PoseType.DEFAULT,

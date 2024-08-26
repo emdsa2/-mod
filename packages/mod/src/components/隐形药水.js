@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+// import ModManager from "@mod-utils/ModManager";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -13,7 +14,7 @@ const asset = {
     DrawLocks: false,
     RemoveTime: 5,
     Time: 10,
-    Effect: [E.Slow],
+    Effect: [E.Slow, E.Block],
     Hide: [
         "ItemHandheld",
         "Hands",
@@ -25,6 +26,8 @@ const asset = {
         "BodyLower",
         "BodyUpper",
     ],
+    AllowActivePose: ["BackBoxTie", "OverTheHead", "Yoked", "BackElbowTouch", "Hogtied", "AllFours"],
+    SetPose: ["BackBoxTie"],
     Extended: true,
     Layer: [
         {
@@ -63,42 +66,12 @@ const asset = {
                 AllFours: "AllFours",
             },
         },
-        {
-            Name: "透视紧身衣下半身",
-            Priority: 13,
-            AllowTypes: { s: 1 },
-            Top: 462,
-            Left: 0,
-            CopyLayerColor: "透视紧身衣上半身",
-            ParentGroup: "BodyLower",
-            PoseMapping: {
-                Kneel: "Kneel",
-                KneelingSpread: "KneelingSpread",
-                LegsClosed: "LegsClosed",
-                Spread: "Spread",
-            },
-        },
-        {
-            Name: "透视紧身衣上半身",
-            Priority: 13,
-            AllowTypes: { s: 1 },
-            Top: 0,
-            Left: 0,
-            ParentGroup: "BodyUpper",
-            PoseMapping: {
-                BackBoxTie: "BackBoxTie",
-                BackCuffs: "BackCuffs",
-                BackElbowTouch: "BackElbowTouch",
-                OverTheHead: "OverTheHead",
-                Yoked: "Yoked",
-                Hogtied: "Hide",
-                AllFours: "Hide",
-            },
-        },
+
+
         {
             Name: "脚链",
             Priority: 31,
-            AllowTypes: { ll: [1, 2, 3, 4, 5] },
+            AllowTypes: { ll: [0, 1, 2, 3, 4, 5] },
             Top: 460,
             Left: 0,
             CopyLayerColor: "手链",
@@ -109,11 +82,29 @@ const asset = {
                 LegsClosed: "LegsClosed",
                 Spread: "Spread",
             },
+            Alpha: [
+                {
+                    Group: ["SuitLower", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
+                    Masks: [
+                        [100, 570, 300, 430],
+                    ],
+                    Pose: ["BaseLower", "LegsClosed", "Kneel"],
+                },
+                {
+                    Group: ["SuitLower", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
+                    Masks: [
+                        [100, 500, 62, 100],
+                        [337, 500, 62, 100],
+                        [100, 550, 300, 450],
+                    ],
+                    Pose: ["KneelingSpread"],
+                },
+            ],
         },
         {
             Name: "手链",
             Priority: 31,
-            AllowTypes: { l: [1, 2, 3] },
+            AllowTypes: { l: [0, 1, 2, 3] },
             Top: 0,
             Left: 0,
             ParentGroup: "BodyUpper",
@@ -126,7 +117,229 @@ const asset = {
                 Hogtied: "Hide",
                 AllFours: "Hide",
             },
+            Alpha: [
+                {
+                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Masks: [
+                        [0, 0, 500, 200],
+                        [100, 100, 48, 110],
+                        [354, 100, 48, 110],
+                    ],
+                    Pose: ["OverTheHead"],
+                },
+                {
+                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Masks: [
+                        [0, 100, 141, 300],
+                        [367, 100, 141, 300],
+                    ],
+                    Pose: ["Yoked"],
+                },
+            ],
         },
+
+        {
+            Name: "手链遮罩小号",
+            HasImage: false,
+            AllowTypes: { a: [0] },
+            Alpha: [
+                {
+                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Masks: [
+                        [100, 318, 91, 97], // 左
+                        [190, 326, 1, 89],
+                        [191, 329, 1, 86],
+                        [192, 346, 1, 79],
+                        [193, 348, 1, 75],
+                        [194, 355, 1, 66],
+                        [195, 360, 1, 52],
+                        [196, 363, 1, 50],
+                        [197, 369, 1, 42],
+                        [198, 372, 1, 37],
+                        [199, 376, 1, 29],
+                        [200, 381, 1, 19],
+
+                        [310, 318, 91, 97], // 右
+                        [309, 326, 1, 89],
+                        [308, 329, 1, 86],
+                        [307, 346, 1, 69],
+                        [306, 350, 1, 65],
+                        [305, 355, 1, 60],
+                        [304, 360, 1, 55],
+                        [303, 363, 1, 49],
+                        [302, 369, 1, 41],
+                        [301, 372, 1, 36],
+                        [300, 376, 1, 26],
+                        [299, 381, 1, 19],
+                    ],
+                    Pose: ["BackBoxTie"],
+                },
+            ],
+        },
+        {
+            Name: "手链遮罩中号",
+            HasImage: false,
+            AllowTypes: { a: [1] },
+            Alpha: [
+                {
+                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Masks: [
+                        [100, 318, 85, 102], // 左
+                        [185, 329, 1, 91],
+                        [186, 335, 1, 85],
+                        [187, 337, 1, 83],
+                        [188, 339, 1, 81],
+                        [189, 341, 1, 79],
+                        [190, 343, 1, 77],
+                        [191, 345, 1, 75],
+                        [192, 352, 1, 68],
+                        [193, 359, 1, 61],
+                        [194, 364, 1, 55],
+                        [195, 370, 1, 48],
+                        [196, 375, 1, 41],
+                        [197, 379, 1, 35],
+                        [198, 384, 1, 28],
+                        [199, 393, 1, 15],
+
+                        [317, 318, 85, 102], // 右
+                        [316, 328, 1, 92],
+                        [315, 332, 1, 88],
+                        [314, 335, 1, 85],
+                        [313, 337, 1, 83],
+                        [312, 339, 1, 81],
+                        [311, 341, 1, 79],
+                        [310, 343, 1, 77],
+                        [309, 345, 1, 75],
+                        [308, 352, 1, 68],
+                        [307, 359, 1, 61],
+                        [306, 364, 1, 55],
+                        [305, 370, 1, 47],
+                        [304, 375, 1, 40],
+                        [303, 379, 1, 34],
+                        [302, 384, 1, 26],
+                        [301, 389, 1, 18],
+                        [300, 394, 1, 12],
+                    ],
+                    Pose: ["BackBoxTie"],
+                },
+            ],
+        },
+        {
+            Name: "手链遮罩大号",
+            HasImage: false,
+            AllowTypes: { a: [2] },
+            Alpha: [
+                {
+                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Masks: [
+                        [100, 319, 80, 101], // 左
+                        [179, 334, 1, 86],
+                        [180, 338, 1, 82],
+                        [181, 340, 1, 80],
+                        [182, 343, 1, 77],
+                        [183, 345, 1, 75],
+                        [184, 347, 1, 73],
+                        [185, 349, 1, 71],
+                        [186, 350, 1, 70],
+                        [187, 351, 1, 69],
+                        [188, 352, 1, 68],
+                        [189, 353, 1, 67],
+                        [190, 359, 1, 61],
+                        [191, 365, 1, 55],
+                        [192, 369, 1, 48],
+                        [193, 376, 1, 40],
+                        [194, 380, 1, 34],
+                        [195, 386, 1, 25],
+                        [196, 391, 1, 18],
+
+                        [322, 319, 78, 101], // 右
+                        [321, 334, 1, 86],
+                        [320, 338, 1, 82],
+                        [319, 340, 1, 80],
+                        [318, 342, 1, 78],
+                        [317, 344, 1, 76],
+                        [316, 346, 1, 74],
+                        [315, 348, 1, 72],
+                        [314, 350, 1, 70],
+                        [313, 351, 1, 69],
+                        [312, 353, 1, 67],
+                        [311, 354, 1, 66],
+                        [310, 359, 1, 61],
+                        [309, 367, 1, 53],
+                        [308, 369, 1, 48],
+                        [307, 376, 1, 40],
+                        [306, 381, 1, 31],
+                        [305, 386, 1, 24],
+                        [304, 389, 1, 18],
+                        [303, 393, 1, 12],
+                    ],
+                    Pose: ["BackBoxTie"],
+                },
+            ],
+        },
+        {
+            Name: "手链遮罩超大号",
+            HasImage: false,
+            Priority: 31,
+            AllowTypes: { a: [3] },
+            Alpha: [
+                {
+                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Masks: [
+                        [100, 316, 74, 111], // 左
+                        [173, 333, 1, 94],
+                        [174, 339, 1, 88],
+                        [175, 342, 1, 85],
+                        [176, 346, 1, 81],
+                        [177, 349, 1, 78],
+                        [178, 351, 1, 76],
+                        [179, 353, 1, 74],
+                        [180, 354, 1, 73],
+                        [181, 355, 1, 72],
+                        [182, 357, 1, 70],
+                        [183, 358, 1, 69],
+                        [184, 359, 1, 68],
+                        [185, 360, 1, 67],
+                        [186, 361, 1, 66],
+                        [187, 363, 1, 64],
+                        [188, 365, 1, 59],
+                        [189, 370, 1, 52],
+                        [190, 373, 1, 46],
+                        [191, 377, 1, 40],
+                        [192, 383, 1, 32],
+                        [193, 387, 1, 26],
+                        [194, 390, 1, 21],
+                        [195, 394, 1, 14],
+
+                        [327, 316, 73, 111], // 右
+                        [326, 339, 1, 88],
+                        [325, 343, 1, 84],
+                        [324, 346, 1, 81],
+                        [323, 348, 1, 79],
+                        [322, 350, 1, 77],
+                        [321, 352, 1, 75],
+                        [320, 354, 1, 73],
+                        [319, 355, 1, 72],
+                        [318, 357, 1, 70],
+                        [317, 358, 1, 69],
+                        [316, 360, 1, 67],
+                        [315, 361, 1, 66],
+                        [314, 362, 1, 65],
+                        [313, 363, 1, 64],
+                        [312, 367, 1, 58],
+                        [311, 371, 1, 51],
+                        [310, 375, 1, 46],
+                        [309, 378, 1, 41],
+                        [308, 382, 1, 33],
+                        [307, 386, 1, 27],
+                        [306, 390, 1, 20],
+                        [305, 393, 1, 13],
+                    ],
+                    Pose: ["BackBoxTie"],
+                },
+            ],
+        },
+
         {
             Name: "手链链子",
             Priority: 8,
@@ -179,19 +392,6 @@ const extened = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
     Modules: [
-        {
-            Name: "紧身衣",
-            DrawImages: false,
-            Key: "s",
-            Options: [
-                {
-                    Property: { Difficulty: 8, Effect: [E.Block] },
-                },
-                {
-                    Property: { Difficulty: 8, Effect: [E.Block] },
-                },
-            ],
-        },
         {
             Name: "铐子手",
             DrawImages: false,
@@ -278,43 +478,29 @@ const extened = {
                 },
             ],
         },
+        {
+            Name: "遮罩",
+            DrawImages: false,
+            Key: "a",
+            Options: [{}, {}, {}, {},],
+        },
     ],
 };
 
 /**@type {Translation.Dialog} */
 const dialog = {
     CN: {
-        ItemAddon隐形药水_LuziSets1: "SourceCharacter脱掉了DestinationCharacter身上的紧身衣",
-        ItemAddon隐形药水_LuziSets0: "SourceCharacter给DestinationCharacter穿上了紧身衣",
-
-        ItemAddon隐形药水_LuziSetl0: "SourceCharacter移除了DestinationCharacter身上的铐子",
-        ItemAddon隐形药水_LuziSetl1: "SourceCharacter在DestinationCharacter的手臂加上了铐子",
-        ItemAddon隐形药水_LuziSetl2: "SourceCharacter将吊顶链连接在了DestinationCharacter手臂上",
-        ItemAddon隐形药水_LuziSetl3: "SourceCharacter将的DestinationCharacter的手拷在一起",
-
-        ItemAddon隐形药水_LuziSetll0: "SourceCharacter移除了DestinationCharacter身上的铐子",
-        ItemAddon隐形药水_LuziSetll1: "SourceCharacter在DestinationCharacter的腿上加上了铐子",
-        ItemAddon隐形药水_LuziSetll2: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上",
-        ItemAddon隐形药水_LuziSetll3: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上",
-        ItemAddon隐形药水_LuziSetll4:
-            "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上,将DestinationCharacter头朝下吊了起来",
-        ItemAddon隐形药水_LuziSetll5: "SourceCharacter将DestinationCharacter的腿拷在一起",
-
-        ItemAddon隐形药水_LuziSetlll0: "SourceCharacter还原DestinationCharacter的高度",
-        ItemAddon隐形药水_LuziSetlll1: "SourceCharacter调整DestinationCharacter的高度",
-        ItemAddon隐形药水_LuziSetlll2: "SourceCharacter在DestinationCharacter的身上使用了吊顶连",
-
         ItemAddon隐形药水_LuziSelectBase: "选择隐形药水配置",
-        ItemAddon隐形药水_LuziSelect紧身衣: "选择紧身衣",
-        ItemAddon隐形药水_LuziModule紧身衣: "紧身衣",
-        ItemAddon隐形药水_LuziOptions0: "无",
-        ItemAddon隐形药水_LuziOptions1: "透视紧身衣",
         ItemAddon隐形药水_LuziSelect铐子手: "选择手部铐子",
         ItemAddon隐形药水_LuziModule铐子手: "手部铐子",
         ItemAddon隐形药水_LuziOptionl0: "无",
         ItemAddon隐形药水_LuziOptionl1: "添加铁拷",
         ItemAddon隐形药水_LuziOptionl2: "添加铁链(向上吊起来)",
         ItemAddon隐形药水_LuziOptionl3: "添加铁链(手向后铐起来)",
+        ItemAddon隐形药水_LuziSetl0: "SourceCharacter移除了DestinationCharacter身上的铐子",
+        ItemAddon隐形药水_LuziSetl1: "SourceCharacter在DestinationCharacter的手臂加上了铐子",
+        ItemAddon隐形药水_LuziSetl2: "SourceCharacter将吊顶链连接在了DestinationCharacter手臂上",
+        ItemAddon隐形药水_LuziSetl3: "SourceCharacter将的DestinationCharacter的手拷在一起",
 
         ItemAddon隐形药水_LuziSelect铐子腿: "选择腿部铐子",
         ItemAddon隐形药水_LuziModule铐子腿: "腿部铐子",
@@ -324,45 +510,45 @@ const dialog = {
         ItemAddon隐形药水_LuziOptionll3: "添加铁链(朝下)",
         ItemAddon隐形药水_LuziOptionll4: "添加铁链(朝下反向)",
         ItemAddon隐形药水_LuziOptionll5: "添加铁链(合并)",
+        ItemAddon隐形药水_LuziSetll0: "SourceCharacter移除了DestinationCharacter身上的铐子",
+        ItemAddon隐形药水_LuziSetll1: "SourceCharacter在DestinationCharacter的腿上加上了铐子",
+        ItemAddon隐形药水_LuziSetll2: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上",
+        ItemAddon隐形药水_LuziSetll3: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上",
+        ItemAddon隐形药水_LuziSetll4: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上,将DestinationCharacter头朝下吊了起来",
+        ItemAddon隐形药水_LuziSetll5: "SourceCharacter将DestinationCharacter的腿拷在一起",
 
         ItemAddon隐形药水_LuziSelect自定义高度: "设置高度",
         ItemAddon隐形药水_LuziModule自定义高度: "调整高度",
         ItemAddon隐形药水_LuziOptionlll0: "无",
         ItemAddon隐形药水_LuziOptionlll1: "自定义高度",
         ItemAddon隐形药水_LuziOptionlll2: "自定义高度(吊顶链)",
+        ItemAddon隐形药水_LuziSetlll0: "SourceCharacter还原DestinationCharacter的高度",
+        ItemAddon隐形药水_LuziSetlll1: "SourceCharacter调整DestinationCharacter的高度",
+        ItemAddon隐形药水_LuziSetlll2: "SourceCharacter在DestinationCharacter的身上使用了吊顶连",
+
+        ItemAddon隐形药水_LuziSelect遮罩: "设置遮罩",
+        ItemAddon隐形药水_LuziModule遮罩: "调整上半身遮罩",
+        ItemAddon隐形药水_LuziOptiona0: "小号",
+        ItemAddon隐形药水_LuziOptiona1: "中号",
+        ItemAddon隐形药水_LuziOptiona2: "大号",
+        ItemAddon隐形药水_LuziOptiona3: "超大号",
+        ItemAddon隐形药水_LuziSeta0: "SourceCharacter将DestinationCharacter手臂的遮罩调整为小号",
+        ItemAddon隐形药水_LuziSeta1: "SourceCharacter将DestinationCharacter手臂的遮罩调整为中号",
+        ItemAddon隐形药水_LuziSeta2: "SourceCharacter将DestinationCharacter手臂的遮罩调整为大号",
+        ItemAddon隐形药水_LuziSeta3: "SourceCharacter将DestinationCharacter手臂的遮罩调整为超大号",
     },
     EN: {
-        ItemAddon隐形药水_LuziSets1: "SourceCharacter removed the tights from DestinationCharacter",
-        ItemAddon隐形药水_LuziSets0: "SourceCharacter put the tights on DestinationCharacter",
-
-        ItemAddon隐形药水_LuziSetl0: "SourceCharacter removed the cuffs from DestinationCharacter",
-        ItemAddon隐形药水_LuziSetl1: "SourceCharacter applied cuffs to DestinationCharacter's arms",
-        ItemAddon隐形药水_LuziSetl2: "SourceCharacter connected the hoist to DestinationCharacter's arms",
-        ItemAddon隐形药水_LuziSetl3: "SourceCharacter cuffs DestinationCharacter's hands together",
-
-        ItemAddon隐形药水_LuziSetll0: "SourceCharacter removed the cuffs from DestinationCharacter",
-        ItemAddon隐形药水_LuziSetll1: "SourceCharacter applied cuffs to DestinationCharacter's legs",
-        ItemAddon隐形药水_LuziSetll2: "SourceCharacter connected the hoist to DestinationCharacter's legs",
-        ItemAddon隐形药水_LuziSetll3: "SourceCharacter connected the hoist to DestinationCharacter's legs",
-        ItemAddon隐形药水_LuziSetll4:
-            "SourceCharacter attached the hanging chain to DestinationCharacter's legs, suspending them head-down",
-        ItemAddon隐形药水_LuziSetll5: "SourceCharacter cuffs DestinationCharacter's legs together",
-
-        ItemAddon隐形药水_LuziSetlll0: "SourceCharacter restored DestinationCharacter's height",
-        ItemAddon隐形药水_LuziSetlll1: "SourceCharacter adjusted DestinationCharacter's height",
-        ItemAddon隐形药水_LuziSetlll2: "SourceCharacter adjusted DestinationCharacter's height",
-
         ItemAddon隐形药水_LuziSelectBase: "Select Invisibility Potion Configuration",
-        ItemAddon隐形药水_LuziSelect紧身衣: "Select Tights",
-        ItemAddon隐形药水_LuziModule紧身衣: "Tights",
-        ItemAddon隐形药水_LuziOptions0: "None",
-        ItemAddon隐形药水_LuziOptions1: "See-Through Tights",
         ItemAddon隐形药水_LuziSelect铐子手: "Select Hand Cuffs",
         ItemAddon隐形药水_LuziModule铐子手: "Hand Cuffs",
         ItemAddon隐形药水_LuziOptionl0: "None",
         ItemAddon隐形药水_LuziOptionl1: "Add Iron Shackles",
         ItemAddon隐形药水_LuziOptionl2: "Adjust Chain Height",
         ItemAddon隐形药水_LuziOptionl3: "Add Iron Chain (Hands Cuffed Behind)",
+        ItemAddon隐形药水_LuziSetl0: "SourceCharacter removed the cuffs from DestinationCharacter",
+        ItemAddon隐形药水_LuziSetl1: "SourceCharacter applied cuffs to DestinationCharacter's arms",
+        ItemAddon隐形药水_LuziSetl2: "SourceCharacter connected the hoist to DestinationCharacter's arms",
+        ItemAddon隐形药水_LuziSetl3: "SourceCharacter cuffs DestinationCharacter's hands together",
 
         ItemAddon隐形药水_LuziSelect铐子腿: "Select Leg Cuffs",
         ItemAddon隐形药水_LuziModule铐子腿: "Leg Cuffs",
@@ -372,18 +558,65 @@ const dialog = {
         ItemAddon隐形药水_LuziOptionll3: "Adjust Chain Height",
         ItemAddon隐形药水_LuziOptionll4: "Add Chain (Reversed Downward)",
         ItemAddon隐形药水_LuziOptionll5: "Add Iron Chain (Merge)",
+        ItemAddon隐形药水_LuziSetll0: "SourceCharacter removed the cuffs from DestinationCharacter",
+        ItemAddon隐形药水_LuziSetll1: "SourceCharacter applied cuffs to DestinationCharacter's legs",
+        ItemAddon隐形药水_LuziSetll2: "SourceCharacter connected the hoist to DestinationCharacter's legs",
+        ItemAddon隐形药水_LuziSetll3: "SourceCharacter connected the hoist to DestinationCharacter's legs",
+        ItemAddon隐形药水_LuziSetll4: "SourceCharacter attached the hanging chain to DestinationCharacter's legs, suspending them head-down",
+        ItemAddon隐形药水_LuziSetll5: "SourceCharacter cuffs DestinationCharacter's legs together",
 
         ItemAddon隐形药水_LuziSelect自定义高度: "Set Height",
         ItemAddon隐形药水_LuziModule自定义高度: "Adjust Height",
         ItemAddon隐形药水_LuziOptionlll0: "None",
         ItemAddon隐形药水_LuziOptionlll1: "Custom Height",
         ItemAddon隐形药水_LuziOptionlll2: "Custom Height",
+        ItemAddon隐形药水_LuziSetlll0: "SourceCharacter restored DestinationCharacter's height",
+        ItemAddon隐形药水_LuziSetlll1: "SourceCharacter adjusted DestinationCharacter's height",
+        ItemAddon隐形药水_LuziSetlll2: "SourceCharacter adjusted DestinationCharacter's height",
+
+        ItemAddon隐形药水_LuziSelect遮罩: "Set Mask",
+        ItemAddon隐形药水_LuziModule遮罩: "Adjust Upper Body Mask",
+        ItemAddon隐形药水_LuziOptiona0: "Small",
+        ItemAddon隐形药水_LuziOptiona1: "Normal",
+        ItemAddon隐形药水_LuziOptiona2: "Large",
+        ItemAddon隐形药水_LuziOptiona3: "XLarge",
+        ItemAddon隐形药水_LuziSeta0: "SourceCharacter sets DestinationCharacter's arm mask to Small",
+        ItemAddon隐形药水_LuziSeta1: "SourceCharacter sets DestinationCharacter's arm mask to Normal",
+        ItemAddon隐形药水_LuziSeta2: "SourceCharacter sets DestinationCharacter's arm mask to Large",
+        ItemAddon隐形药水_LuziSeta3: "SourceCharacter sets DestinationCharacter's arm mask to XLarge",
     },
 };
 
-const translations = { CN: "隐形药水", EN: "Potion of Invisibility" };
+const translations = { CN: "传送门拘束", EN: "Potion of Invisibility" };
 
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, extened, translations);
     AssetManager.addCustomDialog(dialog);
+    // ModManager.hookFunction("DrawCharacter", 10, (args, next) => {
+    //     const C = args[0];
+    //     if (InventoryGet(C, "ItemAddon")) {
+    //         const itemAddon = InventoryGet(C, "ItemAddon");
+    //         if (itemAddon.Asset && itemAddon.Asset.Name === "隐形药水_Luzi") {
+    //             const bodyUpper = InventoryGet(C, "BodyUpper");
+    //             if (bodyUpper && bodyUpper.Asset) {
+    //                 switch (bodyUpper.Asset.Name) {
+    //                     case "Small":
+    //                         itemAddon.Property.TypeRecord.a = 0;
+    //                         break;
+    //                     case "Normal":
+    //                         itemAddon.Property.TypeRecord.a = 1;
+    //                         break;
+    //                     case "Large":
+    //                         itemAddon.Property.TypeRecord.a = 2;
+    //                         break;
+    //                     case "XLarge":
+    //                         itemAddon.Property.TypeRecord.a = 3;
+    //                         break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     next(args);
+    // });
 }
+        // CharacterRefresh(C, true);

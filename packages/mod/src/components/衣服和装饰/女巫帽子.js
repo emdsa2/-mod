@@ -8,6 +8,7 @@ const asset = {
     Gender: "F",
     Top: -220,
     Left: 0,
+    Extended: true,
     DefaultColor: ["#111111","#111111","#111111","#111111","#5e5c5c","#828282","#f1c4c4","#A9AFAF",],
     Layer: [
         {
