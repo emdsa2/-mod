@@ -46,10 +46,10 @@ export default function () {
         "TempCanvas.canvas.width = CanvasDrawWidth;": "TempCanvas.canvas.width = CanvasDrawWidth * 2;",
 
         "const XOffset = CharacterAppearanceXOffset(C, HeightRatio);":
-            "const XOffset = CharacterAppearanceXOffset(C, HeightRatio) + 250;",
+            "const XOffset = CharacterAppearanceXOffset(C, HeightRatio) + 250 * HeightRatio",
 
         "DrawImageEx(Canvas, DrawCanvas, X + XOffset * Zoom":
-            "DrawImageEx(Canvas, DrawCanvas, X + (XOffset - 500) * Zoom",
+            "DrawImageEx(Canvas, DrawCanvas, X + (XOffset - 500 * HeightRatio) * Zoom",
 
         "if (!DrawCanvas) DrawCanvas = MainCanvas;":
             "if (!DrawCanvas) DrawCanvas = MainCanvas; \n if (C.Canvas.width === 500) C.Canvas.width = 1000; \n if (C.CanvasBlink.width === 500) C.CanvasBlink.width = 1000;",
