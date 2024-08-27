@@ -101,4 +101,14 @@ export function setupXCharacterDrawlist() {
             "ChatRoomCharacterViewLoopCharacters((charIdx, charX, charY, _space, roomZoom, cIdx) => {",
         "ChatRoomCharacterDrawlist[charIdx]": "ChatRoomCharacterDrawlist[cIdx]",
     });
+
+    ModManager.progressiveHook("DrawCharacter", 1)
+        .inside("ChatRoomCharacterViewLoopCharacters")
+        .inject((args, next) => {
+            const [C, X, Y, Zoom] = args;
+
+            const pl = /** @type {XCharacter} */ (C);
+            if (!pl || !pl.XCharacterDrawOrder) return;
+            pl.XCharacterDrawOrder.drawState = { X, Y, Zoom };
+        });
 }

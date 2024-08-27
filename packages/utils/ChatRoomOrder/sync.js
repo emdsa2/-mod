@@ -2,8 +2,11 @@ import ModManager from "@mod-utils/ModManager";
 import { key } from "./constant";
 
 function sync() {
-    if (!Player?.MemberNumber) return;
-    const data = /** @type {XCharacter}*/ (Player).XCharacterDrawOrder;
+    const pl = /** @type {XCharacter}*/ (Player);
+    if (!pl || !pl?.MemberNumber) return;
+    if (!pl?.XCharacterDrawOrder) return;
+    /** @type {XCharacterDrawOrderState} */
+    const data = Object.fromEntries(Object.entries(pl.XCharacterDrawOrder).filter(([k, v]) => k !== "drawState"));
     if (!data) return;
 
     ServerSend("ChatRoomChat", {

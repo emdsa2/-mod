@@ -260,6 +260,7 @@ interface XCharacterDrawOrderState {
     nextCharacter?: number;
     associatedAsset?: { group: AssetGroupItemName; asset: string };
     associatedPose?: { pose: AssetPoseName[] };
+    drawState?: { X: number; Y: number; Zoom: number };
 }
 
 type XCharacter = { XCharacterDrawOrder?: XCharacterDrawOrderState } & Character;
