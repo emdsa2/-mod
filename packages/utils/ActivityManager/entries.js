@@ -98,7 +98,9 @@ export function setupEntry() {
                 args[1]
             );
             if (Type !== "Activity") return;
-            Option(resolve(Content)).value_then((v) => Dictionary.push({ Tag: Content, Text: v }));
+            Option(resolve(Content)).value_then((v) =>
+                Dictionary.push({ Tag: `MISSING ACTIVITY DESCRIPTION FOR KEYWORD ${Content}`, Text: v })
+            );
         });
 }
 
