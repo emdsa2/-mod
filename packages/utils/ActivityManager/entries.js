@@ -94,10 +94,11 @@ export function setupEntry() {
     ModManager.progressiveHook("ServerSend", 1)
         .inside("ActivityRun")
         .inject((args, next) => {
-            const { Content, Dictionary } = /** @type { Parameters<ClientToServerEvents["ChatRoomChat"]>[0] } */ (
+            const { Content, Dictionary, Type } = /** @type { Parameters<ClientToServerEvents["ChatRoomChat"]>[0] } */ (
                 args[1]
             );
-            Option(resolve(args[0])).value_then((v) => Dictionary.push({ Tag: Content, Text: v }));
+            if (Type !== "Activity") return;
+            Option(resolve(Content)).value_then((v) => Dictionary.push({ Tag: Content, Text: v }));
         });
 }
 

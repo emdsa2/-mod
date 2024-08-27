@@ -36,7 +36,6 @@ function collectComponents(componentsDir, baseDir, importStartDir) {
             fs.readdirSync(dir, { withFileTypes: true }).forEach((file) => {
                 if (file.isDirectory()) dirWork.push(`${dir}/${file.name}`);
                 else if (file.isFile() && file.name.endsWith(".js")) {
-                    if (file.name === "index.js") return;
                     const content = fs
                         .readFileSync(`${dir}/${file.name}`, "utf8")
                         .replace(/\/\/.*\n?|\/\*.*\*\//gm, "");
