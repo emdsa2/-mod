@@ -183,8 +183,6 @@ type CustomActivityPrerequisite =
     | 'NeedBra'
     | 'NeedPanties'
     | 'NeedSocks'
-    | 'NeedSaddle_Luzi'
-    | 'NeedBed_Luzi'
     | 'NeedSuitLower鱼鱼尾_Luzi'
     | 'Need阿巴阿巴_Luzi';
 

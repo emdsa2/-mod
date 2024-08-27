@@ -212,7 +212,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 2,
-            ParentGroup: null,            
+            ParentGroup: null,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.DEFAULT,
@@ -260,7 +260,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,  
+            ParentGroup: null,
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,
                 OverTheHead: PoseType.DEFAULT,
@@ -280,20 +280,6 @@ const assets = {
                     Priority: 55,
                 },
             ],
-        },
-    ],
-    
-    //TODO Saki (鞍缰绳)
-    ItemTorso: [
-        {
-            Name: "鞍_Luzi",
-            Random: false,
-            // SetPose: ["AllFours"],
-            AllowActivePose: ["AllFours"],
-        },
-        {
-            Name: "缰绳_Luzi",
-            Random: false,
         },
     ],
     ItemDevices: [
@@ -343,10 +329,6 @@ const translations = {
         ItemHandheld: {
             电蚊拍_Luzi: "电蚊拍",
             伊偶_Luzi: "伊偶",
-        },
-        ItemTorso: {
-            鞍_Luzi: "鞍",
-            缰绳_Luzi: "缰绳",
         },
         ItemDevices: {
             树_Luzi: "树",

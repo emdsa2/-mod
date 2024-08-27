@@ -29,11 +29,11 @@ export default class ChatRoomOrder {
         return {
             prev: {
                 C: ret.prev,
-                draState: ret.prev.XCharacterDrawOrder.drawState,
+                drawState: ret.prev.XCharacterDrawOrder.drawState,
             },
             next: {
                 C: ret.next,
-                draState: ret.next.XCharacterDrawOrder.drawState,
+                drawState: ret.next.XCharacterDrawOrder.drawState,
             },
         };
     }

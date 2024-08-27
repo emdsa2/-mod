@@ -29,8 +29,6 @@ const prereqStorage = {
     NeedBra: (prereq, acting, acted, group) => !!InventoryGet(acting, "Bra"),
     NeedPanties: (prereq, acting, acted, group) => !!InventoryGet(acting, "Panties"),
     NeedSocks: (prereq, acting, acted, group) => !!InventoryGet(acting, "Socks"),
-    NeedSaddle_Luzi: (prereq, acting, acted, group) => InventoryIsItemInList(acting, "ItemTorso", ["缰绳_Luzi"]),
-    NeedBed_Luzi: (prereq, acting, acted, group) => InventoryIsItemInList(acting, "ItemDevices", ["床右边_Luzi"]),
     NeedSuitLower鱼鱼尾_Luzi: (prereq, acting, acted, group) =>
         InventoryIsItemInList(acting, "ItemLegs", ["鱼鱼尾_Luzi"]),
     Need阿巴阿巴_Luzi: (prereq, acting, acted, group) =>

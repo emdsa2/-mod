@@ -128,7 +128,7 @@ export default function () {
 
             if (!pair) return;
 
-            const centerX = (pair.prev.draState.X + pair.next.draState.X) / 2;
+            const centerX = (pair.prev.drawState.X + pair.next.drawState.X) / 2;
 
             if (
                 pair.prev.C.MemberNumber === C.MemberNumber &&

@@ -2360,40 +2360,6 @@ const activities = [
             EN: "SourceCharacter用鱼尾抚弄TargetCharacter的大腿.",
         },
     },
-    {
-        activity: {
-            Name: "躺上去",
-            Prerequisite: ["NeedBed_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemArms"],
-        },
-        useImage: ["ItemDevices", "Bed"],
-        label: {
-            CN: "躺上去",
-            EN: "Lie Down",
-        },
-        dialog: {
-            CN: "SourceCharacter躺到TargetCharacter的身边.",
-            EN: "SourceCharacter Lies Down Next to TargetCharacter.",
-        },
-    },
-    {
-        activity: {
-            Name: "骑上去",
-            Prerequisite: ["NeedSaddle_Luzi"],
-            MaxProgress: 50,
-            Target: ["ItemTorso"],
-        },
-        useImage: "Wiggle",
-        label: {
-            CN: "骑上去",
-            EN: "Ride On",
-        },
-        dialog: {
-            CN: "SourceCharacter骑在TargetCharacter的背上.",
-            EN: "SourceCharacter Rides on TargetCharacter's Back.",
-        },
-    },
 ];
 
 export default function () {
