@@ -1,4 +1,4 @@
-import ActivityManager from "../ActivityManager";
+import ActivityManager from "@mod-utils/ActivityManager";
 
 /** @type { ActivityManagerInterface.ICustomActivity []} */
 const activities = [

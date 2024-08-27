@@ -1,7 +1,7 @@
-import { pushHandler } from "./handlers";
+import { pushHandler, setupHandler } from "./handlers";
 import { pushLoad, setupLoad } from "./load";
 import { addAcvitityEntry, setupEntry } from "./entries";
-import { addPrerequisite, setupPrereq } from "./prereq";
+import { addPrerequisite, enlistUnamedPrereq, setupPrereq } from "./prereq";
 import { addCustomActivity, testCustomActivity } from "./stash";
 import { addActivityImageMapping, setupImgMapping } from "./image";
 
@@ -29,16 +29,20 @@ export default class ActivityManager {
      * @returns {void}
      */
     static addCustomActivity(act) {
+        const copyAct = { ...act };
         pushLoad(() => {
-            ActivityFemale3DCG.push(/** @type {Activity}*/ (act.activity));
-            ActivityFemale3DCGOrdering.push(/** @type {ActivityName}*/ (act.activity.Name));
-            addAcvitityEntry(act);
-            pushHandler(act.activity.Name, act);
-            addCustomActivity(act);
+            copyAct.activity.Prerequisite = enlistUnamedPrereq(copyAct.activity.Name, copyAct.activity.Prerequisite);
 
-            if (typeof act.useImage === "string") addActivityImageMapping({ [act.activity.Name]: act.useImage });
-            else if (Array.isArray(act.useImage))
-                addActivityImageMapping({ [act.activity.Name]: act.useImage[1] }, act.useImage[0]);
+            ActivityFemale3DCG.push(/** @type {Activity}*/ (copyAct.activity));
+            ActivityFemale3DCGOrdering.push(/** @type {ActivityName}*/ (copyAct.activity.Name));
+            addAcvitityEntry(copyAct);
+            pushHandler(copyAct.activity.Name, copyAct);
+            addCustomActivity(copyAct);
+
+            if (typeof copyAct.useImage === "string")
+                addActivityImageMapping({ [copyAct.activity.Name]: copyAct.useImage });
+            else if (Array.isArray(copyAct.useImage))
+                addActivityImageMapping({ [copyAct.activity.Name]: copyAct.useImage[1] }, copyAct.useImage[0]);
         });
     }
 
@@ -83,6 +87,7 @@ export default class ActivityManager {
         );
 
         pushLoad(() => loadFunc());
+        pushLoad(() => setupHandler());
 
         setupEntry();
         setupPrereq();

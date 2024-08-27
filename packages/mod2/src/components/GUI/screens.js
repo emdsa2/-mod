@@ -1,4 +1,4 @@
-import ActivityManager from "src/ActivityManager";
+import ActivityManager from "@mod-utils/ActivityManager";
 import { 保存制作物品, 读取制作物品 } from "../保存数据/保存制作物品";
 import { 设置高潮数据, 高潮数据开关 } from "../保存数据/保存高潮";
 import { flying_pig } from "./flying_pig";

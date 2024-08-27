@@ -42,6 +42,6 @@ export function setupImgMapping() {
 
     ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
         (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) =>
-            ModManager.progressiveHook(fn, 1).inject((args, next) => (args[0] = mapImgSrc(args[0])))
+            ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapImgSrc(args[0])))
     );
 }

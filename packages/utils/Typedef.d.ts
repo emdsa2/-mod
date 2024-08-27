@@ -13,9 +13,9 @@ type CustomGroupBodyName =
     | AssetGroupBodyName
     | `${AssetGroupBodyName}_笨笨蛋Luzi`
     | `${AssetGroupBodyName}_笨笨笨蛋Luzi2`
-    | "Liquid2_Luzi"
-    | "BodyMarkings2_Luzi"
-    | "身体痕迹_Luzi";
+    | 'Liquid2_Luzi'
+    | 'BodyMarkings2_Luzi'
+    | '身体痕迹_Luzi';
 
 /** 扩展身体组名称 */
 type CustomGroupName = AssetGroupItemName | CustomGroupBodyName | AssetGroupScriptName;
@@ -34,12 +34,12 @@ namespace _ {
     namespace CGroupDef {
         type Item = _.SetType<
             _.ExtendType<AssetGroupDefinition.Item, AssetGroupName, CustomGroupName>,
-            "Group",
+            'Group',
             AssetGroupItemName
         >;
         type Appearance = _.SetType<
             _.ExtendType<AssetGroupDefinition.Appearance, AssetGroupName, CustomGroupName>,
-            "Group",
+            'Group',
             CustomGroupBodyName
         >;
         type Script = AssetGroupDefinition.Script;
@@ -133,11 +133,11 @@ type CopyGroupInfo = { name: CustomGroupName; mirror: AssetGroupName; descriptio
 
 namespace ModManagerInterface {
     namespace _ {
-        type PatchHook<T extends (...args: any[]) => any> = import("bondage-club-mod-sdk").PatchHook<T>;
-        type GetDotedPathType<K extends string> = import("bondage-club-mod-sdk").GetDotedPathType<typeof globalThis, K>;
+        type PatchHook<T extends (...args: any[]) => any> = import('bondage-club-mod-sdk').PatchHook<T>;
+        type GetDotedPathType<K extends string> = import('bondage-club-mod-sdk').GetDotedPathType<typeof globalThis, K>;
     }
-    type ModSDKModInfo = import("bondage-club-mod-sdk").ModSDKModInfo;
-    type ModSDKModAPI = import("bondage-club-mod-sdk").ModSDKModAPI;
+    type ModSDKModInfo = import('bondage-club-mod-sdk').ModSDKModInfo;
+    type ModSDKModAPI = import('bondage-club-mod-sdk').ModSDKModAPI;
 
     type HookFunction<T extends string> = _.PatchHook<_.GetDotedPathType<T>>;
     type FunctionArguments<T extends string> = Parameters<HookFunction<T>>[0];
@@ -153,44 +153,45 @@ namespace ModManagerInterface {
 }
 
 namespace ProgressiveHookInterface {
-    type InjectWork<T extends string> = { value: "inject"; work: ModManager.InjectFunction<T> };
-    type NextWork<T extends string> = { value: "next" };
-    type OverrideWork<T extends string> = { value: "override"; work: ModManager.HookFunction<T> };
-    type FlagWork<T extends string> = { value: "flag"; flag: boolean; once: boolean };
-    type CheckWork<T extends string> = { value: "check"; work: ModManager.CheckFunction<T> };
+    type InjectWork<T extends string> = { value: 'inject'; work: ModManager.InjectFunction<T> };
+    type NextWork<T extends string> = { value: 'next' };
+    type OverrideWork<T extends string> = { value: 'override'; work: ModManager.HookFunction<T> };
+    type FlagWork<T extends string> = { value: 'flag'; flag: boolean; once: boolean };
+    type CheckWork<T extends string> = { value: 'check'; work: ModManager.CheckFunction<T> };
 
     type WorkType<T extends string> = InjectWork<T> | NextWork<T> | OverrideWork<T> | FlagWork<T> | CheckWork<T>;
 }
 
 type CustomActivityPrerequisite =
     | ActivityPrerequisite
-    | "TargetHasTail"
-    | "TargetHasWings"
-    | "TargetHasLeash"
-    | "TargetHasCatTail"
-    | "TargetHasTentacles"
-    | "NeedTentacles"
-    | "NeedPawMittens"
-    | "NeedPetSuit"
-    | "NeedKennel"
-    | "TargetHasItemVulvaPiercings"
-    | "TargetHasItemVulva"
-    | "NeedSword"
-    | "NeedScissors"
-    | "NeedCloth"
-    | "NeedNoCloth"
-    | "NeedNoClothLower"
-    | "NeedBra"
-    | "NeedPanties"
-    | "NeedSocks"
-    | "NeedSaddle_Luzi"
-    | "NeedBed_Luzi"
-    | "NeedSuitLower鱼鱼尾_Luzi"
-    | "Need阿巴阿巴_Luzi";
+    | 'TargetHasTail'
+    | 'TargetHasWings'
+    | 'TargetHasLeash'
+    | 'TargetHasCatTail'
+    | 'TargetHasTentacles'
+    | 'NeedTentacles'
+    | 'NeedPawMittens'
+    | 'NeedPetSuit'
+    | 'NeedKennel'
+    | 'TargetHasItemVulvaPiercings'
+    | 'TargetHasItemVulva'
+    | 'NeedSword'
+    | 'NeedScissors'
+    | 'NeedCloth'
+    | 'NeedNoCloth'
+    | 'NeedNoClothLower'
+    | 'NeedBra'
+    | 'NeedPanties'
+    | 'NeedSocks'
+    | 'NeedSaddle_Luzi'
+    | 'NeedBed_Luzi'
+    | 'NeedSuitLower鱼鱼尾_Luzi'
+    | 'Need阿巴阿巴_Luzi';
 
-type CustomActivity = Omit<Activity, "Name" | "Prerequisite" | "ActivityID"> & {
+
+type CustomActivity = Omit<Activity, 'Name' | 'Prerequisite' | 'ActivityID'> & {
     Name: string;
-    Prerequisite: CustomActivityPrerequisite[];
+    Prerequisite: ActivityManagerInterface.ExCustomActivityPrerequisite[];
 };
 
 namespace Translation {
@@ -198,11 +199,15 @@ namespace Translation {
 }
 
 namespace ActivityManagerInterface {
-    type ActivityDialogKey = `Chat${"Other" | "Self"}-${AssetGroupItemName}-${CustomActivity["Name"]}`;
+    type ActivityDialogKey = `Chat${'Other' | 'Self'}-${AssetGroupItemName}-${CustomActivity['Name']}`;
 
-    type ActivityRunnableTriggerMode = "OnSelf" | "OtherOnSelf" | "OnOther";
+    type ActivityRunnableTriggerMode = 'OnSelf' | 'OtherOnSelf' | 'OnOther';
 
-    type PrerequisiteCheckFunction = (...args: ModManagerInterface.FunctionArguments<"ActivityCheckPrerequisite">) => boolean;
+    type PrerequisiteCheckFunction = (
+        ...args: ModManagerInterface.FunctionArguments<'ActivityCheckPrerequisite'>
+    ) => boolean;
+
+    type ExCustomActivityPrerequisite = CustomActivityPrerequisite | ActivityManagerInterface.PrerequisiteCheckFunction;
 
     interface ICustomActivityPrerequisite {
         readonly name: CustomActivityPrerequisite;
@@ -245,4 +250,16 @@ namespace ActivityManagerInterface {
     }
 }
 
-declare function ServerSend<T = keyof ClientToServerEvents>(Message: T, ...args: Parameters<ClientToServerEvents[T]>): void;
+declare function ServerSend<T = keyof ClientToServerEvents>(
+    Message: T,
+    ...args: Parameters<ClientToServerEvents[T]>
+): void;
+
+interface XCharacterDrawOrderState {
+    prevCharacter?: number;
+    nextCharacter?: number;
+    associatedAsset?: { group: AssetGroupItemName; asset: string };
+    associatedPose?: { pose: AssetPoseName[] };
+}
+
+type XCharacter = { XCharacterDrawOrder?: XCharacterDrawOrderState } & Character;

@@ -1,5 +1,5 @@
 import { RecordEntries } from "@mod-utils/fp";
-import ActivityManager from "../ActivityManager";
+import ActivityManager from "@mod-utils/ActivityManager";
 
 /** @type { Record<Exclude<CustomActivityPrerequisite,ActivityPrerequisite>, ActivityManagerInterface.PrerequisiteCheckFunction> }  */
 const prereqStorage = {

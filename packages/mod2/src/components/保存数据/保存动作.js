@@ -1,6 +1,6 @@
 import ModManager from "@mod-utils/ModManager";
 import { ModInfo } from "@mod-utils/rollupHelper";
-import ActivityManager from "src/ActivityManager";
+import ActivityManager from "@mod-utils/ActivityManager";
 import { load, save } from "./dataAccess";
 
 const dataKey = `ECHO${ModInfo.name}`;

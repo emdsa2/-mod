@@ -1,5 +1,5 @@
 import { Path } from "@mod-utils/path";
-import ActivityManager from "../ActivityManager";
+import ActivityManager from "@mod-utils/ActivityManager";
 
 /** @type { ActivityManagerInterface.ICustomActivity } */
 const activity = {
