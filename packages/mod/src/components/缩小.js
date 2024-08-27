@@ -1,30 +1,58 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
 
-const reduceTag1 = "缩小(地)_Luzi";
-const reduceTag2 = "缩小(空)_Luzi";
-
 // 定义一个对象来存储不同道具的调整参数
 const assetAdjustments = {
     // "缩小(地)_Luzi": { widthMultiplier: 2, heightMultiplier: 2, offsetXMultiplier: 4, offsetYMultiplier: 2 },
-    [reduceTag1]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 6, offsetYMultiplier: 1.5 },
-    [reduceTag2]: { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 6, offsetYMultiplier: 10 },
+    "缩小地上_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
+    "缩小浮空_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
+    "身高减10cm_Luzi": { widthMultiplier: 1.05, heightMultiplier: 1.05, offsetXMultiplier: 36, offsetYMultiplier: 20 }, 
+    "身高减20cm_Luzi": { widthMultiplier: 1.08, heightMultiplier: 1.08, offsetXMultiplier: 28, offsetYMultiplier: 14 }, 
 };
 
 /** @type { CustomAssetDefinitionAppearance[]} */
 const assets = [
     {
-        Name: reduceTag1,
+        Name: "缩小地上_Luzi",
         Visible: false,
         Random: false,
         Effect: [E.Slow],
     },
     {
-        Name: reduceTag2,
+        Name: "缩小浮空_Luzi",
+        Visible: false,
+        Random: false,
+    },
+    {
+        Name: "身高减10cm_Luzi", 
+        Visible: false,
+        Random: false,
+    },
+    {
+        Name: "身高减20cm_Luzi", 
         Visible: false,
         Random: false,
     },
 ];
+
+const translations = {
+    CN: {
+        BodyMarkings2_Luzi: {
+            缩小地上_Luzi: "缩小地上",
+            缩小浮空_Luzi: "缩小浮空",
+            身高减10cm_Luzi: "-10cm",
+            身高减20cm_Luzi: "-20cm",
+        },
+    },
+    EN: {
+        BodyMarkings2_Luzi: {
+            缩小地上_Luzi: "Shrink on Ground",
+            缩小浮空_Luzi: "Shrink in Air",
+            身高减10cm_Luzi: "-10cm",
+            身高减20cm_Luzi: "-20cm",
+        },
+    },
+}
 
 export default function () {
     // ================================================================================
@@ -83,5 +111,5 @@ export default function () {
         return next([source, canvas, X, Y, options]);
     });
 
-    AssetManager.addGroupedAssets({ BodyMarkings2_Luzi: assets });
+    AssetManager.addGroupedAssets({ BodyMarkings2_Luzi: assets }, translations);
 }
