@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-// import ModManager from "@mod-utils/ModManager";
+import ModManager from "@mod-utils/ModManager";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -15,6 +15,7 @@ const asset = {
     RemoveTime: 5,
     Time: 10,
     Effect: [E.Slow, E.Block],
+    DynamicBeforeDraw: true,
     Hide: [
         "ItemHandheld",
         "Hands",
@@ -67,7 +68,6 @@ const asset = {
             },
         },
 
-
         {
             Name: "脚链",
             Priority: 31,
@@ -84,14 +84,50 @@ const asset = {
             },
             Alpha: [
                 {
-                    Group: ["SuitLower", "Garters", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
-                    Masks: [
-                        [100, 570, 300, 430],
+                    Group: [
+                        "SuitLower",
+                        "Garters",
+                        "Bra",
+                        "Socks",
+                        "SocksRight",
+                        "SocksLeft",
+                        "RightAnklet",
+                        "LeftAnklet",
+                        "ItemFeet",
+                        "ItemLegs",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemBoots",
+                        "Liquid2_Luzi",
+                        "身体痕迹_Luzi",
+                        "BodyMarkings2_Luzi",
+                        "Bra_笨笨蛋Luzi",
+                        "Shoes_笨笨蛋Luzi",
                     ],
+                    Masks: [[100, 570, 300, 430]],
                     Pose: ["BaseLower", "LegsClosed", "Kneel"],
                 },
                 {
-                    Group: ["SuitLower", "Garters", "Bra", "Socks", "SocksRight", "SocksLeft", "RightAnklet", "LeftAnklet", "ItemFeet", "ItemLegs", "ItemTorso", "ItemTorso2", "ItemBoots", "Liquid2_Luzi", "身体痕迹_Luzi", "BodyMarkings2_Luzi", "Bra_笨笨蛋Luzi", "Shoes_笨笨蛋Luzi"],
+                    Group: [
+                        "SuitLower",
+                        "Garters",
+                        "Bra",
+                        "Socks",
+                        "SocksRight",
+                        "SocksLeft",
+                        "RightAnklet",
+                        "LeftAnklet",
+                        "ItemFeet",
+                        "ItemLegs",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemBoots",
+                        "Liquid2_Luzi",
+                        "身体痕迹_Luzi",
+                        "BodyMarkings2_Luzi",
+                        "Bra_笨笨蛋Luzi",
+                        "Shoes_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [100, 500, 62, 100],
                         [337, 500, 62, 100],
@@ -119,7 +155,19 @@ const asset = {
             },
             Alpha: [
                 {
-                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Group: [
+                        "Suit",
+                        "Bra",
+                        "Bra_笨笨蛋Luzi",
+                        "Gloves",
+                        "LeftHand",
+                        "RightHand",
+                        "Bracelet",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemArms",
+                        "Gloves_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [0, 0, 500, 200],
                         [100, 100, 48, 110],
@@ -128,7 +176,19 @@ const asset = {
                     Pose: ["OverTheHead"],
                 },
                 {
-                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Group: [
+                        "Suit",
+                        "Bra",
+                        "Bra_笨笨蛋Luzi",
+                        "Gloves",
+                        "LeftHand",
+                        "RightHand",
+                        "Bracelet",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemArms",
+                        "Gloves_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [0, 100, 141, 300],
                         [367, 100, 141, 300],
@@ -145,7 +205,19 @@ const asset = {
             CopyLayerColor: "手链",
             Alpha: [
                 {
-                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Group: [
+                        "Suit",
+                        "Bra",
+                        "Bra_笨笨蛋Luzi",
+                        "Gloves",
+                        "LeftHand",
+                        "RightHand",
+                        "Bracelet",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemArms",
+                        "Gloves_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [100, 318, 91, 97], // 左
                         [190, 326, 1, 89],
@@ -184,7 +256,19 @@ const asset = {
             CopyLayerColor: "手链",
             Alpha: [
                 {
-                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Group: [
+                        "Suit",
+                        "Bra",
+                        "Bra_笨笨蛋Luzi",
+                        "Gloves",
+                        "LeftHand",
+                        "RightHand",
+                        "Bracelet",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemArms",
+                        "Gloves_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [100, 318, 85, 102], // 左
                         [185, 329, 1, 91],
@@ -233,7 +317,19 @@ const asset = {
             CopyLayerColor: "手链",
             Alpha: [
                 {
-                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Group: [
+                        "Suit",
+                        "Bra",
+                        "Bra_笨笨蛋Luzi",
+                        "Gloves",
+                        "LeftHand",
+                        "RightHand",
+                        "Bracelet",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemArms",
+                        "Gloves_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [100, 319, 80, 101], // 左
                         [179, 334, 1, 86],
@@ -288,7 +384,19 @@ const asset = {
             CopyLayerColor: "手链",
             Alpha: [
                 {
-                    Group: ["Suit", "Bra", "Bra_笨笨蛋Luzi", "Gloves", "LeftHand", "RightHand", "Bracelet", "ItemTorso", "ItemTorso2", "ItemArms", "Gloves_笨笨蛋Luzi",],
+                    Group: [
+                        "Suit",
+                        "Bra",
+                        "Bra_笨笨蛋Luzi",
+                        "Gloves",
+                        "LeftHand",
+                        "RightHand",
+                        "Bracelet",
+                        "ItemTorso",
+                        "ItemTorso2",
+                        "ItemArms",
+                        "Gloves_笨笨蛋Luzi",
+                    ],
                     Masks: [
                         [100, 316, 74, 111], // 左
                         [173, 333, 1, 94],
@@ -485,8 +593,9 @@ const extened = {
         {
             Name: "遮罩",
             DrawImages: false,
+            AllowSelfSelect: false,
             Key: "a",
-            Options: [{}, {}, {}, {},],
+            Options: [{}, {}, {}, {}],
         },
     ],
 };
@@ -518,7 +627,8 @@ const dialog = {
         ItemAddon隐形药水_LuziSetll1: "SourceCharacter在DestinationCharacter的腿上加上了铐子",
         ItemAddon隐形药水_LuziSetll2: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上",
         ItemAddon隐形药水_LuziSetll3: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上",
-        ItemAddon隐形药水_LuziSetll4: "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上,将DestinationCharacter头朝下吊了起来",
+        ItemAddon隐形药水_LuziSetll4:
+            "SourceCharacter将吊顶连连接在了DestinationCharacter的腿上,将DestinationCharacter头朝下吊了起来",
         ItemAddon隐形药水_LuziSetll5: "SourceCharacter将DestinationCharacter的腿拷在一起",
 
         ItemAddon隐形药水_LuziSelect自定义高度: "设置高度",
@@ -566,7 +676,8 @@ const dialog = {
         ItemAddon隐形药水_LuziSetll1: "SourceCharacter applied cuffs to DestinationCharacter's legs",
         ItemAddon隐形药水_LuziSetll2: "SourceCharacter connected the hoist to DestinationCharacter's legs",
         ItemAddon隐形药水_LuziSetll3: "SourceCharacter connected the hoist to DestinationCharacter's legs",
-        ItemAddon隐形药水_LuziSetll4: "SourceCharacter attached the hanging chain to DestinationCharacter's legs, suspending them head-down",
+        ItemAddon隐形药水_LuziSetll4:
+            "SourceCharacter attached the hanging chain to DestinationCharacter's legs, suspending them head-down",
         ItemAddon隐形药水_LuziSetll5: "SourceCharacter cuffs DestinationCharacter's legs together",
 
         ItemAddon隐形药水_LuziSelect自定义高度: "Set Height",
@@ -593,34 +704,33 @@ const dialog = {
 
 const translations = { CN: "传送门拘束", EN: "Potion of Invisibility" };
 
-export default function () {
-    AssetManager.addAsset("ItemAddon", asset, extened, translations);
-    AssetManager.addCustomDialog(dialog);
-    // ModManager.hookFunction("DrawCharacter", 10, (args, next) => {
-    //     const C = args[0];
-    //     if (InventoryGet(C, "ItemAddon")) {
-    //         const itemAddon = InventoryGet(C, "ItemAddon");
-    //         if (itemAddon.Asset && itemAddon.Asset.Name === "隐形药水_Luzi") {
-    //             const bodyUpper = InventoryGet(C, "BodyUpper");
-    //             if (bodyUpper && bodyUpper.Asset) {
-    //                 switch (bodyUpper.Asset.Name) {
-    //                     case "Small":
-    //                         itemAddon.Property.TypeRecord.a = 0;
-    //                         break;
-    //                     case "Normal":
-    //                         itemAddon.Property.TypeRecord.a = 1;
-    //                         break;
-    //                     case "Large":
-    //                         itemAddon.Property.TypeRecord.a = 2;
-    //                         break;
-    //                     case "XLarge":
-    //                         itemAddon.Property.TypeRecord.a = 3;
-    //                         break;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     next(args);
-    // });
+/** @type {ExtendedItemCallbacks.BeforeDraw} */
+function beforeDraw({ C, Property }) {
+    const bodyUpper = InventoryGet(C, "BodyUpper");
+    if (bodyUpper && bodyUpper.Asset) {
+        switch (bodyUpper.Asset.Name) {
+            case "Small":
+                Property.TypeRecord.a = 0;
+                break;
+            case "Normal":
+                Property.TypeRecord.a = 1;
+                break;
+            case "Large":
+                Property.TypeRecord.a = 2;
+                break;
+            case "XLarge":
+                Property.TypeRecord.a = 3;
+                break;
+        }
+    }
+    return {
+        Property,
+    };
 }
-// CharacterRefresh(C, true);
+
+export default function () {
+    const group = "ItemAddon";
+    ModManager.globalFunction(`Assets${group}${asset.Name}BeforeDraw`, beforeDraw);
+    AssetManager.addAsset(group, asset, extened, translations);
+    AssetManager.addCustomDialog(dialog);
+}
