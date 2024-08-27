@@ -1,19 +1,27 @@
 import ModManager from "@mod-utils/ModManager";
 import { key } from "./constant";
 
-function sync() {
+let doSync = false;
+function syncRun() {
+    if (!doSync) return;
     const pl = /** @type {XCharacter}*/ (Player);
     if (!pl || !pl?.MemberNumber) return;
     if (!pl?.XCharacterDrawOrder) return;
     /** @type {XCharacterDrawOrderState} */
     const data = Object.fromEntries(Object.entries(pl.XCharacterDrawOrder).filter(([k, v]) => k !== "drawState"));
     if (!data) return;
-
+    doSync = false;
     ServerSend("ChatRoomChat", {
         Content: key,
         Type: "Hidden",
         Dictionary: [data],
     });
+}
+
+setInterval(() => syncRun(), 400);
+
+export function setSync() {
+    doSync = true;
 }
 
 /**
@@ -22,7 +30,7 @@ function sync() {
  */
 export function setXDrawState(data) {
     /** @type {XCharacter}*/ (Player).XCharacterDrawOrder = data;
-    sync();
+    setSync();
 }
 
 /**
@@ -63,19 +71,19 @@ function validate(data) {
 
 export function setupSync() {
     ModManager.hookFunction("ChatRoomSync", 10, (args, next) => {
-        sync();
+        setSync();
         next(args);
     });
 
     ModManager.hookFunction("ChatRoomSyncMemberLeave", 10, (args, next) => {
-        sync();
+        setSync();
         next(args);
     });
 
     ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
         let data = args[0];
         if (data.Content === "ServerEnter") {
-            sync();
+            setSync();
         }
         next(args);
     });
@@ -83,8 +91,13 @@ export function setupSync() {
     ModManager.hookFunction("ChatRoomMessage", 0, (args, next) => {
         const { Type, Content, Sender, Dictionary } = args[0];
         if (Type === "Hidden" && Content === key) {
+            /** @type {XCharacter}*/
             const target = ChatRoomCharacter.find((c) => c.MemberNumber === Sender);
-            if (target) /** @type {XCharacter} */ (target).XCharacterDrawOrder = validate(Dictionary[0]);
+            if (target) {
+                const drawState = target.XCharacterDrawOrder?.drawState;
+                target.XCharacterDrawOrder = validate(Dictionary[0]);
+                if (drawState) target.XCharacterDrawOrder.drawState = drawState;
+            }
             return;
         }
         next(args);

@@ -1,4 +1,5 @@
 import ModManager from "@mod-utils/ModManager";
+import { setXDrawState } from "./sync";
 
 /**
  *
@@ -11,8 +12,14 @@ function validXCharacter(C) {
     if (!prevCharacter && !nextCharacter) return false;
     if (prevCharacter === C.MemberNumber || nextCharacter === C.MemberNumber) return false;
 
-    if (associatedAsset && !InventoryIsItemInList(C, associatedAsset.group, [associatedAsset.asset])) return false;
-    if (associatedPose && !associatedPose.pose.every((p) => C.ActivePose.includes(p))) return false;
+    if (associatedAsset && !InventoryIsItemInList(C, associatedAsset.group, [associatedAsset.asset])) {
+        setXDrawState({});
+        return false;
+    }
+    if (associatedPose && !associatedPose.pose.every((p) => C.ActivePose.includes(p))) {
+        setXDrawState({});
+        return false;
+    }
 
     return true;
 }
