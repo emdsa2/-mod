@@ -13,9 +13,9 @@ type CustomGroupBodyName =
     | AssetGroupBodyName
     | `${AssetGroupBodyName}_笨笨蛋Luzi`
     | `${AssetGroupBodyName}_笨笨笨蛋Luzi2`
-    | "Liquid2_Luzi"
-    | "BodyMarkings2_Luzi"
-    | "身体痕迹_Luzi";
+    | 'Liquid2_Luzi'
+    | 'BodyMarkings2_Luzi'
+    | '身体痕迹_Luzi';
 
 /** 扩展身体组名称 */
 type CustomGroupName = AssetGroupItemName | CustomGroupBodyName | AssetGroupScriptName;
@@ -34,12 +34,12 @@ namespace _ {
     namespace CGroupDef {
         type Item = _.SetType<
             _.ExtendType<AssetGroupDefinition.Item, AssetGroupName, CustomGroupName>,
-            "Group",
+            'Group',
             AssetGroupItemName
         >;
         type Appearance = _.SetType<
             _.ExtendType<AssetGroupDefinition.Appearance, AssetGroupName, CustomGroupName>,
-            "Group",
+            'Group',
             CustomGroupBodyName
         >;
         type Script = AssetGroupDefinition.Script;
@@ -54,12 +54,12 @@ namespace _ {
 
     type GroupedAssetType = {
         [K in CustomGroupName]?: K extends AssetGroupItemName
-            ? CAssetDef.Item[]
-            : K extends CustomGroupBodyName
-            ? CAssetDef.Appearance[]
-            : K extends AssetGroupScriptName
-            ? CAssetDef.Script[]
-            : never;
+        ? CAssetDef.Item[]
+        : K extends CustomGroupBodyName
+        ? CAssetDef.Appearance[]
+        : K extends AssetGroupScriptName
+        ? CAssetDef.Script[]
+        : never;
     };
 }
 
@@ -133,31 +133,134 @@ type CopyGroupInfo = { name: CustomGroupName; mirror: AssetGroupName; descriptio
 
 namespace ModManagerInterface {
     namespace _ {
-        type PatchHook<T extends (...args: any[]) => any> = import("bondage-club-mod-sdk").PatchHook<T>;
-        type GetDotedPathType<K extends string> = import("bondage-club-mod-sdk").GetDotedPathType<typeof globalThis, K>;
+        type PatchHook<T extends (...args: any[]) => any> = import('bondage-club-mod-sdk').PatchHook<T>;
+        type GetDotedPathType<K extends string> = import('bondage-club-mod-sdk').GetDotedPathType<typeof globalThis, K>;
     }
-    type ModSDKModInfo = import("bondage-club-mod-sdk").ModSDKModInfo;
-    type ModSDKModAPI = import("bondage-club-mod-sdk").ModSDKModAPI;
+    type ModSDKModInfo = import('bondage-club-mod-sdk').ModSDKModInfo;
+    type ModSDKModAPI = import('bondage-club-mod-sdk').ModSDKModAPI;
 
     type HookFunction<T extends string> = _.PatchHook<_.GetDotedPathType<T>>;
     type FunctionArguments<T extends string> = Parameters<HookFunction<T>>[0];
     type FunctionType<T extends string> = Parameters<HookFunction<T>>[1];
     type FunctionReturnType<T extends string> = ReturnType<HookFunction<T>>;
 
-    type InjectFunction<T extends string> = (...args: [Parameters<HookFunction<T>>]) => void;
-    type CheckFunction<T extends string> = (...args: [Parameters<HookFunction<T>>]) => boolean;
+    type InjectFunction<T extends string> = (...args: Parameters<HookFunction<T>>) => void;
+    type CheckFunction<T extends string> = (...args: Parameters<HookFunction<T>>) => boolean;
 
-    type Hookable = {
+    type HookableMod = {
         hookFunction<T extends string>(funcName: T, priority: number, hook: HookFunction<T>): void;
     };
 }
 
 namespace ProgressiveHookInterface {
-    type InjectWork<T extends string> = { value: "inject"; work: ModManager.InjectFunction<T> };
-    type NextWork<T extends string> = { value: "next" };
-    type OverrideWork<T extends string> = { value: "override"; work: ModManager.HookFunction<T> };
-    type FlagWork<T extends string> = { value: "flag"; flag: boolean; once: boolean };
-    type CheckWork<T extends string> = { value: "check"; work: ModManager.CheckFunction<T> };
+    type InjectWork<T extends string> = { value: 'inject'; work: ModManager.InjectFunction<T> };
+    type NextWork<T extends string> = { value: 'next' };
+    type OverrideWork<T extends string> = { value: 'override'; work: ModManager.HookFunction<T> };
+    type FlagWork<T extends string> = { value: 'flag'; flag: boolean; once: boolean };
+    type CheckWork<T extends string> = { value: 'check'; work: ModManager.CheckFunction<T> };
 
     type WorkType<T extends string> = InjectWork<T> | NextWork<T> | OverrideWork<T> | FlagWork<T> | CheckWork<T>;
 }
+
+type CustomActivityPrerequisite =
+    | ActivityPrerequisite
+    | 'TargetHasTail'
+    | 'TargetHasWings'
+    | 'TargetHasLeash'
+    | 'TargetHasCatTail'
+    | 'TargetHasTentacles'
+    | 'NeedTentacles'
+    | 'NeedPawMittens'
+    | 'NeedPetSuit'
+    | 'NeedKennel'
+    | 'TargetHasItemVulvaPiercings'
+    | 'TargetHasItemVulva'
+    | 'NeedSword'
+    | 'NeedScissors'
+    | 'NeedCloth'
+    | 'NeedNoCloth'
+    | 'NeedNoClothLower'
+    | 'NeedBra'
+    | 'NeedPanties'
+    | 'NeedSocks'
+    | 'NeedSaddle_Luzi'
+    | 'NeedBed_Luzi'
+    | 'NeedSuitLower鱼鱼尾_Luzi'
+    | 'Need阿巴阿巴_Luzi';
+
+
+type CustomActivity = Omit<Activity, 'Name' | 'Prerequisite' | 'ActivityID'> & {
+    Name: string;
+    Prerequisite: ActivityManagerInterface.ExCustomActivityPrerequisite[];
+};
+
+namespace Translation {
+    type ActivityEntry = _.PRecord<ServerChatRoomLanguage, _.PRecord<AssetGroupItemName, string>>;
+}
+
+namespace ActivityManagerInterface {
+    type ActivityDialogKey = `Chat${'Other' | 'Self'}-${AssetGroupItemName}-${CustomActivity['Name']}`;
+
+    type ActivityRunnableTriggerMode = 'OnSelf' | 'OtherOnSelf' | 'OnOther';
+
+    type PrerequisiteCheckFunction = (
+        ...args: ModManagerInterface.FunctionArguments<'ActivityCheckPrerequisite'>
+    ) => boolean;
+
+    type ExCustomActivityPrerequisite = CustomActivityPrerequisite | ActivityManagerInterface.PrerequisiteCheckFunction;
+
+    interface ICustomActivityPrerequisite {
+        readonly name: CustomActivityPrerequisite;
+        readonly test: PrerequisiteCheckFunction;
+    }
+
+    interface IActivityRunnable {
+        readonly mode?: ActivityRunnableTriggerMode;
+        run?: (player: PlayerCharacter, sender: Character, info: ActivityInfo) => void;
+    }
+
+    interface ICustomActivity extends IActivityRunnable {
+        readonly activity: CustomActivity;
+
+        // 提供一个字符串时，代表使用对应的动作的图片。提供[组名, 物品名]时，代表使用对应的物品的图片。
+        readonly useImage?: [AssetGroupName, string] | ActivityName;
+        // 对他人使用动作的动作名称
+        readonly label?: Translation.ActivityEntry | Translation.Entry;
+        readonly dialog?: Translation.ActivityEntry | Translation.Entry;
+        // 对自己使用动作的动作名称，如果没有定义则使用 label
+        readonly labelSelf?: Translation.ActivityEntry | Translation.Entry;
+        readonly dialogSelf?: Translation.ActivityEntry | Translation.Entry;
+    }
+
+    interface IActivityModifier extends Required<IActivityRunnable> {
+        readonly name: ActivityName;
+    }
+
+    interface ActivityInfo {
+        SourceCharacter: number;
+        TargetCharacter: number;
+        ActivityGroup: AssetGroupName;
+        ActivityName: string;
+        Asset?: {
+            AssetName: string;
+            CraftName: string;
+            GroupName: AssetGroupItemName;
+        };
+        BCDictionary: ChatMessageDictionaryEntry[];
+    }
+}
+
+declare function ServerSend<T = keyof ClientToServerEvents>(
+    Message: T,
+    ...args: Parameters<ClientToServerEvents[T]>
+): void;
+
+interface XCharacterDrawOrderState {
+    prevCharacter?: number;
+    nextCharacter?: number;
+    associatedAsset?: { group: AssetGroupItemName; asset: string };
+    associatedPose?: { pose: AssetPoseName[] };
+    drawState?: { X: number; Y: number; Zoom: number };
+}
+
+type XCharacter = { XCharacterDrawOrder?: XCharacterDrawOrderState } & Character;

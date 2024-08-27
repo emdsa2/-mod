@@ -11,6 +11,7 @@
   "rollupSetting": {
     "output": "mod2.js",
     "input": "src/main.js",
+    "componentDir": "src/components",
     "loaderName": "BC_Activity2.user.js"
   },
   "displayName": "动作拓展",

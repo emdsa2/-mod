@@ -38,3 +38,27 @@ function isFunction(fValue) {
 export function Option(fValue) {
     return /** @type {OptionImpl<T>} */ (new OptionImpl(isFunction(fValue) ? fValue() : fValue));
 }
+
+/**
+ * @template {string} T
+ * @template U
+ * @param {Partial<Record<T, U>>} src
+ */
+export function RecordEntries(src) {
+    return /** @type { ([T, U])[]} */ (Object.entries(src));
+}
+
+/**
+ * @template {string} T
+ * @template {string} U
+ * @param {Partial<Record<T, string>>} src
+ * @param {(arg:T)=>U} keyFunc
+ * @param {Partial<Record<U,string>>} [init]
+ * @returns {Partial<Record<U,string>>}
+ */
+export function RecordMap(src, keyFunc, init = {}) {
+    return RecordEntries(src).reduce((pv, [key, value]) => {
+        pv[keyFunc(key)] = value;
+        return pv;
+    }, init);
+}

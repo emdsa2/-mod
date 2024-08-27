@@ -2,6 +2,7 @@ import { Option } from "@mod-utils/fp";
 // import { unit } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
 import AssetManager from "@mod-utils/AssetManager";
+import ChatRoomOrder from "@mod-utils/ChatRoomOrder";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -119,47 +120,29 @@ const translations = {
 
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
-
     ModManager.progressiveHook("DrawCharacter", 1)
         .inside("ChatRoomCharacterViewLoopCharacters")
         .inject((args, next) => {
-            const C = args[0];
-            Option(InventoryGet(C, "ItemDevices")).value_then((device) => {
-                // unit(InventoryGet(C, "ItemDevices")).then((device) => {
-                if (device.Asset.Name === assets.ItemDevices[0].Name) {
-                    const idx = ChatRoomCharacterDrawlist.indexOf(C);
-                    if (
-                        idx < 0 ||
-                        idx === ChatRoomCharacterDrawlist.length - 1 ||
-                        idx === ChatRoomCharacterViewCharactersPerRow - 1
-                    )
-                        return;
-                    const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx + 1], "ItemDevices");
-                    if (!other_device) return;
+            const [C, X, Y, Zoom] = args;
+            const pair = ChatRoomOrder.requirePairDrawState(C);
 
-                    if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
-                        if (ChatRoomCharacterDrawlist.length == 2) {
-                            args[1] += 245;
-                        }
-                        if (ChatRoomCharacterDrawlist.length == 3) {
-                            args[1] += 115;
-                        }
-                        if (ChatRoomCharacterDrawlist.length == 4) {
-                            args[1] += 45;
-                        }
-                        if (ChatRoomCharacterDrawlist.length >= 5) {
-                            args[1] += 15;
-                        }
-                    }
-                } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
-                    const idx = ChatRoomCharacterDrawlist.indexOf(C);
-                    if (idx < 0 || idx === 0 || idx === ChatRoomCharacterViewCharactersPerRow) return;
-                    const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx - 1], "ItemDevices");
-                    if (!other_device) return;
-                    if (other_device.Asset.Name === assets.ItemDevices[0].Name) {
-                        args[1] -= 145;
-                    }
-                }
-            });
+            if (!pair) return;
+
+            const centerX = (pair.prev.draState.X + pair.next.draState.X) / 2;
+
+            if (
+                pair.prev.C.MemberNumber === C.MemberNumber &&
+                InventoryIsItemInList(C, "ItemDevices", ["床左边_Luzi"])
+            ) {
+                args[1] = centerX - 100 * Zoom;
+                return;
+            }
+            if (
+                pair.next.C.MemberNumber === C.MemberNumber &&
+                InventoryIsItemInList(C, "ItemDevices", ["床右边_Luzi"])
+            ) {
+                args[1] = centerX + 100 * Zoom;
+                return;
+            }
         });
 }
