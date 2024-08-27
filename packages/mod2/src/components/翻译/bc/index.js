@@ -48,7 +48,9 @@ export function setup() {
         next(args);
     });
 
-    ModManager.hookFunction("CommonStringSubstitute", 10, (args, next) => {
-        return next([activities[args[0]] || args[0], args[1]]);
+    ModManager.hookFunction("ActivityDictionaryText", 1, (args, next) => {
+        const ret = next(args);
+        if (TranslationLanguage === "CN" || TranslationLanguage === "TW") return activities[ret] || ret;
+        return ret;
     });
 }
