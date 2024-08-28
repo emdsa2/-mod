@@ -1,6 +1,8 @@
 import { setupSync, setXDrawState } from "./sync";
 import { findDrawOrderPair, setupXCharacterDrawlist } from "./XCharacterDrawlist";
 
+const setupKey = "MODChatRoomOrder";
+
 export default class ChatRoomOrder {
     /**
      * 设置当前玩家的配对绘制状态
@@ -21,6 +23,8 @@ export default class ChatRoomOrder {
      * 初始化配对绘制功能
      */
     static setup() {
+        if (window[setupKey]) return;
+        window[setupKey] = ChatRoomOrder;
         setupXCharacterDrawlist();
         setupSync();
     }
@@ -70,8 +74,8 @@ export default class ChatRoomOrder {
         };
 
         const center = (() => {
-            // 如果两个人物的Y坐标差距大于500，说明两个人物不在同一水平线上，直接使用第二个人物为基准位置
-            if (Math.abs(prev.Y - next.Y) > 500) return { X: next.X, Y: next.Y };
+            // 如果两个人物的Y坐标差距大于300，说明两个人物不在同一水平线上，直接使用第二个人物为基准位置
+            if (Math.abs(prev.Y - next.Y) > 300) return { X: next.X, Y: next.Y };
             // 取两个人物的中心点
             return { X: (prev.X + next.X) / 2, Y: (prev.Y + next.Y) / 2 };
         })();
