@@ -4,10 +4,10 @@ import ModManager from "@mod-utils/ModManager";
 // 定义一个对象来存储不同道具的调整参数
 const assetAdjustments = {
     // "缩小(地)_Luzi": { widthMultiplier: 2, heightMultiplier: 2, offsetXMultiplier: 4, offsetYMultiplier: 2 },
-    "缩小地上_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 1.5 },
-    "缩小浮空_Luzi": { widthMultiplier: 3, heightMultiplier: 3, offsetXMultiplier: 3, offsetYMultiplier: 10 },
-    "身高减10cm_Luzi": { widthMultiplier: 1.05, heightMultiplier: 1.05, offsetXMultiplier: 36, offsetYMultiplier: 20 }, 
-    "身高减20cm_Luzi": { widthMultiplier: 1.08, heightMultiplier: 1.08, offsetXMultiplier: 28, offsetYMultiplier: 14 }, 
+    缩小地上_Luzi: { widthMultiplier: 0.3, heightMultiplier: 0.3, center: { X: 0.5, Y: 1 } },
+    缩小浮空_Luzi: { widthMultiplier: 0.3, heightMultiplier: 0.3, center: { X: 0.5, Y: 0 } },
+    身高减10cm_Luzi: { widthMultiplier: 1 / 1.05, heightMultiplier: 1 / 1.05, center: { X: 0.5, Y: 1 } },
+    身高减20cm_Luzi: { widthMultiplier: 1 / 1.08, heightMultiplier: 1 / 1.08, center: { X: 0.5, Y: 1 } },
 };
 
 /** @type { CustomAssetDefinitionAppearance[]} */
@@ -24,12 +24,12 @@ const assets = [
         Random: false,
     },
     {
-        Name: "身高减10cm_Luzi", 
+        Name: "身高减10cm_Luzi",
         Visible: false,
         Random: false,
     },
     {
-        Name: "身高减20cm_Luzi", 
+        Name: "身高减20cm_Luzi",
         Visible: false,
         Random: false,
     },
@@ -52,7 +52,7 @@ const translations = {
             身高减20cm_Luzi: "-20cm",
         },
     },
-}
+};
 
 export default function () {
     // ================================================================================
@@ -80,7 +80,7 @@ export default function () {
     ModManager.hookFunction("DrawImageEx", 10, (args, next) => {
         let [source, canvas, X, Y, options] = args;
 
-        if (!options?.Width || !options?.Height) return next(args);
+        if (!options || !options?.Width || !options?.Height) return next(args);
         let Width = options.Width;
         let Height = options.Height;
 
@@ -93,22 +93,24 @@ export default function () {
                     // 如果绘图对象未定义，则初始化为空对象
                     if (options == undefined) options = {};
 
+                    const center = {
+                        X: X + Width * adjustment.center.X,
+                        Y: Y + Height * adjustment.center.Y,
+                    };
+
+                    Width = Width * adjustment.widthMultiplier;
+                    Height = Height * adjustment.heightMultiplier;
+
                     // 调整绘图位置和尺寸
-                    X = X + Width / adjustment.offsetXMultiplier;
-                    Y = Y + Height / adjustment.offsetYMultiplier;
-
-                    Width = Width / adjustment.widthMultiplier;
-                    Height = Height / adjustment.heightMultiplier;
-
-                    // 更新绘图对象的宽度和高度
-                    Object.assign(options, { Width, Height });
+                    X = center.X - Width * adjustment.center.X;
+                    Y = center.Y - Height * adjustment.center.Y;
                 }
             });
         }
 
         InDrawCharacter = false;
         // 调用原始的DrawImageEx函数，传入调整后的参数
-        return next([source, canvas, X, Y, options]);
+        return next([source, canvas, X, Y, Object.assign(options || {}, { Width, Height })]);
     });
 
     AssetManager.addGroupedAssets({ BodyMarkings2_Luzi: assets }, translations);

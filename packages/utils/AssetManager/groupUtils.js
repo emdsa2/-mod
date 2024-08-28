@@ -71,7 +71,7 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
             }),
             {
                 description: soldDesc,
-                dynamicName: fromDef.Group,
+                dynamicName: fromDef.DynamicGroupName || fromDef.Group,
                 preimage: fromGrp,
             }
         );
