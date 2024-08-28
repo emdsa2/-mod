@@ -114,6 +114,12 @@ export function setupXCharacterDrawlist() {
         "ChatRoomCharacterDrawlist[charIdx]": "ChatRoomCharacterDrawlist[cIdx]",
     });
 
+    ModManager.patchFunction("ChatRoomCharacterViewClick", {
+        "ChatRoomCharacterViewLoopCharacters((charIdx, charX, charY, space, zoom) => {":
+            "ChatRoomCharacterViewLoopCharacters((charIdx, charX, charY, space, zoom, cIdx) => {",
+        "ChatRoomCharacterDrawlist[charIdx]": "ChatRoomCharacterDrawlist[cIdx]",
+    });
+
     ModManager.progressiveHook("DrawCharacter", 10)
         .inside("ChatRoomCharacterViewLoopCharacters")
         .inject((args, next) => {
