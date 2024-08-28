@@ -106,7 +106,7 @@ namespace Translation {
      * }
      *
      */
-    type Dialog = _.PRecord<ServerChatRoomLanguage, CustomDialog>;
+    type Dialog = _.PRecord<ServerChatRoomLanguage, Record<string, string>>;
 
     /**
      * 按组分类的，含有很多物品的，描述翻译条目
