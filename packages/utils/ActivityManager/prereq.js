@@ -26,7 +26,7 @@ export function setupPrereq() {
  */
 function randomPrereqKey(prefix) {
     while (true) {
-        const key = `${prefix}_${Math.random().toString(36).substring(2)}`;
+        const key = `${prefix}_prereq_${Math.random().toString(36).substring(2)}`;
         if (!prereqMap[key]) return /** @type {CustomActivityPrerequisite}*/ (key);
     }
 }

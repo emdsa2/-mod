@@ -120,7 +120,7 @@ export function setupXCharacterDrawlist() {
         "ChatRoomCharacterDrawlist[charIdx]": "ChatRoomCharacterDrawlist[cIdx]",
     });
 
-    ModManager.progressiveHook("DrawCharacter", 10)
+    ModManager.progressiveHook("DrawCharacter", 100)
         .inside("ChatRoomCharacterViewLoopCharacters")
         .inject((args, next) => {
             const [C, X, Y, Zoom] = args;

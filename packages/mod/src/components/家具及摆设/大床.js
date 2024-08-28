@@ -128,20 +128,28 @@ export default function () {
 
             if (!pair) return;
 
-            const centerX = (pair.prev.drawState.X + pair.next.drawState.X) / 2;
+            const positionArgs = (() => {
+                const { prev, next } = { prev: pair.prev.drawState, next: pair.next.drawState };
+                // 如果两个人物的Y坐标差距大于1，说明两个人物不在同一水平线上，直接使用第二个人物为基准位置
+                if (Math.abs(prev.Y - next.Y) > 1) return next;
+                // 否则，使用二者的中心点作为基准位置
+                else return { X: (prev.X + next.X) / 2, Y: (prev.Y + next.Y) / 2 };
+            })();
 
             if (
                 pair.prev.C.MemberNumber === C.MemberNumber &&
                 InventoryIsItemInList(C, "ItemDevices", ["床左边_Luzi"])
             ) {
-                args[1] = centerX - 100 * Zoom;
+                args[1] = positionArgs.X - 100 * Zoom;
+                args[2] = positionArgs.Y;
                 return;
             }
             if (
                 pair.next.C.MemberNumber === C.MemberNumber &&
                 InventoryIsItemInList(C, "ItemDevices", ["床右边_Luzi"])
             ) {
-                args[1] = centerX + 100 * Zoom;
+                args[1] = positionArgs.X + 100 * Zoom;
+                args[2] = Y;
                 return;
             }
         });
