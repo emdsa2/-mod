@@ -2,25 +2,30 @@ import ModManager from "@mod-utils/ModManager";
 import { setXDrawState } from "./sync";
 
 /**
- *
+ * @param {XCharacter} C
+ */
+function validAssociated(C) {
+    const { associatedAsset, associatedPose } = C.XCharacterDrawOrder;
+    const ret = (() => {
+        if (associatedAsset && !InventoryIsItemInList(C, associatedAsset.group, [associatedAsset.asset])) return false;
+        if (associatedPose && !associatedPose.pose.every((p) => C.ActivePose.includes(p))) return false;
+        return true;
+    })();
+
+    if (!ret && C.IsPlayer()) setXDrawState({});
+    return ret;
+}
+
+/**
  * @param {XCharacter} C
  * @returns {boolean} 如果是需要特殊处理的角色返回true
  */
 function validXCharacter(C) {
     if (!C || !C.XCharacterDrawOrder) return false;
-    const { prevCharacter, nextCharacter, associatedAsset, associatedPose } = C.XCharacterDrawOrder;
+    const { prevCharacter, nextCharacter } = C.XCharacterDrawOrder;
     if (!prevCharacter && !nextCharacter) return false;
     if (prevCharacter === C.MemberNumber || nextCharacter === C.MemberNumber) return false;
-
-    if (associatedAsset && !InventoryIsItemInList(C, associatedAsset.group, [associatedAsset.asset])) {
-        setXDrawState({});
-        return false;
-    }
-    if (associatedPose && !associatedPose.pose.every((p) => C.ActivePose.includes(p))) {
-        setXDrawState({});
-        return false;
-    }
-
+    if (!validAssociated(C)) return false;
     return true;
 }
 
