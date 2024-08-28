@@ -105,7 +105,7 @@ const asset = {
                         "Shoes_笨笨蛋Luzi",
                     ],
                     Masks: [[100, 570, 300, 430]],
-                    Pose: ["BaseLower", "LegsClosed", "Kneel"],
+                    Pose: ["BaseLower", "LegsClosed", "Kneel", "Spread"],
                 },
                 {
                     Group: [
@@ -486,7 +486,7 @@ const asset = {
         },
         {
             Name: "吊顶链",
-            Priority: 0,
+            Priority: 1,
             AllowTypes: { lll: [2] },
             Top: -400,
             Left: -10,

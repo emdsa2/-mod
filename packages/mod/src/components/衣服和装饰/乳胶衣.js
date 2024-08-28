@@ -71,6 +71,8 @@ const assets = {
                         KneelingSpread: "KneelingSpread",
                         LegsClosed: "LegsClosed",
                         Spread: "Spread",
+                        Hogtied: "Hide",
+                        AllFours: "Hide",
                     },
                 },
                 {
@@ -95,6 +97,8 @@ const assets = {
                         KneelingSpread: "KneelingSpread",
                         LegsClosed: "LegsClosed",
                         Spread: "Spread",
+                        Hogtied: "Hide",
+                        AllFours: "Hide",
                     },
                 },
             ],

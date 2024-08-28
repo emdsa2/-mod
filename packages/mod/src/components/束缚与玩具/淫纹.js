@@ -131,12 +131,12 @@ const asset = {
     Layer: [
         {
             Name: "淫纹",
-            ParentGroup: "ItemMisc",
+            ParentGroup: null,
         },
         {
             Name: "发光",
             Priority: 44,
-            ParentGroup: "ItemMisc",
+            ParentGroup: null,
             AllowTypes: { typed: [1, 2, 3] },
         },
     ],
