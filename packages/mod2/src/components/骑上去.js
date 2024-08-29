@@ -6,7 +6,6 @@ const activity = {
     activity: {
         Name: "骑上去",
         Prerequisite: [
-            "UseFeet",
             (prereq, acting, acted, group) => {
                 return (
                     InventoryIsItemInList(acting, "ItemTorso", ["缰绳_Luzi"]) &&

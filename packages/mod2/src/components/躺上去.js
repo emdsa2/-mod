@@ -7,7 +7,6 @@ const activities = [
         activity: {
             Name: "躺上去",
             Prerequisite: [
-                "UseFeet",
                 (prereq, acting, acted, group) => {
                     return InventoryIsItemInList(acted, "ItemDevices", ["Bed", "床左边_Luzi"]);
                 },
