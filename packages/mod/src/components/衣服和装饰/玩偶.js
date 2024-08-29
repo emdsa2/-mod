@@ -88,6 +88,16 @@ const typeNames = {
 
 const translations = { CN: "玩偶", EN: "Plushies" };
 
+/** @type {Translation.Dialog} */
+const predefDialog = {
+    CN: {
+        ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
+        ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
+        ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只超厉害超威严bc第一的Cyäegha大人的眼线!",
+        ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只超色气的PumpkinPie玩偶.",
+    },
+};
+
 // 下面是根据上面的内容，生成描述的代码
 // 也就是说，不用手动写描述文字啦，只用写上面的内容就行
 
@@ -137,14 +147,10 @@ const cnDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
         if (!layerName) return;
         pv[`ItemMisc玩偶_LuziOption${Key}${i}`] = `${layerName}`;
         pv[`ItemMisc玩偶_LuziSet${Key}${i}`] = `SourceCharacter给了DestinationCharacter一只可爱的${layerName}玩偶.`;
-        // ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
-        // ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
-        // ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只超厉害超威严bc第一的Cyäegha大人的眼线!",
-        // ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只超色气的PumpkinPie玩偶.",
     });
 
     return pv;
-}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "选择房间" }));
+}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "选择房间", ...(predefDialog.CN || {}) }));
 
 /** @type { Record<string,string> } */
 
@@ -165,7 +171,7 @@ const enDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
     });
 
     return pv;
-}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "Select Room" }));
+}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "Select Room", ...(predefDialog.EN || {}) }));
 
 /** @type {Translation.Dialog} */
 const dialogs = {
