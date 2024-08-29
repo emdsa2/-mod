@@ -137,6 +137,10 @@ const cnDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
         if (!layerName) return;
         pv[`ItemMisc玩偶_LuziOption${Key}${i}`] = `${layerName}`;
         pv[`ItemMisc玩偶_LuziSet${Key}${i}`] = `SourceCharacter给了DestinationCharacter一只可爱的${layerName}玩偶.`;
+        // ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
+        // ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
+        // ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只超厉害超威严bc第一的Cyäegha大人的眼线!",
+        // ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只超色气的PumpkinPie玩偶.",
     });
 
     return pv;
