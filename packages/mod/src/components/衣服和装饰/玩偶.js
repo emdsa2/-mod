@@ -67,6 +67,8 @@ const asset = {
         { Name: "彤酱", AllowTypes: { y: 4 } },
         { Name: "璃心", AllowTypes: { y: 5 } },
         { Name: "雫", AllowTypes: { y: 6 } },
+        { Name: "小狼", AllowTypes: { y: 7 } },
+        { Name: "小果", AllowTypes: { y: 8 } },
 
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
