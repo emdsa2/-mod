@@ -3,6 +3,8 @@ import { 保存制作物品, 读取制作物品 } from "../保存数据/保存�
 import { 设置高潮数据, 高潮数据开关 } from "../保存数据/保存高潮";
 import { flying_pig } from "./flying_pig";
 import { activityName, 动作数据管理 } from "../保存数据/保存动作";
+import { Path } from "@mod-utils/path";
+import log from "@mod-utils/log";
 
 const GUIScreen = {
     /** @type { Subscreen | null } */
@@ -20,13 +22,32 @@ const GUIScreen = {
             if (typeof PreferenceSubscreenExtensionsClear === "function") PreferenceSubscreenExtensionsClear();
             else PreferenceSubscreen = "";
         } else {
-            this.Current.load();
+            this._Current.load();
         }
     },
 };
 
 function getInputElementById(id) {
     return /** @type {HTMLInputElement | null}*/ (document.getElementById(id));
+}
+
+function ElementInputShowOrCreate(id, type, value, maxLength) {
+    const ele = getInputElementById(id);
+    if (ele) {
+        ele.hidden = false;
+    } else {
+        ElementCreateInput(id, type, value, maxLength);
+    }
+}
+
+function ElementTextAreaShowOrCreate(id, maxLength) {
+    const ele = getInputElementById(id);
+    if (ele) {
+        ele.hidden = false;
+        ele.maxLength = maxLength;
+    } else {
+        ElementCreateTextArea(id).maxLength = maxLength;
+    }
 }
 
 function 移除清空输入框(name) {
@@ -51,9 +72,7 @@ class Subscreen {
     exit() {
         GUIScreen.Current = null;
     }
-    unload() {
-        GUIScreen.Current = null;
-    }
+    unload() {}
 }
 
 class BaseSubscreen extends Subscreen {
@@ -77,9 +96,9 @@ class 自定义动作设置 extends BaseSubscreen {
     }
 
     run() {
-        DrawImageResize("https://emdsa2.github.io/-mod/image/动作拓展设置.jpg", 0, 0, 2000, 1000);
-        DrawImageResize("https://emdsa2.github.io/-mod/image/条线.png", 0, 0, 2000, 1000);
-        DrawImageResize("https://emdsa2.github.io/-mod/image/返回白.png", 114, 75, 90, 90);
+        DrawImageResize(Path.resolve("image/选择界面.png"), 0, 0, 2000, 1000);
+        DrawImageResize(Path.resolve("image/条线.png"), 0, 0, 2000, 1000);
+        DrawImageResize(Path.resolve("image/返回白.png"), 114, 75, 90, 90);
         DrawText(`- 自定义动作设置 -`, 1000, 125, "Black");
 
         DrawCharacter(Player, 370, 50, 0.9, false); // 绘制主要标签和玩家
@@ -119,7 +138,7 @@ class 自定义动作设置 extends BaseSubscreen {
         };
 
         if (MouseIn(80, 210, 160, 100)) {
-            DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 232, 90, 50);
+            DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 232, 90, 50);
             DrawText(`动作`, 220, 260, "White");
         } else {
             if (this.当前界面 !== `动作`) {
@@ -128,7 +147,7 @@ class 自定义动作设置 extends BaseSubscreen {
         }
 
         if (MouseIn(80, 380, 160, 100)) {
-            DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 399, 90, 50);
+            DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 399, 90, 50);
             DrawText(`文本`, 220, 426.67, "White");
         } else {
             if (this.当前界面 !== `文本`) {
@@ -137,10 +156,10 @@ class 自定义动作设置 extends BaseSubscreen {
         }
 
         if (this.当前界面 == `动作`) {
-            ElementCreateInput("笨蛋Luzi_activityName", "text", "", "20"); // 创建一个新的文本输入元素
+            ElementInputShowOrCreate("笨蛋Luzi_activityName", "text", "", "20"); // 创建一个新的文本输入元素
             ElementPosition("笨蛋Luzi_activityName", 1260, 250, 400); // 特定位置绘制一个输入框
             DrawText(`动作名字:`, 960, 260, "White"); // 绘制一个文本元素
-            DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 232, 90, 50);
+            DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 232, 90, 50);
             DrawText(`动作`, 220, 260, "White");
             if (this.单双 === "👤") {
                 DrawButton(1500, 200, 90, 90, "👤", "White", "");
@@ -162,7 +181,7 @@ class 自定义动作设置 extends BaseSubscreen {
         }
 
         if (this.当前界面 == `文本`) {
-            DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 399, 90, 50);
+            DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 399, 90, 50);
             DrawText(`文本`, 220, 426.67, "White");
             if (this.单双 === "👤") {
                 if (this.isme === "👈") {
@@ -182,8 +201,7 @@ class 自定义动作设置 extends BaseSubscreen {
                 // document.getElementById("笨蛋Luzi_targetSelfText").value
 
                 if (this.isme === "👉") {
-                    ElementCreateTextArea("笨蛋Luzi_targetText");
-                    document.getElementById("笨蛋Luzi_targetText").setAttribute("maxLength", 1000);
+                    ElementTextAreaShowOrCreate("笨蛋Luzi_targetText", 1000);
                     ElementPosition("笨蛋Luzi_targetText", 1310, 650, 850, 480); // 特定位置绘制一个输入框
 
                     DrawText(`对别人使用动作的文本:`, 1100, 360, "White"); // 绘制一个文本元素
@@ -197,16 +215,14 @@ class 自定义动作设置 extends BaseSubscreen {
                 }
             }
             if (this.单双 === "👥") {
-                ElementCreateTextArea("笨蛋Luzi_targetSelfText");
-                document.getElementById("笨蛋Luzi_targetSelfText").setAttribute("maxLength", 1000);
+                ElementTextAreaShowOrCreate("笨蛋Luzi_targetSelfText", 1000);
                 ElementPosition("笨蛋Luzi_targetSelfText", 1310, 300, 800, 380); // 特定位置绘制一个输入框
                 DrawText(`对自己使用动作的文本:`, 1100, 80, "White"); // 绘制一个文本元素
                 DrawButton(1730, 135, 80, 60, "👈", "White", "");
                 DrawButton(1860, 135, 80, 60, "👉", "White", "");
                 DrawButton(1730, 220, 80, 60, "🚻", "White", "");
 
-                ElementCreateTextArea("笨蛋Luzi_targetText");
-                document.getElementById("笨蛋Luzi_targetText").setAttribute("maxLength", 1000);
+                ElementTextAreaShowOrCreate("笨蛋Luzi_targetText", 1000);
                 ElementPosition("笨蛋Luzi_targetText", 1310, 790, 800, 380); // 特定位置绘制一个输入框
                 DrawText(`对别人使用动作的文本:`, 1100, 560, "White"); // 绘制一个文本元素
                 DrawButton(1730, 635, 80, 60, "👈", "White", "");
@@ -245,7 +261,7 @@ class 自定义动作设置 extends BaseSubscreen {
         }
 
         if (MouseIn(80, 710, 160, 100)) {
-            DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 730, 90, 50);
+            DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 730, 90, 50);
             DrawText(`删除`, 220, 760, "White");
         } else {
             if (this.当前界面 !== `删除`) {
@@ -254,11 +270,12 @@ class 自定义动作设置 extends BaseSubscreen {
         }
 
         if (this.当前界面 == `删除`) {
-            DrawImageResize("https://emdsa2.github.io/-mod/image/白箭头右.png", 270, 730, 90, 50);
+            DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 730, 90, 50);
             DrawText(`删除`, 220, 760, "White");
 
             DrawText(`删除已有动作:`, 1000, 260, "White"); // 绘制一个文本元素
-            this.动作 = ActivityFemale3DCGOrdering.filter((item) => item.includes("笨蛋笨Luzi_"));
+            this.动作 = Object.keys(动作数据管理()?.data || {});
+            this.当前动作索引 = Math.min(this.当前动作索引, this.动作.length - 1);
             DrawBackNextButton(900, 325, 400, 64, this.动作[this.当前动作索引], "White", "");
             DrawButton(1360, 325, 100, 64, "🚮", "White", "");
 
@@ -271,7 +288,7 @@ class 自定义动作设置 extends BaseSubscreen {
     click() {
         if (MouseIn(114, 75, 90, 90)) {
             动作数据管理()?.保存();
-            console.log("已存储进个人设置");
+            log.info("已存储进个人设置");
             this.exit();
         }
 
@@ -367,7 +384,7 @@ class 自定义动作设置 extends BaseSubscreen {
                 if (!ActivityFemale3DCGOrdering.includes(nName)) {
                     this.新建动作 = true;
                     动作数据管理()?.保存();
-                    console.log("已存储进个人设置");
+                    log.info("已存储进个人设置");
                 }
             }
             // Player.OnlineSettings.ECHO
@@ -400,15 +417,8 @@ class 自定义动作设置 extends BaseSubscreen {
                 );
             }
             if (MouseIn(1360, 325, 100, 64)) {
-                ActivityFemale3DCG = ActivityFemale3DCG.filter((obj) => obj.Name !== this.动作[this.当前动作索引]);
-                ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter(
-                    (item) => item !== this.动作[this.当前动作索引]
-                );
-                var regex2 = new RegExp(this.动作[this.当前动作索引] + "$");
-                ActivityDictionary = ActivityDictionary.filter((subArray) => !regex2.test(subArray[0]));
-
-                动作数据管理()?.保存();
-                console.log("已存储进个人设置");
+                动作数据管理()?.删除动作(this.动作[this.当前动作索引]);
+                log.info("已存储进个人设置");
             }
             if (MouseIn(1600, 720, 90, 90)) {
                 动作数据管理()?.清空();
@@ -428,8 +438,8 @@ class 高潮计数保留设置 extends BaseSubscreen {
         super(prev);
     }
     run() {
-        DrawImageResize("https://emdsa2.github.io/-mod/image/选择界面.png", 0, 0, 2000, 1000);
-        DrawImageResize("https://emdsa2.github.io/-mod/image/返回白.png", 114, 75, 90, 90);
+        DrawImageResize(Path.resolve("image/选择界面.png"), 0, 0, 2000, 1000);
+        DrawImageResize(Path.resolve("image/返回白.png"), 114, 75, 90, 90);
 
         DrawText(`- 杂项设置 -`, 1000, 125, "Black");
 
@@ -466,13 +476,13 @@ class 动作拓展设置 extends BaseSubscreen {
         super(prev);
     }
     run() {
-        DrawImageResize("https://emdsa2.github.io/-mod/image/选择界面.png", 0, 0, 2000, 1000);
-        DrawImageResize("https://emdsa2.github.io/-mod/image/返回白.png", 114, 75, 90, 90);
+        DrawImageResize(Path.resolve("image/选择界面.png"), 0, 0, 2000, 1000);
+        DrawImageResize(Path.resolve("image/返回白.png"), 114, 75, 90, 90);
         DrawText(`- 动作拓展设置 -`, 1000, 125, "Black");
 
-        DrawImageResize("https://emdsa2.github.io/-mod/image/界面选择.png", 0, 0, 2000, 1000);
+        DrawImageResize(Path.resolve("image/界面选择.png"), 0, 0, 2000, 1000);
 
-        DrawImageResize("https://emdsa2.github.io/-mod/image/界面缠绕.png", 0, 0, 2000, 1000);
+        DrawImageResize(Path.resolve("image/界面缠绕.png"), 0, 0, 2000, 1000);
 
         // DrawButton(900, 220, 360, 600, "", "#646464", "");
         if (MouseIn(317, 220, 360, 600)) {

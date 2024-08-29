@@ -66,15 +66,17 @@ export default function () {
             // 如果存在旧数据
             const { 高潮开关, 高潮次数 } = olddata;
             if (高潮开关 !== undefined || 高潮次数 !== undefined) {
+                console.log("迁移高潮数据");
                 data.设置值(olddata);
+                delete olddata["高潮开关"];
+                delete olddata["高潮次数"];
+                ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
             }
-            delete Player.OnlineSettings["ECHO"];
-            ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
         }
     });
 
     ModManager.hookFunction("ChatRoomRun", 1, (args, next) => {
-        if (data?.高潮开关) {
+        if (data?.高潮开关 && Player.ArousalSettings?.OrgasmCount !== undefined) {
             Player.ArousalSettings.OrgasmCount = data?.高潮次数;
         }
         next(args);

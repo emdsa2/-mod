@@ -2,6 +2,7 @@ import ModManager from "@mod-utils/ModManager";
 import { ModInfo } from "@mod-utils/rollupHelper";
 import ActivityManager from "@mod-utils/ActivityManager";
 import { load, save } from "./dataAccess";
+import { activities } from "../翻译/bc/LSCG";
 
 const dataKey = `ECHO${ModInfo.name}`;
 
@@ -26,16 +27,40 @@ class 动作数据 {
     }
 
     /**
+     * @param {ActivityData[]} acts
+     */
+    增加一组动作(acts) {
+        acts.forEach((act) => {
+            if (this.data[act.Name]) return;
+            if (!ActivityManager.checkActivityAvailability(activityName(act.Name))) return;
+            this.data[act.Name] = act;
+            this.注册动作(act);
+        });
+        this.保存();
+    }
+
+    /**
      * @param {ActivityData} act
      * @returns {boolean} 如果添加成功返回true
      */
     增加动作(act) {
         if (this.data[act.Name]) return false;
-        if (ActivityManager.checkActivityAvailability(activityName(act.Name))) return false;
+        if (!ActivityManager.checkActivityAvailability(activityName(act.Name))) return false;
         this.data[act.Name] = act;
         this.注册动作(act);
         this.保存();
         return true;
+    }
+
+    /**
+     * @param {string} actName
+     */
+    删除动作(actName) {
+        const name = activityName(actName);
+        ActivityFemale3DCG = ActivityFemale3DCG.filter((act) => act.Name !== name);
+        ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter((act) => act !== name);
+        delete this.data[actName];
+        this.保存();
     }
 
     /**
@@ -85,6 +110,51 @@ let data = undefined;
 export default function () {
     ModManager.afterPlayerLogin(() => {
         data = new 动作数据();
+
+        const olddata = /** @type {any} */ (Player.OnlineSettings).ECHO;
+        if (olddata) {
+            // 如果存在旧数据
+            const { 炉子ActivityFemale3DCG, 炉子ActivityDictionary } = olddata;
+            if (炉子ActivityFemale3DCG !== undefined && 炉子ActivityDictionary !== undefined) {
+                console.log("迁移动作数据");
+                try {
+                    /** @type {Activity[]} */
+                    let decompressedActivity = JSON.parse(LZString.decompressFromUTF16(炉子ActivityFemale3DCG));
+                    /** @type {[string,string][]} */
+                    let decompressedDictionary = JSON.parse(LZString.decompressFromUTF16(炉子ActivityDictionary));
+
+                    const oldPrefix = "笨蛋笨Luzi_";
+
+                    /** @type {ActivityData[]} */
+                    const resultActivity = [];
+                    decompressedActivity.forEach((act) => {
+                        if (ActivityManager.checkActivityAvailability(act.Name)) {
+                            resultActivity.push({
+                                Name: act.Name.startsWith(oldPrefix) ? act.Name.slice(oldPrefix.length) : act.Name,
+                                Target: act.Target[0] || "",
+                                TargetSelf: act.TargetSelf[0] || "",
+                            });
+                        }
+                    });
+
+                    resultActivity.forEach((data) => {
+                        const selfdialog = decompressedDictionary.find(
+                            ([k, v]) => k === `ChatSelf-${data.TargetSelf}-${oldPrefix}${data.Name}`
+                        );
+                        if (selfdialog) data.DialogSelf = selfdialog[1];
+                        const targetdialog = decompressedDictionary.find(
+                            ([k, v]) => k === `ChatOther-${data.Target}-${oldPrefix}${data.Name}`
+                        );
+                        if (selfdialog) data.Dialog = targetdialog[1];
+                    });
+
+                    data.增加一组动作(resultActivity);
+                    delete olddata["炉子ActivityFemale3DCG"];
+                    delete olddata["炉子ActivityDictionary"];
+                    ServerAccountUpdate.QueueData({ OnlineSettings: Player.OnlineSettings });
+                } catch (e) {}
+            }
+        }
     });
 }
 

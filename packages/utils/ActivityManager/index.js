@@ -20,7 +20,7 @@ export default class ActivityManager {
      * @returns {boolean}
      */
     static checkActivityAvailability(name) {
-        return ActivityFemale3DCGOrdering.includes(/** @type {ActivityName}*/ (name));
+        return !ActivityFemale3DCGOrdering.includes(/** @type {ActivityName}*/ (name));
     }
 
     /**

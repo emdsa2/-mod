@@ -1346,7 +1346,7 @@ const activities = [
     },
     {
         activity: {
-            Name: "揉搓乳头",
+            Name: "揉搓阴环",
             Prerequisite: ["TargetHasItemVulva"],
             MaxProgress: 50,
             Target: [],
@@ -1354,7 +1354,7 @@ const activities = [
         },
         useImage: "Wiggle",
         labelSelf: {
-            CN: "揉搓乳头",
+            CN: "揉搓阴环",
             EN: "Rub Nipples",
         },
         dialogSelf: {
