@@ -20,9 +20,10 @@ export function setupLoad(criteria) {
     (async () => {
         await sleepUntil(() => criteria());
 
+        const start = Date.now();
         log.info(`开始加载`);
         queueLoaded = true;
         while (registerQueue.length > 0) registerQueue.shift()();
-        log.info(`加载完成`);
+        log.info(`加载完成 ${Date.now() - start}ms`);
     })();
 }

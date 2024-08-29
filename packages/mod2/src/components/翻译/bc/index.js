@@ -25,10 +25,10 @@ function tryReplaceWithNames(key) {
  * @returns {string}
  */
 function replaceTranslate(key) {
+    if (!key) return key;
+
     if (TranslationLanguage !== "CN" && TranslationLanguage !== "TW") return key;
-
     key = tryReplaceWithNames(key);
-
     return translations[key] || key;
 }
 
