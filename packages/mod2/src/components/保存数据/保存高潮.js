@@ -3,12 +3,17 @@ import { load, save } from "./dataAccess";
 
 class 高潮数据 {
     constructor() {
+        /** @type {boolean} */
         this.高潮开关 = false;
+        /** @type {number} */
         this.高潮次数 = 0;
 
+        /** @type {{高潮开关:boolean, 高潮次数:number }} */
         const data = load(高潮数据.name);
-        this.高潮开关 = data.高潮开关 || this.高潮开关;
-        this.高潮次数 = data.高潮次数 || this.高潮次数;
+        if (data) {
+            this.高潮开关 = data.高潮开关;
+            this.高潮次数 = data.高潮次数;
+        }
     }
 
     /**
@@ -18,8 +23,8 @@ class 高潮数据 {
      * @param {number} [param0.高潮次数] 高潮次数
      */
     设置值({ 高潮开关, 高潮次数 } = {}) {
-        this.高潮开关 = 高潮开关 || this.高潮开关;
-        this.高潮次数 = 高潮次数 || this.高潮次数;
+        if (高潮开关 !== undefined) this.高潮开关 = 高潮开关;
+        if (高潮次数 !== undefined) this.高潮次数 = 高潮次数;
         this.保存();
     }
 
@@ -53,6 +58,7 @@ export function 设置高潮数据(param0) {
     data?.设置值(param0);
 }
 
+/** @returns {boolean} */
 export function 高潮数据开关() {
     return data?.data().高潮开关;
 }
