@@ -32,6 +32,7 @@ export default class ActivityManager {
         const copyAct = { ...act };
         pushLoad(() => {
             copyAct.activity.Prerequisite = enlistUnamedPrereq(copyAct.activity.Name, copyAct.activity.Prerequisite);
+            copyAct.activity.ActivityID = -1;
 
             ActivityFemale3DCG.push(/** @type {Activity}*/ (copyAct.activity));
             ActivityFemale3DCGOrdering.push(/** @type {ActivityName}*/ (copyAct.activity.Name));

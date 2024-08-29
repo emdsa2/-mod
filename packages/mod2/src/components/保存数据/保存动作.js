@@ -1,10 +1,6 @@
 import ModManager from "@mod-utils/ModManager";
-import { ModInfo } from "@mod-utils/rollupHelper";
 import ActivityManager from "@mod-utils/ActivityManager";
 import { load, save } from "./dataAccess";
-import { activities } from "../翻译/bc/LSCG";
-
-const dataKey = `ECHO${ModInfo.name}`;
 
 /**
  * @typedef { {Name:string, Target:string, TargetSelf?: string, Dialog?:string, DialogSelf?:string} } ActivityData
@@ -57,8 +53,7 @@ class 动作数据 {
      */
     删除动作(actName) {
         const name = activityName(actName);
-        ActivityFemale3DCG = ActivityFemale3DCG.filter((act) => act.Name !== name);
-        ActivityFemale3DCGOrdering = ActivityFemale3DCGOrdering.filter((act) => act !== name);
+        ActivityManager.removeCustomActivity(name);
         delete this.data[actName];
         this.保存();
     }
