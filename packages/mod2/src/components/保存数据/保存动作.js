@@ -1,6 +1,7 @@
 import ModManager from "@mod-utils/ModManager";
 import ActivityManager from "@mod-utils/ActivityManager";
 import { load, save } from "./dataAccess";
+import log from "@mod-utils/log";
 
 /**
  * @typedef { {Name:string, Target:string, TargetSelf?: string, Dialog?:string, DialogSelf?:string} } ActivityData
@@ -63,6 +64,10 @@ class 动作数据 {
      * @param {ActivityData} act
      */
     注册动作(act) {
+        if (!act.Name) {
+            log.warn(`动作名称为空 : ${JSON.stringify(act)}`);
+        }
+
         /** @type { ActivityManagerInterface.ICustomActivity } */
         const nAct = {
             activity: {

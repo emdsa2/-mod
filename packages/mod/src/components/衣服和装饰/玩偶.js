@@ -147,8 +147,11 @@ const cnDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
         if (i === 0) return;
         const layerName = layerNames[`${Name}${i}`];
         if (!layerName) return;
-        pv[`ItemMisc玩偶_LuziOption${Key}${i}`] = `${layerName}`;
-        pv[`ItemMisc玩偶_LuziSet${Key}${i}`] = `SourceCharacter给了DestinationCharacter一只可爱的${layerName}玩偶.`;
+        const keyOption = `ItemMisc玩偶_LuziOption${Key}${i}`;
+        const keySet = `ItemMisc玩偶_LuziSet${Key}${i}`;
+        if (typeof pv[keyOption] !== "string") pv[keyOption] = `${layerName}`;
+        if (typeof pv[keySet] !== "string")
+            pv[keySet] = `SourceCharacter给DestinationCharacter一个可爱的${layerName}玩偶.`;
     });
 
     return pv;
@@ -168,8 +171,11 @@ const enDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
         if (i === 0) return;
         const layerName = layerNames[`${Name}${i}`];
         if (!layerName) return;
-        pv[`ItemMisc玩偶_LuziOption${Key}${i}`] = `${layerName}`;
-        pv[`ItemMisc玩偶_LuziSet${Key}${i}`] = `SourceCharacter gives DestinationCharacter a cute ${layerName} doll.`;
+        const keyOption = `ItemMisc玩偶_LuziOption${Key}${i}`;
+        const keySet = `ItemMisc玩偶_LuziSet${Key}${i}`;
+        if (typeof pv[keyOption] !== "string") pv[keyOption] = `${layerName}`;
+        if (typeof pv[keySet] !== "string")
+            pv[keySet] = `SourceCharacter gives DestinationCharacter a cute ${layerName} doll.`;
     });
 
     return pv;
