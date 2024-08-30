@@ -45,29 +45,33 @@ const groups = [
             ],
             Color: [
                 "Default",
-                "#cccccc",
-                "#aaaaaa",
-                "#888888",
-                "#666666",
-                "#444444",
-                "#222222",
-                "#aa8080",
-                "#80aa80",
-                "#8080aa",
-                "#aaaa80",
-                "#80aaaa",
-                "#aa80aa",
-                "#cc3333",
-                "#33cc33",
-                "#3333cc",
-                "#cccc33",
-                "#33cccc",
-                "#cc33cc",
             ],
         },
         description: {
-            CN: "🍔鞭痕测试",
-            EN: "🍔鞭痕测试",
+            CN: "🍔鞭痕",
+            EN: "🍔鞭痕",
+        },
+    },
+    {
+        groupDef: {
+            Group: "动物身体_Luzi",
+            Priority: 10,
+            Clothing: true,
+            Default: false,
+            Random: false,
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: [
+                "Default",
+            ],
+        },
+        description: {
+            CN: "🍔动物身体",
+            EN: "🍔动物身体",
         },
     },
 ];
