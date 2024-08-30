@@ -135,20 +135,20 @@ const extended = {
 
 const descriptions = {
     CN: {
-        SuitLower鱼鱼尾_LuziSelectBase: "选择配置",
-        SuitLower鱼鱼尾_LuziSelect鱼尾装饰: "设置",
-        SuitLower鱼鱼尾_LuziModule鱼尾装饰: "鱼尾装饰",
-        SuitLower鱼鱼尾_LuziOptionq0: "无",
-        SuitLower鱼鱼尾_LuziOptionq1: "皮带",
-        SuitLower鱼鱼尾_LuziOptionq2: "珍珠项链",
+        动物身体_Luzi鱼鱼尾_LuziSelectBase: "选择配置",
+        动物身体_Luzi鱼鱼尾_LuziSelect鱼尾装饰: "设置",
+        动物身体_Luzi鱼鱼尾_LuziModule鱼尾装饰: "鱼尾装饰",
+        动物身体_Luzi鱼鱼尾_LuziOptionq0: "无",
+        动物身体_Luzi鱼鱼尾_LuziOptionq1: "皮带",
+        动物身体_Luzi鱼鱼尾_LuziOptionq2: "珍珠项链",
     },
     EN: {
-        SuitLower鱼鱼尾_LuziSelectBase: "Select Configuration",
-        SuitLower鱼鱼尾_LuziSelect鱼尾装饰: "Settings",
-        SuitLower鱼鱼尾_LuziModule鱼尾装饰: "Decorations",
-        SuitLower鱼鱼尾_LuziOptionq0: "None",
-        SuitLower鱼鱼尾_LuziOptionq1: "Belt",
-        SuitLower鱼鱼尾_LuziOptionq2: "Pearl Necklace",
+        动物身体_Luzi鱼鱼尾_LuziSelectBase: "Select Configuration",
+        动物身体_Luzi鱼鱼尾_LuziSelect鱼尾装饰: "Settings",
+        动物身体_Luzi鱼鱼尾_LuziModule鱼尾装饰: "Decorations",
+        动物身体_Luzi鱼鱼尾_LuziOptionq0: "None",
+        动物身体_Luzi鱼鱼尾_LuziOptionq1: "Belt",
+        动物身体_Luzi鱼鱼尾_LuziOptionq2: "Pearl Necklace",
     },
 };
 
