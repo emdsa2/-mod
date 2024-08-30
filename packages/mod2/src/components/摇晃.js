@@ -7,7 +7,7 @@ import ChatRoomOrder from "@mod-utils/ChatRoomOrder";
 * @param {string} item2 - 道具名称 2
 */// @ts-ignore
 function shakeTail(player, itemgroup, item1, item2) {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 2; i++) {
         setTimeout(() => {
             if (InventoryGet(player, itemgroup).Asset.Name === item1) {
                 let propColor = InventoryGet(player, itemgroup).Color;
