@@ -5,7 +5,7 @@ import { translation as FBC } from "./FBC";
 import { activities, translation as LSCG } from "./LSCG";
 import { translation as MBS } from "./MBS";
 import { translation as WCE } from "./WCE";
-import { translationsDTF } from "./regexRep";
+import { translationsDTF, act_dialogs, pronouns } from "./regexRep";
 
 const translations = [BCAR, BCX, FBC, LSCG, MBS, WCE].reduce((pv, cv) => Object.assign(pv, cv), {});
 
@@ -52,5 +52,31 @@ export function setup() {
         const ret = next(args);
         if (TranslationLanguage === "CN" || TranslationLanguage === "TW") return activities[ret] || ret;
         return ret;
+    });
+
+    ModManager.hookFunction("ChatRoomMessage", 0, (args, next) => {
+        if (TranslationLanguage === "CN" || TranslationLanguage === "TW") {
+            const { Content, Type, Dictionary } = args[0];
+            if (Content === "Beep" && Type === "Action") {
+                // 旧式BCX自定义动作
+                const target = /** @type {TextDictionaryEntry | undefined}*/ (
+                    Dictionary.find((item) => {
+                        const dtag = /** @type {TextDictionaryEntry}*/ (item);
+                        return dtag.Tag === "msg";
+                    })
+                );
+
+                if (target) {
+                    act_dialogs.forEach(({ regex, replacement }) => {
+                        target.Text = target.Text.replace(regex, replacement);
+                    });
+                    pronouns.forEach(({ regex, replacement }) => {
+                        target.Text = target.Text.replace(regex, replacement);
+                    });
+                }
+            }
+        }
+
+        next(args);
     });
 }
