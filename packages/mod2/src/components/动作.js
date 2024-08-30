@@ -1021,24 +1021,6 @@ const activities = [
     },
     {
         activity: {
-            Name: "摇晃尾巴",
-            Prerequisite: ["TargetHasTail"],
-            MaxProgress: 50,
-            Target: [],
-            TargetSelf: ["ItemButt"],
-        },
-        useImage: "Wiggle",
-        labelSelf: {
-            CN: "摇晃尾巴",
-            EN: "Wag Tail",
-        },
-        dialogSelf: {
-            CN: "SourceCharacter摇晃PronounPossessive的尾巴.",
-            EN: "SourceCharacter wags PronounPossessive tail.",
-        },
-    },
-    {
-        activity: {
             Name: "竖起尾巴",
             Prerequisite: ["TargetHasCatTail"],
             MaxProgress: 50,
