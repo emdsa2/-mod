@@ -34,6 +34,7 @@ function getInputElementById(id) {
 function ElementInputShowOrCreate(id, type, value, maxLength) {
     const ele = getInputElementById(id);
     if (ele) {
+        // delete ele.style.display;
         ele.hidden = false;
     } else {
         ElementCreateInput(id, type, value, maxLength);
@@ -43,6 +44,7 @@ function ElementInputShowOrCreate(id, type, value, maxLength) {
 function ElementTextAreaShowOrCreate(id, maxLength) {
     const ele = getInputElementById(id);
     if (ele) {
+        // delete ele.style.display;
         ele.hidden = false;
         ele.maxLength = maxLength;
     } else {
@@ -53,7 +55,8 @@ function ElementTextAreaShowOrCreate(id, maxLength) {
 function 移除清空输入框(name) {
     const ele = getInputElementById(name);
     if (ele) {
-        ele.style.display = "none"; // 移除输入框
+        // ele.style.display = "none"; // 移除输入框
+        ele.hidden = true;
         ele.value = ""; // 清空输入框
     }
 }
@@ -61,7 +64,8 @@ function 移除清空输入框(name) {
 function 移除清空输入框不清空(name) {
     const ele = getInputElementById(name);
     if (ele) {
-        ele.style.display = "none"; // 移除输入框
+        // ele.style.display = "none"; // 移除输入框
+        ele.hidden = true;
     }
 }
 
@@ -185,7 +189,7 @@ class 自定义动作设置 extends BaseSubscreen {
             DrawText(`文本`, 220, 426.67, "White");
             if (this.单双 === "👤") {
                 if (this.isme === "👈") {
-                    ElementCreateTextArea("笨蛋Luzi_targetSelfText");
+                    ElementTextAreaShowOrCreate("笨蛋Luzi_targetSelfText", 1000);
                     document.getElementById("笨蛋Luzi_targetSelfText").setAttribute("maxLength", 1000);
                     ElementPosition("笨蛋Luzi_targetSelfText", 1310, 650, 850, 480); // 特定位置绘制一个输入框
 
