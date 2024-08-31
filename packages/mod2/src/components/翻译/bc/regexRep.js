@@ -223,11 +223,11 @@ const translationsDTF = [
     },
     {
         regex: /This rule prevents (.+) from adding characters with the set minimum role or a higher one to their bondage club blacklist and ghostlist\./,
-        replacement: "此规则防止 $1 将设置的最低角色或更高角色的角色添加到她的束缚俱乐部黑名单和幽灵列表中.",
+        replacement: "此规则防止 $1 将设置的最低角色或更高角色的角色添加到她的束缚俱乐部黑名单和忽视列表中.",
     },
     {
         regex: /This rule prevents (.+) from adding characters with a role lower than a BCX Mistress to their bondage club whitelist\./,
-        replacement: "此规则防止 $1 将低于 BCX Mistress 的角色的角色添加到她的绑缚俱乐部白名单中.",
+        replacement: "此规则防止 $1 将低于 BCX 女主人 的角色的角色添加到她的绑缚俱乐部白名单中.",
     },
     {
         regex: /This rule forbids (.+) to use any kind of lock on her own body. \(Others still can add locks on her items normally\)/,
@@ -333,7 +333,7 @@ const translationsDTF = [
     {
         regex: /This rule prevents (.+) from seeing their own arousal meter\, even while it is active and working\. This means\, that it is a surprise to them\, when the orgasm \(quick\-time event\) happens. Does not effect other characters being able to see the meter\, if club settings allow that\./,
         replacement:
-            "此规则阻 $1 查看自己的性唤起仪表, 即使它处于活动和工作状态. 这意味着对于她来说, 当性高潮(快感事件)发生时, 这将是一个惊喜. 如果俱乐部设置允许, 不影响其他角色能够看到仪表.",
+            "此规则阻止 $1 查看自己的性唤起仪表, 即使它处于活动和工作状态. 这意味着对于她来说, 当性高潮(快感事件)发生时, 这将是一个惊喜. 如果俱乐部设置允许, 不影响其他角色能够看到仪表.",
     },
     {
         regex: /This rule impacts (.+)\'s ability to control their orgasms\, independent of items\. There are three control options\, which are\: Never cum \(always edge, the bar never reaches 100\%\)\, force into ruined orgasm \(orgasm screen starts, but doesn't let her actually cum\) and prevent resisting orgasm \(able to enter orgasm screen, but unable to resist it\)\./,
@@ -446,7 +446,7 @@ const translationsDTF = [
     },
     {
         regex: /This rule observes (.+)\, logging it as a rule violation if the club was previously entered at least once without BCX active\./,
-        replacement: "此规则观察 $1, 如果至少有一次在未激活 BCX 的情况下进入俱乐部, 则将其记录为违规.",
+        replacement: "此规则监视 $1, 如果至少有一次在未激活 BCX 的情况下进入俱乐部, 则将其记录为违规.",
     },
     {
         regex: /This rule reminds or tells (.+) one of the recorded sentences at random in a settable interval\. Only (.+) can see the set message and it is only shown if in a chat room\./,
@@ -523,7 +523,7 @@ const translationsDTF = [
     {
         regex: /This rule forces (.+) to talk as if they were gagged\, automatically garbling all of their speech\. This rule does not affect OOC\. This rule only affects whispers if the rule \"Garble whispers while gagged\" is also in effect\./,
         replacement:
-            "此规则强制 $1 以口球的方式交谈, 自动压制她的所有言论. 此规则不影响 OOC. 仅当规则 '口球时扭曲私语' 也生效时, 此规则才会影响私语.",
+            "此规则强制 $1 以堵嘴的方式交谈, 自动失真她的所有话语. 此规则不影响 OOC. 仅当规则 '口球时扭曲私语' 也生效时, 此规则才会影响私语.",
     },
     { regex: /(.+) has too much willpower to let you in\.\.\./, replacement: "$1 拥有太多意志力不让你进入..." },
     {
@@ -799,7 +799,7 @@ const act_dialogs = [
     },
     {
         regex: /(.+) lets out a low moan as (.+) muscles relax and (.+) starts to drop\.\.\./,
-        replacement: "$2的肌肉放松时,$1发出一声低沉的呻吟,$3开始下垂……",
+        replacement: "$2的肌肉松弛,并发出一声低吟,她的肢体开始逐渐下垂……",
     },
     {
         regex: /(.+)'s eyes flutter as (.+) fights to keep them open\.\.\./,
@@ -926,11 +926,11 @@ const act_dialogs = [
     },
     {
         regex: /(.+) gulps thankfully as the threat to (.+) airway is removed\./,
-        replacement: "$1感激地吞咽着, 当对$2气道的威胁消除时.", // 救救
+        replacement: "当折磨$1许久的窒息感消失后,她庆幸地长舒了一口气.", // 救救
     },
     {
         regex: /(.+)'s eyes start to roll back, gasping and choking as (.+) collar presses in tightly and completely with a menacing hiss\./,
-        replacement: "$1的眼睛开始翻白, $2的项圈紧紧收紧, 发出威胁的嘶嘶声, 喘息和窒息.", // 救救
+        replacement: "$1的眼睛开始翻白,她的颈部被项圈死死勒入肉中,伴随着痛苦的喘息与项圈的收紧声,她再也无法获取一丁点空气.", // 救救
     },
     {
         regex: /(.+)'s eyes flutter with a groan, unable to get any air to (.+) lungs\./,
@@ -973,7 +973,7 @@ const act_dialogs = [
     },
     {
         regex: /(.+) reboots, blinking and gasping as (.+) regains (.+) senses\./,
-        replacement: "$1重新启动, 眨眼喘息, 当$2重新获得$3感官时.", // 救救
+        replacement: "$1重新启动, 眨眼并喘息着, 当$2重新获得$3感官时.", // 救救
     },
     {
         regex: /(.+) blinks, shaking (.+) head with confusion as (.+) regains (.+) senses\./,
@@ -991,7 +991,7 @@ const act_dialogs = [
     { regex: /(.+) frowns as (.+) is completely deafened\./, replacement: "$1皱着眉头, 因为$2完全失聪." },
     {
         regex: /(.+)'s eyes widen in a panic as (.+) muscles seize in place\./,
-        replacement: "$1恐慌地睁大眼睛, 当$2的肌肉僵硬时.",
+        replacement: "$1恐慌地睁大眼睛,她突然发现自己浑身僵硬.",
     },
     {
         regex: /(.+) is unable to fight the spell's hypnotizing influence, slumping weakly as (.+) eyes go blank\./,
@@ -1000,7 +1000,7 @@ const act_dialogs = [
     { regex: /(.+)'s protests suddenly fall completely silent\./, replacement: "$1的抗议突然完全沉默了." },
     {
         regex: /(.+)'s mouth moves in protest but not a single sound escapes\./,
-        replacement: "$1的嘴在抗议, 但没有任何声音逃脱.",
+        replacement: "$1的嘴巴动了动以示抗议, 但没有发出任何声音",
     },
     {
         regex: /(.+) succumbs to the spell's overwhelming pressure, (.+) eyes closing as (.+) falls unconscious\./,
@@ -1350,7 +1350,7 @@ const act_dialogs = [
     },
     {
         regex: /The curse on (.+)\'s (.+) wakes up and the item reappears\./,
-        replacement: "$1诅咒苏醒,$2再次出现.",
+        replacement: "$1上的诅咒苏醒,$2再次浮现.",
     },
     {
         regex: /tried to use a remote control on (.+) own body\, which was forbidden\./,
