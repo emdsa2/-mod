@@ -16,8 +16,9 @@ type CustomGroupBodyName =
     | "Liquid2_Luzi"
     | "BodyMarkings2_Luzi"
     | "动物身体_Luzi"
+    | "长袖子_Luzi"
     | "身体痕迹_Luzi";
-    
+
 
 /** 扩展身体组名称 */
 type CustomGroupName = AssetGroupItemName | CustomGroupBodyName | AssetGroupScriptName;
@@ -56,12 +57,12 @@ namespace _ {
 
     type GroupedAssetType = {
         [K in CustomGroupName]?: K extends AssetGroupItemName
-            ? CAssetDef.Item[]
-            : K extends CustomGroupBodyName
-            ? CAssetDef.Appearance[]
-            : K extends AssetGroupScriptName
-            ? CAssetDef.Script[]
-            : never;
+        ? CAssetDef.Item[]
+        : K extends CustomGroupBodyName
+        ? CAssetDef.Appearance[]
+        : K extends AssetGroupScriptName
+        ? CAssetDef.Script[]
+        : never;
     };
 }
 

@@ -74,6 +74,28 @@ const groups = [
             EN: "🍔动物身体",
         },
     },
+    {
+        groupDef: {
+            Group: "长袖子_Luzi",
+            Priority: 10,
+            Clothing: true,
+            Default: false,
+            Random: false,
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: [
+                "Default",
+            ],
+        },
+        description: {
+            CN: "🍔长袖子",
+            EN: "🍔长袖子",
+        },
+    },
 ];
 
 /** @type {CopyGroupInfo[]} */
