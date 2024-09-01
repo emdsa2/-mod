@@ -165,6 +165,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 2,
+            Block: [],
             ParentGroup: null,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
