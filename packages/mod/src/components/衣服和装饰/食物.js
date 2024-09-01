@@ -9,7 +9,7 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,
-            Effect: [E.BlockMouth],
+            Effect: [],
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.DEFAULT,
@@ -34,7 +34,7 @@ const assets = {
             Left: 0,
             Priority: 55,
             ParentGroup: null,
-            Effect: [E.BlockMouth],
+            Effect: [],
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.DEFAULT,
@@ -53,7 +53,7 @@ const assets = {
             Left: 0,
             Priority: 55,
             ParentGroup: null,
-            Effect: [E.BlockMouth],
+            Effect: [],
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.DEFAULT,
