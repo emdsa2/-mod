@@ -43,6 +43,7 @@ const asset = {
         { Name: "临", AllowTypes: { z: 9 } },
         { Name: "小安", AllowTypes: { z: 10 } },
         { Name: "Suki", AllowTypes: { z: 11 } },
+        { Name: "兔叽", AllowTypes: { z: 12 } },
 
         // Catnest
         { Name: "XinLian", AllowTypes: { c: 1 } },
@@ -69,12 +70,15 @@ const asset = {
         { Name: "雫", AllowTypes: { y: 6 } },
         { Name: "小狼", AllowTypes: { y: 7 } },
         { Name: "小果", AllowTypes: { y: 8 } },
+        { Name: "茗子", AllowTypes: { y: 8 } },
 
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
         { Name: "YouXiang", AllowTypes: { l: 2 } },
         { Name: "Lilian", AllowTypes: { l: 3 } },
         { Name: "泠雨", AllowTypes: { l: 4 } },
+        { Name: "墨芸", AllowTypes: { l: 5 } },
+        { Name: "poi", AllowTypes: { l: 6 } },
     ],
 };
 
