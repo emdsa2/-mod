@@ -32,7 +32,7 @@ const asset = {
         { Name: "Xin", AllowTypes: { s: 6 } },
 
         // 芷窝
-        { Name: "Ttong", AllowTypes: { z: 1 } },
+        { Name: "芷童", AllowTypes: { z: 1 } },
         { Name: "ZforShort", AllowTypes: { z: 2 } },
         { Name: "Gin", AllowTypes: { z: 3 } },
         { Name: "Echo", AllowTypes: { z: 4 } },
