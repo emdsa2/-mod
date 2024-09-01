@@ -48,5 +48,5 @@ const activities = [
 ];
 
 export default function () {
-    ActivityManager.addCustomActivities(activities);
+    // ActivityManager.addCustomActivities(activities);
 }
