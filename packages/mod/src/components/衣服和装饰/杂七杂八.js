@@ -115,38 +115,6 @@ const assets = {
             ],
         },
     ],
-    Bracelet: [
-        {
-            Name: "广袖_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-            ParentGroup: null,
-            PoseMapping: {
-                BackBoxTie: "Hide",
-                BackCuffs: "Hide",
-                BackElbowTouch: "Hide",
-                OverTheHead: "Hide",
-                Yoked: "Yoked",
-                Hogtied: "Hide",
-                AllFours: "Hide",
-            },
-            Layer: [
-                {
-                    Name: "袖子",
-                    Priority: 36,
-                },
-                {
-                    Name: "渐变",
-                    Priority: 35,
-                },
-                {
-                    Name: "花纹",
-                    Priority: 37,
-                },
-            ],
-        },
-    ],
     ItemHands: [
         {
             Name: "拳击手套_Luzi",
@@ -320,9 +288,6 @@ const translations = {
         Shoes: {
             鱼嘴高跟鞋_Luzi: "鱼嘴高跟鞋",
         },
-        Bracelet: {
-            广袖_Luzi: "广袖",
-        },
         ItemHands: {
             拳击手套_Luzi: "拳击手套",
         },
@@ -359,9 +324,6 @@ const translations = {
         },
         Shoes: {
             鱼嘴高跟鞋_Luzi: "Fish toe high heels",
-        },
-        Bracelet: {
-            广袖_Luzi: "Wide sleeve",
         },
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",
