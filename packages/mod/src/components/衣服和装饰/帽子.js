@@ -9,12 +9,12 @@ const assets = {
             Random: false,
             Top: -18,
             Left: 0,
-            DefaultColor: ["##660606","#000000","#C18A34","#CFAC68"],
+            DefaultColor: ["##660606", "#000000", "#C18A34", "#CFAC68"],
             Layer: [
                 {
                     Name: "帽顶",
                     Priority: 55,
-                
+
                 },
                 {
                     Name: "帽身",
