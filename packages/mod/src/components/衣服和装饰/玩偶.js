@@ -78,7 +78,7 @@ const asset = {
         { Name: "Lilian", AllowTypes: { l: 3 } },
         { Name: "泠雨", AllowTypes: { l: 4 } },
         { Name: "墨芸", AllowTypes: { l: 5 } },
-        { Name: "poi", AllowTypes: { l: 6 } },
+        { Name: "Poi", AllowTypes: { l: 6 } },
     ],
 };
 
