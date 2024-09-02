@@ -70,7 +70,7 @@ const asset = {
         { Name: "雫", AllowTypes: { y: 6 } },
         { Name: "小狼", AllowTypes: { y: 7 } },
         { Name: "小果", AllowTypes: { y: 8 } },
-        { Name: "茗子", AllowTypes: { y: 8 } },
+        { Name: "茗子", AllowTypes: { y: 9 } },
 
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
