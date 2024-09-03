@@ -73,11 +73,6 @@ const translation = {
     "Automatically clears the drawing cache every hour, preventing memory usage from growing out of control during long play sessions.":
         "每小时自动清除绘图缓存,防止在长时间游戏过程中内存使用量失控.",
     "Shows the current FPS in the top-left corner of the screen.": "在界面左上角显示当前FPS.",
-    "Limits the FPS to 10 in the background. This is useful for saving resources when you are not interacting with the game.":
-        "将后台中的FPS限制为10.当您不与游戏交互时,这对节省资源很有用.",
-    "Limits the FPS to 15. This is useful for saving resources.": "将FPS限制为15.这对于节省资源很有用.",
-    "Limits the FPS to 30. This is useful for saving resources.": "将FPS限制为30.这对于节省资源很有用.",
-    "Limits the FPS to 60. This is useful for saving resources.": "将FPS限制为60.这对于节省资源很有用.",
     "Check for FBC updates on startup.": "启动时检查FBC更新.",
     "Automatically re-enter your password after you disconnect from the game. For convenience or AFK. Requires the password for the current account to have been saved in the login screen. Passwords are saved in your browser's local storage in plain text.":
         "在您从游戏断开连接后,自动重新输入密码.方便或离开键盘.要求在登录界面中保存了当前帐户的密码.密码以纯文本形式保存在浏览器的本地存储中.",
@@ -103,16 +98,6 @@ const translation = {
     "This setting is temporary until BCX supports a focus mode rule.": "此设置在BCX支持焦点模式规则之前是临时的.",
     "Share a list of your installed addons with other FBC users in the room, visible via /versions chat command.":
         "与房间中的其他FBC用户共享您已安装插件的列表,可通过/versions聊天命令查看.",
-    "Load Bondage Club Extended. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.":
-        "加载Bondage Club Extended.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改.",
-    "Load the latest beta version of BCX. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.":
-        "加载BCX的最新测试版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改.",
-    "Load the latest stable version of EBCH. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.":
-        "加载EBCH的最新稳定版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改.",
-    "Load the latest stable version of MBS. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.":
-        "加载MBS的最新稳定版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改.",
-    "Load the latest stable version of LSCG. To see all details, see the link in sidiousious.gitlab.io/bce. This option always loads the latest version, which may change between refreshes.":
-        "加载LSCG的最新稳定版.要查看所有详细信息,请访问sidiousious.gitlab.io/bce中的链接.此选项始终加载最新版本,可能在刷新之间更改.",
 };
 
 export { translation };
