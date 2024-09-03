@@ -1,13 +1,12 @@
 const translationsDTF = [
     {
         regex: /Failed to get role data from (.+)\. This can be caused by missing permission to interact with their items\, the user having left the room meanwhile\, or the user not having the BC tab focused\./,
-        replacement:
-            "无法从 $1 获取角色数据. 这可能是由于缺少与其物品交互的权限, 用户已经离开房间, 或用户没有将 BC 标签页聚焦.",
+        replacement: "无法从 $1 获取角色数据.这可能是由于缺乏与其物品交互的权限、用户已离开房间,或者用户未将 BC 标签页聚焦."
     },
-    { regex: / Global\: Configuration for (.+) \-/, replacement: "- 全局: $1 的配置 -" },
-    { regex: /\- Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项: $1 的配置 -" },
+    { regex: / Global\: Configuration for (.+) \-/, replacement: "- 全局：$1 的配置 -" },
+    { regex: /\- Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项：$1 的配置 -" },
     { regex: /Dear (.+),/, replacement: "亲爱的 $1," },
-    { regex: / Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项: $1 的配置 -" },
+    { regex: / Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项：$1 的配置 -" },
     {
         regex: /\- Export \/ Import of Behaviour Log \- Configuration on (.+) \-/,
         replacement: "- 导出/导入 行为日志 - $1 上的配置 -",
@@ -313,7 +312,7 @@ const translationsDTF = [
     {
         regex: /This rule forbids (.+) to remove any items from her own body\. Other people can still remove them\. The rule has a toggle to optionally still allow to remove items which were given a low difficulty score by the original asset maker\, such as hand\-held items\, plushies\, etc\. This means that custom crafted properties given to an item such as \'decoy\' are not factored in\./,
         replacement:
-            "此规则禁 $1 从自己的身体上取下任何物品. 其他人仍然可以取下它们. 该规则具有一个切换按钮, 可以选择仍然允许取下原始资产制作者给予低难度评分的物品, 例如手持物品、毛绒玩具等. 这意味着赋予物品的自定义属性(例如“诱饵”)并未计入其中.",
+            "此规则禁 $1 从自己的身体上取下任何物品. 其他人仍然可以取下它们. 该规则具有一个切换按钮, 可以选择仍然允许取下原始资产制作者给予低难度评分的物品, 例如手持物品、毛绒玩具等. 这意味着赋予物品的自定义属性(例如\"诱饵\")并未计入其中.",
     },
     {
         regex: /This rule prevents (.+) from leaving the room they are currently inside while at least one character with the set minimum role or a higher one is present inside\. NOTE\: Careful when setting the minimum role too low\. If it is set to public for instance\, it would mean that (.+) can only leave the room when they are alone in it\./,
@@ -389,31 +388,31 @@ const translationsDTF = [
     {
         regex: /This rule forces (.+)\'s base game or BCX setting \'Keep all restraints when relogging\' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
         replacement:
-            "此规则将 $1 的基础游戏或 BCX 设置“重新登录时保留所有约束”强制设置为配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
+            "此规则将 $1 的基础游戏或 BCX 设置\"重新登录时保留所有约束\"强制设置为配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
     },
     {
         regex: /This rule forces (.+)\'s base game or BCX setting \'Garble chatroom names and descriptions while blind\' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
         replacement:
-            "此规则将 $1 的基础游戏或 BCX 设置“在失明时混淆聊天室名称和描述”强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
+            "此规则将 $1 的基础游戏或 BCX 设置\"在失明时混淆聊天室名称和描述\"强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
     },
     {
         regex: /This rule forces (.+)\'s base game setting \'Sensory deprivation setting\' to configurable value and prevents her from changing it\./,
-        replacement: "此规则将 $1 的基础游戏设置“感官剥夺设置”强制设置为可配置的值, 并防止她更改它.",
+        replacement: "此规则将 $1 的基础游戏设置\"感官剥夺设置\"强制设置为可配置的值, 并防止她更改它.",
     },
     {
         regex: /This rule forces (.+)\'s base game or BCX setting \'Prevent others from changing cosplay items\' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
         replacement:
-            "此规则将 $1 的基础游戏或 BCX 设置“防止其他人更改角色扮演服饰项目”强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
+            "此规则将 $1 的基础游戏或 BCX 设置\"防止其他人更改角色扮演服饰项目\"强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
     },
     {
         regex: /This rule forces (.+)\'s base game or BCX setting \'Allow safeword use\' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
         replacement:
-            "此规则将 $1 的基础游戏或 BCX 设置“允许使用安全词”强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
+            "此规则将 $1 的基础游戏或 BCX 设置\"允许使用安全词\"强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
     },
     {
         regex: /This rule forces (.+)\'s base game or BCX setting \'Cannot enter single\-player rooms when restrained\' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
         replacement:
-            "此规则将 $1 的基础游戏或 BCX 设置“受限时不能进入单人房间”强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
+            "此规则将 $1 的基础游戏或 BCX 设置\"受限时不能进入单人房间\"强制设置为可配置的值, 并防止她更改它. 还有一个选项, 可以将设置恢复到规则更改之前的状态.  恢复发生在规则变得不活跃时(例如通过切换或不满足的触发条件)或在删除规则时.",
     },
     {
         regex: /This rule sets (.+)\'s nickname \(replacing her name in most cases\) to any text entered in the rule config\, blocking changes to it from BC's nickname menu\. You can optionally choose whether the previous BC nickname will be restored while the rule is not in effect\./,
@@ -493,159 +492,186 @@ const translationsDTF = [
     {
         regex: /This rule forbids (.+) to use certain words in the chat\. The list of banned words can be configured\. Checks are not case sensitive \(forbidding \'no\' also forbids \'NO\' and \'No\'\)\. Doesn\'t affect emotes and OOC text\, but does affect whispers\./,
         replacement:
-            "此规则禁 $1 在聊天中使用特定的单词. 禁用单词的列表可以进行配置. 检查不区分大小写(禁用 'no' 也会禁用 'NO' 和 'No'). 不影响表情和 OOC 文本, 但会影响私语.",
+            "这个规则禁止 $1 在聊天中使用特定的单词.禁用的单词列表可以进行配置.检查时不区分大小写(禁用 'no' 也会禁用 'NO' 和 'No').这个规则不影响表情和 OOC 文本,但会影响私语."
     },
     {
         regex: /This rule forbids (.+) to send a message to all people inside a chat room\. Does not affect whispers or emotes\, but does affect OOC\./,
-        replacement: "此规则禁 $1 向聊天室内的所有人发送消息. 不影响私语或表情, 但会影响 OOC.",
+        replacement: "在聊天室里,你不能给所有人发消息,但可以私聊或用表情符号.这个规则也会影响到OOC.",
     },
     { regex: /(.+) can only say the custom name/, replacement: "$1 只能说出定制名称" },
     {
         regex: /This rule can set the time (.+) needs to leave the current room\, when items or a rule force her to leave it slowly\. The time can be set between 1 and 600 seconds \(10 mins\)\./,
         replacement:
-            "此规则可以设置 $1 在被物品或规则迫使她慢慢离开当前房间时需要的时间. 时间可以在 1 到 600 秒(10 分钟)之间设置.",
+            "这个规则可以设定一个时间,当物品或规则逼迫她慢慢离开当前房间时,需要等待的时间.设置的时间范围是1到600秒(10分钟)之间.",
     },
     {
         regex: /This rule forces (.+) to switch rooms from anywhere in the club to the chat room of the summoner after 15 seconds\. It works by sending a beep message with the set text or simply the word \'summon\' to (.+)\. Members who are allowed to summon (.+) can be set\. NOTES\: (.+) can always be summoned no matter if she has a leash or is prevented from leaving the room \(ignoring restraints or locked rooms\)\. However\, if the target room is full or locked\, she will end up in the lobby\. Summoning will not work if the room name is not included with the beep message\!/,
         replacement:
-            "此规则强制 $1 从俱乐部的任何地方切换到召唤者的聊天室, 时间为 15 秒. 它通过向 $2 发送一个带有设置文本或简单地包含单词 '召唤' 的蜂鸣消息来工作. 允许召唤 $3 的成员可以被设置. 注: 无论 $4 是否被束缚或禁止离开房间(忽略限制或锁定的房间), 她总是可以被召唤的. 但是, 如果目标房间已满或已锁定, 她将会进入大堂. 如果蜂鸣消息中不包含房间名, 召唤将无效!",
+            "这个规则要求在15秒内,$1必须从俱乐部的任何地方切换到召唤者的聊天室.它通过向$2发送一条带有设置文本或简单包含单词'召唤'的蜂鸣消息来实现.允许设置可以召唤$3的成员.注意：无论$4是否被束缚或禁止离开房间(忽略限制或锁定的房间),她总是可以被召唤.但是,如果目标房间已满或已锁定,她将会进入大堂.如果蜂鸣消息中没有包含房间名,那么召唤将无效！",
     },
     {
         regex: /This rule forbids (.+) to enter all rooms, that are not on an editable whitelist of still allowed ones\. NOTE\: As safety measure this rule is not in effect while the list is empty\. TIP\: This rule can be combined with the rule \"Forbid creating new rooms\"\./,
         replacement:
-            "此规则禁 $1 进入未在可编辑的白名单上的所有房间. 注意: 作为安全措施, 此规则在列表为空时不生效. 提示: 此规则可以与规则 '禁止创建新房间' 结合使用.",
+            "这个规则禁止 $1 进入不在可编辑白名单上的所有房间.注意：作为安全措施,这个规则在列表为空时不会生效.提示：这个规则可以和 '禁止创建新房间' 的规则一起使用."
     },
     {
         regex: /Here you switch the rule on\/off\, set a timer for activating\/deactivating \/ deleting the rule and define when it can trigger, such as either always or based on where the player is and with whom\.The small green\/red bars next to the checkboxes indicate whether a condition is true at present or not and the big bar whether this means that the rule is in effect\, if active\. Depending on the rule\, you can either enforce its effect\, log all violations\, or both at the same time\. Lastly on the bottom right\, you can set whether the trigger conditions of this rule should follow the global rules config or not\./,
         replacement:
-            "在此, 您可以切换规则的开/关状态, 设置激活/停用/删除规则的计时器, 并定义它何时触发, 例如始终或基于玩家的位置和与谁在一起. 复选框旁边的小绿色/红色条指示条件当前是否为真, 大条指示是否在生效(如果激活). 具体取决于规则, 您可以强制执行其效果、记录所有违规行为或同时执行两者. 最后, 在右下角, 您可以设置此规则的触发条件是否应遵循全局规则配置.",
+            "在这里,您可以切换规则的开关状态,设置激活、停用或删除规则的计时器,并定义它何时触发,比如说总是或者根据玩家的位置和与谁在一起.复选框旁边的小绿条和红条显示条件当前是否成立,大条则表示这个规则是否生效(如果已激活).具体来说,根据不同的规则,您可以选择强制执行效果、记录所有违规行为,或者两者都做.最后,在右下角,您可以设置这个规则的触发条件是否要遵循全局规则配置."
     },
     {
         regex: /This rule forces (.+) to talk as if they were gagged\, automatically garbling all of their speech\. This rule does not affect OOC\. This rule only affects whispers if the rule \"Garble whispers while gagged\" is also in effect\./,
         replacement:
-            "此规则强制 $1 以堵嘴的方式交谈, 自动失真她的所有话语. 此规则不影响 OOC. 仅当规则 '口球时扭曲私语' 也生效时, 此规则才会影响私语.",
+            "这个规则强迫 $1 像被堵嘴一样说话,自动让她的所有话都变得模糊.这个规则不影响 OOC.只有在 '口球时扭曲私语' 这个规则生效的时候,这个规则才会影响私语..",
     },
-    { regex: /(.+) has too much willpower to let you in\.\.\./, replacement: "$1 拥有太多意志力不让你进入..." },
+    { regex: /(.+) has too much willpower to let you in\.\.\./, replacement: "$1 拥有太多意志力不让你进入……" },
     {
         regex: /You must be the owner to purchase this module for (.+)\.\.\./,
-        replacement: "你必须是 $1 的所有者才能购买此模块...",
+        replacement: "你得是 $1 的主人才能买这个模块……",
     },
-
+    {
+        regex: /(.+) is resisting any hypnotic suggestions\.\.\./,
+        replacement: "$1 正在抵制任何催眠暗示……",
+    },
+    {
+        regex: /Installed by(.+)/,
+        replacement: "制作人$1",
+    },
+    {
+        regex: /Delete (.+)/,
+        replacement: "删除 $1",
+    },
+    {
+        regex: /Trigger Phrase(.+)/,
+        replacement: "触发短语:$1",
+    },
+    {
+        regex: /Exclusive(.+)/,
+        replacement: "专用(仅制作者可见):$1",
+    },
+    {
+        regex: /Instruction(.+)/,
+        replacement: "指令$1",
+    },
+    {
+        regex: /Enable Tamperproof ltems:(.+)/,
+        replacement: "启用防篡改项目:$1",
+    },
     // { regex: /-/, replacement: "" },
 ];
 
 const act_dialogs = [
     {
         regex: /(.+) moans uncontrollably as (.+)'s drug takes effect\./,
-        replacement: "随着$2的药物开始起效时,$1开始无法控制地呻吟起来.",
+        replacement: "当$2的药物生效时,$1不由自主地呻吟起来."
     },
     {
         regex: /(.+) quivers as (.+) body is flooded with (.+)'s aphrodisiac\./,
-        replacement: "当$1的身体被$3的催情剂淹没时,$2的身体会颤抖不已.",
+        replacement: "当$1的身体被$3的催情剂充斥时,$2颤抖不止."
     },
     {
         regex: /(.+)'s eyes roll back as a wave of pleasure washes over (.+) body\./,
-        replacement: "随着一阵愉悦感涌入$1身体的同时,$2的眼睛不由自主地向上翻转.",
+        replacement: "当一阵愉悦感席卷$1的身体时,$2的眼睛向后翻转."
     },
     {
         regex: /(.+) sighs as a cool relaxing calm glides through (.+) body, fighting to keep (.+) eyes open\./,
-        replacement: "随着一阵凉爽而放松的宁静在$1身体中流淌,$2深吸一口气,努力的睁开$3的眼睛.",
+        replacement: "当一阵清凉、放松、平静的感觉流过$1的身体时,$2叹息着,努力睁开$3的眼睛."
     },
     {
         regex: /(.+)'s muscles relax as (.+)'s sedative courses through (.+) body/,
-        replacement: "在$2的镇静剂作用下,$3的肌肉逐渐放松.",
+        replacement: "随着$2的镇静剂在$3的身体里起作用,$1的肌肉放松下来."
     },
     {
         regex: /(.+) fights to stay conscious against the relentless weight of (.+)'s drug\./,
-        replacement: "$1努力保持清醒,抵抗着$2的药物的无情压力.",
+        replacement: "$1奋力抵抗着$2的药物那持续不断的作用以保持清醒."
     },
     {
         regex: /(.+)'s eyes droop as (.+) fights to stay conscious against the cool, welcoming weight of (.+)'s drug\./,
-        replacement: "$1的眼睛低垂,$2在抵抗着$3的药物的凉爽、沉稳的压力,努力保持清醒.",
+        replacement: "$1的眼睛耷拉下来,而$2在对抗着$3的药物那清凉、令人舒缓的压力努力保持清醒."
     },
     {
         regex: /(.+) moans thankfully as (.+)'s medicine heals (.+)\./,
-        replacement: "当$2的药物治愈了$3时,$1感激地发出呻吟声.",
+        replacement: "当$2的药物治愈了$3,$1满怀感激地呻吟着."
     },
     {
         regex: /(.+)'s body glows slightly as (.+)'s cure washes warmly over (.+)\./,
-        replacement: "当$2的治愈之力温暖地洒在$3身上时,$1的身体会微微发光.",
+        replacement: "当$2的治愈方法温暖地作用于$3时,$1的身体微微发光."
     },
     {
         regex: /(.+)'s drug rushes warmly through (.+)'s body, curing what ails (.+)\./,
-        replacement: "$1的药物迅速地在$2体内产生暖流,治愈了$3的病痛.",
+        replacement: "$1 的药物温暖地在 $2 的身体里涌动,治愈了困扰 $3 的病症."
     },
     {
         regex: /(.+) gulps and swallows (.+)'s drink, a cool relaxing feeling starting to spread through (.+) body\./,
-        replacement: "$1大口大口地喝着$2的饮料,一种清凉舒爽的感觉开始在$3全身蔓延.",
+        replacement: "$1 大口吞咽着 $2 的饮料,一种清凉放松的感觉开始在 $3 的身体里扩散开来."
     },
     {
         regex: /(.+) sighs as a cool relaxing calm glides down (.+) throat, fighting to keep (.+) eyes open\./,
-        replacement: "当一股清凉、放松、平和的感觉滑过$2的喉咙时,$1不禁吐了口气,努力的睁开双眼.",
+        replacement: "当一阵清凉、放松、平静的感觉滑下 $2 的喉咙时,$1 叹了口气,努力保持 $3 的眼睛睁开."
     },
     {
         regex: /(.+)'s muscles relax as (.+)'s sedative pours down (.+) throat and starts to take effect\./,
-        replacement: "$2的镇静剂顺着$3的喉咙流入体内并开始起作用时,$1的肌肉开始放松下来.",
+        replacement: "当$2的镇静剂顺着$3的喉咙灌入并开始生效时,$1的肌肉放松下来."
     },
     {
         regex: /(.+)'s eyes droop as (.+) fights to stay conscious against the cool, welcoming weight of (.+)'s drug\./,
-        replacement: "$1努力抵抗着$3的药物带来的清凉、令人愉悦的沉重感,努力的保持清醒时,$2的眼睛开始缓慢下垂.",
+        replacement: "当$1努力抵抗着$3的药物那清凉、诱人的沉重感以保持清醒时,$2的眼睛耷拉下来."
     },
     {
         regex: /(.+) whimpers and struggles to keep control of (.+) mind\./,
-        replacement: "$1不停地抽泣,挣扎着摆脱$2的催眠.",
+        replacement: "$1呜咽着,努力控制住$2的意识."
     },
     {
         regex: /(.+) gasps weakly as (.+)'s drug slowly erases (.+) free will\./,
-        replacement: "$2的药物地抹去$3的自由意志时,$1虚弱地喘息着.",
+        replacement: "当$2的药物慢慢抹去$3的自由意志时,$1虚弱地倒抽一口气."
     },
     {
         regex: /(.+)'s eyes struggle to focus as (.+)'s drug makes (.+) more suggestible\./,
-        replacement: "$2的药物使$3加容易被暗示时,$1的眼睛会变得难以聚焦.",
+        replacement: "当$2的药物让$3变得更容易受暗示时,$1的眼睛努力想要聚焦."
     },
     {
         regex: /(.+) starts to drift dreamily as they swallow (.+)'s drink\./,
-        replacement: "$1喝下$2的饮料时,$1的身体开始梦幻般地飘忽不定.",
+        replacement: "当他们吞下$2的饮料时,$1开始如梦般地恍惚起来."
     },
     {
         regex: /(.+) gasps weakly and starts to lose focus as (.+)'s drug warms (.+) comfortably\./,
-        replacement: "$1虚弱地喘息着,注意力开始集中不起来,因为服用$2的药物正让$3感到意识从身体中抽离了出去.",
+        replacement: "当$2的药物让$3舒适地沉浸其中时,$1虚弱地喘息着并开始失去焦点."
     },
     {
         regex: /(.+)'s eyes flutter and defocus as (.+)'s drink slides warmly down (.+) throat\./,
-        replacement: "当$2的饮料温暖地滑过$3喉咙时,$1的眼睛会变得模糊,视线也变得不清晰.",
+        replacement: "当$2的饮料温暖地顺着$3的喉咙滑下时,$1的眼睛眨动且视线模糊."
     },
     {
         regex: /(.+) gulps thankfully as (.+)'s medicine slowly heals (.+)\./,
-        replacement: "$1感激地咽下了药,因为$2的药正慢慢地治愈着$3.",
+        replacement: "$1满怀感激地大口吞咽,因为$2的药物正在慢慢治愈$3."
     },
     {
         regex: /(.+)'s body glows slightly as (.+)'s cure glides warmly through (.+)\./,
-        replacement: "当$2的治愈之力温暖地流过$3的身体时,$1的身体会微微发光.",
+        replacement: "当$2的治愈能量温暖地在$3体内流淌时,$1的身体微微发光."
     },
     {
         regex: /(.+)'s antidote slowly washes through (.+)'s body, curing what ails (.+)\./,
-        replacement: "$1的解药慢慢地流遍了$2的全身,治愈了其病痛.",
+        replacement: "$1的解药缓慢地在$2的身体中流淌,治愈了困扰$3的病症."
     },
     {
         regex: /(.+)'s body goes limp as (.+) mind empties and (.+) awaits a command\./,
-        replacement: "$1的意识一片空白,身体变得软弱无力,等待着下一步指令.",
+        replacement: "当$2的思维变得空白,$1的身体变得绵软无力,等待着命令."
     },
     {
         regex: /(.+)'s eyes roll back as a wave of pleasure emanates from (.+) belly\./,
-        replacement: "$2的腹部发出一阵愉悦的波澜时,$1的眼睛开始翻白.",
+        replacement: "当一阵愉悦感从$2的腹部散发出来时,$1的眼睛向后翻转."
     },
     {
         regex: /(.+)'s eyes move dreamily under (.+) closed eyelids\.\.\./,
-        replacement: "在$1紧闭的眼皮下,$2的眼神飘忽不定地移动着……",
+        replacement: "在$1紧闭的眼皮底下,$2的眼睛如梦般地移动着……"
     },
     {
         regex: /(.+)'s mask whirs and shudders as it reloads its own supply and continues emitting\./,
-        replacement: "$1的面罩发出低沉的嗡鸣声,剧烈颤动着,同时在重新装载自身的供应,并持续释放出细腻的气体.",
+        replacement: "$1的面具发出呼呼声并颤抖着,因为它正在重新装载自身供应并继续释放."
     },
     {
         regex: /(.+)'s mask hums menacingly as it holds its supply in reserve\./,
-        replacement: "$1的面罩发出低沉的嗡嗡声,仿佛在暗中积蓄力量.",
+        replacement: "$1的面罩发出充满威胁的嗡嗡声,同时储备着能量.",
     },
     {
         regex: /(.+)'s mask clicks and turns itself back on\./,
@@ -653,638 +679,680 @@ const act_dialogs = [
     },
     {
         regex: /(.+) reloads (.+)'s mask and turns it back on, pumping gas back into (.+) lungs\./,
-        replacement: "$1重新装载了$2的面罩并重新启动,将气体注入$3的肺部.", // 12345
+        replacement: "$1重新装载了$2的面罩并将其打开,把气体重新泵入$3的肺部."
     },
     {
         regex: /(.+) switches on (.+)'s mask, filling (.+) lungs\./,
-        replacement: "$1打开了$2的面罩,将气体填满$3的肺部.",
+        replacement: "$1打开了$2的面罩,使气体充满$3的肺部."
     },
     {
         regex: /(.+) switches off (.+)'s mask, halting the flow of gas\./,
-        replacement: "$1关闭了$2的面罩,停止气体的流动.",
+        replacement: "$1关掉了$2的面罩,阻断了气体的流动."
     },
     {
         regex: /(.+)'s eyes widen as (.+) mask activates, slowly filling (.+) lungs with its drug\./,
-        replacement: "$1的眼睛睁大,$2的面罩启动,缓慢地将药物填满$3的肺部.",
+        replacement: "$1的眼睛睁大,随着$2的面罩启动,慢慢地用其药物充满$3的肺部."
     },
     {
         regex: /(.+) takes a deep breath of cool, clean air as (.+) mask is removed\./,
-        replacement: "$1深吸一口凉爽、清新的空气,当$2的面罩被移除时.",
+        replacement: "当$2的面罩被取下时,$1深吸了一口凉爽、清新的空气."
     },
     {
         regex: /(.+)'s mask hisses quietly as it runs out of its supply of gas\./,
-        replacement: "$1的面罩轻轻地嘶嘶作响,它的气体用尽了.",
+        replacement: "$1的面罩在气体供应耗尽时安静地发出嘶嘶声."
     },
     {
         regex: /(.+) groans helplessly as (.+) headset manipulates (.+) mind\./,
-        replacement: "$1无助地呻吟着,$2的耳机操控着$3的思维.",
+        replacement: "$1无助地呻吟,因为$2的耳机在操纵着$3的思想."
     },
     {
         regex: /(.+) struggles to keep (.+) focus through the overwhelming influence of (.+) headset\./,
-        replacement: "$1挣扎着保持$2的专注,尽管$3的耳机影响是压倒性的.",
+        replacement: "$1努力在$3耳机那压倒性的影响下保持$2的专注."
     },
     {
         regex: /(.+) whimpers as (.+) headset erases (.+) own mind relentlessly\./,
-        replacement: "$1抽泣着,$2的耳机无情地抹去了$3的思维.",
+        replacement: "$1抽泣着,因为$2的耳机在毫不留情地抹去$3自己的思想."
     },
     {
         regex: /(.+)'s muscles relax limply as (.+) takes a deep breath through (.+) mask\./,
-        replacement: "当$2通过$3的面罩深吸一口气后,$1的肌肉变得无力松弛.",
+        replacement: "当$2通过$3的面罩深吸一口气时,$1的肌肉绵软地松弛下来."
     },
-    { regex: /(.+)'s eyes flutter weakly as (.+) inhales\./, replacement: "当$2吸气时,$1的,着.", },
+    {
+        regex: /(.+)'s eyes flutter weakly as (.+) inhales\./,
+        replacement: "当$2吸气时,$1的眼睛无力地眨动."
+    },
     {
         regex: /(.+) struggles to keep (.+) drooping eyes open as (.+) mask continues to emit its sedative gas\./,
-        replacement: "$1费力地让$2下垂的眼睛睁开,因为$3的面罩仍在释放它的镇静气体.",
+        replacement: "$1努力让$2下垂的眼睛睁开,而$3的面罩持续释放着镇静气体."
     },
     {
         regex: /(.+) groans helplessly as (.+) mask sends another dose into (.+) lungs\./,
-        replacement: "$1无助地呻吟,$2的面罩又送进了另一剂药物到$3的肺部.",
+        replacement: "$1无助地呻吟,因为$2的面罩又向$3的肺部输送了一剂药物."
     },
     {
         regex: /(.+) struggles to keep (.+) focus through the suggestible haze caused by (.+) mask\./,
-        replacement: "$1在$3的朦胧迷雾中努力保持$2的专注力.",
+        replacement: "$1努力在$3的面罩所导致的易受暗示的迷雾中保持$2的专注力."
     },
     {
         regex: /(.+) whimpers as (.+) mask's drug pushes (.+) further out of (.+) own mind\./,
-        replacement: "当$2戴着面罩的药物推动$3越来越远离$4自己的思想时,$1发出呜咽声.",
+        replacement: "当$2面罩的药物将$3进一步推出$4自己的思维时,$1抽泣起来."
     },
     {
         regex: /(.+)'s spine tingles as (.+) takes a deep breath through (.+) mask\./,
-        replacement: "当$2深吸一口气通过$3面罩时,$1脊背会不由自主地感到一阵刺痛.",
+        replacement: "当$2通过$3面罩深吸一口气时,$1的脊椎感到一阵刺痛."
     },
-    { regex: /(.+) lets out a muffled moan as (.+) inhales\./, replacement: "当$2吸气时,$1发出一声模糊的呻吟声." },
+    { regex: /(.+) lets out a muffled moan as (.+) inhales\./, replacement: "当$2吸气时,$1发出一声低沉的呻吟." },
     {
         regex: /(.+)'s sensitive areas burn hot as (.+) breathes through (.+) mask\./,
-        replacement: "当$2透过$3的面罩呼吸时,$1的敏感部位变得灼热.",
+        replacement: "当$2通过$3面罩呼吸时,$1的敏感区域灼热起来."
     },
     {
         regex: /(.+) sighs with relief as (.+) takes a deep gulp of healing mist\./,
-        replacement: "$2大口吸入治疗雾气,$1如释重负地叹了口气.",
+        replacement: "当$2深吸一口治疗雾气时,$1宽慰地叹了口气."
     },
     {
         regex: /(.+) feels a tingle across (.+) skin as (.+) mask heals them\./,
-        replacement: "当$2的面罩治愈$1的皮肤时,感到自己的皮肤上有一阵刺痛.",
+        replacement: "当$2的面罩为$1治疗时,$1感觉自己的皮肤一阵刺痛."
     },
     {
         regex: /(.+) lets out a quiet moan as (.+) mask releases a healing mist into (.+) lungs\./,
-        replacement: "当$2的面罩释放出治疗的雾气进入$3的肺部时,$1轻声叹息着.",
+        replacement: "当$2的面罩向$3的肺部释放治疗雾气时,$1轻轻呻吟."
     },
-    { regex: /(.+)'s whimpers, (.+) tongue held tightly\./, replacement: "$1发出微弱的呜咽声,$2的舌头被紧紧地抓住." },
-    { regex: /(.+) strains, trying to pull (.+) tongue free\./, replacement: "$1用力拉扯$2的舌头,试图将它从嘴里拉出来." },
-    { regex: /(.+) starts to drool, (.+) tongue held fast\./, replacement: "$1开始流口水, $2的舌头被牢牢地固定住." },
-    { regex: /(.+) wiggles (.+) nose\./, replacement: "$1摇晃$2的鼻子." },
-    { regex: /(.+) wiggles (.+) nose with a small frown\./, replacement: "$1轻微皱眉,用鼻子轻轻地蹭了蹭$2." },
+    { regex: /(.+)'s whimpers, (.+) tongue held tightly\./, replacement: "$1呜咽着,$2的舌头被紧紧地含着." },
+    { regex: /(.+) strains, trying to pull (.+) tongue free\./, replacement: "$1使劲,试图把$2的舌头拉出来." },
+    { regex: /(.+) starts to drool, (.+) tongue held fast\./, replacement: "$1开始流口水,$2的舌头被紧紧固定住." },
+    { regex: /(.+) wiggles (.+) nose\./, replacement: "$1晃动着$2的鼻子." },
+    { regex: /(.+) wiggles (.+) nose with a small frown\./, replacement: "$1微微皱着眉,晃动了一下$2的鼻子." },
     { regex: /(.+) sneezes in surprise\./, replacement: "$1惊讶地打了个喷嚏." },
-    { regex: /(.+) looks crosseyed at (.+) nose\./, replacement: "$1斜眼看着$2的鼻子." },
-    { regex: /(.+) wiggles (.+) nose with a squeak\./, replacement: "$1扭动着$2的鼻子." },
-    { regex: /(.+) meeps\!/, replacement: "$1发出吱吱声!" },
-    { regex: /(.+) swats at (.+)'s hand\./, replacement: "$1挥手打掉了$2的手." },
-    {
-        regex: /(.+) covers (.+) nose protectively, squinting at (.+)\./,
-        replacement: "$1遮住$2的鼻子,眯着眼睛看着$3.",
-    },
-    { regex: /(.+) snatches (.+)'s booping finger\./, replacement: "$1抓住$2轻拍的手指." },
-    { regex: /(.+)'s nose overloads and shuts down\./, replacement: "$1的鼻子过载并停止工作." },
-    { regex: /(.+) struggles in (.+) bindings, huffing\./, replacement: "$1在$2的束缚中挣扎, 喘着粗气." },
-    { regex: /(.+) frowns and squirms in (.+) bindings\./, replacement: "$1皱起眉头,在$2的束缚中扭动身体." },
-    { regex: /(.+) whimpers in (.+) bondage\./, replacement: "$1在$2的束缚下发出呜咽声." },
-    { regex: /(.+) groans helplessly\./, replacement: "$1无助地呻吟着." },
-    { regex: /(.+) whines and wiggles in (.+) bondage\./, replacement: "$1在$2的束缚状态下呜咽扭动." },
-    { regex: /(.+)'s mouth moves silently\./, replacement: "$1的嘴唇无声地蠕动着." },
-    { regex: /(.+)'s mouth moves without a sound\./, replacement: "$1的嘴巴动了,却没有发出声音." },
-    { regex: /(.+)'s whimpers inaudibly, unable to breathe\./, replacement: "$1呜咽声微弱得几乎听不见,无法呼吸." },
-    { regex: /(.+) groans and convulses\./, replacement: "$1发出痛苦的呻吟和痉挛." },
-    { regex: /(.+) shudders as (.+) lungs burn\./, replacement: "$1的肺部像燃烧一样,$2颤抖着想要吸入空气." },
-    { regex: /(.+) gasps and gulps for air\./, replacement: "$1大口喘气拼命呼吸新鲜空气." },
-    { regex: /(.+)'s lungs expand hungrily as (.+) gasps in air\./, replacement: "$1的肺部伴随着$2的喘息饥渴地扩张着." },
-    { regex: /(.+) gasps for air with a whimper\./, replacement: "$1以一声微弱的喘息声艰难地呼吸着." },
-    { regex: /(.+) coughs as (.+) collar pushes against (.+) throat\./, replacement: "$1的项圈勒紧$2的脖子时,$2忍不住的咳嗽." },
+    { regex: /(.+) looks crosseyed at (.+) nose\./, replacement: "$1斜着眼看向$2的鼻子." },
+    { regex: /(.+) wiggles (.+) nose with a squeak\./, replacement: "$1伴随着吱吱声扭动着$2的鼻子." },
+    { regex: /(.+) meeps\!/, replacement: "$1发出了吱吱声!" },
+    { regex: /(.+) swats at (.+)'s hand\./, replacement: "$1拍打了$2的手." },
+    { regex: /(.+) covers (.+) nose protectively, squinting at (.+)\./, replacement: "$1保护性地捂住$2的鼻子,眯着眼看向$3." },
+    { regex: /(.+) snatches (.+)'s booping finger\./, replacement: "$1一把抓住$2正在轻戳的手指." },
+    { regex: /(.+)'s nose overloads and shuts down\./, replacement: "$1的鼻子超负荷运转然后停止了." },
+    { regex: /(.+) struggles in (.+) bindings, huffing\./, replacement: "$1在$2的捆绑中挣扎,大口喘气." },
+    { regex: /(.+) frowns and squirms in (.+) bindings\./, replacement: "$1皱着眉在$2的捆绑中扭动." },
+    { regex: /(.+) whimpers in (.+) bondage\./, replacement: "$1在$2的束缚中呜咽." },
+    { regex: /(.+) groans helplessly\./, replacement: "$1无奈地呻吟." },
+    { regex: /(.+) whines and wiggles in (.+) bondage\./, replacement: "$1在$2的束缚中呜呜叫并扭动." },
+    { regex: /(.+)'s mouth moves silently\./, replacement: "$1的嘴默默地动着." },
+    { regex: /(.+)'s mouth moves without a sound\./, replacement: "$1的嘴动了但没有声音." },
+    { regex: /(.+)'s whimpers inaudibly, unable to breathe\./, replacement: "$1无声地呜咽着,无法呼吸." },
+    { regex: /(.+) groans and convulses\./, replacement: "$1痛苦地呻吟并痉挛." },
+    { regex: /(.+) shudders as (.+) lungs burn\./, replacement: "$1因肺部灼热而颤抖,$2想要吸入空气." },
+    { regex: /(.+) gasps and gulps for air\./, replacement: "$1大口喘息并拼命吸气." },
+    { regex: /(.+)'s lungs expand hungrily as (.+) gasps in air\./, replacement: "$1的肺部在$2喘息着吸气时饥渴地扩张着." },
+    { regex: /(.+) gasps for air with a whimper\./, replacement: "$1伴着一声呜咽艰难地喘气吸气." },
+    { regex: /(.+) coughs as (.+) collar pushes against (.+) throat\./, replacement: "当$2的项圈紧压$3的喉咙时,$1咳嗽起来." },
     {
         regex: /(.+) gulps as (.+) feels the tight collar around (.+) neck\./,
-        replacement: "$1感受到$2的脖子上逐渐勒紧的项圈时,$3不由得咽了下口水.",
+        replacement: "$1在$2感觉到脖子上的紧项圈时,$3咽了咽口水."
     },
-    { regex: /(.+) shifts nervously in (.+) tight collar\./, replacement: "$1在$2勒紧的项圈中不安地扭动着身体." },
+    {
+        regex: /(.+) shifts nervously in (.+) tight collar\./,
+        replacement: "$1在$2的紧项圈里紧张地扭动."
+    },
     {
         regex: /(.+) trembles, very conscious of the tight collar around (.+) neck\./,
-        replacement: "$1颤抖着,明显感受到$2的脖子上那条勒紧的项圈.",
+        replacement: "$1颤抖着,十分清楚地感受到$2脖子上的紧项圈."
     },
-    { regex: /(.+) huffs uncomfortably in (.+) tight collar\./, replacement: "$1在$2紧绷的项圈下不自在地吐了口气." },
+    {
+        regex: /(.+) huffs uncomfortably in (.+) tight collar\./,
+        replacement: "$1在$2的紧项圈里不舒服地喘着气."
+    },
     {
         regex: /(.+) whimpers pleadingly as (.+) struggles to take a full breath\./,
-        replacement: "每当$2费力地想要深呼吸时,$1会可怜兮兮地呜咽着.",
+        replacement: "每当$2艰难地想要进行一次完整的呼吸时,$1都会可怜巴巴地呜咽着."
     },
     { regex: /(.+) chokes against (.+) collar, moaning softly\./, replacement: "$1被$2的项圈紧紧勒住,发出轻声呻吟." },
     {
         regex: /(.+)'s eyes flutter weakly as (.+) collar presses into (.+) neck\./,
-        replacement: "$2被$3的项圈紧紧勒住时,$1的眼睛会虚弱地颤动.",
+        replacement: "当$2的项圈紧压在$3的脖子上时,$1的眼睛虚弱地眨动着."
     },
     {
         regex: /(.+) tries to focus on breathing, each inhale an effort in (.+) collar\./,
-        replacement: "$1试着专注于呼吸, 但每次吸气都让$2感到项圈变得紧绷.",
+        replacement: "$1试图专注于呼吸,然而在$2的项圈中每次吸气都很费力."
     },
-    { regex: /(.+) splutters and chokes, struggling to breathe\./, replacement: "$1喘着粗气, 挣扎着呼吸." },
-    { regex: /(.+) grunts and moans, straining to breathe\./, replacement: "$1发出粗重的喘息声和呻吟声,努力呼吸着." },
+    {
+        regex: /(.+)'s eyes flutter weakly as (.+) collar presses into (.+) neck\./,
+        replacement: "当$2的项圈紧压在$3的脖子上时,$1的眼睛虚弱地眨动着."
+    },
+    {
+        regex: /(.+) tries to focus on breathing, each inhale an effort in (.+) collar\./,
+        replacement: "$1试图专注于呼吸,然而在$2的项圈中每次吸气都很费力."
+    },
     {
         regex: /(.+)'s eyes have trouble focusing, as (.+) chokes and gets lightheaded\./,
-        replacement: "$1的视线开始涣散,因为窒息让$2感到头晕目眩.",
+        replacement: "$1的眼睛难以聚焦,因为$2窒息并感到头晕."
     },
     {
         regex: /(.+)'s eyes flutter as (.+) fights to keep control of (.+) senses\.\.\./,
-        replacement: "$2努力控制$3的感官时,$1的眼睛会不由自主地眨动.",
+        replacement: "当$2努力保持对$3感官的控制时,$1的眼睛会眨动……"
     },
-    { regex: /(.+) whimpers and struggles to stay awake\.\.\./, replacement: "$1不停地呜咽着,努力保持清醒…" },
+    { regex: /(.+) whimpers and struggles to stay awake\.\.\./, replacement: "$1轻声呜咽着,努力保持清醒……" },
     {
         regex: /(.+) can feel (.+) eyelids grow heavy as (.+) drifts on the edge of trance\.\.\./,
-        replacement: "$1感觉到$2眼皮越来越沉,$3正处于半梦半醒的状态……",
+        replacement: "$1能感觉到$2的眼皮愈发沉重,$3在恍惚的边缘游离……"
     },
     {
         regex: /(.+) lets out a low moan as (.+) muscles relax and (.+) starts to drop\.\.\./,
-        replacement: "$2的肌肉松弛,并发出一声低吟,她的肢体开始逐渐下垂……",
+        replacement: "$2的肌肉松弛,发出一声低吟,$3的身体开始逐渐下垂……"
     },
     {
         regex: /(.+)'s eyes flutter as (.+) fights to keep them open\.\.\./,
-        replacement: "$1的眼睛不停地眨动,$2似乎在与睡意作斗争.",
+        replacement: "$1的眼睛眨动着,而$2努力想让它们保持睁开的状态……"
     },
-    { regex: /(.+) yawns and struggles to stay awake\.\.\./, replacement: "$1打了个哈欠,努力的保持清醒……" },
+    {
+        regex: /(.+) yawns and struggles to stay awake\.\.\./, replacement: "$1打着哈欠,努力保持清醒……"
+    },
     {
         regex: /(.+) can feel (.+) eyelids grow heavy as (.+) drifts on the edge of sleep\.\.\./,
-        replacement: "$1感受到$2的眼皮越来越沉,仿佛$3即将陷入梦乡……",
+        replacement: "$1能感觉到$2的眼皮变得沉重,好像$3正在睡眠的边缘游离……"
     },
     {
         regex: /(.+) takes a deep, relaxing breath as (.+) muscles relax and (.+) eyes start to droop\.\.\./,
-        replacement: "$1深吸了一口气, $2肌肉的肌肉逐渐放松, $3的眼睛开始下垂...",
+        replacement: "$1深吸了一口气,此时$2的肌肉逐渐放松,$3的眼睛开始耷拉……"
     },
-    { regex: /(.+) takes another deep breath through (.+) gag\.\.\./, replacement: "$1通过$2的吸嘴深深地吸了一口气." },
-    { regex: /(.+) exhales slowly, fully relaxed\.\.\./, replacement: "$1慢慢地呼出一口气,身体完全放松了……" },
-    { regex: /(.+)'s muscles twitch weakly in (.+) sleep\.\.\./, replacement: "$1在睡眠中身体微弱地抽搐着……", },
-    { regex: /(.+) moans softly and relaxes\.\.\./, replacement: "$1轻声呻吟着,身体开始放松下来……", },
+    {
+        regex: /(.+) takes another deep breath through (.+) gag\.\.\./, replacement: "$1通过$2的塞口物又深吸了一口气……"
+    },
+    {
+        regex: /(.+) exhales slowly, fully relaxed\.\.\./, replacement: "$1缓缓地呼气,完全放松了下来……"
+    },
+    { regex: /(.+)'s muscles twitch weakly in (.+) sleep\.\.\./, replacement: "$1在$2的睡眠中肌肉微弱地抽动着……" },
+    { regex: /(.+) moans softly and relaxes\.\.\./, replacement: "$1轻声呻吟着,然后逐渐放松下来……" },
     { regex: /(.+) fires a net wildly\./, replacement: "$1胡乱地射出一张网.", },
-    { regex: /(.+) fires at themselves point blank\./, replacement: "$1直接向自己开枪.", },
-    { regex: /(.+) fires a net at (.+)\./, replacement: "$1向$2射出一张网.", },
+    { regex: /(.+) fires at themselves point blank\./, replacement: "$1近距离朝自己开火.", },
+    { regex: /(.+) fires a net at (.+)\./, replacement: "$1向$2发射一张网.", },
     {
         regex: /(.+) barely trembles, unable to move (.+) mouth or make a sound\.\.\./,
-        replacement: "$1几乎无法动弹,无法张开嘴巴或发出声音……",
+        replacement: "$1微微颤抖着,无法移动$2的嘴巴或发出声音……"
     },
     {
         regex: /(.+)'s eyes plead helplessly as (.+) muscles refuse to obey\.\.\./,
-        replacement: "$2的身体无法服从命令,$1的眼神无助地乞求着……",
+        replacement: "$2的肌肉不听使唤,$1的眼睛无助地恳求着……"
     },
     {
         regex: /(.+) manages to muster a quiet whimper, (.+) body held fast\.\.\./,
-        replacement: "$1尝试发出一声微弱的呜咽声,$2的身体被紧紧地固定住……",
+        replacement: "$1成功地勉强发出一声安静的呜咽,$2的身体被牢牢地控制住……"
     },
     {
         regex: /(.+)'s eyes widen as they try to speak without success\.\.\./,
-        replacement: "$1眼睛睁得大大的,试图说话却无法开口……",
+        replacement: "$1的眼睛睁大,他们试图说话却没有成功……"
     },
     {
         regex: /(.+) looks around helplessly, unable to make a sound\.\.\./,
-        replacement: "$1无助地四处张望,无法发出声音……",
+        replacement: "$1无助地环顾四周,发不出声音……"
     },
-    { regex: /(.+)'s mouth moves in silence\.\.\./, replacement: "$1的嘴唇无声地蠕动着……" },
-    { regex: /(.+)'s mouth moves silently\.\.\./, replacement: "$1的嘴唇无声地蠕动着……" },
+    { regex: /(.+)'s mouth moves in silence\.\.\./, replacement: "$1的嘴巴在寂静中动着……" },
+    { regex: /(.+)'s mouth moves silently\.\.\./, replacement: "$1的嘴巴默默地动着……" },
     {
         regex: /(.+) whimpers, struggling in (.+) bindings and unable to speak\.\.\./,
-        replacement: "$1发出呜咽声,在$2束缚中挣扎,无法说话……",
+        replacement: "$1呜咽着,在$2的捆绑中挣扎,无法言语……"
     },
     {
         regex: /(.+)'s eyes widen as they squirm in (.+) bondage, only a gentle moan escaping\.\.\./,
-        replacement: "$1的眼睛睁得大大的,因为$2的身体被束缚着,无法动弹.$2轻轻地呻吟着,似乎在忍受着痛苦.",
+        replacement: "$1的眼睛睁得大大的,因为$2的身体在束缚中扭动着,无法动弹.$2只是轻轻地呻吟着,仿佛在忍受痛苦.",
     },
     {
         regex: /(.+) tries (.+) best to speak, but has to resign themselves to mearly a bound whimper\.\.\./,
-        replacement: "无论$1如何努力地发出声音,最终还是只能发出微弱的呜咽声……",
+        replacement: "无论$1如何竭尽全力地发声,最终却也只能发出被束缚着的微弱呜咽声……",
     },
     {
         regex: /(.+) squirms in (.+) bindings, (.+) mouth moving in silence\.\.\./,
-        replacement: "$1在$2束缚中扭动挣扎,嘴巴无声地动着……",
+        replacement: "$1在$2的束缚中扭动挣扎,$3的嘴巴无声地活动着……"
     },
     {
         regex: /(.+)'s eyelids flutter as a thought tries to enter (.+) blank mind\.\.\./,
-        replacement: "当一个想法试图进入$2空白的大脑时,$1的眼皮会不自觉地颤动……",
+        replacement: "当一个想法试图进入$2空白的脑海时,$1的眼皮会不由自主地颤动……"
     },
     {
         regex: /(.+) sways weakly in (.+) place, drifting peacefully\.\.\./,
-        replacement: "$1在$2地方虚弱地摇晃, 平静地漂流……",
+        replacement: "$1在$2的地方无力地摇晃着,平静地飘荡……"
     },
     {
         regex: /(.+) trembles as something deep and forgotten fails to resurface\.\.\./,
-        replacement: "$1颤抖着,因为一些深藏已久的记忆无法再次浮现……",
+        replacement: "$1颤抖着,因为某些深藏且被遗忘的东西未能重新浮现……"
     },
     {
         regex: /(.+) moans softly as (.+) drops even deeper into trance\.\.\./,
-        replacement: "$1深深陷入恍惚状态时,$2轻声呻吟着……",
+        replacement: "当$2陷入更深的恍惚状态时,$1轻声呻吟着……"
     },
     {
         regex: /(.+) quivers, patiently awaiting something to fill (.+) empty head\.\.\./,
-        replacement: "$1颤抖着, 耐心地等待着什么来填补$2空洞的意识……",
+        replacement: "$1颤抖着,耐心地等待着有什么来填补$2空洞的头脑……"
     },
     {
         regex: /(.+) stares blankly, (.+) mind open and suggestible\.\.\./,
-        replacement: "$1茫然地盯着前方,思绪一片空白,$2很容易受到别人言语的影响……",
+        replacement: "$1茫然地凝视着,$2的思维敞开且易受影响……"
     },
     {
         regex: /(.+)'s eyelids flutter gently, awaiting a command\.\.\./,
-        replacement: "$1的眼皮轻轻颤动着, 等待着下一步指令……",
+        replacement: "$1的眼皮轻轻颤动,等待着指令……"
     },
     {
         regex: /(.+) trembles with a quiet moan as (.+) yearns to obey\.\.\./,
-        replacement: "$1低声呻吟着,身体微微颤抖,渴望服从命令……",
+        replacement: "$1伴随着轻声呻吟微微颤抖,因为$2渴望服从……"
     },
     {
         regex: /(.+)'s eyes widen as (.+) gag inflates to completely fill (.+) throat\./,
-        replacement: "$1的喉咙被$2气管塞完全填满时$3的眼睛睁得大大的.",
+        replacement: "当$2的塞口物膨胀至完全填满$3的喉咙时,$1的眼睛睁得大大的."
     },
-    { regex: /(.+) splutters and gasps for air around (.+) gag\./, replacement: "$1喷溅并在$2口饰周围喘息." },
+    { regex: /(.+) splutters and gasps for air around (.+) gag\./, replacement: "$1喷溅着并在$2口塞周围大口喘气." },
     {
         regex: /(.+)'s eyes flutter as (.+) collar starts to tighten around (.+) neck with a quiet hiss\./,
-        replacement: "当$2的项圈开始悄无声息地勒紧$的脖子时,$1的眼睛开始不安地眨动.",
+        replacement: "当$2的项圈开始悄无声息地在$3的脖子周围收紧时,$1的眼睛开始扑闪."
     },
     {
         regex: /(.+) gasps for air as (.+) collar presses in around (.+) neck with a hiss\./,
-        replacement: "$1喘不过气来,$2的项圈紧紧地勒在$3的脖子上,发出嘶嘶的声音。",
+        replacement: "$1因呼吸困难而大口喘气,$2的项圈带着嘶嘶声紧紧压在$3的脖子周围."
     },
     {
         regex: /(.+)'s face runs flush, choking as (.+) collar hisses, barely allowing any air to (.+) lungs\./,
-        replacement: "$1的脸涨得通红, 当$2项圈发出嘶嘶声, 几乎无法让$3的肺部吸入足够的空气.",
+        replacement: "$1的脸涨得通红,在$2项圈发出嘶嘶声时被呛得喘不过气来,项圈几乎不让任何空气进入$3的肺部."
     },
     {
         regex: /(.+) chokes and gasps desperately as (.+) collar slowly releases some pressure\./,
-        replacement: "$1困难地喘息, 这时$2项圈缓慢地松开了一些压力.",
+        replacement: "$1艰难地喘着粗气,拼命地吸气,这时$2项圈慢慢地释放了一些压力."
     },
     {
         regex: /(.+)'s collar opens a little as (.+) lets out a moan, gulping for air\./,
-        replacement: "$1的项圈微微放松了, $2发出一声呻吟, 大口呼吸着空气.",
+        replacement: "$1的项圈稍稍打开了一些,$2发出一声呻吟,大口地吞咽着空气."
     },
     {
         regex: /(.+) whimpers thankfully as (.+) collar reduces most of its pressure around (.+) neck\./,
-        replacement: "$1感激地呜咽着, $2的项圈减轻了$3脖子周围的大部分压力.",
+        replacement: "$1满怀感激地呜咽着,因为$2的项圈减轻了环绕在$3脖子周围的大部分压力."
     },
     {
         regex: /(.+) takes a deep breath as (.+) collar releases its grip with a hiss\./,
-        replacement: "$1深吸一口气, $2的项圈发出嘶嘶声,束缚感消失了.",
+        replacement: "$1深吸了一口气,因为$2的项圈伴随着嘶嘶声松开了束缚."
     },
     {
         regex: /(.+) gulps thankfully as the threat to (.+) airway is removed\./,
-        replacement: "当折磨$1许久的窒息感消失后,她庆幸地长舒了一口气.", // 救救
+        replacement: "当折磨$1许久的窒息感消失后,她庆幸地长舒了一口气.",
     },
     {
         regex: /(.+)'s eyes start to roll back, gasping and choking as (.+) collar presses in tightly and completely with a menacing hiss\./,
-        replacement: "$1的眼睛开始翻白,她的颈部被项圈死死勒入肉中,伴随着痛苦的喘息与项圈的收紧声,她再也无法获取一丁点空气.", // 救救
+        replacement: "$1的眼睛开始翻白,她的颈部被项圈死死勒入肉中,伴随着痛苦的喘息与项圈的收紧声,她再也无法获取一丁点空气.",
     },
     {
         regex: /(.+)'s eyes flutter with a groan, unable to get any air to (.+) lungs\./,
-        replacement: "$1的眼睛因为痛苦而微微颤动着, $2无法让足够的空气进入肺部.",
+        replacement: "$1的眼睛伴随着呻吟微微颤动,无法使任何空气进入$2的肺部."
     },
-    { regex: /(.+) chokes and spasms, (.+) collar holding tight\./, replacement: "$1窒息和痉挛, $2项圈紧紧地控制着." },
+    {
+        regex: /(.+) chokes and spasms, (.+) collar holding tight\./, replacement: "$1窒息并痉挛,$2项圈紧紧地勒着."
+    },
     {
         regex: /(.+) chokes and spasms, (.+) gripping (.+) throat relentlessly\./,
-        replacement: "$1突然窒息抽搐, $2不停地紧抓着$3的脖子.",
+        replacement: "$1窒息并痉挛,$2无情地紧握着$3的喉咙."
     },
     {
         regex: /(.+) convulses weakly with a moan, (.+) eyes rolling back as the collar hisses impossibly tighter\./,
-        replacement: "$1痛苦地抽搐着,嘴里发出微弱的呻吟声,项圈越收越紧,发出嘶嘶声,$2的眼睛开始翻白.",
+        replacement: "$1痛苦地抽搐着,嘴里发出微弱的呻吟声,项圈发出不可能更紧的嘶嘶声,$2的眼睛开始翻白.",
     },
     {
         regex: /As (.+) collapses unconscious, (.+) collar releases all of its pressure with a long hiss\./,
-        replacement: "$1昏倒时, $2的项圈发出一声长长的嘶嘶声, 项圈松开了对脖子的压迫.",
+        replacement: "当$1失去意识昏倒时,$2项圈伴随着一声长长的嘶嘶声释放了所有的压力."
     },
     {
         regex: /As (.+) collapses unconscious, (.+) releases (.+) neck\./,
-        replacement: "当$1昏倒失去知觉时, $2松开了对$3脖子的压迫.",
+        replacement: "当$1昏倒失去知觉时,$2松开了$3的脖子."
     },
     {
         regex: /As (.+) slumps unconscious, (.+) nose plugs fall out\./,
-        replacement: "当$1昏倒时, $2的鼻塞掉了出来.",
+        replacement: "当$1无力地倒下失去意识时,$2的鼻塞掉了出来."
     },
-    { regex: /(.+) quivers with one last attempt to stay awake\.\.\./, replacement: "$1最后一次试图保持清醒,但他的身体却在颤抖……" },
+    { regex: /(.+) quivers with one last attempt to stay awake\.\.\./, replacement: "$1伴随着最后一次保持清醒的尝试而颤抖着……" },
     {
         regex: /(.+) trembles weakly with one last attempt to maintain (.+) senses\.\.\./,
-        replacement: "$1虚弱地颤抖着,最后一次试图保持清醒……",
+        replacement: "$1虚弱地颤抖着,做着最后一次维持$2意识的尝试……"
     },
-    { regex: /(.+)'s frowns as (.+) fights to remain conscious\./, replacement: "$1紧皱眉头,$2努力保持清醒." },
+    { regex: /(.+)'s frowns as (.+) fights to remain conscious\./, replacement: "$1皱起眉头,因为$2在努力保持清醒." },
     {
         regex: /(.+)'s eyes immediately defocus, (.+) posture slumping slightly as (.+) loses control of (.+) body at the utterance of a trigger word\./,
-        replacement: "$1的眼神立刻变得迷离, 当$2说出触发词时, $3的手臂略微下垂, 失去对$4身体的控制.",
+        replacement: "$1的眼睛立刻失去焦点,当$2说出触发词时,$3的姿势轻微下垂,$3失去了对$4身体的控制."
     },
     {
         regex: /(.+)'s eyes glaze over, (.+) posture slumping weakly as (.+) loses control of (.+) body\./,
-        replacement: "$1的眼神变得呆滞, $2的身体也无力地瘫软下来,$3失去了对$4身体的控制.",
+        replacement: "$1的眼睛变得无神,$2的姿势虚弱地垮下,因为$3失去了对$4身体的控制."
     },
     {
         regex: /(.+) reboots, blinking and gasping as (.+) regains (.+) senses\./,
-        replacement: "$1重新启动, 眨眼并喘息着, 当$2重新获得$3感官时.", // 救救
+        replacement: "$1重新启动,眨着眼并大口喘气,当$2重新获得$3的感知时."
     },
     {
         regex: /(.+) blinks, shaking (.+) head with confusion as (.+) regains (.+) senses\./,
-        replacement: "$1眨眼, 困惑地摇摇头, 当$3重新获得$4感官时.", // 存档以下全没改
+        replacement: "$1眨了眨眼,困惑地摇了摇$2的头,当$3重新获得$4的感知时."
     },
-    { regex: /(.+) gasps, blinking and blushing with confusion\./, replacement: "$1喘息, 眨眼并因困惑而脸红." },
+    {
+        regex: /(.+) gasps, blinking and blushing with confusion\./, replacement: "$1喘着气,眨着眼,因困惑而脸红."
+    },
     {
         regex: /(.+) concentrates, breaking the hold the previous trigger word held over (.+)\./,
-        replacement: "$1集中精神, 打破了以前触发词对$2的控制.",
+        replacement: "$1集中精力,打破了之前触发词对$2的掌控."
     },
     {
         regex: /(.+)'s eyes dart around, (.+) world suddenly plunged into darkness\./,
-        replacement: "$1的眼睛四处游移, $2的世界突然陷入黑暗.",
+        replacement: "$1的眼睛快速转动,$2的世界突然陷入一片黑暗."
     },
-    { regex: /(.+) frowns as (.+) is completely deafened\./, replacement: "$1皱着眉头, 因为$2完全失聪." },
+    {
+        regex: /(.+) frowns as (.+) is completely deafened\./, replacement: "$1皱起眉头,因为$2完全丧失了听力."
+    },
     {
         regex: /(.+)'s eyes widen in a panic as (.+) muscles seize in place\./,
-        replacement: "$1恐慌地睁大眼睛,她突然发现自己浑身僵硬.",
+        replacement: "$1惊慌地睁大双眼,因为$2的肌肉僵在了原地."
     },
     {
         regex: /(.+) is unable to fight the spell's hypnotizing influence, slumping weakly as (.+) eyes go blank\./,
-        replacement: "$1无法抵抗咒语的催眠影响, 当$2的眼睛变得空白时, 软弱地倒下.",
+        replacement: "$1无法抵御咒语的催眠作用,当$2的眼睛变得空洞时,无力地瘫倒."
     },
-    { regex: /(.+)'s protests suddenly fall completely silent\./, replacement: "$1的抗议突然完全沉默了." },
+    {
+        regex: /(.+)'s protests suddenly fall completely silent\./, replacement: "$1的抗议突然彻底安静了下来."
+    },
     {
         regex: /(.+)'s mouth moves in protest but not a single sound escapes\./,
-        replacement: "$1的嘴巴动了动以示抗议, 但没有发出任何声音",
+        replacement: "$1的嘴巴在抗议地动着,但没有一丝声音传出."
     },
     {
         regex: /(.+) succumbs to the spell's overwhelming pressure, (.+) eyes closing as (.+) falls unconscious\./,
-        replacement: "$1屈服于咒语的压倒性压力, 当$3失去意识时, $2的眼睛闭上了.",
+        replacement: "$1屈服于咒语那巨大的压力,当$3失去意识时,$2的眼睛闭上了."
     },
     {
         regex: /(.+) gasps, blinking as the magic affecting (.+) is removed\./,
-        replacement: "当影响$2的魔法被解除时,$1突然屏住呼吸,眨了眨眼.",
+        replacement: "当作用于$2的魔法被移除时,$1喘着气,眨着眼."
     },
     {
         regex: /(.+) gasps, blinking as any magic affecting (.+) is removed\./,
-        replacement: "当任何影响$2的魔法被移除时,$1发出一声惊呼,眨了眨眼睛.",
+        replacement: "当任何作用于$2的魔法被移除时,$1喘着气,眨着眼睛."
     },
     {
         regex: /(.+) trembles as (.+) clothing shimmers and morphs around (.+)\./,
-        replacement: "$1颤抖着, 当$2的衣服闪烁并在$3周围变形时.",
+        replacement: "$1颤抖着,当$2的衣物闪烁并在$3周围发生形态变化时."
     },
     {
         regex: /(.+) squeaks as (.+) clothing shimmers and morphs around (.+)\./,
-        replacement: "$1尖叫着, 当$2的衣服闪烁并在$3周围变形时.",
+        replacement: "$1尖叫着,当$2的衣服闪烁并在$3周围变形的时候."
     },
-    { regex: /(.+) trembles as (.+) body shimmers and morphs\./, replacement: "$1颤抖, 当$2的身体闪烁并改变形状时." },
-    { regex: /(.+) squeaks as (.+) body shimmers and morphs\./, replacement: "$1尖叫着, 当$2的身体闪烁并改变形状时." },
-    { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1扭动着身体, 当$2的兴奋被配对时." },
+    { regex: /(.+) trembles as (.+) body shimmers and morphs\./, replacement: "$1颤抖着,当$2的身体闪烁并变形时." },
+    { regex: /(.+) squeaks as (.+) body shimmers and morphs\./, replacement: "$1尖叫着,当$2的身体闪烁并变形时." },
+    { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1扭动着,当$2的高潮被匹配到自己身上时." },
     {
         regex: /(.+) quivers as (.+) feels (.+) impending denial\./,
-        replacement: "$1颤抖着, 当$2感受到$3即将到来的拒绝时.",
+        replacement: "$1颤抖着,当$2感觉到$3即将来临的拒绝时."
     },
     {
         regex: /(.+) whimpers as (.+) feels (.+) impending denial\./,
-        replacement: "$1呜咽着, 当$2感受到$3即将到来的拒绝时.",
+        replacement: "$1呜咽着,当$2感受到$3即将到来的拒绝时."
     },
     {
         regex: /(.+)'s muscles slump limply once more as another dose of chloroform is applied\./,
-        replacement: "$1的肌肉再次无力松弛, 当又一剂氯仿被施用时.",
+        replacement: "$1的肌肉再次绵软地松弛下来,当又一剂氯仿被使用时."
     },
     {
         regex: /(.+) eyes go wide as the sweet smell of ether fills (.+) nostrils\./,
-        replacement: "$1的眼睛瞪大, 当乙醚的甜味充满$2的鼻孔时.",
+        replacement: "$1的眼睛睁得很大,当乙醚的甜香充斥着$2的鼻孔时."
     },
     {
         regex: /(.+) slumps back in (.+) sleep as another dose of ether assails (.+) senses\./,
-        replacement: "$1在另一剂乙醚冲击$3的感官时, $2沉入睡梦中.",
+        replacement: "$1在另一剂乙醚冲击$3的感官时,$2又陷入了睡眠中."
     },
     {
         regex: /(.+), unable to continue holding (.+) breath, takes a desparate gasp through the chemical-soaked cloth\./,
-        replacement: "$1, 无法继续屏住$2的呼吸, 透过浸满化学药品的布料拼命地喘气.",
+        replacement: "$1,无法继续屏住$2的呼吸,透过浸满化学制剂的布绝望地大口喘气."
     },
     {
         regex: /(.+)'s body trembles as the chloroform sinks deep into (.+) mind\./,
-        replacement: "$1的身体颤抖, 当氯仿深深渗入$2的头脑时.",
+        replacement: "$1的身体颤抖着,当氯仿深深侵入$2的脑海时."
     },
     {
         regex: /(.+) takes a deep, calm breath as (.+) chloroform starts to lose its potency\.\.\./,
-        replacement: "$1深深地吸了口气, 当$2氯仿开始失去效力时, 保持平静.",
+        replacement: "$1深吸一口气,保持平静,当$2的氯仿开始失去药效……"
     },
     {
         regex: /(.+) continues to sleep peacefully as the cloth is removed\.\.\./,
-        replacement: "$1继续安详地睡着, 当布料被移开时.",
+        replacement: "$1继续平静地睡着,当这块布被移除时……"
     },
     {
         regex: /(.+) gulps in fresh air as the cloth is removed\.\.\./,
-        replacement: "$1大口吸入新鲜空气, 当布料被移开时.",
+        replacement: "$1在布料被移除时大口吞咽着新鲜空气……"
     },
     { regex: /(.+) starts to stir with a gentle moan\.\.\./, replacement: "$1开始缓慢地挣扎着, 轻轻地呻吟着." },
     {
         regex: /(.+)'s eyes flutter and start to open sleepily\.\.\./,
-        replacement: "$1的眼睛飘动着, 开始慢慢地睁开, 显得昏昏欲睡.",
+        replacement: "$1的眼睛微微颤动,开始困倦地睁开……"
     },
     {
         regex: /(.+) moans and trembles in frustration as (.+) is held right at the edge\.\.\./,
-        replacement: "$1因被困在边缘而感到沮丧地呻吟和颤抖.",
+        replacement: "$1沮丧地呻吟着并颤抖着,当$2被正好困在高潮边缘时……"
     },
-    { regex: /(.+) leads (.+) out of the room by the ear\./, replacement: "$1领着$2通过耳朵离开房间." },
-    { regex: /(.+) roughly pulls (.+) out of the room by the arm\./, replacement: "$1粗暴地拉着$2通过手臂离开房间." },
-    { regex: /(.+) tugs (.+) out of the room by the tongue\./, replacement: "$1拽着$2通过舌头离开房间." },
-    { regex: /(.+) drags (.+) out of the room with a wince\./, replacement: "$1痛苦地拖着$2离开房间." },
-    { regex: /(.+) feels as though (.+) abilities are enhanced\./, replacement: "$1感觉自己的能力得到了增强." },
-    { regex: /(.+) feels as though (.+) abilities are deminished\./, replacement: "$1感觉自己的能力受到了削弱." },
-    { regex: /(.+)'s abilities return to normal\./, replacement: "$1的能力恢复正常." },
-    { regex: /(.+) blinks and returns to (.+) senses\./, replacement: "$1眨了眨眼, 回到了$2的感觉中." },
-    {
-        regex: /(.+)'s breathing calms down as (.+) regains control of (.+) arousal\./,
-        replacement: "$1的呼吸平静下来, 当$2重新控制了$3的兴奋时.",
-    },
-    { regex: /(.+) slumps weakly as (.+) slips into unconciousness\./, replacement: "$1无力地瘫坐, 当$2陷入无意识时." },
-    {
-        regex: /(.+)'s eyelids flutter and start to open sleepily\.\.\./,
-        replacement: "$1的眼睑飘动, 开始昏昏欲睡地睁开.",
-    },
-    { regex: /(.+)'s body reshapes and grows to twice its size\./, replacement: "$1的身体重新塑形并长大至两倍大小." },
-    { regex: /(.+)'s body reshapes and shrinks to half its size\./, replacement: "$1的身体重新塑形并缩小至一半大小." },
-    { regex: /(.+)'s body returns to its normal size\./, replacement: "$1的身体恢复到正常大小." },
-    { regex: /(.+)'s (.+) engulfs (.+)\./, replacement: "$1的$2吞没了$3." },
-    {
-        regex: /(.+) struggles in (.+) bindings, unable to reach (.+) collar's controls\./,
-        replacement: "$1在$2约束下挣扎, 无法触及$3项圈的控制装置.",
-    },
-    {
-        regex: /(.+) struggles in (.+) bindings, unable to reach (.+)'s collar controls\./,
-        replacement: "$1在$2约束下挣扎, 无法触及$3的项圈控制装置.",
-    },
-    { regex: /(.+) presses a button on (.+) collar\./, replacement: "$1按下$2项圈上的一个按钮." },
-    { regex: /(.+) presses a button on (.+)'s collar\./, replacement: "$1按下$2的项圈上的一个按钮." },
-    {
-        regex: /(.+)\'s collar beeps and a computerized voice says "Access Denied\./,
-        replacement: "$1的项圈发出嘟嘟声, 电脑化的声音说:“访问被拒绝.”",
-    },
+    { regex: /(.+) leads (.+) out of the room by the ear\./, replacement: "$1揪着$2的耳朵把其带出房间." },
+    { regex: /(.+) roughly pulls (.+) out of the room by the arm\./, replacement: "$1粗暴地拽着$2的胳膊把其带出房间." },
+    { regex: /(.+) tugs (.+) out of the room by the tongue\./, replacement: "$1拽着$2的舌头离开房间." },
+    { regex: /(.+) drags (.+) out of the room with a wince\./, replacement: "$1皱着眉把$2拖出房间." },
+    { regex: /(.+) feels as though (.+) abilities are enhanced\./, replacement: "$1感觉好像$2的能力得到了增强." },
+    { regex: /(.+) feels as though (.+) abilities are deminished\./, replacement: "$1感觉好像$2的能力被削弱了." },
+    { regex: /(.+)'s abilities return to normal\./, replacement: "$1的能力回归正常." },
+    { regex: /(.+) blinks and returns to (.+) senses\./, replacement: "$1眨了眨眼,回到了$2的感知中." },
+    { regex: /(.+)'s breathing calms down as (.+) regains control of (.+) arousal\./, replacement: "$1的呼吸平稳下来,当$2重新掌控了$3的高潮状态时." },
+    { regex: /(.+) slumps weakly as (.+) slips into unconciousness\./, replacement: "$1虚弱地瘫倒,当$2陷入昏迷时." },
+    { regex: /(.+)'s eyelids flutter and start to open sleepily\.\.\./, replacement: "$1的眼皮颤动,开始困倦地睁开……" },
+    { regex: /(.+)'s body reshapes and grows to twice its size\./, replacement: "$1 的身体重新塑形并且长大到原来的两倍." },
+    { regex: /(.+)'s body reshapes and shrinks to half its size\./, replacement: "$1 的身体重新塑形并且缩小到原来的一半." },
+    { regex: /(.+)'s body returns to its normal size\./, replacement: "$1 的身体回归正常大小." },
+    { regex: /(.+)'s (.+) engulfs (.+)\./, replacement: "$1 的 $2 吞噬了 $3 ." },
+    { regex: /(.+) struggles in (.+) bindings, unable to reach (.+) collar's controls\./, replacement: "$1 在 $2 的束缚中挣扎,无法够到 $3 项圈的控制装置." },
+    { regex: /(.+) struggles in (.+) bindings, unable to reach (.+)'s collar controls\./, replacement: "$1 在 $2 的束缚中挣扎,无法够到 $3 的项圈控制装置." },
+    { regex: /(.+) presses a button on (.+) collar\./, replacement: "$1 按下 $2 项圈上的一个按钮." },
+    { regex: /(.+) presses a button on (.+)'s collar\./, replacement: "$1 按下 $2 的项圈上的一个按钮." },
+    { regex: /(.+)\'s collar beeps and a computerized voice says "Access Denied\./, replacement: "$1 的项圈发出蜂鸣声,一个电脑化的声音说：\"访问被拒绝.\"  " },
     {
         regex: /(.+)\'s collar chimes and a computerized voice reads out\:\nCurrent Level\: (.+)\.\.\.\nCorrective Cycles: (.+)\.\.\.\nTighten Trigger\: \'(.+)\'\.\.\.\nLoosen Trigger\: \'(.+)\'\.\.\.\nRemote Access\: (.+)\.\.\./,
         replacement:
-            "$1的项圈响起提示音, 电脑化的声音读出:\n当前水平:$2...\n校正周期:$3...\n收紧触发器:“$4”...\n放松触发器:“$5”...\n远程访问:$6..",
+            "$1 的项圈发出鸣响,电脑化的声音读出：\n当前等级：$2……$\n$校正周期：$3……\n收紧触发器：'$4'……$\n$放松触发器：'$5'……\n远程访问：$6……"
     },
-    { regex: /(.+) gives (.+) (.+) to (.+)\./, replacement: "$1给$2$3给$4." },
+    { regex: /(.+) gives (.+) to (.+)\./, replacement: "$1 把 $2 给 $3 ." },
     {
-        regex: /(.+) slowly waves (.+) (.+) in an intricate pattern, making sure (.+) follows along with (.+) (.+)/,
-        replacement: "$1慢慢地挥动着$2$3以复杂的图案, 确保$4跟着他们的$5$6.",
-    },
-    {
-        regex: /(.+) repeats an indecipherable phrase, touching (.+) (.+) to (.+)'s (.+)/,
-        replacement: "$1重复着一个难以理解的短语, 把$2$3碰到$4的$5.",
+        regex: /(.+) slowly waves (.+) in an intricate pattern, making sure (.+) follows along with (.+)/,
+        replacement: "$1 慢慢地挥动着 $2 形成复杂的图案,确保 $3 跟随他们的 $4."
     },
     {
-        regex: /(.+) holds both(.+)(.+) and(.+)'s (.+) tightly, energy traveling from one to the other/,
-        replacement: "$1紧紧地握着$2$3和$4的$5, 能量从一个传递到另一个",
+        regex: /(.+) repeats an indecipherable phrase, touching (.+) to (.+)'s (.+)/,
+        replacement: "$1 重复着一个难以理解的短语,将 $2 触碰到 $3 的 $4 ."
     },
     {
-        regex: /(.+) waves (.+) (.+) in an intricate pattern and casts (.+) on (.+)(.+)/,
-        replacement: "$1挥动$2$3以复杂的图案并在$4上施放$5$6",
+        regex: /(.+) holds both (.+) and (.+)'s (.+) tightly, energy traveling from one to the other/,
+        replacement: "$1 紧紧地握着 $2 和 $3 的 $4 ,能量在两者之间传递."
     },
     {
-        regex: /(.+) chants an indecipherable phrase, pointing (.+) (.+) at (.+) and casting (.+)(.+)/,
-        replacement: "$1吟诵着一个难以理解的短语, 指着$2$3对准$4并施放$5$6",
+        regex: /(.+) waves (.+) in an intricate pattern and casts (.+) on (.+)/,
+        replacement: "$1 挥动 $2 形成复杂的图案,并在 $4 上施展 $3 ."
     },
     {
-        regex: /(.+) aims (.+) (.+) at (.+) and, with a grin, casts (.+) (.+)/,
-        replacement: "$1瞄准$2$3在$4上, 并带着笑容施放$5$6 ",
+        regex: /(.+) chants an indecipherable phrase, pointing (.+) at (.+) and casting (.+)/,
+        replacement: "$1 吟诵着一个难以理解的短语,将 $2 指向 $3 并施展 $4 ."
+    },
+    {
+        regex: /(.+) aims (.+) at (.+) and, with a grin, casts (.+)/,
+        replacement: "$1 把 $2 瞄准 $3 ,带着笑容施展 $4 ."
     },
     {
         regex: /(.+) struggles to wield (.+)'s (.+), (.+) spell backfiring\./,
-        replacement: "$1挣扎着挥舞$2的$3, $4法术反噬.",
+        replacement: "$1 挣扎着挥动 $2 的 $3 ,$4 法术产生反噬."
     },
     {
         regex: /(.+) struggles to wield (.+)'s (.+), (.+) spell fizzling with no effect\./,
-        replacement: "$1挣扎着挥舞$2的$3, $4法术无效.",
+        replacement: "$1 挣扎着挥动 $2 的 $3 ,$4 法术毫无效果地消散了."
     },
-    { regex: /(.+) casts (.+) at (.+) but it seems to fizzle\./, replacement: "$1施放$2在$3, 但看起来失效了." },
+    { regex: /(.+) casts (.+) at (.+) but it seems to fizzle\./, replacement: "$1 向 $3 施放 $2 ,但似乎失效了." },
     {
         regex: /(.+) tries to explain the details of (.+) to (.+) but (.+) don't seem to understand\./,
-        replacement: "$1试图向$3解释$2的细节, 但$4似乎不理解.",
+        replacement: "$1 试图向 $3 解释 $2 的细节,但 $4 似乎不理解."
     },
     {
         regex: /(.+) tries to teach (.+) (.+) but (.+) don't seem to have ̶i̶n̶s̶t̶a̶l̶l̶e̶d̶ embraced Magic™\./,
-        replacement: "$1试图教$3$2, 但$4似乎没有 embraced Magic™.",
+        replacement: "$1 试图教 $2 $3 ,但 $4 似乎没有接纳 Magic™ ."
     },
     {
         regex: /(.+)\'s (.+) fizzles when cast on (.+), none of its effects allowed to take hold\./,
-        replacement: "$1的$2消失了, 没有任何效果.",
+        replacement: "$1 的 $2 在对 $3 施放时失效了,没有任何效果产生."
     },
     {
         regex: /(.+)\'s paired spell fizzles as it attempts to pair with (.+)\./,
-        replacement: "$1的配对法术消失了, 当尝试与$2配对时.",
+        replacement: "$1 的配对法术在尝试与 $2 配对时失效了."
     },
-    { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1扭动不安, 当$2的情欲被配对时." },
+    { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1 扭动着,当 $2 的兴奋被配对时." },
     {
         regex: /(.+) lets out a quiet gasp as the pleasure center of (.+) mind starts to tingle\./,
-        replacement: "$1发出轻轻的呼吸声, 因为$2心灵的愉悦中心开始发麻.",
+        replacement: "$1 发出一声轻轻的喘息,因为 $2 心灵的愉悦中心开始有刺痛感."
     },
     {
         regex: /(.+)\'s mind is already full of spells. (.+) must forget one before (.+) can learn (.+)\./,
-        replacement: "$1的心灵已经充满了咒语.$2必须忘记一个才能学会$4.",
+        replacement: "$1 的脑海中已经充满了咒语.$2 必须先忘记一个,$3 才能学会 $4 ."
     },
     {
         regex: /(.+) already knows a spell called (.+) and ignores (.+) new instructions\./,
-        replacement: "$1已经知道一个名为$2的咒语, 忽略了$3的新指示.",
+        replacement: "$1 已经知道一个叫做 $2 的咒语,并且忽略了 $3 的新指令."
     },
     {
         regex: /(.+) grins as they finally understand the details of (.+) and memorizes it for later\./,
-        replacement: "$1露出笑容, 因为他们终于理解了$2的细节, 并把它记在心里以备将来.",
+        replacement: "$1 咧嘴笑了,因为他们终于理解了 $2 的细节,并将其记住以备后用."
     },
-    { regex: /(.+) gulps down (.+)'s (.+)\./, replacement: "$1吞下了$2的$3." },
-    { regex: /(.+) leads (.+) out of the room by the (.+)\./, replacement: "$1牵着$2走出房间." },
-    { regex: /(.+) leads (.+) and (.+) out of the room\./, replacement: "$1带着$2和$3走出房间." },
-    { regex: /(.+) drags (.+) out of the room with a wince\./, replacement: "$1拖着$2一边皱着眉走出房间." },
-    { regex: /(.+)\'s (.+) state wears off\./, replacement: "$1的$2状态消失了." },
+    { regex: /(.+) gulps down (.+)'s (.+)\./, replacement: "$1 吞下了 $2 的 $3 ." },
+    { regex: /(.+) leads (.+) out of the room by the (.+)\./, replacement: "$1 牵着 $2 走出房间." },
+    { regex: /(.+) leads (.+) and (.+) out of the room\./, replacement: "$1 带着 $2 和 $3 走出房间." },
+    { regex: /(.+) drags (.+) out of the room with a wince\./, replacement: "$1 拖着 $2 一边皱着眉走出房间." },
+    { regex: /(.+)\'s (.+) state wears off\./, replacement: "$1 的 $2 状态消失了." },
     {
-        regex: /(.+) (.+) successfully defends against (.+)'s (.+) attempt to force (.+) to drink (.+) (.+), spilling drink all over\./,
-        replacement: "$1 $2 成功地抵御了$3的$4企图强迫$5喝 $6 $7, 饮料洒得到处都是.",
+        regex: /(.+) successfully defends against (.+)'s (.+) attempt to force (.+) to drink (.+), spilling drink all over\./,
+        replacement: "$1 成功地抵御了 $2 的 $3 企图强迫 $4 喝 $5 ,饮料洒得到处都是."
     },
     {
-        regex: /(.+) (.+) manages to wrest (.+)'s (.+) (.+) out of (.+) grasp\!/,
-        replacement: "$1$2设法夺过$3的$4$5脱离了$6的控制!",
+        regex: /(.+) manages to wrest (.+)'s (.+) out of (.+) grasp\!/,
+        replacement: "$1 设法夺过 $2 的 $3 从 $4 的手中!"
     },
-    { regex: /(.+) makes an activity roll and gets: (.+) (.+)/, replacement: "$1进行一次活动检定并获得: $2 $3" },
-    {
-        regex: /(.+) makes an activity check attack against (.+)\!/,
-        replacement: "$1进行一次活动检定攻击, 攻击目标是$2!",
-    },
+    { regex: /(.+) makes an activity roll and gets: (.+)/, replacement: "$1 进行一次活动检定并获得: $2 " },
+    { regex: /(.+) makes an activity check attack against (.+)\!/, replacement: "$1 进行一次活动检定攻击,攻击目标是 $2!" },
     { regex: /(.+) makes an activity check defending from (.+)\!/, replacement: "$1进行一次活动检定防御, 防御来自$2!" },
     {
-        regex: /(.+) (.+) manages to get (.+) (.+) past (.+)'s (.+) lips, forcing (.+) to swallow\./,
-        replacement: "$1$2设法让$3$4经过$5的$6, 迫使$7吞咽.",
+        regex: /(.+) manages to get (.+) past (.+)'s (.+) lips, forcing (.+) to swallow\./,
+        replacement: "$1 设法让 $2 经过 $3 的 $4 嘴唇,迫使 $5 吞咽."
     },
     {
         regex: /(.+) lets out a long low moan as (.+)'s drink burns pleasurably down (.+) throat\./,
-        replacement: "$1发出长长的低吟, 当$2的饮料愉快地灼烧着$3的喉咙.",
+        replacement: "$1 发出一声长长的低吟,当 $2 的饮料愉快地灼烧着 $3 的喉咙."
     },
     {
         regex: /(.+) gulps and quivers as (.+) body is slowly flooded with (.+)'s aphrodisiac\./,
-        replacement: "$1低声喘息, 当$2的身体逐渐被$3的催情剂淹没.",
+        replacement: "$1 大口吞咽并颤抖着,当 $2 的身体慢慢被 $3 的催情剂淹没."
     },
     {
         regex: /(.+) gasps, snapping back into (.+) senses confused and blushing\./,
-        replacement: "$1喘息, 突然回到$2的意识中, 感到困惑而脸红.",
+        replacement: "$1 喘息着,突然回到 $2 的意识中,感到困惑并脸红."
     },
     {
         regex: /(.+) groans as air is allowed back into (.+) lungs\./,
-        replacement: "$1呻吟着, 当空气重新进入$2的肺部时.",
+        replacement: "$1 呻吟着,当空气重新回到 $2 的肺部."
     },
     {
         regex: /(.+)\'s eyes flutter as (.+) wraps (.+) hand around (.+) neck\./,
-        replacement: "$1的眼睛眨动着, 当$2用$4的手环绕着$3的脖子时.",
+        replacement: "$1 的眼睛眨动着,当 $2 用 $3 的手环绕着 $4 的脖子."
     },
     {
         regex: /(.+) gasps for air as (.+) tightens (.+) grip on (.+) neck\./,
-        replacement: "$1为了呼吸而喘息, 当$2在$4的脖子上紧紧抓着时.",
+        replacement: "$1 喘着粗气想要呼吸,当 $2 收紧 $3 对 $4 脖子的控制."
     },
     {
         regex: /(.+)\'s face runs flush, choking as (.+) presses firmly against (.+) neck, barely allowing any air to (.+) lungs\./,
-        replacement: "$1的脸颊泛红,当$2紧紧压在$3的脖子上,几乎不让空气进入$4的肺部.",
+        replacement: "$1 的脸涨得通红,窒息着,当 $2 紧紧压在 $3 的脖子上,几乎不让任何空气进入 $4 的肺里."
     },
     {
         regex: /(.+) gasps in relief as (.+) releases (.+) pressure on (.+) neck\./,
-        replacement: "$1松了口气, 当$2释放对$4的压力时.",
+        replacement: "$1 如释重负地喘着气,当 $2 减轻对 $4 脖子的压力时."
     },
-    { regex: /(.+) chokes and spasms, struggling in (.+) gag\./, replacement: "$1呛着并痉挛, 挣扎在$2的口球中." },
+    { regex: /(.+) chokes and spasms, struggling in (.+) gag\./, replacement: "$1 呛着并痉挛,在 $2 中挣扎." },
     {
         regex: /(.+) convulses weakly with a moan, (.+) eyes rolling back as (.+) clenches around (.+) throat even tighter\./,
-        replacement: "$1微弱地抽搐着发出呻吟声, 当$2更紧地锁紧$4的喉咙时, $3的眼睛翻白.",
+        replacement: "$1 虚弱地抽搐着发出呻吟声, 当 $2 更紧地掐住 $4 的喉咙, $3的眼睛翻白.",
     },
     {
         regex: /(.+) convulses weakly with a moan, (.+) eyes rolling back as (.+) lungs scream for air\./,
-        replacement: "$1微弱地抽搐着发出呻吟声, 当$2的眼睛开始翻白时, $3的肺部呼吁空气.",
+        replacement: "$1 虚弱地抽搐着并呻吟,$2 眼睛翻白,$3 的肺在渴求空气."
     },
     {
         regex: /(.+) snaps back into (.+) senses at (.+)'s voice\./,
-        replacement: "$1突然回到$2的意识中, 听到了$3的声音.",
+        replacement: "$1 突然回到 $2 的意识中,听到了 $3 的声音."
     },
     {
-        regex: /(.+) (.+)manages to get (.+) (.+) past (.+)'s (.+)lips, forcing (.+) to swallow\./,
-        replacement: "$1$2设法让$3$4经过$5的$6, 迫使$7吞咽.",
+        regex: /(.+)manages to get (.+) past (.+)'s (.+)lips, forcing (.+) to swallow\./,
+        replacement: "$1 设法让 $2 经过 $3 的 $4 嘴唇,迫使 $5 吞咽."
     },
     {
-        regex: /(.+) (.+) manages to get (.+) (.+) past (.+)'s (.+) lips, forcing (.+) to swallow it\./,
-        replacement: "$1$2设法让$3$4经过$5的$6, 迫使$7吞咽它.",
+        regex: /(.+) manages to get (.+) past (.+)'s (.+) lips, forcing (.+) to swallow it\./,
+        replacement: "$1 设法让 $2 经过 $3 的 $4 嘴唇,迫使 $5 吞咽它."
     },
     {
-        regex: /(.+) (.+) successfully defends against (.+)'s (.+) attempt to force (.+) to drink (.+) (.+)\./,
-        replacement: "$1$2成功抵御了$3的$4企图迫使$5喝下$6$7.",
+        regex: /(.+) successfully defends against (.+)'s (.+) attempt to force (.+) to drink (.+)\./,
+        replacement: "$1 成功抵御了 $2 的 $3 企图迫使 $4 喝下 $5 ."
     },
     {
         regex: /(.+) leads (.+) and (.+) out of the room by (.+) ears\./,
-        replacement: "$1带着$2和$3走出房间, 拉着$4的耳朵.",
+        replacement: "$1 带着 $2 和 $3 走出房间,拉着 $4 的耳朵."
     },
     {
-        regex: /(.+) roughly pulls (.+) and (.+) out of the room by (.+) arms\./,
-        replacement: "$1粗暴地拉着$2和$3走出房间, 抓住$4的手臂.",
+        regex: /(.+) roughly Pulls (.+) and (.+) out of the room by (.+) arms\./,
+        replacement: "$1 粗暴地拉着 $2 和 $3 走出房间,抓住 $4 的手臂."
     },
     {
         regex: /(.+) tugs (.+) and (.+) out of the room by (.+) tongues\./,
-        replacement: "$1拽着$2和$3走出房间, 用$4的舌头.",
+        replacement: "$1 拽着 $2 和 $3 走出房间,用 $4 的舌头."
     },
-    { regex: /(.+) tries (.+) best to escape from (.+)'s grip\.\.\./, replacement: "$1竭尽全力从$3的控制中挣脱..." },
+    { regex: /(.+) tries (.+) best to escape from (.+)'s grip\.\.\./, replacement: "$1 竭尽全力从 $3 的控制中挣脱..." },
     {
         regex: /(.+)\'s eyes start to roll back with a groan as (.+) completely closes (.+) airway with (.+) hand\./,
-        replacement: "$1的眼睛开始滚动, 发出呻吟声, 当$2用$4的手完全封闭$3的气道时.",
+        replacement: "$1 的眼睛开始翻白并呻吟,当 $2 用 $4 的手完全封闭 $3 的气道时."
     },
 
-
-    // {
-    //     regex: /(.+) gasps as pleasure (.+) over (.+)\./,
-    //     replacement: "$1.", // 救救
-    // },
-    // 下面改过
+    {
+        regex: /(.+) grabs at (.+)'s (.+), trying to steal it\!/,
+        replacement: "$1一把抓住$2的$3, 试图偷取它!",
+    },
+    {
+        regex: /(.+) fails to steal (.+)'s (.+) and is dazed from the attempt\!/,
+        replacement: "$1未能偷走$2的$3, 并且在尝试之后感到茫然失措!",
+    },
+    {
+        regex: /(.+)'s leash seems to be cursed and slips out of (.+)'s hand\./,
+        replacement: "$1的牵引绳似乎被诅咒了,从$2手中滑落.",
+    },
+    {
+        regex: /(.+)'s eyes lock on to (.+) and (.+) follows (.+) out of the room obediently\./,
+        replacement: "$1的目光锁定在$2上,接着$3顺从地跟随$4走出房间."
+    },
+    {
+        regex: /(.+) looks around, a little confused about how (.+) got here\./,
+        replacement: "$1环顾四周,有点搞不清楚$2是怎么来到这里的.",
+    },
+    {
+        regex: /(.+) moans quietly as (.+) slips back down under trance\.\.\./,
+        replacement: "$1在恍惚中慢慢滑落,$2轻声呻吟着……",
+    },
+    {
+        regex: /(.+) gasps quietly as (.+) mind can suddenly form sentences once again\.\.\./,
+        replacement: "$1轻轻地喘息着,$2的大脑突然又能组织句子了……",
+    },
+    {
+        regex: /(.+) gasps as pleasure rushes over (.+)\./,
+        replacement: "$1因极度的快感而喘息不已.",
+    },
+    {
+        regex: /(.+)'s mouth falls silent once again\.\.\./,
+        replacement: "$1再次陷入沉默,嘴唇紧闭.",
+    },
+    {
+        regex: /(.+) gasps as pleasure (.+) over (.+)\./,
+        replacement: "$1 因愉悦而喘息,(这种愉悦)笼罩着 $3."
+    },
     {
         regex: /(.+)'s blank expression hides (.+) impending denial\./,
         replacement: "$1茫然的表情掩饰了$2他即将要否认的事实.",
@@ -1315,7 +1383,7 @@ const act_dialogs = [
     },
     {
         regex: /(.+) looks frustrated, their inability to both walk and talk preventing them from serving drinks./,
-        replacement: "$1看起来很沮丧,既不能走路也不能说话,这使得无法为客人提供饮料.",
+        replacement: "$1 看起来很沮丧,既不能走路也不能说话,这使得他们无法为客人提供饮料."
     },
     {
         regex: /(.+) opens her mouth but no sound comes out./,
@@ -1341,7 +1409,22 @@ const act_dialogs = [
         regex: /(.+) has accessed your remote settings\!/,
         replacement: "$1访问了您的远程设置!",
     },
-    // 上面改过
+    {
+        regex: /(.+) waves (.+) in front of (.+), and with a sudden boop, casts (.+) on (.+), the spell's power also arcing to (.+)\./,
+        replacement: "$ $1把$2的$3举到$4面前,突然用魔杖敲了一下,施展了\"$5\"咒语,咒语的力量也传到了$6身上.",
+    },
+    {
+        regex: /(.+) successfully saves against (.+)'s \[(.+)\] (.+)\./,
+        replacement: "$1成功抵御了$2的 \[$3\] \"$4\"咒语.",
+    },
+    {
+        regex: /(.+) baps (.+) with (.+) and, with a grin, casts (.+), the spell's power also arcing to (.+)\./,
+        replacement: "$1用$2的$4拍了拍$3,笑着施展了\"$5\"咒语,咒语的力量也传到了$6身上.",
+    },
+    // {
+    //     regex: /(.+)\./,
+    //     replacement: "$1.",
+    // },
 
     // BCX
     {
@@ -1350,13 +1433,20 @@ const act_dialogs = [
     },
     {
         regex: /The curse on (.+)\'s (.+) wakes up and the item reappears\./,
-        replacement: "$1上的诅咒苏醒,$2再次浮现.",
+        replacement: "在$1的$2上的诅咒苏醒,该物品再次出现."
     },
     {
         regex: /tried to use a remote control on (.+) own body\, which was forbidden\./,
-        replacement: "$1试图用遥控器控制自己的身体,但这是被禁止的.",
+        replacement: "$1试图对自己的身体使用遥控器,而这是被禁止的."
     },
-
+    {
+        regex: /(.+) almost forgot to use a mandatory word while talking\./,
+        replacement: "$1在交谈时忘了使用一个必说词汇."
+    },
+    {
+        regex: /(.+) tried to use the antiblind command\./,
+        replacement: "$1尝试使用反盲指令."
+    },
 
 
     // BCC
@@ -1369,7 +1459,7 @@ const act_dialogs = [
     { regex: /(.+) uses \"Put to sleep\" spell on (.+)/, replacement: '$1 对 $2 使用了 "催眠入睡" 法术' },
     {
         regex: /(.+) fell asleep, only hot kiss or hard spanking can wake his up/,
-        replacement: "$1 睡着了,只有热烈的亲吻或严厉的打屁股才能唤醒他",
+        replacement: "$1 睡着了,只有热烈的亲吻或严厉的打屁股才能唤醒他"
     },
 
     // 移除魔法效果
