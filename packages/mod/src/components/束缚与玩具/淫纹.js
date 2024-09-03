@@ -1,6 +1,43 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
 
+/** @type {CustomGroupName} */
+const group = "ItemPelvis";
+
+function AssetsItemPelvis淫纹开始自慰(){
+    ActivityEffect(Player, Player, "MasturbateHand", "ItemVulvaPiercings", 0, null)
+    DrawFlashScreen("#FF7777", 2000, 500);
+    ServerSend("ChatRoomChat", {
+        "Content": "ChatSelf-ItemVulvaPiercings-MasturbateHand",
+        "Type": "Activity",
+        "Dictionary": [
+            { "SourceCharacter": Player.MemberNumber },
+            { "TargetCharacter": Player.MemberNumber },
+            { "Tag": "FocusAssetGroup", "FocusGroupName": "ItemVulvaPiercings" },
+            { "ActivityName": "MasturbateHand" }
+        ],
+    });
+
+    const a = setInterval(() => {
+        // @ts-ignore
+        if ( !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi") || !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi").Property.Masturbation) {
+            return clearInterval(a);
+        }
+        ActivityEffect(Player, Player, "MasturbateHand", "ItemVulvaPiercings", 0, null)
+        DrawFlashScreen("#FF7777", 2000, 500);
+        ServerSend("ChatRoomChat", {
+            "Content": "ChatSelf-ItemVulvaPiercings-MasturbateHand",
+            "Type": "Activity",
+            "Dictionary": [
+                { "SourceCharacter": Player.MemberNumber },
+                { "TargetCharacter": Player.MemberNumber },
+                { "Tag": "FocusAssetGroup", "FocusGroupName": "ItemVulvaPiercings" },
+                { "ActivityName": "MasturbateHand" }
+            ],
+        });
+    }, 20000);
+}
+
 ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
     const data = args[0];
     if (data.Content.includes("淫纹_Luzi")) {
@@ -11,32 +48,53 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
                 ActivityOrgasmPrepare(Player);
             } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹性刺激互动") {
                 DrawFlashScreen("#FF7777", 2000, 500);
+            } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹开始强制自慰互动") {
+                AssetsItemPelvis淫纹开始自慰();
             }
         }
     }
     next(args);
 });
 
+// @ts-ignore
 function InventoryItemPelvis淫纹DrawHook(Data, OriginalFunction) {
     OriginalFunction();
-
     MainCanvas.textAlign = "center";
     ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹性刺激按钮", 1510, 600);
     ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹魔法电流按钮", 1510, 675);
-    ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹强制高潮按钮", 1510, 750);
+    // @ts-ignore
+    if(DialogFocusItem.Property.Masturbation)
+	    DrawText(AssetTextGet("ItemPelvis淫纹_LuziON"), 1810, 776, "White", "Gray");
+    else
+        DrawText(AssetTextGet("ItemPelvis淫纹_LuziOFF"), 1810, 776, "White", "Gray");
+   // @ts-ignore
+    if(DialogFocusItem.Property.Light)
+	    DrawText(AssetTextGet("ItemPelvis淫纹_LuziON"), 1190, 626, "White", "Gray");
+    else
+        DrawText(AssetTextGet("ItemPelvis淫纹_LuziOFF"), 1190, 626, "White", "Gray");
+    ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹强制自慰按钮", 1510, 750);
+    ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹强制高潮按钮", 1510, 825);
+    ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹发光按钮", 1260, 600);
 }
 
+// @ts-ignore
 function InventoryItemPelvis淫纹ClickHook(Data, OriginalFunction) {
     OriginalFunction();
-
     if (!DialogFocusItem) {
         return;
     } else if (MouseIn(1510, 600, 225, 55)) {
         ExtendedItemCustomClick("淫纹性刺激", AssetsItemPelvis淫纹性刺激, false, false);
     } else if (MouseIn(1510, 675, 225, 55)) {
         ExtendedItemCustomClick("淫纹魔法电流", PropertyShockPublishAction, false, false);
-    } else if (MouseIn(1510, 750, 225, 55)) {
+    } else if (MouseIn(1510, 750, 225, 55) ) {
+        // @ts-ignore
+        ExtendedItemCustomClickAndPush(CharacterGetCurrent(), DialogFocusItem, "Masturbation", () => DialogFocusItem.Property.Masturbation = !DialogFocusItem.Property.Masturbation, false, false);
+		ExtendedItemCustomClick("淫纹强制自慰", AssetsItemPelvis淫纹强制自慰, false, false);
+    } else if (MouseIn(1510, 825, 225, 55)) {
         ExtendedItemCustomClick("淫纹强制高潮", AssetsItemPelvis淫纹强制高潮, false, false);
+    } else if (MouseIn(1260, 600, 225, 55)) {
+        // @ts-ignore
+        ExtendedItemCustomClick("淫纹发光",  () => DialogFocusItem.Property.Light = !DialogFocusItem.Property.Light, false, false);
     }
 }
 
@@ -68,10 +126,33 @@ function AssetsItemPelvis淫纹性刺激() {
     if (C != null) DialogLeave();
 }
 
+function AssetsItemPelvis淫纹强制自慰() {
+    const C = CharacterGetCurrent();
+    // @ts-ignore
+    if ( DialogFocusItem.Property.Masturbation ) {
+        ServerSend("ChatRoomChat", {
+            "Content": "ItemPelvis淫纹_Luzi淫纹开始强制自慰互动",
+            "Type": "Action",
+            "Dictionary": [
+                { "SourceCharacter": Player.MemberNumber },
+                { "TargetCharacter": C.MemberNumber },
+            ],
+        });
+    } else {
+        ServerSend("ChatRoomChat", {
+            "Content": "ItemPelvis淫纹_Luzi淫纹停止强制自慰互动",
+            "Type": "Action",
+            "Dictionary": [
+                { "SourceCharacter": Player.MemberNumber },
+                { "TargetCharacter": C.MemberNumber },
+            ],
+        });
+    }
+    if (C != null) DialogLeave();
+}
+
 function AssetsItemPelvis淫纹强制高潮() {
     const C = CharacterGetCurrent();
-    if (C.IsPlayer()) {
-    }
     ServerSend("ChatRoomChat", {
         "Content": "ItemPelvis淫纹_Luzi淫纹强制高潮互动",
         "Type": "Action",
@@ -87,8 +168,9 @@ function AssetsItemPelvis淫纹强制高潮() {
     if (C != null) DialogLeave();
 }
 
-// @ts-ignore
-function AssetsItemPelvis淫纹ScriptDrawHook(data, originalFunction, drawData) {
+
+function scriptDraw( data, originalFunction, drawData ) {
+
     if (drawData.C.IsPlayer() && drawData.Item.Property.TypeRecord.typed === 1) {
         // 确保 Player 存在
         if (!Player) {
@@ -110,7 +192,39 @@ function AssetsItemPelvis淫纹ScriptDrawHook(data, originalFunction, drawData) 
         // @ts-ignore
         Player.LSCG.InjectorModule.hornyLevel = Math.min(newLevelActual, hornyLevelMax * drugLevelMultiplier);
     }
+
+    const Data = drawData.PersistentData();
+
+    const qsetting = () =>
+        Player.GraphicsSettings ? Math.max(30, Player.GraphicsSettings.AnimationQuality * 0.6) : 30;
+
+    Data.FrameDelay = Data.FrameDelay ?? qsetting();
+    Data.FrameTimer = Data.FrameTimer ?? CommonTime() + Data.FrameDelay;
+
+    if (Data.FrameTimer < CommonTime()) {
+        Data.FrameTimer = CommonTime() + qsetting();
+        AnimationRequestRefreshRate(drawData.C, Data.FrameDelay);
+        AnimationRequestDraw(drawData.C);
+    }
+
+
 }
+
+
+function beforeDraw({ PersistentData, L, X, Y, Property }) {
+    if (L === "发光") {
+		const property = Property || {};
+        const Data = PersistentData();
+        Data.Frame = Data.Frame || 0;
+        // @ts-ignore
+        if( property.Light ) {
+            Data.Frame = (Data.Frame + 1) % 40 ;
+		    return { Opacity:0.7 + 0.3 * Math.cos(Data.Frame * 0.025 * 2 * Math.PI) };
+        } else
+            return { Opacity: 0 };
+	}
+}
+
 
 /** @type { CustomAssetDefinition} */
 const asset = {
@@ -127,6 +241,7 @@ const asset = {
     RemoveTime: 5,
     Time: 10,
     DynamicScriptDraw: true,
+    DynamicBeforeDraw: true,
     DefaultColor: ["#EA3E74"],
     Layer: [
         {
@@ -137,7 +252,6 @@ const asset = {
             Name: "发光",
             Priority: 44,
             ParentGroup: null,
-            AllowTypes: { typed: [1, 2, 3] },
         },
     ],
 };
@@ -157,7 +271,13 @@ const extended = {
     {
         Draw: InventoryItemPelvis淫纹DrawHook,
         Click: InventoryItemPelvis淫纹ClickHook,
-        ScriptDraw: AssetsItemPelvis淫纹ScriptDrawHook,
+        ScriptDraw: scriptDraw,
+    },
+    BaselineProperty: {
+        // @ts-ignore
+        Masturbation: false,
+        Light: false,
+        Opacity: 1,
     },
 };
 
@@ -170,6 +290,9 @@ const dialog = {
         ItemPelvis淫纹_Luzi拒绝: "拒绝",
         ItemPelvis淫纹_Luzi淫纹性刺激按钮: "淫纹性刺激",
         ItemPelvis淫纹_Luzi淫纹性刺激互动: "SourceCharacter令DestinationCharacter淫纹产生性刺激.",
+        ItemPelvis淫纹_Luzi淫纹强制自慰按钮: "淫纹强制自慰",
+        ItemPelvis淫纹_Luzi淫纹开始强制自慰互动: "SourceCharacter通过淫纹魔法令TargetCharacter开始不停地自慰.",
+        ItemPelvis淫纹_Luzi淫纹停止强制自慰互动: "SourceCharacter通过淫纹魔法解除了TargetCharacter的强制自慰.",
         ItemPelvis淫纹_Luzi淫纹魔法电流按钮: "淫纹魔法电流",
         ItemPelvis淫纹_Luzi淫纹魔法电流互动: "SourceCharacter令DestinationCharacter淫纹产生淫纹魔法电流.",
         ItemPelvis淫纹_Luzi淫纹强制高潮按钮: "淫纹强制高潮",
@@ -178,6 +301,9 @@ const dialog = {
         ItemPelvis淫纹_LuziSet正常: "SourceCharacter通过魔法令TargetCharacter的淫纹恢复自然状态.",
         ItemPelvis淫纹_LuziSet寸止: "SourceCharacter通过淫纹魔法令TargetCharacter仅能够处于高潮边缘.",
         ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter通过淫纹魔法令TargetCharacter仅能够拒绝高潮.",
+        ItemPelvis淫纹_Luzi淫纹发光按钮: "淫纹发光",
+        ItemPelvis淫纹_LuziON: "已开启",
+        ItemPelvis淫纹_LuziOFF: "已关闭",
     },
     EN: {
         ItemPelvis淫纹_LuziSelect: "Select Effect",
@@ -206,4 +332,5 @@ const translations = {
 export default function () {
     AssetManager.addAsset("ItemPelvis", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
+    ModManager.globalFunction(`Assets${group}${asset.Name}BeforeDraw`, beforeDraw);
 }
