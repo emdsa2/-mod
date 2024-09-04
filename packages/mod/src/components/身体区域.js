@@ -49,7 +49,7 @@ const groups = [
         },
         description: {
             CN: "🍔鞭痕",
-            EN: "🍔鞭痕",
+            EN: "🍔Whip marks",
         },
     },
     {
@@ -71,7 +71,7 @@ const groups = [
         },
         description: {
             CN: "🍔动物身体",
-            EN: "🍔动物身体",
+            EN: "🍔Animal Bodies",
         },
     },
     {
@@ -93,7 +93,7 @@ const groups = [
         },
         description: {
             CN: "🍔长袖子",
-            EN: "🍔长袖子",
+            EN: "🍔Long sleeves",
         },
     },
 ];
