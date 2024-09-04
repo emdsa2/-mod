@@ -1239,6 +1239,10 @@ const act_dialogs = [
         regex: /(.+) grunts and moans, straining to breathe\./,
         replacement: "$1发出粗重的喘息声和呻吟声,努力呼吸着.",
     },
+    {
+        regex: /(.+) swallows (.+) (.+)\./,
+        replacement: "$1喝下了$2的$3.",
+    },
 
 
     // {
