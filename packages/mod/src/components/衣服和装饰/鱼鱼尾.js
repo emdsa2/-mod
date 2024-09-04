@@ -15,7 +15,7 @@ const asset = {
             Top: {
                 Kneel: -110,
                 LegsClosed: -110,
-                Hogtied: -272,
+                Hogtied: -100,
                 AllFours: 0,
             },
             Left: 0,
@@ -89,7 +89,7 @@ const asset = {
             Top: {
                 Kneel: -110,
                 LegsClosed: -110,
-                Hogtied: 272,
+                Hogtied: -100,
                 AllFours: 0,
             },
             Left: 0,
