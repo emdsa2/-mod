@@ -23,7 +23,7 @@ const translations = {
     },
     EN: {
         EyeShadow: {
-            面部妆容_Luzi: "面部妆容",
+            面部妆容_Luzi: "Face makeup",
         },
 
     },

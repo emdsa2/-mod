@@ -24,6 +24,12 @@ const translations = {
             缰绳_Luzi: "缰绳",
         },
     },
+    EN: {
+        ItemTorso: {
+            鞍_Luzi: "Saddle",
+            缰绳_Luzi: "Reins",
+        },
+    },
 };
 
 export default function () {

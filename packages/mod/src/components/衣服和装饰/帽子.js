@@ -42,7 +42,7 @@ const translations = {
     },
     EN: {
         Hat: {
-            冕旒_Luzi: "冕旒",
+            冕旒_Luzi: "Mian Liu",
         },
     },
 };

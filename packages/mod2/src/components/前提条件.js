@@ -7,7 +7,7 @@ const prereqStorage = {
     TargetHasWings: (prereq, acting, acted, group) => !!InventoryGet(acted, "Wings"),
     TargetHasLeash: (prereq, acting, acted, group) => ChatRoomCanBeLeashed(acted),
     TargetHasCatTail: (prereq, acting, acted, group) =>
-        InventoryIsItemInList(acted, "TailStraps", ["KittenTailStrap2", "KittenTailStrap1"]),
+        InventoryIsItemInList(acted, "TailStraps", ["TailStrap", "KittenTailStrap2", "KittenTailStrap1"]),
     TargetHasTentacles: (prereq, acting, acted, group) =>
         InventoryIsItemInList(acted, "TailStraps", ["Tentacles"]) ||
         InventoryIsItemInList(acted, "ItemButt", ["Tentacles"]),
