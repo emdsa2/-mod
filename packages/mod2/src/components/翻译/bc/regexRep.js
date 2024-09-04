@@ -1229,7 +1229,7 @@ const act_dialogs = [
     },
     {
         regex: /(.+) splutters and chokes\, struggling to breathe\./,
-        replacement: "$1气急败坏 ,喘不过气来 ,挣扎着呼吸.",
+        replacement: "$1快要喘不过来了 ,咳得厉害 ,挣扎着想要呼吸.",
     },
     {
         regex: /(.+) trembled as pleasure rushes over (.+)\./,
