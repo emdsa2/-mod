@@ -77,6 +77,15 @@ const translation = {
 				`]: "关于安全性的说明:尽管被发现是恶意的插件会从插件管理器中移除, 但仍然有可能有一些漏网的鱼鱼",
     "SAVE": "保存",
     "Debug": "调试",
+
+
+    // TODO Saki救救 (BCX的 .help 不知道怎么替换 ，还有LSCG的绿色弹窗) 
+    // "BCX commands are organized into categories": "BCX 命令被组织成不同的类别。",
+    // "To view help texts for all commands in a category, use '.help &lt;category&gt;' (e.g. '.help utility')": 
+    // "要查看某个类别下所有命令的帮助文本，请使用 '.help &lt;category&gt;'（例如 '.help utility'）。",
+    // "List of categories:": "类别列表：",
+
+
 };
 
 const htmlTags = [
@@ -85,6 +94,8 @@ const htmlTags = [
     "#fusam-addon-manager-body > p",
     "#fusam-show-button",
     "#fusam-addon-manager-close",
+    // ".ChatMessage.ChatMessageLocalMessage",
 ];
 
 export { htmlTags, translation };
+

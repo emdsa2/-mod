@@ -5,7 +5,7 @@ import { translation as FBC } from "./FBC";
 import { activities, translation as LSCG } from "./LSCG";
 import { translation as MBS } from "./MBS";
 import { translation as WCE } from "./WCE";
-import { translationsDTF, act_dialogs, pronouns } from "./regexRep";
+import { translationsDTF, translationsDTF2, act_dialogs, pronouns } from "./regexRep";
 
 const translations = [BCAR, BCX, FBC, LSCG, MBS, WCE].reduce((pv, cv) => Object.assign(pv, cv), {});
 
@@ -15,6 +15,9 @@ function tryReplaceWithNames(key) {
     if (!PName || !SName) return key;
     if (key.includes(PName) || key.includes(SName)) {
         translationsDTF.forEach(({ regex, replacement }) => (key = key.replace(regex, replacement)));
+    } else {
+        // TODO 不知道这样写对不对 0 0    这个是翻译不带玩家名字的文本的
+        translationsDTF2.forEach(({ regex, replacement }) => (key = key.replace(regex, replacement)));
     }
     return key;
 }

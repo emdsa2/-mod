@@ -3,36 +3,21 @@ const translationsDTF = [
         regex: /Failed to get role data from (.+)\. This can be caused by missing permission to interact with their items\, the user having left the room meanwhile\, or the user not having the BC tab focused\./,
         replacement: "无法从 $1 获取角色数据.这可能是由于缺乏与其物品交互的权限、用户已离开房间,或者用户未将 BC 标签页聚焦."
     },
-    { regex: / Global\: Configuration for (.+) \-/, replacement: "- 全局：$1 的配置 -" },
-    { regex: /\- Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项：$1 的配置 -" },
+    { regex: / Global\: Configuration for (.+) \-/, replacement: "- 全局: $1 的配置 -" },
+    { regex: /\- Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项: $1 的配置 -" },
     { regex: /Dear (.+),/, replacement: "亲爱的 $1," },
-    { regex: / Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项：$1 的配置 -" },
-    {
-        regex: /\- Export \/ Import of Behaviour Log \- Configuration on (.+) \-/,
-        replacement: "- 导出/导入 行为日志 - $1 上的配置 -",
-    },
-    {
-        regex: / Export \/ Import of BCX module configurations on (.+) \-/,
-        replacement: "- 导出 / 导入 $1 的BCX模块配置 -",
-    },
-    {
-        regex: / Relationships\: Custom names shown \(only\) to (.+) \-/,
-        replacement: "- 关系: 自定义名称(仅)显示给 $1 -",
-    },
-    {
-        regex: /\- Export \/ Import of Authority \- Permissions on (.+) \-/,
-        replacement: "- 导出 / 导入 权限 - $1 的权限 -",
-    },
-    {
-        regex: /\- Export \/ Import of Commands \- Limits on (.+) \-/,
-        replacement: "- 导出 / 导入 指令 - 对 $1 的限制 - ",
-    },
+    { regex: / Miscellaneous\: Configuration for (.+) \-/, replacement: "- 杂项: $1 的配置 -" },
+    { regex: /\- Export \/ Import of Behaviour Log \- Configuration on (.+) \-/, replacement: "- 导出/导入 行为日志 - $1 上的配置 -", },
+    { regex: / Export \/ Import of BCX module configurations on (.+) \-/, replacement: "- 导出 / 导入 $1 的BCX模块配置 -", },
+    { regex: / Relationships\: Custom names shown \(only\) to (.+) \-/, replacement: "- 关系: 自定义名称(仅)显示给 $1 -", },
+    { regex: /\- Export \/ Import of Authority \- Permissions on (.+) \-/, replacement: "- 导出 / 导入 权限 - $1 的权限 -", },
+    { regex: /\- Export \/ Import of Commands \- Limits on (.+) \-/, replacement: "- 导出 / 导入 指令 - 对 $1 的限制 - ", },
     { regex: /\- Export \/ Import of Curses \- Limits on (.+) \-/, replacement: "- 导出 / 导入 诅咒 - 限制 $1 - " },
     { regex: /\- Export \/ Import of Rules \- Limits on (.+) \-/, replacement: "- 导出 / 导入 规则- $1 限制 -" },
     { regex: /\- Export \/ Import of Relationships on (.+) \-/, replacement: "- 导出 / 导入 $1 上的关系 -" },
     { regex: /\- Commands\: List all commands for (.+) \-/, replacement: "- 指令: 列出 $1 的所有指令 -" },
     { regex: / Authority\: Permission Settings for (.+) \-/, replacement: "- 权限: $1 的权限设置 -" },
-    { regex: /\- Curses\: All active curses on (.+) \-/, replacement: "- 诅咒: 对$1 的所有有效诅咒 -" },
+    { regex: /\- Curses\: All active curses on (.+) \-/, replacement: "- 诅咒: 对 $1 的所有有效诅咒 -" },
     { regex: / Behaviour Log\: Configuration for (.+) \-/, replacement: "- 行为日志: $1 的配置 -" },
     { regex: /\- Rules\: All active rules on (.+) \-/, replacement: "- 规则: $1 上的所有活动规则 -" },
     { regex: /\- Authority\: Role Management for (.+) \-/, replacement: "- 权限: $1 的角色管理 -" },
@@ -43,119 +28,38 @@ const translationsDTF = [
     { regex: /\- Rules\: Create new rules for (.+) \-/, replacement: "- 为 $1 创建新规则 -" },
     { regex: /Added by\: (.+) \((.+)\)/, replacement: "添加者: $1 ($2)" },
     {
-        regex: /Info\: Currently set role\: Friend \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 好友 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: Public \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 公共 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: Whitelist \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 白名单 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: Mistress \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 女主人 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: Lover \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 恋人 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: Owner \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 所有者 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: Clubowner \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: 俱乐部主人 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: (.+)/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: $1",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Clubowner/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 俱乐部主人",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Owner/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 所有者",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Lover/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 恋人",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Mistress/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 女主人",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Whitelist/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 白名单",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Friend/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 好友",
-    },
-    {
-        regex: /Info\: Currently set role\: (.+) \→ Newly selected role\: Public/,
-        replacement: "信息: 当前设置的角色: $1 → 新选择的角色: 公共",
-    },
-    {
         regex: /Forbid using remotes on self \((.+) using one on (.+)\)/,
-        replacement: "禁止自我使用遥控器($1 在 $2身上使用)",
+        replacement: "禁止对自己使用遥控器($1 在 $2身上使用)",
     },
-    {
-        regex: /Forbid using keys on self \((.+) using one on (.+)\)/,
-        replacement: "禁止自我使用钥匙($1 在 $2身上使用)",
-    },
+    { regex: /Forbid using keys on self \((.+) using one on (.+)\)/, replacement: "禁止对自己使用钥匙($1 在 $2身上使用)", },
     {
         regex: /Forbid picking locks on self \((.+) picking one on (.+)\)/,
-        replacement: "禁止自我撬锁($1 在 $2身上使用)",
+        replacement: "禁止撬自己的锁($1 在 $2身上使用)",
     },
-    { regex: /Forbid using locks on self \((.+) using one on (.+)\)/, replacement: "禁止自我使用锁($1 在 $2身上使用)" },
+    { regex: /Forbid using locks on self \((.+) using one on (.+)\)/, replacement: "禁止对自己使用锁($1 在 $2身上使用)" },
     {
         regex: /Forbid wardrobe use on self \((.+) using (.+)'s wardrobe\)/,
-        replacement: "禁止自我使用衣柜($1 使用 $2 的衣柜)",
+        replacement: "禁止更换自己的服装($1 使用 $2 的衣柜)",
     },
     {
         regex: /Forbid freeing self \((.+) removing any items from (.+)'s body\)/,
-        replacement: "禁止解救自己($1 从 $2 身上移除任何物品)",
+        replacement: "禁止自己解开自己的拘束($1 从 $2 身上移除任何物品)",
     },
     {
         regex: /Prevent using BCX permissions \((.+) using her permissions for her own BCX\, with some exceptions\)/,
         replacement: "禁止使用BCX权限($1 使用她自己BCX的权限,有一些例外)",
     },
     { regex: /Prevent changing own emoticon \(for just (.+)\)/, replacement: "防止更改自己的表情符号(仅限 $1)" },
-    {
-        regex: /Force\-hide UI elements \(e\.g\.\, icons\, bars\, or names\)/,
-        replacement: "强制隐藏UI元素(例如图标、条形、或名称)",
-    },
-    {
-        regex: /Sensory deprivation\: Sound \(impacts (.+)'s hearing\; adjustable\)/,
-        replacement: "感官剥夺: 听觉(影响 $1 的听觉；可调节)",
-    },
-    {
-        regex: /Hearing whitelist \(of members whom (.+) can always understand\)/,
-        replacement: "听觉白名单($1 始终能够理解的成员)",
-    },
-    {
-        regex: /Sensory deprivation: Sight \(impacts (.+)'s sight\; adjustable\)/,
-        replacement: "感官剥夺: 视觉(影响 $1 的视觉；可调节)",
-    },
-    {
-        regex: /Seeing whitelist \(of members whom (.+) can always see\)/,
-        replacement: "视觉白名单($1 始终能够看到的成员)",
-    },
-    {
-        regex: /Control profile online description \(directly sets (.+)'s description\)/,
-        replacement: "控制在线描述资料(直接设置 $1 的描述)",
-    },
+    { regex: /Force\-hide UI elements \(e\.g\.\, icons\, bars\, or names\)/, replacement: "强制隐藏UI元素(例如图标、条形、或名称)", },
+    { regex: /Sensory deprivation\: Sound \(impacts (.+)'s hearing\; adjustable\)/, replacement: "感官剥夺: 听觉(影响 $1 的听觉；可调节)", },
+    { regex: /Hearing whitelist \(of members whom (.+) can always understand\)/, replacement: "听觉白名单($1 始终能够理解的成员)", },
+    { regex: /Sensory deprivation: Sight \(impacts (.+)'s sight\; adjustable\)/, replacement: "感官剥夺: 视觉(影响 $1 的视觉；可调节)", },
+    { regex: /Seeing whitelist \(of members whom (.+) can always see\)/, replacement: "视觉白名单($1 始终能够看到的成员)", },
+    { regex: /Control profile online description \(directly sets (.+)'s description\)/, replacement: "控制在线描述资料(直接设置 $1 的描述)", },
     { regex: /Control nickname \(directly sets (.+)'s nickname\)/, replacement: "控制昵称(直接设置 $1 的昵称)" },
     {
         regex: /Ready to be summoned \(leash (.+) from anywhere using a beep with message\)/,
-        replacement: "准备被召唤(随时随地使用蜂鸣消息牵引 $1 )",
+        replacement: "准备好被召唤(随时随地使用蜂鸣消息传送 $1 )",
     },
     {
         regex: /Allow changing the whole appearance \(of (.+) - for the defined roles\)/,
@@ -163,20 +67,20 @@ const translationsDTF = [
     },
     {
         regex: /Enforce faltering speech \(an enhanced studder effect is added to (.+)'s chat texts\)/,
-        replacement: "强制结巴的言语(对 $1 的聊天文本添加了增强的结巴效果)",
+        replacement: "强制口吃(对 $1 的聊天文本添加了增强的阿巴阿巴的效果)",
     },
     {
         regex: /Force garbled speech \(force (.+) to talk as if they were gagged\)/,
-        replacement: "强制混乱言语(强制 $1 说话,就像他们被堵住一样",
+        replacement: "强制言语混乱(强制 $1 说话, 就像被堵住一样)",
     },
-    { regex: /Forbid going afk \(logs whenever (.+) is inactive\)/, replacement: "禁止挂机(记录 $1 无操作时)" },
+    { regex: /Forbid going afk \(logs whenever (.+) is inactive\)/, replacement: "禁止 AFK(记录 $1 无操作时)" },
     {
         regex: /Track rule effect time \(counts the time this rule's trigger conditions were fulfilled\)/,
         replacement: "追踪规则生效时间(计算此规则的触发条件得到满足的时间)",
     },
     {
         regex: /Listen to my voice \(regularly show configurable sentences to (.+)\)/,
-        replacement: "倾听我的声音(定期向 $1 展示可配置的句子)",
+        replacement: "听我的声音(定时向 $1 弹出指定的句子)",
     },
     {
         regex: /Track BCX activation \(logs if (.+) enters the club without BCX\)/,
@@ -195,7 +99,7 @@ const translationsDTF = [
         regex: /Send to cell \(Lock (.+) in a singleplayer isolation cell\)/,
         replacement: "送到监狱 (锁定 $1 在单人隔离监狱中)",
     },
-    { regex: /Send to asylum \(Lock (.+) into the asylum\)/, replacement: "送入收容所 (锁定 $1 进入收容所)" },
+    { regex: /Send to asylum \(Lock (.+) into the aslyum\)/, replacement: "送入收容所 (把 $1 关进收容所)" },
     { regex: /Deposit all keys \(Store away (.+)\'s keys\)/, replacement: "存放所有钥匙 (存放 $1 的所有钥匙)" },
     {
         regex: /Show remaining time \(Remaining time of keyhold\, asylum stay\, or GGTS training\)/,
@@ -507,12 +411,12 @@ const translationsDTF = [
     {
         regex: /This rule forces (.+) to switch rooms from anywhere in the club to the chat room of the summoner after 15 seconds\. It works by sending a beep message with the set text or simply the word \'summon\' to (.+)\. Members who are allowed to summon (.+) can be set\. NOTES\: (.+) can always be summoned no matter if she has a leash or is prevented from leaving the room \(ignoring restraints or locked rooms\)\. However\, if the target room is full or locked\, she will end up in the lobby\. Summoning will not work if the room name is not included with the beep message\!/,
         replacement:
-            "这个规则要求在15秒内,$1必须从俱乐部的任何地方切换到召唤者的聊天室.它通过向$2发送一条带有设置文本或简单包含单词'召唤'的蜂鸣消息来实现.允许设置可以召唤$3的成员.注意：无论$4是否被束缚或禁止离开房间(忽略限制或锁定的房间),她总是可以被召唤.但是,如果目标房间已满或已锁定,她将会进入大堂.如果蜂鸣消息中没有包含房间名,那么召唤将无效！",
+            "这个规则要求在15秒内,$1必须从俱乐部的任何地方切换到召唤者的聊天室.它通过向$2发送一条带有设置文本或简单包含单词'召唤'的蜂鸣消息来实现.允许设置可以召唤$3的成员.注意: 无论$4是否被束缚或禁止离开房间(忽略限制或锁定的房间),她总是可以被召唤.但是,如果目标房间已满或已锁定,她将会进入大堂.如果蜂鸣消息中没有包含房间名,那么召唤将无效！",
     },
     {
         regex: /This rule forbids (.+) to enter all rooms, that are not on an editable whitelist of still allowed ones\. NOTE\: As safety measure this rule is not in effect while the list is empty\. TIP\: This rule can be combined with the rule \"Forbid creating new rooms\"\./,
         replacement:
-            "这个规则禁止 $1 进入不在可编辑白名单上的所有房间.注意：作为安全措施,这个规则在列表为空时不会生效.提示：这个规则可以和 '禁止创建新房间' 的规则一起使用."
+            "这个规则禁止 $1 进入不在可编辑白名单上的所有房间.注意: 作为安全措施,这个规则在列表为空时不会生效.提示: 这个规则可以和 '禁止创建新房间' 的规则一起使用."
     },
     {
         regex: /Here you switch the rule on\/off\, set a timer for activating\/deactivating \/ deleting the rule and define when it can trigger, such as either always or based on where the player is and with whom\.The small green\/red bars next to the checkboxes indicate whether a condition is true at present or not and the big bar whether this means that the rule is in effect\, if active\. Depending on the rule\, you can either enforce its effect\, log all violations\, or both at the same time\. Lastly on the bottom right\, you can set whether the trigger conditions of this rule should follow the global rules config or not\./,
@@ -538,25 +442,15 @@ const translationsDTF = [
         replacement: "制作人$1",
     },
     {
-        regex: /Delete (.+)/,
-        replacement: "删除 $1",
-    },
-    {
         regex: /Trigger Phrase(.+)/,
         replacement: "触发短语:$1",
     },
     {
-        regex: /Exclusive(.+)/,
-        replacement: "专用(仅制作者可见):$1",
+        regex: /You must be the owner to purchase this module for (.+).../,
+        replacement: "您必须是主人才能为 $1 购买此模块……",
     },
-    {
-        regex: /Instruction(.+)/,
-        replacement: "指令$1",
-    },
-    {
-        regex: /Enable Tamperproof ltems:(.+)/,
-        replacement: "启用防篡改项目:$1",
-    },
+
+
     // { regex: /-/, replacement: "" },
 ];
 
@@ -1066,25 +960,13 @@ const act_dialogs = [
         regex: /(.+) gasps, blinking as any magic affecting (.+) is removed\./,
         replacement: "当任何作用于$2的魔法被移除时,$1喘着气,眨着眼睛."
     },
-    {
-        regex: /(.+) trembles as (.+) clothing shimmers and morphs around (.+)\./,
-        replacement: "$1颤抖着,当$2的衣物闪烁并在$3周围发生形态变化时."
-    },
-    {
-        regex: /(.+) squeaks as (.+) clothing shimmers and morphs around (.+)\./,
-        replacement: "$1尖叫着,当$2的衣服闪烁并在$3周围变形的时候."
-    },
+    { regex: /(.+) trembles as (.+) clothing shimmers and morphs around (.+)\./, replacement: "$1颤抖着,当$2的衣物闪烁并在$3周围发生形态变化时." },
+    { regex: /(.+) squeaks as (.+) clothing shimmers and morphs around (.+)\./, replacement: "$1尖叫着,当$2的衣服闪烁并在$3周围变形的时候." },
     { regex: /(.+) trembles as (.+) body shimmers and morphs\./, replacement: "$1颤抖着,当$2的身体闪烁并变形时." },
     { regex: /(.+) squeaks as (.+) body shimmers and morphs\./, replacement: "$1尖叫着,当$2的身体闪烁并变形时." },
     { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1扭动着,当$2的高潮被匹配到自己身上时." },
-    {
-        regex: /(.+) quivers as (.+) feels (.+) impending denial\./,
-        replacement: "$1颤抖着,当$2感觉到$3即将来临的拒绝时."
-    },
-    {
-        regex: /(.+) whimpers as (.+) feels (.+) impending denial\./,
-        replacement: "$1呜咽着,当$2感受到$3即将到来的拒绝时."
-    },
+    { regex: /(.+) quivers as (.+) feels (.+) impending denial\./, replacement: "$1颤抖着,当$2感觉到$3即将来临的拒绝时." },
+    { regex: /(.+) whimpers as (.+) feels (.+) impending denial\./, replacement: "$1呜咽着,当$2感受到$3即将到来的拒绝时." },
     {
         regex: /(.+)'s muscles slump limply once more as another dose of chloroform is applied\./,
         replacement: "$1的肌肉再次绵软地松弛下来,当又一剂氯仿被使用时."
@@ -1101,27 +983,12 @@ const act_dialogs = [
         regex: /(.+), unable to continue holding (.+) breath, takes a desparate gasp through the chemical-soaked cloth\./,
         replacement: "$1,无法继续屏住$2的呼吸,透过浸满化学制剂的布绝望地大口喘气."
     },
-    {
-        regex: /(.+)'s body trembles as the chloroform sinks deep into (.+) mind\./,
-        replacement: "$1的身体颤抖着,当氯仿深深侵入$2的脑海时."
-    },
-    {
-        regex: /(.+) takes a deep, calm breath as (.+) chloroform starts to lose its potency\.\.\./,
-        replacement: "$1深吸一口气,保持平静,当$2的氯仿开始失去药效……"
-    },
-    {
-        regex: /(.+) continues to sleep peacefully as the cloth is removed\.\.\./,
-        replacement: "$1继续平静地睡着,当这块布被移除时……"
-    },
-    {
-        regex: /(.+) gulps in fresh air as the cloth is removed\.\.\./,
-        replacement: "$1在布料被移除时大口吞咽着新鲜空气……"
-    },
+    { regex: /(.+)'s body trembles as the chloroform sinks deep into (.+) mind\./, replacement: "$1的身体颤抖着,当氯仿深深侵入$2的脑海时." },
+    { regex: /(.+) takes a deep, calm breath as (.+) chloroform starts to lose its potency\.\.\./, replacement: "$1深吸一口气,保持平静,当$2的氯仿开始失去药效……" },
+    { regex: /(.+) continues to sleep peacefully as the cloth is removed\.\.\./, replacement: "$1继续平静地睡着,当这块布被移除时……" },
+    { regex: /(.+) gulps in fresh air as the cloth is removed\.\.\./, replacement: "$1在布料被移除时大口吞咽着新鲜空气……" },
     { regex: /(.+) starts to stir with a gentle moan\.\.\./, replacement: "$1开始缓慢地挣扎着, 轻轻地呻吟着." },
-    {
-        regex: /(.+)'s eyes flutter and start to open sleepily\.\.\./,
-        replacement: "$1的眼睛微微颤动,开始困倦地睁开……"
-    },
+    { regex: /(.+)'s eyes flutter and start to open sleepily\.\.\./, replacement: "$1的眼睛微微颤动,开始困倦地睁开……" },
     {
         regex: /(.+) moans and trembles in frustration as (.+) is held right at the edge\.\.\./,
         replacement: "$1沮丧地呻吟着并颤抖着,当$2被正好困在高潮边缘时……"
@@ -1145,11 +1012,11 @@ const act_dialogs = [
     { regex: /(.+) struggles in (.+) bindings, unable to reach (.+)'s collar controls\./, replacement: "$1 在 $2 的束缚中挣扎,无法够到 $3 的项圈控制装置." },
     { regex: /(.+) presses a button on (.+) collar\./, replacement: "$1 按下 $2 项圈上的一个按钮." },
     { regex: /(.+) presses a button on (.+)'s collar\./, replacement: "$1 按下 $2 的项圈上的一个按钮." },
-    { regex: /(.+)\'s collar beeps and a computerized voice says "Access Denied\./, replacement: "$1 的项圈发出蜂鸣声,一个电脑化的声音说：\"访问被拒绝.\"  " },
+    { regex: /(.+)\'s collar beeps and a computerized voice says "Access Denied\./, replacement: "$1 的项圈发出蜂鸣声,一个电脑化的声音说: \"访问被拒绝.\"  " },
     {
         regex: /(.+)\'s collar chimes and a computerized voice reads out\:\nCurrent Level\: (.+)\.\.\.\nCorrective Cycles: (.+)\.\.\.\nTighten Trigger\: \'(.+)\'\.\.\.\nLoosen Trigger\: \'(.+)\'\.\.\.\nRemote Access\: (.+)\.\.\./,
         replacement:
-            "$1 的项圈发出鸣响,电脑化的声音读出：\n当前等级：$2……$\n$校正周期：$3……\n收紧触发器：'$4'……$\n$放松触发器：'$5'……\n远程访问：$6……"
+            "$1 的项圈发出鸣响,电脑化的声音读出: \n当前等级: $2……\n校正周期: $3……\n收紧触发器: '$4'……\n放松触发器: '$5'……\n远程访问: $6……"
     },
     { regex: /(.+) gives (.+) to (.+)\./, replacement: "$1 把 $2 给 $3 ." },
     {
@@ -1172,10 +1039,7 @@ const act_dialogs = [
         regex: /(.+) chants an indecipherable phrase, pointing (.+) at (.+) and casting (.+)/,
         replacement: "$1 吟诵着一个难以理解的短语,将 $2 指向 $3 并施展 $4 ."
     },
-    {
-        regex: /(.+) aims (.+) at (.+) and, with a grin, casts (.+)/,
-        replacement: "$1 把 $2 瞄准 $3 ,带着笑容施展 $4 ."
-    },
+    { regex: /(.+) aims (.+) at (.+) and, with a grin, casts (.+)/, replacement: "$1 把 $2 瞄准 $3 ,带着笑容施展 $4 ." },
     {
         regex: /(.+) struggles to wield (.+)'s (.+), (.+) spell backfiring\./,
         replacement: "$1 挣扎着挥动 $2 的 $3 ,$4 法术产生反噬."
@@ -1227,10 +1091,7 @@ const act_dialogs = [
         regex: /(.+) successfully defends against (.+)'s (.+) attempt to force (.+) to drink (.+), spilling drink all over\./,
         replacement: "$1 成功地抵御了 $2 的 $3 企图强迫 $4 喝 $5 ,饮料洒得到处都是."
     },
-    {
-        regex: /(.+) manages to wrest (.+)'s (.+) out of (.+) grasp\!/,
-        replacement: "$1 设法夺过 $2 的 $3 从 $4 的手中!"
-    },
+    { regex: /(.+) manages to wrest (.+)'s (.+) out of (.+) grasp\!/, replacement: "$1 设法夺过 $2 的 $3 从 $4 的手中!" },
     { regex: /(.+) makes an activity roll and gets: (.+)/, replacement: "$1 进行一次活动检定并获得: $2 " },
     { regex: /(.+) makes an activity check attack against (.+)\!/, replacement: "$1 进行一次活动检定攻击,攻击目标是 $2!" },
     { regex: /(.+) makes an activity check defending from (.+)\!/, replacement: "$1进行一次活动检定防御, 防御来自$2!" },
@@ -1312,11 +1173,7 @@ const act_dialogs = [
         regex: /(.+)\'s eyes start to roll back with a groan as (.+) completely closes (.+) airway with (.+) hand\./,
         replacement: "$1 的眼睛开始翻白并呻吟,当 $2 用 $4 的手完全封闭 $3 的气道时."
     },
-
-    {
-        regex: /(.+) grabs at (.+)'s (.+), trying to steal it\!/,
-        replacement: "$1一把抓住$2的$3, 试图偷取它!",
-    },
+    { regex: /(.+) grabs at (.+)'s (.+), trying to steal it\!/, replacement: "$1一把抓住$2的$3, 试图偷取它!", },
     {
         regex: /(.+) fails to steal (.+)'s (.+) and is dazed from the attempt\!/,
         replacement: "$1未能偷走$2的$3, 并且在尝试之后感到茫然失措!",
@@ -1341,96 +1198,56 @@ const act_dialogs = [
         regex: /(.+) gasps quietly as (.+) mind can suddenly form sentences once again\.\.\./,
         replacement: "$1轻轻地喘息着,$2的大脑突然又能组织句子了……",
     },
-    {
-        regex: /(.+) gasps as pleasure rushes over (.+)\./,
-        replacement: "$1因极度的快感而喘息不已.",
-    },
-    {
-        regex: /(.+)'s mouth falls silent once again\.\.\./,
-        replacement: "$1再次陷入沉默,嘴唇紧闭.",
-    },
-    {
-        regex: /(.+) gasps as pleasure (.+) over (.+)\./,
-        replacement: "$1 因愉悦而喘息,(这种愉悦)笼罩着 $3."
-    },
-    {
-        regex: /(.+)'s blank expression hides (.+) impending denial\./,
-        replacement: "$1茫然的表情掩饰了$2他即将要否认的事实.",
-    },
-    {
-        regex: /(.+)'s face begins to blush and (.+) breathing speeds up\./,
-        replacement: "$1的脸开始泛红,$2呼吸也加快了.",
-    },
-    {
-        regex: /(.+) struggles to perform some action\./,
-        replacement: "$1挣扎着去做某个动作.",
-    },
-    {
-        regex: /(.+) starts to remove clothing from (.+) body\./,
-        replacement: "$1开始从$2身上脱去衣服.",
-    },
-    {
-        regex: /(.+) moves their body into a pose obediently\./,
-        replacement: "$1顺从地摆出一个姿势.",
-    },
-    {
-        regex: /(.+)'s eyes start to follow (.+)'s every movement\./,
-        replacement: "$1的目光开始追随$2的一举一动.",
-    },
-    {
-        regex: /(.+) mouth starts to move automatically\./,
-        replacement: "$1嘴巴开始不由自主地动起来.",
-    },
+    { regex: /(.+) gasps as pleasure rushes over (.+)\./, replacement: "$1因极度的快感而喘息不已.", },
+    { regex: /(.+)'s mouth falls silent once again\.\.\./, replacement: "$1再次陷入沉默,嘴唇紧闭.", },
+    { regex: /(.+) gasps as pleasure (.+) over (.+)\./, replacement: "$1 因愉悦而喘息,(这种愉悦)笼罩着 $3." },
+    { regex: /(.+)'s blank expression hides (.+) impending denial\./, replacement: "$1茫然的表情掩饰了$2他即将要否认的事实.", },
+    { regex: /(.+)'s face begins to blush and (.+) breathing speeds up\./, replacement: "$1的脸开始泛红,$2呼吸也加快了.", },
+    { regex: /(.+) struggles to perform some action\./, replacement: "$1挣扎着去做某个动作.", },
+    { regex: /(.+) starts to remove clothing from (.+) body\./, replacement: "$1开始从$2身上脱去衣服.", },
+    { regex: /(.+) moves their body into a pose obediently\./, replacement: "$1顺从地摆出一个姿势.", },
+    { regex: /(.+)'s eyes start to follow (.+)'s every movement\./, replacement: "$1的目光开始追随$2的一举一动.", },
+    { regex: /(.+) mouth starts to move automatically\./, replacement: "$1嘴巴开始不由自主地动起来.", },
     {
         regex: /(.+) looks frustrated, their inability to both walk and talk preventing them from serving drinks./,
         replacement: "$1 看起来很沮丧,既不能走路也不能说话,这使得他们无法为客人提供饮料."
     },
-    {
-        regex: /(.+) opens her mouth but no sound comes out./,
-        replacement: "$1张开嘴,但发不出声音.",
-    },
-    {
-        regex: /(.+) transform the Power Staff into Staff/,
-        replacement: "$1将能量杖转换为法杖.",
-    },
-    {
-        regex: /(.+) transform the Power Staff into Wand/,
-        replacement: "$1能量杖变成魔杖.",
-    },
-    {
-        regex: /(.+) groans softly as (.+) is allowed speech once more\.\.\./,
-        replacement: "$1再次获准说话时,$2轻轻地呻吟着……",
-    },
-    {
-        regex: /(.+) mouth starts to move automatically\./,
-        replacement: "$1的嘴巴开始不由自主地动起来.",
-    },
-    {
-        regex: /(.+) has accessed your remote settings\!/,
-        replacement: "$1访问了您的远程设置!",
-    },
+    { regex: /(.+) opens her mouth but no sound comes out./, replacement: "$1张开嘴,但发不出声音.", },
+    { regex: /(.+) transform the Power Staff into Staff/, replacement: "$1将能量杖转换为法杖.", },
+    { regex: /(.+) transform the Power Staff into Wand/, replacement: "$1能量杖变成魔杖.", },
+    { regex: /(.+) groans softly as (.+) is allowed speech once more\.\.\./, replacement: "$1再次获准说话时,$2轻轻地呻吟着……", },
+    { regex: /(.+) mouth starts to move automatically\./, replacement: "$1的嘴巴开始不由自主地动起来.", },
+    { regex: /(.+) has accessed your remote settings\!/, replacement: "$1访问了您的远程设置!", },
     {
         regex: /(.+) waves (.+) in front of (.+), and with a sudden boop, casts (.+) on (.+), the spell's power also arcing to (.+)\./,
         replacement: "$ $1把$2的$3举到$4面前,突然用魔杖敲了一下,施展了\"$5\"咒语,咒语的力量也传到了$6身上.",
     },
-    {
-        regex: /(.+) successfully saves against (.+)'s \[(.+)\] (.+)\./,
-        replacement: "$1成功抵御了$2的 \[$3\] \"$4\"咒语.",
-    },
+    { regex: /(.+) successfully saves against (.+)'s \[(.+)\] (.+)\./, replacement: "$1成功抵御了$2的 \[$3\] \"$4\"咒语.", },
     {
         regex: /(.+) baps (.+) with (.+) and, with a grin, casts (.+), the spell's power also arcing to (.+)\./,
         replacement: "$1用$2的$4拍了拍$3,笑着施展了\"$5\"咒语,咒语的力量也传到了$6身上.",
     },
+    {
+        regex: /(.+) splutters and chokes\, struggling to breathe\./,
+        replacement: "$1气急败坏 ,喘不过气来 ,挣扎着呼吸.",
+    },
+    {
+        regex: /(.+) trembled as pleasure rushes over (.+)\./,
+        replacement: "当愉悦的感觉涌上$1的身体时 ,$2不由得颤抖起来.",
+    },
+    {
+        regex: /(.+) grunts and moans, straining to breathe\./,
+        replacement: "$1发出粗重的喘息声和呻吟声,努力呼吸着.",
+    },
+
+
     // {
     //     regex: /(.+)\./,
     //     replacement: "$1.",
     // },
 
     // BCX
-    {
-        regex: /(.+) spoke openly in a room\./,
-        replacement: "$1尝试在房间说话.",
-    },
+    { regex: /(.+) spoke openly in a room\./, replacement: "$1尝试在房间说话.", },
     {
         regex: /The curse on (.+)\'s (.+) wakes up and the item reappears\./,
         replacement: "在$1的$2上的诅咒苏醒,该物品再次出现."
@@ -1447,6 +1264,9 @@ const act_dialogs = [
         regex: /(.+) tried to use the antiblind command\./,
         replacement: "$1尝试使用反盲指令."
     },
+
+
+
 
 
     // BCC
@@ -1528,4 +1348,133 @@ const pronouns = [
     { regex: /net/g, replacement: "网" },
 ];
 
-export { translationsDTF, act_dialogs, pronouns };
+const translationsDTF2 = [
+    { regex: /Instruction (.+):/, replacement: "指令 $1:", },
+    { regex: /Delete (.+)/, replacement: "删除 $1", },
+    { regex: /Delete Spell No. (.+)/, replacement: "删除法术编号 $1", },
+    { regex: /Effect (.+):/, replacement: "效果 $1:", },
+    { regex: /Spell No. (.+)/, replacement: "法术编号 $1", },
+    { regex: /Page (.+)\/(.+)/, replacement: "第 $1 页/$2", },
+    { regex: /Background (.+)\/(.+)/, replacement: "背景 第 $1 页/$2", },
+    { regex: /Confirm \((.+)\)/, replacement: "确认 \($1\)", },
+    { regex: /- Little Sera's Club Games v(.+) -/, replacement: "Little Sera 的俱乐部游戏 v$1" },
+    { regex: /Your BCX version: (.+)/, replacement: "您的 BCX 版本: $1" },
+    { regex: /Your initially selected BCX preset was: \"(.+)\"/, replacement: "你最初选择的BCX预设是: \"$1\"" },
+    { regex: /- Rules: Description of the rule: \"(.+)\"-/, replacement: "- 规则描述: \"$1\" -", },
+    { regex: /- View \/ Edit the \'(.+)\' rule -/, replacement: "- 查看/编辑 \'$1\' 规则 -", },
+    { regex: /(.+)\"Force \'(.+)/, replacement: "$1\"强制 \'$2", },
+    { regex: /(.+)Forbid using remotes on others(.+)/, replacement: "$1禁止对别人使用遥控器$2", },
+    { regex: /(.+)Forbid using remotes on self(.+)/, replacement: "$1禁止对自己使用遥控器$2", },
+    { regex: /(.+)Forbid using keys on others(.+)/, replacement: "$1禁止对别人使用遥控器$2", },
+    { regex: /(.+)Forbid using keys on self(.+)/, replacement: "$1禁止对自己使用钥匙$2", },
+    { regex: /(.+)Forbid tying up others(.+)/, replacement: "$1禁止捆绑别人$2", },
+    { regex: /(.+)Prevent blacklisting(.+)/, replacement: "$1禁止增加黑名单$2", },
+    { regex: /(.+)Forbid freeing self(.+)/, replacement: "$1禁止自己解开自己的拘束$2", },
+    { regex: /(.+)Forbid creating new rooms(.+)/, replacement: "$1禁止创建新房间$2", },
+    { regex: /(.+)Restrict allowed body poses(.+)/, replacement: "$1限制允许的身体姿势$2", },
+    { regex: /(.+)Forbid using locks on self(.+)/, replacement: "$1禁止对自己使用锁$2", },
+    { regex: /(.+)Forbid picking locks on self(.+)/, replacement: "$1禁止自己的撬自己的锁$2", },
+    { regex: /(.+)Forbid wardrobe use on self(.+)/, replacement: "$1禁止更换自己的服装$2", },
+    { regex: /(.+)Forbid picking locks on others(.+)/, replacement: "$1禁止撬别人的锁$2", },
+    { regex: /(.+)Forbid using locks on others(.+)/, replacement: "$1禁止对别人使用锁$2", },
+    { regex: /(.+)Forbid wardrobe use on others(.+)/, replacement: "$1禁止更换别人的服装$2", },
+    { regex: /(.+)Restrict entering rooms(.+)/, replacement: "$1限制进入房间$2", },
+    { regex: /(.+)Prevent leaving the room(.+)/, replacement: "$1禁止离开房间$2", },
+    { regex: /(.+)Forbid the antiblind command(.+)/, replacement: "$1禁止使用防盲指令$2", },
+    { regex: /(.+)Prevent usage of all activities(.+)/, replacement: "$1禁止使用所有交互动作$2", },
+    { regex: /(.+)Forbid mainhall maid services(.+)/, replacement: "$1禁止大厅女仆服务$2", },
+    { regex: /(.+)Forbid changing difficulty(.+)/, replacement: "$1禁止改变难度$2", },
+    { regex: /(.+)Prevent whitelisting(.+)/, replacement: "$1禁止增加白名单$2", },
+    { regex: /(.+)Forbid the action command(.+)/, replacement: "$1禁止动作指令$2", },
+    { regex: /(.+)Prevent using BCX permissions(.+)/, replacement: "$1禁止使用 BCX 权限$2", },
+    { regex: /(.+)Forbid looking at room admin UI(.+)/, replacement: "$1禁止查看房间管理界面$2", },
+    { regex: /(.+)Forbid using GGTS(.+)/, replacement: "$1禁止使用 GGTS$2", },
+    { regex: /(.+)Prevent working as club slave(.+)/, replacement: "$1禁止成为俱乐部的奴隶$2", },
+    { regex: /(.+)Prevent using items of others(.+)/, replacement: "$1禁止使用别人的物品$2", },
+    { regex: /(.+)Prevent changing own emoticon(.+)/, replacement: "$1禁止更改自己的表情符号$2", },
+    { regex: /(.+)Force-hide UI elements(.+)/, replacement: "$1强制隐藏 UI 元素$2", },
+    { regex: /(.+)Sensory deprivation: Sound(.+)/, replacement: "$1感觉剥夺: 听觉$2", },
+    { regex: /(.+)Hearing whitelist(.+)/, replacement: "$1听觉白名单$2", },
+    { regex: /(.+)Sensory deprivation: Sight(.+)/, replacement: "$1感觉剥夺: 视觉$2", },
+    { regex: /(.+)Seeing whitelist(.+)/, replacement: "$1视觉白名单$2", },
+    { regex: /(.+)Fully blind when eyes are closed(.+)/, replacement: "$1闭上眼睛时完全失去视力$2", },
+    { regex: /(.+)Field of vision for eyes(.+)/, replacement: "$1眼睛的视野$2", },
+    { regex: /(.+)Fully blind when blindfolded(.+)/, replacement: "$1蒙眼时完全看不见$2", },
+    { regex: /(.+)Always leave rooms slowly(.+)/, replacement: "$1总是慢慢离开房间$2", },
+    { regex: /(.+)Set slowed leave time(.+)/, replacement: "$1设置缓慢离开的时间$2", },
+    { regex: /(.+)Control ability to orgasm(.+)/, replacement: "$1控制高潮$2", },
+    { regex: /(.+)Secret orgasm progress(.+)/, replacement: "$1隐藏高潮进度$2", },
+    { regex: /(.+)Room admin transfer(.+)/, replacement: "$1转移房间管理权限$2", },
+    { regex: /(.+)Limit bound admin power(.+)/, replacement: "$1限制被束缚时管理员的权限$2", },
+    { regex: /(.+)Control profile online description(.+)/, replacement: "$1控制在线个人简介$2", },
+    { regex: /(.+)Control playername(.+)/, replacement: "$1控制昵称$2", },
+    { regex: /(.+)Always carry a suitcase(.+)/, replacement: "$1总是携带一个手提箱$2", },
+    { regex: /(.+)Restrict being leashed by others(.+)/, replacement: "$1限制被别人牵引$2", },
+    { regex: /(.+)Hide online friends if blind(.+)/, replacement: "$1失明时隐藏好友列表$2", },
+    { regex: /(.+)Ready to be summoned(.+)/, replacement: "$1准备好被召唤$2", },
+    { regex: /(.+)Allow changing the whole appearance(.+)/, replacement: "$1允许改变整体外观$2", },
+    { regex: /(.+)Item permission(.+)/, replacement: "$1物品权限$2", },
+    { regex: /(.+)Locks on you can't be picked(.+)/, replacement: "$1锁在你身上无法被撬开$2", },
+    { regex: /(.+)Cannot enter single-player rooms when restrained(.+)/, replacement: "$1当被束缚时不能进入单人房间$2", },
+    { regex: /(.+)Allow safeword use(.+)/, replacement: "$1允许使用安全词$2", },
+    { regex: /(.+)Arousal meter(.+)/, replacement: "$1高潮条$2", },
+    { regex: /(.+)Block advanced vibrator modes(.+)/, replacement: "$1屏蔽高级震动器模式$2", },
+    { regex: /(.+)Arousal speech stuttering(.+)/, replacement: "$1兴奋时口吃$2", },
+    { regex: /(.+)Show AFK bubble(.+)/, replacement: "$1显示 AFK 气泡$2", },
+    { regex: /(.+)Allow others to alter your whole appearance(.+)/, replacement: "$1允许别人改变你的整体外观$2", },
+    { regex: /(.+)Prevent others from changing cosplay items(.+)/, replacement: "$1禁止别人更换你的角色扮演道具$2", },
+    { regex: /(.+)Sensory deprivation setting(.+)/, replacement: "$1感官剥夺设置$2", },
+    { regex: /(.+)Hide non-adjacent players while partially blind(.+)/, replacement: "$1在部分失明时隐藏非相邻玩家$2", },
+    { regex: /(.+)Garble chatroom names and descriptions while blind(.+)/, replacement: "$1失明时混淆聊天室的名称和描述$2", },
+    { regex: /(.+)Keep all restraints when relogging(.+)/, replacement: "$1重新登录时保存所有束缚和道具$2", },
+    { regex: /(.+)Players can drag you to rooms when leashed(.+)/, replacement: "$1当被牵住时, 玩家可以把你拖到其他房间$2", },
+    { regex: /(.+)Return to chatrooms on relog(.+)/, replacement: "$1重新登录时返回聊天室$2", },
+    { regex: /(.+)Events while plugged or vibed(.+)/, replacement: "$1插着或振动时发生事件$2", },
+    { regex: /(.+)Allow item tint effects(.+)/, replacement: "$1允许物品染色效果$2", },
+    { regex: /(.+)Allow item blur effects(.+)/, replacement: "$1允许物品模糊效果$2", },
+    { regex: /(.+)Flip room vertically when upside-down(.+)/, replacement: "$1倒立时房间垂直翻转$2", },
+    { regex: /(.+)Prevent random NPC events(.+)/, replacement: "$1阻止随机 NPC 事件$2", },
+    { regex: /Cheat: (.+) (kidnappings, ransoms, asylum, club slaves)/, replacement: "作弊: $1 (绑架、赎金、庇护、俱乐部奴隶)", },
+    { regex: /(.+)Forbid club owner changes(.+)/, replacement: "$1禁止更换俱乐部主人$2", },
+    { regex: /(.+)Forbid getting new lovers(.+)/, replacement: "$1禁止交新的恋人$2", },
+    { regex: /(.+)Forbid breaking up with lovers(.+)/, replacement: "$1禁止与恋人分手$2", },
+    { regex: /(.+)Forbid taking new submissives(.+)/, replacement: "$1禁止接收新的顺从者$2", },
+    { regex: /(.+)Forbid disowning submissives(.+)/, replacement: "$1禁止放弃顺从者$2", },
+    { regex: /(.+)Allow specific sounds only(.+)/, replacement: "$1仅允许特定声音$2", },
+    { regex: /(.+)Garble whispers while gagged(.+)/, replacement: "$1嘴巴被堵住时混淆私聊$2", },
+    { regex: /(.+)Block OOC chat while gagged(.+)/, replacement: "$1嘴巴被堵住时阻止 OOC 聊天$2", },
+    { regex: /(.+)Block OOC chat(.+)/, replacement: "$1阻止 OOC 聊天$2", },
+    { regex: /(.+)Doll talk(.+)/, replacement: "$1玩偶言语$2", },
+    { regex: /(.+)Forbid saying certain words in chat(.+)/, replacement: "$1禁止在聊天中说某些词$2", },
+    { regex: /(.+)Forbid saying certain words in emotes(.+)/, replacement: "$1禁止在表情中说某些词$2", },
+    { regex: /(.+)Forbid talking openly(.+)/, replacement: "$1禁止公开聊天$2", },
+    { regex: /(.+)Limit talking openly(.+)/, replacement: "$1限制公开聊天$2", },
+    { regex: /(.+)Forbid using emotes(.+)/, replacement: "$1禁止使用表情符号$2", },
+    { regex: /(.+)Limit using emotes(.+)/, replacement: "$1限制使用表情符号$2", },
+    { regex: /(.+)Restrict sending whispers(.+)/, replacement: "$1限制发送私信$2", },
+    { regex: /(.+)Restrict receiving whispers(.+)/, replacement: "$1限制接收私信$2", },
+    { regex: /(.+)Restrict sending beep messages(.+)/, replacement: "$1限制发送蜂鸣消息$2", },
+    { regex: /(.+)Restrict receiving beeps(.+)/, replacement: "$1限制接收蜂鸣$2", },
+    { regex: /(.+)Order to greet club(.+)/, replacement: "$1登录时自动发蜂鸣消息$2", },
+    { regex: /(.+)Forbid the antigarble option(.+)/, replacement: "$1禁止反语言混淆选项$2", },
+    { regex: /(.+)Force to retype(.+)/, replacement: "$1强制重新输入$2", },
+    { regex: /(.+)Order to greet room(.+)/, replacement: "$1进房间时自动发送的问候语$2", },
+    { regex: /(.+)Greet new guests(.+)/, replacement: "$1问候新客人$2", },
+    { regex: /(.+)Enforce faltering speech(.+)/, replacement: "$1强制断句说话$2", },
+    { regex: /(.+)Establish mandatory words(.+)/, replacement: "$1建立必用的词汇$2", },
+    { regex: /(.+)Establish mandatory words in emotes(.+)/, replacement: "$1在表情中建立必用的词汇$2", },
+    { regex: /(.+)Partial hearing(.+)/, replacement: "$1部分听觉$2", },
+    { regex: /(.+)Force garbled speech(.+)/, replacement: "$1强制口吃说话$2", },
+    { regex: /(.+)Forbid going afk(.+)/, replacement: "$1禁止 AFK$2", },
+    { regex: /(.+)Track rule effect time(.+)/, replacement: "$1追踪规则生效时间$2", },
+    { regex: /(.+)Listen to my voice(.+)/, replacement: "$1听我的声音$2", },
+    { regex: /(.+)Log money changes(.+)/, replacement: "$1记录货币变动$2", },
+    { regex: /(.+)Track BCX activation(.+)/, replacement: "$1追踪 BCX 激活情况$2", },
+    { regex: /Force \'(.+)\'/, replacement: "强制 \'$1\'", },
+    { regex: /Force \'(.+)\' (Existing BC setting)/, replacement: "强制 \'$1\' (现有的 BC 设置)", },
+    { regex: /Info: Currently set role: (.+) → Newly selected role: (.+)/, replacement: "信息: 当前权限级别: $1 → 新的权限级别: $2", },
+    { regex: /- View \/ Edit the \'(.+)\' curse -/, replacement: "- 查看 \/ 编辑 \'$1\' 诅咒 -", },
+
+];
+
+export { translationsDTF, translationsDTF2, act_dialogs, pronouns };
