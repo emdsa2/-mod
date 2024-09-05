@@ -572,7 +572,7 @@ const translation = {
     "Room admin transfer": "转移房间管理权限",
     "Limit bound admin power": "限制被束缚时管理员的权限",
     "Control profile online description": "控制在线个人简介",
-    "Control playername": "控制昵称",
+    "Control nickname": "控制昵称",
     "Always carry a suitcase": "总是携带一个手提箱",
     "Restrict being leashed by others": "限制被别人牵引",
     "Hide online friends if blind": "失明时隐藏好友列表",
