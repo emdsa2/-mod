@@ -16,7 +16,7 @@ const activities = {
     "SourceCharacter nuzzles under TargetCharacter's feet.": "SourceCharacter 在 TargetCharacter 的脚下轻蹭.",
     "Hug": "拥抱",
     "SourceCharacter wraps PronounPossessive arms around TargetCharacter in a big warm hug.":
-        "SourceCharacter 张开双臂,给了 TargetCharacter 一个大大的温暖拥抱,将 PronounPossessive 的手臂也环绕其中.",
+        "SourceCharacter张开双臂,给了TargetCharacter一个大大的温暖拥抱,将PronounPossessive的手臂也环绕其中.",
     "Tackle": "扑倒",
     "SourceCharacter full body tackles TargetCharacter!": "SourceCharacter 整个身体扑倒了 TargetCharacter!",
     "Flop": "瘫倒",
@@ -28,40 +28,40 @@ const activities = {
         "SourceCharacter用PronounPossessive的私处摩擦着TargetCharacter的阴茎.",
     "Slap Face": "扇脸",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's face.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的脸上.",
+        "SourceCharacter 用PronounPossessive的ActivityAsset 抽打在 TargetCharacter 的脸上.",
     "Slap Mouth": "扇嘴巴",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's mouth.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的嘴巴上.",
+        "SourceCharacter 用PronounPossessive的ActivityAsset 抽打在 TargetCharacter 的嘴巴上.",
     "Slap against Pussy": "扇打私处",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's pussy.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的私处上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的私处上.",
     "Slap Breast": "扇打乳房",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's breast.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的乳房上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的乳房上.",
     "Slap Thigh": "扇打大腿",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's thigh.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的大腿上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的大腿上.",
     "Slap Calf": "扇打小腿",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's calf.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的小腿上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的小腿上.",
     "Slap Feet": "扇打脚",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's feet.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的脚上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的脚上.",
     "Slap Butt": "扇打屁股",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's butt.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的屁股上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的屁股上.",
     "Slap Neck": "扇打脖子",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's neck.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的脖子上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的脖子上.",
     "Slap Arms": "扇打手臂",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's arm.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的手臂上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的手臂上.",
     "Slap Hand": "扇打手",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's hand.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的手上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的手上.",
     "Slap Penis": "扇打阴茎",
     "SourceCharacter slaps PronounPossessive ActivityAsset against TargetCharacter's penis.":
-        "SourceCharacter 用 PronounPossessive 的 ActivityAsset 抽打在 TargetCharacter 的阴茎上.",
+        "SourceCharacter 用PronounPossessive的 ActivityAsset 抽打在 TargetCharacter 的阴茎上.",
     "Nibble Tail": "轻咬尾巴",
     "SourceCharacter nibbles on TargetCharacter's tail.": "SourceCharacter 轻咬 TargetCharacter 的尾巴.",
     "SourceCharacter nibbles on PronounPossessive own tail.": "SourceCharacter 轻咬自己的尾巴.",
@@ -94,7 +94,7 @@ const activities = {
     "SourceCharacter wraps PronounPossessive lips around PronounPossessive own ActivityAsset and sucks.":
         "SourceCharacter 用嘴唇包裹住自己的 ActivityAsset 并吮吸.",
     "SourceCharacter takes PronounPossessive own ActivityAsset deep down PronounPossessive throat.":
-        "SourceCharacter 将自己的ActivityAsset 深深地吞入 PronounPossessive 的喉咙.",
+        "SourceCharacter 将自己的ActivityAsset 深深地吞入PronounPossessive的喉咙.",
     "Eat": "咬一口",
     "SourceCharacter takes a big bite out of TargetCharacter's ActivityAsset.":
         "SourceCharacter 咬了 TargetCharacter 的 ActivityAsset 一大口.",
@@ -274,10 +274,10 @@ const activities = {
         "SourceCharacter 紧紧地用自己的绳子把自己的脚趾缠绕起来.",
     "Steal": "抢夺",
     "SourceCharacter grabs at TargetCharacters hands, trying to steal TargetPronounPossessive item.":
-        "SourceCharacter 抓住了 TargetCharacters 的手, 试图抢夺 TargetPronounPossessive 的物品.",
+        "SourceCharacter 抓住了 TargetCharacters 的手, 试图抢夺TargetPronounPossessive的物品.",
     "Give Item": "交出物品",
     "SourceCharacter grabs at TargetCharacters hands, trying to steal TargetPronounPossessive item!":
-        "SourceCharacter 一把抓住 TargetCharacters 的手, 企图抢夺 TargetPronounPossessive 的物品!",
+        "SourceCharacter 一把抓住 TargetCharacters 的手, 企图抢夺TargetPronounPossessive的物品!",
     "Shark Bite": "鲨鱼咬",
     "SourceCharacter's ActivityAsset bites TargetCharacter's arm.":
         "SourceCharacter 的 ActivityAsset 咬住了 TargetCharacter 的手臂.",
