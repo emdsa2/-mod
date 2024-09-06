@@ -12,7 +12,7 @@ const assets = {
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
-                Spread: 0,
+                LegsOpen: 0,
             },
         },
         {
@@ -30,7 +30,7 @@ const assets = {
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
-                Spread: 0,
+                LegsOpen: 0,
             },
             Layer: [
                 {
@@ -52,7 +52,7 @@ const assets = {
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
-                Spread: 0,
+                LegsOpen: 0,
             },
             Layer: [
                 {
@@ -74,7 +74,7 @@ const assets = {
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
-                Spread: 0,
+                LegsOpen: 0,
             },
         },
         {
@@ -86,7 +86,7 @@ const assets = {
                 Kneel: 0,
                 KneelingSpread: 30,
                 LegsClosed: 0,
-                Spread: 0,
+                LegsOpen: 0,
             },
         },
     ],
@@ -121,7 +121,7 @@ const translations = {
             条纹袜_Luzi: "Striped Socks",
             条纹袜2_Luzi: "Striped Socks 2",
             丝袜_Luzi: "Silk Stockings",
-            露趾袜_Luzi:"Stirrup Thigh High Socks",
+            露趾袜_Luzi: "Stirrup Thigh High Socks",
             丝袜2_Luzi: "Silk Stockings 2",
         },
         SuitLower: {
