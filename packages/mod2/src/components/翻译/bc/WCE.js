@@ -140,7 +140,7 @@ const translation = {
     "Anti Deafen": "防聋",
     "Show original messages in brackets while deafened.": "在被致聋时,在括号中显示原始消息.",
     "Allows the game to control your real vibrators. For a list of supported vibrators see https://buttplug.io":
-        "允许游戏控制你的真实震动器.有关支持的震动器列表,请参见 https://buttplug.io",
+        "允许游戏控制你现实中的振动玩具.有关支持的振动玩具列表,请参见 https://buttplug.io",
 
     "BCC Dark Magic": "BCC 黑暗魔法",
 };
