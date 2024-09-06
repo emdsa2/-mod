@@ -1025,7 +1025,7 @@ const act_dialogs = [
     },
     {
         regex: /(.+) repeats an indecipherable phrase, touching (.+) to (.+)'s (.+)/,
-        replacement: "$1 重复着一个难以理解的短语,将 $2 触碰到 $3 的 $4 ."
+        replacement: "$1 重复着一个难以理解的咒语,将 $2 触碰到 $3 的 $4 ."
     },
     {
         regex: /(.+) holds both (.+) and (.+)'s (.+) tightly, energy traveling from one to the other/,
@@ -1037,7 +1037,11 @@ const act_dialogs = [
     },
     {
         regex: /(.+) chants an indecipherable phrase, pointing (.+) at (.+) and casting (.+)/,
-        replacement: "$1 吟诵着一个难以理解的短语,将 $2 指向 $3 并施展 $4 ."
+        replacement: "$1 吟诵着一个难以理解的咒语,将 $2 指向 $3 并施展 $4 ."
+    },
+    {
+        regex: /(.+) chants an indecipherable phrase, tapping (.+) (.+) against (.+) and casting (.+)/,
+        replacement: "$1 吟唱着一句难以理解的咒语, 用$2的$3轻触, 并施展出了$4魔法."
     },
     { regex: /(.+) aims (.+) at (.+) and, with a grin, casts (.+)/, replacement: "$1 把 $2 瞄准 $3 ,带着笑容施展 $4 ." },
     {
