@@ -546,23 +546,23 @@ const extened = {
                     Property: { Difficulty: 8, Effect: [E.CuffedFeet] },
                 },
                 {
-                    Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["KneelingSpread"] },
+                    Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["BackBoxTie", "KneelingSpread"] },
                     Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                 },
                 {
-                    Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["KneelingSpread"] },
+                    Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["BackBoxTie", "KneelingSpread"] },
                     Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                 },
                 {
                     Property: {
                         Difficulty: 8,
                         Effect: [E.CuffedFeet, E.Mounted],
-                        SetPose: ["Suspension", "KneelingSpread"],
+                        SetPose: ["BackBoxTie", "KneelingSpread"],
                     },
                     Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                 },
                 {
-                    Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["Kneel"] },
+                    Property: { Difficulty: 8, Effect: [E.CuffedFeet, E.Mounted], SetPose: ["BackBoxTie", "Kneel"] },
                     Expression: [{ Group: "Blush", Name: "Medium", Timer: 10 }],
                 },
             ],
