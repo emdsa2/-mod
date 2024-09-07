@@ -46,11 +46,9 @@ function AssetsItemPelvis淫纹开始自慰(){
     AssetsItemPelvis随机自慰()
     const a = setInterval(() => {
         // @ts-ignore
-        if ( !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi") || !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi").Property.Masturbation) {
-            return clearInterval(a);
-        }
+        if ( !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi") || !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi").Property.Masturbation) 
+            return clearInterval(a)
         AssetsItemPelvis随机自慰()
-
     }, 20000);
 }
 
@@ -72,32 +70,6 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
     next(args);
 });
 
-ModManager.hookFunction("ServerSend", 5, (args, next) => {
-    // @ts-ignore
-    if ( args[0] == "ChatRoomSearch" && typeof Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi") === "object" && Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi").Property.Masturbation) {
-        console.log("c1")
-        AssetsItemPelvis淫纹开始自慰()
-    }
-    next(args);
-});
-
-ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
-    const data = args[0];
-    if (data.Content.includes("淫纹_Luzi")) {
-        const activityNameDictEntry = data.Dictionary.find((x => "TargetCharacter" in x));
-        if (activityNameDictEntry?.TargetCharacter === Player.MemberNumber) {
-            if (data.Content === "ItemPelvis淫纹_Luzi淫纹强制高潮互动") {
-                if (!!Player.ArousalSettings) Player.ArousalSettings.Progress = 100;
-                ActivityOrgasmPrepare(Player);
-            } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹性刺激互动") {
-                DrawFlashScreen("#FF7777", 2000, 500);
-            } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹开始强制自慰互动") {
-                AssetsItemPelvis淫纹开始自慰();
-            }
-        }
-    }
-    next(args);
-});
 
 // @ts-ignore
 function InventoryItemPelvis淫纹DrawHook(Data, OriginalFunction) {
