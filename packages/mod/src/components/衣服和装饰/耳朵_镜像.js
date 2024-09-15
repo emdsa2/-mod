@@ -37,7 +37,12 @@ const translations = {
     },
     EN: {
         HairAccessory2: {
-            黑猫耳镜像_Luzi: "BlackCatEarsMirror",
+            黑猫耳镜像_Luzi: "Black Cat Ears Mirror",
+        },
+    },
+    RU: {
+        HairAccessory2: {
+            黑猫耳镜像_Luzi: "Зеркальные чёрные кошачьи уши",
         },
     },
 };

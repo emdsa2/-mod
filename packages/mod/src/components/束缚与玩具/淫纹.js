@@ -4,29 +4,23 @@ import ModManager from "@mod-utils/ModManager";
 /** @type {CustomGroupName} */
 const group = "ItemPelvis";
 
-function AssetsItemPelvis淫纹开始自慰(){
-    ActivityEffect(Player, Player, "MasturbateHand", "ItemVulvaPiercings", 0, null)
-    DrawFlashScreen("#FF7777", 2000, 500);
-    ServerSend("ChatRoomChat", {
-        "Content": "ChatSelf-ItemVulvaPiercings-MasturbateHand",
-        "Type": "Activity",
-        "Dictionary": [
-            { "SourceCharacter": Player.MemberNumber },
-            { "TargetCharacter": Player.MemberNumber },
-            { "Tag": "FocusAssetGroup", "FocusGroupName": "ItemVulvaPiercings" },
-            { "ActivityName": "MasturbateHand" }
-        ],
-    });
+function AssetsItemPelvis随机自慰(){
+    const Gender = Player.HasPenis()
+    const Target = [ Gender ? "ItemPenis" : "ItemVulva" ,  Gender ? "ItemGlans" : "ItemVulvaPiercings" ]
 
-    const a = setInterval(() => {
-        // @ts-ignore
-        if ( !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi") || !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi").Property.Masturbation) {
-            return clearInterval(a);
-        }
-        ActivityEffect(Player, Player, "MasturbateHand", "ItemVulvaPiercings", 0, null)
-        DrawFlashScreen("#FF7777", 2000, 500);
+    DrawFlashScreen("#FF7777", 2000, 500);
+    if( Player.HasEffect("Block") ){
         ServerSend("ChatRoomChat", {
-            "Content": "ChatSelf-ItemVulvaPiercings-MasturbateHand",
+            "Content": "ItemPelvis淫纹_Luzi自慰Block" + Math.floor(Math.random() * 5),
+            "Type": "Action",
+            "Dictionary": [ { "SourceCharacter": Player.MemberNumber }, ],
+        });
+        return
+    }
+    if (Math.floor(Math.random() * 2)){
+        ActivityEffect(Player, Player, "MasturbateHand", "ItemVulvaPiercings", 0, null)
+        ServerSend("ChatRoomChat", {
+            "Content": "ChatSelf-"+Target[0]+"-MasturbateHand",
             "Type": "Activity",
             "Dictionary": [
                 { "SourceCharacter": Player.MemberNumber },
@@ -35,6 +29,29 @@ function AssetsItemPelvis淫纹开始自慰(){
                 { "ActivityName": "MasturbateHand" }
             ],
         });
+    } else {
+        ActivityEffect(Player, Player, "MasturbateHand", "ItemVulva", 0, null)
+        ServerSend("ChatRoomChat", {
+            "Content": "ChatSelf-"+Target[1]+"-MasturbateHand",
+            "Type": "Activity",
+            "Dictionary": [
+                { "SourceCharacter": Player.MemberNumber },
+                { "TargetCharacter": Player.MemberNumber },
+                { "Tag": "FocusAssetGroup", "FocusGroupName": "ItemVulva" },
+                { "ActivityName": "MasturbateHand" }
+            ],
+        });
+    }
+    
+}
+
+function AssetsItemPelvis淫纹开始自慰(){
+    AssetsItemPelvis随机自慰()
+    const a = setInterval(() => {
+        // @ts-ignore
+        if ( !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi") || !Player.Appearance.find(asset => asset.Asset.Name === "淫纹_Luzi").Property.Masturbation) 
+            return clearInterval(a)
+        AssetsItemPelvis随机自慰()
     }, 20000);
 }
 
@@ -55,6 +72,7 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
     }
     next(args);
 });
+
 
 // @ts-ignore
 function InventoryItemPelvis淫纹DrawHook(Data, OriginalFunction) {
@@ -108,19 +126,10 @@ function AssetsItemPelvis淫纹性刺激() {
         "Content": "ItemPelvis淫纹_Luzi淫纹性刺激互动",
         "Type": "Action",
         "Dictionary": [
-            {
-                "SourceCharacter": Player.MemberNumber
-            },
-            {
-                "TargetCharacter": C.MemberNumber
-            },
-            {
-                "Tag": "FocusAssetGroup",
-                "FocusGroupName": "ItemVulva"
-            },
-            {
-                "ActivityName": "MasturbateFist"
-            }
+            { "SourceCharacter": Player.MemberNumber },
+            { "TargetCharacter": C.MemberNumber },
+            { "Tag": "FocusAssetGroup", "FocusGroupName": "ItemVulva" },
+            { "ActivityName": "MasturbateFist"}
         ],
     });
     if (C != null) DialogLeave();
@@ -157,12 +166,8 @@ function AssetsItemPelvis淫纹强制高潮() {
         "Content": "ItemPelvis淫纹_Luzi淫纹强制高潮互动",
         "Type": "Action",
         "Dictionary": [
-            {
-                "SourceCharacter": Player.MemberNumber
-            },
-            {
-                "TargetCharacter": C.MemberNumber
-            },
+            { "SourceCharacter": Player.MemberNumber },
+            { "TargetCharacter": C.MemberNumber },
         ],
     });
     if (C != null) DialogLeave();
@@ -304,6 +309,11 @@ const dialog = {
         ItemPelvis淫纹_Luzi淫纹发光按钮: "淫纹发光",
         ItemPelvis淫纹_LuziON: "已开启",
         ItemPelvis淫纹_LuziOFF: "已关闭",
+        ItemPelvis淫纹_Luzi自慰Block0: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的私处.",
+        ItemPelvis淫纹_Luzi自慰Block1: "SourceCharacter急切的想要抚慰自己,扭动肩膀,尽可能让乳尖受到进一步刺激.",
+        ItemPelvis淫纹_Luzi自慰Block2: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦私处,但仍难以得到刺激.",
+        ItemPelvis淫纹_Luzi自慰Block3: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但她的手臂完全无法动弹.",
+        ItemPelvis淫纹_Luzi自慰Block4: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着私处摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
     },
     EN: {
         ItemPelvis淫纹_LuziSelect: "Select Effect",
@@ -313,6 +323,9 @@ const dialog = {
         ItemPelvis淫纹_Luzi拒绝: "Reject",
         ItemPelvis淫纹_Luzi淫纹性刺激按钮: "Lust Pattern Sexual Stimulation",
         ItemPelvis淫纹_Luzi淫纹性刺激互动: "SourceCharacter causes DestinationCharacter's Lust Pattern to generate sexual stimulation.",
+        ItemPelvis淫纹_Luzi淫纹强制自慰按钮: "Lust Pattern Forced Masturbation",
+        ItemPelvis淫纹_Luzi淫纹开始强制自慰互动: "SourceCharacter uses lust pattern magic to make TargetCharacter start continuous masturbation.",
+        ItemPelvis淫纹_Luzi淫纹停止强制自慰互动: "SourceCharacter uses lust pattern magic to stop the forced masturbation of TargetCharacter.",
         ItemPelvis淫纹_Luzi淫纹魔法电流按钮: "Lust Pattern Electric Current",
         ItemPelvis淫纹_Luzi淫纹魔法电流互动: "SourceCharacter causes DestinationCharacter's Lust Pattern to generate an electric current.",
         ItemPelvis淫纹_Luzi淫纹强制高潮按钮: "Lust Pattern Forced Orgasm",
@@ -320,13 +333,22 @@ const dialog = {
         ItemPelvis淫纹_LuziSet持续发情: "SourceCharacter uses the Lust Pattern magic to keep TargetCharacter's intimate area moist and in a continuous state of heat.",
         ItemPelvis淫纹_LuziSet正常: "SourceCharacter uses magic to restore TargetCharacter's Lust Pattern to its natural state.",
         ItemPelvis淫纹_LuziSet寸止: "SourceCharacter uses the Lust Pattern magic to keep TargetCharacter at the edge of orgasm.",
-        ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter uses the Lust Pattern magic to make TargetCharacter able to only reject orgasm."
+        ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter uses the Lust Pattern magic to make TargetCharacter able to only reject orgasm.",
+        ItemPelvis淫纹_Luzi淫纹发光按钮: "LewdPattern Glowing",
+        ItemPelvis淫纹_LuziON: "Enabled",
+        ItemPelvis淫纹_LuziOFF: "Disabled",
+        ItemPelvis淫纹_Luzi自慰Block0: "SourceCharacter eagerly wants to pleasure themselves, trembling and squeezing their thighs together to stimulate their private areas as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block1: "SourceCharacter eagerly wants to pleasure themselves, wriggling their shoulders to further stimulate their nipples.",
+        ItemPelvis淫纹_Luzi自慰Block2: "SourceCharacter eagerly wants to pleasure themselves, squeezing their thighs together to rub their private areas but still finding it difficult to stimulate themselves.",
+        ItemPelvis淫纹_Luzi自慰Block3: "SourceCharacter eagerly wants to pleasure themselves, struggling with their arms to masturbate, but their arms are completely immobilized.",
+        ItemPelvis淫纹_Luzi自慰Block4: "SourceCharacter eagerly wants to pleasure themselves, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
     },
 };
 
 const translations = {
     CN: "淫纹",
     EN: "Lewd Crest",
+    RU: "Порнографический знак",
 };
 
 export default function () {

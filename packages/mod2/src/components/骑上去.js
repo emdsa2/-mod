@@ -45,10 +45,12 @@ const activity = {
     label: {
         CN: "骑上去",
         EN: "Ride On",
+        RU: "Поездка",
     },
     dialog: {
         CN: "SourceCharacter骑在TargetCharacter的背上.",
         EN: "SourceCharacter Rides on TargetCharacter's Back.",
+        RU: "SourceCharacter ocедлала спину TargetCharacter.",
     },
 };
 

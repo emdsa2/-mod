@@ -194,7 +194,7 @@ const dialog = {
     },
 };
 
-const translations = { CN: "独角兽玩偶", EN: "Unicorn Stuffed Toy" };
+const translations = { CN: "独角兽玩偶", EN: "Unicorn Stuffed Toy", RU: "Кукла единорога" };
 
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended, translations);

@@ -181,7 +181,11 @@ const dialog = {
     },
 };
 
-const translations = { CN: "脚趾戒指", EN: "toe ring" };
+const translations = {
+    CN: "脚趾戒指",
+    EN: "Toe Ring",
+    RU: "Кольцо на пальце ноги",
+};
 
 export default function () {
     AssetManager.addAsset("Shoes", asset, extended, translations);

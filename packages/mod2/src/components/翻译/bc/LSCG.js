@@ -328,7 +328,7 @@ const activities = {
         "SourceCharacter 将脚塞入……用脚趾抓挠自己的舌头.",
     "Grab Tail": "抓住尾巴",
     "SourceCharacter grabs TargetCharacter's tail.": "SourceCharacter 抓住了 TargetCharacter 的尾巴.",
-    "Release Tail": "放开眼睛",
+    "Release Tail": "放开尾巴",
     "SourceCharacter releases TargetCharacter's tail.": "SourceCharacter 放开了 TargetCharacter 的尾巴.",
 };
 

@@ -197,7 +197,7 @@ const translationsDTF = [
     {
         regex: /This rule forbids (.+) to use a maid's help to get out of restraints in the club\'s main hall\. Recommended to combine with the rule\: \'Force \'Cannot enter single\-player rooms when restrained\' \(Existing BC setting\)\' to prevent NPCs in other rooms from helping\./,
         replacement:
-            "此规则禁$1 在俱乐部的主大厅中使用女仆的帮助来解开约束. 建议与规则结合使用: '强制'被约束时无法进入单人房间''(现有的 BC 设置)', 以防止其他房间的 NPC 提供帮助.",
+            "此规则禁 $1 在俱乐部的主大厅中使用女仆的帮助来解开约束. 建议与规则结合使用: '强制'被约束时无法进入单人房间''(现有的 BC 设置)', 以防止其他房间的 NPC 提供帮助.",
     },
     {
         regex: /This rule forbids (.+) to change her Bondage Club multiplayer difficulty, regardless of the current value\./,
@@ -369,6 +369,14 @@ const translationsDTF = [
     {
         regex: /This rule forbids (.+) to send an emote \(with \* or \/me\) to all people inside a chat room\./,
         replacement: "此规则禁 $1 向聊天室内的所有人发送表情符号(使用 * 或 /me).",
+    },
+    {
+        regex: /This rule forces (.+)'s base game setting 'Arousal meter' to configurable value and prevents her from changing it.\./,
+        replacement: "此规则强制控制 $1 的基础游戏设置中的性奋量表模式，并阻止她更改模式.",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting \'Hide non-adjacent players while partially blind\' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "该规则会强制 $1 的基础游戏或 BCX 设置中的 “部分失明时隐藏非相邻玩家 ”改为你设定的值，并阻止她更改该设置.还有一个选项可以将设置恢复到规则改变之前的状态.当规则失效（例如关闭或触发条件未满足）或被移除时，就会发生恢复.",
     },
     {
         regex: /This rule forbids (.+) to leave their current club owner or get a new one\. Advancing ownership from trial to full ownership is unaffected. Doesn\'t prevent the club owner from releasing her\./,
@@ -964,7 +972,7 @@ const act_dialogs = [
     { regex: /(.+) squeaks as (.+) clothing shimmers and morphs around (.+)\./, replacement: "$1尖叫着,当$2的衣服闪烁并在$3周围变形的时候." },
     { regex: /(.+) trembles as (.+) body shimmers and morphs\./, replacement: "$1颤抖着,当$2的身体闪烁并变形时." },
     { regex: /(.+) squeaks as (.+) body shimmers and morphs\./, replacement: "$1尖叫着,当$2的身体闪烁并变形时." },
-    { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1扭动着,当$2的高潮被匹配到自己身上时." },
+    { regex: /(.+) squirms as (.+) arousal is paired\./, replacement: "$1扭动着,当$2的高潮被同步到自己身上时." },
     { regex: /(.+) quivers as (.+) feels (.+) impending denial\./, replacement: "$1颤抖着,当$2感觉到$3即将来临的拒绝时." },
     { regex: /(.+) whimpers as (.+) feels (.+) impending denial\./, replacement: "$1呜咽着,当$2感受到$3即将到来的拒绝时." },
     {
@@ -1196,7 +1204,7 @@ const act_dialogs = [
     },
     {
         regex: /(.+) moans quietly as (.+) slips back down under trance\.\.\./,
-        replacement: "$1在恍惚中慢慢滑落,$2轻声呻吟着……",
+        replacement: "当$1再次陷入恍惚时,她低声呻吟起来……",
     },
     {
         regex: /(.+) gasps quietly as (.+) mind can suddenly form sentences once again\.\.\./,
@@ -1272,10 +1280,42 @@ const act_dialogs = [
         regex: /(.+) tried to use the antiblind command\./,
         replacement: "$1尝试使用反盲指令."
     },
-
-
-
-
+    {
+        regex: /(.+) 牵着她的手走出房间\./,
+        replacement: "$1尝试使用反盲指令."
+    },
+    {
+        regex: /A magical shield on (.+) repelled the suspiciously magical changes attempted by (.+)! \[WCE Anti\-Cheat\]/,
+        replacement: "$1 身上出现了一道神奇的护盾, 挡下了 $2 试图施展的可疑魔法! [WCE 反作弊系统]"
+    },
+    {
+        regex: /(.+) received a summon: \"(.+)\"\./,
+        replacement: "$1接到了一个招唤: \"$2\"."
+    },
+    {
+        regex: /The demand for (.+) 's presence is now enforced\./,
+        replacement: "$1 现在必须要过去了."
+    },
+    {
+        regex: /The curse on (.+)'s (.+) wakes up, not allowing the item to be replaced by another item\./,
+        replacement: "$1 身上 $2 的诅咒苏醒了, 禁止该物品被其他物品替换.",
+    },
+    {
+        regex: /(.+) spoke openly in a room\./,
+        replacement: "$1 尝试在房间里说话.",
+    },
+    {
+        regex: /(.+) did not use a mandatory word while talking\./,
+        replacement: "$1 在说话时未使用规定的词汇.",
+    },
+    {
+        regex: /(.+) tried to use OOC in a message while gagged\./,
+        replacement: "$1 被封口时还试图使用 OOC 消息.",
+    },
+    {
+        regex: /The curses on (.+)'s body become dormant and several items fall off (.+) body\./,
+        replacement: "$1 身上的诅咒陷入休眠状态, 几件物品从她身上掉落.",
+    },
 
     // BCC
     // 强制舔腿

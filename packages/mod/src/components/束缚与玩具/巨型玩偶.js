@@ -114,6 +114,10 @@ const dialog = {
         ItemDevices巨型玩偶_Luzi熊熊: "Bear",
         ItemDevices巨型玩偶_LuziSelect: "Select Giant Doll Configuration",
     },
+    RU: {
+        ItemDevices巨型玩偶_Luzi熊熊: "Мишка",
+        ItemDevices巨型玩偶_LuziSelect: "Выбор конфигурации большой игрушки",
+    },
 };
 
 const translations = {

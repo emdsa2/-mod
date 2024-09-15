@@ -34,18 +34,27 @@ const extended = {
 /** @type {Translation.Dialog} */
 const dialog = {
     CN: {
-        Cloth斜肩上衣_Luzi_LuziSelect: "选择斜肩上衣配置",
+        Cloth斜肩上衣_Luzi_LuziSelect: "设置",
         Cloth斜肩上衣_Luzi_左: "左",
         Cloth斜肩上衣_Luzi_右: "右",
     },
     EN: {
-        Cloth斜肩上衣_Luzi_LuziSelect: "Select Off-the-shoulder top",
+        Cloth斜肩上衣_Luzi_LuziSelect: "Select",
         Cloth斜肩上衣_Luzi_左: "Left",
         Cloth斜肩上衣_Luzi_右: "Right",
     },
+    RU: {
+        Cloth斜肩上衣_Luzi_LuziSelect: "Выбрать",
+        Cloth斜肩上衣_Luzi_左: "Лево",
+        Cloth斜肩上衣_Luzi_右: "Право",
+    },
 };
 
-const translations = { CN: "斜肩上衣", EN: "Off-the-shoulder top" };
+const translations = {
+    CN: "斜肩上衣",
+    EN: "Off-the-shoulder top",
+    RU: "Топ с открытым плечом",
+};
 
 export default function () {
     AssetManager.addAsset("Cloth", asset, extended, translations);

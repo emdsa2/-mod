@@ -22,9 +22,23 @@ const assets = {
                         BackBoxTie: "Hide",
                         BackElbowTouch: "Hide",
                         BackCuffs: "Hide",
+                        Hogtied: "Hide",
+                        AllFours: "Hide",
                     },
                 },
-                { Name: "上衣", Priority: 14, },
+                {
+                    Name: "上衣", Priority: 14,
+                    PoseMapping: {
+                        TapedHands: "TapedHands",
+                        Yoked: "Yoked",
+                        OverTheHead: "OverTheHead",
+                        BackBoxTie: "BackBoxTie",
+                        BackElbowTouch: "BackElbowTouch",
+                        BackCuffs: "BackCuffs",
+                        Hogtied: "Hogtied",
+                        AllFours: "Hide",
+                    },
+                },
             ],
         },
     ],
@@ -127,6 +141,17 @@ const translations = {
         },
         Bra: {
             绷带全身_Luzi: "Full Body Bandage",
+        },
+    },
+    RU: {
+        Suit: {
+            乳胶衣上_Luzi: "Латексный верх",
+        },
+        SuitLower: {
+            乳胶衣下_Luzi: "Латексный низ",
+        },
+        Bra: {
+            绷带全身_Luzi: "Полный бинт",
         },
     },
 };

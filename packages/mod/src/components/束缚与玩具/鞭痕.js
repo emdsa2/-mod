@@ -72,7 +72,11 @@ const dialog = {
     },
 };
 
-const translations = { CN: "鞭痕", EN: "Whip marks" };
+const translations = {
+    CN: "鞭痕",
+    EN: "Whip marks",
+    RU: "След удар плет",
+};
 
 export default function () {
     // @ts-ignore

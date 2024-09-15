@@ -214,6 +214,7 @@ const dialog = {
 const translations = {
     CN: "乳胶带床",
     EN: "Latex-belt Bed",
+    RU: "Кровать с латексным ремнем",
 };
 
 export default function () {

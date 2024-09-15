@@ -55,10 +55,12 @@ const activities = [
         label: {
             CN: "摇晃尾巴",
             EN: "Wag Tail",
+            RU: "Вилять хвостом"
         },
         dialog: {
-            CN: "SourceCharacter摇晃PronounPossessive的尾巴.",
+            CN: "SourceCharacter 摇晃 PronounPossessive 的尾巴.",
             EN: "SourceCharacter wags PronounPossessive tail.",
+            RU: "SourceCharacter виляет хвостом."
         },
     },
     {
@@ -82,10 +84,12 @@ const activities = [
         label: {
             CN: "摇晃耳朵",
             EN: "Wag Ears",
+            RU: "Вилять ушами"
         },
         dialog: {
-            CN: "SourceCharacter摇晃PronounPossessive的耳朵.",
+            CN: "SourceCharacter 摇晃 PronounPossessive 的耳朵.",
             EN: "SourceCharacter wags PronounPossessive's ears.",
+            RU: "SourceCharacter виляет ушами."
         },
     },
 ];

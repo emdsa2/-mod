@@ -289,6 +289,7 @@ const customDialog = {
 const translations = {
     CN: "玻璃罐子",
     EN: "Glass Jar",
+    RU: "Стеклянная банка",
 };
 
 export default function () {

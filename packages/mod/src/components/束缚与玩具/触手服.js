@@ -312,7 +312,7 @@ const dialogs = {
     },
 };
 
-const translations = { CN: "触手服", EN: "Tentacle Suit" };
+const translations = { CN: "触手服", EN: "Tentacle Suit", RU: "Костюм для щупальца" };
 
 export default function () {
     AssetManager.addAsset("ItemTorso", asset, extended, translations);

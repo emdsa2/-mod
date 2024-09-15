@@ -154,11 +154,40 @@ const dialog = {
         ItemVulva更多有线跳蛋_LuziSetn4:
             "SourceCharacter fiddles with the wired vibrator egg, now there are five vibrator eggs inside TargetCharacter's vagina.",
     },
+RU: {
+    ItemVulva更多有线跳蛋_LuziSelectBase: "Выбор конфигурации",
+    ItemVulva更多有线跳蛋_LuziSelect跳蛋开关: "Переключатель вибратора",
+    ItemVulva更多有线跳蛋_LuziSelect跳蛋数量: "Количество вибраторов",
+    ItemVulva更多有线跳蛋_LuziModule跳蛋开关: "Переключатель вибратора",
+    ItemVulva更多有线跳蛋_LuziModule跳蛋数量: "Количество вибраторов",
+    ItemVulva更多有线跳蛋_LuziOptionn0: "1 шт.",
+    ItemVulva更多有线跳蛋_LuziOptionn1: "2 шт.",
+    ItemVulva更多有线跳蛋_LuziOptionn2: "3 шт.",
+    ItemVulva更多有线跳蛋_LuziOptionn3: "4 шт.",
+    ItemVulva更多有线跳蛋_LuziOptionn4: "5 шт.",
+    ItemVulva更多有线跳蛋_LuziOptiono0: "Выключено",
+    ItemVulva更多有线跳蛋_LuziOptiono1: "Низкий",
+    ItemVulva更多有线跳蛋_LuziOptiono2: "Средний",
+    ItemVulva更多有线跳蛋_LuziOptiono3: "Высокий",
+    ItemVulva更多有线跳蛋_LuziOptiono4: "Максимальный",
+
+    ItemVulva更多有线跳蛋_LuziSeto0: "SourceCharacter переключает выключатель, устанавливая вибратор TargetCharacter в выключенное состояние.",
+    ItemVulva更多有线跳蛋_LuziSeto1: "SourceCharacter переключает выключатель, устанавливая вибратор TargetCharacter на низкую интенсивность.",
+    ItemVulva更多有线跳蛋_LuziSeto2: "SourceCharacter переключает выключатель, устанавливая вибратор TargetCharacter на среднюю интенсивность.",
+    ItemVulva更多有线跳蛋_LuziSeto3: "SourceCharacter переключает выключатель, устанавливая вибратор TargetCharacter на высокую интенсивность.",
+    ItemVulva更多有线跳蛋_LuziSeto4: "SourceCharacter переключает выключатель, устанавливая вибратор TargetCharacter на максимальную интенсивность.",
+    ItemVulva更多有线跳蛋_LuziSetn0: "SourceCharacter вытаскивает вибратор из TargetCharacter, оставляя только 1 шт.",
+    ItemVulva更多有线跳蛋_LuziSetn1: "SourceCharacter играет с проводными вибраторами, теперь в вагине TargetCharacter находится 2 вибратора.",
+    ItemVulva更多有线跳蛋_LuziSetn2: "SourceCharacter играет с проводными вибраторами, теперь в вагине TargetCharacter находится 3 вибратора.",
+    ItemVulva更多有线跳蛋_LuziSetn3: "SourceCharacter играет с проводными вибраторами, теперь в вагине TargetCharacter находится 4 вибратора.",
+    ItemVulva更多有线跳蛋_LuziSetn4: "SourceCharacter играет с проводными вибраторами, теперь в вагине TargetCharacter находится 5 вибраторов.",
+},
 };
 
 const translations = {
     CN: "更多有线跳蛋",
     EN: "More Wired Vibrators",
+    RU: "Больше проводных вибраторов",
 };
 
 export default function () {

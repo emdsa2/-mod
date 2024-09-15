@@ -45,6 +45,11 @@ const translations = {
             冕旒_Luzi: "Mian Liu",
         },
     },
+    RU: {
+        Hat: {
+            冕旒_Luzi: "Миан Лю",
+        },
+    },
 };
 
 export default function () {

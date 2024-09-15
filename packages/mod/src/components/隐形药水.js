@@ -55,6 +55,8 @@ const asset = {
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
                 Spread: "Spread",
+                Hogtied: "Hide",
+                AllFours: "Hide",
             },
         },
         {
@@ -91,6 +93,8 @@ const asset = {
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
                 Spread: "Spread",
+                Hogtied: "Hide",
+                AllFours: "Hide",
             },
             Alpha: [
                 {
@@ -715,8 +719,11 @@ const dialog = {
     },
 };
 
-const translations = { CN: "传送门拘束", EN: "Potion of Invisibility" };
-
+const translations = {
+    CN: "四肢传送装置",
+    EN: "Limb Teleportation Device",
+    RU: "Устройство телепортации конечностей",
+};
 /** @type {ExtendedItemCallbacks.BeforeDraw} */
 function beforeDraw({ C, Property }) {
     const bodyUpper = InventoryGet(C, "BodyUpper");

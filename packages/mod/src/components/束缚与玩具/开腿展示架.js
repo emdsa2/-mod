@@ -210,6 +210,41 @@ const dialog = {
         ItemDevices开腿展示架_LuziSetd0: "SourceCharacter resets DestinationCharacter's height",
         ItemDevices开腿展示架_LuziSetd1: "SourceCharacter adjusts DestinationCharacter's height",
     },
+    RU: {
+        ItemDevices开腿展示架_LuziSelectBase: "Выбор конфигурации дисплея для раздвигания ног",
+
+        ItemDevices开腿展示架_LuziSelect姿势: "Выбор позы",
+        ItemDevices开腿展示架_LuziModule姿势: "Поза",
+        ItemDevices开腿展示架_LuziOptiono0: "Задняя",
+        ItemDevices开腿展示架_LuziOptiono1: "Поднять руки",
+
+        ItemDevices开腿展示架_LuziSelect嘴巴固定: "Выбор фиксации рта",
+        ItemDevices开腿展示架_LuziModule嘴巴固定: "Фиксация рта",
+        ItemDevices开腿展示架_LuziOptiong0: "Нет",
+        ItemDevices开腿展示架_LuziOptiong1: "Добавить фиксацию рта",
+
+        ItemDevices开腿展示架_LuziSelect下体棒子: "Выбор приспособления для гениталий",
+        ItemDevices开腿展示架_LuziModule下体棒子: "Приспособление для гениталий",
+        ItemDevices开腿展示架_LuziOptionv0: "Нет",
+        ItemDevices开腿展示架_LuziOptionv1: "Добавить приспособление для гениталий",
+
+        ItemDevices开腿展示架_LuziSelect自定义高度: "Установка высоты",
+        ItemDevices开腿展示架_LuziModule自定义高度: "Настройка высоты",
+        ItemDevices开腿展示架_LuziOptiond0: "Нет",
+        ItemDevices开腿展示架_LuziOptiond1: "Настроить высоту",
+
+        ItemDevices开腿展示架_LuziSeto1: "SourceCharacter изменяет фиксацию рук DestinationCharacter",
+        ItemDevices开腿展示架_LuziSeto0: "SourceCharacter изменяет фиксацию рук DestinationCharacter",
+
+        ItemDevices开腿展示架_LuziSetg0: "SourceCharacter убирает фиксацию рта DestinationCharacter",
+        ItemDevices开腿展示架_LuziSetg1: "SourceCharacter добавляет фиксацию рта DestinationCharacter",
+
+        ItemDevices开腿展示架_LuziSetv0: "SourceCharacter убирает приспособление для гениталий DestinationCharacter",
+        ItemDevices开腿展示架_LuziSetv1: "SourceCharacter добавляет приспособление для гениталий DestinationCharacter",
+
+        ItemDevices开腿展示架_LuziSetd0: "SourceCharacter восстанавливает высоту DestinationCharacter",
+        ItemDevices开腿展示架_LuziSetd1: "SourceCharacter настраивает высоту DestinationCharacter",
+    },
 };
 
 const translations = {

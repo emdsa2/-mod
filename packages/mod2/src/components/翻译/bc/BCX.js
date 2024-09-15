@@ -65,18 +65,18 @@ const translation = {
     "BCX: First time init finalized": "BCX: 首次初始化完成",
     "This is the latest version": "这是最新版本",
     "View changelog": "查看更新日志",
-    "Enable typing indicator": "启用输入指示符",
+    "Enable typing indicator": "启用输入指示器(打字中的气泡)",
     "Show BCX icons above characters in chatroom": "在聊天室中的角色上方显示 BCX 图标",
     "Show your BCX Supporter Heart to all BCX users": "向所有 BCX 用户展示您的 BCX 支持者之心",
     "Cheat: Give yourself the mistress padlock and its key": "作弊：给自己女王锁及其钥匙",
     "Cheat: Give yourself the pandora padlock and its key": "作弊：给自己潘多拉魔盒锁及其钥匙",
     "- Permanent deletion of ALL Bondage Club Extended data -": "- 永久删除所有 Bondage Club 扩展数据 -",
     "Use the following text to auto fill the chat room search field:": "使用以下文本自动填充聊天室搜索字段:",
-    "Hide BC's typing & wardrobe icon on users showing BCX one": "在显示 BCX 的用户上隐藏 BC 的输入和衣柜图标",
+    "Hide BC's typing & wardrobe icon on users showing BCX one": "在显示 BCX 的用户上隐藏 BC 的打字和衣柜图标",
     "Cheat: 阻止随机 NPC 事件 (kidnappings, ransoms, asylum, club slaves)":
         "作弊：阻止随机 NPC 事件(绑架、赎金、收容所、俱乐部奴隶)",
     "Enable status indicator showing when you are in any player's BCX menu, biography, or wardrobe":
-        "当您处于任何玩家的 BCX 菜单、传记或衣柜中时, 启用显示的状态指示器",
+        "当您处于任何玩家的 BCX 菜单、个人简介(bio)或衣柜中时, 启用显示状态的气泡",
     "If you confirm, all BCX data (including settings, curses, logs, ...) will be permanently deleted!":
         "如果您确认, 所有 BCX 数据(包括设置、诅咒、日志……)将被永久删除!",
     "you confirm, all BCX data (including settings, curses, logs, ...) will be permanently deleted!":

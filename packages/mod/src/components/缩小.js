@@ -52,6 +52,14 @@ const translations = {
             身高减20cm_Luzi: "-20cm",
         },
     },
+    RU: {
+        BodyMarkings2_Luzi: {
+            缩小地上_Luzi: "Уменьшение на земле",
+            缩小浮空_Luzi: "Уменьшение в воздухе",
+            身高减10cm_Luzi: "-10см",
+            身高减20cm_Luzi: "-20см",
+        },
+    },
 };
 
 export default function () {
