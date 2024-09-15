@@ -30,6 +30,12 @@ const translations = {
             缰绳_Luzi: "Reins",
         },
     },
+    RU: {
+        ItemTorso: {
+            鞍_Luzi: "Седло",
+            缰绳_Luzi: "Уздечка",
+        },
+    },
 };
 
 export default function () {
@@ -43,13 +49,57 @@ export default function () {
 
             if (!sharedC) return;
 
-            if (sharedC.prev.MemberNumber === C.MemberNumber && InventoryIsItemInList(C, "ItemTorso", ["缰绳_Luzi"])) {
+            if (
+                sharedC.prev.MemberNumber === C.MemberNumber &&
+                InventoryIsItemInList(C, "ItemTorso", ["缰绳_Luzi"])
+            ) {
                 args[1] = sharedC.center.X;
                 args[2] = sharedC.center.Y - 50 * sharedC.prev.XCharacterDrawOrder.drawState.Zoom; // 缰绳人要向上移动50像素，乘以鞍人的缩放比例
                 return;
             }
 
-            if (sharedC.next.MemberNumber === C.MemberNumber && InventoryIsItemInList(C, "ItemTorso", ["鞍_Luzi"])) {
+            if (
+                sharedC.next.MemberNumber === C.MemberNumber &&
+                InventoryIsItemInList(C, "ItemTorso", ["鞍_Luzi"])
+            ) {
+                args[1] = sharedC.center.X;
+                args[2] = sharedC.center.Y;
+                return;
+            }
+        });
+
+        ModManager.progressiveHook("DrawCharacter", 1)
+        .inside("ChatRoomCharacterViewLoopCharacters")
+        .inject((args, next) => {
+            const [C, X, Y, Zoom] = args;
+            const sharedC = ChatRoomOrder.requireSharedCenter(C);
+
+            if (!sharedC) return;
+
+            if (sharedC.next.ActivePose[0] === "Kneel" || sharedC.next.ActivePose[0] === "KneelingSpread") {
+                if (
+                    sharedC.prev.MemberNumber === C.MemberNumber &&
+                    InventoryIsItemInList(C, "ItemDevices", ["BurlapSack"])
+                ) {
+                    args[1] = sharedC.center.X;
+                    args[2] = sharedC.center.Y - 120 * sharedC.next.XCharacterDrawOrder.drawState.Zoom;
+                    return;
+                }
+            } else {
+                if (
+                    sharedC.prev.MemberNumber === C.MemberNumber &&
+                    InventoryIsItemInList(C, "ItemDevices", ["BurlapSack"])
+                ) {
+                    args[1] = sharedC.center.X;
+                    args[2] = sharedC.center.Y - 340 * sharedC.next.XCharacterDrawOrder.drawState.Zoom;
+                    return;
+                }
+            }
+    
+            if (
+                sharedC.next.MemberNumber === C.MemberNumber &&
+                InventoryIsItemInList(C, "ItemTorso", ["缰绳_Luzi"])
+            ) {
                 args[1] = sharedC.center.X;
                 args[2] = sharedC.center.Y;
                 return;

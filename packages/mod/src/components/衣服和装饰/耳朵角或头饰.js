@@ -45,6 +45,13 @@ const assets = {
                 },
             ],
         },
+        {
+            Name: "角7_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 52,
+        },
     ],
     HairAccessory2: [
         {
@@ -89,6 +96,13 @@ const assets = {
                 },
             ],
         },
+        {
+            Name: "角7_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 52,
+        },
     ],
 };
 
@@ -96,22 +110,38 @@ const assets = {
 const translations = {
     CN: {
         HairAccessory1: {
-            耳朵1_Luzi: "耳朵1",
-            耳朵2_Luzi: "耳朵2",
+            耳朵1_Luzi: "耳朵 1",
+            耳朵2_Luzi: "耳朵 2",
+            角7_Luzi: "角 7",
         },
         HairAccessory2: {
-            耳朵1_Luzi: "耳朵1",
-            耳朵2_Luzi: "耳朵2",
+            耳朵1_Luzi: "耳朵 1",
+            耳朵2_Luzi: "耳朵 2",
+            角7_Luzi: "角 7",
         },
     },
     EN: {
         HairAccessory1: {
-            耳朵1_Luzi: "Ears1",
-            耳朵2_Luzi: "Ears2",
+            耳朵1_Luzi: "Ears 1",
+            耳朵2_Luzi: "Ears 2",
+            角7_Luzi: "Horn 7",
         },
         HairAccessory2: {
-            耳朵1_Luzi: "Ears1",
-            耳朵2_Luzi: "Ears2",
+            耳朵1_Luzi: "Ears 1",
+            耳朵2_Luzi: "Ears 2",
+            角7_Luzi: "Horn 7",
+        },
+    },
+    RU: {
+        HairAccessory1: {
+            耳朵1_Luzi: "Уши 1",
+            耳朵2_Luzi: "Уши 2",
+            角7_Luzi: "Рог 7",
+        },
+        HairAccessory2: {
+            耳朵1_Luzi: "Уши 1",
+            耳朵2_Luzi: "Уши 2",
+            角7_Luzi: "Рог 7",
         },
     },
 };

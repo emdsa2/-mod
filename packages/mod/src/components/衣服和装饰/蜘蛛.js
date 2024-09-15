@@ -44,7 +44,11 @@ const asset = {
     },
 };
 
-const translations = { CN: "蜘蛛", EN: "Spider" };
+const translations = {
+    CN: "蜘蛛",
+    EN: "Spider",
+    RU: "Паук",
+};
 
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, undefined, translations);

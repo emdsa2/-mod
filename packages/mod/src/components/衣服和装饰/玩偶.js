@@ -43,7 +43,8 @@ const asset = {
         { Name: "临", AllowTypes: { z: 9 } },
         { Name: "小安", AllowTypes: { z: 10 } },
         { Name: "Suki", AllowTypes: { z: 11 } },
-        { Name: "兔叽", AllowTypes: { z: 12 } },
+        { Name: "haru", AllowTypes: { z: 12 } },
+        { Name: "兔叽", AllowTypes: { z: 13 } },
 
         // Catnest
         { Name: "XinLian", AllowTypes: { c: 1 } },
@@ -60,6 +61,7 @@ const asset = {
         { Name: "Shirayuki", AllowTypes: { f: 2 } },
         { Name: "Nail", AllowTypes: { f: 3 } },
         { Name: "Nekonya蓝", AllowTypes: { f: 4 } },
+        { Name: "小果", AllowTypes: { f: 5 } },
 
         // 小夜家玩偶
         { Name: "向归夜", AllowTypes: { y: 1 } },
@@ -72,6 +74,13 @@ const asset = {
         { Name: "小果", AllowTypes: { y: 8 } },
         { Name: "茗子", AllowTypes: { y: 9 } },
 
+        // 盒子的小黑屋
+        { Name: "葡萄果汁盒", AllowTypes: { hz: 1 } },
+        { Name: "时雨Tokiame", AllowTypes: { hz: 2 } },
+        { Name: "殇梦溪", AllowTypes: { hz: 3 } },
+        { Name: "Neko2", AllowTypes: { hz: 4 } },
+        { Name: "mizuki池", AllowTypes: { hz: 5 } },
+        
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
         { Name: "YouXiang", AllowTypes: { l: 2 } },
@@ -79,6 +88,7 @@ const asset = {
         { Name: "泠雨", AllowTypes: { l: 4 } },
         { Name: "墨芸", AllowTypes: { l: 5 } },
         { Name: "Poi", AllowTypes: { l: 6 } },
+        { Name: "Pokemon", AllowTypes: { l: 7 } },
     ],
 };
 
@@ -89,6 +99,7 @@ const typeNames = {
     c: "Catnest玩偶",
     f: "猫州猫庭府玩偶",
     y: "小夜家玩偶",
+    hz: "盒子的小黑屋玩偶",
     l: "路过的玩偶",
 };
 
@@ -97,6 +108,8 @@ const translations = { CN: "玩偶", EN: "Plushies" };
 /** @type {Translation.Dialog} */
 const predefDialog = {
     CN: {
+        ItemMisc玩偶_LuziOptionhz4:"Neko",
+
         ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只超厉害超威严bc第一的Cyäegha大人的眼线!",
@@ -185,10 +198,34 @@ const enDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
     return pv;
 }, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "Select Room", ...(predefDialog.EN || {}) }));
 
+/** @type { Record<string,string> } */
+const ruDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, cv) => {
+    const { Name, Key, Options } = cv;
+
+    pv[`ItemMisc玩偶_LuziSelect${Name}`] = `Выбрать ${Name}`;
+    pv[`ItemMisc玩偶_LuziModule${Name}`] = `${Name}`;
+    pv[`ItemMisc玩偶_LuziOption${Key}0`] = "Пусто";
+    pv[`ItemMisc玩偶_LuziSet${Key}0`] = "SourceCharacter удаляет куклу из руки DestinationCharacter.";
+
+    Options.forEach((_, i) => {
+        if (i === 0) return;
+        const layerName = layerNames[`${Name}${i}`];
+        if (!layerName) return;
+        const keyOption = `ItemMisc玩偶_LuziOption${Key}${i}`;
+        const keySet = `ItemMisc玩偶_LuziSet${Key}${i}`;
+        if (typeof pv[keyOption] !== "string") pv[keyOption] = `${layerName}`;
+        if (typeof pv[keySet] !== "string")
+            pv[keySet] = `SourceCharacter дает DestinationCharacter милую куклу ${layerName}.`;
+    });
+
+    return pv;
+}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "Выбрать комнату", ...(predefDialog.RU || {}) }));
+
 /** @type {Translation.Dialog} */
 const dialogs = {
     CN: cnDialog,
     EN: enDialog,
+    RU: ruDialog,
 };
 
 export default function () {

@@ -96,9 +96,20 @@ const dialog = {
         ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter pushes open the lid of DestinationCharacter.",
         ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter covers DestinationCharacter with a lid.",
     },
+    RU: {
+        ItemDevices窝瓜_LuziSelect: "Выбрать конфигурацию",
+        ItemDevices窝瓜_Luzi没盖子: "Открыть крышку",
+        ItemDevices窝瓜_Luzi有盖子: "Закрыть крышку",
+        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter открыл крышку у DestinationCharacter.",
+        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter закрыл крышку у DestinationCharacter.",
+    },
 };
 
-const translations = { CN: "窝瓜", EN: "Pumpkin" };
+const translations = {
+    CN: "窝瓜",
+    EN: "Pumpkin",
+    RU: "Тыква",
+};
 
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended, translations);

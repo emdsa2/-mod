@@ -28,6 +28,7 @@ const groups = [
         description: {
             CN: "🍔液体",
             EN: "🍔Liquid",
+            RU: "🍔Жидкость",
         },
     },
     {
@@ -49,7 +50,8 @@ const groups = [
         },
         description: {
             CN: "🍔鞭痕",
-            EN: "🍔Whip marks",
+            EN: "🍔Whip Marks",
+            RU: "🍔Побои от плети",
         },
     },
     {
@@ -72,6 +74,7 @@ const groups = [
         description: {
             CN: "🍔动物身体",
             EN: "🍔Animal Bodies",
+            RU: "🍔Тела животных",
         },
     },
     {
@@ -93,7 +96,8 @@ const groups = [
         },
         description: {
             CN: "🍔长袖子",
-            EN: "🍔Long sleeves",
+            EN: "🍔Long Sleeves",
+            RU: "🍔Длинные рукава",
         },
     },
 ];
@@ -104,120 +108,135 @@ const copyGroups = [
         name: "BodyMarkings2_Luzi",
         mirror: "BodyMarkings",
         description: {
-            CN: "🍔身体涂画2",
-            EN: "🍔BodyMarkings2",
+            CN: "🍔身体涂画 2",
+            EN: "🍔Body Markings 2",
+            RU: "🍔Нарисованные отметины на теле 2",
         },
     },
     {
         name: "Cloth_笨笨蛋Luzi",
         mirror: "Cloth",
         description: {
-            CN: "🍔衣服2",
-            EN: "🍔Cloth2",
+            CN: "🍔衣服 2",
+            EN: "🍔Cloth 2",
+            RU: "🍔Одежда 2",
         },
     },
     {
         name: "ClothLower_笨笨蛋Luzi",
         mirror: "ClothLower",
         description: {
-            CN: "🍔下装2",
-            EN: "🍔Bottom2",
+            CN: "🍔下装 2",
+            EN: "🍔Bottom 2",
+            RU: "🍔Нижняя одежда 2",
         },
     },
     {
         name: "Cloth_笨笨笨蛋Luzi2",
         mirror: "Cloth",
         description: {
-            CN: "🍔衣服3",
-            EN: "🍔Cloth3",
+            CN: "🍔衣服 3",
+            EN: "🍔Cloth 3",
+            RU: "🍔Одежда 3",
         },
     },
     {
         name: "ClothLower_笨笨笨蛋Luzi2",
         mirror: "ClothLower",
         description: {
-            CN: "🍔下装3",
-            EN: "🍔Bottom3",
+            CN: "🍔下装 3",
+            EN: "🍔Bottom 3",
+            RU: "🍔Нижняя одежда 3",
         },
     },
     {
         name: "Panties_笨笨蛋Luzi",
         mirror: "Panties",
         description: {
-            CN: "🍔内裤2",
-            EN: "🍔Panties2",
+            CN: "🍔内裤 2",
+            EN: "🍔Panties 2",
+            RU: "🍔Трусики 2",
         },
     },
     {
         name: "ClothAccessory_笨笨蛋Luzi",
         mirror: "ClothAccessory",
         description: {
-            CN: "🍔服装配饰2",
-            EN: "🍔Cloth Accessory2",
+            CN: "🍔服装配饰 2",
+            EN: "🍔Cloth Accessory 2",
+            RU: "🍔Аксессуары одежды 2",
         },
     },
     {
         name: "Necklace_笨笨蛋Luzi",
         mirror: "Necklace",
         description: {
-            CN: "🍔项链2",
-            EN: "🍔Necklace2",
+            CN: "🍔项链 2",
+            EN: "🍔Necklace 2",
+            RU: "🍔Цепочка 2",
         },
     },
     {
         name: "Bra_笨笨蛋Luzi",
         mirror: "Bra",
         description: {
-            CN: "🍔胸罩2",
-            EN: "🍔Bra2",
+            CN: "🍔胸罩 2",
+            EN: "🍔Bra 2",
+            RU: "🍔Бюстгальтер 2",
         },
     },
     {
         name: "Shoes_笨笨蛋Luzi",
         mirror: "Shoes",
         description: {
-            CN: "🍔鞋子2",
-            EN: "🍔Shoes2",
+            CN: "🍔鞋子 2",
+            EN: "🍔Shoes 2",
+            RU: "🍔Обувь 2",
         },
     },
     {
         name: "Hat_笨笨蛋Luzi",
         mirror: "Hat",
         description: {
-            CN: "🍔帽子2",
-            EN: "🍔Hat2",
+            CN: "🍔帽子 2",
+            EN: "🍔Hat 2",
+            RU: "🍔Шляпа 2",
         },
     },
     {
         name: "HairAccessory3_笨笨蛋Luzi",
         mirror: "HairAccessory3",
         description: {
-            CN: "🍔发饰2",
-            EN: "🍔Hair Accessory2",
+            CN: "🍔发饰 2",
+            EN: "🍔Hair Accessory 2",
+            RU: "🍔Прическа Аксессуар 2",
         },
     },
     {
         name: "Gloves_笨笨蛋Luzi",
         mirror: "Gloves",
         description: {
-            CN: "🍔手套2",
-            EN: "🍔Gloves2",
+            CN: "🍔手套 2",
+            EN: "🍔Gloves 2",
+            RU: "🍔Перчатки 2",
         },
     },
     {
         name: "Mask_笨笨蛋Luzi",
         mirror: "Mask",
         description: {
-            CN: "🍔面具2",
-            EN: "🍔Mask2",
+            CN: "🍔面具 2",
+            EN: "🍔Mask 2",
+            RU: "🍔Маска 2",
         },
     },
     {
         name: "Wings_笨笨蛋Luzi",
         mirror: "Wings",
         description: {
-            CN: "🍔翅膀2",
-            EN: "🍔Wings2",
+            CN: "🍔翅膀 2",
+            EN: "🍔Wings 2",
+            RU: "🍔Крылья 2",
         },
     },
 ];
@@ -276,8 +295,8 @@ const groupedAssets = {
                 OverTheHead: PoseType.DEFAULT,
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.DEFAULT,
-                AllFours: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
             },
         },
     ],

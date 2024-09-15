@@ -32,8 +32,12 @@ const translations = {
             猪猪_Luzi: "Piggy",
         },
     },
+    RU: {
+        ItemDevices: {
+            猪猪_Luzi: "Поросёнок",
+        },
+    },
 };
-
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
 }

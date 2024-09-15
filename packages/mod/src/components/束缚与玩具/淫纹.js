@@ -5,6 +5,9 @@ import ModManager from "@mod-utils/ModManager";
 const group = "ItemPelvis";
 
 function AssetsItemPelvis随机自慰(){
+    const Gender = Player.HasPenis()
+    const Target = [ Gender ? "ItemPenis" : "ItemVulva" ,  Gender ? "ItemGlans" : "ItemVulvaPiercings" ]
+
     DrawFlashScreen("#FF7777", 2000, 500);
     if( Player.HasEffect("Block") ){
         ServerSend("ChatRoomChat", {
@@ -17,7 +20,7 @@ function AssetsItemPelvis随机自慰(){
     if (Math.floor(Math.random() * 2)){
         ActivityEffect(Player, Player, "MasturbateHand", "ItemVulvaPiercings", 0, null)
         ServerSend("ChatRoomChat", {
-            "Content": "ChatSelf-ItemVulvaPiercings-MasturbateHand",
+            "Content": "ChatSelf-"+Target[0]+"-MasturbateHand",
             "Type": "Activity",
             "Dictionary": [
                 { "SourceCharacter": Player.MemberNumber },
@@ -29,7 +32,7 @@ function AssetsItemPelvis随机自慰(){
     } else {
         ActivityEffect(Player, Player, "MasturbateHand", "ItemVulva", 0, null)
         ServerSend("ChatRoomChat", {
-            "Content": "ChatSelf-ItemVulva-MasturbateHand",
+            "Content": "ChatSelf-"+Target[1]+"-MasturbateHand",
             "Type": "Activity",
             "Dictionary": [
                 { "SourceCharacter": Player.MemberNumber },
@@ -345,6 +348,7 @@ const dialog = {
 const translations = {
     CN: "淫纹",
     EN: "Lewd Crest",
+    RU: "Порнографический знак",
 };
 
 export default function () {

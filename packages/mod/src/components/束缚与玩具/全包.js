@@ -132,6 +132,18 @@ const translations = {
             绷带全身_Luzi: "Full Body Bandage",
         },
     },
+    RU: {
+        ItemHood: {
+            绷带头部_Luzi: "Бинтование головы",
+            毛毯头部_Luzi: "Покрывало на голову",
+        },
+        ItemTorso: {
+            胶带全身_Luzi: "Лента на всё тело",
+            睡袋改_Luzi: "Изменённый спальный мешок",
+            全包毛毯改_Luzi: "Полностью завёрнутое покрывало",
+            绷带全身_Luzi: "Бинты на всё тело",
+        },
+    },
 };
 
 export default function () {

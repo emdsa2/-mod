@@ -200,19 +200,35 @@ const translations = {
         },
     },
     EN: {
-        ItemHands: {
-            汉堡_Luzi: "Hamburg",
+        ItemHandheld: {
+            汉堡_Luzi: "Hamburger",
             棒棒糖_Luzi: "Lollipop",
-            烤鱼_Luzi: "Cooked Fish",
-            鸡腿_Luzi: "Roasted Thigh",
+            烤鱼_Luzi: "Grilled Fish",
+            鸡腿_Luzi: "Roasted Chicken Leg",
         },
         ItemMouth: {
             棒棒糖_Luzi: "Lollipop",
-            烤鱼_Luzi: "Cooked Fish",
-            鸡腿_Luzi: "Roasted Thigh",
+            烤鱼_Luzi: "Grilled Fish",
+            鸡腿_Luzi: "Roasted Chicken Leg",
         },
         ItemHood: {
-            汉堡_Luzi: "Hamburg",
+            汉堡_Luzi: "Hamburger",
+        },
+    },
+    RU: {
+        ItemHandheld: {
+            汉堡_Luzi: "Гамбургер",
+            棒棒糖_Luzi: "Леденец",
+            烤鱼_Luzi: "Запечённая рыба",
+            鸡腿_Luzi: "Запечённая куриная нога",
+        },
+        ItemMouth: {
+            棒棒糖_Luzi: "Леденец",
+            烤鱼_Luzi: "Запечённая рыба",
+            鸡腿_Luzi: "Запечённая куриная нога",
+        },
+        ItemHood: {
+            汉堡_Luzi: "Гамбургер",
         },
     },
 };

@@ -190,6 +190,13 @@ const dialog = {
         ItemDevices拳击袋_LuziSet有照片: "SourceCharacter attaches a photo to DestinationCharacter.",
         ItemDevices拳击袋_LuziSet无照片: "SourceCharacter removes the photo from DestinationCharacter.",
     },
+    RU: {
+        ItemDevices拳击袋_LuziSelect: "Выбор конфигурации боксерской груши",
+        ItemDevices拳击袋_Luzi有照片: "Прикрепить фото",
+        ItemDevices拳击袋_Luzi无照片: "Снять фото",
+        ItemDevices拳击袋_LuziSet有照片: "SourceCharacter прикрепил фото к DestinationCharacter.",
+        ItemDevices拳击袋_LuziSet无照片: "SourceCharacter снял фото с DestinationCharacter.",
+    },
 };
 
 const translations = {

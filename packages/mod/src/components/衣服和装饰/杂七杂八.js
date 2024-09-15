@@ -85,6 +85,8 @@ const assets = {
                 KneelingSpread: "Hide",
                 LegsClosed: "LegsClosed",
                 Spread: "Hide",
+                Hogtied: "Hide",
+                AllFours: "Hide",
             },
             DefaultColor: ["#FFFFFF", "#FFFFFF", "#000000", "#000000", "#000000", "#000000"],
             Layer: [
@@ -111,6 +113,30 @@ const assets = {
                 {
                     Name: "鞋底",
                     Priority: 1,
+                },
+            ],
+        },
+        {
+            Name: "兽蹄鞋_Luzi",
+            Random: false,
+            Height: 14,
+            Top: 0,
+            Left: 0,
+            PoseMapping: {
+                Kneel: "Hide",
+                KneelingSpread: "Hide",
+                LegsClosed: "LegsClosed",
+                Spread: "Spread",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            },
+            DefaultColor: ["#000000", "#212121"],
+            Layer: [
+                {
+                    Name: "袜子",
+                },
+                {
+                    Name: "鞋底",
                 },
             ],
         },
@@ -271,12 +297,6 @@ const translations = {
             单边眼镜右_Luzi: "单边眼镜右",
             眼镜卡_Luzi: "眼镜卡",
         },
-        Socks: {
-            圣诞_Luzi: "圣诞",
-            踩脚袜_Luzi: "踩脚袜",
-            条纹袜_Luzi: "条纹袜",
-            条纹袜2_Luzi: "条纹袜2",
-        },
         Panties: {
             淫纹_Luzi: "淫纹",
         },
@@ -287,6 +307,7 @@ const translations = {
         },
         Shoes: {
             鱼嘴高跟鞋_Luzi: "鱼嘴高跟鞋",
+            兽蹄鞋_Luzi: "兽蹄鞋",
         },
         ItemHands: {
             拳击手套_Luzi: "拳击手套",
@@ -308,12 +329,6 @@ const translations = {
             单边眼镜右_Luzi: "Monocle Right",
             眼镜卡_Luzi: "Glasses Card",
         },
-        Socks: {
-            圣诞_Luzi: "Christmas",
-            踩脚袜_Luzi: "Footstep Socks",
-            条纹袜_Luzi: "Striped Socks",
-            条纹袜2_Luzi: "Striped Socks 2",
-        },
         Panties: {
             淫纹_Luzi: "Lewd Crest",
         },
@@ -324,6 +339,7 @@ const translations = {
         },
         Shoes: {
             鱼嘴高跟鞋_Luzi: "Fish toe high heels",
+            兽蹄鞋_Luzi: "Beast hoof shoes",
         },
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",

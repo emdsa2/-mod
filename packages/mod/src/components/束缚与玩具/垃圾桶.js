@@ -185,6 +185,16 @@ const dialog = {
         ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter opened DestinationCharacter's lid",
         ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter opened DestinationCharacter's baffle",
     },
+    RU: {
+        ItemDevices垃圾桶_LuziSelect: "Выбор конфигурации мусорного бака",
+        ItemDevices垃圾桶_Luzi打开盖子: "Открыть крышку",
+        ItemDevices垃圾桶_Luzi合上盖子: "Закрыть крышку",
+        ItemDevices垃圾桶_Luzi打开挡板: "Открыть заслонку",
+
+        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter закрыл крышку DestinationCharacter",
+        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter открыл крышку DestinationCharacter",
+        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter открыл заслонку DestinationCharacter",
+    },
 };
 
 const translations = {

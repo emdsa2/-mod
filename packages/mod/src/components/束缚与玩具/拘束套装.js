@@ -182,6 +182,18 @@ const dialogs = {
         ItemTorso拘束套装_LuziSet透视紧身衣: "",
         ItemTorso拘束套装_LuziSet紧身衣: "",
     },
+    RU: {
+        ItemTorso拘束套装_Luzi无: "Нет",
+        ItemTorso拘束套装_Luzi乳胶衣: "Латексный костюм",
+        ItemTorso拘束套装_Luzi透视紧身衣: "Прозрачный комбинезон",
+        ItemTorso拘束套装_Luzi紧身衣: "Комбинезон",
+
+        ItemTorso拘束套装_LuziSelect: "Выбор конфигурации",
+        ItemTorso拘束套装_LuziSet无: "",
+        ItemTorso拘束套装_LuziSet乳胶衣: "",
+        ItemTorso拘束套装_LuziSet透视紧身衣: "",
+        ItemTorso拘束套装_LuziSet紧身衣: "",
+    },
 };
 
 const translations = {

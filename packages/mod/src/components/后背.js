@@ -158,12 +158,21 @@ const dialog = {
     },
     EN: {
         ItemAddon后背_LuziSelect: "Select back configuration",
-        ItemAddon后背_LuziSet纸袋: "SourceCharacter placed a paper bag over DestinationCharacter’s head",
-        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter placed a sack hood over DestinationCharacter’s head",
+        ItemAddon后背_LuziSet纸袋: "SourceCharacter placed a paper bag over DestinationCharacter's head",
+        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter placed a sack hood over DestinationCharacter's head",
+    },
+    RU: {
+        ItemAddon后背_LuziSelect: "Выберите конфигурацию спины",
+        ItemAddon后背_LuziSet纸袋: "SourceCharacter надел бумажный мешок на голову DestinationCharacter",
+        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter надел мешковинную маску на голову DestinationCharacter",
     },
 };
 
-const translations = { CN: "后背", EN: "Back-body" };
+const translations = {
+    CN: "后背",
+    EN: "Back-body",
+    RU: "Спина",
+};
 
 export default function () {
     AssetManager.addAsset("ItemAddon", asset, extended, translations);

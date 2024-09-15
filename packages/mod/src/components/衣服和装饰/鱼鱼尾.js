@@ -150,9 +150,21 @@ const descriptions = {
         动物身体_Luzi鱼鱼尾_LuziOptionq1: "Belt",
         动物身体_Luzi鱼鱼尾_LuziOptionq2: "Pearl Necklace",
     },
+    RU: {
+        动物身体_Luzi鱼鱼尾_LuziSelectBase: "Выбрать конфигурацию",
+        动物身体_Luzi鱼鱼尾_LuziSelect鱼尾装饰: "Настройки",
+        动物身体_Luzi鱼鱼尾_LuziModule鱼尾装饰: "Декорации хвоста",
+        动物身体_Luzi鱼鱼尾_LuziOptionq0: "Нет",
+        动物身体_Luzi鱼鱼尾_LuziOptionq1: "Ремень",
+        动物身体_Luzi鱼鱼尾_LuziOptionq2: "Жемчужное ожерелье",
+    },
 };
 
-const translations = { CN: "鱼鱼尾", EN: "Fishy Tail" };
+const translations = {
+    CN: "鱼鱼尾",
+    EN: "Fishy Tail",
+    RU: "Рыбий хвост",
+};
 
 export default function () {
     AssetManager.addAsset("动物身体_Luzi", asset, extended, translations);

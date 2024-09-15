@@ -97,8 +97,11 @@ const descriptions = {
     },
 };
 
-
-const translations = { CN: "女巫帽子", EN: "Witch hat" };
+const translations = {
+    CN: "女巫帽子",
+    EN: "Witch Hat",
+    RU: "Шляпа ведьмы",
+};
 
 export default function () {
     AssetManager.addAsset("Hat", asset, extended, translations);

@@ -43,6 +43,7 @@ export default function () {
     AssetManager.addAsset("ItemTorso", asset, undefined, {
         CN: "极限束腰",
         EN: "Extreme Corset",
+        RU: "Экстремальный корсет",
     });
     AssetManager.addLayerNames("ItemTorso", asset, {
         CN: {
@@ -52,6 +53,10 @@ export default function () {
         EN: {
             B: "Buckle",
             Main: "Corset",
+        },
+        RU: {
+            B: "Застежка",
+            Main: "Корсет",
         },
     });
 }

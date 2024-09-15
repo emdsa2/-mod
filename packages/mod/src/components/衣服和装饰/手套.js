@@ -26,12 +26,17 @@ const assets = {
 const translations = {
     CN: {
         Gloves: {
-            踩脚袜_Luzi: "袖手套",
+            袖手套_Luzi: "袖手套",
         },
     },
     EN: {
         Gloves: {
-            踩脚袜_Luzi: "Sleeve Gloves",
+            袖手套_Luzi: "Sleeve Gloves",
+        },
+    },
+    RU: {
+        Gloves: {
+            袖手套_Luzi: "Перчатки-рукава",
         },
     },
 };

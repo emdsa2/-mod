@@ -1280,10 +1280,42 @@ const act_dialogs = [
         regex: /(.+) tried to use the antiblind command\./,
         replacement: "$1尝试使用反盲指令."
     },
-
-
-
-
+    {
+        regex: /(.+) 牵着她的手走出房间\./,
+        replacement: "$1尝试使用反盲指令."
+    },
+    {
+        regex: /A magical shield on (.+) repelled the suspiciously magical changes attempted by (.+)! \[WCE Anti\-Cheat\]/,
+        replacement: "$1 身上出现了一道神奇的护盾, 挡下了 $2 试图施展的可疑魔法! [WCE 反作弊系统]"
+    },
+    {
+        regex: /(.+) received a summon: \"(.+)\"\./,
+        replacement: "$1接到了一个招唤: \"$2\"."
+    },
+    {
+        regex: /The demand for (.+) 's presence is now enforced\./,
+        replacement: "$1 现在必须要过去了."
+    },
+    {
+        regex: /The curse on (.+)'s (.+) wakes up, not allowing the item to be replaced by another item\./,
+        replacement: "$1 身上 $2 的诅咒苏醒了, 禁止该物品被其他物品替换.",
+    },
+    {
+        regex: /(.+) spoke openly in a room\./,
+        replacement: "$1 尝试在房间里说话.",
+    },
+    {
+        regex: /(.+) did not use a mandatory word while talking\./,
+        replacement: "$1 在说话时未使用规定的词汇.",
+    },
+    {
+        regex: /(.+) tried to use OOC in a message while gagged\./,
+        replacement: "$1 被封口时还试图使用 OOC 消息.",
+    },
+    {
+        regex: /The curses on (.+)'s body become dormant and several items fall off (.+) body\./,
+        replacement: "$1 身上的诅咒陷入休眠状态, 几件物品从她身上掉落.",
+    },
 
     // BCC
     // 强制舔腿

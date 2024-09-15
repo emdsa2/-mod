@@ -30,7 +30,11 @@ const asset = {
     ],
 };
 
-const translations = { CN: "奶牛", EN: "Cow" };
+const translations = {
+    CN: "奶牛",
+    EN: "Cow",
+    RU: "Корова",
+};
 
 export default function () {
     AssetManager.addAsset("Cloth", asset, undefined, translations);
