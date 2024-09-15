@@ -348,10 +348,6 @@ const translations = {
         ItemHandheld: {
             电蚊拍_Luzi: "Electric Fly Swatter",
         },
-        ItemTorso: {
-            鞍_Luzi: "Saddle",
-            缰绳_Luzi: "Reins",
-        },
         ItemDevices: {
             树_Luzi: "Tree",
         },
