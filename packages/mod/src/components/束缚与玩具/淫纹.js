@@ -57,9 +57,15 @@ function AssetsItemPelvis淫纹开始自慰(){
 
 ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
     const data = args[0];
-    if (data.Content.includes("淫纹_Luzi")) {
-        const activityNameDictEntry = data.Dictionary.find((x => "TargetCharacter" in x));
-        if (activityNameDictEntry?.TargetCharacter === Player.MemberNumber) {
+    if(data.Content.includes("ActionUse")){
+        if (data.Dictionary.find((x => "AssetName" in x))?.AssetName === "淫纹_Luzi") 
+            if (data.Dictionary.find((x => "TargetCharacter" in x))?.TargetCharacter === Player.MemberNumber) {
+                // @ts-ignore
+                InventoryLock(Player, "ItemPelvis", "淫纹锁_Luzi", Player.MemberNumber)
+                ServerSend("ChatRoomCharacterItemUpdate", { "Target": Player.MemberNumber, "Group": "ItemPelvis", "Name": "淫纹_Luzi", "Color": ["#EA3E74","Default"], "Difficulty": 0, "Property": {"TypeRecord": { "typed": 0}, "Masturbation": false, "Light": false, "Opacity": 1, "Effect": ["Lock"], "MemberNumberListKeys": Player.MemberNumber, "LockedBy": "淫纹锁_Luzi", "LockMemberNumber": Player.MemberNumber } } )
+            }
+    } else if (data.Content.includes("淫纹_Luzi")){
+        if (data.Dictionary.find((x => "TargetCharacter" in x))?.TargetCharacter === Player.MemberNumber) {
             if (data.Content === "ItemPelvis淫纹_Luzi淫纹强制高潮互动") {
                 if (!!Player.ArousalSettings) Player.ArousalSettings.Progress = 100;
                 ActivityOrgasmPrepare(Player);
@@ -112,7 +118,7 @@ function InventoryItemPelvis淫纹ClickHook(Data, OriginalFunction) {
         ExtendedItemCustomClick("淫纹强制高潮", AssetsItemPelvis淫纹强制高潮, false, false);
     } else if (MouseIn(1260, 600, 225, 55)) {
         // @ts-ignore
-        ExtendedItemCustomClick("淫纹发光",  () => DialogFocusItem.Property.Light = !DialogFocusItem.Property.Light, false, false);
+        ExtendedItemCustomClickAndPush(CharacterGetCurrent(), DialogFocusItem, "Light",  () => DialogFocusItem.Property.Light = !DialogFocusItem.Property.Light, false, false);
     }
 }
 
@@ -174,7 +180,6 @@ function AssetsItemPelvis淫纹强制高潮() {
 
 
 function scriptDraw( data, originalFunction, drawData ) {
-
     if (drawData.C.IsPlayer() && drawData.Item.Property.TypeRecord.typed === 1) {
         // 确保 Player 存在
         if (!Player) {
@@ -215,13 +220,13 @@ function scriptDraw( data, originalFunction, drawData ) {
 }
 
 
-function beforeDraw({ PersistentData, L, X, Y, Property }) {
+function beforeDraw({ PersistentData, L, Property, C }) {
     if (L === "发光") {
 		const property = Property || {};
         // @ts-ignore
         if( property.Light ) {
             const Data = PersistentData();
-            const TwinkleSpeed = 110 - Player.ArousalSettings.Progress || 50 ;
+            const TwinkleSpeed = C.ArousalSettings ? ( 110 - C.ArousalSettings.Progress ) : 50;
             Data.Frame = Data.Frame || 0;
             Data.Frame = (Data.Frame + 1) % TwinkleSpeed ;
 		    return { Opacity:0.7 + 0.3 * Math.cos(Data.Frame * 1 / TwinkleSpeed * 2 * Math.PI) };
@@ -263,13 +268,15 @@ const asset = {
 /** @type { CustomAssetDefinition} */
 const asset2 = {
     Name: "淫纹锁_Luzi",
-    Value: -1,
     Random: false,
     Wear: false,
     Enable: false,
     Effect: [],
     IsLock: true,
     ExclusiveUnlock: true,
+    Value: 60,
+    Time: 10,
+    Extended: true,
 };
 
 /** @type {AssetArchetypeConfig} */
@@ -299,7 +306,16 @@ const extended = {
 /** @type {AssetArchetypeConfig} */
 const extended2 = {
     Archetype: ExtendedArchetype.NOARCH,
-    CopyConfig: { GroupName: "ItemMisc", AssetName: "ExclusivePadlock" },
+    ScriptHooks: {
+        Init: InventoryItemMiscHighSecurityPadlockInitHook,
+        Load: InventoryItemMiscHighSecurityPadlockLoadHook,
+        Draw: InventoryItemMiscHighSecurityPadlockDrawHook,
+        Click: InventoryItemMiscHighSecurityPadlockClickHook,
+        Exit: InventoryItemMiscHighSecurityPadlockExitHook,
+    },
+    BaselineProperty: {
+        MemberNumberListKeys: "",
+    },
 };
 
 const dialog = {
@@ -377,7 +393,7 @@ const translations = {
     RU: "Порнографический знак",
 };
 const translations2 = {
-    CN: "淫纹锁",
+    CN: "魔法刻印",
     EN: "Lewd Crest lock",
     RU: "Порнографический знак",
 };
