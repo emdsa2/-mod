@@ -219,9 +219,9 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong1: "Додати покриття",
         ItemDevices乳胶带床_LuziOptiong2: "Закрити покриття",
 
-        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter PronounPossessive DestinationCharacter's покриття",
-        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter PronounPossessive покриття DestinationCharacter",
-        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter PronounPossessive покриття DestinationCharacter",
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter забрали DestinationCharacter's покриття",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter додали покриття DestinationCharacter",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter закрили покриття DestinationCharacter",
     },
 };
 
