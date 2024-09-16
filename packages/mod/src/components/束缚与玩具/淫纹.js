@@ -8,10 +8,10 @@ function AssetsItemPelvis随机自慰(){
     const Gender = Player.HasPenis()
     const Target = [ Gender ? "ItemPenis" : "ItemVulva" ,  Gender ? "ItemGlans" : "ItemVulvaPiercings" ]
 
-    DrawFlashScreen("#FF7777", 2000, 500);
+    DrawFlashScreen("#F347B4", 1500, 500);
     if( Player.HasEffect("Block") ){
         ServerSend("ChatRoomChat", {
-            "Content": "ItemPelvis淫纹_Luzi自慰Block" + Math.floor(Math.random() * 5),
+            "Content": "ItemPelvis淫纹_Luzi自慰Block" + (Gender?1:0) + Math.floor(Math.random() * 5),
             "Type": "Action",
             "Dictionary": [ { "SourceCharacter": Player.MemberNumber }, ],
         });
@@ -64,7 +64,7 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
                 if (!!Player.ArousalSettings) Player.ArousalSettings.Progress = 100;
                 ActivityOrgasmPrepare(Player);
             } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹性刺激互动") {
-                DrawFlashScreen("#FF7777", 2000, 500);
+                DrawFlashScreen("#F347B4", 1500, 500);
             } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹开始强制自慰互动") {
                 AssetsItemPelvis淫纹开始自慰();
             }
@@ -120,7 +120,6 @@ function AssetsItemPelvis淫纹性刺激() {
     const C = CharacterGetCurrent();
     if (C.IsPlayer()) {
         ActivityEffect(Player, Player, "MasturbateFist", "ItemVulva", 0, null)
-        DrawFlashScreen("#F347B4", 2000, 500);
     }
     ServerSend("ChatRoomChat", {
         "Content": "ItemPelvis淫纹_Luzi淫纹性刺激互动",
@@ -219,12 +218,13 @@ function scriptDraw( data, originalFunction, drawData ) {
 function beforeDraw({ PersistentData, L, X, Y, Property }) {
     if (L === "发光") {
 		const property = Property || {};
-        const Data = PersistentData();
-        Data.Frame = Data.Frame || 0;
         // @ts-ignore
         if( property.Light ) {
-            Data.Frame = (Data.Frame + 1) % 40 ;
-		    return { Opacity:0.7 + 0.3 * Math.cos(Data.Frame * 0.025 * 2 * Math.PI) };
+            const Data = PersistentData();
+            const TwinkleSpeed = 110 - Player.ArousalSettings.Progress || 50 ;
+            Data.Frame = Data.Frame || 0;
+            Data.Frame = (Data.Frame + 1) % TwinkleSpeed ;
+		    return { Opacity:0.7 + 0.3 * Math.cos(Data.Frame * 1 / TwinkleSpeed * 2 * Math.PI) };
         } else
             return { Opacity: 0 };
 	}
@@ -260,6 +260,17 @@ const asset = {
         },
     ],
 };
+/** @type { CustomAssetDefinition} */
+const asset2 = {
+    Name: "淫纹锁_Luzi",
+    Value: -1,
+    Random: false,
+    Wear: false,
+    Enable: false,
+    Effect: [],
+    IsLock: true,
+    ExclusiveUnlock: true,
+};
 
 /** @type {AssetArchetypeConfig} */
 const extended = {
@@ -285,6 +296,11 @@ const extended = {
         Opacity: 1,
     },
 };
+/** @type {AssetArchetypeConfig} */
+const extended2 = {
+    Archetype: ExtendedArchetype.NOARCH,
+    CopyConfig: { GroupName: "ItemMisc", AssetName: "ExclusivePadlock" },
+};
 
 const dialog = {
     CN: {
@@ -309,18 +325,23 @@ const dialog = {
         ItemPelvis淫纹_Luzi淫纹发光按钮: "淫纹发光",
         ItemPelvis淫纹_LuziON: "已开启",
         ItemPelvis淫纹_LuziOFF: "已关闭",
-        ItemPelvis淫纹_Luzi自慰Block0: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的私处.",
-        ItemPelvis淫纹_Luzi自慰Block1: "SourceCharacter急切的想要抚慰自己,扭动肩膀,尽可能让乳尖受到进一步刺激.",
-        ItemPelvis淫纹_Luzi自慰Block2: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦私处,但仍难以得到刺激.",
-        ItemPelvis淫纹_Luzi自慰Block3: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但她的手臂完全无法动弹.",
-        ItemPelvis淫纹_Luzi自慰Block4: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着私处摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
+        ItemPelvis淫纹_Luzi自慰Block00: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的私处.",
+        ItemPelvis淫纹_Luzi自慰Block01: "SourceCharacter急切的想要抚慰自己,扭动肩膀,尽可能让乳尖受到进一步刺激.",
+        ItemPelvis淫纹_Luzi自慰Block02: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦私处,但仍难以得到刺激.",
+        ItemPelvis淫纹_Luzi自慰Block03: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但她的手臂完全无法动弹.",
+        ItemPelvis淫纹_Luzi自慰Block04: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着私处摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
+        ItemPelvis淫纹_Luzi自慰Block10: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的阴茎.",
+        ItemPelvis淫纹_Luzi自慰Block11: "SourceCharacter急切的想要抚慰自己,扭动身体,尽可能磨蹭阴茎龟头.",
+        ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦龟头,但仍难以得到刺激.",
+        ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但他的手臂完全无法动弹.",
+        ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着阴茎摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
     },
     EN: {
         ItemPelvis淫纹_LuziSelect: "Select Effect",
         ItemPelvis淫纹_Luzi正常: "Normal",
         ItemPelvis淫纹_Luzi持续发情: "Continuous Heat",
         ItemPelvis淫纹_Luzi寸止: "Edge",
-        ItemPelvis淫纹_Luzi拒绝: "Reject",
+        ItemPelvis淫纹_Luzi拒绝: "Deny",
         ItemPelvis淫纹_Luzi淫纹性刺激按钮: "Lust Pattern Sexual Stimulation",
         ItemPelvis淫纹_Luzi淫纹性刺激互动: "SourceCharacter causes DestinationCharacter's Lust Pattern to generate sexual stimulation.",
         ItemPelvis淫纹_Luzi淫纹强制自慰按钮: "Lust Pattern Forced Masturbation",
@@ -335,13 +356,18 @@ const dialog = {
         ItemPelvis淫纹_LuziSet寸止: "SourceCharacter uses the Lust Pattern magic to keep TargetCharacter at the edge of orgasm.",
         ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter uses the Lust Pattern magic to make TargetCharacter able to only reject orgasm.",
         ItemPelvis淫纹_Luzi淫纹发光按钮: "LewdPattern Glowing",
-        ItemPelvis淫纹_LuziON: "Enabled",
-        ItemPelvis淫纹_LuziOFF: "Disabled",
-        ItemPelvis淫纹_Luzi自慰Block0: "SourceCharacter eagerly wants to pleasure themselves, trembling and squeezing their thighs together to stimulate their private areas as much as possible.",
-        ItemPelvis淫纹_Luzi自慰Block1: "SourceCharacter eagerly wants to pleasure themselves, wriggling their shoulders to further stimulate their nipples.",
-        ItemPelvis淫纹_Luzi自慰Block2: "SourceCharacter eagerly wants to pleasure themselves, squeezing their thighs together to rub their private areas but still finding it difficult to stimulate themselves.",
-        ItemPelvis淫纹_Luzi自慰Block3: "SourceCharacter eagerly wants to pleasure themselves, struggling with their arms to masturbate, but their arms are completely immobilized.",
-        ItemPelvis淫纹_Luzi自慰Block4: "SourceCharacter eagerly wants to pleasure themselves, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
+        ItemPelvis淫纹_LuziON: "ON",
+        ItemPelvis淫纹_LuziOFF: "OFF",
+        ItemPelvis淫纹_Luzi自慰Block00: "SourceCharacter eagerly wants to pleasure themselves, trembling and squeezing their thighs together to stimulate their private areas as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block01: "SourceCharacter eagerly wants to pleasure themselves, wriggling their shoulders to further stimulate their nipples.",
+        ItemPelvis淫纹_Luzi自慰Block02: "SourceCharacter eagerly wants to pleasure themselves, squeezing their thighs together to rub their private areas but still finding it difficult to stimulate themselves.",
+        ItemPelvis淫纹_Luzi自慰Block03: "SourceCharacter eagerly wants to pleasure themselves, struggling with their arms to masturbate, but their arms are completely immobilized.",
+        ItemPelvis淫纹_Luzi自慰Block04: "SourceCharacter eagerly wants to pleasure themselves, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
+        ItemPelvis淫纹_Luzi自慰Block10: "SourceCharacter was eager to soothe himself, trembling and gripping his legs, trying to stimulate his penis as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block11: "SourceCharacter is eager to soothe himself, twisting his body and rubbing against the glans penis as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter urgently wanted to comfort himself, clamping his legs and rubbing his glans, but still struggled to get stimulation.",
+        ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter desperately wanted to comfort himself, struggling with his arms to masturbate, but his arms were completely immobile.",
+        ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter urgently wanted to comfort himself, and in vain, his arm groped towards his penis, but the joy that was so close at hand was so unattainable at this moment.",
     },
 };
 
@@ -350,9 +376,15 @@ const translations = {
     EN: "Lewd Crest",
     RU: "Порнографический знак",
 };
+const translations2 = {
+    CN: "淫纹锁",
+    EN: "Lewd Crest lock",
+    RU: "Порнографический знак",
+};
 
 export default function () {
     AssetManager.addAsset("ItemPelvis", asset, extended, translations);
+    AssetManager.addAsset("ItemMisc", asset2, extended2, translations2);
     AssetManager.addCustomDialog(dialog);
     ModManager.globalFunction(`Assets${group}${asset.Name}BeforeDraw`, beforeDraw);
 }
