@@ -209,12 +209,27 @@ const dialog = {
         ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added DestinationCharacter's cover",
         ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter's cover",
     },
+    UA: {
+        ItemDevicess乳胶带床_LuziSelect: "Виберіть Конфігурацію Латексного Ліжка",
+        ItemDevices乳胶带床_LuziSelectBase: "Виберіть концігурацю",
+
+        ItemDevices乳胶带床_LuziSelect盖子: "Виберіть Покриття",
+        ItemDevices乳胶带床_LuziModule盖子: "Накрити",
+        ItemDevices乳胶带床_LuziOptiong0: "Жодного",
+        ItemDevices乳胶带床_LuziOptiong1: "Додати покриття",
+        ItemDevices乳胶带床_LuziOptiong2: "Закрити покриття",
+
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter PronounPossessive DestinationCharacter's покриття",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter PronounPossessive покриття DestinationCharacter",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter PronounPossessive покриття DestinationCharacter",
+    },
 };
 
 const translations = {
     CN: "乳胶带床",
     EN: "Latex-belt Bed",
     RU: "Кровать с латексным ремнем",
+    UA: "Латексне ліжко із ремнями"
 };
 
 export default function () {
