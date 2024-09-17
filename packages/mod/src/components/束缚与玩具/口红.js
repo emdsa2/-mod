@@ -90,7 +90,8 @@ const asset = {
 const translations = {
     CN: "口红",
     EN: "Lipstick",
-    RU: "Помада"
+    RU: "Помада",
+    UA: "Помада"
 };
 export default function () {
     // @ts-ignore
