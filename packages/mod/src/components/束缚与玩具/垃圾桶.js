@@ -185,6 +185,16 @@ const dialog = {
         ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter opened DestinationCharacter's lid",
         ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter opened DestinationCharacter's baffle",
     },
+    UA: {
+        ItemDevices垃圾桶_LuziSelect: "Виберіть конфігурацію для смітника",
+        ItemDevices垃圾桶_Luzi打开盖子: "Відкрити накривку",
+        ItemDevices垃圾桶_Luzi合上盖子: "Закрити накривку",
+        ItemDevices垃圾桶_Luzi打开挡板: "Відкрити клапоть",
+
+        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter закрили DestinationCharacter накривкою",
+        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter відкрили накривку DestinationCharacter",
+        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter відкрили перегородку DestinationCharacter",
+    },
     RU: {
         ItemDevices垃圾桶_LuziSelect: "Выбор конфигурации мусорного бака",
         ItemDevices垃圾桶_Luzi打开盖子: "Открыть крышку",
@@ -200,6 +210,7 @@ const dialog = {
 const translations = {
     CN: "垃圾桶",
     EN: "Trash Can",
+    UA: "Смітник",
 };
 
 export default function () {
