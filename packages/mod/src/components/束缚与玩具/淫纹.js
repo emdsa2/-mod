@@ -244,6 +244,7 @@ const asset = {
     Left: 0,
     Priority: 10,
     AllowLock: true,
+    AllowTighten: false,
     DrawLocks: false,
     Extended: true,
     AlwaysExtend: true,
@@ -351,6 +352,7 @@ const dialog = {
         ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦龟头,但仍难以得到刺激.",
         ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但他的手臂完全无法动弹.",
         ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着阴茎摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
+        PreviewIcon淫纹锁_Luzi: "锁",
     },
     EN: {
         ItemPelvis淫纹_LuziSelect: "Select Effect",
