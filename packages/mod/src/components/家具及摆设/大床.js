@@ -126,6 +126,15 @@ const translations = {
             床右边_Luzi: "Правая сторона кровати",
         },
     },
+    UA: {
+        ItemAddon: {
+            被子左边_Luzi: "Ліва сторона ковдри",
+            被子右边_Luzi: "Права сторона ковдри",
+        },
+        ItemDevices: {
+            床左边_Luzi: "Ліва сторона ліжка",
+            床右边_Luzi: "Права сторона ліжка",
+        },
 };
 
 export default function () {
