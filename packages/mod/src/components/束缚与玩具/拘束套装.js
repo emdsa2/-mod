@@ -194,11 +194,24 @@ const dialogs = {
         ItemTorso拘束套装_LuziSet透视紧身衣: "",
         ItemTorso拘束套装_LuziSet紧身衣: "",
     },
+    UA: {
+        ItemTorso拘束套装_Luzi无: "Ні",
+        ItemTorso拘束套装_Luzi乳胶衣: "Латексний костюм",
+        ItemTorso拘束套装_Luzi透视紧身衣: "Напівпрозорий комбінезон",
+        ItemTorso拘束套装_Luzi紧身衣: "Комбінезон",
+
+        ItemTorso拘束套装_LuziSelect: "Виберіть конфігурацію предмету",
+        ItemTorso拘束套装_LuziSet无: "",
+        ItemTorso拘束套装_LuziSet乳胶衣: "",
+        ItemTorso拘束套装_LuziSet透视紧身衣: "",
+        ItemTorso拘束套装_LuziSet紧身衣: "",
+    },
 };
 
 const translations = {
     CN: "拘束套装",
     EN: "Restraint Set",
+    UA: "Набір обмежувачів",
 };
 
 export default function () {
