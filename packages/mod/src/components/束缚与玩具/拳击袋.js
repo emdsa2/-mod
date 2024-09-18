@@ -190,6 +190,13 @@ const dialog = {
         ItemDevices拳击袋_LuziSet有照片: "SourceCharacter attaches a photo to DestinationCharacter.",
         ItemDevices拳击袋_LuziSet无照片: "SourceCharacter removes the photo from DestinationCharacter.",
     },
+    UA: {
+        ItemDevices拳击袋_LuziSelect: "Виберіть конфігурацію боксерського мішка",
+        ItemDevices拳击袋_Luzi有照片: "Прикріпити фотографію",
+        ItemDevices拳击袋_Luzi无照片: "Зняти фотографію",
+        ItemDevices拳击袋_LuziSet有照片: "SourceCharacter прикріпили фотографію.",
+        ItemDevices拳击袋_LuziSet无照片: "SourceCharacter зняли фотографію.",
+    },
     RU: {
         ItemDevices拳击袋_LuziSelect: "Выбор конфигурации боксерской груши",
         ItemDevices拳击袋_Luzi有照片: "Прикрепить фото",
@@ -202,6 +209,7 @@ const dialog = {
 const translations = {
     CN: "拳击袋",
     EN: "Boxing Bag",
+    UA: "Боксерський мішок",
 };
 
 export default function () {
