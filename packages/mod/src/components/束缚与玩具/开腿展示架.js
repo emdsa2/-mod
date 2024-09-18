@@ -245,11 +245,48 @@ const dialog = {
         ItemDevices开腿展示架_LuziSetd0: "SourceCharacter восстанавливает высоту DestinationCharacter",
         ItemDevices开腿展示架_LuziSetd1: "SourceCharacter настраивает высоту DestinationCharacter",
     },
+    UA: {
+        ItemDevices开腿展示架_LuziSelectBase: "Виберіть конфігурацію для розширювача ніг",
+
+        ItemDevices开腿展示架_LuziSelect姿势: "Виберіть позу",
+        ItemDevices开腿展示架_LuziModule姿势: "Поза",
+        ItemDevices开腿展示架_LuziOptiono0: "За спиною",
+        ItemDevices开腿展示架_LuziOptiono1: "Підняти руки",
+
+        ItemDevices开腿展示架_LuziSelect嘴巴固定: "Виберіть обмежувач на рот",
+        ItemDevices开腿展示架_LuziModule嘴巴固定: "Обмежувач на рот",
+        ItemDevices开腿展示架_LuziOptiong0: "Нічого",
+        ItemDevices开腿展示架_LuziOptiong1: "Додати обмежувач на рот",
+
+        ItemDevices开腿展示架_LuziSelect下体棒子: "Виберіть ",
+        ItemDevices开腿展示架_LuziModule下体棒子: "Генітальна опора",
+        ItemDevices开腿展示架_LuziOptionv0: "Нічого",
+        ItemDevices开腿展示架_LuziOptionv1: "Додати генітальну опору",
+
+        ItemDevices开腿展示架_LuziSelect自定义高度: "Виберіть висоту",
+        ItemDevices开腿展示架_LuziModule自定义高度: "Калібрація висоти",
+        ItemDevices开腿展示架_LuziOptiond0: "Нічого",
+        ItemDevices开腿展示架_LuziOptiond1: "Налаштувати висоту",
+
+        ItemDevices开腿展示架_LuziSeto1: "SourceCharacter модифікує обмежувачі для рук на тілі DestinationCharacter",
+        ItemDevices开腿展示架_LuziSeto0: "SourceCharacter модифікує обмежувачі для рук на тілі DestinationCharacter",
+
+        ItemDevices开腿展示架_LuziSetg0: "SourceCharacter знімає металевий обмежувач з рота DestinationCharacter",
+        ItemDevices开腿展示架_LuziSetg1: "SourceCharacter прикріплює металевий обмежувач до DestinationCharacter рота",
+
+        ItemDevices开腿展示架_LuziSetv0: "SourceCharacter знімає генітальну опору з тіла DestinationCharacter",
+        ItemDevices开腿展示架_LuziSetv1: "SourceCharacter додає DestinationCharacter генітальну опору",
+
+        ItemDevices开腿展示架_LuziSetd0: "SourceCharacter скинув конфігураю висоти на тілі DestinationCharacter",
+        ItemDevices开腿展示架_LuziSetd1: "SourceCharacter налаштовує висоту DestinationCharacter",
+    },
 };
 
 const translations = {
     CN: "开腿展示架",
     EN: "Leg-Spread Display Stand",
+    UA: "Розширювач ніг",
+
 };
 
 export default function () {
