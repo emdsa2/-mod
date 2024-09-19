@@ -192,9 +192,16 @@ const dialog = {
         ItemDevices独角兽玩偶_LuziSet戴上头套: "SourceCharacter puts on the headgear for DestinationCharacter.",
         ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter removes the headgear from DestinationCharacter.",
     },
+    UA: {
+        ItemDevices独角兽玩偶_LuziSelect: "Виберіть конфігурацію лальки",
+        ItemDevices独角兽玩偶_Luzi戴上头套: "Надіти шолом",
+        ItemDevices独角兽玩偶_Luzi摘掉头套: "Зняти шолом",
+        ItemDevices独角兽玩偶_LuziSet戴上头套: "SourceCharacter надіває шолом на DestinationCharacter.",
+        ItemDevices独角兽玩偶_LuziSet摘掉头套: "SourceCharacter знімає шолом з DestinationCharacter.",
+    },
 };
 
-const translations = { CN: "独角兽玩偶", EN: "Unicorn Stuffed Toy", RU: "Кукла единорога" };
+const translations = { CN: "独角兽玩偶", EN: "Unicorn Stuffed Toy", UA: "Лялька єдинорога", RU: "Кукла единорога" };
 
 export default function () {
     AssetManager.addAsset("ItemDevices", asset, extended, translations);
