@@ -352,6 +352,48 @@ const dialogs = {
         ItemTorso触手服_LuziSetm0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи рот носія.",
         ItemTorso触手服_LuziSetm1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на роті носія.",
     },
+    RU: {
+        ItemTorso触手服_LuziSelectBase: "Select Configuration",
+        ItemTorso触手服_LuziSelect触手状态: "Select Tentacle Status",
+        ItemTorso触手服_LuziSelect上衣开关: "Select Top Status",
+        ItemTorso触手服_LuziSelect手套开关: "Select Glove Status",
+        ItemTorso触手服_LuziSelect嘴套开关: "Select Mouth Cover Status",
+        ItemTorso触手服_LuziSelect脚套开关: "Select Foot Cover Status",
+        ItemTorso触手服_LuziModule手套开关: "Select Glove Status",
+        ItemTorso触手服_LuziModule嘴套开关: "Select Mouth Cover Status",
+        ItemTorso触手服_LuziModule脚套开关: "Select Foot Cover Status",
+        ItemTorso触手服_LuziModule触手状态: "Select Tentacle Status",
+        ItemTorso触手服_LuziModule上衣开关: "Select Top Status",
+        ItemTorso触手服_LuziOptiond0: "Seal Genital Area",
+        ItemTorso触手服_LuziOptiond1: "Expose Genital Area",
+        ItemTorso触手服_LuziOptiond2: "Insert Tentacle",
+        ItemTorso触手服_LuziOptions0: "Hide Top",
+        ItemTorso触手服_LuziOptions1: "Display Top",
+        ItemTorso触手服_LuziOptionm0: "Hide Mouth Cover",
+        ItemTorso触手服_LuziOptionm1: "Display Mouth Cover",
+        ItemTorso触手服_LuziOptionh0: "Hide Gloves",
+        ItemTorso触手服_LuziOptionh1: "Display Gloves",
+        ItemTorso触手服_LuziOptionh2: "Bind Arms",
+        ItemTorso触手服_LuziOptionf0: "Hide Foot Covers",
+        ItemTorso触手服_LuziOptionf1: "Display Foot Covers",
+
+        ItemTorso触手服_LuziSetd0:
+            "The lower opening of TargetCharacterName's tentacle suit gradually closes and adheres together.",
+        ItemTorso触手服_LuziSetd1:
+            "A small opening in the lower part of TargetCharacterName's tentacle suit splits to reveal the genital area.",
+        ItemTorso触手服_LuziSetd2:
+            "A small opening in the lower part of TargetCharacterName's tentacle suit splits to reveal the genital area, and a slimy tentacle grows out from the suit and inserts into the vagina.",
+        ItemTorso触手服_LuziSets0: "The tentacle suit on TargetCharacterName slowly changes, revealing the chest.",
+        ItemTorso触手服_LuziSets1: "The tentacle suit on TargetCharacterName slowly changes, growing over the chest.",
+        ItemTorso触手服_LuziSeth0: "The tentacle suit on TargetCharacterName slowly changes, revealing the arms.",
+        ItemTorso触手服_LuziSeth1: "The tentacle suit on TargetCharacterName slowly changes, growing over the hands.",
+        ItemTorso触手服_LuziSeth2:
+            "The tentacle suit on TargetCharacterName slowly changes, forcibly binding the arms behind the back.",
+        ItemTorso触手服_LuziSetf0: "The tentacle suit on TargetCharacterName slowly changes, revealing the legs.",
+        ItemTorso触手服_LuziSetf1: "The tentacle suit on TargetCharacterName slowly changes, growing over the feet.",
+        ItemTorso触手服_LuziSetm0: "The tentacle suit on TargetCharacterName slowly changes, revealing the mouth.",
+        ItemTorso触手服_LuziSetm1: "The tentacle suit on TargetCharacterName slowly changes, growing over the mouth.",
+    },
 };
 
 const translations = { CN: "触手服", EN: "Tentacle Suit", UA: "Щупальцевий костюм", RU: "Костюм для щупальца" };
