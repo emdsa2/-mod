@@ -310,9 +310,51 @@ const dialogs = {
         ItemTorso触手服_LuziSetm0: "The tentacle suit on TargetCharacterName slowly changes, revealing the mouth.",
         ItemTorso触手服_LuziSetm1: "The tentacle suit on TargetCharacterName slowly changes, growing over the mouth.",
     },
+    UA: {
+        ItemTorso触手服_LuziSelectBase: "Виберіть конфігурацію костюму",
+        ItemTorso触手服_LuziSelect触手状态: "Статус костюму",
+        ItemTorso触手服_LuziSelect上衣开关: "Статус поверхні костюму",
+        ItemTorso触手服_LuziSelect手套开关: "Статус щупальцевих рукавиць",
+        ItemTorso触手服_LuziSelect嘴套开关: "Статус каверу на рот",
+        ItemTorso触手服_LuziSelect脚套开关: "Статус щупальцевих шкарпеток",
+        ItemTorso触手服_LuziModule手套开关: "Статус щупальцевих рукавиць",
+        ItemTorso触手服_LuziModule嘴套开关: "Статус каверу на рот",
+        ItemTorso触手服_LuziModule脚套开关: "Статус щупальцевих шкарпеток",
+        ItemTorso触手服_LuziModule触手状态: "Статус щупальцевого костюму",
+        ItemTorso触手服_LuziModule上衣开关: "Статус поверхні костюму",
+        ItemTorso触手服_LuziOptiond0: "Защільнити геніталії",
+        ItemTorso触手服_LuziOptiond1: "Оголити геніталії",
+        ItemTorso触手服_LuziOptiond2: "Вставити щупальце",
+        ItemTorso触手服_LuziOptions0: "Зняти",
+        ItemTorso触手服_LuziOptions1: "Надіти",
+        ItemTorso触手服_LuziOptionm0: "Зняти",
+        ItemTorso触手服_LuziOptionm1: "Надіти",
+        ItemTorso触手服_LuziOptionh0: "Зняти",
+        ItemTorso触手服_LuziOptionh1: "Надіти",
+        ItemTorso触手服_LuziOptionh2: "Зв'язати руки",
+        ItemTorso触手服_LuziOptionf0: "Зняти",
+        ItemTorso触手服_LuziOptionf1: "Надіти",
+
+        ItemTorso触手服_LuziSetd0:
+            "Нижнє відкриття щупальцевого костюму на тілі TargetCharacterName щільно закривається.",
+        ItemTorso触手服_LuziSetd1:
+            "Нижня частина щупальцевого костюму на тілі TargetCharacterName потроху відкривається оголюючи PronounPossessive гетіналю.",
+        ItemTorso触手服_LuziSetd2:
+            "Нижня частина щупальцевого костюму на тілі TargetCharacterName потроху відкривається оголюючи PronounPossessive гетіналю, як потім щупальце зростає позаду носія направляючи свій шлях у вагіну.",
+        ItemTorso触手服_LuziSets0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи груди носія.",
+        ItemTorso触手服_LuziSets1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на грудях носія.",
+        ItemTorso触手服_LuziSeth0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи руки носія.",
+        ItemTorso触手服_LuziSeth1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на руках носія покриваючи їх в щупальцевому костюмі.",
+        ItemTorso触手服_LuziSeth2:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зв'язує руки носія за PronounPossessive спиною.",
+        ItemTorso触手服_LuziSetf0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи ноги носія.",
+        ItemTorso触手服_LuziSetf1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на ногах носія покриваючи їх в щупальцевому костюмі.",
+        ItemTorso触手服_LuziSetm0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи рот носія.",
+        ItemTorso触手服_LuziSetm1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на роті носія.",
+    },
 };
 
-const translations = { CN: "触手服", EN: "Tentacle Suit", RU: "Костюм для щупальца" };
+const translations = { CN: "触手服", EN: "Tentacle Suit", UA: "Щупальцевий костюм", RU: "Костюм для щупальца" };
 
 export default function () {
     AssetManager.addAsset("ItemTorso", asset, extended, translations);
