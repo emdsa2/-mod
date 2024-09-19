@@ -97,12 +97,19 @@ const dialogs = {
         ItemHandheld钻头_Luzi转转转: "Spinnnnnn",
         ItemHandheld钻头_LuziSet转转转: "Spinnnnnn",
     },
+    UA: {
+        ItemHandheld钻头_LuziSelect: "Ввімкнути або ні",
+        ItemHandheld钻头_Luzi不转: "Не вмикати",
+        ItemHandheld钻头_LuziSet不转: "Не вмикати",
+        ItemHandheld钻头_Luzi转转转: "ВЖЖЖЖЖЖЖЖ",
+        ItemHandheld钻头_LuziSet转转转: "ВЖЖЖЖЖЖЖЖ",
+    },
 };
 
 export default function () {
     ModManager.globalFunction(`Assets${group}${asset.Name}BeforeDraw`, beforeDraw);
     ModManager.globalFunction(`Assets${group}${asset.Name}ScriptDraw`, scriptDraw);
 
-    AssetManager.addAsset(group, asset, extended, { CN: "钻头", EN: "Drill" });
+    AssetManager.addAsset(group, asset, extended, { CN: "钻头", UA: "Дриль", EN: "Drill" });
     AssetManager.addCustomDialog(dialogs);
 }
