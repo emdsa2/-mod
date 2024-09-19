@@ -387,17 +387,52 @@ const dialog = {
         ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter desperately wanted to comfort himself, struggling with his arms to masturbate, but his arms were completely immobile.",
         ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter urgently wanted to comfort himself, and in vain, his arm groped towards his penis, but the joy that was so close at hand was so unattainable at this moment.",
     },
+    UA: {
+        ItemPelvis淫纹_LuziSelect: "Виберіть ефект",
+        ItemPelvis淫纹_Luzi正常: "За замовчуванням",
+        ItemPelvis淫纹_Luzi持续发情: "Безперервна жага",
+        ItemPelvis淫纹_Luzi寸止: "Окантвока",
+        ItemPelvis淫纹_Luzi拒绝: "Відмова",
+        ItemPelvis淫纹_Luzi淫纹性刺激按钮: "Жага сексуальної стимуляції",
+        ItemPelvis淫纹_Luzi淫纹性刺激互动: "SourceCharacter змушує візерунок на тілі DestinationCharacter сексуально стимулювати.",
+        ItemPelvis淫纹_Luzi淫纹强制自慰按钮: "Примусовий оргазм",
+        ItemPelvis淫纹_Luzi淫纹开始强制自慰互动: "SourceCharacter за допомогою магії, змушує візерунок на тілі TargetCharacter безперервно мастурбувати.",
+        ItemPelvis淫纹_Luzi淫纹停止强制自慰互动: "SourceCharacter за допомогою магії, зупиняє візерунок на тілі TargetCharacter мастурбувати.",
+        ItemPelvis淫纹_Luzi淫纹魔法电流按钮: "Електрошок хтивого візерунку",
+        ItemPelvis淫纹_Luzi淫纹魔法电流互动: "SourceCharacter починає генерувати заряд у візерунку на тілі DestinationCharacter віддаючи легкий заряд.",
+        ItemPelvis淫纹_Luzi淫纹强制高潮按钮: "Примусовий оргазм",
+        ItemPelvis淫纹_Luzi淫纹强制高潮互动: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter змушуючи носія примусово досягнути клімаксу.",
+        ItemPelvis淫纹_LuziSet持续发情: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter щоб їх чутливі чатини тіла постійно лишались вологими.",
+        ItemPelvis淫纹_LuziSet正常: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter повертаючи все на свої місця.",
+        ItemPelvis淫纹_LuziSet寸止: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter змушуючи PronounPossessive не перетинати окантовку.",
+        ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter змушуючи PronounPossessive відмовляти оргазм.",
+        ItemPelvis淫纹_Luzi淫纹发光按钮: "Світіння візерунку",
+        ItemPelvis淫纹_LuziON: "Ввімкнути",
+        ItemPelvis淫纹_LuziOFF: "Вимкнути",
+        ItemPelvis淫纹_Luzi自慰Block00: "SourceCharacter з нетерпінням хоче чіпати себе, стискає свої лахи як їхні ноги трусяться від жаги стимулювати себе якомога більше.",
+        ItemPelvis淫纹_Luzi自慰Block01: "SourceCharacter з нетерпінням хоче чіпати себе, трусячи своїми плечима з жагою стимулювати свої груди й соски.",
+        ItemPelvis淫纹_Luzi自慰Block02: "SourceCharacter з нетерпінням хоче чіпати себе, стискає свої лахи як їхні ноги трусяться від жаги стимулювати себе якомога більше але натомість не получається стимулювати себе так просто.",
+        ItemPelvis淫纹_Luzi自慰Block03: "SourceCharacter з нетерпінням хоче чіпати себе, пробуючи чинити опір проти щупальевого косьюму як їхні руки зв'язані позаду їх.",
+        ItemPelvis淫纹_Luzi自慰Block04: "SourceCharacter з нетерпінням хоче чіпати себе, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
+        ItemPelvis淫纹_Luzi自慰Block10: "SourceCharacter з нетерпінням хоче охолодити свою жагу, як його тіло труситься і він стискає свої ляхи, пробуючи стимулювати себе якомога більше.",
+        ItemPelvis淫纹_Luzi自慰Block11: "SourceCharacter з нетерпінням хоче охолодити свою жагу, як він повертає своє тіло всік і всяк якомога більше.",
+        ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter терміново хоче знизити жагу, як він стискає свої ляхи і тре свою голівку пісюна, але з невдалою спробою пробує стимулювати себе.",
+        ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter терміново хоче знизити жагу, намагаючись використати свої руки з користю і мастурбувати, але натомість його руки жалюгідно нерухомі.",
+        ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter з гіганською жагою чіпати себе, цого рука слідує до його пісюна стискаючи з впевненістю, натомість не отримує доступне задоволення в руці.",
+    },
 };
 
 const translations = {
     CN: "淫纹",
     EN: "Lewd Crest",
     RU: "Порнографический знак",
+    UA: "Хтивий візерунок",
 };
 const translations2 = {
     CN: "魔法刻印",
     EN: "Lewd Crest lock",
     RU: "Порнографический знак",
+    UA: "Замок хтивого візерунку",
 };
 
 export default function () {
