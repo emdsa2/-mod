@@ -70,12 +70,24 @@ const dialog = {
         身体痕迹_Luzi鞭痕_Luzi7: "7",
         身体痕迹_Luzi鞭痕_Luzi8: "8",
     },
+    UA: {
+        身体痕迹_Luzi鞭痕_LuziSelect: "Виберіть кількість знаків",
+        身体痕迹_Luzi鞭痕_Luzi1: "1",
+        身体痕迹_Luzi鞭痕_Luzi2: "2",
+        身体痕迹_Luzi鞭痕_Luzi3: "3",
+        身体痕迹_Luzi鞭痕_Luzi4: "4",
+        身体痕迹_Luzi鞭痕_Luzi5: "5",
+        身体痕迹_Luzi鞭痕_Luzi6: "6",
+        身体痕迹_Luzi鞭痕_Luzi7: "7",
+        身体痕迹_Luzi鞭痕_Luzi8: "8",
+    },
 };
 
 const translations = {
     CN: "鞭痕",
     EN: "Whip marks",
     RU: "След удар плет",
+    UA: "Знаки від батога",
 };
 
 export default function () {
