@@ -13,6 +13,7 @@ const assets = {
                 KneelingSpread: 30,
                 LegsClosed: 0,
                 LegsOpen: 0,
+                Spread: 0,
             },
         },
         {
@@ -31,6 +32,7 @@ const assets = {
                 KneelingSpread: 30,
                 LegsClosed: 0,
                 LegsOpen: 0,
+                Spread: 0,
             },
             Layer: [
                 {
@@ -53,6 +55,7 @@ const assets = {
                 KneelingSpread: 30,
                 LegsClosed: 0,
                 LegsOpen: 0,
+                Spread: 0,
             },
             Layer: [
                 {
@@ -75,6 +78,7 @@ const assets = {
                 KneelingSpread: 30,
                 LegsClosed: 0,
                 LegsOpen: 0,
+                Spread: 0,
             },
         },
         {
@@ -87,6 +91,7 @@ const assets = {
                 KneelingSpread: 30,
                 LegsClosed: 0,
                 LegsOpen: 0,
+                Spread: 0,
             },
         },
         {
@@ -99,6 +104,7 @@ const assets = {
                 KneelingSpread: 30,
                 LegsClosed: 0,
                 LegsOpen: 0,
+                Spread: 0,
             },
         },
     ],

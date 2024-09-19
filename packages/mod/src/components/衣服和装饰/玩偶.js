@@ -73,6 +73,7 @@ const asset = {
         { Name: "小狼", AllowTypes: { y: 7 } },
         { Name: "小果", AllowTypes: { y: 8 } },
         { Name: "茗子", AllowTypes: { y: 9 } },
+        { Name: "时光光", AllowTypes: { y: 10 } },
 
         // 盒子的小黑屋
         { Name: "葡萄果汁盒", AllowTypes: { hz: 1 } },
@@ -89,6 +90,9 @@ const asset = {
         { Name: "墨芸", AllowTypes: { l: 5 } },
         { Name: "Poi", AllowTypes: { l: 6 } },
         { Name: "Pokemon", AllowTypes: { l: 7 } },
+        { Name: "Clara", AllowTypes: { l: 8 } },
+        { Name: "WallyIlma", AllowTypes: { l: 9 } },
+        { Name: "奈芙塔莉", AllowTypes: { l: 10 } },
     ],
 };
 

@@ -118,11 +118,16 @@ const dialog = {
         ItemDevices巨型玩偶_Luzi熊熊: "Мишка",
         ItemDevices巨型玩偶_LuziSelect: "Выбор конфигурации большой игрушки",
     },
+    UA: {
+        ItemDevices巨型玩偶_Luzi熊熊: "Ведмедик",
+        ItemDevices巨型玩偶_LuziSelect: "Виберіть конфігурацію великої іграшки",
+    },
 };
 
 const translations = {
     CN: "巨型玩偶",
     EN: "Giant Stuffed Toy",
+    UA: "Гіганська Іграшка",
 };
 
 export default function () {

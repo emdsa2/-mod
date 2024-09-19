@@ -36,6 +36,7 @@ const translations = {
     CN: "乳胶宠物拘束服",
     EN: "Latex Pet Restraint Suit",
     RU: "Латексный комбинезон для ограничения питомца",
+    UA: "Латексний комбінезон-обмежувач",
 };
 
 export default function () {

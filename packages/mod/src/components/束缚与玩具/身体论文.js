@@ -183,12 +183,16 @@ const dialogs = {
         Markings2_Luzi身体论文_LuziOption: "姿势",
     },
     EN: {
-        Markings2_Luzi身体论文_LuziModuleText: "文本",
-        Markings2_Luzi身体论文_LuziOption: "姿势",
+        Markings2_Luzi身体论文_LuziModuleText: "Select text",
+        Markings2_Luzi身体论文_LuziOption: "Select pose",
+    },
+    UA: {
+        Markings2_Luzi身体论文_LuziModuleText: "Виберіть текст",
+        Markings2_Luzi身体论文_LuziOption: "Виберіть позу",
     },
 };
 
-const translations = { CN: "身体论文", EN: "身体论文" };
+const translations = { CN: "身体论文", EN: "Body document", UA: "Документ на тіло" };
 
 // export default function () {
 //     ModManager.globalFunction(`AssetsBodyMarkings2_Luzi身体论文_LuziAfterDraw`, afterDrawHook);

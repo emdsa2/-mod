@@ -8,10 +8,10 @@ function AssetsItemPelvis随机自慰(){
     const Gender = Player.HasPenis()
     const Target = [ Gender ? "ItemPenis" : "ItemVulva" ,  Gender ? "ItemGlans" : "ItemVulvaPiercings" ]
 
-    DrawFlashScreen("#FF7777", 2000, 500);
+    DrawFlashScreen("#F347B4", 1500, 500);
     if( Player.HasEffect("Block") ){
         ServerSend("ChatRoomChat", {
-            "Content": "ItemPelvis淫纹_Luzi自慰Block" + Math.floor(Math.random() * 5),
+            "Content": "ItemPelvis淫纹_Luzi自慰Block" + (Gender?1:0) + Math.floor(Math.random() * 5),
             "Type": "Action",
             "Dictionary": [ { "SourceCharacter": Player.MemberNumber }, ],
         });
@@ -57,14 +57,20 @@ function AssetsItemPelvis淫纹开始自慰(){
 
 ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
     const data = args[0];
-    if (data.Content.includes("淫纹_Luzi")) {
-        const activityNameDictEntry = data.Dictionary.find((x => "TargetCharacter" in x));
-        if (activityNameDictEntry?.TargetCharacter === Player.MemberNumber) {
+    if(data.Content.includes("ActionUse")){
+        if (data.Dictionary.find((x => "AssetName" in x))?.AssetName === "淫纹_Luzi") 
+            if (data.Dictionary.find((x => "TargetCharacter" in x))?.TargetCharacter === Player.MemberNumber) {
+                // @ts-ignore
+                InventoryLock(Player, "ItemPelvis", "淫纹锁_Luzi", Player.MemberNumber)
+                ServerSend("ChatRoomCharacterItemUpdate", { "Target": Player.MemberNumber, "Group": "ItemPelvis", "Name": "淫纹_Luzi", "Color": ["#EA3E74","Default"], "Difficulty": 0, "Property": {"TypeRecord": { "typed": 0}, "Masturbation": false, "Light": false, "Opacity": 1, "Effect": ["Lock"], "MemberNumberListKeys": Player.MemberNumber, "LockedBy": "淫纹锁_Luzi", "LockMemberNumber": Player.MemberNumber } } )
+            }
+    } else if (data.Content.includes("淫纹_Luzi")){
+        if (data.Dictionary.find((x => "TargetCharacter" in x))?.TargetCharacter === Player.MemberNumber) {
             if (data.Content === "ItemPelvis淫纹_Luzi淫纹强制高潮互动") {
                 if (!!Player.ArousalSettings) Player.ArousalSettings.Progress = 100;
                 ActivityOrgasmPrepare(Player);
             } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹性刺激互动") {
-                DrawFlashScreen("#FF7777", 2000, 500);
+                DrawFlashScreen("#F347B4", 1500, 500);
             } else if (data.Content === "ItemPelvis淫纹_Luzi淫纹开始强制自慰互动") {
                 AssetsItemPelvis淫纹开始自慰();
             }
@@ -112,7 +118,7 @@ function InventoryItemPelvis淫纹ClickHook(Data, OriginalFunction) {
         ExtendedItemCustomClick("淫纹强制高潮", AssetsItemPelvis淫纹强制高潮, false, false);
     } else if (MouseIn(1260, 600, 225, 55)) {
         // @ts-ignore
-        ExtendedItemCustomClick("淫纹发光",  () => DialogFocusItem.Property.Light = !DialogFocusItem.Property.Light, false, false);
+        ExtendedItemCustomClickAndPush(CharacterGetCurrent(), DialogFocusItem, "Light",  () => DialogFocusItem.Property.Light = !DialogFocusItem.Property.Light, false, false);
     }
 }
 
@@ -120,7 +126,6 @@ function AssetsItemPelvis淫纹性刺激() {
     const C = CharacterGetCurrent();
     if (C.IsPlayer()) {
         ActivityEffect(Player, Player, "MasturbateFist", "ItemVulva", 0, null)
-        DrawFlashScreen("#F347B4", 2000, 500);
     }
     ServerSend("ChatRoomChat", {
         "Content": "ItemPelvis淫纹_Luzi淫纹性刺激互动",
@@ -175,7 +180,6 @@ function AssetsItemPelvis淫纹强制高潮() {
 
 
 function scriptDraw( data, originalFunction, drawData ) {
-
     if (drawData.C.IsPlayer() && drawData.Item.Property.TypeRecord.typed === 1) {
         // 确保 Player 存在
         if (!Player) {
@@ -216,15 +220,16 @@ function scriptDraw( data, originalFunction, drawData ) {
 }
 
 
-function beforeDraw({ PersistentData, L, X, Y, Property }) {
+function beforeDraw({ PersistentData, L, Property, C }) {
     if (L === "发光") {
 		const property = Property || {};
-        const Data = PersistentData();
-        Data.Frame = Data.Frame || 0;
         // @ts-ignore
         if( property.Light ) {
-            Data.Frame = (Data.Frame + 1) % 40 ;
-		    return { Opacity:0.7 + 0.3 * Math.cos(Data.Frame * 0.025 * 2 * Math.PI) };
+            const Data = PersistentData();
+            const TwinkleSpeed = C.ArousalSettings ? ( 110 - C.ArousalSettings.Progress ) : 50;
+            Data.Frame = Data.Frame || 0;
+            Data.Frame = (Data.Frame + 1) % TwinkleSpeed ;
+		    return { Opacity:0.7 + 0.3 * Math.cos(Data.Frame * 1 / TwinkleSpeed * 2 * Math.PI) };
         } else
             return { Opacity: 0 };
 	}
@@ -239,6 +244,7 @@ const asset = {
     Left: 0,
     Priority: 10,
     AllowLock: true,
+    AllowTighten: false,
     DrawLocks: false,
     Extended: true,
     AlwaysExtend: true,
@@ -259,6 +265,19 @@ const asset = {
             ParentGroup: null,
         },
     ],
+};
+/** @type { CustomAssetDefinition} */
+const asset2 = {
+    Name: "淫纹锁_Luzi",
+    Random: false,
+    Wear: false,
+    Enable: false,
+    Effect: [],
+    IsLock: true,
+    ExclusiveUnlock: true,
+    Value: 60,
+    Time: 10,
+    Extended: true,
 };
 
 /** @type {AssetArchetypeConfig} */
@@ -285,6 +304,20 @@ const extended = {
         Opacity: 1,
     },
 };
+/** @type {AssetArchetypeConfig} */
+const extended2 = {
+    Archetype: ExtendedArchetype.NOARCH,
+    ScriptHooks: {
+        Init: InventoryItemMiscHighSecurityPadlockInitHook,
+        Load: InventoryItemMiscHighSecurityPadlockLoadHook,
+        Draw: InventoryItemMiscHighSecurityPadlockDrawHook,
+        Click: InventoryItemMiscHighSecurityPadlockClickHook,
+        Exit: InventoryItemMiscHighSecurityPadlockExitHook,
+    },
+    BaselineProperty: {
+        MemberNumberListKeys: "",
+    },
+};
 
 const dialog = {
     CN: {
@@ -309,18 +342,24 @@ const dialog = {
         ItemPelvis淫纹_Luzi淫纹发光按钮: "淫纹发光",
         ItemPelvis淫纹_LuziON: "已开启",
         ItemPelvis淫纹_LuziOFF: "已关闭",
-        ItemPelvis淫纹_Luzi自慰Block0: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的私处.",
-        ItemPelvis淫纹_Luzi自慰Block1: "SourceCharacter急切的想要抚慰自己,扭动肩膀,尽可能让乳尖受到进一步刺激.",
-        ItemPelvis淫纹_Luzi自慰Block2: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦私处,但仍难以得到刺激.",
-        ItemPelvis淫纹_Luzi自慰Block3: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但她的手臂完全无法动弹.",
-        ItemPelvis淫纹_Luzi自慰Block4: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着私处摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
+        ItemPelvis淫纹_Luzi自慰Block00: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的私处.",
+        ItemPelvis淫纹_Luzi自慰Block01: "SourceCharacter急切的想要抚慰自己,扭动肩膀,尽可能让乳尖受到进一步刺激.",
+        ItemPelvis淫纹_Luzi自慰Block02: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦私处,但仍难以得到刺激.",
+        ItemPelvis淫纹_Luzi自慰Block03: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但她的手臂完全无法动弹.",
+        ItemPelvis淫纹_Luzi自慰Block04: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着私处摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
+        ItemPelvis淫纹_Luzi自慰Block10: "SourceCharacter急切的想要抚慰自己,颤抖着夹紧双腿,尽可能刺激自己的阴茎.",
+        ItemPelvis淫纹_Luzi自慰Block11: "SourceCharacter急切的想要抚慰自己,扭动身体,尽可能磨蹭阴茎龟头.",
+        ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦龟头,但仍难以得到刺激.",
+        ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但他的手臂完全无法动弹.",
+        ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着阴茎摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
+        PreviewIcon淫纹锁_Luzi: "锁",
     },
     EN: {
         ItemPelvis淫纹_LuziSelect: "Select Effect",
         ItemPelvis淫纹_Luzi正常: "Normal",
         ItemPelvis淫纹_Luzi持续发情: "Continuous Heat",
         ItemPelvis淫纹_Luzi寸止: "Edge",
-        ItemPelvis淫纹_Luzi拒绝: "Reject",
+        ItemPelvis淫纹_Luzi拒绝: "Deny",
         ItemPelvis淫纹_Luzi淫纹性刺激按钮: "Lust Pattern Sexual Stimulation",
         ItemPelvis淫纹_Luzi淫纹性刺激互动: "SourceCharacter causes DestinationCharacter's Lust Pattern to generate sexual stimulation.",
         ItemPelvis淫纹_Luzi淫纹强制自慰按钮: "Lust Pattern Forced Masturbation",
@@ -335,13 +374,51 @@ const dialog = {
         ItemPelvis淫纹_LuziSet寸止: "SourceCharacter uses the Lust Pattern magic to keep TargetCharacter at the edge of orgasm.",
         ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter uses the Lust Pattern magic to make TargetCharacter able to only reject orgasm.",
         ItemPelvis淫纹_Luzi淫纹发光按钮: "LewdPattern Glowing",
-        ItemPelvis淫纹_LuziON: "Enabled",
-        ItemPelvis淫纹_LuziOFF: "Disabled",
-        ItemPelvis淫纹_Luzi自慰Block0: "SourceCharacter eagerly wants to pleasure themselves, trembling and squeezing their thighs together to stimulate their private areas as much as possible.",
-        ItemPelvis淫纹_Luzi自慰Block1: "SourceCharacter eagerly wants to pleasure themselves, wriggling their shoulders to further stimulate their nipples.",
-        ItemPelvis淫纹_Luzi自慰Block2: "SourceCharacter eagerly wants to pleasure themselves, squeezing their thighs together to rub their private areas but still finding it difficult to stimulate themselves.",
-        ItemPelvis淫纹_Luzi自慰Block3: "SourceCharacter eagerly wants to pleasure themselves, struggling with their arms to masturbate, but their arms are completely immobilized.",
-        ItemPelvis淫纹_Luzi自慰Block4: "SourceCharacter eagerly wants to pleasure themselves, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
+        ItemPelvis淫纹_LuziON: "ON",
+        ItemPelvis淫纹_LuziOFF: "OFF",
+        ItemPelvis淫纹_Luzi自慰Block00: "SourceCharacter eagerly wants to pleasure themselves, trembling and squeezing their thighs together to stimulate their private areas as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block01: "SourceCharacter eagerly wants to pleasure themselves, wriggling their shoulders to further stimulate their nipples.",
+        ItemPelvis淫纹_Luzi自慰Block02: "SourceCharacter eagerly wants to pleasure themselves, squeezing their thighs together to rub their private areas but still finding it difficult to stimulate themselves.",
+        ItemPelvis淫纹_Luzi自慰Block03: "SourceCharacter eagerly wants to pleasure themselves, struggling with their arms to masturbate, but their arms are completely immobilized.",
+        ItemPelvis淫纹_Luzi自慰Block04: "SourceCharacter eagerly wants to pleasure themselves, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
+        ItemPelvis淫纹_Luzi自慰Block10: "SourceCharacter was eager to soothe himself, trembling and gripping his legs, trying to stimulate his penis as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block11: "SourceCharacter is eager to soothe himself, twisting his body and rubbing against the glans penis as much as possible.",
+        ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter urgently wanted to comfort himself, clamping his legs and rubbing his glans, but still struggled to get stimulation.",
+        ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter desperately wanted to comfort himself, struggling with his arms to masturbate, but his arms were completely immobile.",
+        ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter urgently wanted to comfort himself, and in vain, his arm groped towards his penis, but the joy that was so close at hand was so unattainable at this moment.",
+    },
+    UA: {
+        ItemPelvis淫纹_LuziSelect: "Виберіть ефект",
+        ItemPelvis淫纹_Luzi正常: "За замовчуванням",
+        ItemPelvis淫纹_Luzi持续发情: "Безперервна жага",
+        ItemPelvis淫纹_Luzi寸止: "Окантвока",
+        ItemPelvis淫纹_Luzi拒绝: "Відмова",
+        ItemPelvis淫纹_Luzi淫纹性刺激按钮: "Жага сексуальної стимуляції",
+        ItemPelvis淫纹_Luzi淫纹性刺激互动: "SourceCharacter змушує візерунок на тілі DestinationCharacter сексуально стимулювати.",
+        ItemPelvis淫纹_Luzi淫纹强制自慰按钮: "Примусовий оргазм",
+        ItemPelvis淫纹_Luzi淫纹开始强制自慰互动: "SourceCharacter за допомогою магії, змушує візерунок на тілі TargetCharacter безперервно мастурбувати.",
+        ItemPelvis淫纹_Luzi淫纹停止强制自慰互动: "SourceCharacter за допомогою магії, зупиняє візерунок на тілі TargetCharacter мастурбувати.",
+        ItemPelvis淫纹_Luzi淫纹魔法电流按钮: "Електрошок хтивого візерунку",
+        ItemPelvis淫纹_Luzi淫纹魔法电流互动: "SourceCharacter починає генерувати заряд у візерунку на тілі DestinationCharacter віддаючи легкий заряд.",
+        ItemPelvis淫纹_Luzi淫纹强制高潮按钮: "Примусовий оргазм",
+        ItemPelvis淫纹_Luzi淫纹强制高潮互动: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter змушуючи носія примусово досягнути клімаксу.",
+        ItemPelvis淫纹_LuziSet持续发情: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter щоб їх чутливі чатини тіла постійно лишались вологими.",
+        ItemPelvis淫纹_LuziSet正常: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter повертаючи все на свої місця.",
+        ItemPelvis淫纹_LuziSet寸止: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter змушуючи PronounPossessive не перетинати окантовку.",
+        ItemPelvis淫纹_LuziSet拒绝: "SourceCharacter використовує магію на візерунку на тілі TargetCharacter змушуючи PronounPossessive відмовляти оргазм.",
+        ItemPelvis淫纹_Luzi淫纹发光按钮: "Світіння візерунку",
+        ItemPelvis淫纹_LuziON: "Ввімкнути",
+        ItemPelvis淫纹_LuziOFF: "Вимкнути",
+        ItemPelvis淫纹_Luzi自慰Block00: "SourceCharacter з нетерпінням хоче чіпати себе, стискає свої лахи як їхні ноги трусяться від жаги стимулювати себе якомога більше.",
+        ItemPelvis淫纹_Luzi自慰Block01: "SourceCharacter з нетерпінням хоче чіпати себе, трусячи своїми плечима з жагою стимулювати свої груди й соски.",
+        ItemPelvis淫纹_Luzi自慰Block02: "SourceCharacter з нетерпінням хоче чіпати себе, стискає свої лахи як їхні ноги трусяться від жаги стимулювати себе якомога більше але натомість не получається стимулювати себе так просто.",
+        ItemPelvis淫纹_Luzi自慰Block03: "SourceCharacter з нетерпінням хоче чіпати себе, пробуючи чинити опір проти щупальевого косьюму як їхні руки зв'язані позаду їх.",
+        ItemPelvis淫纹_Luzi自慰Block04: "SourceCharacter з нетерпінням хоче чіпати себе, their arms futilely reaching towards their private areas, the close proximity of pleasure now seeming so unreachable.",
+        ItemPelvis淫纹_Luzi自慰Block10: "SourceCharacter з нетерпінням хоче охолодити свою жагу, як його тіло труситься і він стискає свої ляхи, пробуючи стимулювати себе якомога більше.",
+        ItemPelvis淫纹_Luzi自慰Block11: "SourceCharacter з нетерпінням хоче охолодити свою жагу, як він повертає своє тіло всік і всяк якомога більше.",
+        ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter терміново хоче знизити жагу, як він стискає свої ляхи і тре свою голівку пісюна, але з невдалою спробою пробує стимулювати себе.",
+        ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter терміново хоче знизити жагу, намагаючись використати свої руки з користю і мастурбувати, але натомість його руки жалюгідно нерухомі.",
+        ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter з гіганською жагою чіпати себе, цого рука слідує до його пісюна стискаючи з впевненістю, натомість не отримує доступне задоволення в руці.",
     },
 };
 
@@ -349,10 +426,18 @@ const translations = {
     CN: "淫纹",
     EN: "Lewd Crest",
     RU: "Порнографический знак",
+    UA: "Хтивий візерунок",
+};
+const translations2 = {
+    CN: "魔法刻印",
+    EN: "Lewd Crest lock",
+    RU: "Порнографический знак",
+    UA: "Замок хтивого візерунку",
 };
 
 export default function () {
     AssetManager.addAsset("ItemPelvis", asset, extended, translations);
+    AssetManager.addAsset("ItemMisc", asset2, extended2, translations2);
     AssetManager.addCustomDialog(dialog);
     ModManager.globalFunction(`Assets${group}${asset.Name}BeforeDraw`, beforeDraw);
 }
