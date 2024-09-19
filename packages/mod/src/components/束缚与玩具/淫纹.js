@@ -351,7 +351,8 @@ const dialog = {
         ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter急切的想要抚慰自己,夹紧双腿摩擦龟头,但仍难以得到刺激.",
         ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter急切的想要抚慰自己,手臂挣扎着想要自慰,但他的手臂完全无法动弹.",
         ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter急切的想要抚慰自己,手臂徒劳地向着阴茎摸索尝试,近在咫尺的快乐此时却是如此遥不可及.",
-        PreviewIcon淫纹锁_Luzi: "锁",
+        ItemMisc淫纹锁_LuziIntro: "画着复杂的文字",
+        // MISSING TEXT IN "Backgrounds.csv": Pandora/Second/Cell6
     },
     EN: {
         ItemPelvis淫纹_LuziSelect: "Select Effect",
@@ -385,6 +386,7 @@ const dialog = {
         ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter urgently wanted to comfort himself, clamping his legs and rubbing his glans, but still struggled to get stimulation.",
         ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter desperately wanted to comfort himself, struggling with his arms to masturbate, but his arms were completely immobile.",
         ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter urgently wanted to comfort himself, and in vain, his arm groped towards his penis, but the joy that was so close at hand was so unattainable at this moment.",
+        ItemMisc淫纹锁_LuziIntro: "Painted with complex words",
     },
     UA: {
         ItemPelvis淫纹_LuziSelect: "Виберіть ефект",
@@ -418,6 +420,7 @@ const dialog = {
         ItemPelvis淫纹_Luzi自慰Block12: "SourceCharacter терміново хоче знизити жагу, як він стискає свої ляхи і тре свою голівку пісюна, але з невдалою спробою пробує стимулювати себе.",
         ItemPelvis淫纹_Luzi自慰Block13: "SourceCharacter терміново хоче знизити жагу, намагаючись використати свої руки з користю і мастурбувати, але натомість його руки жалюгідно нерухомі.",
         ItemPelvis淫纹_Luzi自慰Block14: "SourceCharacter з гіганською жагою чіпати себе, цого рука слідує до його пісюна стискаючи з впевненістю, натомість не отримує доступне задоволення в руці.",
+        ItemMisc淫纹锁_LuziIntro: "Painted with complex words",
     },
 };
 
