@@ -275,7 +275,6 @@ const asset2 = {
     Effect: [],
     IsLock: true,
     ExclusiveUnlock: true,
-    Value: 60,
     Time: 10,
     Extended: true,
 };
