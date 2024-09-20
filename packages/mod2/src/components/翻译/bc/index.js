@@ -51,6 +51,11 @@ export function setup() {
         next(args);
     });
 
+    ModManager.hookFunction("DynamicDrawText", 10, (args, next) => {
+        args[0] = replaceTranslate(args[0]);
+        next(args);
+    });
+
     ModManager.hookFunction("ActivityDictionaryText", 1, (args, next) => {
         const ret = next(args);
         if (TranslationLanguage === "CN" || TranslationLanguage === "TW") return activities[ret] || ret;

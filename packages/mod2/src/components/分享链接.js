@@ -58,7 +58,7 @@ const frame = {
         get: (info) => {
             const IDs = info.split("-");
             return `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${IDs[0]}?si=${IDs[1]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-        },
+        }, // TODO 油管的视频看不了！
     },
     phb: {
         displayName: "Pornhub",

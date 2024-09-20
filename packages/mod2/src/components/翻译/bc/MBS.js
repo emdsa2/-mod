@@ -74,7 +74,18 @@ const translation = {
     "Buy female - only items: Page 1 / 1": "购买仅限女性物品:第 1 页 / 1",
     "Shop mode: Buy": "商店模式:购买",
     "Sell female - only items: Page 1 / 1": "出售仅限女性物品:第 1 页 / 1",
-    "Shop mode: Sell": "商店模式:出售",
+    "Shop mode: Sell": "商店模式: 出售",
+
+    "FetishShare": "恋物癖分享",
+    "Fetish & Activity Settings": "恋物癖与活动设置",
+    "Fetishes": "恋物癖",
+    "Fetish & Activity Compatibility:": "恋物癖与活动兼容性：",
+    "Always read bios and ask for consent & limits. Users might not keep these up to date.": "始终阅读个人简介并征求同意和了解限制。用户可能不会及时更新这些信息。",
+    "Activities (done to/by 她)": "活动（对她所做/由她所做）",
+    "Hide neutral activities": "隐藏中性活动",
+    "Show compatibility percentage in chat rooms": "在聊天室中显示兼容性百分比",
+    "(Not recommended) Opt-out of others seeing your fetishes & activities through this plugin.": "(不推荐) 选择不让其他人通过此插件看到您的恋物癖和活动。",
+    "Fetishes: N/A ｜ Activities: N/A": "恋物：不适用 ｜ 活动：不适用",
 };
 
 export { translation };
