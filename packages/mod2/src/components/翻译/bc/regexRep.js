@@ -1531,6 +1531,10 @@ const translationsDTF2 = [
     { regex: /Info: Currently set role: (.+) → Newly selected role: (.+)/, replacement: "信息: 当前权限级别: $1 → 新的权限级别: $2", },
     { regex: /- View \/ Edit the \'(.+)\' curse -/, replacement: "- 查看 \/ 编辑 \'$1\' 诅咒 -", },
     { regex: /Compatibility(.+)/, replacement: "性癖相似度$1", },
+    {
+        regex: /Fetishes: (.+)% ｜ Activities (You → 她): (.+)% ｜ Activities (她 → You): (.+)%/,
+        replacement: "性癖相同: $1% ｜ 动作 (你 → 她): $2% ｜ 动作 (她 → 你): $3% "
+    },
 ];
 
 export { translationsDTF, translationsDTF2, act_dialogs, pronouns };

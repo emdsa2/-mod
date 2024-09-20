@@ -12,10 +12,6 @@ const translationsDTF2 = [
         regex: /MISSING ACTIVITY DESCRIPTION FOR KEYWORD Activity(.+)/,
         replacement: "$1"
     },
-    {
-        regex: /Fetishes: (.+)% ｜ Activities (You → 她): (.+)% ｜ Activities (她 → You): (.+)%/,
-        replacement: "性癖相同: $1% ｜ 动作 (你 → 她): $2% ｜ 动作 (她 → 你): $3% "
-    },
 ];
 
 function applyReplacements(text) {
