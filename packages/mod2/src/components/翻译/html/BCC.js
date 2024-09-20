@@ -141,6 +141,7 @@ const translation = {
 
     "  set them up in Arousal Preferences.": "  在兴奋-爱好设置它们",
     "Activities not configured,  set them up in Arousal Preferences.": "  在兴奋-行动设置它们",
+    "Player has opted-out of FetishShare": "玩家选择退出癖好分享",
     "Latex": "乳胶",
     "ABDL": "成婴",
     "Blindness": "失明",
