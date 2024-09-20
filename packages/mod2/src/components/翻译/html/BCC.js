@@ -139,8 +139,8 @@ const translation = {
     "  - Report bug": "  - 报告错误",
     "  - Open Bondage Club Chaos help menu": "  - 打开 Bondage Club Chaos 帮助菜单",
 
-    "  set them up in Arousal Preferences.": "  在唤醒偏好中设置它们",
-    "Activities not configured,  set them up in Arousal Preferences.": "  未配置的活动，在唤醒偏好中设置它们",
+    "  set them up in Arousal Preferences.": "  在兴奋-爱好设置它们",
+    "Activities not configured,  set them up in Arousal Preferences.": "  在兴奋-行动设置它们",
     "Latex": "乳胶",
     "ABDL": "成婴",
     "Blindness": "失明",
@@ -160,9 +160,8 @@ const translation = {
     "Rope": "绳索",
     "Sadism": "虐待",
     "Tape": "胶带",
-    "MISSING ACTIVITY DESCRIPTION FOR KEYWORD Activity(.+)": "$1",
 };
 
-const htmlTags = ["#bccFullScreen", "#bccPopup", "#bccNotificationBlock", "#Menu_MBCFSFetishes-0", "#Menu_MBCFSActivities-0", "#Menu_MBCFSFetishes-1"];
+const htmlTags = ["#bccFullScreen", "#bccPopup", "#bccNotificationBlock", "#Menu_MBCFSFetishes-0", "#Menu_MBCFSActivities-0", "#Menu_MBCFSFetishes-1", "#Menu_MBCFSActivities-1"];
 
 export { htmlTags, translation };

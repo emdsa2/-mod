@@ -78,8 +78,8 @@ const translation = {
     "SAVE": "保存",
     "Debug": "调试",
 
-    "Displays user Fetish and Arousal preferences in Bios, and calculates compatibility between players.": "在个人简介中显示用户的恋物和情欲偏好，并计算玩家之间的兼容性",
-    "Maple's BC FetishShare": "Maple 的 BC 恋物分享(个人资料拓展)",
+    "Displays user Fetish and Arousal preferences in Bios, and calculates compatibility between players.": "在个人简介中显示用户的性癖和喜爱的动作偏好，并计算玩家之间的性癖相同百分比",
+    "Maple's BC FetishShare": "Maple 的 BC 性癖分享(个人资料拓展)",
     "Moon Cards Editor BC": "BC 月亮卡牌编辑",
     "Adds the ability to view and edit your cards decks from online room": "从在线房间中查看和编辑您的卡牌牌组功能",
 

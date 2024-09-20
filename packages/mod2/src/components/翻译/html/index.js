@@ -1,12 +1,30 @@
 import { htmlTags as fusamTags, translation as FUSAM } from "./FUSAM";
 import { htmlTags as bccTags, translation as BCC } from "./BCC";
 import { sleepFor, sleepUntil } from "@mod-utils/sleep";
-
 /** @type { Record<string,string>} */
 const translations = [FUSAM, BCC].reduce((pv, cv) => Object.assign(pv, cv), {});
 const tags = [fusamTags, bccTags].flat();
 
 const doneAttr = "data-translation-done";
+
+const translationsDTF2 = [
+    {
+        regex: /MISSING ACTIVITY DESCRIPTION FOR KEYWORD Activity(.+)/,
+        replacement: "$1"
+    },
+    {
+        regex: /Fetishes: (.+)% ｜ Activities (You → 她): (.+)% ｜ Activities (她 → You): (.+)%/,
+        replacement: "性癖相同: $1% ｜ 动作 (你 → 她): $2% ｜ 动作 (她 → 你): $3% "
+    },
+];
+
+function applyReplacements(text) {
+    // 应用 translationsDTF2 中的替换规则
+    for (const rule of translationsDTF2) {
+        text = text.replace(rule.regex, rule.replacement);
+    }
+    return text;
+}
 
 function runReplaceInIds() {
     /** @type {Node[]} */
@@ -14,8 +32,13 @@ function runReplaceInIds() {
     while (eleToCheck.length > 0) {
         let ele = eleToCheck.pop();
         if (ele.nodeType === Node.TEXT_NODE) {
-            if (translations[ele.nodeValue]) {
-                ele.nodeValue = translations[ele.nodeValue];
+            let newValue = ele.nodeValue;
+            if (translations[newValue]) {
+                newValue = translations[newValue];
+            }
+            newValue = applyReplacements(newValue); // 应用 translationsDTF2 规则
+            if (newValue !== ele.nodeValue) {
+                ele.nodeValue = newValue;
                 ele.parentElement.setAttribute(doneAttr, "");
             }
         } else {

@@ -1,9 +1,5 @@
 const translationsDTF = [
     {
-        regex: /MISSING ACTIVITY DESCRIPTION FOR KEYWORD Activity(.+)/,
-        replacement: "$1"
-    },
-    {
         regex: /Failed to get role data from (.+)\. This can be caused by missing permission to interact with their items\, the user having left the room meanwhile\, or the user not having the BC tab focused\./,
         replacement: "无法从 $1 获取角色数据.这可能是由于缺乏与其物品交互的权限、用户已离开房间,或者用户未将 BC 标签页聚焦."
     },
@@ -1534,7 +1530,7 @@ const translationsDTF2 = [
     { regex: /Force \'(.+)\' (Existing BC setting)/, replacement: "强制 \'$1\' (现有的 BC 设置)", },
     { regex: /Info: Currently set role: (.+) → Newly selected role: (.+)/, replacement: "信息: 当前权限级别: $1 → 新的权限级别: $2", },
     { regex: /- View \/ Edit the \'(.+)\' curse -/, replacement: "- 查看 \/ 编辑 \'$1\' 诅咒 -", },
-
+    { regex: /Compatibility(.+)/, replacement: "性癖相似度$1", },
 ];
 
 export { translationsDTF, translationsDTF2, act_dialogs, pronouns };
