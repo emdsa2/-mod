@@ -1530,10 +1530,11 @@ const translationsDTF2 = [
     { regex: /Force \'(.+)\' (Existing BC setting)/, replacement: "强制 \'$1\' (现有的 BC 设置)", },
     { regex: /Info: Currently set role: (.+) → Newly selected role: (.+)/, replacement: "信息: 当前权限级别: $1 → 新的权限级别: $2", },
     { regex: /- View \/ Edit the \'(.+)\' curse -/, replacement: "- 查看 \/ 编辑 \'$1\' 诅咒 -", },
+    { regex: /Fetish & Activity Compatibility(.+)/, replacement: "癖好 & 动作 癖好相似度$1", },
     { regex: /Compatibility(.+)/, replacement: "癖好相似度$1", },
     {
-        regex: /Fetishes(.+)Activities (You → 她)(.+)Activities (她 → You)(.+)/,
-        replacement: "癖好相似度$1%动作 (你 → 她)$2动作 (她 → 你)$3"
+        regex: /Fetishes\: (.+)\% \｜ Activities \(You \→ 她\)\: (.+)\% \｜ Activities \(她 → You\)\: (.+)\%/,
+        replacement: "癖好相似度: $1% ｜ %动作 (你 → 她): $2% ｜ 动作 (她 → 你): $3%"
     },
 ];
 
