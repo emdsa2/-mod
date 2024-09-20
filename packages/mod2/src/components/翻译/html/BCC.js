@@ -139,9 +139,12 @@ const translation = {
     "  - Report bug": "  - 报告错误",
     "  - Open Bondage Club Chaos help menu": "  - 打开 Bondage Club Chaos 帮助菜单",
 
+    
+    " ask 她 to set them up in Arousal Preferences.": "  请询问她在兴奋-爱好设置它们",
+    "Activities not configured, ask 她 to set them up in Arousal Preferences.": "  请询问她在兴奋-行动设置它们",
     "  set them up in Arousal Preferences.": "  在兴奋-爱好设置它们",
     "Activities not configured,  set them up in Arousal Preferences.": "  在兴奋-行动设置它们",
-    "Player has opted-out of FetishShare": "玩家选择退出癖好分享",
+    "Player has opted-out of FetishShare": "玩家退出了癖好分享",
     "Latex": "乳胶",
     "ABDL": "成婴",
     "Blindness": "失明",
@@ -163,6 +166,14 @@ const translation = {
     "Tape": "胶带",
 };
 
-const htmlTags = ["#bccFullScreen", "#bccPopup", "#bccNotificationBlock", "#Menu_MBCFSFetishes-0", "#Menu_MBCFSActivities-0", "#Menu_MBCFSFetishes-1", "#Menu_MBCFSActivities-1"];
+const htmlTags = [
+    "#bccFullScreen",
+    "#bccPopup",
+    "#bccNotificationBlock",
+    "#Menu_MBCFSFetishes-0",
+    "#Menu_MBCFSActivities-0",
+    "#Menu_MBCFSFetishes-1",
+    "#Menu_MBCFSActivities-1",  
+];
 
 export { htmlTags, translation };

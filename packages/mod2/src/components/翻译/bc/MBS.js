@@ -81,7 +81,7 @@ const translation = {
     "Fetishes": "癖好",
     "Fetish & Activity Compatibility:": "癖好&动作喜好相似度: ",
     "Always read bios and ask for consent & limits. Users might not keep these up to date.": "始终阅读个人简介并征求同意和了解限制. 用户可能不会及时更新这些信息.",
-    "Activities (done to/by 她)": "动作（对她所做/由她所做）",
+    "Activities (done to/by 她)": "动作喜好（对她所做/由她所做）",
     "Hide neutral activities": "隐藏 无所谓的动作",
     "Hide self-only activities": "隐藏 自己喜好做的动作",
     "Show compatibility percentage in chat rooms": "在聊天室中显示癖好相似度",
