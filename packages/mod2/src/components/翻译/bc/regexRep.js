@@ -1,5 +1,9 @@
 const translationsDTF = [
     {
+        regex: /MISSING ACTIVITY DESCRIPTION FOR KEYWORD Activity(.+)/,
+        replacement: "$1"
+    },
+    {
         regex: /Failed to get role data from (.+)\. This can be caused by missing permission to interact with their items\, the user having left the room meanwhile\, or the user not having the BC tab focused\./,
         replacement: "无法从 $1 获取角色数据.这可能是由于缺乏与其物品交互的权限、用户已离开房间,或者用户未将 BC 标签页聚焦."
     },
@@ -1314,7 +1318,15 @@ const act_dialogs = [
     },
     {
         regex: /The curses on (.+)'s body become dormant and several items fall off (.+) body\./,
-        replacement: "$1 身上的诅咒陷入休眠状态, 几件物品从她身上掉落.",
+        replacement: "$1 身上的诅咒陷入休眠状态, 几件物品从她身上脱落.",
+    },
+    {
+        regex: /The curse on (.+)'s becomes dormant and the (.+) falls off her body\./,
+        replacement: "$1 身上的诅咒陷入休眠状态, $2 物品从她身上脱落.",
+    },
+    {
+        regex: /The curse on (.+)'s (.+) wakes up and the item reappears\./,
+        replacement: "$1身上的诅咒被唤醒, $2 重新出现.",
     },
 
     // BCC

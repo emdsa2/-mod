@@ -138,8 +138,31 @@ const translation = {
         " - 重置 BCC 数据（可能有助于修复一些错误。数据重置后，请务必重新进入 BC）",
     "  - Report bug": "  - 报告错误",
     "  - Open Bondage Club Chaos help menu": "  - 打开 Bondage Club Chaos 帮助菜单",
+
+    "  set them up in Arousal Preferences.": "  在唤醒偏好中设置它们",
+    "Activities not configured,  set them up in Arousal Preferences.": "  未配置的活动，在唤醒偏好中设置它们",
+    "Latex": "乳胶",
+    "ABDL": "成婴",
+    "Blindness": "失明",
+    "Bondage": "束缚",
+    "Chastity": "贞操带",
+    "Deafness": "失聪",
+    "Exhibitionist": "裸露",
+    "Forniphilia": "家具化",
+    "Gagged": "堵嘴",
+    "Leather": "皮质",
+    "Lingerie": "内衣",
+    "Masochism": "受虐",
+    "Metal": "金属",
+    "Nylon": "尼龙",
+    "Pet": "宠物",
+    "Pony": "小马",
+    "Rope": "绳索",
+    "Sadism": "虐待",
+    "Tape": "胶带",
+    "MISSING ACTIVITY DESCRIPTION FOR KEYWORD Activity(.+)": "$1",
 };
 
-const htmlTags = ["#bccFullScreen", "#bccPopup", "#bccNotificationBlock"];
+const htmlTags = ["#bccFullScreen", "#bccPopup", "#bccNotificationBlock", "#Menu_MBCFSFetishes-0", "#Menu_MBCFSActivities-0", "#Menu_MBCFSFetishes-1"];
 
 export { htmlTags, translation };

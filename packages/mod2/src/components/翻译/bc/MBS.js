@@ -83,6 +83,7 @@ const translation = {
     "Always read bios and ask for consent & limits. Users might not keep these up to date.": "始终阅读个人简介并征求同意和了解限制。用户可能不会及时更新这些信息。",
     "Activities (done to/by 她)": "活动（对她所做/由她所做）",
     "Hide neutral activities": "隐藏中性活动",
+    "Hide self-only activities": "隐藏自己的活动",
     "Show compatibility percentage in chat rooms": "在聊天室中显示兼容性百分比",
     "(Not recommended) Opt-out of others seeing your fetishes & activities through this plugin.": "(不推荐) 选择不让其他人通过此插件看到您的恋物癖和活动。",
     "Fetishes: N/A ｜ Activities: N/A": "恋物：不适用 ｜ 活动：不适用",
