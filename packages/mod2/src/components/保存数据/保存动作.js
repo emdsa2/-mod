@@ -4,7 +4,7 @@ import { load, save } from "./dataAccess";
 import log from "@mod-utils/log";
 
 /**
- * @typedef { {Name:string, Target:string, TargetSelf?: string, Dialog?:string, DialogSelf?:string} } ActivityData
+ * @typedef { {Name:string, Target?:string, TargetSelf?: string, Dialog?:string, DialogSelf?:string} } ActivityData
  */
 
 /**
@@ -15,11 +15,30 @@ export function activityName(actName) {
     return /** @type {ActivityName} */ (`笨蛋笨Luzi_${actName}`);
 }
 
+/**
+ * @param {any} data
+ * @returns {Record<string, ActivityData>}
+ */
+function validate(data) {
+    /** @type {Record<string, ActivityData>} */
+    const ret = {};
+    if (typeof ret != "object") return ret;
+
+    Object.entries(data).forEach(([key, value]) => {
+        if (typeof key !== "string" || typeof value !== "object") return;
+        if (typeof value.Name !== "string") return;
+        if (value.Target && (typeof value.Target !== "string" || typeof value.Dialog !== "string")) return;
+        if (value.TargetSelf && (typeof value.TargetSelf !== "string" || typeof value.DialogSelf !== "string")) return;
+        ret[key] = value;
+    });
+
+    return ret;
+}
+
 class 动作数据 {
     constructor() {
         /** @type {Record<string, ActivityData>} */
-        this.data = load(动作数据.name);
-
+        this.data = validate(load(动作数据.name));
         Object.values(this.data).forEach((act) => this.注册动作(act));
     }
 
@@ -66,6 +85,7 @@ class 动作数据 {
     注册动作(act) {
         if (!act.Name) {
             log.warn(`动作名称为空 : ${JSON.stringify(act)}`);
+            return;
         }
 
         /** @type { ActivityManagerInterface.ICustomActivity } */
@@ -131,8 +151,12 @@ export default function () {
                         if (ActivityManager.checkActivityAvailability(act.Name)) {
                             resultActivity.push({
                                 Name: act.Name.startsWith(oldPrefix) ? act.Name.slice(oldPrefix.length) : act.Name,
-                                Target: act.Target[0] || "",
-                                TargetSelf: act.TargetSelf[0] || "",
+                                Target: act.Target?.[0] || "",
+                                TargetSelf: (() => {
+                                    if (typeof act.TargetSelf === "boolean")
+                                        if (act.TargetSelf) return act.Target?.[0] || "";
+                                    if (Array.isArray(act.TargetSelf)) return act.TargetSelf[0] || "";
+                                })(),
                             });
                         }
                     });

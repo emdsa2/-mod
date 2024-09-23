@@ -24,6 +24,6 @@ export function setupLoad(criteria) {
         log.info(`开始加载`);
         queueLoaded = true;
         while (registerQueue.length > 0) registerQueue.shift()();
-        log.info(`加载完成 ${Date.now() - start}ms`);
+        log.info(`加载完成，耗时 ${Date.now() - start}ms`);
     })();
 }

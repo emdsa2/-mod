@@ -108,8 +108,7 @@ export function runSetupLoad() {
         // 再执行所有组的加载完整事件（一般是通过 requireGroup 添加的自定义的物品加载）
         AssetGroup.forEach((group) => runAssetLoad(group));
 
-        const time2 = Date.now();
-        log.info(`加载完成，耗时 ${time2 - time}ms`);
+        log.info(`加载完成，耗时 ${Date.now() - time}ms`);
     };
 
     if (AssetGroup.length > 50) {
