@@ -20,7 +20,7 @@ const GUIScreen = {
         this._Current = value;
         if (this._Current === null) {
             if (typeof PreferenceSubscreenExtensionsClear === "function") PreferenceSubscreenExtensionsClear();
-            else PreferenceSubscreen = "";
+            else PreferenceSubscreen = null;
         } else {
             this._Current.load();
         }
@@ -97,6 +97,8 @@ class 自定义动作设置 extends BaseSubscreen {
         this.当前动作索引 = 0;
         this.动作 = undefined;
         this.当前界面 = undefined;
+
+        this.当前组 = undefined;
     }
 
     run() {
@@ -105,38 +107,28 @@ class 自定义动作设置 extends BaseSubscreen {
         DrawImageResize(Path.resolve("image/返回白.png"), 114, 75, 90, 90);
         DrawText(`- 自定义动作设置 -`, 1000, 125, "Black");
 
-        DrawCharacter(Player, 370, 50, 0.9, false); // 绘制主要标签和玩家
-        if (PreferenceArousalIsActive()) {
-            // 绘制所有可用的角色区域
-            for (let Group of AssetGroup) {
-                if (
-                    Group.IsItem() &&
-                    !Group.MirrorActivitiesFrom &&
-                    AssetActivitiesForGroup("Female3DCG", Group.Name).length
-                )
-                    DrawAssetGroupZone(
-                        Player,
-                        Group.Zone,
-                        0.9,
-                        370,
-                        50,
-                        1,
-                        "#808080FF",
-                        3,
-                        PreferenceGetFactorColor(PreferenceGetZoneFactor(Player, Group.Name))
-                    );
-            }
-            // 可以选择并在角色身上绘制区域
-            if (Player.FocusGroup != null) {
-                DrawAssetGroupZone(Player, Player.FocusGroup.Zone, 0.9, 370, 50, 1, "cyan");
-                MainCanvas.textAlign = "center";
-            }
+        const DisplayBase = { X: 370, Y: 50 };
+        const DisplayRatio = 0.9;
+
+        DrawCharacter(Player, DisplayBase.X, DisplayBase.Y, DisplayRatio, false); // 绘制主要标签和玩家
+        if (Player.ArousalSettings.Active !== "Inactive") {
+            AssetGroup.filter(
+                (g) => g.IsItem() && !g.MirrorActivitiesFrom && AssetActivitiesForGroup("Female3DCG", g.Name).length
+            ).forEach((g) => {
+                const targeted = this.当前组 == g;
+                g.Zone.forEach((z) => {
+                    const [X, Y, W, H] = z.map((x) => x * DisplayRatio);
+                    if (targeted) DrawEmptyRect(DisplayBase.X + X, DisplayBase.Y + Y, W, H, "cyan");
+                    else DrawEmptyRect(DisplayBase.X + X, DisplayBase.Y + Y, W, H, "#80808080");
+                });
+            });
         }
+
         // DrawButton(80, 210, 160, 100, "", "#646464", "");
         const activityInfo2 = {
             Name: getInputElementById("笨蛋Luzi_activityName")?.value || "",
-            Target: Player.FocusGroup?.Name || "",
-            TargetSelf: Player.FocusGroup?.Name || "",
+            Target: this.当前组?.Name || "",
+            TargetSelf: this.当前组?.Name || "",
             Dialog: getInputElementById("笨蛋Luzi_targetSelfText")?.value || "",
             DialogSelf: getInputElementById("笨蛋Luzi_targetSelfText")?.value || "",
         };
@@ -234,7 +226,7 @@ class 自定义动作设置 extends BaseSubscreen {
                 DrawButton(1730, 720, 80, 60, "🚻", "White", "");
             }
 
-            if (Player.FocusGroup && Player.FocusGroup.Name && activityInfo2.Name) {
+            if (this.当前组?.Name && activityInfo2.Name) {
                 if (MouseIn(1770, 460, 150, 80)) {
                     // 获取用户输入的动作名字
                     const name = getInputElementById("笨蛋Luzi_activityName")?.value || "";
@@ -242,10 +234,9 @@ class 自定义动作设置 extends BaseSubscreen {
                     const nName = activityName(name);
 
                     // 检查是否存在重复的动作名字
-                    if (ActivityManager.checkActivityAvailability(nName)) {
-                        DrawText(`动作名字已存在!`, 1850, 400, "red"); // 绘制一个文本元素
-                    }
                     if (!ActivityManager.checkActivityAvailability(nName)) {
+                        DrawText(`动作名字已存在!`, 1850, 400, "red"); // 绘制一个文本元素
+                    } else {
                         DrawText(`新建动作`, 1850, 400, "White"); // 绘制一个文本元素
                     }
                 }
@@ -296,18 +287,16 @@ class 自定义动作设置 extends BaseSubscreen {
             this.exit();
         }
 
-        for (const Group of AssetGroup) {
-            if (
-                Group.IsItem() &&
-                !Group.MirrorActivitiesFrom &&
-                AssetActivitiesForGroup("Female3DCG", Group.Name).length
-            ) {
-                const Zone = Group.Zone.find((z) => DialogClickedInZone(Player, z, 0.9, 370, 50, 1));
-                if (Zone) {
-                    Player.FocusGroup = Group;
-                    PreferenceArousalZoneFactor = PreferenceGetZoneFactor(Player, Group.Name);
-                }
-            }
+        const DisplayBase = { X: 370, Y: 50 };
+        const DisplayRatio = 0.9;
+        if (MouseIn(DisplayBase.X, DisplayBase.Y, 500, 1000)) {
+            this.当前组 = AssetGroup.filter(
+                (g) => g.IsItem() && !g.MirrorActivitiesFrom && AssetActivitiesForGroup("Female3DCG", g.Name).length
+            ).find((g) =>
+                g.Zone.map((rect) => rect.map((x) => x * DisplayRatio)).some(([X, Y, W, H]) =>
+                    MouseIn(DisplayBase.X + X, DisplayBase.Y + Y, W, H)
+                )
+            );
         }
 
         if (MouseIn(80, 210, 160, 100)) {
@@ -381,11 +370,9 @@ class 自定义动作设置 extends BaseSubscreen {
                 let name = getInputElementById("笨蛋Luzi_activityName")?.value || ""; // 获取用户输入的动作名字
                 const nName = activityName(name);
                 // 检查是否存在重复的动作名字
-                if (ActivityFemale3DCGOrdering.includes(nName)) {
+                if (!ActivityManager.checkActivityAvailability(nName)) {
                     this.新建动作 = false;
-                }
-
-                if (!ActivityFemale3DCGOrdering.includes(nName)) {
+                } else {
                     this.新建动作 = true;
                     动作数据管理()?.保存();
                     log.info("已存储进个人设置");

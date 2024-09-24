@@ -1,6 +1,8 @@
 import ModManager from "@mod-utils/ModManager";
 import { load, save } from "./dataAccess";
 
+const 高潮数据key = "高潮数据";
+
 class 高潮数据 {
     constructor() {
         /** @type {boolean} */
@@ -9,7 +11,11 @@ class 高潮数据 {
         this.高潮次数 = 0;
 
         /** @type {{高潮开关:boolean, 高潮次数:number }} */
-        const data = load(高潮数据.name);
+        const data = (() => {
+            let ret = load(高潮数据key);
+            if (Object.keys(ret).length === 0) return load(高潮数据.name);
+            return ret;
+        })();
         if (data) {
             this.高潮开关 = data.高潮开关;
             this.高潮次数 = data.高潮次数;
@@ -43,7 +49,7 @@ class 高潮数据 {
     }
 
     保存() {
-        save(高潮数据.name, this.data());
+        save(高潮数据key, this.data());
     }
 }
 

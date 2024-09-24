@@ -35,10 +35,18 @@ function validate(data) {
     return ret;
 }
 
+const 动作数据key = "动作数据";
+
 class 动作数据 {
     constructor() {
         /** @type {Record<string, ActivityData>} */
-        this.data = validate(load(动作数据.name));
+        this.data = validate(
+            (() => {
+                let ret = load(动作数据key);
+                if (Object.keys(ret).length === 0) return load(动作数据.name);
+                return ret;
+            })()
+        );
         Object.values(this.data).forEach((act) => this.注册动作(act));
     }
 
@@ -112,7 +120,7 @@ class 动作数据 {
     }
 
     保存() {
-        save(动作数据.name, this.data);
+        save(动作数据key, this.data);
     }
 
     清空() {
