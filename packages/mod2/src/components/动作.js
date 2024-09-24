@@ -1523,7 +1523,7 @@ const activities = [
     },
     {
         activity: {
-            Name: "揉搓阴环",
+            Name: "双腿颤抖",
             Prerequisite: ["TargetHasItemVulva"],
             MaxProgress: 50,
             Target: [],
@@ -1531,8 +1531,8 @@ const activities = [
         },
         useImage: "Wiggle",
         labelSelf: {
-            CN: "揉搓阴环",
-            EN: "Rub Nipples",
+            CN: "双腿颤抖",
+            EN: "Shaking legs.",
         },
         dialogSelf: {
             CN: "SourceCharacter颤抖着双腿.",

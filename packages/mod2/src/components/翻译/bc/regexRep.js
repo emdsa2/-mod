@@ -1301,10 +1301,6 @@ const act_dialogs = [
         replacement: "$1 身上 $2 的诅咒苏醒了, 禁止该物品被其他物品替换.",
     },
     {
-        regex: /(.+) spoke openly in a room\./,
-        replacement: "$1 尝试在房间里说话.",
-    },
-    {
         regex: /(.+) did not use a mandatory word while talking\./,
         replacement: "$1 在说话时未使用规定的词汇.",
     },
@@ -1324,6 +1320,11 @@ const act_dialogs = [
         regex: /The curse on (.+)'s (.+) wakes up and the item reappears\./,
         replacement: "$1身上的诅咒被唤醒, $2 重新出现.",
     },
+    {
+        regex: /(.+) broke a rule to only speak using specific sound patterns\./,
+        replacement: "$1违反了只使用特定句子说话的规定.",
+    },
+
 
     // BCC
     // 强制舔腿
