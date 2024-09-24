@@ -21,9 +21,11 @@ const activities = [
                 const asset = AssetGet("Female3DCG", "ItemHandheld", "棒棒糖_Luzi");
                 if (!asset) return;
                 // 获取 TargetCharacter 玩家信息
-                let infoTargetCharacter = ChatRoomCharacterDrawlist.filter(obj => obj.MemberNumber === info.TargetCharacter)[0]
+                let infoTargetCharacter = ChatRoomCharacterDrawlist.filter(
+                    (obj) => obj.MemberNumber === info.TargetCharacter
+                )[0];
                 // 给棒棒糖
-                InventoryWear(infoTargetCharacter, "棒棒糖_Luzi", "ItemMouth",);
+                InventoryWear(infoTargetCharacter, "棒棒糖_Luzi", "ItemMouth");
                 InventoryRemove(player, "ItemHandheld", true);
                 ChatRoomCharacterUpdate(infoTargetCharacter); // 更新外观
             }
@@ -48,5 +50,5 @@ const activities = [
 ];
 
 export default function () {
-    // ActivityManager.addCustomActivities(activities);
+    ActivityManager.addCustomActivities(activities);
 }

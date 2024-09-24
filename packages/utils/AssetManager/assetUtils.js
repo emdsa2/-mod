@@ -1,6 +1,6 @@
 import log from "../log";
 import { AssetConfig, ParsedAsset, resolveStringAsset } from "./assetConfigs";
-import { CustomAssetAdd } from "./customStash";
+import { CustomAssetAdd, getCustomAssets } from "./customStash";
 import { Entries, resolveEntry } from "./entries";
 import { addLayerNames } from "./layerNames";
 import { pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
@@ -30,6 +30,10 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
 
         const assetDefRes = AssetResolveCopyConfig.AssetDefinition(assetDef, groupName, ParsedAsset.value);
         const solidDesc = description || { CN: assetDefRes.Name.replace(/_.*?Luzi$/, "") };
+
+        if (getCustomAssets()[groupName]?.[assetDef.Name] !== undefined) {
+            log.warn(`Asset {${groupName}:${assetDef.Name}} already existed!`);
+        }
 
         // 先在这里设置一遍显示名称
         CustomAssetAdd(groupObj, assetDefRes, AssetConfig.value).then((asset) => {
