@@ -78,6 +78,14 @@ class 动作数据 {
 
     /**
      * @param {string} actName
+     * @returns { boolean}
+     */
+    动作可用(actName) {
+        return this.data[actName] === undefined;
+    }
+
+    /**
+     * @param {string} actName
      */
     删除动作(actName) {
         const name = activityName(actName);
