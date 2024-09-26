@@ -72,9 +72,21 @@ export function setupImgMapping() {
         return src;
     };
 
-    ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
-        (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) => {
+    ["DrawImageEx", "DrawImageResize", "GLDrawImage", "DrawGetImage"].forEach(
+        (/** @type {"DrawImageEx" | "GLDrawImage" | "DrawGetImage"}*/ fn) => {
             ModManager.progressiveHook(fn, 0).inject((args, next) => (args[0] = mapImgSrc(args[0])));
         }
     );
+
+    ModManager.hookFunction("CraftingElements._RadioButton", 5, (args, next) => {
+        const ret = next(args);
+        const img = ret.querySelector("img");
+        if (img?.src) {
+            const idx = img.src.indexOf("Assets/");
+            if (idx !== -1) {
+                img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
+            }
+        }
+        return ret;
+    });
 }

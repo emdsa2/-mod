@@ -107,6 +107,8 @@ export function runSetupLoad() {
         AssetGroup.forEach((group) => runAssetDefsLoad(group));
         // 再执行所有组的加载完整事件（一般是通过 requireGroup 添加的自定义的物品加载）
         AssetGroup.forEach((group) => runAssetLoad(group));
+        // 重新加载制作物品
+        CraftingAssets = CraftingAssetsPopulate();
 
         log.info(`加载完成，耗时 ${Date.now() - time}ms`);
     };

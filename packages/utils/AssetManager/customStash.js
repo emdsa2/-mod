@@ -71,6 +71,33 @@ export function enableCustomAssets() {
             }
         }
     });
+
+    ModManager.progressiveHook("InventoryAvailable")
+        .inside("CraftingItemListBuild")
+        .override((args, next) => {
+            const [C, Name, Group] = args;
+            if (customAssets[Group]?.[Name]) return true;
+            return next(args);
+        });
+
+    ModManager.progressiveHook("CraftingValidate").inject((args, next) => {
+        const asset = CraftingAssets[args[0].Item][0];
+        if (asset && customAssets[asset.Group.Name]?.[asset.Name]) args[3] = false;
+    });
+
+    const pInventory = ModManager.randomGlobalFunction("CraftingInventory", () => {
+        return [
+            ...Player.Inventory,
+            ...Object.values(customAssets)
+                .map((x) => Object.values(x))
+                .flat()
+                .map((Asset) => ({ Asset })),
+        ];
+    });
+
+    ModManager.patchFunction("CraftingRun", {
+        "for (let Item of Player.Inventory) {": `for (let Item of ${pInventory}()) {`,
+    });
 }
 
 /**
