@@ -81,7 +81,7 @@ export function enableCustomAssets() {
         });
 
     ModManager.progressiveHook("CraftingValidate").inject((args, next) => {
-        const asset = CraftingAssets[args[0].Item][0];
+        const asset = CraftingAssets[args[0].Item]?.[0];
         if (asset && customAssets[asset.Group.Name]?.[asset.Name]) args[3] = false;
     });
 
