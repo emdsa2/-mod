@@ -14,7 +14,7 @@ const activities = [
         labelSelf: {
             CN: "歪头",
             EN: "Tilt Head",
-            RU: "Наклон головы",
+            RU: "Наклонить Голову",
         },
         dialogSelf: {
             CN: "SourceCharacter歪头.",
@@ -34,7 +34,7 @@ const activities = [
         labelSelf: {
             CN: "环视周围",
             EN: "Look Around",
-            RU: "Посмотрите вокруг",
+            RU: "Посмотреть Вокруг",
         },
         dialogSelf: {
             CN: "SourceCharacter环视周围.",
@@ -52,13 +52,13 @@ const activities = [
         useImage: "Wiggle",
         label: {
             CN: "上下打量",
-            EN: "look up and down",
-            RU: "Смотреть вверх и вниз",
+            EN: "Take a look",
+            RU: "Смерить Взглядом",
         },
         dialog: {
             CN: "SourceCharacter仔细打量着TargetCharacter.",
-            EN: "SourceCharacter sizes up TargetCharacter.",
-            RU: "SourceCharacter размер до TargetCharacter.",
+            EN: "SourceCharacter glance at TargetCharacter.",
+            RU: "SourceCharacter оглядывает TargetCharacter с головы до пяток.",
         },
     },
     {
@@ -73,7 +73,7 @@ const activities = [
         labelSelf: {
             CN: "闭上眼睛",
             EN: "Close Eyes",
-            RU: "Закрыть глаза",
+            RU: "Закрыть Глаза",
         },
         dialogSelf: {
             CN: "SourceCharacter闭上了眼睛.",
@@ -93,12 +93,12 @@ const activities = [
         labelSelf: {
             CN: "眼睛呆滞",
             EN: "Blank Stare",
-            RU: "Уставилась в пустоту",
+            RU: "Уставиться в Пустоту",
         },
         dialogSelf: {
             CN: "SourceCharacter呆滞地看着前方.",
             EN: "SourceCharacter stares blankly ahead.",
-            RU: "SourceCharacter Безучастно смотрит вперед",
+            RU: "SourceCharacter смотрит вперед с остекленевшим взлядом.",
         },
     },
     {
@@ -113,12 +113,12 @@ const activities = [
         labelSelf: {
             CN: "眼睛湿润",
             EN: "Watery Eyes",
-            RU: "Прослезилась",
+            RU: "Прослезиться",
         },
         dialogSelf: {
             CN: "SourceCharacter眼角泛着泪光.",
             EN: "SourceCharacter's eyes are watery.",
-            RU: "SourceCharacter's глаза намокли",
+            RU: "Глаза SourceCharacter намокли.",
         },
     },
     {
@@ -133,12 +133,12 @@ const activities = [
         labelSelf: {
             CN: "流眼泪",
             EN: "Shed Tears",
-            RU: "плачет",
+            RU: "Плакать",
         },
         dialogSelf: {
             CN: "SourceCharacter的眼泪从眼角流下.",
             EN: "SourceCharacter's tears fall from the corners of her eyes.",
-            RU: "Слезы SourceCharacter текут из уголков её глаз.",
+            RU: "Слезы текут из уголков глаз SourceCharacter.",
         },
     },
     {
@@ -153,7 +153,7 @@ const activities = [
         labelSelf: {
             CN: "张开嘴",
             EN: "Open Mouth",
-            RU: "открыла рот",
+            RU: "Открыть Рот",
         },
         dialogSelf: {
             CN: "SourceCharacter张开了嘴.",
@@ -173,7 +173,7 @@ const activities = [
         labelSelf: {
             CN: "吞咽口水",
             EN: "Swallow Saliva",
-            RU: "сглатывает слюну",
+            RU: "Сглотнуть Слюну",
         },
         dialogSelf: {
             CN: "SourceCharacter吞咽嘴里的口水.",
@@ -193,12 +193,12 @@ const activities = [
         labelSelf: {
             CN: "流口水",
             EN: "Drool",
-            RU: "слюни",
+            RU: "Пусктить Слюни",
         },
         dialogSelf: {
             CN: "SourceCharacter的口水顺着嘴角流下.",
             EN: "SourceCharacter drools down the corner of the mouth.",
-            RU: "SourceCharacter пускает слюни.",
+            RU: "SourceCharacter пускает слюни из уголков рта.",
         },
     },
     {
@@ -213,7 +213,7 @@ const activities = [
         labelSelf: {
             CN: "轻声喘息",
             EN: "Softly Pant",
-            RU: "Тихо вздыхает",
+            RU: "Тихо Вздохнуть",
         },
         dialogSelf: {
             CN: "SourceCharacter 发出轻声地喘息.",
@@ -253,12 +253,12 @@ const activities = [
         labelSelf: {
             CN: "嘟囔",
             EN: "Muttered",
-            RU: "бормочет",
+            RU: "Бормотать",
         },
         dialogSelf: {
             CN: "SourceCharacter 嘟囔着.",
             EN: "SourceCharacter muttered.",
-            RU: "SourceCharacter бормочет.",
+            RU: "SourceCharacter недовольно бормочет себе под нос.",
         },
     },
     {
@@ -273,17 +273,17 @@ const activities = [
         label: {
             CN: "舔手",
             EN: "Lick Hand",
-            RU: "облизывает руку",
+            RU: "Облизать Руку",
         },
         dialog: {
             CN: "SourceCharacter舔TargetCharacter的手.",
             EN: "SourceCharacter licks TargetCharacter's hand.",
-            RU: "SourceCharacter облизывает TargetCharacter's руку.",
+            RU: "SourceCharacter облизывает руку TargetCharacter.",
         },
         labelSelf: {
             CN: "舔手",
             EN: "Lick Hand",
-            RU: "облизывает руку",
+            RU: "Облизать Руку",
         },
         dialogSelf: {
             CN: "SourceCharacter舔PronounPossessive自己的手.",
@@ -303,7 +303,7 @@ const activities = [
         label: {
             CN: "舔手指",
             EN: "Lick Fingers",
-            RU: "Облизывать пальцы",
+            RU: "Облизать Пальцы",
         },
         dialog: {
             CN: "SourceCharacter舔TargetCharacter的手指.",
@@ -313,12 +313,12 @@ const activities = [
         labelSelf: {
             CN: "舔手指",
             EN: "Lick Fingers",
-            RU: "Облизывать пальцы",
+            RU: "Облизать Пальцы",
         },
         dialogSelf: {
             CN: "SourceCharacter舔PronounPossessive自己的手指.",
             EN: "SourceCharacter licks PronounPossessive own fingers.",
-            RU: "Eleanor облизывает свои пальцы",
+            RU: "SourceCharacter облизывает свои пальцы.",
         },
     },
     {
@@ -333,22 +333,22 @@ const activities = [
         label: {
             CN: "吮吸手指",
             EN: "Suck on Fingers",
-            RU: "Сосать пальцы",
+            RU: "Пососать Пальцы",
         },
         dialog: {
             CN: "SourceCharacter吮吸TargetCharacter的手指.",
             EN: "SourceCharacter sucks on TargetCharacter's fingers.",
-            RU: "SourceCharacter посасывает пальцы TargetCharacter",
+            RU: "SourceCharacter посасывает пальцы TargetCharacter.",
         },
         labelSelf: {
             CN: "吮吸手指",
             EN: "Suck on Fingers",
-            RU: "Сосать пальцы",
+            RU: "Пососать Пальцы",
         },
         dialogSelf: {
             CN: "SourceCharacter吮吸PronounPossessive的手指.",
             EN: "SourceCharacter sucks on PronounPossessive own fingers.",
-            RU: "SourceCharacter сосет свои пальцы",
+            RU: "SourceCharacter сосет свои пальцы.",
         },
     },
     {
@@ -362,7 +362,7 @@ const activities = [
         label: {
             CN: "舔脸",
             EN: "Lick Face",
-            RU: "Облизать лицо",
+            RU: "Облизать Лицо",
         },
         dialog: {
             CN: "SourceCharacter舔TargetCharacter的脸.",
@@ -382,7 +382,7 @@ const activities = [
         label: {
             CN: "舔脚",
             EN: "Lick Feet",
-            RU: "Лизать ноги",
+            RU: "Лизать Ноги",
         },
         dialog: {
             CN: "SourceCharacter 舔 TargetCharacter 的脚.",
@@ -392,7 +392,7 @@ const activities = [
         labelSelf: {
             CN: "舔脚",
             EN: "Lick Feet",
-            RU: "Лизать ноги",
+            RU: "Лизать Ноги",
         },
         dialogSelf: {
             CN: "SourceCharacter 舔 PronounPossessive 自己的脚.",
@@ -412,7 +412,7 @@ const activities = [
         label: {
             CN: "嗅手",
             EN: "Sniff",
-            RU: "Понюхать руку",
+            RU: "Понюхать Руку",
         },
         dialog: {
             CN: "SourceCharacter 用鼻子嗅了嗅 TargetCharacter 的手.",
@@ -422,7 +422,7 @@ const activities = [
         labelSelf: {
             CN: "嗅手",
             EN: "Sniff",
-            RU: "Понюхать руку",
+            RU: "Понюхать Руку",
         },
         dialogSelf: {
             CN: "SourceCharacter 用鼻子嗅了嗅自己的手.",
@@ -441,7 +441,7 @@ const activities = [
         label: {
             CN: "爬到脚边",
             EN: "Crawl to Feet",
-            RU: "Ползти к ногам",
+            RU: "Ползти к Ногам",
         },
         dialog: {
             CN: "SourceCharacter爬到TargetCharacter的脚边.",
@@ -460,7 +460,7 @@ const activities = [
         label: {
             CN: "蹭大腿",
             EN: "Nuzzle Thigh",
-            RU: "Тереться об ляжку",
+            RU: "Тереться об Ляжку",
         },
         dialog: {
             CN: "SourceCharacter用头轻轻蹭TargetCharacter的大腿.",
@@ -479,7 +479,7 @@ const activities = [
         label: {
             CN: "蹭小腿",
             EN: "Nuzzle Shin",
-            RU: "Тереться об голень",
+            RU: "Тереться об Голень",
         },
         dialog: {
             CN: "SourceCharacter用头轻轻蹭TargetCharacter的小腿.",
@@ -499,12 +499,12 @@ const activities = [
         labelSelf: {
             CN: "踮起双脚",
             EN: "Stand on Tiptoes",
-			RU: "Стоять на ципочках",
+			RU: "Встать на Цыпочки",
         },
         dialogSelf: {
             CN: "SourceCharacter踮起PronounPossessive的双脚.",
             EN: "SourceCharacter stands on tiptoes.",
-			RU: "SourceCharacter встает на ципочки.",
+			RU: "SourceCharacter встает на цыпочки.",
         },
     },
     {
@@ -519,12 +519,12 @@ const activities = [
         labelSelf: {
             CN: "摇晃脚踝",
             EN: "Wiggle Ankles",
-			RU: "Покачивать лодыжками",
+			RU: "Покачиваться",
         },
         dialogSelf: {
             CN: "SourceCharacter摇晃PronounPossessive的脚踝.",
             EN: "SourceCharacter wiggles PronounPossessive ankles.",
-			RU: "SourceCharacter покачивается на своих лодыжках.",
+			RU: "SourceCharacter покачивается стоя на ногах.",
         },
     },
     {
@@ -539,7 +539,7 @@ const activities = [
         labelSelf: {
             CN: "伸出脚",
             EN: "Extend Leg",
-			RU: "Приподнять ногу",
+			RU: "Приподнять Ногу",
         },
         dialogSelf: {
             CN: "SourceCharacter伸出PronounPossessive的脚.",
@@ -559,7 +559,7 @@ const activities = [
         label: {
             CN: "掰开双腿",
             EN: "Spread Legs",
-			RU: "Раздвинуть ноги",
+			RU: "Раздвинуть Ноги",
         },
         dialog: {
             CN: "SourceCharacter掰开TargetCharacter的双腿.",
@@ -580,11 +580,11 @@ const activities = [
         labelSelf: {
             CN: "夹紧双腿",
             EN: "Squeeze thighs",
-			RU: "Сжать ляжки",
+			RU: "Сжать Ляжки",
         },
         dialogSelf: {
             CN: "SourceCharacter夹紧了自己的腿.",
-			EN: "SourceCharacter clamps PronounPossessive own thighs",
+			EN: "SourceCharacter clamps PronounPossessive own thighs.",
 			RU: "SourceCharacter сжимает свои ляжки.",
         },
     },
@@ -599,7 +599,7 @@ const activities = [
         label: {
             CN: "脚托起下巴",
             EN: "Foot on Chin",
-			RU: "Ногу на подбородок",
+			RU: "Ногу на Подбородок",
         },
         dialog: {
             CN: "SourceCharacter用脚托起TargetCharacter的下巴.",
@@ -619,7 +619,7 @@ const activities = [
         label: {
             CN: "戳脸",
             EN: "Poke Face",
-			RU: "Тыкнуть в лицо",
+			RU: "Тыкнуть в Лицо",
         },
         dialog: {
             CN: "SourceCharacter戳了戳TargetCharacter的脸.",
@@ -629,7 +629,7 @@ const activities = [
         labelSelf: {
             CN: "戳脸",
             EN: "Poke Face",
-			RU: "Тыкнуть в лицо",
+			RU: "Тыкнуть в Лицо",
         },
         dialogSelf: {
             CN: "SourceCharacter戳了戳自己的脸.",
@@ -649,7 +649,7 @@ const activities = [
         label: {
             CN: "捏脸",
             EN: "Pinch Face",
-			RU: "Ущипнуть за лицо",
+			RU: "Ущипнуть за Лицо",
         },
         dialog: {
             CN: "SourceCharacter捏了捏TargetCharacter的脸.",
@@ -659,12 +659,12 @@ const activities = [
         labelSelf: {
             CN: "捏脸",
             EN: "Pinch Face",
-			RU: "Ущипнуть за лицо",
+			RU: "Ущипнуть за Лицо",
         },
         dialogSelf: {
             CN: "SourceCharacter捏了捏自己的脸.",
             EN: "SourceCharacter pinches own face.",
-			RU: "SourceCharacter щипает себя за лицо.",
+			RU: "SourceCharacter щипает свое лицо.",
         },
     },
     {
@@ -679,7 +679,7 @@ const activities = [
         label: {
             CN: "戳手臂",
             EN: "Poke Arm",
-			RU: "Тыкнуть в руку",
+			RU: "Тыкнуть в Руку",
         },
         dialog: {
             CN: "SourceCharacter戳了戳TargetCharacter的手臂.",
@@ -689,7 +689,7 @@ const activities = [
         labelSelf: {
             CN: "戳手臂",
             EN: "Poke Arm",
-			RU: "Тыкнуть в руку",
+			RU: "Тыкнуть в Руку",
         },
         dialogSelf: {
             CN: "SourceCharacter戳了戳自己的手臂.",
@@ -709,7 +709,7 @@ const activities = [
         label: {
             CN: "揉脸",
             EN: "Rub Face",
-			RU: "Потереть лицо",
+			RU: "Потереть Лицо",
         },
         dialog: {
             CN: "SourceCharacter揉了揉TargetCharacter的脸.",
@@ -719,7 +719,7 @@ const activities = [
         labelSelf: {
             CN: "揉脸",
             EN: "Rub Face",
-			RU: "Потереть лицо",
+			RU: "Потереть Лицо",
 			
         },
         dialogSelf: {
@@ -740,7 +740,7 @@ const activities = [
         label: {
             CN: "摇晃手臂",
             EN: "Shake Arms",
-			RU: "Трясти за плечи",
+			RU: "Трясти за Плечи",
         },
         dialog: {
             CN: "SourceCharacter摇晃TargetCharacter的手臂.",
@@ -750,7 +750,7 @@ const activities = [
         labelSelf: {
             CN: "摇晃手臂",
             EN: "Shake Arms",
-			RU: "Пожать плечами",
+			RU: "Пожать Плечами",
         },
         dialogSelf: {
             CN: "SourceCharacter摇晃自己的手臂.",
@@ -769,7 +769,7 @@ const activities = [
         label: {
             CN: "轻推",
             EN: "Light Push",
-			RU: "Легонько толкнуть",
+			RU: "Легонько Толкнуть",
         },
         dialog: {
             CN: "SourceCharacter用手轻推TargetCharacter的身体.",
@@ -788,12 +788,12 @@ const activities = [
         label: {
             CN: "托起脚",
             EN: "Lift Foot",
-			RU: "Поднять ступню",
+			RU: "Приподнять Ступню",
         },
         dialog: {
             CN: "SourceCharacter托起TargetCharacter的脚.",
             EN: "SourceCharacter lifts TargetCharacter's foot.",
-			RU: "SourceCharacter поднимает ступню TargetCharacter",
+			RU: "SourceCharacter приподнимает ступню TargetCharacter",
         },
     },
     {
@@ -808,7 +808,7 @@ const activities = [
         labelSelf: {
             CN: "扭动手腕",
             EN: "Twist Wrists",
-			RU: "Вращать кистями",
+			RU: "Вращать Кистями",
         },
         dialogSelf: {
             CN: "SourceCharacter扭动PronounPossessive的手腕.",
@@ -828,7 +828,7 @@ const activities = [
         labelSelf: {
             CN: "挠头",
             EN: "Scratch Head",
-			RU: "Почесать голову"
+			RU: "Почесать Голову"
         },
         dialogSelf: {
             CN: "SourceCharacter挠了挠PronounPossessive的头.",
@@ -848,22 +848,22 @@ const activities = [
         label: {
             CN: "盖住耳朵",
             EN: "Cover Ears",
-			RU: "Закрыть уши",
+			RU: "Закрыть Уши",
         },
         dialog: {
             CN: "SourceCharacter用手盖住了TargetCharacter的耳朵.",
 			EN: "SourceCharacter covers TargetCharacter's ears with hands.",
-			RU: "SourceCharacter прикрывает уши TargetCharacter руками",
+			RU: "SourceCharacter прикрывает уши TargetCharacter руками.",
         },
         labelSelf: {
             CN: "盖住耳朵",
             EN: "Cover Ears",
-			RU: "Закрыть уши",
+			RU: "Закрыть Уши",
         },
         dialogSelf: {
             CN: "SourceCharacter用手盖住了自己的耳朵.",
 			EN: "SourceCharacter covers own ears with hands.",
-			RU: "SourceCharacter прикрывает свои уши руками",
+			RU: "SourceCharacter прикрывает свои уши руками.",
         },
     },
     {
@@ -878,7 +878,7 @@ const activities = [
         label: {
             CN: "遮住眼睛",
             EN: "Cover Eyes",
-			RU: "Прикрыть глазки",
+			RU: "Прикрыть Глазки",
         },
         dialog: {
             CN: "SourceCharacter用手遮住了TargetCharacter的眼睛.",
@@ -888,12 +888,12 @@ const activities = [
         labelSelf: {
             CN: "遮住眼睛",
             EN: "Cover Eyes",
-			RU: "Прикрыть глазки",
+			RU: "Прикрыть Глазки",
         },
         dialogSelf: {
             CN: "SourceCharacter用手遮住了自己的眼睛.",
             EN: "SourceCharacter covers PronounPossessive own eyes with hands.",
-			RU: "SourceCharacter прикрывает свои глазки руками",
+			RU: "SourceCharacter прикрывает свои глазки руками.",
         },
     },
     {
@@ -908,7 +908,7 @@ const activities = [
         label: {
             CN: "捂住头",
             EN: "Cover Head",
-			RU: "Прикрыть голову",
+			RU: "Прикрыть Голову",
         },
         dialog: {
             CN: "SourceCharacter捂住TargetCharacter的头.",
@@ -918,7 +918,7 @@ const activities = [
         labelSelf: {
             CN: "捂住头",
             EN: "Cover Head",
-			RU: "Прикрыть голову",
+			RU: "Прикрыть Голову",
         },
         dialogSelf: {
             CN: "SourceCharacter捂住自己的头.",
@@ -938,22 +938,22 @@ const activities = [
         label: {
             CN: "捂住下体",
             EN: "Cover Groin",
-			RU: "Прикрыть пах",
+			RU: "Прикрыть Промежность",
         },
         dialog: {
             CN: "SourceCharacter捂住TargetCharacter的下体.",
             EN: "SourceCharacter covers TargetCharacter's groin with hands.",
-			RU: "SourceCharacter прикрывает пах TargetCharacter своими руками.",
+			RU: "SourceCharacter прикрывает промежность TargetCharacter своими руками.",
         },
         labelSelf: {
             CN: "捂住下体",
             EN: "Cover Groin",
-			RU: "Прикрыть пах",
+			RU: "Прикрыть Промежность",
         },
         dialogSelf: {
             CN: "SourceCharacter捂住自己的下体.",
             EN: "SourceCharacter covers own groin with hands.",
-			RU: "SourceCharacter прикрывает свой пах руками.",
+			RU: "SourceCharacter прикрывает свою промежность руками.",
         },
     },
     {
@@ -968,7 +968,7 @@ const activities = [
         label: {
             CN: "掀开裙子",
             EN: "Lift Skirt",
-			RU: "Приподнять юбку",
+			RU: "Приподнять Юбку",
         },
         dialog: {
             CN: "SourceCharacter掀开TargetCharacter的裙子.",
@@ -978,7 +978,7 @@ const activities = [
         labelSelf: {
             CN: "掀开裙子",
             EN: "Lift Skirt",
-			RU: "Приподнять юбку",
+			RU: "Приподнять Юбку",
         },
         dialogSelf: {
             CN: "SourceCharacter掀开PronounPossessive的裙子.",
@@ -997,7 +997,7 @@ const activities = [
         label: {
             CN: "挥手",
             EN: "Wave Hand",
-			RU: "Помахать рукой",
+			RU: "Помахать Рукой",
         },
         dialog: {
             CN: "SourceCharacter向TargetCharacter挥手.",
@@ -1017,7 +1017,7 @@ const activities = [
         labelSelf: {
             CN: "伸出手",
             EN: "Reach Out Hand",
-			RU: "Протянуть руку",
+			RU: "Протянуть Руку",
         },
         dialogSelf: {
             CN: "SourceCharacter伸出自己的手.",
@@ -1037,7 +1037,7 @@ const activities = [
         labelSelf: {
             CN: "捂住胸",
             EN: "Cover Chest",
-			RU: "Прикрыть грудь",
+			RU: "Прикрыть Грудь",
         },
         dialogSelf: {
             CN: "SourceCharacter捂住自己的胸.",
@@ -1056,7 +1056,7 @@ const activities = [
         label: {
             CN: "手托起下巴",
             EN: "Hand under Chin",
-			RU: "Взять за подбородок",
+			RU: "Взять за Подбородок",
         },
         dialog: {
             CN: "SourceCharacter用手托起TargetCharacter的下巴.",
@@ -1075,12 +1075,12 @@ const activities = [
         label: {
             CN: "拽链子",
             EN: "Pull Chain",
-			RU: "Тянуть за поводок",
+			RU: "Потянуть за Поводок",
         },
         dialog: {
             CN: "SourceCharacter拽TargetCharacter的链子.",
             EN: "SourceCharacter pulls TargetCharacter's chain.",
-			RU: "SourceCharacter тянет за поводок на ошейнике TargetCharacter",
+			RU: "SourceCharacter тянет TargetCharacter за поводок.",
         },
     },
     {
@@ -1094,7 +1094,7 @@ const activities = [
         label: {
             CN: "弹额头",
             EN: "Flick Forehead",
-			RU: "Щелбан",
+			RU: "Поставить Щелбан",
         },
         dialog: {
             CN: "SourceCharacter弹了一下TargetCharacter的额头.",
@@ -1113,12 +1113,12 @@ const activities = [
         label: {
             CN: "弹阴蒂",
             EN: "Flick Clitoris",
-			RU: "Щелчек по клитору",
+			RU: "Щелчек по Клитору",
         },
         dialog: {
             CN: "SourceCharacter弹了一下TargetCharacter的阴蒂.",
             EN: "SourceCharacter flicks TargetCharacter's clitoris.",
-			RU: "SourceCharacter щелкает TargetCharacter по клитору",
+			RU: "SourceCharacter щелкает TargetCharacter по клитору.",
         },
     },
     {
@@ -1132,7 +1132,7 @@ const activities = [
         label: {
             CN: "抱腿",
             EN: "Hug Legs",
-			RU: "Обнять ноги",
+			RU: "Обнять Ноги",
         },
         dialog: {
             CN: "SourceCharacter抱住TargetCharacter的腿.",
@@ -1151,12 +1151,12 @@ const activities = [
         label: {
             CN: "拉扯衣角",
             EN: "Tug Clothes",
-			RU: "Потянуть за одежду",
+			RU: "Потянуть за Одежду",
         },
         dialog: {
             CN: "SourceCharacter用手拉扯TargetCharacter的衣角.",
             EN: "SourceCharacter tugs at TargetCharacter's clothes.",
-			RU: "SourceCharacter тянет TargetCharacter за одежду",
+			RU: "SourceCharacter тянет TargetCharacter за одежду.",
         },
     },
     {
@@ -1170,7 +1170,7 @@ const activities = [
         label: {
             CN: "拍头",
 			EN: "Hit The Head",
-			RU: "Ударить по голове",
+			RU: "Ударить по Голове",
         },
         dialog: {
             CN: "SourceCharacter拍打TargetCharacter的头.",
@@ -1190,12 +1190,12 @@ const activities = [
         labelSelf: {
             CN: "竖起尾巴",
             EN: "Raise Tail",
-			RU: "Поднять хвост",
+			RU: "Поднять Хвост",
         },
         dialogSelf: {
             CN: "SourceCharacter的尾巴竖了起来.",
-            EN: "SourceCharacter raises own tail.",
-			RU: "SourceCharacter держит хвост трубой.",
+            EN: "SourceCharacter raises PronounPossessive tail.",
+			RU: "SourceCharacter поднимает свой хвост.",
         },
     },
     {
@@ -1230,7 +1230,7 @@ const activities = [
         label: {
             CN: "舔尾巴",
             EN: "Lick Tail",
-			RU: "Облизать хвост",
+			RU: "Облизать Хвост",
         },
         dialog: {
             CN: "SourceCharacter舔TargetCharacter的尾巴.",
@@ -1240,7 +1240,7 @@ const activities = [
         labelSelf: {
             CN: "舔尾巴",
             EN: "Lick Tail",
-			RU: "Вылизать хвост",
+			RU: "Вылизать Хвост",
         },
         dialogSelf: {
             CN: "SourceCharacter舔自己的尾巴.",
@@ -1260,7 +1260,7 @@ const activities = [
         label: {
             CN: "轻抚尾巴",
             EN: "Gently Stroke Tail",
-			RU: "Нежно погладить хвостик",
+			RU: "Нежно Погладить Хвостик",
         },
         dialog: {
             CN: "SourceCharacter轻抚TargetCharacter的尾巴.",
@@ -1270,12 +1270,12 @@ const activities = [
         labelSelf: {
             CN: "轻抚尾巴",
             EN: "Gently Stroke Tail",
-			RU: "Нежно подрочить хвостик",
+			RU: "Нежно Подрочить Хвостик",
         },
         dialogSelf: {
             CN: "SourceCharacter轻抚PronounPossessive的尾巴.",
             EN: "SourceCharacter gently strokes PronounPossessive's tail.",
-			RU: "SourceCharacter нежно дрочит свой собственный хвостик.",
+			RU: "SourceCharacter нежно дрочит свой хвостик.",
         },
     },
     {
@@ -1290,7 +1290,7 @@ const activities = [
         label: {
             CN: "尾巴叼在嘴里",
             EN: "Hold Tail in Mouth",
-			RU: "Взять хвост в рот",
+			RU: "Взять Хвост в Рот",
         },
         dialog: {
             CN: "SourceCharacter叼起TargetCharacter的尾巴.",
@@ -1300,7 +1300,7 @@ const activities = [
         labelSelf: {
             CN: "尾巴叼在嘴里",
             EN: "Hold Tail in Mouth",
-			RU: "Взять хвост в рот",
+			RU: "Взять Хвост в Рот",
         },
         dialogSelf: {
             CN: "SourceCharacter叼起自己的尾巴.",
@@ -1320,12 +1320,12 @@ const activities = [
         labelSelf: {
             CN: "抬起屁股",
             EN: "Lift Buttocks",
-			RU: "Поднять булочки",
+			RU: "Поднять Булочки",
         },
         dialogSelf: {
             CN: "SourceCharacter弯腰抬起PronounPossessive的屁股.",
             EN: "SourceCharacter bends over, lifting PronounPossessive buttocks.",
-			RU: "SourceCharacter наклоняется, приподнимая ягодицы.",
+			RU: "SourceCharacter наклоняется, приподнимая свои ягодицы.",
         },
     },
     {
@@ -1340,12 +1340,12 @@ const activities = [
         labelSelf: {
             CN: "扇动翅膀",
             EN: "Flap Wings",
-			RU: "Взмахнуть крыльями",
+			RU: "Взмахнуть Крыльями",
         },
         dialogSelf: {
             CN: "SourceCharacter扇动PronounPossessive的翅膀.",
             EN: "SourceCharacter flaps PronounPossessive wings.",
-			RU: "SourceCharacter вмахивает своими крыльями.",
+			RU: "SourceCharacter взмахивает своими крыльями.",
         },
     },
     {
@@ -1359,7 +1359,7 @@ const activities = [
         label: {
             CN: "下巴搭在肩膀上",
             EN: "Chin on Shoulder",
-			RU: "Подбородок на плечо.",
+			RU: "Подбородок на Плечо.",
         },
         dialog: {
             CN: "SourceCharacter把下巴搭在TargetCharacter的肩膀上.",
@@ -1378,7 +1378,7 @@ const activities = [
         label: {
             CN: "手臂搭在肩膀上",
             EN: "Arm on Shoulder",
-			RU: "Руку на плечо",
+			RU: "Руку на Плечо",
         },
         dialog: {
             CN: "SourceCharacter把手臂搭在TargetCharacter的肩膀上.",
@@ -1397,7 +1397,7 @@ const activities = [
         label: {
             CN: "搂腰",
             EN: "Embrace Waist",
-			RU: "Приобнять за талию",
+			RU: "Приобнять за Талию",
         },
         dialog: {
             CN: "SourceCharacter搂住TargetCharacter的腰.",
@@ -1417,12 +1417,12 @@ const activities = [
         labelSelf: {
             CN: "叉腰",
             EN: "Put Hands on Hips",
-			RU: "Руки на бедра",
+			RU: "Руки на Бедра",
         },
         dialogSelf: {
             CN: "SourceCharacter双手叉在腰上.",
-            EN: "SourceCharacter puts its hands on its hips.",
-			RU: "SourceCharacter упирается руками в бедра.",
+            EN: "SourceCharacter puts PronounPossessive hands on PronounPossessive hips.",
+			RU: "SourceCharacter кладет руки на бедра.",
         },
     },
     {
@@ -1437,7 +1437,7 @@ const activities = [
         labelSelf: {
             CN: "身体颤抖",
             EN: "Body Trembles",
-			RU: "Дрожь по телу",
+			RU: "Дрожать",
         },
         dialogSelf: {
             CN: "SourceCharacter颤抖着身体.",
@@ -1457,12 +1457,12 @@ const activities = [
         labelSelf: {
             CN: "身体抽搐",
             EN: "Body Twitches",
-			RU: "Подергивания в теле",
+			RU: "Подрагивать Телом",
         },
         dialogSelf: {
             CN: "SourceCharacter身体抽搐着.",
             EN: "SourceCharacter's body twitches.",
-			RU: "SourceCharacter подергивает телом.",
+			RU: "SourceCharacter подрагивает всем телом.",
         },
     },
     {
@@ -1477,7 +1477,7 @@ const activities = [
         label: {
             CN: "托起乳房",
             EN: "Lift Breasts",
-			RU: "Приподнять грудь",
+			RU: "Приподнять Грудь",
         },
         dialog: {
             CN: "SourceCharacter托起TargetCharacter的双乳.",
@@ -1487,7 +1487,7 @@ const activities = [
         labelSelf: {
             CN: "托起乳房",
             EN: "Lift Breasts",
-			RU: "Приподнять грудь",
+			RU: "Приподнять Грудь",
         },
         dialogSelf: {
             CN: "SourceCharacter托起PronounPossessive的双乳.",
@@ -1507,18 +1507,22 @@ const activities = [
         label: {
             CN: "揉搓乳头",
             EN: "Rub Nipples",
+			RU: "Поиграть с Сосками"
         },
         dialog: {
             CN: "SourceCharacter揉搓TargetCharacter的乳头.",
             EN: "SourceCharacter uses hands to pinch TargetCharacter's nipples, rubbing them.",
+			RU: "SourceCharacter вытягивает соски TargetCharacter и массирует их.",
         },
         labelSelf: {
             CN: "揉搓乳头",
             EN: "Rub Nipples",
+			RU: "Поиграть с Сосками"
         },
         dialogSelf: {
             CN: "SourceCharacter揉搓PronounPossessive的乳头.",
             EN: "SourceCharacter uses hands to pinch PronounPossessive's nipples, rubbing them.",
+			RU: "SourceCharacter оттягивает свои соски и массирует их.",
         },
     },
     {
@@ -1532,11 +1536,13 @@ const activities = [
         useImage: "Wiggle",
         labelSelf: {
             CN: "双腿颤抖",
-            EN: "Shaking legs.",
+            EN: "Shaking legs",
+			RU: "Ноги Дрожат",
         },
         dialogSelf: {
             CN: "SourceCharacter颤抖着双腿.",
             EN: "SourceCharacter's legs tremble.",
+			RU: "Ноги SourceCharacter трясутся от страха.",
         },
     },
     {
@@ -1551,10 +1557,12 @@ const activities = [
         labelSelf: {
             CN: "摇晃双腿",
             EN: "Shake Legs",
+			RU: "Трясти Ногами",
         },
         dialogSelf: {
             CN: "SourceCharacter摇晃PronounPossessive的双腿.",
             EN: "SourceCharacter shakes own legs.",
+			RU: "SourceCharacter трясет своими ногами.",
         },
     },
     {
@@ -1569,10 +1577,12 @@ const activities = [
         labelSelf: {
             CN: "流出液体",
             EN: "Liquid Flows",
+			RU: "Потечь",
         },
         dialogSelf: {
             CN: "SourceCharacter股间有液体顺着的大腿流下.",
             EN: "Liquid flows down SourceCharacter's thighs.",
+			RU: "Жидкость стекает по ляжкам SourceCharacter.",
         },
     },
     {
@@ -1587,10 +1597,12 @@ const activities = [
         labelSelf: {
             CN: "失禁",
             EN: "Incontinence",
+			RU: "Недержание",
         },
         dialogSelf: {
             CN: "SourceCharacter的尿液顺着PronounPossessive大腿流下.",
             EN: "SourceCharacter's urine flows down PronounPossessive thighs.",
+			RU: "SourceCharacter не выдерживает и писается, обтекая мочой на ногах.",
         },
     },
     {
@@ -1605,10 +1617,12 @@ const activities = [
         labelSelf: {
             CN: "撇眼",
             EN: "Roll Eyes",
+			RU: "Закатить Глаза.",
         },
         dialogSelf: {
             CN: "SourceCharacter撇了TargetCharacter一眼.",
             EN: "SourceCharacter rolls its eyes at TargetCharacter.",
+			RU: "SourceCharacter закатывает глаза смотря на TargetCharacter.",
         },
     },
     {
@@ -1623,10 +1637,12 @@ const activities = [
         labelSelf: {
             CN: "跺脚",
             EN: "Stamp Feet",
+			RU: "Топать",
         },
         dialogSelf: {
             CN: "SourceCharacter不停地跺脚.",
-            EN: "SourceCharacter keeps stamping its feet.",
+            EN: "SourceCharacter keeps stamping PronounPossessive feet.",
+			RU: "SourceCharacter недовольно топает ногами.",
         },
     },
     {
@@ -1641,10 +1657,12 @@ const activities = [
         labelSelf: {
             CN: "撩头发",
             EN: "Toss Hair",
+			RU: "Поправить Волосы",
         },
         dialogSelf: {
             CN: "SourceCharacter撩起头发挂在耳边.",
-            EN: "SourceCharacter tosses its hair, letting it hang by its ears.",
+            EN: "SourceCharacter tosses PronounPossessive hair, letting it hang behind PronounPossessive ears.",
+            RU: "SourceCharacter поправляет волосы, заводя их за ухо.",
         },
     },
     {
@@ -1659,18 +1677,22 @@ const activities = [
         label: {
             CN: "手指插进阴道",
             EN: "Insert Finger into Vagina",
+			RU: "Вставить Палец в Вагину",
         },
         dialog: {
             CN: "SourceCharacter手指插进TargetCharacter的阴道内.",
             EN: "SourceCharacter inserts finger into TargetCharacter's vagina.",
+			RU: "SourceCharacter вставляет палец в вагину TargetCharacter.",
         },
         labelSelf: {
             CN: "手指插进阴道",
             EN: "Insert Finger into Vagina",
+			RU: "Вставить Палец в Вагину",
         },
         dialogSelf: {
             CN: "SourceCharacter手指插进自己的的阴道内.",
             EN: "SourceCharacter inserts finger into own vagina.",
+			RU: "SourceCharacter вставляет палец в свою вагину.",
         },
     },
     {
@@ -1685,18 +1707,22 @@ const activities = [
         label: {
             CN: "拔出自己的手指",
             EN: "Remove Finger",
+			RU: "Вытащить Палец",
         },
         dialog: {
             CN: "SourceCharacter从TargetCharacter的阴道内拔出自己的手指,手指连着PronounPossessive的爱液.",
             EN: "SourceCharacter removes own finger from TargetCharacter's vagina, the finger coated with PronounPossessive love fluids.",
+			RU: "SourceCharacter вынимает покрытый любовным соком палец из вагины TargetCharacter.",
         },
         labelSelf: {
             CN: "拔出自己的手指",
             EN: "Remove Finger",
+			RU: "Вытащить Палец",
         },
         dialogSelf: {
             CN: "SourceCharacter从PronounPossessive的阴道内拔出自己的手指,手指连着自己的爱液.",
             EN: "SourceCharacter removes own finger from PronounPossessive's vagina, the finger coated with SourceCharacter's love fluids.",
+			RU: "SourceCharacter вынимает покрытый любовным соком палец из своей вагины.",
         },
     },
     {
@@ -1711,18 +1737,22 @@ const activities = [
         label: {
             CN: "蠕动手指",
             EN: "Wriggle Finger",
+			RU: "Двигать Пальцем",
         },
         dialog: {
             CN: "SourceCharacter在TargetCharacter的阴道内蠕动手指.",
             EN: "SourceCharacter wriggles a finger inside TargetCharacter's vagina.",
+			RU: "SourceCharacter двигает пальцем внутри вагины TargetCharacter.",
         },
         labelSelf: {
             CN: "蠕动手指",
             EN: "Wriggle Finger",
+			RU: "Двигать Пальцем",
         },
         dialogSelf: {
             CN: "SourceCharacter在PronounPossessive的阴道内蠕动手指.",
             EN: "SourceCharacter wriggles a finger inside PronounPossessive's vagina.",
+			RU: "SourceCharacter двигает пальцем внутри своей вагины.",
         },
     },
     {
@@ -1737,18 +1767,22 @@ const activities = [
         label: {
             CN: "快速抽插",
             EN: "Quickly Thrust",
+			RU: "Интим",
         },
         dialog: {
             CN: "SourceCharacter的手在TargetCharacter的阴道内快速抽插.",
             EN: "SourceCharacter's hand quickly thrusts in and out of TargetCharacter's vagina, rubbing and kneading.",
+			RU: "Рука SourceCharacter быстро входит и выходит из вагины TargetCharacter, растягивая и разминая её.",
         },
         labelSelf: {
             CN: "快速抽插",
             EN: "Quickly Thrust",
+			RU: "Интим",
         },
         dialogSelf: {
             CN: "SourceCharacter的手在PronounPossessive的阴道内快速抽插.",
             EN: "SourceCharacter's hand quickly thrusts in and out of PronounPossessive's vagina, rubbing and kneading.",
+			RU: "SourceCharacter быстро орудует рукой, входя и выхоля из своей вагины он растягивает и разминает её.",
         },
     },
     {
@@ -1763,18 +1797,22 @@ const activities = [
         label: {
             CN: "钩住阴蒂环",
             EN: "Hook Clitoral Piercing",
+			RU: "Подцепить за Пирсинг",
         },
         dialog: {
             CN: "SourceCharacter钩住TargetCharacter的阴蒂环.",
             EN: "SourceCharacter hooks onto TargetCharacter's clitoral piercing.",
+			RU: "SourceCharacter цепляется за пирсинг на клиторе TargetCharacter.",
         },
         labelSelf: {
             CN: "钩住阴蒂环",
             EN: "Hook Clitoral Piercing",
+			RU: "Подцепить за Пирсинг",
         },
         dialogSelf: {
             CN: "SourceCharacter钩住自己的阴蒂环.",
             EN: "SourceCharacter hooks onto own clitoral piercing.",
+			RU: "SourceCharacter цепляется за пирсинг на своем клиторе.",
         },
     },
     {
@@ -1789,18 +1827,22 @@ const activities = [
         label: {
             CN: "拉扯阴蒂环",
             EN: "Tug Clitoral Piercing",
+			RU: "Потянуть за Пирсинг",
         },
         dialog: {
             CN: "SourceCharacter拉了一下TargetCharacter的阴蒂环.",
             EN: "SourceCharacter tugs on TargetCharacter's clitoral piercing and then releases it.",
+			RU: "SourceCharacter тянет за пирсинг на клиторе TargetCharacter.",
         },
         labelSelf: {
             CN: "拉扯阴蒂环",
             EN: "Tug Clitoral Piercing",
+			RU: "Потянуть за Пирсинг",
         },
         dialogSelf: {
             CN: "SourceCharacter拉了一下自己的阴蒂环.",
             EN: "SourceCharacter tugs on own clitoral piercing and then releases it.",
+			RU: "SourceCharacter тянет за пирсинг на своем клиторе.",
         },
     },
     {
@@ -1813,11 +1855,13 @@ const activities = [
         useImage: "Wiggle",
         label: {
             CN: "宠物服爬到脚边",
-            EN: "Pet Crawls to Feet",
+            EN: "Crawl to Feet Like a Pet",
+			RU: "Игриво Ползти к Ногам",
         },
         dialog: {
             CN: "SourceCharacter爬到TargetCharacter脚边.",
-            EN: "SourceCharacter's pet crawls to TargetCharacter's feet.",
+            EN: "SourceCharacter crawls to TargetCharacter's feet like a pet.",
+			RU: "SourceCharacter игриво ползет к ногам TargetCharacter.",
         },
     },
     {
@@ -1830,11 +1874,13 @@ const activities = [
         useImage: "Wiggle",
         label: {
             CN: "宠物服蹭小腿",
-            EN: "Pet Rubs Legs",
+            EN: "Rub Legs Like a Pet",
+			RU: "Игриво Тереться об Ляшки",
         },
         dialog: {
             CN: "SourceCharacter蹭TargetCharacter的腿.",
-            EN: "SourceCharacter's pet rubs against TargetCharacter's legs.",
+            EN: "SourceCharacter rubs against TargetCharacter's legs like a pet.",
+			RU: "SourceCharacter игриво трется головой об ляжки TargetCharacter.",
         },
     },
     {
@@ -1847,11 +1893,13 @@ const activities = [
         useImage: "Wiggle",
         label: {
             CN: "宠物服蹭大腿",
-            EN: "Pet Rubs Legs",
+            EN: "Rub Legs Like a pet",
+			RU: "Игриво Тереться об Ноги",
         },
         dialog: {
             CN: "SourceCharacter蹭TargetCharacter的腿.",
-            EN: "SourceCharacter's pet rubs against TargetCharacter's legs.",
+            EN: "SourceCharacter rubs against TargetCharacter's legs like a pet.",
+			RU: "SourceCharacter игриво трется об ноги TargetCharacter.",
         },
     },
     {
@@ -1865,11 +1913,13 @@ const activities = [
         useImage: "Wiggle",
         labelSelf: {
             CN: "宠物服趴下",
-            EN: "Pet Lies Down",
+            EN: "Lie Down Like a Pet",
+			RU: "На Четвереньки",
         },
         dialogSelf: {
             CN: "SourceCharacter四肢着地趴在地上.",
-            EN: "SourceCharacter's pet lies down on all fours.",
+            EN: "SourceCharacter lies down on all fours like a pet.",
+			RU: "SourceCharacter игриво ложится на четвереньки.",
         },
     },
     {
@@ -1883,11 +1933,13 @@ const activities = [
         useImage: "Wiggle",
         labelSelf: {
             CN: "宠物服跪立",
-            EN: "Pet Kneels",
+            EN: "Kneel Like a Pet",
+			RU: "Встать на Колени",
         },
         dialogSelf: {
             CN: "SourceCharacter手臂离地跪立.",
-            EN: "SourceCharacter's pet kneels with its limbs off the ground.",
+            EN: "SourceCharacter kneels with PronounPossessive arms off the ground like a pet.",
+			RU: "SourceCharacter поднимается с четверенек на коленки.",
         },
     },
     {
@@ -1900,11 +1952,13 @@ const activities = [
         useImage: "Wiggle",
         label: {
             CN: "宠物服扑",
-            EN: "Pet Pounces",
+            EN: "Pounces Like a Pet",
+			RU: "Игриво Наброситься",
         },
         dialog: {
             CN: "SourceCharacter扑到TargetCharacter身上.",
-            EN: "SourceCharacter's pet pounces onto TargetCharacter.",
+            EN: "SourceCharacter pounces on TargetCharacter pet a like.",
+			RU: "SourceCharacter игриво набрасывается на TargetCharacter.",
         },
     },
     {
@@ -1917,11 +1971,13 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪挠手",
-            EN: "Cat Scratches Hand",
+            EN: "Scratch Hand Like a Pet",
+			RU: "Поскрести Ладонь",
         },
         dialog: {
             CN: "SourceCharacter用爪子挠了一下TargetCharacter的手.",
-            EN: "SourceCharacter's pet scratches TargetCharacter's hand with its claws.",
+            EN: "SourceCharacter scratches TargetCharacter's hand with mitten claws like a pet.",
+			RU: "SourceCharacter игриво шкребет ладонь TargetCharacter своими коготками.",
         },
     },
     {
@@ -1934,11 +1990,13 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪挠手臂",
-            EN: "Cat Scratches Arm",
+            EN: "Scratch Arm Like a Pet",
+			RU: "Поскрести Руку"
         },
         dialog: {
             CN: "SourceCharacter用爪子挠了一下TargetCharacter的手臂.",
-            EN: "SourceCharacter's pet scratches TargetCharacter's arm with its claws.",
+            EN: "SourceCharacter scratches TargetCharacter's arm with mitten claws like a pet.",
+			RU: "SourceCharacter игриво шкребет руку TargetCharacter своими коготками.",
         },
     },
     {
@@ -1952,11 +2010,13 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         labelSelf: {
             CN: "猫爪舔手",
-            EN: "Cat Licks Paw",
+            EN: "Lick Paw Like a Pet",
+			RU: "Вылизать Лапку",
         },
         dialogSelf: {
             CN: "SourceCharacter舔自己的爪子.",
-            EN: "SourceCharacter's pet licks its own paw.",
+            EN: "SourceCharacter licks PronounPossessive own paw like a pet.",
+			RU: "SourceCharacter вылизывает свою лапку как кошечка.",
         },
     },
     {
@@ -1970,19 +2030,23 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪戳脸",
-            EN: "Cat Pokes Face",
+            EN: "Poke Claws in Face ",
+			RU: "Тыкнуть Коготками в Лицо",
         },
         dialog: {
             CN: "SourceCharacter用爪子戳了戳TargetCharacter的脸.",
-            EN: "SourceCharacter's pet pokes TargetCharacter's face with its claws.",
+            EN: "SourceCharacter's pokes TargetCharacter's face with PronounPossessive mitten claws like a pet.",
+			RU: "SourceCharacter тыкает в лицо TargetCharacter своим коготками.",
         },
         labelSelf: {
             CN: "猫爪戳脸",
-            EN: "Cat Pokes Face",
+            EN: "Pokes Claws in Face",
+			RU: "Тыкнуть Коготками в Лицо",
         },
         dialogSelf: {
             CN: "SourceCharacter用爪子戳了戳自己的脸.",
-            EN: "SourceCharacter's pet pokes its own face with its claws.",
+            EN: "SourceCharacter pokes PronounPossessive own face with mitten claws.",
+			RU: "SourceCharacter тыкает коготками в свое лицо.",
         },
     },
     {
@@ -1996,19 +2060,23 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪戳鼻子",
-            EN: "Cat Pokes Nose",
+            EN: "Poke Claws in Nose",
+			RU: "Тыкнуть Коготками в Нос",
         },
         dialog: {
             CN: "SourceCharacter用爪子戳了戳TargetCharacter的鼻子.",
-            EN: "SourceCharacter's pet pokes TargetCharacter's nose with its claws.",
+            EN: "SourceCharacter's pokes TargetCharacter's nose with mitten claws.",
+			RU: "SourceCharacter тыкает своими коготками в нос TargetCharacter.",
         },
         labelSelf: {
             CN: "猫爪戳鼻子",
-            EN: "Cat Pokes Nose",
+            EN: "Poke Claws in Nose ",
+			RU: "Тыкнуть Коготками в Нос",
         },
         dialogSelf: {
             CN: "SourceCharacter用爪子戳了戳自己的鼻子.",
-            EN: "SourceCharacter's pet pokes its own nose with its claws.",
+            EN: "SourceCharacter's pet pokes PronounPossessive own nose with mitten claws.",
+			RU: "SourceCharacter тыкает коготками в свой нос.",
         },
     },
     {
@@ -2022,19 +2090,23 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪揉脸",
-            EN: "Cat Rubs Face",
+            EN: "Rub Claws in Face",
+			RU: "Поцарапать Лицо",
         },
         dialog: {
             CN: "SourceCharacter用爪子揉了揉TargetCharacter的脸.",
-            EN: "SourceCharacter uses its claws to rub TargetCharacter's face.",
+            EN: "SourceCharacter uses PronounPossessive claws to rub TargetCharacter's face.",
+			RU: "SourceCharacter царапает лицо TargetCharacter своими коготками.",
         },
         labelSelf: {
             CN: "猫爪揉脸",
-            EN: "Cat Rubs Face",
+            EN: "Rub Claws in Face",
+			RU: "Поцарапать Лицо",
         },
         dialogSelf: {
             CN: "SourceCharacter用爪子揉了揉自己的脸.",
-            EN: "SourceCharacter uses its claws to rub its own face.",
+            EN: "SourceCharacter uses PronounPossessive claws to rub PronounPossessive own face.",
+			RU: "SourceCharacter царапает своё лицо коготочками.",
         },
     },
     {
@@ -2048,19 +2120,23 @@ const activities = [
         useImage: ["ItemHands", "PawMittens"],
         label: {
             CN: "猫爪揉鼻子",
-            EN: "Cat Rubs Nose",
+            EN: "Rub Claws in Nose",
+			RU: "Поцарапать Нос",
         },
         dialog: {
             CN: "SourceCharacter用爪子揉了揉TargetCharacter的鼻子.",
-            EN: "SourceCharacter uses its claws to rub TargetCharacter's nose.",
+            EN: "SourceCharacter uses PronounPossessive claws to rub TargetCharacter's nose.",
+			RU: "SourceCharacter царапает нос TargetCharacter своими коготками",
         },
         labelSelf: {
             CN: "猫爪揉鼻子",
-            EN: "Cat Rubs Nose",
+            EN: "Rub Claws in Nose",
+			RU: "Поцарапать Нос",
         },
         dialogSelf: {
             CN: "SourceCharacter用爪子揉了揉自己的鼻子.",
-            EN: "SourceCharacter uses its claws to rub its own nose.",
+            EN: "SourceCharacter uses PronounPossessive claws to rub PronounPossessive own nose.",
+			RU: "SourceCharacter царапает свой нос коготками.",
         },
     },
     {
@@ -2074,11 +2150,13 @@ const activities = [
         useImage: ["ItemDevices", "PawMittens"],
         labelSelf: {
             CN: "撞笼子",
-            EN: "Bump into Cage",
+            EN: "Bump Against Cage",
+			RU: "Ударить Клетку"
         },
         dialogSelf: {
             CN: "SourceCharacter用身体撞击笼子.",
-            EN: "SourceCharacter bumps its body into the cage.",
+            EN: "SourceCharacter bumps PronounPossessive body against the cage.",
+			RU: "SourceCharacter ударяется телом о клетку.",
         },
     },
     {
@@ -2093,10 +2171,12 @@ const activities = [
         labelSelf: {
             CN: "咬笼子",
             EN: "Bite Cage",
+			RU: "Кусать Прутья"
         },
         dialogSelf: {
             CN: "SourceCharacter用牙齿咬笼子.",
             EN: "SourceCharacter bites the cage.",
+			RU: "SourceCharacter кусает прутья клетки.",
         },
     },
     {
@@ -2111,10 +2191,12 @@ const activities = [
         labelSelf: {
             CN: "摇晃笼子",
             EN: "Shake Cage",
+			RU: "Трясет Дверь",
         },
         dialogSelf: {
             CN: "SourceCharacter摇晃笼子的门.",
             EN: "SourceCharacter shakes the door of the cage.",
+			RU: "SourceCharacter трясет дверь клетки.",
         },
     },
     {
@@ -2129,18 +2211,22 @@ const activities = [
         label: {
             CN: "泡沫剑架在脖子上",
             EN: "Foam Sword Rests on the Neck",
+			RU: "Приставить Поролоновый Меч",
         },
         dialog: {
             CN: "SourceCharacter把泡沫剑架在TargetCharacter的脖子上",
-            EN: "SourceCharacter Places the Foam Sword on TargetCharacter's Neck",
+            EN: "SourceCharacter places the Foam Sword on TargetCharacter's Neck",
+			RU: "SourceCharacter приставляет к шее TargetCharacter поролоновый меч.",
         },
         labelSelf: {
             CN: "泡沫剑架在脖子上",
             EN: "Foam Sword Rests on the Neck",
+			RU: "Приставить Поролоновый Меч",
         },
         dialogSelf: {
             CN: "SourceCharacter把泡沫剑架在自己的脖子上.",
-            EN: "SourceCharacter Places the Foam Sword on own Neck.",
+            EN: "SourceCharacter places the Foam Sword on own neck.",
+			RU: "SourceCharacter приставляет поролоновый меч к собственной шее.",
         },
     },
     {
@@ -2154,10 +2240,12 @@ const activities = [
         label: {
             CN: "泡沫剑拍脸",
             EN: "Foam Sword Hits the Face",
+			RU: "Ударить Мечем по Лицу ",
         },
         dialog: {
             CN: "SourceCharacter用泡沫剑轻轻拍了拍一下TargetCharacter的脸",
-            EN: "SourceCharacter Gently Hits TargetCharacter's Face with a Foam Sword",
+            EN: "SourceCharacter gently hits TargetCharacter's face with a Foam Sword",
+			RU: "SourceCharacter аккуратно бьет TargetCharacter по лицу поролоновым мечем.",
         },
     },
     {
@@ -2172,10 +2260,12 @@ const activities = [
         labelSelf: {
             CN: "舔触手",
             EN: "Lick Tentacles",
+			RU: "Облизать Тентакли",
         },
         dialogSelf: {
             CN: "SourceCharacter舔PronounPossessive的触手.",
-            EN: "SourceCharacter Licks PronounPossessive Tentacles.",
+            EN: "SourceCharacter licks PronounPossessive tentacles.",
+			RU: "SourceCharacter облизывает свои тентакли.",
         },
     },
     {
@@ -2189,19 +2279,23 @@ const activities = [
         useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手摸头",
-            EN: "Tentacles Pet Head",
+            EN: "Pet Head with Tentacles",
+			RU: "Погладить Тентаклями по Голове",
         },
         dialog: {
             CN: "SourceCharacter用触手摸了摸TargetCharacter的头.",
-            EN: "SourceCharacter Pet TargetCharacter's Head with Tentacles.",
+            EN: "SourceCharacter pets TargetCharacter's head with tentacles.",
+			RU: "SourceCharacter гладит TargetCharacter по голове тентаклями.",
         },
         labelSelf: {
             CN: "触手摸头",
-            EN: "Tentacles Pet Head",
+            EN: "Pet Head with Tentacles ",
+			RU: "Погладить Тентаклями по Голове",
         },
         dialogSelf: {
             CN: "SourceCharacter用触手摸了摸自己的头.",
-            EN: "SourceCharacter Pet own Head with Tentacles.",
+            EN: "SourceCharacter pets own head with tentacles.",
+			RU: "SourceCharacter гладит себя тентаклями по голове.",
         },
     },
     {
@@ -2215,19 +2309,23 @@ const activities = [
         useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手戳鼻子",
-            EN: "Tentacles Poke Nose",
+            EN: "Poke Nose with Tentacles",
+			RU: "Коснуться Носа Тентаклями",
         },
         dialog: {
             CN: "SourceCharacter用触手戳了戳TargetCharacter的鼻子.",
-            EN: "SourceCharacter Pokes TargetCharacter's Nose with Tentacles.",
+            EN: "SourceCharacter pokes TargetCharacter's nose with tentacles.",
+			RU: "SourceCharacter косается носа TargetCharacter своими тентаклями.",
         },
         labelSelf: {
             CN: "触手戳鼻子",
-            EN: "Tentacles Poke Nose",
+            EN: "Poke Nose with Tentacles",
+			RU: "Коснуться Носа Тентаклями",
         },
         dialogSelf: {
             CN: "SourceCharacter用触手戳了戳自己的鼻子.",
             EN: "SourceCharacter Pokes own Nose with Tentacles.",
+			RU: "SourceCharacter косается своего носа тентаклями.",
         },
     },
     {
@@ -2241,19 +2339,23 @@ const activities = [
         useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手戳脸",
-            EN: "Tentacles Poke Face",
+            EN: "Poke Face with Tentacles",
+			RU: "Коснуться Лица Тентаклями",
         },
         dialog: {
             CN: "SourceCharacter用触手戳了戳TargetCharacter的脸.",
-            EN: "SourceCharacter Pokes TargetCharacter's Face with Tentacles.",
+            EN: "SourceCharacter pokes TargetCharacter's face with tentacles.",
+			RU: "SourceCharacter касается лица TargetCharacter своими тентаклями.",
         },
         labelSelf: {
             CN: "触手戳脸",
-            EN: "Tentacles Poke Face",
+            EN: "Poke Face with Tentacles",
+			RU: "Коснуться Лица Тентаклями",
         },
         dialogSelf: {
             CN: "SourceCharacter用触手戳了戳自己的脸.",
-            EN: "SourceCharacter Pokes own Face with Tentacles.",
+            EN: "SourceCharacter pokes own face with tentacles.",
+			RU: "SourceCharacter касается своего лицо тентаклями.",
         },
     },
     {
@@ -2267,19 +2369,23 @@ const activities = [
         useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手揉鼻子",
-            EN: "Tentacles Rub Nose",
+            EN: "Rub Nose with Tentacles",
+			RU: "Потрогать Нос Тентаклями",
         },
         dialog: {
             CN: "SourceCharacter用触手揉了揉TargetCharacter的鼻子.",
-            EN: "SourceCharacter Rubs TargetCharacter's Nose with Tentacles.",
+            EN: "SourceCharacter rubs TargetCharacter's nose with tentacles.",
+			RU: "SourceCharacter трогает нос TargetCharacter своими тентаклями.",
         },
         labelSelf: {
             CN: "触手揉鼻子",
-            EN: "Tentacles Rub Nose",
+            EN: "Rub Nose with Tentacles",
+			RU: "Потрогать нос Тентаклями",
         },
         dialogSelf: {
             CN: "SourceCharacter用触手揉了揉自己的鼻子.",
-            EN: "SourceCharacter Rubs own Nose with Tentacles.",
+            EN: "SourceCharacter rubs own nose with tentacles.",
+			RU: "SourceCharacter трогает свой нос тентаклями.",
         },
     },
     {
@@ -2293,15 +2399,23 @@ const activities = [
         useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手掀裙子",
+			EN: "Lift skirt with tentacles",
+			RU: "Поднять Юбку Тентаклями",
         },
         dialog: {
             CN: "SourceCharacter用触手掀开TargetCharacter的裙子.",
+			EN: "SourceCharacter lifts TargetCharacter's skirt with PronounPossessive tentacles.",
+			RU: "SourceCharacter приподнимает юбку TargetCharacter с помощью своих тентаклей.",
         },
         labelSelf: {
             CN: "触手掀裙子",
+			EN: "Lift skirt with tentacles",
+			RU: "Поднять Юбку Тентаклями",
         },
         dialogSelf: {
             CN: "SourceCharacter用触手掀开PronounPossessive的裙子.",
+			EN: "SourceCharacter lifts PronounPossessive skirt with PronounPossessive tentacles.",
+			RU: "SourceCharacter приподнимает свою юбку с помощью тентаклей.",
         },
     },
     {
@@ -2315,19 +2429,23 @@ const activities = [
         useImage: ["TailStraps", "Tentacles"],
         label: {
             CN: "触手揉脸",
-            EN: "Tentacles Rub Face",
+            EN: "Rub Face with Tentacles",
+			RU: "Потрогать Тентаклями Лицо",
         },
         dialog: {
             CN: "SourceCharacter用触手揉了揉TargetCharacter的脸.",
-            EN: "SourceCharacter用触手揉了揉TargetCharacter的脸.",
+            EN: "SourceCharacter rubs TargetCharacter's face with PronounPossessive tentacles.",
+			RU: "SourceCharacter трогает лицо TargetCharacter своими тентаклями.",
         },
         labelSelf: {
             CN: "触手揉脸",
-            EN: "Tentacles Rub Face",
+            EN: "Rub Face with Tentacles",
+			RU: "Потрогать Тентаклями Лицо",
         },
         dialogSelf: {
             CN: "SourceCharacter用触手揉了揉自己的脸.",
-            EN: "SourceCharacter Rubs own Face with Tentacles.",
+            EN: "SourceCharacter rubs own face with tentacles.",
+			RU: "SourceCharacter трогает свое лицо тентаклями.",
         },
     },
     {
@@ -2341,7 +2459,7 @@ const activities = [
         useImage: ["ItemLegs", "MermaidTail"],
         label: {
             CN: "鱼尾揉脸",
-            EN: "Fish Tail Rubs Face",
+            EN: "Rub Face with Tail",
         },
         dialog: {
             CN: "SourceCharacter用鱼尾揉了揉TargetCharacter的脸.",

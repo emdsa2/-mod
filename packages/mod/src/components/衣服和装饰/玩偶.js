@@ -93,6 +93,10 @@ const asset = {
         { Name: "Clara", AllowTypes: { l: 8 } },
         { Name: "WallyIlma", AllowTypes: { l: 9 } },
         { Name: "奈芙塔莉", AllowTypes: { l: 10 } },
+        { Name: "素瑞饼", AllowTypes: { l: 11 } },
+        { Name: "Annie", AllowTypes: { l: 12 } },
+        { Name: "accoo", AllowTypes: { l: 13 } },
+        
     ],
 };
 
