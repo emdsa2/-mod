@@ -72,6 +72,18 @@ export function addAcvitityEntry(src) {
 
     const dlabel = label ?? { CN: Name };
 
+    if (isTranslationEntry(dlabel)) {
+        RecordEntries(dlabel).forEach(([lang, entry]) => {
+            if (!entries[lang]) entries[lang] = {};
+            entries[lang][`Activity${Name}`] = entry;
+        });
+    } else {
+        RecordEntries(dlabel).forEach(([lang, entry]) => {
+            if (!entries[lang]) entries[lang] = {};
+            entries[lang][`Activity${Name}`] = Object.values(entry)[0] || Name;
+        });
+    }
+
     addEntryBranch("Label-", dlabel, "Other", Name, Target);
     Option(dialog).value_then((d) => addEntryBranch("", d, "Other", Name, Target));
 
