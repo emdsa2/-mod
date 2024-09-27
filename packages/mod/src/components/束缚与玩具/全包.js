@@ -5,6 +5,7 @@ const head_assets = [
     {
         Name: "绷带头部_Luzi",
         Random: false,
+        Block: [],
         Priority: 51,
         Top: 0,
         Left: 0,
@@ -12,6 +13,7 @@ const head_assets = [
     {
         Name: "毛毯头部_Luzi",
         Random: false,
+        Block: [],
         Top: 0,
         Left: 0,
         Hide: ["HairBack"],
