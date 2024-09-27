@@ -10,6 +10,7 @@ import {
 } from "../utils";
 import { RElementPositionFixed, RDrawButton, RMouseIn, RDrawText, RDrawTextCentered } from "../RDraw";
 import ActivityManager from "@mod-utils/ActivityManager";
+import { i18n } from "../i18n";
 
 export class 自定义动作设置_动作 extends BaseSubscreen {
     /**
@@ -46,30 +47,37 @@ export class 自定义动作设置_动作 extends BaseSubscreen {
 
     /** @returns {{ ret: boolean, what:string}} */
     canSaveReport() {
-        if (!this.targetGroup()?.Name) return { ret: false, what: "还没有选择身体区域" };
+        if (!this.targetGroup()?.Name) return { ret: false, what: i18n("Setting::Act::Save::NeedBodyArea") };
         const name = getInputElementById(this.actNameId)?.value;
-        if (!name) return { ret: false, what: "还没有设置动作名字" };
-        if (!动作数据管理()?.动作可用(name)) return { ret: false, what: "已经存在动作" };
+        if (!name) return { ret: false, what: i18n("Setting::Act::Save::NeedActName") };
+        if (!动作数据管理()?.动作可用(name)) return { ret: false, what: i18n("Setting::Act::Save::ActExisted") };
         return { ret: true, what: "" };
     }
 
     run() {
         DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 232, 90, 50);
-        DrawText("动作", 220, 260, "White");
+        DrawText(i18n("Setting::Act::Act"), 220, 260, "White");
 
-        RDrawText({ X: 900, Y: 80 }, "动作名称：", "White");
+        RDrawText({ X: 900, Y: 80 }, i18n("Setting::Act::Name"), "White");
         ElementInputShowOrCreate(this.actNameId, "text", "", "20");
         RElementPositionFixed(this.actNameRect, this.actNameId);
 
-        RDrawText({ X: 900, Y: 155 }, "动作目标:", "White");
-        if (this.targetType === "任意") RDrawButton(this.targetButtonRect, "👈👉都行", "White", "");
-        else if (this.targetType === "自己") RDrawButton(this.targetButtonRect, "👈自己", "White", "");
-        else if (this.targetType === "对方") RDrawButton(this.targetButtonRect, "👉其他人", "White", "");
+        RDrawText({ X: 900, Y: 155 }, i18n("Setting::Act::Target"), "White");
+        if (this.targetType === "任意")
+            RDrawButton(this.targetButtonRect, i18n("Setting::Act::Target::Both"), "White", "");
+        else if (this.targetType === "自己")
+            RDrawButton(this.targetButtonRect, i18n("Setting::Act::Target::Self"), "White", "");
+        else if (this.targetType === "对方")
+            RDrawButton(this.targetButtonRect, i18n("Setting::Act::Target::Other"), "White", "");
 
-        RDrawText({ X: 900, Y: 230 }, "身体区域:", "White");
-        RDrawText({ X: 1100, Y: 230 }, this.targetGroup()?.Description || "(未选择)", "White");
+        RDrawText({ X: 900, Y: 230 }, i18n("Setting::Act::BodyGroup"), "White");
+        RDrawText(
+            { X: 1100, Y: 230 },
+            this.targetGroup()?.Description || i18n("Setting::Act::BodyGroup::Unset"),
+            "White"
+        );
 
-        RDrawText({ X: 900, Y: 350 }, "对自己使用的文本:", "White");
+        RDrawText({ X: 900, Y: 330 }, i18n("Setting::Act::Text::TextSelf"), "White");
         ElementTextAreaShowOrCreate(this.targetSelfTextAreaId, 200);
         RElementPositionFixed(this.targetSelfTextAreaRect, this.targetSelfTextAreaId);
         const selfDisabled = this.targetType === "对方";
@@ -82,7 +90,7 @@ export class 自定义动作设置_动作 extends BaseSubscreen {
         RDrawButton(this.targetSelfActedRefRect, "👉", targetSelfColor, "", "", selfDisabled);
         RDrawButton(this.targetSelfActOwnRect, "🚻", targetSelfColor, "", "", selfDisabled);
 
-        RDrawText({ X: 900, Y: 650 }, "对别人使用动作的文本:", "White");
+        RDrawText({ X: 900, Y: 660 }, i18n("Setting::Act::Text::TextOther"), "White");
         ElementTextAreaShowOrCreate(this.targetTextAreaId, 200);
         RElementPositionFixed(this.targetTextAreaRect, this.targetTextAreaId);
         const targetDisabled = this.targetType === "自己";
@@ -96,9 +104,9 @@ export class 自定义动作设置_动作 extends BaseSubscreen {
         RDrawButton(this.targetActOwnRect, "🚻", targetColor, "", "", targetDisabled);
 
         const { ret, what } = this.canSaveReport();
-        if (ret) RDrawButton(this.saveButtonRect, "保存", "White", "");
+        if (ret) RDrawButton(this.saveButtonRect, i18n("General::Save"), "White", "");
         else {
-            RDrawButton(this.saveButtonRect, "保存", "LightGray", "", "", true);
+            RDrawButton(this.saveButtonRect, i18n("General::Save"), "LightGray", "", "", true);
             if (RMouseIn(this.saveButtonRect)) {
                 RDrawTextCentered(this.saveButtonHint, what, "White");
             }

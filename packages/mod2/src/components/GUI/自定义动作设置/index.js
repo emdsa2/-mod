@@ -7,6 +7,7 @@ import { Path } from "@mod-utils/path";
 import { RDrawImageResize, RMouseIn } from "../RDraw";
 import { 自定义动作设置_动作 } from "./动作";
 import { 自定义动作设置_删除 } from "./删除";
+import { i18n } from "../i18n";
 
 export class 自定义动作设置 extends BaseSubscreen {
     constructor(prev) {
@@ -28,7 +29,7 @@ export class 自定义动作设置 extends BaseSubscreen {
         DrawImageResize(Path.resolve("image/选择界面.png"), 0, 0, 2000, 1000);
         DrawImageResize(Path.resolve("image/条线.png"), 0, 0, 2000, 1000);
         RDrawImageResize(this.exitButtonRect, Path.resolve("image/返回白.png"));
-        DrawText(`- 自定义动作设置 -`, 1000, 125, "Black");
+        DrawText(`- ${i18n("Setting::Main::CustomActTile")} -`, 1000, 125, "Black");
 
         const DisplayBase = { X: 370, Y: 50 };
         const DisplayRatio = 0.9;
@@ -49,19 +50,19 @@ export class 自定义动作设置 extends BaseSubscreen {
 
         if (MouseIn(80, 210, 160, 100)) {
             DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 232, 90, 50);
-            DrawText(`动作`, 220, 260, "White");
+            DrawText(i18n("Setting::Act::Act"), 220, 260, "White");
         } else {
             if (this.当前页面 !== `动作`) {
-                DrawText(`动作`, 160, 260, "White");
+                DrawText(i18n("Setting::Act::Act"), 160, 260, "White");
             }
         }
 
         if (MouseIn(80, 710, 160, 100)) {
             DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 730, 90, 50);
-            DrawText(`删除`, 220, 760, "White");
+            DrawText(i18n("General::Delete"), 220, 760, "White");
         } else {
             if (this.当前页面 !== `删除`) {
-                DrawText(`删除`, 160, 760, "White");
+                DrawText(i18n("General::Delete"), 160, 760, "White");
             }
         }
 

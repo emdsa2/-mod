@@ -267,7 +267,16 @@ interface XCharacterDrawOrderState {
 type XCharacter = { XCharacterDrawOrder?: XCharacterDrawOrderState } & Character;
 
 type DrawFunParameters<T extends (...args: any[]) => any> =
-    T extends (X: any, Y: any, W: any, H: any, ...args: infer P) => any ? P : never;
+    T extends (X: number, Y: number, W: number, H: number, ...args: infer P) => any ? P : never;
+
+type SliceParameters<E extends number, T extends (...args: any[]) => any> =
+    E extends 0 ? args :
+    E extends 1 ? (T extends (_: any, ...args: infer P) => any ? P : never) :
+    E extends 2 ? (T extends (_: any, _: any, ...args: infer P) => any ? P : never) :
+    E extends 3 ? (T extends (_: any, _: any, _: any, ...args: infer P) => any ? P : never) :
+    E extends 4 ? (T extends (_: any, _: any, _: any, _: any, ...args: infer P) => any ? P : never) :
+    E extends 5 ? (T extends (_: any, _: any, _: any, _: any, _: any, ...args: infer P) => any ? P : never) :
+    never;
 
 type Rect = { X: number; Y: number; W: number; H: number };
 type Point = { X: number; Y: number };

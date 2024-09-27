@@ -8,7 +8,7 @@ export function RMouseIn(rect) {
 
 /**
  * @param {Rect} rect
- * @param  {DrawFunParameters<typeof DrawButton>} args
+ * @param  {SliceParameters<4, typeof DrawButton>} args
  */
 export function RDrawButton(rect, ...args) {
     DrawButton(rect.X, rect.Y, rect.W, rect.H, ...args);
@@ -16,7 +16,7 @@ export function RDrawButton(rect, ...args) {
 
 /**
  * @param {Rect} rect
- * @param  {DrawFunParameters<typeof DrawBackNextButton>} args
+ * @param  {SliceParameters<4, typeof DrawBackNextButton>} args
  */
 export function RDrawBackNextButton(rect, ...args) {
     DrawBackNextButton(rect.X, rect.Y, rect.W, rect.H, ...args);
@@ -62,4 +62,30 @@ export function RDrawTextCentered(anchor, text, color, backColor) {
  */
 export function RDrawImageResize(rect, source) {
     DrawImageResize(source, rect.X, rect.Y, rect.W, rect.H);
+}
+
+/**
+ * @param {Rect} rect
+ * @param {string} label
+ * @param {SliceParameters<5, typeof DrawButton>} args
+ */
+export function RDrawIconButton(rect, label, ...args) {
+    DrawButton(rect.X, rect.Y, rect.W, rect.H, "", ...args);
+    RDrawText({ X: rect.X + rect.H + 10, Y: rect.Y + rect.H / 2 }, label, "black");
+}
+
+/**
+ * @param {Rect} rect
+ * @param {boolean} checked
+ */
+export function RDrawCheckbox(rect, checked) {
+    DrawCheckbox(rect.X, rect.Y, rect.W, rect.H, "", checked);
+}
+
+/**
+ * @param {Rect} rect
+ * @param {string} color
+ */
+export function RDrawRect(rect, color) {
+    DrawRect(rect.X, rect.Y, rect.W, rect.H, color);
 }

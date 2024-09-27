@@ -1,0 +1,32 @@
+/** @type {Record<TextTag, string>} */
+const values = {
+    "General::Delete": "Delete",
+    "General::Save": "Save",
+    "Setting::Act::NoMore": "No more",
+    "Setting::Act::DeleteExisting": "Delete Existing:",
+    "Setting::Act::DeleteAll": "Delete all",
+    "Setting::Act::Save::NeedBodyArea": "No body area selected",
+    "Setting::Act::Save::NeedActName": "No action name set",
+    "Setting::Act::Save::ActExisted": "Action existed",
+    "Setting::Act::Act": "Action",
+    "Setting::Act::Name": "Name:",
+    "Setting::Act::Target": "Target:",
+    "Setting::Act::Target::Self": "👈Self",
+    "Setting::Act::Target::Other": "👉Other",
+    "Setting::Act::Target::Both": "👈👉Both",
+    "Setting::Act::BodyGroup": "Body Area:",
+    "Setting::Act::BodyGroup::Unset": "(Not selected)",
+    "Setting::Act::Text::TextSelf": "Text for Self:",
+    "Setting::Act::Text::TextOther": "Text for Others:",
+    "General::Setting": "Setting",
+    "Setting::Main::CustomActTile": "Custom Actions",
+    "Setting::Main::CustomAssetTitle": "Custom Assets",
+    "Setting::Main::DiscordHover": "Check for updates and feedback here",
+    "Setting::Main::MiscTitle": "Misc Settings",
+    "Setting::Misc::KeepArousal": "Keep Arousal Count",
+    "Setting::Misc::ClearArousal": "Clear Counter",
+    "Setting::Misc::LoadCrafting": "Load Crafting",
+    "Setting::Misc::SaveCrafting": "Save Crafting",
+};
+
+export { values };

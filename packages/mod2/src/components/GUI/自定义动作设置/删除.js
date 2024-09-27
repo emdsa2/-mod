@@ -2,6 +2,7 @@ import { Path } from "@mod-utils/path";
 import { 动作数据管理 } from "../../保存数据/保存动作";
 import { BaseSubscreen } from "../gui";
 import { RDrawBackNextButton, RDrawButton, RMouseIn } from "../RDraw";
+import { i18n } from "../i18n";
 
 export class 自定义动作设置_删除 extends BaseSubscreen {
     constructor() {
@@ -20,15 +21,17 @@ export class 自定义动作设置_删除 extends BaseSubscreen {
     }
     run() {
         DrawImageResize(Path.resolve("image/白箭头右.png"), 270, 730, 90, 50);
-        DrawText(`删除`, 220, 760, "White");
+        DrawText(i18n("General::Delete"), 220, 760, "White");
 
-        DrawText(`删除已有动作:`, 1000, 260, "White");
+        DrawText(i18n("Setting::Act::DeleteExisting"), 1000, 260, "White");
 
         const acts = Object.keys(动作数据管理()?.data || {});
 
-        const targetActText = acts.length > 0 ? `[${acts[this.actIndex]}]` : "没有了";
-        const prevActText = acts.length > 0 ? `[${acts[(this.actIndex - 1) % acts.length]}]` : "没有了";
-        const nextActText = acts.length > 0 ? `[${acts[(this.actIndex + 1) % acts.length]}]` : "没有了";
+        const targetActText = acts.length > 0 ? `[${acts[this.actIndex]}]` : i18n("Setting::Act::NoMore");
+        const prevActText =
+            acts.length > 0 ? `[${acts[(this.actIndex - 1) % acts.length]}]` : i18n("Setting::Act::NoMore");
+        const nextActText =
+            acts.length > 0 ? `[${acts[(this.actIndex + 1) % acts.length]}]` : i18n("Setting::Act::NoMore");
 
         RDrawBackNextButton(
             this.backNextButtonRect,
@@ -43,10 +46,10 @@ export class 自定义动作设置_删除 extends BaseSubscreen {
             "🚮",
             "White",
             "",
-            acts.length > 0 ? `删除[${acts[this.actIndex]}]` : "",
+            acts.length > 0 ? `${i18n("General::Delete")}[${acts[this.actIndex]}]` : "",
             acts.length == 0
         );
-        RDrawButton(this.deleteAllButtonRect, "♻", "red", "", "清空所有创建动作");
+        RDrawButton(this.deleteAllButtonRect, "♻", "red", "", i18n("Setting::Act::DeleteAll"));
     }
     click() {
         if (RMouseIn(this.backNextButtonRect)) {

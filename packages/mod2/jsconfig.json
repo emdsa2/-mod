@@ -15,6 +15,7 @@
     "include": [
         "../utils/**/*.js",
         "src/**/*.js",
+        "src/**/Typedef.d.ts",
         "../utils/Typedef.d.ts",
         "node_modules/bc-stubs/bc/**/*.d.ts"
     ]
