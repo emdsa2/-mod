@@ -104,6 +104,28 @@ const assets = [
             { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT } },
         ],
     },
+    {
+        Name: "全包毛毯_Luzi",
+        Gender: "F",
+        Random: false,
+        Top: 0,
+        Left: 0,
+        Difficulty: 10,
+        SelfBondage: 6,
+        Time: 30,
+        RemoveTime: 40,
+        AllowTighten: true,
+        SetPose: ["BackElbowTouch", "LegsClosed"],
+        Effect: [E.Block, E.BlockWardrobe, E.Slow],
+        Prerequisite: ["HasBreasts"],
+        Layer: [
+            { Name: "上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT } },
+            { Name: "下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT } },
+            { Name: "后", Priority: 1, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT } },
+            { Name: "丝带上", Priority: 24, ParentGroup: "BodyUpper", PoseMapping: { BackElbowTouch: PoseType.DEFAULT } },
+            { Name: "丝带下", Priority: 24, ParentGroup: "BodyLower", PoseMapping: { LegsClosed: PoseType.DEFAULT } },
+        ],
+    },
 ];
 
 /** @type {Translation.GroupedEntries} */
@@ -118,6 +140,7 @@ const translations = {
             睡袋改_Luzi: "睡袋改",
             全包毛毯改_Luzi: "全包毛毯改",
             绷带全身_Luzi: "绷带全身",
+            全包毛毯_Luzi: "全包毛毯",
         },
     },
     EN: {
@@ -130,6 +153,7 @@ const translations = {
             睡袋改_Luzi: "Modified Sleeping Bag",
             全包毛毯改_Luzi: "Fully Wrapped Blanket",
             绷带全身_Luzi: "Full Body Bandage",
+            全包毛毯_Luzi: "Fully Wrapped Blanket",
         },
     },
     UA: {
@@ -142,6 +166,7 @@ const translations = {
             睡袋改_Luzi: "Модифікований спальний мішок",
             全包毛毯改_Luzi: "Повністю обгорнення ковдрою",
             绷带全身_Luzi: "Обв'язка бинтами на все тіло",
+            全包毛毯_Luzi: "Повністю обгорнення ковдрою",
         },
     },
     RU: {
@@ -154,6 +179,7 @@ const translations = {
             睡袋改_Luzi: "Изменённый спальный мешок",
             全包毛毯改_Luzi: "Полностью завёрнутое покрывало",
             绷带全身_Luzi: "Бинты на всё тело",
+            全包毛毯_Luzi: "Полностью завёрнутое покрывало",
         },
     },
 };
