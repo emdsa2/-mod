@@ -8,6 +8,8 @@ const assetAdjustments = {
     缩小浮空_Luzi: { widthMultiplier: 0.3, heightMultiplier: 0.3, center: { X: 0.5, Y: 0 } },
     身高减10cm_Luzi: { widthMultiplier: 1 / 1.05, heightMultiplier: 1 / 1.05, center: { X: 0.5, Y: 1 } },
     身高减20cm_Luzi: { widthMultiplier: 1 / 1.08, heightMultiplier: 1 / 1.08, center: { X: 0.5, Y: 1 } },
+    身高减30cm_Luzi: { widthMultiplier: 1 / 1.11, heightMultiplier: 1 / 1.11, center: { X: 0.5, Y: 1 } },
+    身高减40cm_Luzi: { widthMultiplier: 1 / 1.14, heightMultiplier: 1 / 1.14, center: { X: 0.5, Y: 1 } },
 };
 
 /** @type { CustomAssetDefinitionAppearance[]} */
@@ -33,6 +35,16 @@ const assets = [
         Visible: false,
         Random: false,
     },
+    {
+        Name: "身高减30cm_Luzi",
+        Visible: false,
+        Random: false,
+    },
+    {
+        Name: "身高减40cm_Luzi",
+        Visible: false,
+        Random: false,
+    },
 ];
 
 const translations = {
@@ -42,6 +54,8 @@ const translations = {
             缩小浮空_Luzi: "缩小浮空",
             身高减10cm_Luzi: "-10cm",
             身高减20cm_Luzi: "-20cm",
+            身高减30cm_Luzi: "-30cm",
+            身高减40cm_Luzi: "-40cm",
         },
     },
     EN: {
@@ -50,6 +64,8 @@ const translations = {
             缩小浮空_Luzi: "Shrink in Air",
             身高减10cm_Luzi: "-10cm",
             身高减20cm_Luzi: "-20cm",
+            身高减30cm_Luzi: "-30cm",
+            身高减40cm_Luzi: "-40cm",
         },
     },
     RU: {
@@ -58,6 +74,8 @@ const translations = {
             缩小浮空_Luzi: "Уменьшение в воздухе",
             身高减10cm_Luzi: "-10см",
             身高减20cm_Luzi: "-20см",
+            身高减30cm_Luzi: "-30см",
+            身高减40cm_Luzi: "-40см",
         },
     },
 };
