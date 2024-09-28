@@ -1,6 +1,6 @@
 {
   "name": "mod",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "scripts": {
     "type-check": "tsc --noEmit --allowJs --checkJs -p jsconfig.json",
     "build": "rollup -c rollup.config.js"

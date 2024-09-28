@@ -46,43 +46,46 @@ export function getCustomAssets() {
     return customAssets;
 }
 
+/**
+ * @param {CustomGroupName} group
+ * @param {string} name
+ * @returns {boolean}
+ */
+export function isInListCustomAsset(group, name) {
+    /** @type {Asset | undefined} */
+    const asset = customAssets[group]?.[name];
+    return asset && !asset.NotVisibleOnScreen?.includes("LuziScreen");
+}
+
 export function enableCustomAssets() {
-    let dialogBuildFlag = false;
-    ModManager.hookFunction("DialogInventoryBuild", 1, (args, next) => {
-        if (args[2]) return next(args);
-
-        dialogBuildFlag = true;
-        next(args);
-        dialogBuildFlag = false;
-    });
-
-    ModManager.hookFunction("DialogInventoryAdd", 1, (args, next) => {
-        next(args);
-        if (dialogBuildFlag) {
-            dialogBuildFlag = false;
-
+    ModManager.progressiveHook("DialogInventoryAdd")
+        .inside("DialogInventoryBuild", { once: true })
+        .next()
+        .inject((args, next) => {
             const groupName = args[1].Asset.Group.Name;
             const added = new Set(DialogInventory.map((item) => item.Asset.Name));
 
             if (customAssets[groupName]) {
                 Object.entries(customAssets[groupName])
-                    .filter(([assetName]) => !added.has(assetName))
+                    .filter(
+                        ([assetName, asset]) =>
+                            !asset.NotVisibleOnScreen?.includes("LuziScreen") && !added.has(assetName)
+                    )
                     .forEach(([_, asset]) => DialogInventoryAdd(args[0], { Asset: asset }, false));
             }
-        }
-    });
+        });
 
     ModManager.progressiveHook("InventoryAvailable")
         .inside("CraftingItemListBuild")
         .override((args, next) => {
             const [C, Name, Group] = args;
-            if (customAssets[Group]?.[Name]) return true;
+            if (isInListCustomAsset(Group, Name)) return true;
             return next(args);
         });
 
     ModManager.progressiveHook("CraftingValidate").inject((args, next) => {
         const asset = CraftingAssets[args[0].Item]?.[0];
-        if (asset && customAssets[asset.Group.Name]?.[asset.Name]) args[3] = false;
+        if (asset && isInListCustomAsset(asset.Group.Name, asset.Name)) args[3] = false;
     });
 
     const pInventory = ModManager.randomGlobalFunction("CraftingInventory", () => {

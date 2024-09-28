@@ -34,7 +34,7 @@ export function setXDrawState(data) {
 }
 
 /**
- * @param {any} data
+ * @param {Partial<XCharacterDrawOrderState>} data
  * @returns {XCharacterDrawOrderState}
  */
 function validate(data) {
@@ -95,7 +95,7 @@ export function setupSync() {
             const target = ChatRoomCharacter.find((c) => c.MemberNumber === Sender);
             if (target) {
                 const drawState = target.XCharacterDrawOrder?.drawState;
-                target.XCharacterDrawOrder = validate(Dictionary[0]);
+                target.XCharacterDrawOrder = validate(/** @type {unknown}*/ (Dictionary[0]));
                 if (drawState) target.XCharacterDrawOrder.drawState = drawState;
             }
             return;

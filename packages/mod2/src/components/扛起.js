@@ -1,6 +1,5 @@
 import ActivityManager from "@mod-utils/ActivityManager";
 import ChatRoomOrder from "@mod-utils/ChatRoomOrder";
-import ModManager from "@mod-utils/ModManager";
 
 /** @type { ActivityManagerInterface.ICustomActivity} */
 const activity = {
@@ -8,10 +7,7 @@ const activity = {
         Name: "扛起",
         Prerequisite: [
             (prereq, acting, acted, group) => {
-                return (
-                    InventoryIsItemInList(acted, "ItemDevices", ["BurlapSack"]) &&
-                    InventoryIsItemInList(acting, "ItemTorso", ["缰绳_Luzi"])
-                );
+                return InventoryIsItemInList(acted, "ItemDevices", ["BurlapSack"]);
             },
         ],
         MaxProgress: 50,
@@ -32,11 +28,12 @@ const activity = {
         } else if (info.SourceCharacter === player.MemberNumber) {
             const TgtChara = ChatRoomCharacter.find((C) => C.MemberNumber === info.TargetCharacter);
             if (!TgtChara) return;
+            InventoryWear(player, "扛起来的麻袋_Luzi", "ItemMisc");
             ChatRoomOrder.setDrawOrder({
                 prevCharacter: TgtChara.MemberNumber,
                 associatedAsset: {
-                    group: "ItemTorso",
-                    asset: "缰绳_Luzi",
+                    group: "ItemMisc",
+                    asset: "扛起来的麻袋_Luzi",
                 },
             });
             if (ChatRoomLeashList.indexOf(TgtChara.MemberNumber) < 0) ChatRoomLeashList.push(TgtChara.MemberNumber);

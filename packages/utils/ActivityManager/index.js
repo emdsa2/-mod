@@ -78,7 +78,7 @@ export default class ActivityManager {
         pushLoad(() => pushHandler(modifier.name, modifier));
     }
 
-    static init(loadFunc) {
+    static init() {
         setupLoad(
             () =>
                 Array.isArray(ActivityFemale3DCG) &&
@@ -87,7 +87,6 @@ export default class ActivityManager {
                 Array.isArray(ChatRoomMessageHandlers)
         );
 
-        pushLoad(() => loadFunc());
         pushLoad(() => setupHandler());
 
         setupEntry();

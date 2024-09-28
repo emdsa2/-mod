@@ -8,34 +8,45 @@ const activity = {
         Prerequisite: [
             (prereq, acting, acted, group) => {
                 return (
-                    InventoryIsItemInList(acting, "ItemTorso", ["缰绳_Luzi"]) &&
+                    (!InventoryGet(acting, "ItemHandheld") ||
+                        InventoryIsItemInList(acting, "ItemHandheld", ["拉紧的牵绳_Luzi"])) &&
                     InventoryIsItemInList(acted, "ItemNeckRestraints", ["CollarLeash"])
                 );
             },
         ],
         MaxProgress: 50,
-        Target: ["ItemTorso"],
+        Target: ["ItemTorso", "ItemNeckRestraints", "ItemNeck"],
     },
     run: (player, sender, info) => {
         if (info.TargetCharacter === player.MemberNumber) {
             const SrcChara = ChatRoomCharacter.find((C) => C.MemberNumber === info.SourceCharacter);
             if (!SrcChara) return;
             ChatRoomOrder.setDrawOrder({
-                prevCharacter: SrcChara.MemberNumber,
+                nextCharacter: SrcChara.MemberNumber,
                 associatedAsset: {
                     group: "ItemNeckRestraints",
                     asset: "CollarLeash",
                 },
             });
+            const item = InventoryGet(player, "ItemNeckRestraints");
+            if (item) {
+                if (!item.Property) item.Property = {};
+                if (!Array.isArray(item.Property.Effect)) item.Property.Effect = [];
+                if (item.Property.Effect.indexOf("IsLeashed") < 0) {
+                    item.Property.Effect.push("IsLeashed");
+                    ChatRoomCharacterUpdate(Player);
+                }
+            }
             ChatRoomLeashPlayer = SrcChara.MemberNumber;
         } else if (info.SourceCharacter === player.MemberNumber) {
             const TgtChara = ChatRoomCharacter.find((C) => C.MemberNumber === info.TargetCharacter);
             if (!TgtChara) return;
+            InventoryWear(player, "拉紧的牵绳_Luzi", "ItemHandheld");
             ChatRoomOrder.setDrawOrder({
-                nextCharacter: TgtChara.MemberNumber,
+                prevCharacter: TgtChara.MemberNumber,
                 associatedAsset: {
-                    group: "ItemTorso",
-                    asset: "缰绳_Luzi",
+                    group: "ItemHandheld",
+                    asset: "拉紧的牵绳_Luzi",
                 },
             });
             if (ChatRoomLeashList.indexOf(TgtChara.MemberNumber) < 0) ChatRoomLeashList.push(TgtChara.MemberNumber);
