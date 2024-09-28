@@ -76,6 +76,14 @@ export function enableCustomAssets() {
         });
 
     ModManager.progressiveHook("InventoryAvailable")
+        .inside("CharacterAppearanceValidate")
+        .override((args, next) => {
+            const [C, Name, Group] = args;
+            if (customAssets[Group]?.[Name]) return true;
+            return next(args);
+        });
+
+    ModManager.progressiveHook("InventoryAvailable")
         .inside("CraftingItemListBuild")
         .override((args, next) => {
             const [C, Name, Group] = args;

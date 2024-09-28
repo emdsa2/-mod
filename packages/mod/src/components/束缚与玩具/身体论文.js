@@ -1,6 +1,6 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
-//TODO 身体论文草稿 （整个身体从上到下书写文字
+
 /**
  * 用于在绘制角色后执行自定义绘制逻辑的钩子函数
  * @param {Object} data - 绘制所需的数据对象
@@ -11,8 +11,8 @@ function afterDrawHook(data, originalFunction, { C, A, CA, X, Y, drawCanvas, dra
     if (L !== "Text") return;
 
     // 设置临时画布
-    const Height = 65;
-    const Width = 200;
+    const Height = 500;
+    const Width = 500;
     const TempCanvas = AnimationGenerateTempCanvas(C, A, Width, Height);
 
     /** @type {DynamicDrawOptions} */
@@ -23,77 +23,38 @@ function afterDrawHook(data, originalFunction, { C, A, CA, X, Y, drawCanvas, dra
         width: Width,
     };
 
-    // 根据文本位置调整绘制参数
-    switch (CA.Property.TypeRecord.p) {
-        case 0: // Collar L
-            X -= 50;
-            Y -= 105;
-            drawOptions.textAlign = "left";
-            break;
-        case 1: // Collar C
-            Y -= 105;
-            drawOptions.textAlign = "center";
-            break;
-        case 2: // Collar R
-            X += 50;
-            Y -= 105;
-            drawOptions.textAlign = "right";
-            break;
-        case 3: // Ribs L
-            X -= 48;
-            drawOptions.textAlign = "left";
-            break;
-        case 4: // Ribs C
-            drawOptions.textAlign = "center";
-            break;
-        case 5: // Ribs R
-            X += 48;
-            drawOptions.textAlign = "right";
-            break;
-        case 6: // Hips L
-            X -= 70;
-            Y += 105;
-            drawOptions.textAlign = "left";
-            break;
-        case 7: // Hips C
-            Y += 105;
-            drawOptions.textAlign = "center";
-            break;
-        case 8: // Hips R
-            X += 70;
-            Y += 105;
-            drawOptions.textAlign = "right";
-            break;
-        default:
-            return;
-    }
+    const pos = [
+        { X: -40, Y: -105, textAlign: "left" },
+        { X: 0, Y: -105, textAlign: "center" },
+        { X: 40, Y: -105, textAlign: "right" },
+        { X: -38, Y: 0, textAlign: "left" },
+        { X: 0, Y: 0, textAlign: "center" },
+        { X: 38, Y: 0, textAlign: "right" },
+        { X: -60, Y: 105, textAlign: "left" },
+        { X: 0, Y: 105, textAlign: "center" },
+        { X: 60, Y: 105, textAlign: "right" },
+    ];
 
-    // 根据角色属性调整Y坐标
-    if (CA.Property.TypeRecord.p >= 3 && CA.Property.TypeRecord.p <= 5 && C.HasAttribute("UpperLarge")) {
-        Y += 17;
-    }
-
-    // 初始化文本项
     TextItem.Init(data, C, CA, false, false);
-    const [text1, text2, text3] = [CA.Property.Text, CA.Property.Text2, CA.Property.Text3];
 
-    // 在临时画布上绘制文本
     const ctx = TempCanvas.getContext("2d");
-    DynamicDrawText(text1, ctx, Width / 2, Height / 2 - 10, drawOptions);
-    DynamicDrawText(text2, ctx, Width / 2, Height / 2, drawOptions);
-    DynamicDrawText(text3, ctx, Width / 2, Height / 2 + 10, drawOptions);
 
-    // 将临时画布的内容根据角色位置绘制到最终画布上
-    drawCanvas(TempCanvas, X + Width / 2, Y + Height / 2, AlphaMasks);
-    drawCanvasBlink(TempCanvas, X + Width / 2, Y + Height / 2, AlphaMasks);
+    pos.forEach((p, index) => {
+        const center = { X: p.X + Width / 2, Y: p.Y + Height / 2 };
+        DynamicDrawText(CA.Property[`Text${index * 3 + 1}`] || "", ctx, center.X, center.Y - 10, drawOptions);
+        DynamicDrawText(CA.Property[`Text${index * 3 + 2}`] || "", ctx, center.X, center.Y, drawOptions);
+        DynamicDrawText(CA.Property[`Text${index * 3 + 3}`] || "", ctx, center.X, center.Y + 10, drawOptions);
+    });
+
+    drawCanvas(TempCanvas, X, Y, AlphaMasks);
+    drawCanvasBlink(TempCanvas, X, Y, AlphaMasks);
 }
 
 /** @type {CustomAssetDefinition} */
 const asset = {
     Name: "身体论文_Luzi",
-    Priority: 9,
+    Priority: 13,
     Value: -1,
-    BuyGroup: "BodyWritings",
     DynamicGroupName: "BodyMarkings",
     PoseMapping: {
         BackBoxTie: PoseType.DEFAULT,
@@ -111,10 +72,9 @@ const asset = {
     Layer: [
         {
             Name: "Text",
-            Left: 50,
-            Top: 305,
+            Left: 0,
+            Top: 120,
             HasImage: false,
-            AllowTypes: { t: 1 },
         },
     ],
 };
@@ -124,78 +84,122 @@ const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChatSetting: ModularItemChatSetting.PER_MODULE,
     DrawImages: false,
-    Modules: [
-        {
-            Name: "Position",
-            Key: "p",
-            Options: [
-                {},
-                {},
-                {}, // Collar 0-L 1-C 2-R
-                {},
-                {},
-                {}, // Ribs   3-L 4-C 5-R
-                {},
-                {},
-                {}, // Hips   6-L 7-C 8-R
-            ],
-            DrawData: {
-                elementData: [
-                    { position: ExtendedXYWithoutImages[9][0] },
-                    { position: ExtendedXYWithoutImages[9][1] },
-                    { position: ExtendedXYWithoutImages[9][2] },
-                    { position: ExtendedXYWithoutImages[9][3] },
-                    { position: ExtendedXYWithoutImages[9][4] },
-                    { position: ExtendedXYWithoutImages[9][5] },
-                    { position: ExtendedXYWithoutImages[9][6] },
-                    { position: ExtendedXYWithoutImages[9][7] },
-                    { position: ExtendedXYWithoutImages[9][8] },
-                ],
-                itemsPerPage: 9,
-            },
-        },
-        {
-            Name: "Text",
-            Key: "t",
-            Options: [
-                {}, // 0-N
-                {
-                    HasSubscreen: true,
-                    ArchetypeConfig: {
-                        Archetype: ExtendedArchetype.TEXT,
-                        MaxLength: { Text: 20, Text2: 20, Text3: 20 },
-                        Font: "Ananda Black",
-                        ScriptHooks: {
-                            AfterDraw: afterDrawHook,
-                        },
+    Modules: ["a", "b", "c", "d", "e", "f", "g", "h", "i"].map((name, index) => ({
+        Name: `Text${index}`,
+        Key: name,
+        Options: [
+            {},
+            {
+                HasSubscreen: true,
+                ArchetypeConfig: {
+                    Archetype: ExtendedArchetype.TEXT,
+                    MaxLength: {
+                        [`Text${index * 3 + 1}`]: 20,
+                        [`Text${index * 3 + 2}`]: 20,
+                        [`Text${index * 3 + 3}`]: 20,
                     },
-                }, // 1-Y
-            ],
-        },
-    ],
-    BaselineProperty: { Text: "", Text2: "", Text3: "" },
+                    Font: "Ananda Black",
+                    ScriptHooks: {
+                        AfterDraw: afterDrawHook,
+                    },
+                },
+            },
+        ],
+    })),
+
+    DrawData: {
+        elementData: [
+            { position: ExtendedXYWithoutImages[9][0] },
+            { position: ExtendedXYWithoutImages[9][1] },
+            { position: ExtendedXYWithoutImages[9][2] },
+            { position: ExtendedXYWithoutImages[9][3] },
+            { position: ExtendedXYWithoutImages[9][4] },
+            { position: ExtendedXYWithoutImages[9][5] },
+            { position: ExtendedXYWithoutImages[9][6] },
+            { position: ExtendedXYWithoutImages[9][7] },
+            { position: ExtendedXYWithoutImages[9][8] },
+        ],
+        itemsPerPage: 9,
+    },
+    BaselineProperty: /** @type {PropertiesNoArray.Item}*/ ({
+        Text1: "",
+        Text2: "",
+        Text3: "",
+        Text4: "",
+        Text5: "",
+        Text6: "",
+        Text7: "",
+        Text8: "",
+        Text9: "",
+        Text10: "",
+        Text11: "",
+        Text12: "",
+        Text13: "",
+        Text14: "",
+        Text15: "",
+        Text16: "",
+        Text17: "",
+        Text18: "",
+        Text19: "",
+        Text20: "",
+        Text21: "",
+        Text22: "",
+        Text23: "",
+        Text24: "",
+        Text25: "",
+        Text26: "",
+        Text27: "",
+    }),
 };
 
 /** @type {Translation.Dialog} */
 const dialogs = {
     CN: {
-        Markings2_Luzi身体论文_LuziModuleText: "文本",
-        Markings2_Luzi身体论文_LuziOption: "姿势",
+        BodyMarkings2_Luzi身体论文_LuziSelectBase: "选择文本位置",
+        BodyMarkings2_Luzi身体论文_LuziModuleText0: "右侧锁骨",
+        BodyMarkings2_Luzi身体论文_LuziModuleText1: "中间锁骨",
+        BodyMarkings2_Luzi身体论文_LuziModuleText2: "左侧锁骨",
+        BodyMarkings2_Luzi身体论文_LuziModuleText3: "右侧肋",
+        BodyMarkings2_Luzi身体论文_LuziModuleText4: "中间肋",
+        BodyMarkings2_Luzi身体论文_LuziModuleText5: "左侧肋",
+        BodyMarkings2_Luzi身体论文_LuziModuleText6: "右侧髋",
+        BodyMarkings2_Luzi身体论文_LuziModuleText7: "中间髋",
+        BodyMarkings2_Luzi身体论文_LuziModuleText8: "左侧髋",
+        ...["a", "b", "c", "d", "e", "f", "g", "h", "i"].reduce((pv, name, index) => {
+            pv[`BodyMarkings2_Luzi身体论文_LuziSelectText${index}`] = "设置文本";
+            pv[`BodyMarkings2_Luzi身体论文_LuziOption${name}0`] = "无";
+            pv[`BodyMarkings2_Luzi身体论文_LuziOption${name}1`] = "有";
+            return pv;
+        }, {}),
     },
     EN: {
-        Markings2_Luzi身体论文_LuziModuleText: "Select text",
-        Markings2_Luzi身体论文_LuziOption: "Select pose",
-    },
-    UA: {
-        Markings2_Luzi身体论文_LuziModuleText: "Виберіть текст",
-        Markings2_Luzi身体论文_LuziOption: "Виберіть позу",
+        BodyMarkings2_Luzi身体论文_LuziSelectBase: "Select Text Position",
+        BodyMarkings2_Luzi身体论文_LuziModuleText0: "Collarbone Right",
+        BodyMarkings2_Luzi身体论文_LuziModuleText1: "Collarbone Center",
+        BodyMarkings2_Luzi身体论文_LuziModuleText2: "Collarbone Left",
+        BodyMarkings2_Luzi身体论文_LuziModuleText3: "Ribs Right",
+        BodyMarkings2_Luzi身体论文_LuziModuleText4: "Ribs Center",
+        BodyMarkings2_Luzi身体论文_LuziModuleText5: "Ribs Left",
+        BodyMarkings2_Luzi身体论文_LuziModuleText6: "Hips Right",
+        BodyMarkings2_Luzi身体论文_LuziModuleText7: "Hips Center",
+        BodyMarkings2_Luzi身体论文_LuziModuleText8: "Hips Left",
+        ...["a", "b", "c", "d", "e", "f", "g", "h", "i"].reduce((pv, name, index) => {
+            pv[`BodyMarkings2_Luzi身体论文_LuziSelectText${index}`] = "Set Text";
+            pv[`BodyMarkings2_Luzi身体论文_LuziOption${name}0`] = "No";
+            pv[`BodyMarkings2_Luzi身体论文_LuziOption${name}1`] = "Yes";
+            return pv;
+        }, {}),
     },
 };
 
 const translations = { CN: "身体论文", EN: "Body document", UA: "Документ на тіло" };
 
-// export default function () {
-//     ModManager.globalFunction(`AssetsBodyMarkings2_Luzi身体论文_LuziAfterDraw`, afterDrawHook);
-//     AssetManager.addAsset("BodyMarkings2_Luzi", asset, extended, translations);
-//     AssetManager.addCustomDialog(dialogs);
-// }
+export default function () {
+    ModManager.globalFunction(`AssetsBodyMarkings2_Luzi身体论文_LuziAfterDraw`, afterDrawHook);
+    AssetManager.addAsset("BodyMarkings2_Luzi", asset, extended, translations);
+    AssetManager.addImageMapping({
+        "Assets/Female3DCG/BodyMarkings/Preview/身体论文_Luzi.png":
+            "Assets/Female3DCG/BodyMarkings/Preview/BodyWritings.png",
+    });
+    AssetManager.addCustomDialog(dialogs);
+}

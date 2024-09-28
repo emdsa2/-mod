@@ -5,6 +5,9 @@ const mMirrorGroups = { ItemTorso: TorsoMirror, ItemTorso2: TorsoMirror };
 /** @type {Partial<Record<CustomGroupName, CustomGroupName>>} */
 const rMirrorPreimage = {};
 
+/** @type {Partial<Record<CustomGroupName, Set<CustomGroupName>>>} */
+const customMirrorGroups = {};
+
 // 图片映射，认为ItemTorso2的原版内容已经处理好了不需要添加
 /** @type {Partial<Record<`Assets/Female3DCG/${CustomGroupName}`,`Assets/Female3DCG/${CustomGroupName}`>>} */
 const mirrorImgMapping = {};
@@ -19,8 +22,16 @@ const mirrorImgMapping = {};
 export function registerMirror(from, to) {
     if (!mMirrorGroups[from]) mMirrorGroups[from] = new Set([from]);
     mMirrorGroups[from].add(to);
+
+    if (!customMirrorGroups[from]) customMirrorGroups[from] = new Set();
+    customMirrorGroups[from].add(to);
+
     rMirrorPreimage[to] = from;
     mirrorImgMapping[`Assets/Female3DCG/${to}`] = `Assets/Female3DCG/${from}`;
+}
+
+export function getCustomMirrorGroups() {
+    return customMirrorGroups;
 }
 
 /**

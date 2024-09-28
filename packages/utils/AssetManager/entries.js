@@ -1,6 +1,6 @@
 import ModManager from "../ModManager";
 import { checkItemCustomed, getCustomAssets, getCustomGroups } from "./customStash";
-import { resolvePreimage } from "./mirrorGroup";
+import { getCustomMirrorGroups, resolvePreimage } from "./mirrorGroup";
 
 /**
  * 按语言解析翻译条目
@@ -125,6 +125,36 @@ export function setupEntries() {
             .flat()
             .filter(({ fromAsset }) => !!fromAsset)
             .forEach(({ asset, fromAsset }) => assignDesc(asset, fromAsset.Description));
+
+        /** @type {TextCache | undefined} */
+        const assetStrings = TextAllScreenCache.get(AssetStringsPath);
+        const loadFunc = (tcache) => {
+            const cmg = getCustomMirrorGroups();
+            const doneSet = new Set();
+            const names = AssetGroup.map((group) => group.Name).sort((a, b) => b.length - a.length);
+            Object.entries(tcache.cache).forEach(([key, value]) => {
+                if (doneSet.has(key)) return;
+                const n = names.find((name) => key.startsWith(name));
+                if (!n) return;
+                doneSet.add(key);
+                const mirrors = cmg[n];
+                if (!mirrors) return;
+                const tail = key.slice(n.length);
+
+                mirrors.forEach((mirror) => {
+                    const mirrorKey = mirror + tail;
+                    if (!tcache.cache[mirrorKey]) tcache.cache[mirrorKey] = value;
+                });
+            });
+        };
+
+        if (assetStrings) {
+            if (!assetStrings.loaded) {
+                assetStrings.rebuildListeners.push((tcache) => loadFunc(tcache));
+            } else {
+                loadFunc(assetStrings);
+            }
+        }
     };
     // 加载csv描述
     ModManager.progressiveHook("AssetBuildDescription").next().inject(loadAssetEntries);
