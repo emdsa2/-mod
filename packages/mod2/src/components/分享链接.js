@@ -49,16 +49,16 @@ const frame = {
     bili: {
         displayName: "Bilibili",
         get: (info) => {
-            const IDs = info.split("-");
+            const IDs = JSON.parse(info);
             return `<iframe width="100%" height="315" src="//player.bilibili.com/player.html?aid=${IDs[0]}&bvid=${IDs[1]}&cid=${IDs[2]}&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>`;
         },
     },
     ytb: {
         displayName: "Youtube",
         get: (info) => {
-            const IDs = info.split("-");
-            return `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${IDs[0]}?si=${IDs[1]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-        }, // TODO 油管的视频看不了！
+            const IDs = JSON.parse(info);
+            return `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${IDs[0]}?si=${IDs[1]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+        },
     },
     phb: {
         displayName: "Pornhub",
@@ -86,21 +86,21 @@ function shareHandle(parsed) {
             if (match)
                 return {
                     linkType: "nm",
-                    info: match[1],
+                    info: btoa(match[1]),
                 };
         } else if (shareContent.startsWith('<iframe src="//player.bilibili.com/player.html')) {
             const match = shareContent.match(/aid=(\d+)&bvid=([A-Za-z0-9]+)&cid=([A-Za-z0-9]+)/);
             if (match)
                 return {
                     linkType: "bili",
-                    info: `${match[1]}-${match[2]}-${match[3]}`,
+                    info: btoa(JSON.stringify([match[1], match[2], match[3]])),
                 };
         } else if (shareContent.startsWith("https://youtu.be/")) {
-            const match = shareContent.match(/([A-Za-z0-9_-]+)\?si=([A-Za-z0-9]+)/);
-            if (match) return { linkType: "ytb", info: `${match[1]}-${match[2]}` };
+            const match = shareContent.match(/([A-Za-z0-9_-]+)\?si=([A-Za-z0-9_-]+)/);
+            if (match) return { linkType: "ytb", info: btoa(JSON.stringify([match[1], match[2]])) };
         } else if (shareContent.includes("pornhub.com/view_video.php")) {
             const match = shareContent.match(/viewkey=([A-Za-z0-9]+)/);
-            if (match) return { linkType: "phb", info: match[1] };
+            if (match) return { linkType: "phb", info: btoa(match[1]) };
         }
 
         shareErrReport();
@@ -127,7 +127,7 @@ export default function () {
         const { Content, Dictionary } = args[0];
         if (Content === "Share_Link") {
             const { linkType, info } = /** @type { any } */ (Dictionary[0]);
-            const result = frame[linkType]?.get(info);
+            const result = frame[linkType]?.get(atob(info));
             if (result) ChatRoomSendLocal(result);
             return;
         }
@@ -137,9 +137,12 @@ export default function () {
     CommandCombine({
         Tag: "分享",
         Description: '分享媒体链接,使用"/分享"获取帮助! ',
-        Action: (parsed) => {
+        Action: (parsed, msg) => {
             if (parsed === "") sendShareHelp();
-            else shareHandle(parsed);
+            else {
+                const ori = msg.substring(msg.indexOf(" ") + 1);
+                shareHandle(ori);
+            }
         },
     });
 }
