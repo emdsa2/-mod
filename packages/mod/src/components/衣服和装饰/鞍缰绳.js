@@ -88,13 +88,19 @@ export default function () {
 
             if (!sharedC) return;
 
-            if (sharedC.prev.MemberNumber === C.MemberNumber && InventoryIsItemInList(C, "ItemTorso", ["缰绳_Luzi"])) {
+            if (
+                sharedC.prev.XCharacterDrawOrder.associatedAsset?.asset !== "缰绳_Luzi" ||
+                sharedC.next.XCharacterDrawOrder.associatedAsset?.asset !== "鞍_Luzi"
+            )
+                return;
+
+            if (sharedC.prev.MemberNumber === C.MemberNumber) {
                 args[1] = sharedC.center.X;
-                args[2] = sharedC.center.Y - 50 * sharedC.prev.XCharacterDrawOrder.drawState.Zoom; // 缰绳人要向上移动50像素，乘以鞍人的缩放比例
+                args[2] = sharedC.center.Y - 50 * Zoom;
                 return;
             }
 
-            if (sharedC.next.MemberNumber === C.MemberNumber && InventoryIsItemInList(C, "ItemTorso", ["鞍_Luzi"])) {
+            if (sharedC.next.MemberNumber === C.MemberNumber) {
                 args[1] = sharedC.center.X;
                 args[2] = sharedC.center.Y;
                 return;

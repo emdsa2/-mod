@@ -42,24 +42,24 @@ export default function () {
             if (!sharedC) return;
 
             if (
-                sharedC.prev.MemberNumber === C.MemberNumber &&
-                InventoryIsItemInList(C, "ItemDevices", ["BurlapSack"])
-            ) {
+                sharedC.prev.XCharacterDrawOrder.associatedAsset?.asset !== "BurlapSack" ||
+                sharedC.next.XCharacterDrawOrder.associatedAsset?.asset !== "扛起来的麻袋_Luzi"
+            )
+                return;
+
+            if (sharedC.prev.MemberNumber === C.MemberNumber) {
                 if (sharedC.next.ActivePose[0] === "Kneel" || sharedC.next.ActivePose[0] === "KneelingSpread") {
                     args[1] = sharedC.center.X;
-                    args[2] = sharedC.center.Y - 120 * sharedC.next.XCharacterDrawOrder.drawState.Zoom;
+                    args[2] = sharedC.center.Y - 120 * Zoom;
                     return;
                 } else {
                     args[1] = sharedC.center.X;
-                    args[2] = sharedC.center.Y - 340 * sharedC.next.XCharacterDrawOrder.drawState.Zoom;
+                    args[2] = sharedC.center.Y - 340 * Zoom;
                     return;
                 }
             }
 
-            if (
-                sharedC.next.MemberNumber === C.MemberNumber &&
-                InventoryIsItemInList(C, "ItemMisc", ["扛起来的麻袋_Luzi"])
-            ) {
+            if (sharedC.next.MemberNumber === C.MemberNumber) {
                 args[1] = sharedC.center.X;
                 args[2] = sharedC.center.Y;
                 return;

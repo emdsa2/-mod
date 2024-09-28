@@ -34,18 +34,18 @@ export default function () {
             if (!sharedC) return;
 
             if (
-                sharedC.next.MemberNumber === C.MemberNumber &&
-                InventoryIsItemInList(C, "ItemHandheld", ["拉紧的牵绳_Luzi"])
-            ) {
+                sharedC.prev.XCharacterDrawOrder.associatedAsset?.asset !== "CollarLeash" ||
+                sharedC.next.XCharacterDrawOrder.associatedAsset?.asset !== "拉紧的牵绳_Luzi"
+            )
+                return;
+
+            if (sharedC.next.MemberNumber === C.MemberNumber) {
                 args[1] = sharedC.center.X;
                 args[2] = sharedC.center.Y;
                 return;
             }
 
-            if (
-                sharedC.prev.MemberNumber === C.MemberNumber &&
-                InventoryIsItemInList(C, "ItemNeckRestraints", ["CollarLeash"])
-            ) {
+            if (sharedC.prev.MemberNumber === C.MemberNumber) {
                 args[1] = sharedC.center.X - 150 * Zoom;
                 args[2] = sharedC.center.Y;
                 return;
