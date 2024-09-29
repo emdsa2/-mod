@@ -1,98 +1,91 @@
-import ModManager from "@mod-utils/ModManager";
 import AssetManager from "@mod-utils/AssetManager";
+import ChatRoomOrder from "@mod-utils/ChatRoomOrder";
+import ModManager from "@mod-utils/ModManager";
 
 /** @type {CustomGroupedAssetDefinitions} */
-const assets = {
-    // ItemDevices: [
-    //     {
-    //         Name: "马车_Luzi",
-    //         Random: false,
-    //         Top: 0,
-    //         Left: 0,
-    //         Layer: [
-    //             {
-    //                 Name: "前",
-    //                 Priority: 19,
-    //             },
-    //             {
-    //                 Name: "中",
-    //                 Priority: 18,
-    //             },
-    //             {
-    //                 Name: "后",
-    //                 Priority: 0,
-    //             },
-    //         ],
-    //     },
-    //     {
-    //         Name: "马_Luzi",
-    //         Random: false,
-    //         Top: 0,
-    //         Left: 0,
-    //     },
-    // ],
+const asset = {
+    ItemDevices: [
+        {
+            Name: "马车前_Luzi",
+            Random: false,
+            Top: 0,
+            Left: -50,
+            AllowLock: false,
+            Extended: false,
+            FixedPosition: true,
+            Layer: [
+                { Name: "右辕", Priority: 1 },
+                { Name: "軓", Priority: 1 },
+                { Name: "左辕", Priority: 60 },
+            ],
+        },
+        {
+            Name: "马车_Luzi",
+            Random: false,
+            Top: 0,
+            Left: -280,
+            AllowLock: false,
+            Extended: false,
+            FixedPosition: true,
+            Layer: [
+                { Name: "右轮挡泥板后", Priority: 1 },
+                { Name: "右轮", Priority: 1 },
+                { Name: "右轮挡泥板前", Priority: 1 },
+                { Name: "右輢", Priority: 2 },
+                { Name: "舆", Priority: 5 },
+                { Name: "左輢", Priority: 60 },
+                { Name: "左轮挡泥板后", Priority: 61 },
+                { Name: "左轮", Priority: 61 },
+                { Name: "左轮挡泥板前", Priority: 61 },
+            ],
+            SetPose: ["Kneel"],
+            AllowActivePose: ["Kneel", "KneelingSpread"],
+            OverrideHeight: {
+                Height: 20,
+                Priority: 21,
+                HeightRatioProportion: 1,
+            },
+        },
+    ],
 };
-
-/** @type {Translation.GroupedEntries} */
 const translations = {
-    // CN: {
-    //     ItemDevices: {
-    //         马车: "马车",
-    //         马: "马",
-    //     },
-    // },
-    // EN: {
-    //     ItemDevices: {
-    //         马车: "Carriage",
-    //         马: "Horse",
-    //     },
-    // },
+    CN: {
+        ItemDevices: {
+            马车前_Luzi: "马车前",
+            马车_Luzi: "马车",
+        },
+    },
 };
 
 export default function () {
-    AssetManager.addGroupedAssets(assets, translations);
+    // AssetManager.addGroupedAssets(asset, translations);
 
-    // // 调整绘制位置
-    // let inChatRoomCharacterViewDraw = false;
-    // ModManager.hookFunction("ChatRoomCharacterViewLoopCharacters", 1, (args, next) => {
-    //     inChatRoomCharacterViewDraw = true;
-    //     next(args);
-    //     inChatRoomCharacterViewDraw = false;
-    // });
+    ModManager.progressiveHook("DrawCharacter", 1)
+        .inside("ChatRoomCharacterViewLoopCharacters")
+        .inject((args, next) => {
+            const [C, X, Y, Zoom] = args;
+            const sharedC = ChatRoomOrder.requireSharedCenter(C);
 
-    // ModManager.hookFunction("DrawCharacter", 1, (args, next) => {
-    //     do {
-    //         const [C, X, Y, Zoom] = args;
-    //         if (C.Canvas.width === 500) C.Canvas.width = 1000;
-    //         if (C.CanvasBlink.width === 500) C.CanvasBlink.width = 1000;
+            if (!sharedC) return;
 
-    //         if (!inChatRoomCharacterViewDraw) break;
+            if (
+                sharedC.prev.XCharacterDrawOrder.associatedAsset?.asset !== "马车_Luzi" ||
+                sharedC.next.XCharacterDrawOrder.associatedAsset?.asset !== "马车前_Luzi"
+            )
+                return;
 
-    //         const device = InventoryGet(C, "ItemDevices");
-    //         if (!device) break;
-    //         if (device.Asset.Name === assets.ItemDevices[0].Name) {
-    //             const idx = ChatRoomCharacterDrawlist.indexOf(C);
-    //             if (
-    //                 idx < 0 ||
-    //                 idx === ChatRoomCharacterDrawlist.length - 1 ||
-    //                 idx === ChatRoomCharacterViewCharactersPerRow - 1
-    //             )
-    //                 break;
-    //             const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx + 1], "ItemDevices");
-    //             if (!other_device) break;
-    //             if (other_device.Asset.Name === assets.ItemDevices[1].Name) {
-    //                 return next([C, X + 145, Y, Zoom]);
-    //             }
-    //         } else if (device.Asset.Name === assets.ItemDevices[1].Name) {
-    //             const idx = ChatRoomCharacterDrawlist.indexOf(C);
-    //             if (idx < 0 || idx === 0 || idx === ChatRoomCharacterViewCharactersPerRow) break;
-    //             const other_device = InventoryGet(ChatRoomCharacterDrawlist[idx - 1], "ItemDevices");
-    //             if (!other_device) break;
-    //             if (other_device.Asset.Name === assets.ItemDevices[0].Name) {
-    //                 return next([C, X - 145, Y, Zoom]);
-    //             }
-    //         }
-    //     } while (false);
-    //     next(args);
-    // });
+            if (sharedC.next.MemberNumber === C.MemberNumber) {
+                args[1] = sharedC.center.X - 130 / args[3];
+                args[2] = sharedC.center.Y;
+                args[4] = false;
+                return;
+            }
+
+            if (sharedC.prev.MemberNumber === C.MemberNumber) {
+                args[1] = sharedC.center.X + 80 / args[3];
+                args[2] = sharedC.center.Y;
+                args[4] = false;
+                return;
+            }
+        });
 }
