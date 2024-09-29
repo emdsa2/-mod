@@ -46,6 +46,14 @@ const activity = {
             ItemFeet: "Scissors Cut Off the Socks",
             ItemBoots: "Scissors Cut Off the Shoes",
         },
+        UA: {
+            ItemTorso: "Відрізати верхній одяг ножицями",
+            ItemLegs: "Відрізати нижній одяг ножицями",
+            ItemBreast: "Відрізати лівчик ножицями",
+            ItemVulvaPiercings: "Відрізати трусики ножицями",
+            ItemFeet: "Відрізати шкарпетки ножицями",
+            ItemBoots: "Відрізати взуття ножицями",
+        },
     },
     dialog: {
         CN: {
@@ -63,6 +71,14 @@ const activity = {
             ItemVulvaPiercings: "SourceCharacter Cuts Off TargetCharacter's Underwear with Scissors.",
             ItemFeet: "SourceCharacter Cuts Off TargetCharacter's Socks with Scissors.",
             ItemBoots: "SourceCharacter Cuts Off TargetCharacter's Shoes with Scissors.",
+        },
+        UA: {
+            ItemTorso: "SourceCharacter ріже верхній одяг TargetCharacter ножицями.",
+            ItemLegs: "SourceCharacter ріже нижній одяг TargetCharacter ножицями.",
+            ItemBreast: "SourceCharacter ріже лівчик TargetCharacter ножицями.",
+            ItemVulvaPiercings: "SourceCharacter ріже трусики TargetCharacter ножицями.",
+            ItemFeet: "SourceCharacter ріже шкарпетки TargetCharacter ножицями.",
+            ItemBoots: "SourceCharacter ріже взуття TargetCharacter ножицями.",
         },
     },
     labelSelf: {
@@ -82,6 +98,14 @@ const activity = {
             ItemFeet: "Scissors Cut Off the Socks",
             ItemBoots: "Scissors Cut Off the Shoes",
         },
+        UA: {
+            ItemTorso: "Відрізати верхній одяг ножицями",
+            ItemLegs: "Відрізати нижній одяг ножицями",
+            ItemBreast: "Відрізати лівчик ножицями",
+            ItemVulvaPiercings: "Відрізати трусики ножицями",
+            ItemFeet: "Відрізати шкарпетки ножицями",
+            ItemBoots: "Відрізати взуття ножицями",
+        },
     },
     dialogSelf: {
         CN: {
@@ -100,6 +124,13 @@ const activity = {
             ItemFeet: "SourceCharacter Cuts Off own Socks with Scissors.",
             ItemBoots: "SourceCharacter Cuts Off own Shoes with Scissors.",
         },
+        UA: {
+            ItemTorso: "SourceCharacter ріже свій верхній одяг ножицями.",
+            ItemLegs: "SourceCharacter ріже свій нижній одяг ножицями.",
+            ItemBreast: "SourceCharacter ріже свій лівчик ножицями.",
+            ItemVulvaPiercings: "SourceCharacter ріже свої трусики ножицями.",
+            ItemFeet: "SourceCharacter ріже свої шкарпетки ножицями.",
+            ItemBoots: "SourceCharacter ріже свої взуття ножицями.",
     },
 };
 
