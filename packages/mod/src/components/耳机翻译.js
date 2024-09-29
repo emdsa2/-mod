@@ -1,14 +1,20 @@
 import ModManager from "@mod-utils/ModManager";
 
 /** @type {_.PRecord<CustomGroupName,Set<string>>} */
-const validAssets = {
+const speakingAssets = {
     ItemMisc: new Set(["TeddyBear", "PetPotato", "BunPlush", "FoxPlush", "Karl"]),
-    ItemEars: new Set(["FuturisticEarphones"]),
 };
 
-/** @returns {string | undefined} */
-function validItemCraftingDesc(groupName) {
-    for (const [groupName, assets] of Object.entries(validAssets)) {
+/** @type {_.PRecord<CustomGroupName,Set<string>>} */
+const hearingAssets = {
+    ItemEars: new Set(["FuturisticEarphones"]),
+};
+/**
+ * @param {_.PRecord<CustomGroupName,Set<string>>} vAssets
+ * @returns {string | undefined}
+ */
+function validItemCraftingDesc(vAssets) {
+    for (const [groupName, assets] of Object.entries(vAssets)) {
         const item = InventoryGet(Player, /** @type{any}*/ (groupName));
         if (item && assets.has(item.Asset.Name)) {
             const m = item.Craft?.Description?.match(/["“](.+)["”]/);
@@ -31,29 +37,27 @@ function translateText(sourceText, targetLang) {
 export default function () {
     ModManager.progressiveHook("ChatRoomMessage").inject((args, next) => {
         const data = args[0];
-        if (data.Dictionary?.find((d) => d["AutoTranslated"])) return;
         if (["Chat", "Whisper", "Emote"].includes(data.Type)) {
-            const tLang = validItemCraftingDesc();
-            if (tLang) {
-                const modedData = (text) => ({
-                    ...data,
-                    Content: `🔊 ${text}`,
-                    Dictionary: /** @type {ChatMessageDictionary} */ ([
-                        ...(data.Dictionary || []),
-                        { Automatic: true },
-                        { AutoTranslated: true },
-                    ]),
-                });
+            if (Array.isArray(data.Dictionary) && data.Dictionary.find((d) => d["AutoTranslated"])) return;
+            if (["\\", "/", "www"].some((s) => data.Content.includes(s))) return;
+            const modedData = (prefix, text) => ({
+                ...data,
+                Content: `${prefix} ${text}`,
+                Dictionary: /** @type {ChatMessageDictionary} */ ([{ Automatic: true }, { AutoTranslated: true }]),
+            });
 
-                translateText(data.Content, tLang).then(({ sourceText, translatedText }) => {
-                    if (sourceText === data.Content) {
-                        if (data.Sender === Player.MemberNumber) {
-                            ServerSend("ChatRoomChat", modedData(translatedText));
-                        } else {
-                            ChatRoomMessage(modedData(translatedText));
-                        }
-                    }
-                });
+            if (data.Sender === Player.MemberNumber) {
+                const tLang = validItemCraftingDesc(speakingAssets);
+                if (tLang)
+                    translateText(data.Content, tLang).then(({ sourceText, translatedText }) => {
+                        if (sourceText === data.Content) ServerSend("ChatRoomChat", modedData("🔊", translatedText));
+                    });
+            } else {
+                const tLang = validItemCraftingDesc(hearingAssets);
+                if (tLang)
+                    translateText(data.Content, tLang).then(({ sourceText, translatedText }) => {
+                        if (sourceText === data.Content) ChatRoomMessage(modedData("📞", translatedText));
+                    });
             }
         }
     });
