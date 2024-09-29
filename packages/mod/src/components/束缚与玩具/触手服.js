@@ -120,6 +120,7 @@ const asset = {
                 Kneel: "Kneel",
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
+                Spread:"Spread"
             },
         },
         {
