@@ -55,10 +55,16 @@ const translations = {
             马车_Luzi: "马车",
         },
     },
+    EN: {
+        ItemDevices: {
+            马车前_Luzi: "马车前",
+            马车_Luzi: "马车",
+        },
+    },
 };
 
 export default function () {
-    // AssetManager.addGroupedAssets(asset, translations);
+    AssetManager.addGroupedAssets(asset, translations);
 
     ModManager.progressiveHook("DrawCharacter", 1)
         .inside("ChatRoomCharacterViewLoopCharacters")

@@ -56,5 +56,5 @@ const activity = {
 };
 
 export default function () {
-    // ActivityManager.addCustomActivity(activity);
+    ActivityManager.addCustomActivity(activity);
 }
