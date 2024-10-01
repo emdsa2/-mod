@@ -65,6 +65,15 @@ const assets = {
                 AllFours: PoseType.DEFAULT,
             },
         },
+        {
+            Name: "蛋糕卷_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 55,
+            ParentGroup: null,
+            Effect: [],
+        },
     ],
     ItemHandheld: [
         {
