@@ -48,7 +48,7 @@ const asset2 = {
     Top: 0,
     Left: 0,
     Prerequisite: ["HasBreasts"],
-    DefaultColor: ["#3F3F3F","#898989"],
+    DefaultColor: ["#3F3F3F","#808080"],
     Layer: [
         {
             Name: "裙子",
