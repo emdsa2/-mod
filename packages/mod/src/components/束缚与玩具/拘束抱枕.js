@@ -17,14 +17,13 @@ const asset = {
     Prerequisite: [],
     ParentGroup: null,
     PoseMapping: {BaseUpper: "BaseUpper"},
-    Value: 30,
     Block: [],
     Layer: [
         {
-             Name: "抱枕", Priority: 34
+             Name: "抱枕", Priority: 46
             },
         {
-             Name: "绑带", Priority: 35,
+             Name: "绑带", Priority: 46,
             AllowTypes: { s: 1 },
          }
     ],
