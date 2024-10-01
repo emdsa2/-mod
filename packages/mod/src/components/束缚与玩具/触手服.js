@@ -66,6 +66,7 @@ const asset = {
     DynamicBeforeDraw: true,
     DynamicScriptDraw: true,
     RemoveTime: 5,
+    Extended: true,
     Time: 10,
     Layer: [
         {
@@ -120,7 +121,7 @@ const asset = {
                 Kneel: "Kneel",
                 KneelingSpread: "KneelingSpread",
                 LegsClosed: "LegsClosed",
-                Spread:"Spread"
+                Spread: "Spread",
             },
         },
         {
@@ -342,16 +343,24 @@ const dialogs = {
             "Нижня частина щупальцевого костюму на тілі TargetCharacterName потроху відкривається оголюючи PronounPossessive гетіналю.",
         ItemTorso触手服_LuziSetd2:
             "Нижня частина щупальцевого костюму на тілі TargetCharacterName потроху відкривається оголюючи PronounPossessive гетіналю, як потім щупальце зростає позаду носія направляючи свій шлях у вагіну.",
-        ItemTorso触手服_LuziSets0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи груди носія.",
-        ItemTorso触手服_LuziSets1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на грудях носія.",
-        ItemTorso触手服_LuziSeth0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи руки носія.",
-        ItemTorso触手服_LuziSeth1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на руках носія покриваючи їх в щупальцевому костюмі.",
+        ItemTorso触手服_LuziSets0:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи груди носія.",
+        ItemTorso触手服_LuziSets1:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на грудях носія.",
+        ItemTorso触手服_LuziSeth0:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи руки носія.",
+        ItemTorso触手服_LuziSeth1:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на руках носія покриваючи їх в щупальцевому костюмі.",
         ItemTorso触手服_LuziSeth2:
             "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зв'язує руки носія за PronounPossessive спиною.",
-        ItemTorso触手服_LuziSetf0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи ноги носія.",
-        ItemTorso触手服_LuziSetf1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на ногах носія покриваючи їх в щупальцевому костюмі.",
-        ItemTorso触手服_LuziSetm0: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи рот носія.",
-        ItemTorso触手服_LuziSetm1: "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на роті носія.",
+        ItemTorso触手服_LuziSetf0:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи ноги носія.",
+        ItemTorso触手服_LuziSetf1:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на ногах носія покриваючи їх в щупальцевому костюмі.",
+        ItemTorso触手服_LuziSetm0:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, оголюючи рот носія.",
+        ItemTorso触手服_LuziSetm1:
+            "щупальцевий костюм на тілі TargetCharacterName потроху змінюється, як воно зростає на роті носія.",
     },
     RU: {
         ItemTorso触手服_LuziSelectBase: "Select Configuration",
