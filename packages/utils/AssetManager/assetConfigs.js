@@ -10,12 +10,8 @@ export class AssetConfig {
         Object.entries(extendedConfig).forEach(([groupName, assets]) =>
             Object.entries(assets).forEach(([assetName, config]) =>
                 resolveMirror(/** @type {CustomGroupName}*/ (groupName)).forEach(({ name }) => {
-                    if (AssetFemale3DCGExtended[name]?.[assetName])
-                        log.warn(`Asset ${name}:${assetName} already has an extended config!`);
-                    else {
-                        if (!AssetFemale3DCGExtended[name]) AssetFemale3DCGExtended[name] = { [assetName]: config };
-                        else AssetFemale3DCGExtended[name][assetName] = config;
-                    }
+                    if (!AssetFemale3DCGExtended[name]) AssetFemale3DCGExtended[name] = {};
+                    if (!AssetFemale3DCGExtended[name][assetName]) AssetFemale3DCGExtended[name][assetName] = config;
                 })
             )
         );

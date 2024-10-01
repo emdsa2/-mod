@@ -1,7 +1,7 @@
 import log from "../log";
 import { AssetConfig, ParsedAsset, resolveStringAsset } from "./assetConfigs";
 import { CustomAssetAdd, getCustomAssets } from "./customStash";
-import { Entries, resolveEntry } from "./entries";
+import { Entries, resolveEntry, solidfyEntry } from "./entries";
 import { addLayerNames } from "./layerNames";
 import { pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
 
@@ -29,7 +29,7 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
         const assetDef = resolveStringAsset(/** @type {AssetDefinition} */ (asset));
 
         const assetDefRes = AssetResolveCopyConfig.AssetDefinition(assetDef, groupName, ParsedAsset.value);
-        const solidDesc = description || { CN: assetDefRes.Name.replace(/_.*?Luzi$/, "") };
+        const solidDesc = solidfyEntry(description, assetDefRes.Name.replace(/_.*?Luzi$/, ""));
 
         if (getCustomAssets()[groupName]?.[assetDef.Name] !== undefined) {
             log.warn(`Asset {${groupName}:${assetDef.Name}} already existed!`);

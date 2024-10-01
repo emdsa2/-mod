@@ -1,5 +1,5 @@
 import log from "../log";
-import { Entries, resolveEntry } from "./entries";
+import { Entries, resolveEntry, solidfyEntry } from "./entries";
 import { pushGroupLoad } from "./loadSchedule";
 import { registerMirror } from "./mirrorGroup";
 import { CustomGroupAdd } from "./customStash";
@@ -16,7 +16,7 @@ import { resolveStringAsset } from "./assetConfigs";
  */
 export function loadGroup(groupDef, { description, dynamicName, preimage } = {}) {
     pushGroupLoad(() => {
-        const solidDesc = description || { CN: groupDef.Group.replace(/_.*?Luzi$/, "") };
+        const solidDesc = solidfyEntry(description, groupDef.Group.replace(/_.*?Luzi$/, ""));
         CustomGroupAdd("Female3DCG", /** @type { AssetGroupDefinition }*/ (groupDef)).then((grp) => {
             grp.Description = resolveEntry(solidDesc);
             if (dynamicName) grp.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
@@ -62,7 +62,7 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
 
         registerMirror(copyFrom, newGroup);
 
-        const soldDesc = description || { CN: newGroup.replace(/_.*?Luzi$/, "") };
+        const soldDesc = solidfyEntry(description, newGroup.replace(/_.*?Luzi$/, ""));
 
         loadGroup(
             /** @type {CustomGroupDefinition} */ ({
