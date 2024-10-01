@@ -48,24 +48,25 @@ const asset2 = {
     Top: 0,
     Left: 0,
     Prerequisite: ["HasBreasts"],
+    DefaultColor: ["#3F3F3F","#898989"],
     Layer: [
         {
             Name: "裙子",
-            Priority: 26,
+            Priority: 35,
             PoseMapping: {
                 TapedHands: "TapedHands",
-                Yoked: "BackElbowTouch",
-                OverTheHead: "BackElbowTouch",
-                BackBoxTie: "BackElbowTouch",
+                Yoked: "Yoked",
+                OverTheHead: "OverTheHead",
+                BackBoxTie: "BackBoxTie",
                 BackElbowTouch: "BackElbowTouch",
-                BackCuffs: "BackElbowTouch",
+                BackCuffs: "BackCuffs",
                 AllFours: "Hide",
                 Hogtied: "Hide",
             },
         },
         {
             Name: "围裙",
-            Priority: 26,
+            Priority: 35,
             PoseMapping: {
                 TapedHands: "TapedHands",
                 Yoked: "BackElbowTouch",
