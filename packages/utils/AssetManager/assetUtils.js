@@ -54,6 +54,13 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
     });
 }
 
+/**
+ * @param {ExtendedItemMainConfig} [extendedConfig]
+ */
+export function loadExtendedConfig(extendedConfig) {
+    AssetConfig.add(extendedConfig);
+}
+
 /** @type { Partial<Record<CustomGroupName, Set<string>>> } */
 const missingAsset = {};
 /**

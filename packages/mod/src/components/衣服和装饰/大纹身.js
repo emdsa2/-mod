@@ -61,6 +61,7 @@ const LayerSettings = [
         PoseMapping: {
             OverTheHead: PoseType.HIDE,
             Yoked: PoseType.HIDE,
+            BackElbowTouch: PoseType.HIDE,
         },
     },
     {
@@ -192,22 +193,22 @@ const extended = {
 /** @type {Translation.Dialog} */
 const dialogs = {
     CN: {
-        BodyMarkings2_Luzi大纹身_LuziSelectBase: "选择要显示的纹身",
+        BodyMarkings大纹身_LuziSelectBase: "选择要显示的纹身",
         ...LayerSettings.reduce((acc, layer, index) => {
-            acc[`BodyMarkings2_Luzi大纹身_LuziModule${layer.Name}`] = layer.Name;
-            acc[`BodyMarkings2_Luzi大纹身_LuziSelect${layer.Name}`] = `设置 "${layer.Name}" 是否显示`;
-            acc[`BodyMarkings2_Luzi大纹身_LuziOption${layer.ConfigKey}0`] = "隐藏";
-            acc[`BodyMarkings2_Luzi大纹身_LuziOption${layer.ConfigKey}1`] = "显示";
+            acc[`BodyMarkings大纹身_LuziModule${layer.Name}`] = layer.Name;
+            acc[`BodyMarkings大纹身_LuziSelect${layer.Name}`] = `设置 "${layer.Name}" 是否显示`;
+            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}0`] = "隐藏";
+            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}1`] = "显示";
             return acc;
         }, {}),
     },
     EN: {
-        BodyMarkings2_Luzi大纹身_LuziSelectBase: "Select the tattoo to show",
+        BodyMarkings大纹身_LuziSelectBase: "Select the tattoo to show",
         ...LayerSettings.reduce((acc, layer, index) => {
-            acc[`BodyMarkings2_Luzi大纹身_LuziModule${layer.Name}`] = layer.Name;
-            acc[`BodyMarkings2_Luzi大纹身_LuziSelect${layer.Name}`] = `Set "${layer.Name}" is shown`;
-            acc[`BodyMarkings2_Luzi大纹身_LuziOption${layer.ConfigKey}0`] = "Hide";
-            acc[`BodyMarkings2_Luzi大纹身_LuziOption${layer.ConfigKey}1`] = "Show";
+            acc[`BodyMarkings大纹身_LuziModule${layer.Name}`] = layer.Name;
+            acc[`BodyMarkings大纹身_LuziSelect${layer.Name}`] = `Set "${layer.Name}" is shown`;
+            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}0`] = "Hide";
+            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}1`] = "Show";
             return acc;
         }, {}),
     },
@@ -216,4 +217,8 @@ const dialogs = {
 export default function () {
     AssetManager.addAsset("BodyMarkings", asset, extended);
     AssetManager.addCustomDialog(dialogs);
+    AssetManager.addImageMapping({
+        "Assets/Female3DCG/BodyMarkings2_Luzi/Preview/大纹身_Luzi.png":
+            "Assets/Female3DCG/BodyMarkings/Preview/大纹身_Luzi.png",
+    });
 }

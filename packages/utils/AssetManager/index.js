@@ -1,4 +1,4 @@
-import { loadAsset, modifyAsset } from "./assetUtils";
+import { loadAsset, loadExtendedConfig, modifyAsset } from "./assetUtils";
 import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
@@ -33,6 +33,11 @@ export default class AssetManager {
                 loadAsset(groupName, asset, { description });
             });
         });
+    }
+
+    /** @param {ExtendedItemMainConfig} extendedConfig */
+    static addGroupedConfig(extendedConfig) {
+        loadExtendedConfig(extendedConfig);
     }
 
     /**

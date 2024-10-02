@@ -1,5 +1,12 @@
 import AssetManager from "@mod-utils/AssetManager";
 
+const clothLCSetting = [
+    { Name: "样式0", EN: "Style 0", Src: "淫纹" },
+    { Name: "样式1", EN: "Style 1", Src: "预设淫纹1", AllowColorize: false },
+    { Name: "样式2", EN: "Style 2", Src: "预设淫纹2", AllowColorize: false },
+    { Name: "样式3", EN: "Style 3", Src: "预设淫纹3", AllowColorize: false },
+];
+
 /** @type { CustomGroupedAssetDefinitions }} */
 const assets = {
     Wings: [
@@ -36,12 +43,19 @@ const assets = {
             Name: "淫纹_Luzi",
             Random: false,
             Gender: "F",
-            Top: -110,
-            Left: 0,
+            Top: 308,
+            Left: 54,
             Priority: 9,
             Prerequisite: ["HasVagina"],
             Fetish: ["Lingerie"],
             DefaultColor: ["#E975A0"],
+            Extended: true,
+            ParentGroup: null,
+            Layer: clothLCSetting.map((layer, index) => ({
+                Name: layer.Name,
+                AllowColorize: layer.AllowColorize ?? true,
+                AllowTypes: { typed: index },
+            })),
         },
     ],
     BodyMarkings: [
@@ -49,11 +63,17 @@ const assets = {
             Name: "淫纹_Luzi",
             Random: false,
             Gender: "F",
-            Top: -110,
-            Left: 0,
+            Top: 308,
+            Left: 54,
             Priority: 9,
             ParentGroup: null,
             DefaultColor: ["#E975A0"],
+            Extended: true,
+            Layer: clothLCSetting.map((layer, index) => ({
+                Name: layer.Name,
+                AllowColorize: layer.AllowColorize ?? true,
+                AllowTypes: { typed: index },
+            })),
         },
         {
             Name: "刻度尺_Luzi",
@@ -212,6 +232,18 @@ const assets = {
     ],
 };
 
+/** @type {_.PRecord<CustomGroupName, ExtendedItemGroupConfig>} */
+const extendedConfig = {
+    ...["Panties", "BodyMarkings"].reduce((pv, group) => {
+        if (!pv[group]) pv[group] = {};
+        pv[group]["淫纹_Luzi"] = {
+            Archetype: ExtendedArchetype.TYPED,
+            Options: clothLCSetting.map((layer) => ({ Name: layer.Name })),
+        };
+        return pv;
+    }, {}),
+};
+
 /** @type { Translation.GroupedEntries } */
 const translations = {
     CN: {
@@ -282,4 +314,33 @@ const translations = {
 
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
+    AssetManager.addGroupedConfig(extendedConfig);
+
+    AssetManager.addImageMapping(
+        clothLCSetting.reduce((pv, cv, idx) => {
+            ["Panties", "BodyMarkings"].forEach((group) => {
+                ["Screens/Inventory", "Assets/Female3DCG"].forEach((prefix) => {
+                    pv[`${prefix}/${group}/淫纹_Luzi/${cv.Name}.png`] = `${prefix}/ItemPelvis/淫纹_Luzi/t${idx}.png`;
+                });
+            });
+            return pv;
+        }, {})
+    );
+
+    AssetManager.addCustomDialog({
+        CN: {
+            ...["Panties", "BodyMarkings"].reduce((acc, group) => {
+                acc[`${group}淫纹_LuziSelect`] = "选择样式";
+                clothLCSetting.forEach((layer) => (acc[`${group}淫纹_Luzi${layer.Name}`] = layer.Name));
+                return acc;
+            }, {}),
+        },
+        EN: {
+            ...["Panties", "BodyMarkings"].reduce((acc, group) => {
+                acc[`${group}淫纹_LuziSelect`] = "Select Style";
+                clothLCSetting.forEach((layer) => (acc[`${group}淫纹_Luzi${layer.Name}`] = layer.EN));
+                return acc;
+            }, {}),
+        },
+    });
 }
