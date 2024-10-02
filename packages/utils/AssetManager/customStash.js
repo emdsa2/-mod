@@ -58,10 +58,17 @@ export function isInListCustomAsset(group, name) {
 }
 
 export function enableCustomAssets() {
+    let doInventoryAdd = false;
+    ModManager.progressiveHook("DialogInventoryBuild").inject((args, next) => {
+        if (args[2]) return;
+        doInventoryAdd = true;
+    });
+
     ModManager.progressiveHook("DialogInventoryAdd")
-        .inside("DialogInventoryBuild", { once: true })
         .next()
         .inject((args, next) => {
+            if (!doInventoryAdd) return;
+            doInventoryAdd = false;
             const groupName = args[1].Asset.Group.Name;
             const added = new Set(DialogInventory.map((item) => item.Asset.Name));
 
@@ -75,21 +82,16 @@ export function enableCustomAssets() {
             }
         });
 
-    ModManager.progressiveHook("InventoryAvailable")
-        .inside("CharacterAppearanceValidate")
-        .override((args, next) => {
-            const [C, Name, Group] = args;
-            if (customAssets[Group]?.[Name]) return true;
-            return next(args);
-        });
+    /** @type {ModManagerInterface.HookFunction<"InventoryAvailable">} */
+    const overrideAvailable = (args, next) => {
+        const [C, Name, Group] = args;
+        if (customAssets[Group]?.[Name]) return true;
+        return next(args);
+    };
 
-    ModManager.progressiveHook("InventoryAvailable")
-        .inside("CraftingItemListBuild")
-        .override((args, next) => {
-            const [C, Name, Group] = args;
-            if (isInListCustomAsset(Group, Name)) return true;
-            return next(args);
-        });
+    ModManager.progressiveHook("InventoryAvailable").inside("CharacterAppearanceValidate").override(overrideAvailable);
+    ModManager.progressiveHook("InventoryAvailable").inside("CraftingItemListBuild").override(overrideAvailable);
+    ModManager.progressiveHook("InventoryAvailable").inside("WardrobeFastLoad").override(overrideAvailable);
 
     ModManager.progressiveHook("CraftingValidate").inject((args, next) => {
         const asset = CraftingAssets[args[0].Item]?.[0];
