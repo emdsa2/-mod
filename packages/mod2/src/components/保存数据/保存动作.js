@@ -25,7 +25,7 @@ function validate(data) {
     if (typeof ret != "object") return ret;
 
     Object.entries(data).forEach(([key, value]) => {
-        if (typeof key !== "string" || typeof value !== "object") return;
+        if (typeof key !== "string" || typeof value !== "object" || !value) return;
         if (typeof value.Name !== "string") return;
         if (value.Target && (typeof value.Target !== "string" || typeof value.Dialog !== "string")) return;
         if (value.TargetSelf && (typeof value.TargetSelf !== "string" || typeof value.DialogSelf !== "string")) return;
