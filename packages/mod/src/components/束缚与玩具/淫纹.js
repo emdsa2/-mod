@@ -80,13 +80,13 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
 
                 ChatRoomCharacterItemUpdate(Player, itemTGroup);
             }
-        } else if (Content === "ItemPelvis淫纹_Luzi淫纹强制高潮互动") {
+        } else if (Content === "淫纹_Luzi淫纹强制高潮") {
             if (!!Player.ArousalSettings) Player.ArousalSettings.Progress = 100;
             ActivityOrgasmPrepare(Player);
-        } else if (Content === "ItemPelvis淫纹_LuziSeta1") {
-            DrawFlashScreen("#F347B4", 1500, 500);
         } else if (Content === "淫纹_Luzi开始淫纹强制自慰") {
             setMTime = Date.now();
+        } else if (Content === "ItemPelvis淫纹_LuziSeta1") {
+            DrawFlashScreen("#F347B4", 1500, 500);
         }
     }
     next(args);
@@ -150,6 +150,7 @@ function dialogClickHook(Data, originalFunction) {
         if (RMouseIn(buttons.高潮按钮)) {
             const Dictionary = new DictionaryBuilder()
                 .sourceCharacter(Player)
+                .targetCharacter(CharacterGetCurrent())
                 .destinationCharacterName(CharacterGetCurrent())
                 .asset(DialogFocusItem.Asset, "AssetName", DialogFocusItem.Craft && DialogFocusItem.Craft.Name)
                 .build();
