@@ -4,12 +4,10 @@ This mod introduces various enhancements to the game, including additional cloth
 
 ## Links
 
-| Description                 | Link                                                  |
-|-----------------------------|-------------------------------------------------------|
-| Clothing Expansion Beta     | [Clothing Expansion Beta](https://emdsa2.github.io/-mod/BC_Cloth2.user.js) |
-| Action Expansion Beta       | [Action Expansion Beta](https://emdsa2.github.io/-mod/BC_Activity2.user.js) |
-| Action Expansion            | [Action Expansion](https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Activity2.user.js) |
-| Clothing Expansion          | [Clothing Expansion](https://gitlab.com/Echo_87150/activity/-/raw/main/BC_Cloth2.user.js) |
+| Description        | Link                                                                   |
+| ------------------ | ---------------------------------------------------------------------- |
+| Clothing Expansion | [Clothing Expansion](https://emdsa2.github.io/-mod/BC_Cloth2.user.js)  |
+| Action Expansion   | [Action Expansion](https://emdsa2.github.io/-mod/BC_Activity2.user.js) |
 
 ## Installation Script
 
