@@ -4,10 +4,12 @@ This mod introduces various enhancements to the game, including additional cloth
 
 ## Links
 
-| Description        | Link                                                                   |
-| ------------------ | ---------------------------------------------------------------------- |
-| Clothing Expansion | [Clothing Expansion](https://emdsa2.github.io/-mod/BC_Cloth2.user.js)  |
-| Action Expansion   | [Action Expansion](https://emdsa2.github.io/-mod/BC_Activity2.user.js) |
+| Description             | Link                                                                             |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| Clothing Expansion      | [Clothing Expansion](https://emdsa2.github.io/-mod/BC_Cloth2.user.js)            |
+| Action Expansion        | [Action Expansion](https://emdsa2.github.io/-mod/BC_Activity2.user.js)           |
+| Clothing Expansion Beta | [Clothing Expansion Beta](https://emdsa2.github.io/-mod/BC_Cloth2-beta.user.js)  |
+| Action Expansion Beta   | [Action Expansion Beta](https://emdsa2.github.io/-mod/BC_Activity2-beta.user.js) |
 
 ## Installation Script
 
@@ -25,6 +27,8 @@ wiki: https://github.com/emdsa2/-mod/wiki
 
 
 ## Add-on Menu Overview
+
+This add-on menu overview was provided by Nemesea.
 
 The menu of this add-on features three primary buttons:
 
@@ -50,23 +54,14 @@ The left menu provides three options:
 
 You can choose to save orgasm counter or not, and you can clear it with the trash bin icon.
 
-### Additional Features
+## Additional Features
 
-The add-on also includes new items and clothes.    It adds extra clothes categories in the wardrobe after the body zones, allowing you to combine, for example, two dresses.    However, you will notice that only a few clothes are in these categories;    you need to buy the missing clothes again.
+The add-on also includes new items and clothes.
+
+It adds extra clothes categories in the wardrobe after the original body zones, allowing you to combine, for example, two dresses.
 
 All the new clothing, binding, and wardrobe slots are invisible to those who don't use the script.
 
-This add-on menu overview was provided by Nemesea.
+## 额外的服装槽位 和 一些bug😶
 
-
-### 修改了角色的皮肤
-![角色皮肤预览](https://emdsa2.github.io/-mod/ck/皮肤修改.png)
-
-### 拓展了一些道具...
-![道具预览](https://emdsa2.github.io/-mod/ck/道具.png) 部分展示
-
-### 更大的床 / 和贴贴
-![床预览](https://emdsa2.github.io/-mod/ck/合并.png)
-
-### 额外的服装槽位 和 一些bug😶
 Discord：https://discord.gg/K9YnNqsNKx

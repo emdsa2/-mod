@@ -21,7 +21,11 @@
       ]
     },
     "componentDir": "src/components",
-    "loaderName": "BC_Cloth2.user.js"
+    "loaderName": "BC_Cloth2.user.js",
+    "beta": {
+      "output": "mod-beta.js",
+      "loaderName": "BC_Cloth2-beta.user.js"
+    }
   },
   "displayName": "服装拓展",
   "modFullName": "服装拓展完整名",

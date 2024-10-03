@@ -3,10 +3,10 @@ export const ModInfo = {
     name: __mod_name__,
     fullName: __mod_full_name__,
     version: __mod_version__,
-    repository: __repo__,
+    repository: __mod_repo__,
 };
 
 /** @type { AssetOverrideContainer } */
-export const assetOverrides = __asset_overrides__;
+export const assetOverrides = __mod_asset_overrides__;
 
-export const baseURL = __base_url__;
+export const baseURL = __mod_base_url__;

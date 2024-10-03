@@ -12,7 +12,11 @@
     "output": "mod2.js",
     "input": "src/main.js",
     "componentDir": "src/components",
-    "loaderName": "BC_Activity2.user.js"
+    "loaderName": "BC_Activity2.user.js",
+    "beta": {
+      "output": "mod2-beta.js",
+      "loaderName": "BC_Activity2-beta.user.js"
+    }
   },
   "displayName": "动作拓展",
   "modFullName": "动作拓展完整名",

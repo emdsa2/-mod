@@ -1,12 +1,12 @@
 declare const __mod_version__: string;
 declare const __mod_full_name__: string;
 declare const __mod_name__: string;
-declare const __repo__: string | undefined;
-declare const __base_url__: string;
-declare const __asset_overrides__: AssetOverrideContainer;
+declare const __mod_repo__: string | undefined;
+declare const __mod_base_url__: string;
+declare const __mod_asset_overrides__: AssetOverrideContainer;
 
-declare const __rollup_imports__: string[];
-declare const __rollup_setup__: string[];
+declare const __mod_rollup_imports__: string[];
+declare const __mod_rollup_setup__: string[];
 
 /** 扩展的身体组（非物品）名称 */
 type CustomGroupBodyName =

@@ -1,5 +1,5 @@
-__rollup_imports__;
+__mod_rollup_imports__;
 
 export function setup() {
-    __rollup_setup__;
+    __mod_rollup_setup__;
 }
