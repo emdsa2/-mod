@@ -14,7 +14,9 @@ module.exports = (cliArgs) => {
     };
 
     if (debug) log("Debug mode enabled");
-    if (!baseURL) throw new Error("No deploy site specified");
+    if (!baseURL || typeof baseURL !== "string") throw new Error("No deploy site specified");
+
+    log(`Deploying to ${baseURL}`);
 
     const baseURL_ = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
 

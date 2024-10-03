@@ -15,8 +15,8 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
       github-markdown-css:
-        specifier: ^5.6.1
-        version: 5.6.1
+        specifier: ^5.7.0
+        version: 5.7.0
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
@@ -498,8 +498,8 @@ packages:
     resolution: {integrity: sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==}
     engines: {node: '>= 0.4'}
 
-  github-markdown-css@5.6.1:
-    resolution: {integrity: sha512-DItLFgHd+s7HQmk63YN4/TdvLeRqk1QP7pPKTTPrDTYoI5x7f/luJWSOZxesmuxBI2srHp8RDyoZd+9WF+WK8Q==}
+  github-markdown-css@5.7.0:
+    resolution: {integrity: sha512-GoYhaqELL4YUjz4tZ00PQ4JzFQkMfrBVuEeRB8W74HoikHWNiaGqSgynpwJEc+xom5uf04qoD/tUSS6ziZltaQ==}
     engines: {node: '>=10'}
 
   glob-parent@5.1.2:
@@ -1275,7 +1275,7 @@ snapshots:
       has-symbols: 1.0.3
       hasown: 2.0.2
 
-  github-markdown-css@5.6.1: {}
+  github-markdown-css@5.7.0: {}
 
   glob-parent@5.1.2:
     dependencies:
