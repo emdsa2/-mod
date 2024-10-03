@@ -40,7 +40,7 @@ let setMTime = 0;
  * @param {XItemProperties} property
  */
 function updateRuns(player, property) {
-    if (property.TypeRecord.m === 1) {
+    if (property.TypeRecord.a === 1) {
         const LSCG = /** @type {any} */ (player).LSCG;
         if (LSCG && LSCG.InjectorModule) {
             const { drugLevelMultiplier, hornyLevelMax, hornyLevel } = LSCG.InjectorModule;
