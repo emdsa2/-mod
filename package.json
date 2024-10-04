@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "type-check": "pnpm -r type-check",
-    "build:dev": "pnpm type-check && pnpm build:res && pnpm -r build --configDebug --configBaseURL \"http://localhost:8080/\"",
+    "dev": "pnpm type-check && pnpm build:res && pnpm -r build --configDebug --configBaseURL \"http://localhost:8080/\"",
+    "build:dev": "pnpm dev",
     "build": "pnpm -r build",
     "build:res": "copyfiles -u 1 \"resources/**/*.png\" \"resources/**/*.mp3\" \"resources/**/*.js\" public",
     "page:readme": "node build_readme.js",
