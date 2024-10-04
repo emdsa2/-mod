@@ -9,7 +9,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "TA",
+        ConfigKey: "Ta",
     },
     {
         Name: "胸上1",
@@ -18,7 +18,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "UBA",
+        ConfigKey: "UBa",
     },
     {
         Name: "胸上2",
@@ -27,7 +27,27 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "UBB",
+        ConfigKey: "UBb",
+    },
+    {
+        Name: "梵花胸骨1",
+        Priority: 12,
+        Left: 130,
+        Top: 200,
+        ParentGroup: "BodyUpper",
+        BlendingMode: "source-atop",
+        DefaultColor: "Default",
+        ConfigKey: "SFSa",
+    },
+    {
+        Name: "梵花胸骨2",
+        Priority: 12,
+        Left: 130,
+        Top: 200,
+        ParentGroup: "BodyUpper",
+        BlendingMode: "source-atop",
+        DefaultColor: "Default",
+        ConfigKey: "SFSb",
     },
     {
         Name: "部落右胸",
@@ -36,7 +56,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "#000000",
-        ConfigKey: "TD",
+        ConfigKey: "Td",
         ParentGroup: "BodyUpper",
     },
     {
@@ -46,7 +66,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "#000000",
-        ConfigKey: "TF",
+        ConfigKey: "Tf",
         ParentGroup: "BodyUpper",
     },
     {
@@ -56,7 +76,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "TC",
+        ConfigKey: "Tc",
         ParentGroup: "BodyUpper",
         PoseMapping: {
             OverTheHead: PoseType.HIDE,
@@ -87,7 +107,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "TE",
+        ConfigKey: "Te",
         PoseMapping: {
             AllFours: PoseType.HIDE,
             Hogtied: PoseType.HIDE,
@@ -100,7 +120,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "CA",
+        ConfigKey: "Ca",
         ParentGroup: "BodyUpper",
         PoseMapping: {
             AllFours: PoseType.HIDE,
@@ -114,7 +134,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "CB",
+        ConfigKey: "Cb",
         ParentGroup: "BodyUpper",
         PoseMapping: {
             AllFours: PoseType.HIDE,
@@ -128,7 +148,7 @@ const LayerSettings = [
         Top: 200,
         BlendingMode: "source-atop",
         DefaultColor: "Default",
-        ConfigKey: "CC",
+        ConfigKey: "SSa",
         ParentGroup: "BodyUpper",
         PoseMapping: {
             AllFours: PoseType.HIDE,
@@ -137,15 +157,19 @@ const LayerSettings = [
     },
     {
         Name: "右腿花",
-        Left: 130,
+        Left: 100,
         Top: 470,
         Priority: 12,
         BlendingMode: "source-atop",
         DefaultColor: "#000000",
-        ConfigKey: "FA",
+        ConfigKey: "Fa",
+        ParentGroup: "BodyLower",
         PoseMapping: {
             AllFours: PoseType.HIDE,
             Hogtied: PoseType.HIDE,
+            Kneel: "LegsClosed",
+            LegsClosed: "LegsClosed",
+            KneelingSpread: "KneelingSpread",
         },
     },
 ];
@@ -193,23 +217,27 @@ const extended = {
 /** @type {Translation.Dialog} */
 const dialogs = {
     CN: {
-        BodyMarkings大纹身_LuziSelectBase: "选择要显示的纹身",
-        ...LayerSettings.reduce((acc, layer, index) => {
-            acc[`BodyMarkings大纹身_LuziModule${layer.Name}`] = layer.Name;
-            acc[`BodyMarkings大纹身_LuziSelect${layer.Name}`] = `设置 "${layer.Name}" 是否显示`;
-            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}0`] = "隐藏";
-            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}1`] = "显示";
-            return acc;
+        ...["BodyMarkings", "BodyMarkings2_Luzi"].reduce((pv, key) => {
+            pv[`${key}大纹身_LuziSelectBase`] = "选择要显示的纹身";
+            LayerSettings.forEach((layer) => {
+                pv[`${key}大纹身_LuziModule${layer.Name}`] = layer.Name;
+                pv[`${key}大纹身_LuziSelect${layer.Name}`] = `设置 "${layer.Name}" 是否显示`;
+                pv[`${key}大纹身_LuziOption${layer.ConfigKey}0`] = "隐藏";
+                pv[`${key}大纹身_LuziOption${layer.ConfigKey}1`] = "显示";
+            });
+            return pv;
         }, {}),
     },
     EN: {
-        BodyMarkings大纹身_LuziSelectBase: "Select the tattoo to show",
-        ...LayerSettings.reduce((acc, layer, index) => {
-            acc[`BodyMarkings大纹身_LuziModule${layer.Name}`] = layer.Name;
-            acc[`BodyMarkings大纹身_LuziSelect${layer.Name}`] = `Set "${layer.Name}" is shown`;
-            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}0`] = "Hide";
-            acc[`BodyMarkings大纹身_LuziOption${layer.ConfigKey}1`] = "Show";
-            return acc;
+        ...["BodyMarkings", "BodyMarkings2_Luzi"].reduce((pv, key) => {
+            (pv[`${key}大纹身_LuziSelectBase`] = "Select the tattoo to show"),
+                LayerSettings.forEach((layer) => {
+                    pv[`${key}大纹身_LuziModule${layer.Name}`] = layer.Name;
+                    pv[`${key}大纹身_LuziSelect${layer.Name}`] = `Set "${layer.Name}" is shown`;
+                    pv[`${key}大纹身_LuziOption${layer.ConfigKey}0`] = "Hide";
+                    pv[`${key}大纹身_LuziOption${layer.ConfigKey}1`] = "Show";
+                });
+            return pv;
         }, {}),
     },
 };
