@@ -24,6 +24,11 @@ function validItemCraftingDesc(vAssets) {
     return undefined;
 }
 
+/**
+ * @param {string} sourceText
+ * @param {string} targetLang
+ * @returns {Promise<{ sourceText: string, translatedText: string, sourceLang: string }>}
+ */
 function translateText(sourceText, targetLang) {
     return fetch(
         `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURI(
@@ -31,7 +36,7 @@ function translateText(sourceText, targetLang) {
         )}`
     )
         .then((response) => response.json())
-        .then((dt) => Promise.resolve({ sourceText: dt[0][0][1], translatedText: dt[0][0][0] }));
+        .then((dt) => Promise.resolve({ sourceText: dt[0][0][1], translatedText: dt[0][0][0], sourceLang: dt[2] }));
 }
 
 export default function () {
@@ -49,13 +54,15 @@ export default function () {
             if (data.Sender === Player.MemberNumber) {
                 const tLang = validItemCraftingDesc(speakingAssets);
                 if (tLang)
-                    translateText(data.Content, tLang).then(({ sourceText, translatedText }) => {
+                    translateText(data.Content, tLang).then(({ sourceText, translatedText, sourceLang }) => {
+                        if (sourceLang === tLang) return;
                         if (sourceText === data.Content) ServerSend("ChatRoomChat", modedData("🔊", translatedText));
                     });
             } else {
                 const tLang = validItemCraftingDesc(hearingAssets);
                 if (tLang)
-                    translateText(data.Content, tLang).then(({ sourceText, translatedText }) => {
+                    translateText(data.Content, tLang).then(({ sourceText, translatedText, sourceLang }) => {
+                        if (sourceLang === tLang) return;
                         if (sourceText === data.Content) ChatRoomMessage(modedData("📞", translatedText));
                     });
             }
