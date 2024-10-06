@@ -17,7 +17,7 @@ const LayerSettings = [
         Left: 130,
         Top: 200,
         BlendingMode: "source-atop",
-        DefaultColor: "Default",
+        DefaultColor: "#000000",
         ConfigKey: "UBa",
     },
     {
