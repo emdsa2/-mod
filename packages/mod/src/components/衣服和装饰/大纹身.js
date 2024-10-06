@@ -36,7 +36,7 @@ const LayerSettings = [
         Top: 200,
         ParentGroup: "BodyUpper",
         BlendingMode: "source-atop",
-        DefaultColor: "Default",
+        DefaultColor: "#000000",
         ConfigKey: "SFSa",
     },
     {
@@ -46,7 +46,7 @@ const LayerSettings = [
         Top: 200,
         ParentGroup: "BodyUpper",
         BlendingMode: "source-atop",
-        DefaultColor: "Default",
+        DefaultColor: "#000000",
         ConfigKey: "SFSb",
     },
     {
@@ -273,8 +273,4 @@ const dialogs = {
 export default function () {
     AssetManager.addAsset("BodyMarkings", asset, extended);
     AssetManager.addCustomDialog(dialogs);
-    AssetManager.addImageMapping({
-        "Assets/Female3DCG/BodyMarkings2_Luzi/Preview/大纹身_Luzi.png":
-            "Assets/Female3DCG/BodyMarkings/Preview/大纹身_Luzi.png",
-    });
 }

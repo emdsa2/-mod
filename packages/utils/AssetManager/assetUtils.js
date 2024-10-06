@@ -22,6 +22,8 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
         if (extendedConfig) AssetConfig.add(extendedConfig);
     });
 
+    const srcGroupName = groupName;
+
     requireGroup(groupName, (groupObj) => {
         // 注意，每个镜像身体组都会调用一次这个函数，因此不能使用外面的 groupName
         // 使用 const shadowing 避免这个问题
@@ -38,7 +40,7 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
         // 先在这里设置一遍显示名称
         CustomAssetAdd(groupObj, assetDefRes, AssetConfig.value).then((asset) => {
             if (dynamicName) asset.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
-            else asset.DynamicGroupName = groupName;
+            else asset.DynamicGroupName = /** @type {AssetGroupName} */ (srcGroupName);
 
             if (preimage) {
                 const preimageAsset = AssetGet("Female3DCG", preimage.Name, assetDefRes.Name);
