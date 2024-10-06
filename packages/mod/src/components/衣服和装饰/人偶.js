@@ -8,6 +8,7 @@ const asset = {
     Top: 0,
     Left: 0,
     AllowLock: true,
+    DrawLocks: false,
     Difficulty: 25,
     Hide: ["Hands", "BodyLower", "BodyUpper"],
     Layer: [

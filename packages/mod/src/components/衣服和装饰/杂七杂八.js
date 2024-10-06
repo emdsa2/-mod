@@ -319,9 +319,12 @@ export default function () {
     AssetManager.addImageMapping(
         clothLCSetting.reduce((pv, cv, idx) => {
             ["Panties", "BodyMarkings"].forEach((group) => {
-                ["Screens/Inventory", "Assets/Female3DCG"].forEach((prefix) => {
-                    pv[`${prefix}/${group}/淫纹_Luzi/${cv.Name}.png`] = `${prefix}/ItemPelvis/淫纹_Luzi/t${idx}.png`;
-                });
+                pv[
+                    `Screens/Inventory/${group}/淫纹_Luzi/${cv.Name}.png`
+                ] = `Screens/Inventory/ItemPelvis/淫纹_Luzi/t${idx}.png`;
+                pv[
+                    `Assets/Female3DCG/${group}/淫纹_Luzi_${cv.Name}.png`
+                ] = `Assets/Female3DCG/ItemPelvis/淫纹_Luzi_${cv.Src}.png`;
             });
             return pv;
         }, {})
