@@ -38,6 +38,7 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
         // 先在这里设置一遍显示名称
         CustomAssetAdd(groupObj, assetDefRes, AssetConfig.value).then((asset) => {
             if (dynamicName) asset.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
+            else asset.DynamicGroupName = groupName;
 
             if (preimage) {
                 const preimageAsset = AssetGet("Female3DCG", preimage.Name, assetDefRes.Name);
