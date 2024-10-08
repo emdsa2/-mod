@@ -39,12 +39,15 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
 
         // 先在这里设置一遍显示名称
         CustomAssetAdd(groupObj, assetDefRes, AssetConfig.value).then((asset) => {
-            if (dynamicName) asset.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
-            else asset.DynamicGroupName = /** @type {AssetGroupName} */ (srcGroupName);
+            if (asset.DynamicGroupName === asset.Group.Name) {
+                if (dynamicName) asset.DynamicGroupName = /** @type {AssetGroupName} */ (dynamicName);
+                else asset.DynamicGroupName = /** @type {AssetGroupName} */ (srcGroupName);
+            }
 
             if (preimage) {
                 const preimageAsset = AssetGet("Female3DCG", preimage.Name, assetDefRes.Name);
                 asset.Description = preimageAsset.Description;
+                asset.DynamicGroupName = preimageAsset.DynamicGroupName;
             } else {
                 asset.Description = resolveEntry(solidDesc);
                 addLayerNames(asset.DynamicGroupName, /** @type {CustomAssetDefinition}*/ (assetDefRes), {

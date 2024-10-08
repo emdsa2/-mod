@@ -59,12 +59,7 @@ const groups = [
             Clothing: true,
             Default: false,
             Random: false,
-            Asset: [
-                {
-                    Name: "无_Luzi",
-                    Random: false,
-                },
-            ],
+            Asset: [],
             Color: ["Default"],
         },
         description: {

@@ -60,6 +60,7 @@ const assets = {
             Top: -40,
             Left: 90,
             DefaultColor: ["#7A4646", "#888888", "#0F0F0F"],
+            DynamicGroupName: "HairAccessory1",
             Layer: [
                 {
                     Name: "内圈",
@@ -81,6 +82,7 @@ const assets = {
             Top: 0,
             Left: 90,
             DefaultColor: ["#916A6A", "#888888", "#917451"],
+            DynamicGroupName: "HairAccessory1",
             Layer: [
                 {
                     Name: "内圈",
@@ -99,6 +101,7 @@ const assets = {
         {
             Name: "角7_Luzi",
             Random: false,
+            DynamicGroupName: "HairAccessory1",
             Top: 0,
             Left: 0,
             Priority: 52,
