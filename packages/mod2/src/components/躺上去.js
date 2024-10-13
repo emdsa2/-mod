@@ -52,11 +52,13 @@ const activities = [
             CN: "躺上去",
             EN: "Lie Down",
             RU: "Лечь рядом",
+            UA: "Лягти поряд",
         },
         dialog: {
             CN: "SourceCharacter躺在TargetCharacter身边.",
             EN: "SourceCharacter lies down on TargetCharacter.",
-            RU: "SourceCharacter ложится рядом с TargetCharacter."
+            RU: "SourceCharacter ложится рядом с TargetCharacter.",
+            UA: "SourceCharacter лягає поряд TargetCharacter.",
         },
     },
 ];
