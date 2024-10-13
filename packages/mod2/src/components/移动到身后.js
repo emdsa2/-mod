@@ -13,10 +13,12 @@ const activities = [
         label: {
             CN: "躲到身后",
             EN: "Hide Behind",
+            UA: "Сховатись",
         },
         dialog: {
             CN: "SourceCharacter躲到TargetCharacter的身后.",
             EN: "SourceCharacter hides behind TargetCharacter.",
+            UA: "SourceCharacter ховається позаду TargetCharacter.",
         },
     },
     {
@@ -30,10 +32,12 @@ const activities = [
         label: {
             CN: "移动到身后",
             EN: "Move Behind",
+            UA: "Стати позаду",
         },
         dialog: {
             CN: "SourceCharacter移动到TargetCharacter的身后.",
             EN: "SourceCharacter moves behind TargetCharacter.",
+            UA: "SourceCharacter стає позаду TargetCharacter.",
         },
     },
 ];
