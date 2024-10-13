@@ -32,19 +32,23 @@ const activities = [
         },
         label: {
             CN: "塞棒棒糖",
-            EN: "塞棒棒糖",
+            EN: "Stuff with Lollipop",
+            UA: "Наповнити рот льодяником",
         },
         dialog: {
             CN: "SourceCharacter将手里的棒棒糖塞进TargetCharacter的嘴里.",
-            EN: "SourceCharacter将手里的棒棒糖塞进TargetCharacter的嘴里.",
+            EN: "SourceCharacter stuffs TargetCharacter's mouth with lollipop.",
+            UA: "SourceCharacter наповнює рот TargetCharacter льодяником.",
         },
         labelSelf: {
             CN: "塞棒棒糖",
-            EN: "塞棒棒糖",
+            EN: "Stuff with Lollipop",
+            UA: "Наповнити рот льодяником",
         },
         dialogSelf: {
             CN: "SourceCharacter将手里的棒棒糖塞进PronounPossessive自己的嘴里.",
-            EN: "SourceCharacter将手里的棒棒糖塞进PronounPossessive自己的嘴里.",
+            EN: "SourceCharacter stuffs PronounPossessive own mouth with lollipop.",
+            UA: "SourceCharacter наповнює свій рот льодяником.",
         },
     },
 ];
