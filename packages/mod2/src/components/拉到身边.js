@@ -57,11 +57,13 @@ const activity = {
         CN: "拉到身边",
         EN: "Pull to one's side",
         RU: "Притащить к себе",
+        UA: "Притягнути до себе",
     },
     dialog: {
         CN: "SourceCharacter将TargetCharacter拉到身边.",
         EN: "SourceCharacter pulls TargetCharacter to PronounPossessive side.",
         RU: "SourceCharacter притаскивает TargetCharacter к себе.",
+        UA: "SourceCharacter притягує TargetCharacter ближче до себе.",
     },
 };
 
