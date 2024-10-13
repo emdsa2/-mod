@@ -84,12 +84,14 @@ const activities = [
         label: {
             CN: "摇晃耳朵",
             EN: "Wag Ears",
-            RU: "Вилять ушами"
+            RU: "Вилять ушами",
+            UA: "Махати вухами",
         },
         dialog: {
             CN: "SourceCharacter 摇晃 PronounPossessive 的耳朵.",
             EN: "SourceCharacter wags PronounPossessive's ears.",
-            RU: "SourceCharacter виляет ушами."
+            RU: "SourceCharacter виляет ушами.",
+            UA: "SourceCharacter махає вухами.",
         },
     },
 ];
