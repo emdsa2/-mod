@@ -4,6 +4,7 @@ import AssetManager from "@mod-utils/AssetManager";
 const assetdef = {
     Name: "迷你裤_Luzi",
     Top: 400,
+    Random: false,
     DefaultColor: ["#727B91", "#FFD1A3", "#88665A"],
     PoseMapping: {
         KneelingSpread: "KneelingSpread",
@@ -62,7 +63,7 @@ export default function () {
         undefined,
         translation
     );
-    AssetManager.addAsset("Panties", { ...assetdef, Left: 100 }, undefined, translation);
+    AssetManager.addAsset("Panties", { ...assetdef, Left: 100, Priority: 19 }, undefined, translation);
 
     /** @type {Record<string,string>} */
     const mapping = {};
