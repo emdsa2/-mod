@@ -15,11 +15,7 @@ export function sleepFor(ms) {
  * @returns {Promise<void>}
  */
 export function sleepUntil(test, interval = 100) {
-    return new Promise((resolve) => {
-        const check = () => {
-            if (test()) resolve();
-            else setTimeout(check, interval);
-        };
-        check();
-    });
+    return (async () => {
+        while (!test()) await sleepFor(interval);
+    })();
 }
