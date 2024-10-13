@@ -44,11 +44,13 @@ const activity = {
         CN: "背起",
         EN: "Carry on the back",
         RU: "Нести на спине",
+        UA: "Тягнути на спині",
     },
     dialog: {
         CN: "SourceCharacter将TargetCharacter背了起来.",
         EN: "SourceCharacter carried TargetCharacter on the back.",
         RU: "SourceCharacter взял TargetCharacter себе на спину.",
+        UA: "SourceCharacter тягне TargetCharacter взявши собі на спину.",
     },
 };
 
