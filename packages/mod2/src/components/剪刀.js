@@ -131,6 +131,7 @@ const activity = {
             ItemVulvaPiercings: "SourceCharacter ріже свої трусики ножицями.",
             ItemFeet: "SourceCharacter ріже свої шкарпетки ножицями.",
             ItemBoots: "SourceCharacter ріже свої взуття ножицями.",
+        },
     },
 };
 
