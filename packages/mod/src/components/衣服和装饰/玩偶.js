@@ -74,6 +74,9 @@ const asset = {
         { Name: "小果", AllowTypes: { y: 8 } },
         { Name: "茗子", AllowTypes: { y: 9 } },
         { Name: "时光光", AllowTypes: { y: 10 } },
+        { Name: "xxxx", AllowTypes: { y: 11 } },
+        { Name: "果子狸", AllowTypes: { y: 12 } },
+        { Name: "雪瑗", AllowTypes: { y: 13 } },
 
         // 盒子的小黑屋
         { Name: "葡萄果汁盒", AllowTypes: { hz: 1 } },
@@ -81,6 +84,7 @@ const asset = {
         { Name: "殇梦溪", AllowTypes: { hz: 3 } },
         { Name: "Neko2", AllowTypes: { hz: 4 } },
         { Name: "mizuki池", AllowTypes: { hz: 5 } },
+        { Name: "莉娅", AllowTypes: { hz: 6 } },
         
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
@@ -93,10 +97,13 @@ const asset = {
         { Name: "Clara", AllowTypes: { l: 8 } },
         { Name: "WallyIlma", AllowTypes: { l: 9 } },
         { Name: "奈芙塔莉", AllowTypes: { l: 10 } },
-        { Name: "素瑞饼", AllowTypes: { l: 11 } },
+        { Name: "瑞饼", AllowTypes: { l: 11 } },
         { Name: "Annie", AllowTypes: { l: 12 } },
         { Name: "accoo", AllowTypes: { l: 13 } },
-        
+        { Name: "鸢", AllowTypes: { l: 14 } },
+        { Name: "Lyndis琳", AllowTypes: { l: 15 } },
+        { Name: "Eleanor", AllowTypes: { l: 16 } },
+
     ],
 };
 
