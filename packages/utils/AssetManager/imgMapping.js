@@ -1,3 +1,4 @@
+import { sleepUntil } from "@mod-utils/sleep";
 import ModManager from "../ModManager";
 import { assetOverrides, baseURL } from "../rollupHelper";
 
@@ -78,15 +79,19 @@ export function setupImgMapping() {
         }
     );
 
-    ModManager.hookFunction("CraftingElements._RadioButton", 5, (args, next) => {
-        const ret = next(args);
-        const img = ret.querySelector("img");
-        if (img?.src) {
-            const idx = img.src.indexOf("Assets/");
-            if (idx !== -1) {
-                img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
+    (async () => {
+        await sleepUntil(() => window["CraftingElements"] !== undefined);
+
+        ModManager.hookFunction("CraftingElements._RadioButton", 5, (args, next) => {
+            const ret = next(args);
+            const img = ret.querySelector("img");
+            if (img?.src) {
+                const idx = img.src.indexOf("Assets/");
+                if (idx !== -1) {
+                    img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
+                }
             }
-        }
-        return ret;
-    });
+            return ret;
+        });
+    })();
 }

@@ -1,0 +1,44 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          clean: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Set page url
+        run: |
+          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)
+          USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 1)
+
+          if [ $REPO_NAME = "$USER_NAME.github.io" ]; then
+            PAGE_URL="https://$USER_NAME.github.io/"
+          else
+            PAGE_URL="https://$USER_NAME.github.io/$REPO_NAME/"
+          fi
+
+          echo "PAGE_URL=$PAGE_URL" >> $GITHUB_ENV
+
+      - name: Build Beta
+        run: pnpm build --configBaseURL $PAGE_URL --configBeta
