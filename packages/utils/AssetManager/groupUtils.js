@@ -68,6 +68,8 @@ export function mirrorGroup(newGroup, copyFrom, description = undefined) {
             /** @type {CustomGroupDefinition} */ ({
                 ...fromDef,
                 Group: newGroup,
+                Default: false,
+                Random: false,
             }),
             {
                 description: soldDesc,
