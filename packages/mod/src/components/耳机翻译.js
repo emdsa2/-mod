@@ -27,7 +27,7 @@ function validItemCraftingDesc(vAssets) {
 /**
  * @param {string} sourceText
  * @param {string} targetLang
- * @returns {Promise<{ sourceText: string, translatedText: string, sourceLang: string }>}
+ * @returns {Promise<{ translatedText: string }>}
  */
 function translateText(sourceText, targetLang) {
     return fetch(
@@ -36,7 +36,13 @@ function translateText(sourceText, targetLang) {
         )}`
     )
         .then((response) => response.json())
-        .then((dt) => Promise.resolve({ sourceText: dt[0][0][1], translatedText: dt[0][0][0], sourceLang: dt[2] }));
+        .then((dt) => {
+            const [translatedText, retSourceText] = dt[0][0];
+            const retSourceLang = dt[2];
+            if (retSourceLang === targetLang || translatedText === sourceText || retSourceText !== sourceText)
+                return undefined;
+            else return Promise.resolve({ translatedText });
+        });
 }
 
 export default function () {
@@ -54,17 +60,15 @@ export default function () {
             if (data.Sender === Player.MemberNumber) {
                 const tLang = validItemCraftingDesc(speakingAssets);
                 if (tLang)
-                    translateText(data.Content, tLang).then(({ sourceText, translatedText, sourceLang }) => {
-                        if (sourceLang === tLang) return;
-                        if (sourceText === data.Content) ServerSend("ChatRoomChat", modedData("🔊", translatedText));
-                    });
+                    translateText(data.Content, tLang).then(({ translatedText }) =>
+                        ServerSend("ChatRoomChat", modedData("🔊", translatedText))
+                    );
             } else {
                 const tLang = validItemCraftingDesc(hearingAssets);
                 if (tLang)
-                    translateText(data.Content, tLang).then(({ sourceText, translatedText, sourceLang }) => {
-                        if (sourceLang === tLang) return;
-                        if (sourceText === data.Content) ChatRoomMessage(modedData("📞", translatedText));
-                    });
+                    translateText(data.Content, tLang).then(({ translatedText }) =>
+                        ChatRoomMessage(modedData("📞", translatedText))
+                    );
             }
         }
     });
