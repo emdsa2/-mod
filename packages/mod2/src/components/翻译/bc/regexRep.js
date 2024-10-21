@@ -1146,7 +1146,7 @@ const act_dialogs = [
     { regex: /(.+) chokes and spasms, struggling in (.+) gag\./, replacement: "$1 呛着并痉挛,在 $2 中挣扎." },
     {
         regex: /(.+) convulses weakly with a moan, (.+) eyes rolling back as (.+) clenches around (.+) throat even tighter\./,
-        replacement: "$1 虚弱地抽搐着发出呻吟声, 当 $2 更紧地掐住 $4 的喉咙, $3的眼睛翻白.",
+        replacement: "$1 虚弱地抽搐着发出呻吟声, 当 $3 更紧地掐住 $4 的喉咙, $2 的眼睛翻白.",
     },
     {
         regex: /(.+) convulses weakly with a moan, (.+) eyes rolling back as (.+) lungs scream for air\./,
