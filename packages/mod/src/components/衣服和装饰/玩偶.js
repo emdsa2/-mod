@@ -102,7 +102,7 @@ const asset = {
         { Name: "空", AllowTypes: { c: 8 } },
 
         // 吸血鬼城堡
-        // { Name: "岚岚", AllowTypes: { hz: 1 } },
+        { Name: "岚岚", AllowTypes: { hz: 1 } },
         // { Name: "欧佩娜", AllowTypes: { hz: 2 } },
         // { Name: "艾欧娜", AllowTypes: { hz: 3 } },
         // { Name: "柚子", AllowTypes: { hz: 4 } },
@@ -141,7 +141,7 @@ const typeNames = {
     f: "猫州猫庭府玩偶",
     y: "小夜家玩偶",
     hz: "盒子的小黑屋玩偶",
-    // x: "吸血鬼城堡",
+    x: "吸血鬼城堡",
     l: "路过的玩偶",
 };
 
@@ -156,7 +156,7 @@ const predefDialog = {
         ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只超厉害超威严bc第一的Cyäegha大人的眼线!",
         ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只超色气的PumpkinPie样子的玩偶.",
-        // ItemMisc玩偶_LuziSetx1: "SourceCharacter给了DestinationCharacter一只城堡真正的主人, 伟大! 优雅! 的吸血鬼始祖岚岚大人样子的玩偶.",
+        ItemMisc玩偶_LuziSetx1: "SourceCharacter给了DestinationCharacter一只城堡真正的主人, 伟大! 优雅! 的吸血鬼始祖岚岚大人样子的玩偶.",
 
     },
 };
