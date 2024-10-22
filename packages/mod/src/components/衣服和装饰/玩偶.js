@@ -30,6 +30,8 @@ const asset = {
         { Name: "Reisigure", AllowTypes: { s: 4 } },
         { Name: "Atlantis", AllowTypes: { s: 5 } },
         { Name: "Xin", AllowTypes: { s: 6 } },
+        { Name: "空", AllowTypes: { l: 7 } },
+        { Name: "空", AllowTypes: { l: 8 } },
 
         // 芷窝
         { Name: "芷童", AllowTypes: { z: 1 } },
@@ -45,6 +47,10 @@ const asset = {
         { Name: "Suki", AllowTypes: { z: 11 } },
         { Name: "haru", AllowTypes: { z: 12 } },
         { Name: "兔叽", AllowTypes: { z: 13 } },
+        { Name: "空", AllowTypes: { l: 14 } },
+        { Name: "空", AllowTypes: { l: 15 } },
+        { Name: "空", AllowTypes: { l: 16 } },
+        { Name: "空", AllowTypes: { l: 17 } },
 
         // Catnest
         { Name: "XinLian", AllowTypes: { c: 1 } },
@@ -62,6 +68,9 @@ const asset = {
         { Name: "Nail", AllowTypes: { f: 3 } },
         { Name: "Nekonya蓝", AllowTypes: { f: 4 } },
         { Name: "小果", AllowTypes: { f: 5 } },
+        { Name: "空", AllowTypes: { c: 6 } },
+        { Name: "空", AllowTypes: { c: 7 } },
+        { Name: "空", AllowTypes: { c: 8 } },
 
         // 小夜家玩偶
         { Name: "向归夜", AllowTypes: { y: 1 } },
@@ -77,6 +86,10 @@ const asset = {
         { Name: "xxxx", AllowTypes: { y: 11 } },
         { Name: "果子狸", AllowTypes: { y: 12 } },
         { Name: "雪瑗", AllowTypes: { y: 13 } },
+        { Name: "空", AllowTypes: { l: 14 } },
+        { Name: "空", AllowTypes: { l: 15 } },
+        { Name: "空", AllowTypes: { l: 16 } },
+        { Name: "空", AllowTypes: { l: 17 } },
 
         // 盒子的小黑屋
         { Name: "葡萄果汁盒", AllowTypes: { hz: 1 } },
@@ -85,7 +98,19 @@ const asset = {
         { Name: "Neko2", AllowTypes: { hz: 4 } },
         { Name: "mizuki池", AllowTypes: { hz: 5 } },
         { Name: "莉娅", AllowTypes: { hz: 6 } },
-        
+        { Name: "空", AllowTypes: { c: 7 } },
+        { Name: "空", AllowTypes: { c: 8 } },
+
+        // 吸血鬼城堡
+        { Name: "岚岚", AllowTypes: { hz: 1 } },
+        { Name: "欧佩娜", AllowTypes: { hz: 2 } },
+        { Name: "艾欧娜", AllowTypes: { hz: 3 } },
+        { Name: "柚子", AllowTypes: { hz: 4 } },
+        { Name: "梨子", AllowTypes: { hz: 5 } },
+        { Name: "Lyndis琳", AllowTypes: { hz: 6 } },
+        { Name: "空", AllowTypes: { c: 7 } },
+        { Name: "空", AllowTypes: { c: 8 } },
+
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
         { Name: "YouXiang", AllowTypes: { l: 2 } },
@@ -101,8 +126,9 @@ const asset = {
         { Name: "Annie", AllowTypes: { l: 12 } },
         { Name: "accoo", AllowTypes: { l: 13 } },
         { Name: "鸢", AllowTypes: { l: 14 } },
-        { Name: "Lyndis琳", AllowTypes: { l: 15 } },
+        { Name: "疾风", AllowTypes: { l: 15 } },
         { Name: "Eleanor", AllowTypes: { l: 16 } },
+        { Name: "空", AllowTypes: { l: 17 } },
 
     ],
 };
@@ -115,6 +141,7 @@ const typeNames = {
     f: "猫州猫庭府玩偶",
     y: "小夜家玩偶",
     hz: "盒子的小黑屋玩偶",
+    x: "吸血鬼城堡",
     l: "路过的玩偶",
 };
 
@@ -123,12 +150,14 @@ const translations = { CN: "玩偶", EN: "Plushies" };
 /** @type {Translation.Dialog} */
 const predefDialog = {
     CN: {
-        ItemMisc玩偶_LuziOptionhz4:"Neko",
+        ItemMisc玩偶_LuziOptionhz4: "Neko",
 
         ItemMisc玩偶_LuziSetd2: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSets3: "SourceCharacter给了DestinationCharacter一只笨蛋的Luzi玩偶.",
         ItemMisc玩偶_LuziSetc3: "SourceCharacter给了DestinationCharacter一只超厉害超威严bc第一的Cyäegha大人的眼线!",
-        ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只超色气的PumpkinPie玩偶.",
+        ItemMisc玩偶_LuziSetc4: "SourceCharacter给了DestinationCharacter一只超色气的PumpkinPie样子的玩偶.",
+        ItemMisc玩偶_LuziSetx1: "SourceCharacter给了DestinationCharacter一只城堡真正的主人, 伟大! 优雅! 的吸血鬼始祖岚岚大人样子的玩偶.",
+
     },
 };
 
@@ -151,7 +180,7 @@ const modules = /** @type {AssetLayerDefinition[]}*/ (asset.Layer).reduce((pv, c
         module.Options.push({});
     }
     return pv;
-}, /** @type {ModularItemModuleConfig[]} */ ([]));
+}, /** @type {ModularItemModuleConfig[]} */([]));
 
 /** @type {ModularItemConfig} */
 const extended = {
@@ -164,7 +193,7 @@ const layerNames = /** @type {AssetLayerDefinition[]}*/ (asset.Layer).reduce((pv
     const [k, v] = Object.entries(cv.AllowTypes)[0];
     pv[`${typeNames[k]}${v}`] = cv.Name;
     return pv;
-}, /** @type { Record<string,string> } */ ({}));
+}, /** @type { Record<string,string> } */({}));
 
 /** @type { Record<string,string> } */
 const cnDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, cv) => {
@@ -187,7 +216,7 @@ const cnDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
     });
 
     return pv;
-}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "选择房间", ...(predefDialog.CN || {}) }));
+}, /** @type { Record<string,string> } */({ ItemMisc玩偶_LuziSelectBase: "选择房间", ...(predefDialog.CN || {}) }));
 
 /** @type { Record<string,string> } */
 
@@ -211,7 +240,7 @@ const enDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
     });
 
     return pv;
-}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "Select Room", ...(predefDialog.EN || {}) }));
+}, /** @type { Record<string,string> } */({ ItemMisc玩偶_LuziSelectBase: "Select Room", ...(predefDialog.EN || {}) }));
 
 /** @type { Record<string,string> } */
 const ruDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, cv) => {
@@ -234,7 +263,7 @@ const ruDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
     });
 
     return pv;
-}, /** @type { Record<string,string> } */ ({ ItemMisc玩偶_LuziSelectBase: "Выбрать комнату", ...(predefDialog.RU || {}) }));
+}, /** @type { Record<string,string> } */({ ItemMisc玩偶_LuziSelectBase: "Выбрать комнату", ...(predefDialog.RU || {}) }));
 
 /** @type {Translation.Dialog} */
 const dialogs = {
