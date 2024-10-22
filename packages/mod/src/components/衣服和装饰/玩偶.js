@@ -103,13 +103,13 @@ const asset = {
 
         // 吸血鬼城堡
         { Name: "岚岚", AllowTypes: { x: 1 } },
-        // { Name: "欧佩娜", AllowTypes: { x: 2 } },
-        // { Name: "艾欧娜", AllowTypes: { x: 3 } },
-        // { Name: "柚子", AllowTypes: { x: 4 } },
-        // { Name: "梨子", AllowTypes: { x: 5 } },
-        // { Name: "Lyndis琳", AllowTypes: { x: 6 } },
-        // { Name: "空", AllowTypes: { x: 7 } },
-        // { Name: "空", AllowTypes: { x: 8 } },
+        { Name: "欧佩娜", AllowTypes: { x: 2 } },
+        { Name: "艾欧娜", AllowTypes: { x: 3 } },
+        { Name: "柚子", AllowTypes: { x: 4 } },
+        { Name: "梨子", AllowTypes: { x: 5 } },
+        { Name: "Lyndis琳", AllowTypes: { x: 6 } },
+        { Name: "空", AllowTypes: { x: 7 } },
+        { Name: "空", AllowTypes: { x: 8 } },
 
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
