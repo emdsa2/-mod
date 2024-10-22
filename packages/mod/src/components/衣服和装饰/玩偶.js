@@ -30,8 +30,8 @@ const asset = {
         { Name: "Reisigure", AllowTypes: { s: 4 } },
         { Name: "Atlantis", AllowTypes: { s: 5 } },
         { Name: "Xin", AllowTypes: { s: 6 } },
-        { Name: "空", AllowTypes: { l: 7 } },
-        { Name: "空", AllowTypes: { l: 8 } },
+        { Name: "空", AllowTypes: { s: 7 } },
+        { Name: "空", AllowTypes: { s: 8 } },
 
         // 芷窝
         { Name: "芷童", AllowTypes: { z: 1 } },
@@ -47,10 +47,10 @@ const asset = {
         { Name: "Suki", AllowTypes: { z: 11 } },
         { Name: "haru", AllowTypes: { z: 12 } },
         { Name: "兔叽", AllowTypes: { z: 13 } },
-        { Name: "空", AllowTypes: { l: 14 } },
-        { Name: "空", AllowTypes: { l: 15 } },
-        { Name: "空", AllowTypes: { l: 16 } },
-        { Name: "空", AllowTypes: { l: 17 } },
+        { Name: "空", AllowTypes: { z: 14 } },
+        { Name: "空", AllowTypes: { z: 15 } },
+        { Name: "空", AllowTypes: { z: 16 } },
+        { Name: "空", AllowTypes: { z: 17 } },
 
         // Catnest
         { Name: "XinLian", AllowTypes: { c: 1 } },
@@ -68,9 +68,9 @@ const asset = {
         { Name: "Nail", AllowTypes: { f: 3 } },
         { Name: "Nekonya蓝", AllowTypes: { f: 4 } },
         { Name: "小果", AllowTypes: { f: 5 } },
-        { Name: "空", AllowTypes: { c: 6 } },
-        { Name: "空", AllowTypes: { c: 7 } },
-        { Name: "空", AllowTypes: { c: 8 } },
+        { Name: "空", AllowTypes: { f: 6 } },
+        { Name: "空", AllowTypes: { f: 7 } },
+        { Name: "空", AllowTypes: { f: 8 } },
 
         // 小夜家玩偶
         { Name: "向归夜", AllowTypes: { y: 1 } },
@@ -86,10 +86,10 @@ const asset = {
         { Name: "xxxx", AllowTypes: { y: 11 } },
         { Name: "果子狸", AllowTypes: { y: 12 } },
         { Name: "雪瑗", AllowTypes: { y: 13 } },
-        { Name: "空", AllowTypes: { l: 14 } },
-        { Name: "空", AllowTypes: { l: 15 } },
-        { Name: "空", AllowTypes: { l: 16 } },
-        { Name: "空", AllowTypes: { l: 17 } },
+        { Name: "空", AllowTypes: { y: 14 } },
+        { Name: "空", AllowTypes: { y: 15 } },
+        { Name: "空", AllowTypes: { y: 16 } },
+        { Name: "空", AllowTypes: { y: 17 } },
 
         // 盒子的小黑屋
         { Name: "葡萄果汁盒", AllowTypes: { hz: 1 } },
@@ -98,18 +98,18 @@ const asset = {
         { Name: "Neko2", AllowTypes: { hz: 4 } },
         { Name: "mizuki池", AllowTypes: { hz: 5 } },
         { Name: "莉娅", AllowTypes: { hz: 6 } },
-        { Name: "空", AllowTypes: { c: 7 } },
-        { Name: "空", AllowTypes: { c: 8 } },
+        { Name: "空", AllowTypes: { hz: 7 } },
+        { Name: "空", AllowTypes: { hz: 8 } },
 
         // 吸血鬼城堡
-        { Name: "岚岚", AllowTypes: { hz: 1 } },
-        // { Name: "欧佩娜", AllowTypes: { hz: 2 } },
-        // { Name: "艾欧娜", AllowTypes: { hz: 3 } },
-        // { Name: "柚子", AllowTypes: { hz: 4 } },
-        // { Name: "梨子", AllowTypes: { hz: 5 } },
-        // { Name: "Lyndis琳", AllowTypes: { hz: 6 } },
-        // { Name: "空", AllowTypes: { c: 7 } },
-        // { Name: "空", AllowTypes: { c: 8 } },
+        { Name: "岚岚", AllowTypes: { x: 1 } },
+        // { Name: "欧佩娜", AllowTypes: { x: 2 } },
+        // { Name: "艾欧娜", AllowTypes: { x: 3 } },
+        // { Name: "柚子", AllowTypes: { x: 4 } },
+        // { Name: "梨子", AllowTypes: { x: 5 } },
+        // { Name: "Lyndis琳", AllowTypes: { x: 6 } },
+        // { Name: "空", AllowTypes: { x: 7 } },
+        // { Name: "空", AllowTypes: { x: 8 } },
 
         // 路过的玩偶
         { Name: "li", AllowTypes: { l: 1 } },
