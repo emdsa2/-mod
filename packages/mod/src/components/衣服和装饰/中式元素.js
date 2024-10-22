@@ -55,6 +55,11 @@ const translations = {
             假领子_Luzi: "🍔",
         },
     },
+    UA: {
+        Cloth: {
+            假领子_Luzi: "🍔",
+        },
+    },
     RU: {
         Cloth: {
             假领子_Luzi: "🍔",
