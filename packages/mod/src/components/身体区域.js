@@ -89,6 +89,27 @@ const groups = [
             RU: "🍔Длинные рукава",
         },
     },
+    {
+        groupDef: {
+            Group: "额外头发_Luzi",
+            Priority: 53,
+            Clothing: true,
+            Default: false,
+            Random: false,
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: ["Default"],
+        },
+        description: {
+            CN: "🍔额外头发",
+            EN: "🍔Extra hair",
+            RU: "🍔дополнительные волосы",
+        },
+    }
 ];
 
 /** @type {CopyGroupInfo[]} */

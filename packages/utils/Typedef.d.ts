@@ -17,6 +17,7 @@ type CustomGroupBodyName =
     | "BodyMarkings2_Luzi"
     | "动物身体_Luzi"
     | "长袖子_Luzi"
+    | "额外头发_Luzi"
     | "身体痕迹_Luzi";
 
 
