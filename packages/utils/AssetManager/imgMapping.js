@@ -55,12 +55,7 @@ export function setupImgMapping() {
      */
     const mapImgSrc = (src) => {
         if (typeof src !== "string") return src;
-
-        if (src.includes("_笨笨蛋Luzi")) {
-            src = src.replace("_笨笨蛋Luzi", "");
-        } else if (src.includes("_笨笨笨蛋Luzi2")) {
-            src = src.replace("_笨笨笨蛋Luzi2", "");
-        }
+        if (!src.endsWith(".png")) return src;
 
         if (customImgMapping[src]) {
             src = customImgMapping[src];
