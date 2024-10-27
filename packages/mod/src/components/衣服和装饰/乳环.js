@@ -1,10 +1,10 @@
 import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
-const asset = 			{
+const asset = {
     Name: "短穿环_Luzi",
     Fetish: ["Metal"],
-    Value: 10,
+    Value: -1,
     Difficulty: 10,
     Time: 15,
     AllowLock: true,
@@ -25,4 +25,3 @@ const translations = {
 export default function () {
     AssetManager.addAsset("ItemNipplesPiercings", asset, undefined, translations);
 }
-
