@@ -22,6 +22,7 @@ const asset = {
         // 玩具店
         { Name: "Saki", AllowTypes: { d: 1 } },
         { Name: "Luzi", AllowTypes: { d: 2 } },
+        // { Name: "若若", AllowTypes: { d: 3 } },
 
         // 狼窝
         { Name: "吉娜", AllowTypes: { s: 1 } },
