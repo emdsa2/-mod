@@ -9,7 +9,6 @@ const asset = {
     Priority: 36,
     ParentGroup: null,
     Fetish: ["Leather"],
-    Value: 60,
     Difficulty: 6,
     Time: 20,
     AllowLock: true,
