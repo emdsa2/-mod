@@ -14,7 +14,7 @@ const asset = {
         Yoked: "Yoked",
     },
     Layer: [
-        { Name: "前", Priority: 61 },
+        { Name: "前", Priority: 50 },
         { Name: "后", Priority: 5 },
         { Name: "图案", Priority: 61 },
     ],
