@@ -18,6 +18,7 @@ const asset = {
     Hide: ["Mouth"],
     Effect: [E.BlockMouth, E.GagMedium],
     ExpressionTrigger: [{ Name: "DroolSides", Group: "Fluids", Timer: 30 }],
+    DefaultColor: ["#181818", "Default", "Default", "Default"],
     Layer: [
         {
             Name: "带子",
