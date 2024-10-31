@@ -202,6 +202,32 @@ const assets = {
             },
         },
         {
+            Name: "书",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,
+            Priority: 26,
+            PoseMapping: {
+                TapedHands: "BaseUpper",
+                Yoked: "Hide",
+                OverTheHead: "Hide",
+                BackBoxTie: "Hide",
+                BackElbowTouch: "Hide",
+                BackCuffs: "Hide",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            }, 
+            Layer: [
+                {
+                    Name: "页",
+                },
+                {
+                    Name: "壳",
+                },
+            ],
+        },
+        {
             Name: "伊偶_Luzi",
             Random: false,
             Gender: "F",
