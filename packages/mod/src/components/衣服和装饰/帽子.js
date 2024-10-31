@@ -30,6 +30,32 @@ const assets = {
                 },
             ],
         },
+        {
+            Name: "狐狸面具",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 55,
+            DefaultColor: ["Default", "#FFF260", "#3E5FBB", "#F83A3A"],
+            Layer: [
+                {
+                    Name: "底",
+                    Priority: 55,
+                },
+                {
+                    Name: "眼白",
+                    Priority: 55,
+                },
+                {
+                    Name: "瞳孔",
+                    Priority: 55,
+                },
+                {
+                    Name: "涂色",
+                    Priority: 55,
+                },
+            ],
+        },
     ],
 };
 
@@ -38,16 +64,19 @@ const translations = {
     CN: {
         Hat: {
             冕旒_Luzi: "冕旒",
+            狐狸面具: "狐狸面具",
         },
     },
     EN: {
         Hat: {
             冕旒_Luzi: "Mian Liu",
+            狐狸面具: "Fox Mask",
         },
     },
     RU: {
         Hat: {
             冕旒_Luzi: "Миан Лю",
+            狐狸面具: "маска лисы",
         },
     },
 };
