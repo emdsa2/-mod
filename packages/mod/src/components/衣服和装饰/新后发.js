@@ -56,12 +56,29 @@ const assets =[
             Extended: false,
             InheritColor: "HairFront",
             Hide: ["HairBack"],
-            Layer: [
-                {
-                    Name: "头发",
-                    Priority: 32
-                }
-            ],
+            Priority: 32
+        },
+        {
+            Name: "低双马尾2",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairBack"],
+            Priority: 32
+        },
+        {
+            Name: "卷发后1",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairBack"],
+            Priority: 32
         }
     ];
 
@@ -71,14 +88,18 @@ const translations = {
         新后发_Luzi: {
             侧马尾1: "侧马尾 1",
             侧马尾2: "侧马尾 2",
-            低双马尾1: "低双马尾 1"
+            低双马尾1: "低双马尾 1",
+            低双马尾2: "低双马尾 2",
+            卷发后1: "卷发后1",
         },
     },
     EN: {
         新后发_Luzi: {
             侧马尾1: "Side Ponytail 1",
             侧马尾2: "Side Ponytail 2",
-            低双马尾1: "Low double ponytail 1"
+            低双马尾1: "Low double ponytail 1",
+            低双马尾2: "Low double ponytail 2",
+            卷发后1: "Curly Hair Back 1",
         },
     },
 };
