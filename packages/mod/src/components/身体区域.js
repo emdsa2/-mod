@@ -91,9 +91,53 @@ const groups = [
     },
     {
         groupDef: {
+            Group: "新前发_Luzi",
+            Priority: 52,
+            Clothing: false,
+            Default: false,
+            Random: false,
+            PreviewZone :[140, 40, 220, 220],
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: ["Default"],
+        },
+        description: {
+            CN: "🍔新前发",
+            EN: "🍔New fornt hair",
+            RU: "🍔новые волосы на спине",
+        },
+    },  
+    {
+        groupDef: {
+            Group: "新后发_Luzi",
+            Priority: 5,
+            Clothing: false,
+            Default: false,
+            Random: false,
+            PreviewZone : [55, 0, 390, 390],
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: ["Default"],
+        },
+        description: {
+            CN: "🍔新后发",
+            EN: "🍔New back hair",
+            RU: "🍔новые волосы на спине",
+        },
+    },    
+    {
+        groupDef: {
             Group: "额外头发_Luzi",
             Priority: 53,
-            Clothing: true,
+            Clothing: false,
             Default: false,
             Random: false,
             Asset: [
