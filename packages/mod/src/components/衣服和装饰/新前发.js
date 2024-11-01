@@ -4,7 +4,7 @@ import AssetManager from "@mod-utils/AssetManager";
 const assets = {
     新前发_Luzi: [
         {
-            Name: "样式1",
+            Name: "前发1",
             Random: false,
             Left: 50,
             Top: 0,
@@ -15,7 +15,7 @@ const assets = {
             Hide: ["HairFront"]
         },
         {
-            Name: "样式2",
+            Name: "前发2",
             Random: false,
             Left: 50,
             Top: 0,
@@ -26,7 +26,7 @@ const assets = {
             Hide: ["HairFront"]
         },
         {
-            Name: "样式3",
+            Name: "前发3",
             Random: false,
             Left: 50,
             Top: 0,
@@ -37,7 +37,7 @@ const assets = {
             Hide: ["HairFront"]
         },
         {
-            Name: "样式4",
+            Name: "前发4",
             Random: false,
             Left: 50,
             Top: 0,
@@ -48,7 +48,7 @@ const assets = {
             Hide: ["HairFront"]
         },
         {
-            Name: "样式5",
+            Name: "前发5",
             Random: false,
             Left: 50,
             Top: 0,
@@ -65,20 +65,20 @@ const assets = {
 const translations = {
     CN: {
         新前发_Luzi: {
-            样式1: "样式 1",
-            样式2: "样式 2",
-            样式3: "样式 3",
-            样式4: "样式 4",
-            样式5: "样式 5",
+            前发1: "前发 1",
+            前发2: "前发 2",
+            前发3: "前发 3",
+            前发4: "前发 4",
+            前发5: "前发 5",
         },
     },
     EN: {
         新前发_Luzi: {
-            样式1: "Hair 1",
-            样式2: "Hair 2",
-            样式3: "Hair 3",
-            样式4: "Hair 4",            
-            样式5: "Hair 5"
+            前发1: "HairFront 1",
+            前发2: "HairFront 2",
+            前发3: "HairFront 3",
+            前发4: "HairFront 4",            
+            前发5: "HairFront 5"
         },
     },
 };
