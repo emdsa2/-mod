@@ -14,9 +14,6 @@ const asset = {
     Extended: true,
     AllowActivePose: ["BackBoxTie", "BackElbowTouch", "LegsClosed", "Kneel"],
     SetPose: ["BackBoxTie", "LegsClosed"],
-    PoseMapping: {
-        Kneel: "BaseUpper",
-    },
     Alpha: [
         {
             Group: [
