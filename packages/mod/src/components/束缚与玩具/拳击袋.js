@@ -72,6 +72,9 @@ const asset = {
                         "Cloth_笨笨蛋Luzi",
                         "ClothLower_笨笨笨蛋Luzi2",
                         "ClothLower_笨笨蛋Luzi",
+                        "额外头发_Luzi",
+                        "新后发_Luzi",
+                        "新前发_Luzi",
                     ],
                     Masks: [
                         [0, -100, 500, 135], //上
