@@ -79,6 +79,17 @@ const assets =[
             InheritColor: "HairFront",
             Hide: ["HairBack"],
             Priority: 32
+        },
+        {
+            Name: "卷发后2",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairBack"],
+            Priority: 5
         }
     ];
 
@@ -91,6 +102,7 @@ const translations = {
             低双马尾1: "低双马尾 1",
             低双马尾2: "低双马尾 2",
             卷发后1: "卷发后1",
+            卷发后2: "卷发后2",
         },
     },
     EN: {
@@ -100,6 +112,7 @@ const translations = {
             低双马尾1: "Low double ponytail 1",
             低双马尾2: "Low double ponytail 2",
             卷发后1: "Curly Hair Back 1",
+            卷发后2: "Curly Hair Back 2",
         },
     },
 };

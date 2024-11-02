@@ -70,6 +70,38 @@ const assets = {
             Hide: ["HairFront"]
         },
         {
+            Name: "前发7",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            Priority : 52,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairFront"]
+        },
+        {
+            Name: "前发8",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            Priority : 52,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairFront"],
+            Layer: [               
+                {
+                    Name: "底",                  
+                    Priority: 52,
+                },
+                {
+                    Name: "高光",                  
+                    Priority: 52,
+                }
+            ],
+        },
+        {
             Name: "卷发1",
             Random: false,
             Left: 0,
@@ -115,6 +147,8 @@ const translations = {
             前发4: "前发 4",
             前发5: "前发 5",
             前发6: "前发 6",
+            前发7: "前发 7",
+            前发8: "前发 8",
             卷发1: "卷发 1",
             卷发2: "卷发 2",
             卷发3: "卷发 3",
@@ -127,7 +161,9 @@ const translations = {
             前发3: "HairFront 3",
             前发4: "HairFront 4",            
             前发5: "HairFront 5",            
-            前发6: "HairFront 6",            
+            前发6: "HairFront 6",           
+            前发7: "HairFront 7",          
+            前发8: "HairFront 8",            
             卷发1: "Curly Hair 1",            
             卷发2: "Curly Hair 2",            
             卷发3: "Curly Hair 3"
