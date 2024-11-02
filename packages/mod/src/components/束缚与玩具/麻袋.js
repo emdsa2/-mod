@@ -171,7 +171,7 @@ const translations = {
 const extended = {
     Archetype: ExtendedArchetype.TYPED,
     DrawImages: false,
-    Options: [{ Name: "微透明" }, { Name: "不透" }],
+    Options: [{ Name: "透明" }, { Name: "不透" }],
 };
 
 
