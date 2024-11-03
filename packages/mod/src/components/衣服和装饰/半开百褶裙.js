@@ -7,24 +7,25 @@ const asset = {
     Top: 0,
     Left: 0,
     DefaultColor: ["#7F1739", "Default", "Default"],
+    Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
     PoseMapping: {
         Kneel: "KneelingSpread",
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
     },
-    Layer: [    
+    Layer: [
         {
             Name: "裙子",
-            Priority: 26         
-        }, 
+            Priority: 26,
+        },
         {
             Name: "白线",
-            Priority: 26        
-        },    
+            Priority: 26,
+        },
         {
             Name: "链子",
-            Priority: 26         
-        }
+            Priority: 26,
+        },
     ],
 };
 
@@ -35,7 +36,6 @@ const translation = {
 };
 
 export default function () {
-  
     AssetManager.addAsset(
         "ClothLower",
         {
