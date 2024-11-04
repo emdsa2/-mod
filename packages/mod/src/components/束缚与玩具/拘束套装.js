@@ -9,6 +9,8 @@ const asset = {
     Top: 0,
     Left: 0,
     Difficulty: 25,
+    AllowLock: true,
+    DrawLocks: false,
     Effect: [E.Block, E.BlockWardrobe, E.Slow],
     Prerequisite: ["HasBreasts"],
     SetPose: ["BackElbowTouch"],
@@ -131,6 +133,7 @@ const asset = {
 /** @type { TypedItemConfig } */
 const extended = {
     Archetype: ExtendedArchetype.TYPED,
+    ChangeWhenLocked: false,
     ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
     DrawImages: false,
     Options: [
