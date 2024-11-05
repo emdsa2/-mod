@@ -70,6 +70,23 @@ const groups = [
     },
     {
         groupDef: {
+            Group: "额外身高_Luzi",
+            Priority: 10,
+            Clothing: true,
+            Default: false,
+            Random: false,
+            BodyCosplay: true,
+            Asset: [],
+            Color: ["Default"],
+        },
+        description: {
+            CN: "🍔身高调整",
+            EN: "🍔Height Adjustment",
+            RU: "🍔Регулировка высоты",
+        },
+    },
+    {
+        groupDef: {
             Group: "长袖子_Luzi",
             Priority: 10,
             Clothing: true,
@@ -96,7 +113,7 @@ const groups = [
             Clothing: false,
             Default: false,
             Random: false,
-            PreviewZone :[140, 40, 220, 220],
+            PreviewZone: [140, 40, 220, 220],
             Asset: [
                 {
                     Name: "无_Luzi",
@@ -110,7 +127,7 @@ const groups = [
             EN: "🍔New fornt hair",
             RU: "🍔новые волосы на спине",
         },
-    },  
+    },
     {
         groupDef: {
             Group: "新后发_Luzi",
@@ -118,7 +135,7 @@ const groups = [
             Clothing: false,
             Default: false,
             Random: false,
-            PreviewZone : [55, 0, 390, 390],
+            PreviewZone: [55, 0, 390, 390],
             Asset: [
                 {
                     Name: "无_Luzi",
@@ -132,7 +149,7 @@ const groups = [
             EN: "🍔New back hair",
             RU: "🍔новые волосы на спине",
         },
-    },    
+    },
     {
         groupDef: {
             Group: "额外头发_Luzi",
@@ -153,7 +170,7 @@ const groups = [
             EN: "🍔Extra hair",
             RU: "🍔дополнительные волосы",
         },
-    }
+    },
 ];
 
 /** @type {CopyGroupInfo[]} */

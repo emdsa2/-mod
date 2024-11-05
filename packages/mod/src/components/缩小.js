@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { RecordEntries } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
 
 const assetAdjustments = {
@@ -50,39 +51,43 @@ const assets = [
     },
 ];
 
+/** @type {Translation.CustomRecord<string,string>} */
 const translations = {
     CN: {
-        BodyMarkings2_Luzi: {
-            身高减10cm_Luzi: "-10cm",
-            身高减20cm_Luzi: "-20cm",
-            身高减30cm_Luzi: "-30cm",
-            身高减40cm_Luzi: "-40cm",
-        },
+        缩小地上_Luzi: "缩小地上",
+        缩小浮空_Luzi: "缩小浮空",
+        身高减10cm_Luzi: "-10cm",
+        身高减20cm_Luzi: "-20cm",
+        身高减30cm_Luzi: "-30cm",
+        身高减40cm_Luzi: "-40cm",
     },
     EN: {
-        BodyMarkings2_Luzi: {
-            身高减10cm_Luzi: "-10cm",
-            身高减20cm_Luzi: "-20cm",
-            身高减30cm_Luzi: "-30cm",
-            身高减40cm_Luzi: "-40cm",
-        },
+        缩小地上_Luzi: "Shrink on Ground",
+        缩小浮空_Luzi: "Shrink in Air",
+        身高减10cm_Luzi: "-10cm",
+        身高减20cm_Luzi: "-20cm",
+        身高减30cm_Luzi: "-30cm",
+        身高减40cm_Luzi: "-40cm",
     },
     RU: {
-        BodyMarkings2_Luzi: {
-            身高减10cm_Luzi: "-10см",
-            身高减20cm_Luzi: "-20см",
-            身高减30cm_Luzi: "-30см",
-            身高减40cm_Luzi: "-40см",
-        },
+        缩小地上_Luzi: "Уменьшить на земле",
+        缩小浮空_Luzi: "Уменьшить в воздухе",
+        身高减10cm_Luzi: "-10см",
+        身高减20cm_Luzi: "-20см",
+        身高减30cm_Luzi: "-30см",
+        身高减40cm_Luzi: "-40см",
     },
 };
 
 export default function () {
+    /** @type {CustomGroupName} */
+    const groupName = "额外身高_Luzi";
+
     ModManager.progressiveHook("CharacterAppearanceGetCurrentValue").override((args, next) => {
         /** @type {number} */
         const ret = next(args);
         if (args[1] === "Height" && args[2] === "Zoom") {
-            const i = InventoryGet(args[0], /** @type {AssetGroupName} */ ("BodyMarkings2_Luzi"));
+            const i = InventoryGet(args[0], /** @type {AssetGroupName} */ (groupName));
             if (i) {
                 if (assetAdjustments[i.Asset.Name]?.ZoomModifier)
                     return ret + assetAdjustments[i.Asset.Name].ZoomModifier;
@@ -93,5 +98,11 @@ export default function () {
         return ret;
     });
 
-    AssetManager.addGroupedAssets({ BodyMarkings2_Luzi: assets }, translations);
+    AssetManager.addGroupedAssets(
+        { [groupName]: assets },
+        RecordEntries(translations).reduce((acc, [lang, entries]) => {
+            acc[lang] = { [groupName]: entries };
+            return acc;
+        }, /** @type {Translation.GroupedEntries}*/ ({}))
+    );
 }
