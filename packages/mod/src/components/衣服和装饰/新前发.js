@@ -102,6 +102,49 @@ const assets = {
             ],
         },
         {
+            Name: "前发9",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            Priority : 52,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairFront"]
+        },
+        {
+            Name: "前发10",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            Priority : 52,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairFront"]
+        },
+        {
+            Name: "前发11",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            Priority : 52,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairFront"],
+            Layer: [               
+                {
+                    Name: "底",                  
+                    Priority: 52,
+                },
+                {
+                    Name: "高光",                  
+                    Priority: 52,
+                }
+            ],
+        },
+        {
             Name: "卷发1",
             Random: false,
             Left: 0,
@@ -149,6 +192,9 @@ const translations = {
             前发6: "前发 6",
             前发7: "前发 7",
             前发8: "前发 8",
+            前发9: "前发 9",
+            前发10: "前发 10",
+            前发11: "前发 11",
             卷发1: "卷发 1",
             卷发2: "卷发 2",
             卷发3: "卷发 3",
@@ -163,7 +209,10 @@ const translations = {
             前发5: "HairFront 5",            
             前发6: "HairFront 6",           
             前发7: "HairFront 7",          
-            前发8: "HairFront 8",            
+            前发8: "HairFront 8",         
+            前发9: "HairFront 9",
+            前发10: "HairFront 10",
+            前发11: "HairFront 11",
             卷发1: "Curly Hair 1",            
             卷发2: "Curly Hair 2",            
             卷发3: "Curly Hair 3"

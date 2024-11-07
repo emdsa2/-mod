@@ -70,6 +70,17 @@ const assets =[
             Priority: 32
         },
         {
+            Name: "低双马尾3",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairBack"],
+            Priority: 5
+        },
+        {
             Name: "卷发后1",
             Random: false,
             Left: 0,
@@ -90,6 +101,28 @@ const assets =[
             InheritColor: "HairFront",
             Hide: ["HairBack"],
             Priority: 5
+        },
+        {
+            Name: "后发髻1",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairBack"],
+            Priority: 5
+        },
+        {
+            Name: "后发髻2",
+            Random: false,
+            Left: 0,
+            Top: 0,
+            ParentGroup: null,
+            Extended: false,
+            InheritColor: "HairFront",
+            Hide: ["HairBack"],
+            Priority: 5
         }
     ];
 
@@ -101,8 +134,11 @@ const translations = {
             侧马尾2: "侧马尾 2",
             低双马尾1: "低双马尾 1",
             低双马尾2: "低双马尾 2",
+            低双马尾3: "低双马尾 3",
             卷发后1: "卷发后1",
             卷发后2: "卷发后2",
+            后发髻1: "后发髻1",
+            后发髻2: "后发髻2",
         },
     },
     EN: {
@@ -111,8 +147,11 @@ const translations = {
             侧马尾2: "Side Ponytail 2",
             低双马尾1: "Low double ponytail 1",
             低双马尾2: "Low double ponytail 2",
+            低双马尾3: "Low double ponytail 3",
             卷发后1: "Curly Hair Back 1",
             卷发后2: "Curly Hair Back 2",
+            后发髻1: "Back Bun 1",
+            后发髻2: "Back Bun 2",
         },
     },
 };
