@@ -21,11 +21,7 @@ const assets = {
                 AllFours: PoseType.DEFAULT,
             },
             Priority: 55,
-            Layer: [
-                { Name: "棒子", },
-                { Name: "糖", },
-                { Name: "条纹", },
-            ],
+            Layer: [{ Name: "棒子" }, { Name: "糖" }, { Name: "条纹" }],
         },
         {
             Name: "烤鱼_Luzi",
@@ -51,6 +47,15 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
+            Priority: 55,
+            ParentGroup: null,
+            Effect: [],
+        },
+        {
+            Name: "煎包_Luzi",
+            Random: false,
+            Top: 160,
+            Left: 160,
             Priority: 55,
             ParentGroup: null,
             Effect: [],
@@ -203,6 +208,7 @@ const translations = {
             棒棒糖_Luzi: "棒棒糖",
             烤鱼_Luzi: "烤鱼",
             鸡腿_Luzi: "烤鸡腿",
+            煎包_Luzi: "煎包",
             蛋糕卷_Luzi: "蛋糕卷",
         },
         ItemHood: {
@@ -221,6 +227,7 @@ const translations = {
             棒棒糖_Luzi: "Lollipop",
             烤鱼_Luzi: "Grilled Fish",
             鸡腿_Luzi: "Roasted Chicken Leg",
+            煎包_Luzi: "Fried Bun",
             蛋糕卷_Luzi: "蛋糕卷",
         },
         ItemHood: {
