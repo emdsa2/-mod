@@ -9,8 +9,9 @@ const asset1 = {
     ParentGroup : null,
     Priority : 29,
     Extended: true, 
-    DefaultColor : ["Default", "#F65E5E", "#242424"],
+    DefaultColor : ["Default", "Default", "#F65E5E", "#242424"],
     Layer: [
+        { Name: "线" },
         { Name: "底" },
         { Name: "心", AllowTypes: { typed: 1 } },
         { Name: "X", AllowTypes: { typed: 2 } },
@@ -30,8 +31,9 @@ const asset2 = {
     ParentGroup : null,
     Priority : 29,
     Extended: true, 
-    DefaultColor : ["Default", "#F65E5E", "#242424"],
+    DefaultColor : ["Default", "Default", "#F65E5E", "#242424"],
     Layer: [
+        { Name: "线" },
         { Name: "底" },
         { Name: "心", AllowTypes: { typed: 1 } },
         { Name: "X", AllowTypes: { typed: 2 } },
