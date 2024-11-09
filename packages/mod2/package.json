@@ -28,7 +28,7 @@
     "@rollup/plugin-node-resolve": "^15.2.4",
     "@rollup/plugin-replace": "^5.0.7",
     "@rollup/plugin-terser": "^0.4.4",
-    "bc-stubs": "^108.0.0",
+    "bc-stubs": "^109.0.0",
     "bondage-club-mod-sdk": "^1.2.0",
     "rollup": "^4.22.4",
     "rollup-plugin-cleanup": "^3.2.1",

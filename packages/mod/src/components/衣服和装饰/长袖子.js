@@ -9,11 +9,6 @@ const assets = {
             Top: 0,
             Left: 0,
             ParentGroup: null,
-            // TODO: Saki救救！
-            // @ts-ignore
-            EditOpacity: true,
-            MinOpacity: 0,
-            MaxOpacity: 1,
             PoseMapping: {
                 BackBoxTie: "Hide",
                 BackCuffs: "Hide",

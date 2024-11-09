@@ -92,6 +92,9 @@ const groups = [
             Clothing: true,
             Default: false,
             Random: false,
+            EditOpacity: true,
+            MinOpacity: 0,
+            MaxOpacity: 1,
             Asset: [
                 {
                     Name: "无_Luzi",
@@ -114,6 +117,9 @@ const groups = [
             Default: false,
             Random: false,
             PreviewZone: [140, 40, 220, 220],
+            EditOpacity: true,
+            MinOpacity: 0,
+            MaxOpacity: 1,
             Asset: [
                 {
                     Name: "无_Luzi",
@@ -124,7 +130,7 @@ const groups = [
         },
         description: {
             CN: "🍔新前发",
-            EN: "🍔New fornt hair",
+            EN: "🍔New front hair",
             RU: "🍔новые волосы на спине",
         },
     },
@@ -136,6 +142,9 @@ const groups = [
             Default: false,
             Random: false,
             PreviewZone: [55, 0, 390, 390],
+            EditOpacity: true,
+            MinOpacity: 0,
+            MaxOpacity: 1,
             Asset: [
                 {
                     Name: "无_Luzi",
@@ -157,6 +166,9 @@ const groups = [
             Clothing: false,
             Default: false,
             Random: false,
+            EditOpacity: true,
+            MinOpacity: 0,
+            MaxOpacity: 1,
             Asset: [
                 {
                     Name: "无_Luzi",

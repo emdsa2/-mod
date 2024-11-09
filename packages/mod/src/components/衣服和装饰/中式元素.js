@@ -52,12 +52,12 @@ const translations = {
     },
     EN: {
         Cloth: {
-            假领子_Luzi: "🍔",
+            假领子_Luzi: "Fake Collar",
         },
     },
     RU: {
         Cloth: {
-            假领子_Luzi: "🍔",
+            假领子_Luzi: "Поддельный воротник",
         },
     },
 };
