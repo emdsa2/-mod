@@ -51,6 +51,19 @@ const assets = [
         Left: 0,
         Layer: [{ Name: "尾巴" }, { Name: "蝴蝶结" }, { Name: "铃铛" }],
     },
+    {
+        Name: "尾巴1_Luzi",
+        Random: false,
+        Top: 0,
+        Left: 0,
+        DefaultColor: ["#3B0505",],
+        PoseMapping: {
+            Kneel: "Kneel",
+            KneelingSpread: "Kneel",
+            Hogtied: "Kneel",
+            AllFours: "Kneel",
+        },
+    },
 ];
 
 /** @type { Record<string,string> } */
@@ -85,6 +98,7 @@ const translations = {
             小型穿戴式狼尾镜像_Luzi: "小型穿戴式狼尾镜像",
             小型穿戴式软猫尾镜像_Luzi: "小型穿戴式软猫尾镜像",
             穿戴式猫尾镜像_Luzi: "穿戴式猫尾镜像",
+            尾巴1_Luzi: "尾巴 1",
         },
     },
     EN: {
@@ -97,6 +111,7 @@ const translations = {
             小型穿戴式狼尾镜像_Luzi: "Small Wearable Wolf Tail",
             小型穿戴式软猫尾镜像_Luzi: "Small Soft Wearable Cat Tail",
             穿戴式猫尾镜像_Luzi: "Wearable Cat Tail",
+            尾巴1_Luzi: "Tail 1",
         },
     },
     RU: {
