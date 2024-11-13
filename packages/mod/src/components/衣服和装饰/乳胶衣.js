@@ -4,7 +4,7 @@ import AssetManager from "@mod-utils/AssetManager";
 const assets = {
     Suit: [
         {
-            Name: "乳胶衣上_Luzi",
+            Name: "乳胶衣_Luzi",
             Random: false,
             Gender: "F",
             Top: 0,
@@ -80,7 +80,7 @@ const assets = {
     ],
     SuitLower: [
         {
-            Name: "乳胶衣下_Luzi",
+            Name: "乳胶衣_Luzi",
             Random: false,
             Gender: "F",
             Top: 0,
@@ -179,10 +179,10 @@ const assets = {
 const translations = {
     CN: {
         Suit: {
-            乳胶衣上_Luzi: "乳胶衣上",
+            乳胶衣_Luzi: "乳胶衣",
         },
         SuitLower: {
-            乳胶衣下_Luzi: "乳胶衣下",
+            乳胶衣_Luzi: "乳胶衣",
         },
         Bra: {
             绷带全身_Luzi: "绷带全身",
@@ -190,10 +190,10 @@ const translations = {
     },
     EN: {
         Suit: {
-            乳胶衣上_Luzi: "Latex Top",
+            乳胶衣_Luzi: "Latex Top",
         },
         SuitLower: {
-            乳胶衣下_Luzi: "Latex Bottom",
+            乳胶衣_Luzi: "Latex Bottom",
         },
         Bra: {
             绷带全身_Luzi: "Full Body Bandage",
@@ -201,10 +201,10 @@ const translations = {
     },
     RU: {
         Suit: {
-            乳胶衣上_Luzi: "Латексный верх",
+            乳胶衣_Luzi: "Латексный верх",
         },
         SuitLower: {
-            乳胶衣下_Luzi: "Латексный низ",
+            乳胶衣_Luzi: "Латексный низ",
         },
         Bra: {
             绷带全身_Luzi: "Полный бинт",
