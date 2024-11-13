@@ -11,6 +11,7 @@ const assets = {
             Left: 0,
             Prerequisite: ["HasBreasts"],
             Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"],
+            DefaultColor: ["#232323", "#000000", "#FFFFFF", "#232323", "#000000", "#FFFFFF",],
             Layer: [
                 {
                     Name: "手套底色",
@@ -60,18 +61,39 @@ const assets = {
                 {
                     Name: "上底色", Priority: 14,
                     PoseMapping: {
+                        TapedHands: "TapedHands",
+                        Yoked: "Yoked",
+                        OverTheHead: "OverTheHead",
+                        BackBoxTie: "BackBoxTie",
+                        BackElbowTouch: "BackElbowTouch",
+                        BackCuffs: "BackCuffs",
+                        Hogtied: "Hogtied",
                         AllFours: "Hide",
                     },
                 },
                 {
                     Name: "上阴影", Priority: 14,
                     PoseMapping: {
+                        TapedHands: "TapedHands",
+                        Yoked: "Yoked",
+                        OverTheHead: "OverTheHead",
+                        BackBoxTie: "BackBoxTie",
+                        BackElbowTouch: "BackElbowTouch",
+                        BackCuffs: "BackCuffs",
+                        Hogtied: "Hogtied",
                         AllFours: "Hide",
                     },
                 },
                 {
                     Name: "上高光", Priority: 14,
                     PoseMapping: {
+                        TapedHands: "TapedHands",
+                        Yoked: "Yoked",
+                        OverTheHead: "OverTheHead",
+                        BackBoxTie: "BackBoxTie",
+                        BackElbowTouch: "BackElbowTouch",
+                        BackCuffs: "BackCuffs",
+                        Hogtied: "Hogtied",
                         AllFours: "Hide",
                     },
                 },
@@ -87,24 +109,16 @@ const assets = {
             Left: 0,
             Prerequisite: ["HasVagina"],
             Attribute: ["SuitLower"],
+            DefaultColor: ["#232323", "#000000", "#FFFFFF",],
             Layer: [
                 {
-                    Name: "上衣", Priority: 14,
-                    PoseMapping: {
-                        AllFours: "Hide",
-                    },
+                    Name: "下底色", Priority: 14,
                 },
                 {
-                    Name: "上衣", Priority: 14,
-                    PoseMapping: {
-                        AllFours: "Hide",
-                    },
+                    Name: "下阴影", Priority: 14,
                 },
                 {
-                    Name: "上衣", Priority: 14,
-                    PoseMapping: {
-                        AllFours: "Hide",
-                    },
+                    Name: "下高光", Priority: 14,
                 },
             ],
         },
