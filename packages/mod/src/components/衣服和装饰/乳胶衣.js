@@ -13,8 +13,9 @@ const assets = {
             Expose: ["ItemNipples", "ItemBreast", "ItemNipplesPiercings"],
             Layer: [
                 {
-                    Name: "手套",
+                    Name: "手套底色",
                     Priority: 27,
+                    ParentGroup: null,
                     PoseMapping: {
                         TapedHands: "Hide",
                         Yoked: "Hide",
@@ -27,7 +28,49 @@ const assets = {
                     },
                 },
                 {
-                    Name: "上衣", Priority: 14,
+                    Name: "手套阴影",
+                    Priority: 27,
+                    ParentGroup: null,
+                    PoseMapping: {
+                        TapedHands: "Hide",
+                        Yoked: "Hide",
+                        OverTheHead: "Hide",
+                        BackBoxTie: "Hide",
+                        BackElbowTouch: "Hide",
+                        BackCuffs: "Hide",
+                        Hogtied: "Hide",
+                        AllFours: "Hide",
+                    },
+                },
+                {
+                    Name: "手套高光",
+                    Priority: 27,
+                    ParentGroup: null,
+                    PoseMapping: {
+                        TapedHands: "Hide",
+                        Yoked: "Hide",
+                        OverTheHead: "Hide",
+                        BackBoxTie: "Hide",
+                        BackElbowTouch: "Hide",
+                        BackCuffs: "Hide",
+                        Hogtied: "Hide",
+                        AllFours: "Hide",
+                    },
+                },
+                {
+                    Name: "上底色", Priority: 14,
+                    PoseMapping: {
+                        AllFours: "Hide",
+                    },
+                },
+                {
+                    Name: "上阴影", Priority: 14,
+                    PoseMapping: {
+                        AllFours: "Hide",
+                    },
+                },
+                {
+                    Name: "上高光", Priority: 14,
                     PoseMapping: {
                         AllFours: "Hide",
                     },
@@ -44,6 +87,26 @@ const assets = {
             Left: 0,
             Prerequisite: ["HasVagina"],
             Attribute: ["SuitLower"],
+            Layer: [
+                {
+                    Name: "上衣", Priority: 14,
+                    PoseMapping: {
+                        AllFours: "Hide",
+                    },
+                },
+                {
+                    Name: "上衣", Priority: 14,
+                    PoseMapping: {
+                        AllFours: "Hide",
+                    },
+                },
+                {
+                    Name: "上衣", Priority: 14,
+                    PoseMapping: {
+                        AllFours: "Hide",
+                    },
+                },
+            ],
         },
     ],
     Bra: [
