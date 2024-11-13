@@ -64,7 +64,7 @@ const translations = {
 };
 
 export default function () {
-    AssetManager.addGroupedAssets(asset, translations);
+    // AssetManager.addGroupedAssets(asset, translations);
 
     ModManager.progressiveHook("DrawCharacter", 1)
         .inside("ChatRoomCharacterViewLoopCharacters")
