@@ -94,8 +94,14 @@ export function enableCustomAssets() {
     ModManager.progressiveHook("InventoryAvailable").inside("WardrobeFastLoad").override(overrideAvailable);
 
     ModManager.progressiveHook("CraftingValidate").inject((args, next) => {
-        const asset = CraftingAssets[args[0].Item]?.[0];
-        if (asset && isInListCustomAsset(asset.Group.Name, asset.Name)) args[3] = false;
+        try {
+            if (args[0].Item != undefined) {
+                const asset = CraftingAssets[args[0].Item]?.[0];
+                if (asset && isInListCustomAsset(asset.Group.Name, asset.Name)) args[3] = false;
+            }
+        } catch (error) {
+            console.log(`${error} at -mod/packages/utils/AssetManager/customStash.js at ModManager.progressiveHook("CraftingValidate")`);
+        }
     });
 
     const pInventory = ModManager.randomGlobalFunction("CraftingInventory", () => {
