@@ -14,8 +14,8 @@ const asset = {
             Priority: 26,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
-                Yoked: "Yoked",
-                OverTheHead: "OverTheHead",
+                Yoked: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
                 BackBoxTie: PoseType.DEFAULT,
                 BackElbowTouch: PoseType.DEFAULT,
                 BackCuffs: PoseType.DEFAULT,
@@ -28,8 +28,8 @@ const asset = {
             Priority: 26,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
+                Yoked: "Yoked",
+                OverTheHead: "OverTheHead",
                 BackBoxTie: PoseType.DEFAULT,
                 BackElbowTouch: PoseType.DEFAULT,
                 BackCuffs: PoseType.DEFAULT,
