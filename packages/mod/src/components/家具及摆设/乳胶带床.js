@@ -23,8 +23,12 @@ const asset = {
         "Default",
         "Default",
         "Default",
-        "Default",
-        "Default",
+        "#232323", 
+        "#000000", 
+        "#FFFFFF",
+        "#232323", 
+        "#000000", 
+        "#FFFFFF",
     ],
     Layer: [
         {
@@ -157,12 +161,32 @@ const asset = {
             ParentGroup: "BodyLower",
         },
         {
-            Name: "乳胶上",
+            Name: "乳胶上底色",
             Priority: 23,
             ParentGroup: "BodyUpper",
         },
         {
-            Name: "乳胶下",
+            Name: "乳胶上阴影",
+            Priority: 23,
+            ParentGroup: "BodyUpper",
+        },
+        {
+            Name: "乳胶上高光",
+            Priority: 23,
+            ParentGroup: "BodyUpper",
+        },
+        {
+            Name: "乳胶下底色",
+            Priority: 23,
+            ParentGroup: "BodyLower",
+        },
+        {
+            Name: "乳胶下阴影",
+            Priority: 23,
+            ParentGroup: "BodyLower",
+        },
+        {
+            Name: "乳胶下高光",
             Priority: 23,
             ParentGroup: "BodyLower",
         },
