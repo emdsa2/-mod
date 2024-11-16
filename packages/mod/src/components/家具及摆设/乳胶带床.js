@@ -209,8 +209,8 @@ const extended = {
 
 const dialog = {
     CN: {
-        ItemDevicess乳胶带床_LuziSelect: "选择乳胶带床配置",
-        ItemDevicess乳胶带床_LuziSelectBase: "选择配置",
+        ItemDevices乳胶带床_LuziSelect: "选择乳胶带床配置",
+        ItemDevices乳胶带床_LuziSelectBase: "选择配置",
 
         ItemDevices乳胶带床_LuziSelect盖子: "选择盖子",
         ItemDevices乳胶带床_LuziModule盖子: "盖子",
@@ -223,7 +223,7 @@ const dialog = {
         ItemDevices乳胶带床_LuziSetg2: "SourceCharacter盖上了DestinationCharacter的盖子",
     },
     EN: {
-        ItemDevicess乳胶带床_LuziSelect: "Select Latex Bed Configuration",
+        ItemDevices乳胶带床_LuziSelect: "Select Latex Bed Configuration",
         ItemDevices乳胶带床_LuziSelectBase: "Select Configuration",
 
         ItemDevices乳胶带床_LuziSelect盖子: "Select Cover",
@@ -237,7 +237,7 @@ const dialog = {
         ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter's cover",
     },
     UA: {
-        ItemDevicess乳胶带床_LuziSelect: "Виберіть Конфігурацію Латексного Ліжка",
+        ItemDevices乳胶带床_LuziSelect: "Виберіть Конфігурацію Латексного Ліжка",
         ItemDevices乳胶带床_LuziSelectBase: "Виберіть концігурацю",
 
         ItemDevices乳胶带床_LuziSelect盖子: "Виберіть Покриття",
