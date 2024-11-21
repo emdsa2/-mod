@@ -82,5 +82,5 @@ const translations = {
 };
 
 export default function () {
-    AssetManager.addAsset("ItemAddon", asset, undefined, translations);
+    AssetManager.addAsset("动物身体_Luzi", asset, undefined, translations);
 }
