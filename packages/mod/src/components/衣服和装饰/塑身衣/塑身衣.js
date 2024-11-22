@@ -197,16 +197,9 @@ const asset = {
                 AllFours: PoseType.HIDE,
             },
         },
-
-
-
-
-
-
-
-
     ],
 };
+
 
 /** @type {Translation.Entry} */
 const translation = {
