@@ -1,7 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
-const asset = 			{
+const asset = {
     Name: "TonguePiercingGag",
     Fetish: ["Leather", "Metal", "Gagged"],
     Value: 35,
