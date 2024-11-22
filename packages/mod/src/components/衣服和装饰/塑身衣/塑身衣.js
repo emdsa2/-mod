@@ -35,7 +35,7 @@ const asset = {
             },
         },
         {
-            Name: "蕾丝边上",
+            Name: "上蕾丝边",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -49,7 +49,7 @@ const asset = {
             },
         },
         {
-            Name: "蕾丝边下",
+            Name: "下蕾丝边",
             Priority: 14,
             ParentGroup: "BodyLower",
             PoseMapping: {
@@ -62,7 +62,7 @@ const asset = {
             },
         },
         {
-            Name: "蕾丝中上",
+            Name: "上蕾丝中",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -76,7 +76,7 @@ const asset = {
             },
         },
         {
-            Name: "蕾丝中下",
+            Name: "下蕾丝中",
             Priority: 14,
             ParentGroup: "BodyLower",
             PoseMapping: {
@@ -89,7 +89,7 @@ const asset = {
             },
         },
         {
-            Name: "边线上",
+            Name: "上边线",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -103,7 +103,7 @@ const asset = {
             },
         },
         {
-            Name: "边线下",
+            Name: "下边线",
             Priority: 14,
             ParentGroup: "BodyLower",
             PoseMapping: {
@@ -116,7 +116,7 @@ const asset = {
             },
         },
         {
-            Name: "中线上",
+            Name: "上中线",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -130,7 +130,7 @@ const asset = {
             },
         },
         {
-            Name: "中线下",
+            Name: "下中线",
             Priority: 14,
             ParentGroup: "BodyLower",
             PoseMapping: {
@@ -143,7 +143,7 @@ const asset = {
             },
         },
         {
-            Name: "底边下",
+            Name: "下底边",
             Priority: 14,
             ParentGroup: "BodyLower",
             PoseMapping: {
@@ -156,7 +156,7 @@ const asset = {
             },
         },
         {
-            Name: "蕾丝上上",
+            Name: "上蕾丝上",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -170,7 +170,7 @@ const asset = {
             },
         },
         {
-            Name: "钢圈",
+            Name: "上钢圈",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -184,7 +184,7 @@ const asset = {
             },
         },
         {
-            Name: "肩带",
+            Name: "上肩带",
             ParentGroup: "BodyUpper",
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
