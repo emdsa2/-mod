@@ -4,8 +4,8 @@ import AssetManager from "@mod-utils/AssetManager";
 const asset = {
     Name: "膝上过夜束缚器",
     Fetish: ["Leather"],
-    Left: 125,
-    Top: 725,
+    Left: 0,
+    Top: 0,
     Difficulty: 5,
     Priority: 27,
     Time: 12,
