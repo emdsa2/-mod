@@ -6,15 +6,15 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    Priority: 14, 
+    Priority: 14,
+    SetPose: ["LegsClosed", "Kneel"],
+    AllowActivePose: ["LegsClosed", "Kneel"],
     Layer: [
         {
             Name: "上",
             PoseMapping: {
                 LegsClosed: PoseType.DEFAULT,
-                KneelingSpread: PoseType.DEFAULT,
                 Kneel: PoseType.DEFAULT,
-                Spread: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -23,9 +23,7 @@ const asset = {
             Name: "下",
             PoseMapping: {
                 LegsClosed: "LegsClosed",
-                KneelingSpread: "KneelingSpread",
-                Kneel: "Kneel",
-                Spread: "Spread",
+                Kneel: "LegsClosed",
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -34,9 +32,7 @@ const asset = {
             Name: "上图案",
             PoseMapping: {
                 LegsClosed: PoseType.DEFAULT,
-                KneelingSpread: PoseType.DEFAULT,
                 Kneel: PoseType.DEFAULT,
-                Spread: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -45,9 +41,7 @@ const asset = {
             Name: "下图案",
             PoseMapping: {
                 LegsClosed: "LegsClosed",
-                KneelingSpread: "KneelingSpread",
-                Kneel: "Kneel",
-                Spread: "Spread",
+                Kneel: "LegsClosed",
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -56,9 +50,7 @@ const asset = {
             Name: "上中线",
             PoseMapping: {
                 LegsClosed: PoseType.DEFAULT,
-                KneelingSpread: PoseType.DEFAULT,
                 Kneel: PoseType.DEFAULT,
-                Spread: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -67,9 +59,7 @@ const asset = {
             Name: "下中线",
             PoseMapping: {
                 LegsClosed: "LegsClosed",
-                KneelingSpread: "KneelingSpread",
-                Kneel: "Kneel",
-                Spread: "Spread",
+                Kneel: "LegsClosed",
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -78,9 +68,7 @@ const asset = {
             Name: "上线",
             PoseMapping: {
                 LegsClosed: PoseType.DEFAULT,
-                KneelingSpread: PoseType.DEFAULT,
                 Kneel: PoseType.DEFAULT,
-                Spread: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
@@ -89,9 +77,7 @@ const asset = {
             Name: "下线",
             PoseMapping: {
                 LegsClosed: "LegsClosed",
-                KneelingSpread: "KneelingSpread",
-                Kneel: "Kneel",
-                Spread: "Spread",
+                Kneel: "LegsClosed",
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
