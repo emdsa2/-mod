@@ -2,7 +2,7 @@ import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
-    Name: "大腿束缚器",
+    Name: "膝上过夜束缚器",
     Fetish: ["Leather"],
     Left: 125,
     Top: 725,
@@ -54,8 +54,8 @@ const asset = {
 };
 
 const translations = {
-    CN: "大腿束缚器",
-    EN: "Thigh restraint"
+    CN: "膝上过夜束缚器",
+    EN: "Knee Overnighter"
 };
 
 export default function () {
