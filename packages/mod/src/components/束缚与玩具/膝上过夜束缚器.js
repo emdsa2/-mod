@@ -25,28 +25,28 @@ const asset = {
         Kneel: PoseType.HIDE,
         Hogtied: PoseType.HIDE,
     },
-    Alpha: [
-        {
-            Group: [
-                "Socks",
-                "SocksRight",
-                "SocksLeft",
-                "SuitLower",
-                "ItemBoots",
-            ],
-            Masks: [[195, 746, 110, 28]],
-        },
-        {
-            Group: [
-                "Socks",
-                "SocksRight",
-                "SocksLeft",
-                "SuitLower",
-                "ItemBoots",
-            ],
-            Masks: [[195, 818, 110, 28]],
-        },
-    ],
+    // Alpha: [
+    //     {
+    //         Group: [
+    //             "Socks",
+    //             "SocksRight",
+    //             "SocksLeft",
+    //             "SuitLower",
+    //             "ItemBoots",
+    //         ],
+    //         Masks: [[195, 746, 110, 28]],
+    //     },
+    //     {
+    //         Group: [
+    //             "Socks",
+    //             "SocksRight",
+    //             "SocksLeft",
+    //             "SuitLower",
+    //             "ItemBoots",
+    //         ],
+    //         Masks: [[195, 818, 110, 28]],
+    //     },
+    // ],
     Layer: [
         { Name: "Straps", AllowColorize: true },
         { Name: "Details", ParentGroup: null, AllowColorize: true },
