@@ -64,140 +64,85 @@ const translations = {
 
 
 
-// /** @type { CustomAssetDefinition } */
-// const assetButt = {
-//     Name: "大号拉珠",
-// 	Time: 14,
-// 	Prerequisite: ["AccessButt"],
-// 	Effect: [E.IsPlugged],
-// 	ExpressionTrigger: [{ Name: "Low", Group: "Blush", Timer: 10 }],
-// 	Extended: true,
-// 	Activity: "MasturbateItem",
-// 	CreateLayerTypes: ["typed"], 
-//     Layer: [
-//     ]
-// };
+ /** @type { CustomAssetDefinition } */
+ const assetButt = {
+     Name: "肛鞭",
+ 	Time: 14,
+ 	Prerequisite: ["AccessButt"],
+ 	Effect: [E.IsPlugged],
+ 	ExpressionTrigger: [{ Name: "Low", Group: "Blush", Timer: 10 }],
+ 	Extended: true,
+ 	Activity: "MasturbateItem",
+ 	CreateLayerTypes: ["typed"], 
+     Layer: [ 
+        {
+            Name:  "一半", 
+            Top : -200,
+            AllowTypes: { typed: 0 },
+            Alpha : [{ Group: ["ItemButt",],
+            Masks: [[220, 0, 60, 540]],
+        }]},
+        {
+            Name:  "全部", 
+            Top : -364,
+            AllowTypes: { typed: 1 },
+            Alpha : [{ Group: ["ItemButt",],
+            Masks: [[220, 0, 60, 540]],
+         }]}
+      ]
+ };
 
-// /** @type {AssetArchetypeConfig} */
-// const extendedButt = {
-//     Archetype: ExtendedArchetype.TYPED,
-//     ChatTags: [
-//         CommonChatTags.SOURCE_CHAR,
-//         CommonChatTags.DEST_CHAR,
-//         CommonChatTags.ASSET_NAME,
-//     ],
-//     Options: [
-//     ],
-//     DrawImages: false,
-//     ChatSetting: TypedItemChatSetting.SILENT,
-//     ScriptHooks: {
-//         PublishAction: InventoryItemButtLongAnalBeadsPublishActionHook,
-//     },
-// };
+ /** @type {AssetArchetypeConfig} */
+ const extendedButt = {
+     Archetype: ExtendedArchetype.TYPED,
+     Options: [
+        { 
+            Name: "一半",
+        },
+        { 
+            Name: "全部",
+        },
+     ],
+     DrawImages: false
+ };
 
-// /** @type {Translation.Dialog} */
-// const dialogButt = {
-//     CN: {
-//         ItemButt肛鞭SelectBase: "选择塞入珠子的数量",
-//     },
-//     EN: {
-//         ItemButt肛鞭SelectBase: "Select the number",
-//     }
-// };
+ /** @type {Translation.Dialog} */
+ const dialogButt = {
+     CN: {
+         ItemButt肛鞭Select: "选择塞入程度",
+         ItemButt肛鞭一半: "拔出一半",
+         ItemButt肛鞭全部: "全部塞入",
+         ItemButt肛鞭Set一半: "SourceCharacter将肛鞭从TargetCharacter的肛门拔出了一半.",
+         ItemButt肛鞭Set全部: "SourceCharacter将肛鞭全部塞入TargetCharacter的肛门.",
+     },
+     EN: {
+        ItemButt肛鞭Select: "Select insertion length",
+        ItemButt肛鞭一半: "Pull out half.",
+        ItemButt肛鞭全部: "Stuff it all in.",
+        ItemButt肛鞭Set一半: "SourceCharacter pulls the anal whip halfway out of TargetCharacter's anus.",
+        ItemButt肛鞭Set全部: "SourceCharacter inserts all the anal whips into TargetCharacter's anus.",
+     }
+ };
 
-// const translationsButt = {
-//     CN: "大号拉珠",
-//     EN: "Large pull beads",
-// };
+ const translationsButt = {
+     CN: "肛鞭",
+     EN: "Large pull beads",
+ };
 
-// /** @type {ExtendedItemScriptHookCallbacks.PublishAction<TypedItemData, TypedItemOption>} */
-// function InventoryItemButtLongAnalBeadsPublishActionHook(data, originalFunction, C, item, newOption, previousOption) {
-// 	const beadsOld = previousOption.Property.InsertedBeads || 1;
-// 	const beadsNew = newOption.Property.InsertedBeads || 1;
-// 	const beadsChange = beadsNew - beadsOld;
-// 	if (beadsChange === 0 || data === null) {
-// 		return;
-// 	}
-
-// 	/** @type {ExtendedItemChatData<TypedItemOption>} */
-// 	const chatData = {
-// 		C,
-// 		previousOption,
-// 		newOption,
-// 		previousIndex: data.options.indexOf(previousOption),
-// 		newIndex: data.options.indexOf(newOption),
-// 	};
-
-//     /*@ts-ignore*/
-// 	const dictionary = ExtendedItemBuildChatMessageDictionary(chatData, data, item).focusGroup(item.Asset.Group.Name)
-// 		.build();
-// 	dictionary.push(
-// 		{ ActivityName: "MasturbateItem" },
-// 		{ ActivityCounter: Math.abs(beadsChange) },
-// 	);
-
-// 	const Prefix = (typeof data.dialogPrefix.chat === "function") ? data.dialogPrefix.chat(chatData) : data.dialogPrefix.chat;
-// 	const Suffix = beadsChange > 0 ? "Increase" : "Decrease";
-// 	ChatRoomPublishCustomAction(`${Prefix}${Math.abs(beadsChange)}${Suffix}`, true, dictionary);
-
-// 	if (C.IsPlayer()) {
-// 		// The Player pulls beads from her own butt
-// 		for (let i = beadsChange; i < 0; i++) {
-// 			ActivityArousalItem(C, C, item.Asset);
-// 		}
-// 	}
-// }
-
-// function AddAssetButt()
-// {
-//     extendedButt["Options"] = [];
-//     for(var i = 0; i < 9 ; i++)
-//     {
-//         assetButt["Layer"][i]  = {
-//             Name: (i+1) + "", 
-//             Top : i * (-44),
-//             AllowTypes: { typed: i },
-//             Alpha : [{ Group: ["ItemButt",],
-//                 Masks: [
-//                     [220, 0, 60, 532], 
-//                 ],
-//             }]
-//         };
-
-//         extendedButt["Options"][i]  = {
-//             Name: (i+1) + "", 
-//             Property: { InsertedBeads: i + 1 },
-            
-//         };
-
-//         var key = "Assets/Female3DCG/ItemButt/大号拉珠_typed" + i + "_" + (i+1) + ".png";
-
-//         /**  @type {CustomImageMapping} */
-//         var pair = {};
-//         pair[key] = "Assets/Female3DCG/ItemButt/大号拉珠.png";
-//         AssetManager.addImageMapping(pair);
-
-//         dialogButt["CN"]["ItemButt大号拉珠" + (i + 1)] = (i + 1)+ "个珠子";
-//         dialogButt["CN"]["ItemButt大号拉珠Set" + (i + 1) + "Increase"] = "SourceCharacter将" + (i + 1) + "个珠子塞入TargetCharacter的肛门.";
-//         dialogButt["CN"]["ItemButt大号拉珠Set" + (i + 1) + "Decrease"] = "SourceCharacter将" + (i + 1) + "个珠子拉出TargetCharacter的肛门.";
-
-//         if ( i == 0)
-//         {
-//             dialogButt["EN"]["ItemButt大号拉珠" + (i + 1)] = (i + 1)+ " Bead";
-//             dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Increase"] = "SourceCharacter inserts " + (i + 1) + " bead in DestinationCharacter butt.";
-//             dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Decrease"] = "SourceCharacter pulls " + (i + 1) + " bead from DestinationCharacter butt.";
-//         }else{            
-//             dialogButt["EN"]["ItemButt大号拉珠" + (i + 1)] = (i + 1)+ " Beads";            
-//             dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Increase"] = "SourceCharacter inserts " + (i + 1) + " beads in DestinationCharacter butt.";
-//             dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Decrease"] = "SourceCharacter pulls " + (i + 1) + " beads from DestinationCharacter butt.";
-//         }
-
-//     }
-//     AssetManager.addAsset("ItemButt", assetButt, extendedButt, translationsButt);
-//     AssetManager.addCustomDialog(dialogButt);
-// }
+ /** @type {ExtendedItemScriptHookCallbacks.PublishAction<TypedItemData, TypedItemOption>} */
+ function InventoryItemButtAnalWhipHook(data, originalFunction, C, item, newOption, previousOption) {
+ 	 	if (C.IsPlayer()) {
+ 		// The Player pulls beads from her own butt
+ 		ActivityArousalItem(C, C, item.Asset)
+ 	}
+ }
 
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
-    // AddAssetButt();
+
+    
+    AssetManager.addImageMapping({ "Assets/Female3DCG/ItemButt/肛鞭_typed0_一半.png" : "Assets/Female3DCG/ItemButt/肛鞭.png"});
+    AssetManager.addImageMapping({ "Assets/Female3DCG/ItemButt/肛鞭_typed1_全部.png" : "Assets/Female3DCG/ItemButt/肛鞭.png"});
+    AssetManager.addAsset("ItemButt", assetButt, extendedButt, translationsButt);
+    AssetManager.addCustomDialog(dialogButt);
 }
