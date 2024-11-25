@@ -98,10 +98,10 @@ const extendedButt = {
 /** @type {Translation.Dialog} */
 const dialogButt = {
     CN: {
-        ItemButt大号拉珠Base: "选择塞入珠子的数量",
+        ItemButt大号拉珠SelectBase: "选择塞入珠子的数量",
     },
     EN: {
-        ItemButt大号拉珠Base: "Select the number",
+        ItemButt大号拉珠SelectBase: "Select the number",
     }
 };
 
