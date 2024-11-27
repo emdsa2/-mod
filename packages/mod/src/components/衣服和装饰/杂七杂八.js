@@ -344,7 +344,7 @@ export default function () {
 
     AssetManager.addImageMapping(
         clothLCSetting.reduce((pv, cv, idx) => {
-            ["Panties", "BodyMarkings"].forEach((group) => {
+            ["Panties", "BodyMarkings", "BodyMarkings2_Luzi"].forEach((group) => {
                 pv[
                     `Screens/Inventory/${group}/淫纹_Luzi/${cv.Name}.png`
                 ] = `Screens/Inventory/ItemPelvis/淫纹_Luzi/t${idx}.png`;
@@ -358,14 +358,14 @@ export default function () {
 
     AssetManager.addCustomDialog({
         CN: {
-            ...["Panties", "BodyMarkings"].reduce((acc, group) => {
+            ...["Panties", "BodyMarkings", "BodyMarkings2_Luzi"].reduce((acc, group) => {
                 acc[`${group}淫纹_LuziSelect`] = "选择样式";
                 clothLCSetting.forEach((layer) => (acc[`${group}淫纹_Luzi${layer.Name}`] = layer.Name));
                 return acc;
             }, {}),
         },
         EN: {
-            ...["Panties", "BodyMarkings"].reduce((acc, group) => {
+            ...["Panties", "BodyMarkings", "BodyMarkings2_Luzi"].reduce((acc, group) => {
                 acc[`${group}淫纹_LuziSelect`] = "Select Style";
                 clothLCSetting.forEach((layer) => (acc[`${group}淫纹_Luzi${layer.Name}`] = layer.EN));
                 return acc;
