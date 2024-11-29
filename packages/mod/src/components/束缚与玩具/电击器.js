@@ -123,9 +123,10 @@ function dialogClick(Data, originalFunction) {
     originalFunction();
 
     if (MouseIn(触发电击按钮.X, 触发电击按钮.Y, 触发电击按钮.W, 触发电击按钮.H)) {
-        DialogFocusItem.Property.ShowText = false;
-        PropertyShockPublishAction(CharacterGetCurrent(), DialogFocusItem, false);
-        DialogFocusItem.Property.ShowText = true;
+        const targetItem = DialogFocusItem;
+        targetItem.Property.ShowText = false;
+        PropertyShockPublishAction(CharacterGetCurrent(), targetItem, false);
+        targetItem.Property.ShowText = true;
     } else if (MouseIn(持续电击开关.X, 持续电击开关.Y, 持续电击开关.W, 持续电击开关.H)) {
         const property = DialogFocusItem.Property || {};
 
