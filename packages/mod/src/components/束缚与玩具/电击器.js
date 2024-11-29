@@ -276,18 +276,29 @@ const dialog = {
         ItemLegs电击器_LuziModule电击肛塞: "电击肛塞",
         ItemLegs电击器_LuziOptiona0: "无",
         ItemLegs电击器_LuziOptiona1: "有",
+        ItemLegs电击器_LuziSeta0: "SourceCharacter在TargetCharacter身上使用了电击肛塞",
+        ItemLegs电击器_LuziSeta1: "SourceCharacter从TargetCharacter身上移除了电击肛塞",
+
         ItemLegs电击器_LuziSelect阴部: "配置阴部",
         ItemLegs电击器_LuziModule阴部: "阴部",
         ItemLegs电击器_LuziOptionp0: "无",
         ItemLegs电击器_LuziOptionp1: "有",
+        ItemLegs电击器_LuziSetp0: "SourceCharacter在TargetCharacter身上使用了阴部电击器",
+        ItemLegs电击器_LuziSetp1: "SourceCharacter从TargetCharacter身上移除了阴部电击器",
+
         ItemLegs电击器_LuziSelect大腿内侧: "配置大腿内侧",
         ItemLegs电击器_LuziModule大腿内侧: "大腿内侧",
         ItemLegs电击器_LuziOptionu0: "无",
         ItemLegs电击器_LuziOptionu1: "有",
+        ItemLegs电击器_LuziSetu0: "SourceCharacter在TargetCharacter身上使用了大腿内侧电击器",
+        ItemLegs电击器_LuziSetu1: "SourceCharacter从TargetCharacter身上移除了大腿内侧电击器",
+
         ItemLegs电击器_LuziSelect小腹: "配置小腹",
         ItemLegs电击器_LuziModule小腹: "小腹",
         ItemLegs电击器_LuziOptiond0: "无",
         ItemLegs电击器_LuziOptiond1: "有",
+        ItemLegs电击器_LuziSetd0: "SourceCharacter在TargetCharacter身上使用了小腹电击器",
+        ItemLegs电击器_LuziSetd1: "SourceCharacter从TargetCharacter身上移除了小腹电击器",
 
         ItemLegs电击器_Luzi持续电击开关: "持续电击",
 
