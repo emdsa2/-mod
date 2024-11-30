@@ -33,6 +33,31 @@ const groups = [
     },
     {
         groupDef: {
+            Group: "新眼睛_Luzi",
+            Priority: 8,
+            Clothing: false,
+            Default: false,
+            Random: false,
+            PreviewZone: [190, 100, 120, 120],
+            EditOpacity: true,
+            MinOpacity: 0,
+            MaxOpacity: 1,
+            Asset: [
+                {
+                    Name: "无_Luzi",
+                    Random: false,
+                },
+            ],
+            Color: ["Default"],
+        },
+        description: {
+            CN: "🍔新眼睛",
+            EN: "🍔New eyes",
+            RU: "🍔новые глаза",
+        },
+    },
+    {
+        groupDef: {
             Group: "身体痕迹_Luzi",
             Priority: 10,
             Clothing: true,
