@@ -21,6 +21,7 @@ type CustomGroupBodyName =
     | "新后发_Luzi"
     | "额外头发_Luzi"
     | "额外身高_Luzi"
+    | "新眼睛_Luzi"
     | "身体痕迹_Luzi";
 
 /** 扩展身体组名称 */
