@@ -5,6 +5,10 @@ import ModManager from "@mod-utils/ModManager";
 const assetAdjustments = {
     缩小地上_Luzi: { OverrideZoom: 0.3 },
     缩小浮空_Luzi: { OverrideZoom: 0.3 },
+    身高加40cm_Luzi: { ZoomModifier: +0.08 },
+    身高加30cm_Luzi: { ZoomModifier: +0.06 },
+    身高加20cm_Luzi: { ZoomModifier: +0.04 },
+    身高加10cm_Luzi: { ZoomModifier: +0.02 },
     身高减10cm_Luzi: { ZoomModifier: -0.02 },
     身高减20cm_Luzi: { ZoomModifier: -0.04 },
     身高减30cm_Luzi: { ZoomModifier: -0.06 },
@@ -28,6 +32,26 @@ const assets = [
             Priority: 20,
             HeightRatioProportion: 0.2,
         },
+    },
+    {
+        Name: "身高加40cm_Luzi",
+        Visible: false,
+        Random: false,
+    },
+    {
+        Name: "身高加30cm_Luzi",
+        Visible: false,
+        Random: false,
+    },
+    {
+        Name: "身高加20cm_Luzi",
+        Visible: false,
+        Random: false,
+    },
+    {
+        Name: "身高加10cm_Luzi",
+        Visible: false,
+        Random: false,
     },
     {
         Name: "身高减10cm_Luzi",
@@ -56,6 +80,10 @@ const translations = {
     CN: {
         缩小地上_Luzi: "缩小地上",
         缩小浮空_Luzi: "缩小浮空",
+        身高加10cm_Luzi: "+10cm",
+        身高加20cm_Luzi: "+20cm",
+        身高加30cm_Luzi: "+30cm",
+        身高加40cm_Luzi: "+40cm",
         身高减10cm_Luzi: "-10cm",
         身高减20cm_Luzi: "-20cm",
         身高减30cm_Luzi: "-30cm",
@@ -64,6 +92,10 @@ const translations = {
     EN: {
         缩小地上_Luzi: "Shrink on Ground",
         缩小浮空_Luzi: "Shrink in Air",
+        身高加10cm_Luzi: "+10cm",
+        身高加20cm_Luzi: "+20cm",
+        身高加30cm_Luzi: "+30cm",
+        身高加40cm_Luzi: "+40cm",
         身高减10cm_Luzi: "-10cm",
         身高减20cm_Luzi: "-20cm",
         身高减30cm_Luzi: "-30cm",
@@ -72,10 +104,14 @@ const translations = {
     RU: {
         缩小地上_Luzi: "Уменьшить на земле",
         缩小浮空_Luzi: "Уменьшить в воздухе",
-        身高减10cm_Luzi: "-10см",
-        身高减20cm_Luzi: "-20см",
-        身高减30cm_Luzi: "-30см",
-        身高减40cm_Luzi: "-40см",
+        身高加10cm_Luzi: "+10cm",
+        身高加20cm_Luzi: "+20cm",
+        身高加30cm_Luzi: "+30cm",
+        身高加40cm_Luzi: "+40cm",
+        身高减10cm_Luzi: "-10cm",
+        身高减20cm_Luzi: "-20cm",
+        身高减30cm_Luzi: "-30cm",
+        身高减40cm_Luzi: "-40cm",
     },
 };
 
