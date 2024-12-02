@@ -21,7 +21,6 @@ type CustomGroupBodyName =
     | "新后发_Luzi"
     | "额外头发_Luzi"
     | "额外身高_Luzi"
-    | "新眼睛_Luzi"
     | "身体痕迹_Luzi";
 
 /** 扩展身体组名称 */
@@ -61,12 +60,12 @@ namespace _ {
 
     type GroupedAssetType = {
         [K in CustomGroupName]?: K extends AssetGroupItemName
-            ? CAssetDef.Item[]
-            : K extends CustomGroupBodyName
-            ? CAssetDef.Appearance[]
-            : K extends AssetGroupScriptName
-            ? CAssetDef.Script[]
-            : never;
+        ? CAssetDef.Item[]
+        : K extends CustomGroupBodyName
+        ? CAssetDef.Appearance[]
+        : K extends AssetGroupScriptName
+        ? CAssetDef.Script[]
+        : never;
     };
 }
 
@@ -284,24 +283,24 @@ type SliceParameters<E extends number, T extends (...args: any[]) => any> = E ex
     ? args
     : E extends 1
     ? T extends (_: any, ...args: infer P) => any
-        ? P
-        : never
+    ? P
+    : never
     : E extends 2
     ? T extends (_: any, _: any, ...args: infer P) => any
-        ? P
-        : never
+    ? P
+    : never
     : E extends 3
     ? T extends (_: any, _: any, _: any, ...args: infer P) => any
-        ? P
-        : never
+    ? P
+    : never
     : E extends 4
     ? T extends (_: any, _: any, _: any, _: any, ...args: infer P) => any
-        ? P
-        : never
+    ? P
+    : never
     : E extends 5
     ? T extends (_: any, _: any, _: any, _: any, _: any, ...args: infer P) => any
-        ? P
-        : never
+    ? P
+    : never
     : never;
 
 type Rect = { X: number; Y: number; W: number; H: number };
