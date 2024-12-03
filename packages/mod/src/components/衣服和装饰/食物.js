@@ -171,6 +171,42 @@ const assets = {
                 Hogtied: "Hide",
                 AllFours: "Hide",
             },
+        },,
+        {
+            Name: "奶茶",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,
+            Priority: 55,
+            DefaultColor:["#BA9273", "#F9F4E0", "#B4B4B4", "Default", "#878787"],
+            AllowActivity: ["RubItem", "SipItem"],
+            PoseMapping: {
+                Yoked: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
+                AllFours: PoseType.DEFAULT,
+            },
+            Layer: [
+                {
+                    Name: "底色",
+                },
+                {
+                    Name: "顶色",
+                },
+                {
+                    Name: "盖子",
+                },
+                {
+                    Name: "外观",
+                },
+                {
+                    Name: "吸管",
+                },
+            ],
         },
     ],
     ItemHood: [
@@ -203,6 +239,7 @@ const translations = {
             棒棒糖_Luzi: "棒棒糖",
             烤鱼_Luzi: "烤鱼",
             鸡腿_Luzi: "烤鸡腿",
+            奶茶: "奶茶",
         },
         ItemMouth: {
             棒棒糖_Luzi: "棒棒糖",
@@ -222,6 +259,7 @@ const translations = {
             烤鱼_Luzi: "Grilled Fish",
             鸡腿_Luzi: "Roasted Chicken Leg",
             蛋糕卷_Luzi: "蛋糕卷",
+            奶茶: "Milk Tea",
         },
         ItemMouth: {
             棒棒糖_Luzi: "Lollipop",
@@ -240,6 +278,7 @@ const translations = {
             棒棒糖_Luzi: "Леденец",
             烤鱼_Luzi: "Запечённая рыба",
             鸡腿_Luzi: "Запечённая куриная нога",
+            奶茶: "чай с молоком",
         },
         ItemMouth: {
             棒棒糖_Luzi: "Леденец",
