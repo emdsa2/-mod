@@ -1,0 +1,51 @@
+import AssetManager from "@mod-utils/AssetManager";
+
+/** @type {CustomAssetDefinition} */
+const asset = {
+    Name: "女仆胸罩_Luzi",
+    Random: false,
+    Top: 0,
+    Left: 0,
+    Priority: 14, 
+    Layer: [
+        {
+            Name: "胸罩",
+            ParentGroup: "BodyUpper",
+            PoseMapping: {
+                TapedHands: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                Yoked: PoseType.DEFAULT,
+                Hogtied: "Hogtied",
+                AllFours: PoseType.HIDE,
+            },
+        },
+        {
+            Name: "花边",
+            ParentGroup: "BodyLower",
+            PoseMapping: {
+                TapedHands: PoseType.DEFAULT,
+                BackBoxTie: PoseType.DEFAULT,
+                BackCuffs: PoseType.DEFAULT,
+                BackElbowTouch: PoseType.DEFAULT,
+                OverTheHead: PoseType.DEFAULT,
+                Yoked: PoseType.DEFAULT,
+                Hogtied: PoseType.DEFAULT,
+                AllFours: PoseType.HIDE,
+            },
+        },
+    ],
+};
+
+
+/** @type {Translation.Entry} */
+const translation = {
+    CN: "女仆胸罩",
+    EN: "Maid Bra",
+};
+
+export default function () {
+    AssetManager.addAsset("Bra", asset, null, translation);
+}
