@@ -11,6 +11,7 @@ const asset = {
     Left: 0,
     AllowLock: true,
     Prerequisite: ["AccessBreast", "AccessBreastSuitZip"],
+    Effect: [E.Wiggling, E.UseRemote],
     ExpressionTrigger: [
         { Name: "Closed", Group: "Eyes", Timer: 5 },
         { Name: "Angry", Group: "Eyebrows", Timer: 5 },
@@ -29,6 +30,10 @@ const asset = {
     ],
 };
 
+const extended = {
+    Archetype: ExtendedArchetype.VIBRATING
+};
+
 const translations = {
     CN: "乳夹",
     EN: "乳夹",
@@ -37,5 +42,5 @@ const translations = {
 };
 
 export default function () {
-    AssetManager.addAsset("ItemNipples", asset, undefined, translations);
+    AssetManager.addAsset("ItemNipples", asset, extended, translations);
 }
