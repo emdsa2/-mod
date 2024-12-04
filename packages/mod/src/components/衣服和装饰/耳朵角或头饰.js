@@ -52,6 +52,14 @@ const assets = {
             Left: 0,
             Priority: 52,
         },
+        {
+            Name: "精灵耳_Luzi",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 51,
+            ColorSuffix: { HEX_COLOR: "White" },
+        },
     ],
     HairAccessory2: [
         {
@@ -105,6 +113,15 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 52,
+        },
+        {
+            Name: "精灵耳_Luzi",
+            Random: false,
+            DynamicGroupName: "HairAccessory1",
+            Top: 0,
+            Left: 0,
+            Priority: 51,
+            ColorSuffix: { HEX_COLOR: "White" },
         },
     ],
 };

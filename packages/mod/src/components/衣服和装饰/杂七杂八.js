@@ -94,73 +94,6 @@ const assets = {
             ParentGroup: null,
         },
     ],
-    Shoes: [
-        {
-            Name: "鱼嘴高跟鞋_Luzi",
-            Random: false,
-            Top: 0,
-            Left: 0,
-            PoseMapping: {
-                Kneel: "Hide",
-                KneelingSpread: "Hide",
-                LegsClosed: "LegsClosed",
-                Spread: "Hide",
-                Hogtied: "Hide",
-                AllFours: "Hide",
-            },
-            DefaultColor: ["#FFFFFF", "#FFFFFF", "#000000", "#000000", "#000000", "#000000"],
-            Layer: [
-                {
-                    Name: "高光",
-                    Priority: 18,
-                },
-                {
-                    Name: "卡扣",
-                    Priority: 19,
-                },
-                {
-                    Name: "绑带",
-                    Priority: 18,
-                },
-                {
-                    Name: "鞋面",
-                    Priority: 17,
-                },
-                {
-                    Name: "鞋垫",
-                    Priority: 1,
-                },
-                {
-                    Name: "鞋底",
-                    Priority: 1,
-                },
-            ],
-        },
-        {
-            Name: "兽蹄鞋_Luzi",
-            Random: false,
-            Height: 14,
-            Top: 0,
-            Left: 0,
-            PoseMapping: {
-                Kneel: "Hide",
-                KneelingSpread: "Hide",
-                LegsClosed: "LegsClosed",
-                Spread: "Spread",
-                Hogtied: "Hide",
-                AllFours: "Hide",
-            },
-            DefaultColor: ["#000000", "#212121"],
-            Layer: [
-                {
-                    Name: "袜子",
-                },
-                {
-                    Name: "鞋底",
-                },
-            ],
-        },
-    ],
     ItemHands: [
         {
             Name: "拳击手套_Luzi",
@@ -289,10 +222,6 @@ const translations = {
             刻度尺_Luzi: "刻度尺",
             番茄酱_Luzi: "番茄酱",
         },
-        Shoes: {
-            鱼嘴高跟鞋_Luzi: "鱼嘴高跟鞋",
-            兽蹄鞋_Luzi: "兽蹄鞋",
-        },
         ItemHands: {
             拳击手套_Luzi: "拳击手套",
         },
@@ -320,10 +249,6 @@ const translations = {
             淫纹_Luzi: "Lewd Crest",
             刻度尺_Luzi: "Ruler",
             番茄酱_Luzi: "Ketchup",
-        },
-        Shoes: {
-            鱼嘴高跟鞋_Luzi: "Fish toe high heels",
-            兽蹄鞋_Luzi: "Beast hoof shoes",
         },
         ItemHands: {
             拳击手套_Luzi: "Boxing Gloves",

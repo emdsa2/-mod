@@ -2,25 +2,25 @@ import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
-    Name: "瑜伽裤_Luzi",
+    Name: "蕾丝裤_Luzi",
     Random: false,
     Top: 0,
     Left: 0,
-    Priority: 24, 
+    Priority: 20, 
     Layer: [
         {
-            Name: "上",
+            Name: "裤子",
             PoseMapping: {
-                LegsClosed: PoseType.DEFAULT,
-                KneelingSpread: PoseType.DEFAULT,
-                Kneel: PoseType.DEFAULT,
-                Spread: PoseType.DEFAULT,
+                LegsClosed: "LegsClosed",
+                KneelingSpread: "KneelingSpread",
+                Kneel: "Kneel",
+                Spread: "Spread",
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
         },
         {
-            Name: "下",
+            Name: "图案",
             PoseMapping: {
                 LegsClosed: "LegsClosed",
                 KneelingSpread: "KneelingSpread",
@@ -35,12 +35,12 @@ const asset = {
 
 /** @type {Translation.Entry} */
 const translation = {
-    CN: "瑜伽裤",
-    EN: "Yoga Pants",
+    CN: "蕾丝裤",
+    EN: "Lace Pants",
+    RU: "Рюнорные штанишки",
 };
 
 export default function () {
-
     AssetManager.addAsset(
         "ClothLower",
         {
@@ -53,6 +53,4 @@ export default function () {
         undefined,
         translation
     );
-
-    AssetManager.addAsset("SuitLower", asset, null, translation);
 }
