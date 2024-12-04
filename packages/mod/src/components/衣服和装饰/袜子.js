@@ -126,7 +126,7 @@ const assets = {
                 LegsOpen: 0,
                 Spread: 0,
             },
-            Priority: 20,
+            Priority: 12,
             DefaultColor: ["#351C1C", "#351C1C", "#1C1111", "#1C1111", "#170E0E", "#170E0E", "#000000",],
             Layer: [
                 {
