@@ -53,7 +53,7 @@ const assets = {
             Priority: 52,
         },
         {
-            Name: "精灵耳_Luzi",
+            Name: "精灵耳2_Luzi",
             Random: false,
             Top: 0,
             Left: 0,
@@ -115,7 +115,7 @@ const assets = {
             Priority: 52,
         },
         {
-            Name: "精灵耳_Luzi",
+            Name: "精灵耳2_Luzi",
             Random: false,
             DynamicGroupName: "HairAccessory1",
             Top: 0,
