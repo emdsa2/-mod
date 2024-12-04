@@ -171,7 +171,7 @@ const assets = {
                 Hogtied: "Hide",
                 AllFours: "Hide",
             },
-        },,
+        }, ,
         {
             Name: "奶茶",
             Random: false,
@@ -179,7 +179,7 @@ const assets = {
             Left: 0,
             ParentGroup: null,
             Priority: 55,
-            DefaultColor:["#BA9273", "#F9F4E0", "#B4B4B4", "Default", "#878787"],
+            DefaultColor: ["#BA9273", "#F9F4E0", "#B4B4B4", "Default", "#878787"],
             AllowActivity: ["RubItem", "SipItem"],
             PoseMapping: {
                 Yoked: PoseType.DEFAULT,

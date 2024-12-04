@@ -2,129 +2,129 @@ import AssetManager from "@mod-utils/AssetManager";
 import { pickEntry, setupEntries } from "@mod-utils/AssetManager/entries";
 
 /** @type {Array<CustomAssetDefinition>}} */
-const assets =[    
-        {
-            Name: "侧马尾1",
-            Random: false,
-            Left: 50,
-            Top: 0,
-            ParentGroup: null,
-            Extended: true,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Layer: [                
-                {
-                    Name: "左侧",                  
-                    Priority: 32,
-                    AllowTypes: { typed: [0, 2] },
-                },
-                {
-                    Name: "右侧",                  
-                    Priority: 32,
-                    AllowTypes: { typed: [1, 2] },
-                }
-            ],
-        },
-        {
-            Name: "侧马尾2",
-            Random: false,
-            Left: 50,
-            Top: 0,
-            ParentGroup: null,
-            Extended: true,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Layer: [               
-                {
-                    Name: "左侧",                  
-                    Priority: 32,
-                    AllowTypes: { typed: [0, 2] },
-                },
-                {
-                    Name: "右侧",                  
-                    Priority: 32,
-                    AllowTypes: { typed: [1, 2] },
-                }
-            ],
-        },
-        {
-            Name: "低双马尾1",
-            Random: false,
-            Left: 50,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 32
-        },
-        {
-            Name: "低双马尾2",
-            Random: false,
-            Left: 0,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 32
-        },
-        {
-            Name: "低双马尾3",
-            Random: false,
-            Left: 0,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 5
-        },
-        {
-            Name: "卷发后1",
-            Random: false,
-            Left: 0,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 32
-        },
-        {
-            Name: "卷发后2",
-            Random: false,
-            Left: 0,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 5
-        },
-        {
-            Name: "后发髻1",
-            Random: false,
-            Left: 0,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 5
-        },
-        {
-            Name: "后发髻2",
-            Random: false,
-            Left: 0,
-            Top: 0,
-            ParentGroup: null,
-            Extended: false,
-            InheritColor: "HairFront",
-            Hide: ["HairBack"],
-            Priority: 5
-        }
-    ];
+const assets = [
+    {
+        Name: "侧马尾1",
+        Random: false,
+        Left: 50,
+        Top: 0,
+        ParentGroup: null,
+        Extended: true,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Layer: [
+            {
+                Name: "左侧",
+                Priority: 32,
+                AllowTypes: { typed: [0, 2] },
+            },
+            {
+                Name: "右侧",
+                Priority: 32,
+                AllowTypes: { typed: [1, 2] },
+            }
+        ],
+    },
+    {
+        Name: "侧马尾2",
+        Random: false,
+        Left: 50,
+        Top: 0,
+        ParentGroup: null,
+        Extended: true,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Layer: [
+            {
+                Name: "左侧",
+                Priority: 32,
+                AllowTypes: { typed: [0, 2] },
+            },
+            {
+                Name: "右侧",
+                Priority: 32,
+                AllowTypes: { typed: [1, 2] },
+            }
+        ],
+    },
+    {
+        Name: "低双马尾1",
+        Random: false,
+        Left: 50,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 32
+    },
+    {
+        Name: "低双马尾2",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 32
+    },
+    {
+        Name: "低双马尾3",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 5
+    },
+    {
+        Name: "卷发后1",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 32
+    },
+    {
+        Name: "卷发后2",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 5
+    },
+    {
+        Name: "后发髻1",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 5
+    },
+    {
+        Name: "后发髻2",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 5
+    }
+];
 
 /** @type { Translation.GroupedEntries } */
 const translations = {
@@ -169,17 +169,15 @@ const extended = {
 
 export default function () {
     assets.forEach(asset => {
-        if(asset.Extended === true)
-        {
-            AssetManager.addAsset("新后发_Luzi", asset, extended, getTranslations("新后发_Luzi",asset.Name));
+        if (asset.Extended === true) {
+            AssetManager.addAsset("新后发_Luzi", asset, extended, getTranslations("新后发_Luzi", asset.Name));
 
-            AssetManager.addCustomDialog(getDialog("新后发_Luzi",asset.Name));            
+            AssetManager.addCustomDialog(getDialog("新后发_Luzi", asset.Name));
         }
-        else
-        {
-            AssetManager.addAsset("新后发_Luzi", asset, null, getTranslations("新后发_Luzi",asset.Name));
+        else {
+            AssetManager.addAsset("新后发_Luzi", asset, null, getTranslations("新后发_Luzi", asset.Name));
         }
-    });    
+    });
 }
 
 /**
@@ -189,13 +187,13 @@ export default function () {
  */
 function getTranslations(groupKey, entryKey) {
     const result = {};
-    
+
     for (const lang in translations) {
         if (translations[lang][groupKey] && translations[lang][groupKey][entryKey]) {
             result[lang] = translations[lang][groupKey][entryKey];
         }
     }
-    
+
     return result;
 }
 
@@ -205,9 +203,9 @@ function getTranslations(groupKey, entryKey) {
  * @returns {Translation.Dialog} - 返回翻译
  */
 function getDialog(groupKey, entryKey) {
-    const dialog= {
-        CN : {},
-        EN : {}
+    const dialog = {
+        CN: {},
+        EN: {}
     };
 
     dialog["CN"][groupKey + entryKey + "Select"] = "选择外观";

@@ -127,7 +127,7 @@ const assets = {
                 Spread: 0,
             },
             Priority: 20,
-            DefaultColor: ["#351C1C", "#351C1C", "#1C1111", "#1C1111", "#000000",],
+            DefaultColor: ["#351C1C", "#351C1C", "#1C1111", "#1C1111", "#170E0E", "#170E0E", "#000000",],
             Layer: [
                 {
                     Name: "上袜",

@@ -150,7 +150,7 @@ const assets = {
                 BackCuffs: "Hide",
                 Hogtied: "Hide",
                 AllFours: "Hide",
-            }, 
+            },
             Layer: [
                 {
                     Name: "页",
