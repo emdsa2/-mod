@@ -40,8 +40,22 @@ export function setupImgMapping() {
         return src;
     };
 
-    ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
-        (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) =>
-            ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapImgSrc(args[0])))
-    );
+    if (GameVersion === "R110") {
+        ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
+            (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) =>
+                ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapImgSrc(args[0])))
+        );
+    } else { // R111
+        ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
+            const button = next(args);
+            const img = button.querySelector("img.button-image");
+            if (img?.src) {
+                const idx = img.src.indexOf("Assets/");
+                if (idx !== -1) {
+                    img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
+                }
+            }
+            return button;
+        });
+    }
 }
