@@ -94,7 +94,9 @@ export function enableCustomAssets() {
     ModManager.progressiveHook("InventoryAvailable").inside("WardrobeFastLoad").override(overrideAvailable);
 
     ModManager.progressiveHook("CraftingValidate").inject((args, next) => {
-        const asset = CraftingAssets[args[0].Item]?.[0];
+        const item = args[0]?.Item;
+        if (!item) return;
+        const asset = CraftingAssets[item]?.[0];
         if (asset && isInListCustomAsset(asset.Group.Name, asset.Name)) args[3] = false;
     });
 
