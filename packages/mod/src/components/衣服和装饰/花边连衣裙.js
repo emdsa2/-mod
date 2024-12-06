@@ -9,8 +9,11 @@ const asset = {
     Priority: 26,
     DefaultColor :[
         "#3F3F3F",
+        "#3F3F3F",
         "#9B3131",
         "#3F3F3F",
+        "#9B3131",
+        "#9B3131",
         "#9B3131",
         "#9B3131",
         "#9B3131",
@@ -25,7 +28,15 @@ const asset = {
     },
     Layer: [
         {
-            Name: "袖",
+            Name: "袖左",
+            PoseMapping: {
+                Yoked: "Yoked",
+                OverTheHead: "OverTheHead",
+                AllFours: PoseType.HIDE,
+                Hogtied: PoseType.HIDE,
+            },
+        },{
+            Name: "袖右",
             PoseMapping: {
                 Yoked: "Yoked",
                 OverTheHead: "OverTheHead",
@@ -48,7 +59,13 @@ const asset = {
             Name: "胸罩",
         },
         {
-            Name: "束腰",
+            Name: "束腰左",
+        },
+        {
+            Name: "束腰右",
+        },
+        {
+            Name: "束腰中",
         },
         {
             Name: "束腰绑带",
