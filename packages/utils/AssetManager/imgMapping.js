@@ -68,13 +68,13 @@ export function setupImgMapping() {
         return src;
     };
 
-    if (GameVersion === "R110") {
-        ["DrawImageEx", "DrawImageResize", "GLDrawImage", "DrawGetImage"].forEach(
-            (/** @type {"DrawImageEx" | "GLDrawImage" | "DrawGetImage"}*/ fn) => {
-                ModManager.progressiveHook(fn, 0).inject((args, next) => (args[0] = mapImgSrc(args[0])));
-            }
-        );
+    ["DrawImageEx", "DrawImageResize", "GLDrawImage", "DrawGetImage"].forEach(
+        (/** @type {"DrawImageEx" | "GLDrawImage" | "DrawGetImage"}*/ fn) => {
+            ModManager.progressiveHook(fn, 0).inject((args, next) => (args[0] = mapImgSrc(args[0])));
+        }
+    );
 
+    if (GameVersion === "R110") {
         (async () => {
             await sleepUntil(() => window["CraftingElements"] !== undefined);
 
@@ -91,6 +91,8 @@ export function setupImgMapping() {
             });
         })();
     } else { // R111
+        await sleepUntil(() => window["ElementButton"] !== undefined);
+
         ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
             const button = next(args);
             const img = button.querySelector("img.button-image");
