@@ -135,37 +135,31 @@ const dialogs = {
         ItemArms拘束抱枕Optionc2: "中",
         ItemArms拘束抱枕Optionc3: "高",
         ItemArms拘束抱枕Optionc4: "最高",
-        ItemArms拘束抱枕Sets0:
-        "SourceCharacter取下了DestinationCharacter的抱枕上的手腕绑带，让她的手能够自由活动",
-        ItemArms拘束抱枕Sets1:
-        "SourceCharacter绑上了DestinationCharacter的抱枕上的手腕绑带，让她的手紧紧地绑在了抱枕上",
+        ItemArms拘束抱枕Sets0: "SourceCharacter取下了DestinationCharacter抱枕上的手腕绑带，让她的手能够自由活动",
+        ItemArms拘束抱枕Sets1: "SourceCharacter绑上了DestinationCharacter抱枕上的手腕绑带，让她的手紧紧地绑在了抱枕上",
         ItemArms拘束抱枕Sets2:
-        "SourceCharacter绑上了DestinationCharacter的抱枕上的几乎无法察觉的透明绑带，让她的手不被人注意的情况下紧紧地绑在了抱枕上",
+            "SourceCharacter绑上了DestinationCharacter抱枕上的几乎无法察觉的透明绑带，让她的手不被人注意的情况下紧紧地绑在了抱枕上",
 
-        ItemArms拘束抱枕Setn0:
-        "SourceCharacter取下了DestinationCharacter的抱枕上的乳头跳蛋",
-        ItemArms拘束抱枕Setn1:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的乳头，并微微逗弄起她来",
+        ItemArms拘束抱枕Setn0: "SourceCharacter取下了DestinationCharacter抱枕上的乳头跳蛋",
+        ItemArms拘束抱枕Setn1: "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的乳头，并微微逗弄起她来",
         ItemArms拘束抱枕Setn2:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的乳头，并逐渐提升到中等的频率",
+            "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的乳头，并逐渐提升到中等的频率",
         ItemArms拘束抱枕Setn3:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的乳头，并猛烈地颤动起来！",
+            "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的乳头，并猛烈地颤动起来！",
         ItemArms拘束抱枕Setn4:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的乳头，并突然以最大强度振动起来！",
+            "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的乳头，并突然以最大强度振动起来！",
 
-        ItemArms拘束抱枕Setc0:
-        "SourceCharacter取下了DestinationCharacter的抱枕上的阴蒂跳蛋",
-        ItemArms拘束抱枕Setc1:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的阴蒂，并微微逗弄起她来",
+        ItemArms拘束抱枕Setc0: "SourceCharacter取下了DestinationCharacter抱枕上的阴蒂跳蛋",
+        ItemArms拘束抱枕Setc1: "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的阴蒂，并微微逗弄起她来",
         ItemArms拘束抱枕Setc2:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的阴蒂，并逐渐提升到中等的频率",
+            "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的阴蒂，并逐渐提升到中等的频率",
         ItemArms拘束抱枕Setc3:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的阴蒂，并猛烈地颤动起来！",
+            "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的阴蒂，并猛烈地颤动起来！",
         ItemArms拘束抱枕Setc4:
-        "SourceCharacter将DestinationCharacter的抱枕接上吮吸跳蛋吸住了她的阴蒂，并突然以最大强度振动起来！",
+            "SourceCharacter将DestinationCharacter抱枕接上吮吸跳蛋吸住了她的阴蒂，并突然以最大强度振动起来！",
     },
-    EN: {      
-		ItemArms拘束抱枕SelectBase: "Select Attachment",
+    EN: {
+        ItemArms拘束抱枕SelectBase: "Select Attachment",
         ItemArms拘束抱枕Select绑带: "Select Strap Status",
         ItemArms拘束抱枕Module绑带: "Strap Status",
         ItemArms拘束抱枕Select乳头: "Select Nipple Toy",
@@ -186,37 +180,34 @@ const dialogs = {
         ItemArms拘束抱枕Optionc3: "High",
         ItemArms拘束抱枕Optionc4: "Highest",
         ItemArms拘束抱枕Sets0:
-        "SourceCharacter removes the wrist straps from DestinationCharacter's pillow, allowing her hands to move freely",
+            "SourceCharacter removes the wrist straps from DestinationCharacter pillow, allowing her hands to move freely",
         ItemArms拘束抱枕Sets1:
-        "SourceCharacter ties the wrist straps from DestinationCharacter's pillow, tying her hands tightly to the pillow",
+            "SourceCharacter ties the wrist straps from DestinationCharacter pillow, tying her hands tightly to the pillow",
         ItemArms拘束抱枕Sets2:
-        "SourceCharacter puts on the barely perceptible transparent straps of DestinationCharacter's pillow, keeping her hands tightly bound to the pillow without being noticed",
-        
-        ItemArms拘束抱枕Setn0:
-        "SourceCharacter removes the nipple vibrator from DestinationCharacter's pillow",
+            "SourceCharacter puts on the barely perceptible transparent straps of DestinationCharacter pillow, keeping her hands tightly bound to the pillow without being noticed",
+
+        ItemArms拘束抱枕Setn0: "SourceCharacter removes the nipple vibrator from DestinationCharacter pillow",
         ItemArms拘束抱枕Setn1:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and teased her slightly",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and teased her slightly",
         ItemArms拘束抱枕Setn2:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and gradually increased to a medium frequency",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and gradually increased to a medium frequency",
         ItemArms拘束抱枕Setn3:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and vibrated violently!",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and vibrated violently!",
         ItemArms拘束抱枕Setn4:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and suddenly vibrated at the maximum intensity! ",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and suddenly vibrated at the maximum intensity! ",
 
-        ItemArms拘束抱枕Setc0:
-        "SourceCharacter removed the clitoral vibrator from DestinationCharacter's pillow",
+        ItemArms拘束抱枕Setc0: "SourceCharacter removed the clitoral vibrator from DestinationCharacter pillow",
         ItemArms拘束抱枕Setc1:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and teased her slightly",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and teased her slightly",
         ItemArms拘束抱枕Setc2:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and gradually increased to a medium frequency",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and gradually increased to a medium frequency",
         ItemArms拘束抱枕Setc3:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and vibrated violently! ",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and vibrated violently! ",
         ItemArms拘束抱枕Setc4:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and suddenly vibrated at the maximum intensity! ",
-
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and suddenly vibrated at the maximum intensity! ",
     },
-    RU: {      
-		ItemArms拘束抱枕SelectBase: "Select Attachment",
+    RU: {
+        ItemArms拘束抱枕SelectBase: "Select Attachment",
         ItemArms拘束抱枕Select绑带: "Select Strap Status",
         ItemArms拘束抱枕Module绑带: "Strap Status",
         ItemArms拘束抱枕Select乳头: "Select Nipple Toy",
@@ -237,37 +228,34 @@ const dialogs = {
         ItemArms拘束抱枕Optionc3: "High",
         ItemArms拘束抱枕Optionc4: "Highest",
         ItemArms拘束抱枕Sets0:
-        "SourceCharacter removes the wrist straps from DestinationCharacter's pillow, allowing her hands to move freely",
+            "SourceCharacter removes the wrist straps from DestinationCharacter pillow, allowing her hands to move freely",
         ItemArms拘束抱枕Sets1:
-        "SourceCharacter ties the wrist straps from DestinationCharacter's pillow, tying her hands tightly to the pillow",
+            "SourceCharacter ties the wrist straps from DestinationCharacter pillow, tying her hands tightly to the pillow",
         ItemArms拘束抱枕Sets2:
-        "SourceCharacter puts on the barely perceptible transparent straps of DestinationCharacter's pillow, keeping her hands tightly bound to the pillow without being noticed",
-        
-        ItemArms拘束抱枕Setn0:
-        "SourceCharacter removes the nipple vibrator from DestinationCharacter's pillow",
+            "SourceCharacter puts on the barely perceptible transparent straps of DestinationCharacter pillow, keeping her hands tightly bound to the pillow without being noticed",
+
+        ItemArms拘束抱枕Setn0: "SourceCharacter removes the nipple vibrator from DestinationCharacter pillow",
         ItemArms拘束抱枕Setn1:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and teased her slightly",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and teased her slightly",
         ItemArms拘束抱枕Setn2:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and gradually increased to a medium frequency",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and gradually increased to a medium frequency",
         ItemArms拘束抱枕Setn3:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and vibrated violently!",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and vibrated violently!",
         ItemArms拘束抱枕Setn4:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and suddenly vibrated at the maximum intensity! ",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and suddenly vibrated at the maximum intensity! ",
 
-        ItemArms拘束抱枕Setc0:
-        "SourceCharacter removed the clitoral vibrator from DestinationCharacter's pillow",
+        ItemArms拘束抱枕Setc0: "SourceCharacter removed the clitoral vibrator from DestinationCharacter pillow",
         ItemArms拘束抱枕Setc1:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and teased her slightly",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and teased her slightly",
         ItemArms拘束抱枕Setc2:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and gradually increased to a medium frequency",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and gradually increased to a medium frequency",
         ItemArms拘束抱枕Setc3:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and vibrated violently! ",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and vibrated violently! ",
         ItemArms拘束抱枕Setc4:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and suddenly vibrated at the maximum intensity! ",
-
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and suddenly vibrated at the maximum intensity! ",
     },
-    UA: {      
-		ItemArms拘束抱枕SelectBase: "Select Attachment",
+    UA: {
+        ItemArms拘束抱枕SelectBase: "Select Attachment",
         ItemArms拘束抱枕Select绑带: "Select Strap Status",
         ItemArms拘束抱枕Module绑带: "Strap Status",
         ItemArms拘束抱枕Select乳头: "Select Nipple Toy",
@@ -288,35 +276,32 @@ const dialogs = {
         ItemArms拘束抱枕Optionc3: "High",
         ItemArms拘束抱枕Optionc4: "Highest",
         ItemArms拘束抱枕Sets0:
-        "SourceCharacter removes the wrist straps from DestinationCharacter's pillow, allowing her hands to move freely",
+            "SourceCharacter removes the wrist straps from DestinationCharacter pillow, allowing her hands to move freely",
         ItemArms拘束抱枕Sets1:
-        "SourceCharacter ties the wrist straps from DestinationCharacter's pillow, tying her hands tightly to the pillow",
+            "SourceCharacter ties the wrist straps from DestinationCharacter pillow, tying her hands tightly to the pillow",
         ItemArms拘束抱枕Sets2:
-        "SourceCharacter puts on the barely perceptible transparent straps of DestinationCharacter's pillow, keeping her hands tightly bound to the pillow without being noticed",
-        
-        ItemArms拘束抱枕Setn0:
-        "SourceCharacter removes the nipple vibrator from DestinationCharacter's pillow",
+            "SourceCharacter puts on the barely perceptible transparent straps of DestinationCharacter pillow, keeping her hands tightly bound to the pillow without being noticed",
+
+        ItemArms拘束抱枕Setn0: "SourceCharacter removes the nipple vibrator from DestinationCharacter pillow",
         ItemArms拘束抱枕Setn1:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and teased her slightly",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and teased her slightly",
         ItemArms拘束抱枕Setn2:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and gradually increased to a medium frequency",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and gradually increased to a medium frequency",
         ItemArms拘束抱枕Setn3:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and vibrated violently!",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and vibrated violently!",
         ItemArms拘束抱枕Setn4:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her nipples, and suddenly vibrated at the maximum intensity! ",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her nipples, and suddenly vibrated at the maximum intensity! ",
 
-        ItemArms拘束抱枕Setc0:
-        "SourceCharacter removed the clitoral vibrator from DestinationCharacter's pillow",
+        ItemArms拘束抱枕Setc0: "SourceCharacter removed the clitoral vibrator from DestinationCharacter pillow",
         ItemArms拘束抱枕Setc1:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and teased her slightly",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and teased her slightly",
         ItemArms拘束抱枕Setc2:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and gradually increased to a medium frequency",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and gradually increased to a medium frequency",
         ItemArms拘束抱枕Setc3:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and vibrated violently! ",
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and vibrated violently! ",
         ItemArms拘束抱枕Setc4:
-        "SourceCharacter connected DestinationCharacter's pillow to the sucking vibrator and sucked her clitoris, and suddenly vibrated at the maximum intensity! ",
-
-    }
+            "SourceCharacter connected DestinationCharacter pillow to the sucking vibrator and sucked her clitoris, and suddenly vibrated at the maximum intensity! ",
+    },
 };
 
 const translations = {

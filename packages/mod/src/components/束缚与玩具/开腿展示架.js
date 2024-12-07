@@ -163,8 +163,8 @@ const dialog = {
         ItemDevices开腿展示架_LuziOptiond0: "无",
         ItemDevices开腿展示架_LuziOptiond1: "自定义高度",
 
-        ItemDevices开腿展示架_LuziSeto1: "SourceCharacter修改了DestinationCharacter的手部拘束",
-        ItemDevices开腿展示架_LuziSeto0: "SourceCharacter修改了DestinationCharacter的手部拘束",
+        ItemDevices开腿展示架_LuziSeto1: "SourceCharacter修改了DestinationCharacter手部拘束",
+        ItemDevices开腿展示架_LuziSeto0: "SourceCharacter修改了DestinationCharacter手部拘束",
 
         ItemDevices开腿展示架_LuziSetg0: "SourceCharacter移除了DestinationCharacter嘴部的拘束",
         ItemDevices开腿展示架_LuziSetg1: "SourceCharacter添加了DestinationCharacter嘴部的拘束",
@@ -172,8 +172,8 @@ const dialog = {
         ItemDevices开腿展示架_LuziSetv0: "SourceCharacter移除了DestinationCharacter阴部的道具",
         ItemDevices开腿展示架_LuziSetv1: "SourceCharacter添加了DestinationCharacter阴部的道具",
 
-        ItemDevices开腿展示架_LuziSetd0: "SourceCharacter还原DestinationCharacter的高度",
-        ItemDevices开腿展示架_LuziSetd1: "SourceCharacter调整DestinationCharacter的高度",
+        ItemDevices开腿展示架_LuziSetd0: "SourceCharacter还原DestinationCharacter高度",
+        ItemDevices开腿展示架_LuziSetd1: "SourceCharacter调整DestinationCharacter高度",
     },
     EN: {
         ItemDevices开腿展示架_LuziSelectBase: "Select Leg Spread Display Configuration",
@@ -198,17 +198,17 @@ const dialog = {
         ItemDevices开腿展示架_LuziOptiond0: "None",
         ItemDevices开腿展示架_LuziOptiond1: "Custom Height",
 
-        ItemDevices开腿展示架_LuziSeto1: "SourceCharacter modifies DestinationCharacter's hand restraints",
-        ItemDevices开腿展示架_LuziSeto0: "SourceCharacter modifies DestinationCharacter's hand restraints",
+        ItemDevices开腿展示架_LuziSeto1: "SourceCharacter modifies DestinationCharacter hand restraints",
+        ItemDevices开腿展示架_LuziSeto0: "SourceCharacter modifies DestinationCharacter hand restraints",
 
-        ItemDevices开腿展示架_LuziSetg0: "SourceCharacter removes DestinationCharacter's mouth restraint",
-        ItemDevices开腿展示架_LuziSetg1: "SourceCharacter adds DestinationCharacter's mouth restraint",
+        ItemDevices开腿展示架_LuziSetg0: "SourceCharacter removes DestinationCharacter mouth restraint",
+        ItemDevices开腿展示架_LuziSetg1: "SourceCharacter adds DestinationCharacter mouth restraint",
 
-        ItemDevices开腿展示架_LuziSetv0: "SourceCharacter removes DestinationCharacter's genital prop",
-        ItemDevices开腿展示架_LuziSetv1: "SourceCharacter adds DestinationCharacter's genital prop",
+        ItemDevices开腿展示架_LuziSetv0: "SourceCharacter removes DestinationCharacter genital prop",
+        ItemDevices开腿展示架_LuziSetv1: "SourceCharacter adds DestinationCharacter genital prop",
 
-        ItemDevices开腿展示架_LuziSetd0: "SourceCharacter resets DestinationCharacter's height",
-        ItemDevices开腿展示架_LuziSetd1: "SourceCharacter adjusts DestinationCharacter's height",
+        ItemDevices开腿展示架_LuziSetd0: "SourceCharacter resets DestinationCharacter height",
+        ItemDevices开腿展示架_LuziSetd1: "SourceCharacter adjusts DestinationCharacter height",
     },
     RU: {
         ItemDevices开腿展示架_LuziSelectBase: "Выбор конфигурации дисплея для раздвигания ног",

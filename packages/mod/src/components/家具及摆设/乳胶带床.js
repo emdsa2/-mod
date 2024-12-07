@@ -218,9 +218,9 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong1: "添加盖子",
         ItemDevices乳胶带床_LuziOptiong2: "盖上盖子",
 
-        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter去掉了DestinationCharacter的盖子",
-        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter加上了DestinationCharacter的盖子",
-        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter盖上了DestinationCharacter的盖子",
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter去掉了DestinationCharacter盖子",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter加上了DestinationCharacter盖子",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter盖上了DestinationCharacter盖子",
     },
     EN: {
         ItemDevices乳胶带床_LuziSelect: "Select Latex Bed Configuration",
@@ -232,9 +232,9 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong1: "Add Cover",
         ItemDevices乳胶带床_LuziOptiong2: "Close Cover",
 
-        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter removed DestinationCharacter's cover",
-        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added DestinationCharacter's cover",
-        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter's cover",
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter removed DestinationCharacter cover",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added DestinationCharacter cover",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter cover",
     },
     UA: {
         ItemDevices乳胶带床_LuziSelect: "Виберіть Конфігурацію Латексного Ліжка",
@@ -246,7 +246,7 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong1: "Додати покриття",
         ItemDevices乳胶带床_LuziOptiong2: "Закрити покриття",
 
-        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter забрали DestinationCharacter's покриття",
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter забрали DestinationCharacter покриття",
         ItemDevices乳胶带床_LuziSetg1: "SourceCharacter додали покриття DestinationCharacter",
         ItemDevices乳胶带床_LuziSetg2: "SourceCharacter закрили покриття DestinationCharacter",
     },

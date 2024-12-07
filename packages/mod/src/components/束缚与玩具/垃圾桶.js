@@ -174,9 +174,9 @@ const dialog = {
         ItemDevices垃圾桶_Luzi合上盖子: "合上盖子",
         ItemDevices垃圾桶_Luzi打开挡板: "打开挡板",
 
-        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter合上了DestinationCharacter的盖子",
-        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter打开了DestinationCharacter的盖子",
-        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter打开了DestinationCharacter的挡板",
+        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter合上了DestinationCharacter盖子",
+        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter打开了DestinationCharacter盖子",
+        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter打开了DestinationCharacter挡板",
     },
     EN: {
         ItemDevices垃圾桶_LuziSelect: "Select Trash Bin Configuration",
@@ -184,9 +184,9 @@ const dialog = {
         ItemDevices垃圾桶_Luzi合上盖子: "Close Lid",
         ItemDevices垃圾桶_Luzi打开挡板: "Open Flap",
 
-        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter closed DestinationCharacter's lid",
-        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter opened DestinationCharacter's lid",
-        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter opened DestinationCharacter's baffle",
+        ItemDevices垃圾桶_LuziSet合上盖子: "SourceCharacter closed DestinationCharacter lid",
+        ItemDevices垃圾桶_LuziSet打开盖子: "SourceCharacter opened DestinationCharacter lid",
+        ItemDevices垃圾桶_LuziSet打开挡板: "SourceCharacter opened DestinationCharacter baffle",
     },
     UA: {
         ItemDevices垃圾桶_LuziSelect: "Виберіть конфігурацію для смітника",

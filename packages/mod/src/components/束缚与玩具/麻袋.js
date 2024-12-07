@@ -123,30 +123,30 @@ const dialog = {
         ItemDevices麻袋_Luzi不透: "不透",
         ItemDevices麻袋_Luzi透明: "微透明",
 
-        ItemDevices麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter的麻袋换成了不透明的款式.",
-        ItemDevices麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter的麻袋换成了微透明的款式.",
+        ItemDevices麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter麻袋换成了不透明的款式.",
+        ItemDevices麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter麻袋换成了微透明的款式.",
 
         ItemHood麻袋_LuziSelect: "选择外观",
         ItemHood麻袋_Luzi不透: "不透",
         ItemHood麻袋_Luzi透明: "微透明",
 
-        ItemHood麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter的麻袋换成了不透明的款式.",
-        ItemHood麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter的麻袋换成了微透明的款式.",
+        ItemHood麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter麻袋换成了不透明的款式.",
+        ItemHood麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter麻袋换成了微透明的款式.",
     },
     EN: {
         ItemDevices麻袋_LuziSelect: "选择外观",
         ItemDevices麻袋_Luzi不透: "不透",
         ItemDevices麻袋_Luzi透明: "透明",
 
-        ItemDevices麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter的麻袋换成了不透明的款式.",
-        ItemDevices麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter的麻袋换成了微透明的款式.",
+        ItemDevices麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter麻袋换成了不透明的款式.",
+        ItemDevices麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter麻袋换成了微透明的款式.",
 
         ItemHood麻袋_LuziSelect: "选择外观",
         ItemHood麻袋_Luzi不透: "不透",
         ItemHood麻袋_Luzi透明: "微透明",
 
-        ItemHood麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter的麻袋换成了不透明的款式.",
-        ItemHood麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter的麻袋换成了微透明的款式.",
+        ItemHood麻袋_LuziSet不透: "SourceCharacter将DestinationCharacter麻袋换成了不透明的款式.",
+        ItemHood麻袋_LuziSet透明: "SourceCharacter将DestinationCharacter麻袋换成了微透明的款式.",
     },
 };
 

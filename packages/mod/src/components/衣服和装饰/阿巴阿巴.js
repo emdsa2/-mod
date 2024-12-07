@@ -50,9 +50,9 @@ const dialog = {
         ItemHandheld阿巴阿巴_Luzi阿巴阿巴: "阿巴阿巴",
         ItemHandheld阿巴阿巴_Luzi阿巴AK: "阿巴AK",
 
-        ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter移除了DestinationCharacter的阿巴阿巴.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter给了DestinationCharacter一个阿巴阿巴.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter给了DestinationCharacter一个阿巴AK.",
+        ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter移除了TargetCharacter的阿巴阿巴.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter给了TargetCharacter一个阿巴阿巴.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter给了TargetCharacter一个阿巴AK.",
     },
     EN: {
         ItemHandheld阿巴阿巴_LuziSelect: "Select Aba Aba",
@@ -60,9 +60,9 @@ const dialog = {
         ItemHandheld阿巴阿巴_Luzi阿巴阿巴: "Aba Aba",
         ItemHandheld阿巴阿巴_Luzi阿巴AK: "Aba AK",
 
-        ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter removed AbaAba from DestinationCharacter.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter toggled AbaAba for DestinationCharacter.",
-        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter toggled AbaAK for DestinationCharacter.",
+        ItemHandheld阿巴阿巴_LuziSet无: "SourceCharacter removed AbaAba from TargetCharacter.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴阿巴: "SourceCharacter toggled AbaAba for TargetCharacter.",
+        ItemHandheld阿巴阿巴_LuziSet阿巴AK: "SourceCharacter toggled AbaAK for TargetCharacter.",
     },
 };
 

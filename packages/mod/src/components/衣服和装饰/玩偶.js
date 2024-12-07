@@ -226,7 +226,7 @@ const enDialog = /** @type {ModularItemModuleConfig[]}*/ (modules).reduce((pv, c
     pv[`ItemMisc玩偶_LuziSelect${Name}`] = `Select ${Name}`;
     pv[`ItemMisc玩偶_LuziModule${Name}`] = `${Name}`;
     pv[`ItemMisc玩偶_LuziOption${Key}0`] = "Empty";
-    pv[`ItemMisc玩偶_LuziSet${Key}0`] = "SourceCharacter removes the doll from DestinationCharacter's hand.";
+    pv[`ItemMisc玩偶_LuziSet${Key}0`] = "SourceCharacter removes the doll from DestinationCharacter hand.";
 
     Options.forEach((_, i) => {
         if (i === 0) return;

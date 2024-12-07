@@ -41,50 +41,57 @@ const activity = {
             ItemNose: "射击鼻子",
             ItemPelvis: "射击肚子",
         },
+        EN: {
+            ItemBreast: "Shoot Breast",
+            ItemButt: "Shoot Butt",
+            ItemMouth: "Shoot Mouth",
+            ItemTorso: "Shoot Torso",
+            ItemEars: "Shoot Ears",
+            ItemArms: "Shoot Arms",
+            ItemNeck: "Shoot Neck",
+            ItemHood: "Shoot Hood",
+            ItemHead: "Shoot Head",
+            ItemNose: "Shoot Nose",
+            ItemPelvis: "Shoot Pelvis",
+        },
     },
     dialog: {
         CN: {
-            ItemBreast: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的乳房.",
-            ItemButt: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的屁股.",
-            ItemMouth: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脸.",
-            ItemTorso: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的腰.",
-            ItemEars: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的耳朵.",
-            ItemArms: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的手臂.",
-            ItemNeck: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的脖子.",
-            ItemHood: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的头.",
-            ItemHead: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的眉心.",
-            ItemNose: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的鼻子.",
-            ItemPelvis: "SourceCharacter举起枪瞄准, 水弹直直击中了TargetCharacter的肚子.",
+            ItemBreast: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter乳房.",
+            ItemButt: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter屁股.",
+            ItemMouth: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter脸.",
+            ItemTorso: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter腰.",
+            ItemEars: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter一侧的耳朵.",
+            ItemArms: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter一侧的手臂.",
+            ItemNeck: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter脖子.",
+            ItemHood: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter头.",
+            ItemHead: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter眉心.",
+            ItemNose: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter鼻子.",
+            ItemPelvis: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter肚子.",
         },
-    },
-    labelSelf: {
-        CN: {
-            ItemBreast: "射击乳房",
-            ItemButt: "射击屁股",
-            ItemMouth: "射击脸",
-            ItemTorso: "射击腰",
-            ItemEars: "射击耳朵",
-            ItemArms: "射击手臂",
-            ItemNeck: "射击脖子",
-            ItemHood: "射击头",
-            ItemHead: "射击眉心",
-            ItemNose: "射击鼻子",
-            ItemPelvis: "射击肚子",
-        },
-    },
-    dialogSelf: {
-        CN: {
-            ItemBreast: "SourceCharacter举起枪瞄准PronounPossessive自己的乳房.",
-            ItemButt: "SourceCharacter举起枪瞄准PronounPossessive自己的屁股.",
-            ItemMouth: "SourceCharacter举起枪瞄准PronounPossessive自己的脸.",
-            ItemTorso: "SourceCharacter举起枪瞄准PronounPossessive自己的腰.",
-            ItemEars: "SourceCharacter举起枪瞄准PronounPossessive自己的耳朵.",
-            ItemArms: "SourceCharacter举起枪瞄准PronounPossessive自己的手臂.",
-            ItemNeck: "SourceCharacter举起枪瞄准PronounPossessive自己的脖子.",
-            ItemHood: "SourceCharacter举起枪瞄准PronounPossessive自己的头.",
-            ItemHead: "SourceCharacter举起枪瞄准PronounPossessive自己的眉心.",
-            ItemNose: "SourceCharacter举起枪瞄准PronounPossessive自己的鼻子.",
-            ItemPelvis: "SourceCharacter举起枪瞄准PronounPossessive自己的肚子.",
+        EN: {
+            ItemBreast:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter breast directly.",
+            ItemButt:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter butt directly.",
+            ItemMouth:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter face directly.",
+            ItemTorso:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter torso directly.",
+            ItemEars:
+                "SourceCharacter raised the gun and aimed, the water bullet hit one of DestinationCharacter ears directly.",
+            ItemArms:
+                "SourceCharacter raised the gun and aimed, the water bullet hit one of DestinationCharacter arms directly.",
+            ItemNeck:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter neck directly.",
+            ItemHood:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter head directly.",
+            ItemHead:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter forehead directly.",
+            ItemNose:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter nose directly.",
+            ItemPelvis:
+                "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter belly directly.",
         },
     },
 };

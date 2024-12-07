@@ -42,8 +42,8 @@ const dialog = {
         ItemMisc斩标_Luzi无: "None",
         ItemMisc斩标_Luzi笨蛋: "笨蛋",
 
-        ItemMisc斩标_LuziSet无: "SourceCharacter erased the words on DestinationCharacter's ChanBiao.",
-        ItemMisc斩标_LuziSet笨蛋: "SourceCharacter wrote 'BenDiao' on DestinationCharacter's ChanBiao.",
+        ItemMisc斩标_LuziSet无: "SourceCharacter erased the words on DestinationCharacter ChanBiao.",
+        ItemMisc斩标_LuziSet笨蛋: "SourceCharacter wrote 'BenDiao' on DestinationCharacter ChanBiao.",
     },
 };
 

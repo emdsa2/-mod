@@ -52,9 +52,8 @@ const dialog = {
         Cloth_笨笨蛋Luzi插兜雨衣不透: "不透",
         Cloth_笨笨蛋Luzi插兜雨衣透明: "透明",
 
-
-        Cloth插兜雨衣Set不透: "SourceCharacter将DestinationCharacter的雨衣换成了不透明的款式.",
-        Cloth插兜雨衣Set透明: "SourceCharacter将DestinationCharacter的雨衣换成了透明的款式.",
+        Cloth插兜雨衣Set不透: "SourceCharacter将DestinationCharacter雨衣换成了不透明的款式.",
+        Cloth插兜雨衣Set透明: "SourceCharacter将DestinationCharacter雨衣换成了透明的款式.",
     },
     EN: {
         Cloth插兜雨衣Select: "Choose look",
@@ -68,8 +67,8 @@ const dialog = {
         Cloth_笨笨蛋Luzi插兜雨衣不透: "Opaque",
         Cloth_笨笨蛋Luzi插兜雨衣透明: "Transparent",
 
-        Cloth插兜雨衣Set不透透明: "SourceCharacter changes DestinationCharacter's raincoat to an opaque style.",
-        Cloth插兜雨衣Set透明: "SourceCharacter changes DestinationCharacter's raincoat to a transparent style.",
+        Cloth插兜雨衣Set不透透明: "SourceCharacter changes DestinationCharacter raincoat to an opaque style.",
+        Cloth插兜雨衣Set透明: "SourceCharacter changes DestinationCharacter raincoat to a transparent style.",
     },
 };
 

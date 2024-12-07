@@ -153,13 +153,13 @@ const extended = {
 const dialog = {
     CN: {
         ItemAddon后背_LuziSelect: "选择后背配置",
-        ItemAddon后背_LuziSet纸袋: "SourceCharacter在DestinationCharacter的头上套上了纸袋",
-        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter在DestinationCharacter的头上套上了麻袋",
+        ItemAddon后背_LuziSet纸袋: "SourceCharacter在DestinationCharacter头上套上了纸袋",
+        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter在DestinationCharacter头上套上了麻袋",
     },
     EN: {
         ItemAddon后背_LuziSelect: "Select back configuration",
-        ItemAddon后背_LuziSet纸袋: "SourceCharacter placed a paper bag over DestinationCharacter's head",
-        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter placed a sack hood over DestinationCharacter's head",
+        ItemAddon后背_LuziSet纸袋: "SourceCharacter placed a paper bag over DestinationCharacter head",
+        ItemAddon后背_LuziSet麻袋头罩: "SourceCharacter placed a sack hood over DestinationCharacter head",
     },
     RU: {
         ItemAddon后背_LuziSelect: "Выберите конфигурацию спины",
