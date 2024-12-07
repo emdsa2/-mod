@@ -1,19 +1,16 @@
-import { RecordMap } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
 import { Path } from "@mod-utils/path";
 import { sleepUntil } from "@mod-utils/sleep";
+import { Mapping } from "../ImageMapping";
 
-/** @type { Record<string,string> } */
-const imageMapping = {};
+const mapping = Mapping();
 
 /**
  * 添加自定义图片映射
  * @param { Record<string,string> } mappings
  */
 export function addImgMapping(mappings) {
-    Object.entries(mappings).forEach(([key, value]) => {
-        imageMapping[key] = value;
-    });
+    mapping.addImgMapping(mappings);
 }
 
 /**
@@ -23,29 +20,27 @@ export function addImgMapping(mappings) {
  */
 export function addActivityImageMapping(mappings, category = "Activity") {
     if (category === "Activity") {
-        Object.entries(mappings).forEach(([key, value]) => {
-            imageMapping[`Assets/Female3DCG/Activity/${key}.png`] = `Assets/Female3DCG/Activity/${value}.png`;
-        });
+        mapping.addImgMapping(
+            Object.entries(mappings).reduce((pv, [key, value]) => {
+                pv[`Assets/Female3DCG/Activity/${key}.png`] = `Assets/Female3DCG/Activity/${value}.png`;
+                return pv;
+            }, /** @type {Record<string , string>}*/ ({}))
+        );
     } else {
-        Object.entries(mappings).forEach(([key, value]) => {
-            imageMapping[
-                `Assets/Female3DCG/Activity/${key}.png`
-            ] = `Assets/Female3DCG/${category}/Preview/${value}.png`;
-        });
+        mapping.addImgMapping(
+            Object.entries(mappings).reduce((pv, [key, value]) => {
+                pv[`Assets/Female3DCG/Activity/${key}.png`] = `Assets/Female3DCG/${category}/Preview/${value}.png`;
+                return pv;
+            }, /** @type {Record<string , string>}*/ ({}))
+        );
     }
 }
 
 export function setupImgMapping() {
-    const mapImgSrc = (src) => {
-        if (typeof src !== "string") return src;
-        if (imageMapping[src]) src = imageMapping[src];
-        return src;
-    };
-
     if (GameVersion === "R110") {
         ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
             (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) =>
-                ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapImgSrc(args[0])))
+                ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapping.mapImgSrc(args[0])))
         );
     } else {
         // R111
@@ -54,10 +49,8 @@ export function setupImgMapping() {
 
             ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
                 const _args = /** @type {any[]} */ (args);
-                const image = imageMapping[Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1]))];
-                if (image) {
-                    _args[4] = { ..._args[4], image };
-                }
+                const image = mapping.mapImgSrc(Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1])));
+                _args[4] = { ..._args[4], image };
                 return next(args);
             });
         })();
