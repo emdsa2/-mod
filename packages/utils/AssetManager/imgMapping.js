@@ -74,19 +74,35 @@ export function setupImgMapping() {
         }
     );
 
-    (async () => {
-        await sleepUntil(() => window["CraftingElements"] !== undefined);
+    if (GameVersion === "R110") {
+        (async () => {
+            await sleepUntil(() => window["CraftingElements"] !== undefined);
 
-        ModManager.hookFunction("CraftingElements._RadioButton", 5, (args, next) => {
-            const ret = next(args);
-            const img = ret.querySelector("img");
+            ModManager.hookFunction("CraftingElements._RadioButton", 5, (args, next) => {
+                const ret = next(args);
+                const img = ret.querySelector("img");
+                if (img?.src) {
+                    const idx = img.src.indexOf("Assets/");
+                    if (idx !== -1) {
+                        img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
+                    }
+                }
+                return ret;
+            });
+        })();
+    } else { // R111
+        await sleepUntil(() => window["ElementButton"] !== undefined);
+
+        ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
+            const button = next(args);
+            const img = button.querySelector("img.button-image");
             if (img?.src) {
                 const idx = img.src.indexOf("Assets/");
                 if (idx !== -1) {
                     img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
                 }
             }
-            return ret;
+            return button;
         });
-    })();
+    }
 }

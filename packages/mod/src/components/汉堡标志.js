@@ -25,27 +25,41 @@ FhZ6IIeuA4OENTMzowCWlpaMrVpt8gL6EJROpwGYmpoyJfHc3Fxrfyv0QP4D/SuQTlQPpN30FwcY
 PMrnpTehAAAAAElFTkSuQmCC`;
 
 export default function () {
-    const iconSize = 50;
-    const margin = 5;
-    const hoverText = ModInfo.name;
+    if (GameVersion === "R110") {
+        const iconSize = 50;
+        const margin = 5;
+        const hoverText = ModInfo.name;
 
-    const func = (args, next) => {
-        const [x, y, asset, { Width, Height }] = args;
-        if (AssetManager.assetIsCustomed(asset)) {
-            const iconX = x + (Width || DrawAssetPreviewDefaultWidth) - iconSize - margin;
-            const iconY = y + (Height || DrawAssetPreviewDefaultHeight) - iconSize - margin - 40;
+        const func = (args, next) => {
+            const [x, y, asset, { Width, Height }] = args;
+            if (AssetManager.assetIsCustomed(asset)) {
+                const iconX = x + (Width || DrawAssetPreviewDefaultWidth) - iconSize - margin;
+                const iconY = y + (Height || DrawAssetPreviewDefaultHeight) - iconSize - margin - 40;
 
-            DrawImageResize(hanburgerIcon, iconX, iconY, iconSize, iconSize);
-            if (MouseIn(iconX, iconY, iconSize * 0.9, iconSize * 0.9)) {
-                DrawHoverElements.push(() => DrawButtonHover(iconX, iconY, 100, 65, hoverText));
+                DrawImageResize(hanburgerIcon, iconX, iconY, iconSize, iconSize);
+                if (MouseIn(iconX, iconY, iconSize * 0.9, iconSize * 0.9)) {
+                    DrawHoverElements.push(() => DrawButtonHover(iconX, iconY, 100, 65, hoverText));
+                }
             }
-        }
-    };
+        };
 
-    ModManager.progressiveHook("DrawAssetPreview", 1).inside("DialogDrawItemMenu").next().inject(func);
-    ModManager.progressiveHook("DrawAssetPreview", 1)
-        .inside("AppearanceRun")
-        .next()
-        .when(() => CharacterAppearanceMode == "Cloth")
-        .inject(func);
+        ModManager.progressiveHook("DrawAssetPreview", 1).inside("DialogDrawItemMenu").next().inject(func);
+        ModManager.progressiveHook("DrawAssetPreview", 1)
+            .inside("AppearanceRun")
+            .next()
+            .when(() => CharacterAppearanceMode == "Cloth")
+            .inject(func);
+    } else { // R111
+        ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
+            const asset = "Asset" in args[1] ? args[1].Asset : args[1];
+            if (AssetManager.assetIsCustomed(asset)) {
+                args[4] ??= {};
+                args[4].icons = [
+                    ...(args[4].icons ?? []),
+                    { iconSrc: hanburgerIcon, tooltipText: ModInfo.name },
+                ];
+            }
+            return next(args);
+        });
+    }
 }
