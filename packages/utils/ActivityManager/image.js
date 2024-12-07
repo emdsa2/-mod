@@ -49,8 +49,9 @@ export function setupImgMapping() {
 
             ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
                 const _args = /** @type {any[]} */ (args);
-                const image = mapping.mapImgSrc(Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1])));
-                _args[4] = { ..._args[4], image };
+                mapping.mapImg(Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1])), (image) => {
+                    _args[4] = { ..._args[4], image };
+                });
                 return next(args);
             });
         })();
