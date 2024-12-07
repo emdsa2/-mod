@@ -19,6 +19,10 @@ const activity = {
             "ItemHood",
             "ItemNose",
             "ItemPelvis",
+            "ItemHands",
+            "ItemLegs",
+            "ItemFeet",
+            "ItemBoots",
         ],
         TargetSelf: true,
     },
@@ -40,6 +44,10 @@ const activity = {
             ItemHead: "射击眉心",
             ItemNose: "射击鼻子",
             ItemPelvis: "射击肚子",
+            ItemHands: "射击手",
+            ItemLegs: "射击大腿",
+            ItemFeet: "射击小腿",
+            ItemBoots: "射击脚",
         },
         EN: {
             ItemBreast: "Shoot Breast",
@@ -53,6 +61,10 @@ const activity = {
             ItemHead: "Shoot Head",
             ItemNose: "Shoot Nose",
             ItemPelvis: "Shoot Pelvis",
+            ItemHands: "Shoot Hands",
+            ItemLegs: "Shoot Thighs",
+            ItemFeet: "Shoot Calves",
+            ItemBoots: "Shoot Feet",
         },
     },
     dialog: {
@@ -68,6 +80,10 @@ const activity = {
             ItemHead: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter眉心.",
             ItemNose: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter鼻子.",
             ItemPelvis: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter肚子.",
+            ItemHands: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter一侧的手.",
+            ItemLegs: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter一侧的大腿.",
+            ItemFeet: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter一侧的小腿.",
+            ItemBoots: "SourceCharacter举起枪瞄准, 水弹直直击中了DestinationCharacter一侧的脚.",
         },
         EN: {
             ItemBreast:
@@ -92,6 +108,14 @@ const activity = {
                 "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter nose directly.",
             ItemPelvis:
                 "SourceCharacter raised the gun and aimed, the water bullet hit DestinationCharacter belly directly.",
+            ItemHands:
+                "SourceCharacter raised the gun and aimed, the water bullet hit one of DestinationCharacter hands directly.",
+            ItemLegs:
+                "SourceCharacter raised the gun and aimed, the water bullet hit one of DestinationCharacter legs directly.",
+            ItemFeet:
+                "SourceCharacter raised the gun and aimed, the water bullet hit one of DestinationCharacter calves directly.",
+            ItemBoots:
+                "SourceCharacter raised the gun and aimed, the water bullet hit one of DestinationCharacter feet directly.",
         },
     },
 };
