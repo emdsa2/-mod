@@ -47,12 +47,12 @@ export default function () {
         });
     } else { // R111
         ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
-            if (ActivityManager.activityIsCustom(args[1].Activity.Name)) {
-                args[4] ??= {};
-                args[4].icons = [
-                    ...(args[4].icons ?? []),
-                    { iconSrc: hanburgerIcon, tooltipText: ModInfo.name },
-                ];
+            const _args = /** @type {any[]} */ (args);
+            if (ActivityManager.activityIsCustom(_args[1].Activity.Name)) {
+                _args[4] = {
+                    ..._args[4],
+                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name }],
+                };
             }
             return next(args);
         });

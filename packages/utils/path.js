@@ -80,4 +80,24 @@ export class Path {
     static get 空png() {
         return emptyPNGPath;
     }
+
+    /**
+     * 获得资源的图标路径
+     * @param {Asset | Item} asset
+     * @returns {string}
+     */
+    static AssetPreviewIconPath(asset) {
+        const _asset = "Asset" in asset ? asset.Asset : asset;
+        return `Assets/Female3DCG/${_asset.DynamicGroupName}/Preview/${_asset.Name}.png`;
+    }
+
+    /**
+     * 获得活动的图标路径
+     * @param {Activity | ItemActivity} activity
+     * @returns {string}
+     */
+    static ActivityPreviewIconPath(activity) {
+        const _activity = "Activity" in activity ? activity.Activity : activity;
+        return `Assets/Female3DCG/Activity/${_activity.Name}.png`;
+    }
 }

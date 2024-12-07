@@ -1,5 +1,7 @@
 import { RecordMap } from "@mod-utils/fp";
 import ModManager from "@mod-utils/ModManager";
+import { Path } from "@mod-utils/path";
+import { sleepUntil } from "@mod-utils/sleep";
 
 /** @type { Record<string,string> } */
 const imageMapping = {};
@@ -45,17 +47,19 @@ export function setupImgMapping() {
             (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) =>
                 ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapImgSrc(args[0])))
         );
-    } else { // R111
-        ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
-            const button = next(args);
-            const img = button.querySelector("img.button-image");
-            if (img?.src) {
-                const idx = img.src.indexOf("Assets/");
-                if (idx !== -1) {
-                    img.src = mapImgSrc(decodeURI(img.src.slice(idx)));
+    } else {
+        // R111
+        (async () => {
+            await sleepUntil(() => window["ElementButton"] !== undefined);
+
+            ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
+                const _args = /** @type {any[]} */ (args);
+                const image = imageMapping[Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1]))];
+                if (image) {
+                    _args[4] = { ..._args[4], image };
                 }
-            }
-            return button;
-        });
+                return next(args);
+            });
+        })();
     }
 }

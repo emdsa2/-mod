@@ -51,13 +51,13 @@ export default function () {
             .inject(func);
     } else { // R111
         ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
-            const asset = "Asset" in args[1] ? args[1].Asset : args[1];
+            const _args = /** @type {any[]} */ (args);
+            const asset = "Asset" in _args[1] ? _args[1].Asset : _args[1];
             if (AssetManager.assetIsCustomed(asset)) {
-                args[4] ??= {};
-                args[4].icons = [
-                    ...(args[4].icons ?? []),
-                    { iconSrc: hanburgerIcon, tooltipText: ModInfo.name },
-                ];
+                _args[4] = {
+                    ..._args[4],
+                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name }],
+                };
             }
             return next(args);
         });
