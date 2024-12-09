@@ -26,6 +26,12 @@ const asset = {
         {
             Name: "裙",
             PoseMapping: {
+                TapedHands: "TapedHands",
+                BackBoxTie: "BackElbowTouch",
+                BackCuffs: "BackElbowTouch",
+                BackElbowTouch: "BackElbowTouch",
+                OverTheHead: "BackElbowTouch",
+                Yoked: "BackElbowTouch",
                 AllFours: PoseType.HIDE,
                 Hogtied: PoseType.HIDE,
             },
