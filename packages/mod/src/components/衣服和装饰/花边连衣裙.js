@@ -7,7 +7,7 @@ const asset = {
     Top: 0,
     Left: 0,
     Priority: 26,
-    DefaultColor :[
+    DefaultColor: [
         "#3F3F3F",
         "#3F3F3F",
         "#9B3131",
@@ -35,7 +35,7 @@ const asset = {
                 AllFours: PoseType.HIDE,
                 Hogtied: PoseType.HIDE,
             },
-        },{
+        }, {
             Name: "袖右",
             PoseMapping: {
                 Yoked: "Yoked",
@@ -46,11 +46,11 @@ const asset = {
         },
         {
             Name: "裙边2",
-            ParentGroup : null,
+            ParentGroup: null,
         },
         {
             Name: "裙边",
-            ParentGroup : null,
+            ParentGroup: null,
         },
         {
             Name: "裙",
@@ -78,7 +78,7 @@ const asset = {
         },
         {
             Name: "蝴蝶结",
-            ParentGroup : null,
+            ParentGroup: null,
         }
     ],
 };
