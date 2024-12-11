@@ -206,21 +206,21 @@ const copyGroups = [
         },
     },
     {
-        name: "ClothLower_笨笨蛋Luzi",
-        mirror: "ClothLower",
-        description: {
-            CN: "🍔下装 2",
-            EN: "🍔Bottom 2",
-            RU: "🍔Нижняя одежда 2",
-        },
-    },
-    {
         name: "Cloth_笨笨笨蛋Luzi2",
         mirror: "Cloth",
         description: {
             CN: "🍔衣服 3",
             EN: "🍔Cloth 3",
             RU: "🍔Одежда 3",
+        },
+    },
+    {
+        name: "ClothLower_笨笨蛋Luzi",
+        mirror: "ClothLower",
+        description: {
+            CN: "🍔下装 2",
+            EN: "🍔Bottom 2",
+            RU: "🍔Нижняя одежда 2",
         },
     },
     {
@@ -248,6 +248,15 @@ const copyGroups = [
             CN: "🍔服装配饰 2",
             EN: "🍔Cloth Accessory 2",
             RU: "🍔Аксессуары одежды 2",
+        },
+    },
+    {
+        name: "ClothAccessory_笨笨笨蛋Luzi2",
+        mirror: "ClothAccessory",
+        description: {
+            CN: "🍔服装配饰 3",
+            EN: "🍔Cloth Accessory 3",
+            RU: "🍔Аксессуары одежды 3",
         },
     },
     {
