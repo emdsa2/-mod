@@ -51,7 +51,7 @@ export default function () {
             if (ActivityManager.activityIsCustom(_args[1].Activity.Name)) {
                 _args[4] = {
                     ..._args[4],
-                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name }],
+                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name, name: ModInfo.name }],
                 };
             }
             return next(args);
