@@ -56,7 +56,7 @@ export default function () {
             if (AssetManager.assetIsCustomed(asset)) {
                 _args[4] = {
                     ..._args[4],
-                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name }],
+                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name, name: ModInfo.name }],
                 };
             }
             return next(args);
