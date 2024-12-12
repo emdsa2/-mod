@@ -1,6 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
 import { ModInfo } from "@mod-utils/rollupHelper";
+import { makeTooltipIcon } from "@mod-utils/Tooltip";
 
 const hanburgerIcon = `data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 G3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAEEUlEQVRoge2Zz28bRRTHP7Pr
@@ -55,16 +56,13 @@ export default function () {
         ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
             const _args = /** @type {any[]} */ (args);
             const asset = "Asset" in _args[1] ? _args[1].Asset : _args[1];
+
+            const ret = /** @type {HTMLButtonElement} */ (next(args));
+
             if (AssetManager.assetIsCustomed(asset)) {
-                _args[4] = {
-                    ..._args[4],
-                    icons: [
-                        ...(_args[4].icons ?? []),
-                        { iconSrc: hanburgerIcon, tooltipText: ModInfo.name, name: ModInfo.name },
-                    ],
-                };
+                ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
             }
-            return next(args);
+            return /**@type {never}*/ (ret);
         });
     }
 }

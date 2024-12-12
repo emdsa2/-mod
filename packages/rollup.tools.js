@@ -7,6 +7,7 @@ const replace = require("@rollup/plugin-replace");
 const copy = require("rollup-plugin-copy");
 const terser = require("@rollup/plugin-terser");
 const alias = require("@rollup/plugin-alias");
+const css = require("rollup-plugin-import-css");
 
 /**
  * 分析相对路径，与path.relative()不同的是，返回的路径会保持"./"开头
@@ -218,6 +219,7 @@ function createRollupConfig(curDir, baseURL, modInfo, rollupSetting) {
             }),
             commonjs(),
             resolve({ browser: true }),
+            css({ inject: true }),
             ...(rollupSetting.debug ? [] : [terser({ sourceMap: true })]),
         ],
     };

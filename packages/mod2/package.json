@@ -32,6 +32,7 @@
     "bondage-club-mod-sdk": "^1.2.0",
     "rollup": "^4.22.4",
     "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-copy": "^3.5.0"
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-import-css": "^3.5.7"
   }
 }

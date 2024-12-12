@@ -1,6 +1,7 @@
 import ModManager from "@mod-utils/ModManager";
 import { ModInfo } from "@mod-utils/rollupHelper";
 import ActivityManager from "@mod-utils/ActivityManager";
+import { makeTooltipIcon } from "@mod-utils/Tooltip";
 
 const hanburgerIcon = `data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 G3RFWHRTb2Z0d2FyZQBDZWxzeXMgU3R1ZGlvIFRvb2zBp+F8AAAEEUlEQVRoge2Zz28bRRTHP7Pr
@@ -45,14 +46,13 @@ export default function () {
         ModManager.patchFunction("DialogDrawActivityMenu", {
             "return false;": `${gfunc}(x,y,width,height,Act.Name); return false;`,
         });
-    } else { // R111
+    } else {
+        // R111
         ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
             const _args = /** @type {any[]} */ (args);
+            const ret = /** @type {HTMLButtonElement} */ (next(args));
             if (ActivityManager.activityIsCustom(_args[1].Activity.Name)) {
-                _args[4] = {
-                    ..._args[4],
-                    icons: [...(_args[4].icons ?? []), { iconSrc: hanburgerIcon, tooltipText: ModInfo.name, name: ModInfo.name }],
-                };
+                ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
             }
             return next(args);
         });

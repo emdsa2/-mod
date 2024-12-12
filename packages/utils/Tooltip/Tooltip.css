@@ -1,0 +1,32 @@
+.echo-item-tooltip-wrapper {
+    --echo-img-size: min(2.5dvw,5dvh);
+    position: absolute;
+    top: 55%;
+    right: 2%;
+}
+
+.echo-item-tooltip-img {
+    width: var(--echo-img-size);
+    height: var(--echo-img-size);
+}
+
+.echo-tooltip {
+    background-color: #FFFF88;
+    color: black;
+    border: min(0.2vh, 0.1vw) solid black;
+	box-shadow: min(0.4vh, 0.2vw) min(0.4vh, 0.2vw) min(2vh, 1vw) 0 rgb(0 0 0 / 50%);
+	box-sizing: border-box;
+	padding: 0.3em 0.6em 0.3em 0.6em;
+
+    position: absolute;
+	text-align: center;
+	visibility: hidden;
+	width: fit-content;
+	text-wrap: nowrap;
+	z-index: 1;
+
+    font-size: min(3.2dvh, 1.6dvw);
+
+	transform: translateY(-50%);
+	right: calc(100% + min(1dvh, 0.5dvw));
+}
