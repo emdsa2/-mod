@@ -6,6 +6,7 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
+    DefaultColor: ["#272020", "#221717", "#221717",],
     Layer: [
         {
             Name: "袜子",
