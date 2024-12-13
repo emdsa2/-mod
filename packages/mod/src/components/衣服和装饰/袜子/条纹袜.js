@@ -26,9 +26,7 @@ const translation = {
 };
 
 export default function () {
-
-    AssetManager.addAsset(
-        "Socks",
+    AssetManager.addAsset("Socks",
         {
             ...asset,
             Left: {
@@ -39,12 +37,32 @@ export default function () {
                 LegsOpen: 0,
                 Spread: 0,
             },
-        },
-        undefined,
-        translation
+        }, undefined, translation
     );
-
-    AssetManager.addAsset("Socks", asset, null, translation);
-    AssetManager.addAsset("SocksLeft", asset, null, translation);
-    AssetManager.addAsset("SocksRight", asset, null, translation);
-}
+    AssetManager.addAsset("SocksLeft",
+        {
+            ...asset,
+            Left: {
+                BaseLower: 0,
+                Kneel: 0,
+                KneelingSpread: 30,
+                LegsClosed: 0,
+                LegsOpen: 0,
+                Spread: 0,
+            },
+        }, undefined, translation
+    );
+    AssetManager.addAsset("SocksRight",
+        {
+            ...asset,
+            Left: {
+                BaseLower: 0,
+                Kneel: 0,
+                KneelingSpread: 30,
+                LegsClosed: 0,
+                LegsOpen: 0,
+                Spread: 0,
+            },
+        }, undefined, translation
+    );
+};

@@ -97,9 +97,7 @@ const translation = {
 };
 
 export default function () {
-
-    AssetManager.addAsset(
-        "Socks",
+    AssetManager.addAsset("Socks",
         {
             ...asset,
             Left: {
@@ -110,10 +108,6 @@ export default function () {
                 LegsOpen: 0,
                 Spread: 0,
             },
-        },
-        undefined,
-        translation
+        }, undefined, translation
     );
-
-    AssetManager.addAsset("Socks", asset, null, translation);
-}
+};
