@@ -38,7 +38,7 @@ jobs:
           echo "PAGE_URL=$PAGE_URL" >> $GITHUB_ENV
 
       - name: Copy Resources
-        run: pnpm build:res
+        run: pnpm resources:rel
 
       - name: Build Pages
         run: pnpm page:all

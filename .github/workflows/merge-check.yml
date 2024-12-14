@@ -30,6 +30,9 @@ jobs:
       - name: Type-based check
         run: pnpm type-check
 
+      - name: Resources
+        run: pnpm resources:rel
+
       - name: Set page url
         run: |
           REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)
