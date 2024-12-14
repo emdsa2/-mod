@@ -10,49 +10,91 @@ const asset = {
     Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt",],
     SetPose: ["LegsClosed",],
     AllowActivePose: ["Kneel", "LegsClosed",],
-    PoseMapping: {
-        Hogtied: PoseType.HIDE,
-        AllFours: PoseType.HIDE,
-    },
     DefaultColor: ["#7F1739", "Default", "Default",],
     Layer: [
         {
             Name: "底面",
             Priority: 1,
             ParentGroup: null,
-        },
-        {
-            Name: "上裙子", PoseMapping: {
-                Kneel: "LegsClosed",
+            PoseMapping: {
+                Kneel: "Kneel",
+                LegsClosed: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
         },
-        { Name: "下裙子", },
         {
-            Name: "上拉链", PoseMapping: {
-                Kneel: "LegsClosed",
+            Name: "上裙子",
+            PoseMapping: {
+                Kneel: PoseType.DEFAULT,
+                LegsClosed: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
         },
-        { Name: "下拉链", },
         {
-            Name: "上亮面", PoseMapping: {
-                Kneel: "LegsClosed",
+            Name: "下裙子",
+            PoseMapping: {
+                Kneel: "Kneel",
+                LegsClosed: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
         },
-        { Name: "下亮面", },
         {
-            Name: "上高光", PoseMapping: {
-                Kneel: "LegsClosed",
+            Name: "上拉链",
+            PoseMapping: {
+                Kneel: PoseType.DEFAULT,
+                LegsClosed: PoseType.DEFAULT,
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
         },
-        { Name: "下高光", },
+        {
+            Name: "下拉链",
+            PoseMapping: {
+                Kneel: "Kneel",
+                LegsClosed: PoseType.DEFAULT,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
+        },
+        {
+            Name: "上亮面",
+            PoseMapping: {
+                Kneel: PoseType.DEFAULT,
+                LegsClosed: PoseType.DEFAULT,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
+        },
+        {
+            Name: "下亮面",
+            PoseMapping: {
+                Kneel: "Kneel",
+                LegsClosed: PoseType.DEFAULT,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
+        },
+        {
+            Name: "上高光",
+            PoseMapping: {
+                Kneel: PoseType.DEFAULT,
+                LegsClosed: PoseType.DEFAULT,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
+        },
+        {
+            Name: "下高光",
+            PoseMapping: {
+                Kneel: "Kneel",
+                LegsClosed: PoseType.DEFAULT,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
+        },
     ],
 };
 
