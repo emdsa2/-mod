@@ -41,6 +41,24 @@ export class AssetTools {
     }
 
     /**
+     * 绘制更新函数
+     * @param {Character} C 角色
+     * @param { {FrameTimer?:number} } data 绘制中的持久化数据
+     */
+    static drawUpdate(C, data) {
+        const FrameTime = Player.GraphicsSettings ? Math.max(30, Player.GraphicsSettings.AnimationQuality * 0.6) : 30;
+
+        const now = CommonTime();
+
+        if (!data.FrameTimer) data.FrameTimer = now + FrameTime;
+        if (data.FrameTimer < now) {
+            data.FrameTimer = now + FrameTime;
+            AnimationRequestRefreshRate(C, FrameTime);
+            AnimationRequestDraw(C);
+        }
+    }
+
+    /**
      * 支持文本标签，包括源角色、目标角色、目标角色（所有格）、物品名称
      * @returns {CommonChatTags[]}
      */

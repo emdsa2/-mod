@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { AssetTools } from "@mod-utils/AssetTools";
 import ModManager from "@mod-utils/ModManager";
 
 /** @type {CustomGroupName} */
@@ -65,21 +66,10 @@ function beforeDraw({ PersistentData, L, LayerType }) {
 function scriptDraw({ C, Item, PersistentData }) {
     const typeRecord = (Item.Property && Item.Property.TypeRecord) || {};
     const subType = typeRecord.typed || 0;
-
-    const qsetting = () =>
-        Player.GraphicsSettings ? Math.max(250, Player.GraphicsSettings.AnimationQuality * 0.5) : 250;
-
     const Data = PersistentData();
-    Data.FrameDelay = Data.FrameDelay ?? qsetting();
-    Data.FrameTimer = Data.FrameTimer ?? CommonTime() + Data.FrameDelay;
-
     Data.Draws = subType === 1;
 
-    if (Data.FrameTimer < CommonTime()) {
-        Data.FrameTimer = CommonTime() + qsetting();
-        AnimationRequestRefreshRate(C, Data.FrameDelay);
-        AnimationRequestDraw(C);
-    }
+    AssetTools.drawUpdate(C, Data);
 }
 
 const dialogs = {

@@ -11,7 +11,7 @@ import ModManager from "@mod-utils/ModManager";
  */
 
 /**
- * @typedef { { Frame?:number, FrameTimer?:number, FrameDelay?:number, Draws: boolean } } 淫纹DataType
+ * @typedef { { ArousalCheckTimer:number, NextMasturbateTime:number, Frame: number, FrameTimer:number }} 淫纹DataType
  */
 
 /** @type {CustomGroupName} */
@@ -34,33 +34,36 @@ function AssetsItemPelvis随机自慰() {
     ActivityRun(Player, Player, group, { Activity: AssetGetActivity("Female3DCG", "MasturbateHand") }, true);
 }
 
-let setMTime = 0;
-
 /**
  * @param {Character} player
+ * @param {淫纹DataType} data
  * @param {XItemProperties} property
  */
-function updateRuns(player, property) {
+function updateRuns(player, data, property) {
+    const now = CommonTime();
+    const delta = now - data.ArousalCheckTimer;
+    data.ArousalCheckTimer += delta;
+
     if (property.TypeRecord.a === 1) {
         const LSCG = /** @type {any} */ (player).LSCG;
         if (LSCG && LSCG.InjectorModule) {
             const { drugLevelMultiplier, hornyLevelMax, hornyLevel } = LSCG.InjectorModule;
-            LSCG.InjectorModule.hornyLevel = Math.min(hornyLevel + 0.05, hornyLevelMax * drugLevelMultiplier);
+            LSCG.InjectorModule.hornyLevel = Math.min(hornyLevel + 0.05 * delta / 1000, hornyLevelMax * drugLevelMultiplier);
         }
     }
 
-    const invoked = (() => {
-        const now = Date.now();
-        if (now > setMTime) {
-            setMTime =
-                now + (Math.random() * 10 + (15 * (100 - (Player.ArousalSettings?.Progress ?? 0))) / 100 + 10) * 1000;
-            return true;
-        }
-        return false;
-    })();
+    const nextTime = () => 
+        now + (Math.random() * 10 + (15 * (100 - (Player.ArousalSettings?.Progress ?? 0))) / 100 + 10) * 1000;
 
-    if (property.Masturbate && invoked && CurrentScreen == "ChatRoom") {
-        AssetsItemPelvis随机自慰();
+    if(!data.NextMasturbateTime) data.NextMasturbateTime = nextTime();
+
+    if(property.Masturbate && CurrentScreen == "ChatRoom") {
+        if(now > data.NextMasturbateTime)  {
+            data.NextMasturbateTime = nextTime();
+            AssetsItemPelvis随机自慰();
+        }
+    } else {
+        data.NextMasturbateTime = nextTime();
     }
 }
 
@@ -84,8 +87,6 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
         } else if (Content === "淫纹_Luzi淫纹强制高潮") {
             if (!!Player.ArousalSettings) Player.ArousalSettings.Progress = 100;
             ActivityOrgasmPrepare(Player);
-        } else if (Content === "淫纹_Luzi开始淫纹强制自慰") {
-            setMTime = Date.now();
         } else if (Content === "ItemPelvis淫纹_LuziSeta1") {
             DrawFlashScreen("#F347B4", 1500, 500);
         }
@@ -181,20 +182,11 @@ function dialogClickHook(Data, originalFunction) {
 
 /** @type {ExtendedItemScriptHookCallbacks.ScriptDraw<ModularItemData, 淫纹DataType>} */
 function scriptDraw(data, originalFunction, { C, Item, PersistentData }) {
-    if (C.IsPlayer()) updateRuns(C, /**@type {XItemProperties}*/ (Item.Property));
-
     const Data = PersistentData();
-    const qsetting = () =>
-        Player.GraphicsSettings ? Math.max(30, Player.GraphicsSettings.AnimationQuality * 0.6) : 30;
 
-    Data.FrameDelay = Data.FrameDelay ?? qsetting();
-    Data.FrameTimer = Data.FrameTimer ?? CommonTime() + Data.FrameDelay;
+    if (C.IsPlayer()) updateRuns(C, Data, /**@type {XItemProperties}*/ (Item.Property));
 
-    if (Data.FrameTimer < CommonTime()) {
-        Data.FrameTimer = CommonTime() + qsetting();
-        AnimationRequestRefreshRate(C, Data.FrameDelay);
-        AnimationRequestDraw(C);
-    }
+    AssetTools.drawUpdate(C, Data);
 }
 
 /** @type {ExtendedItemScriptHookCallbacks.BeforeDraw<ModularItemData, 淫纹DataType>} */
