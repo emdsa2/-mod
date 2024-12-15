@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { AssetTools } from "@mod-utils/AssetTools";
 
 /** @type { CustomAssetDefinition} */
 const asset = {
@@ -6,9 +7,13 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
+    Effect: [E.Tethered, E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
     SetPose: ["BackElbowTouch", "LegsClosed"],
+    LayerVisibility: true,
     DefaultColor: [
+        "Default",
+        "Default",
+        "Default",
         "Default",
         "Default",
         "Default",
@@ -23,11 +28,11 @@ const asset = {
         "Default",
         "Default",
         "Default",
-        "#232323", 
-        "#000000", 
+        "#232323",
+        "#000000",
         "#FFFFFF",
-        "#232323", 
-        "#000000", 
+        "#232323",
+        "#000000",
         "#FFFFFF",
     ],
     Layer: [
@@ -35,68 +40,33 @@ const asset = {
             Name: "外壳盖子关闭",
             Priority: 60,
             AllowTypes: { g: 2 },
+            Visibility: "Others",
+        },
+        {
+            Name: "外壳盖子打开下",
+            Priority: 60,
+            AllowTypes: { g: 3 },
+            Visibility: "AllExceptPlayerDialog",
+        },
+        {
+            Name: "外壳盖子打开上",
+            Priority: 60,
+            AllowTypes: { g: 4 },
+            Visibility: "AllExceptPlayerDialog",
+        },
+        {
+            Name: "盖子关闭边缘",
+            Priority: 59,
+            AllowTypes: { g: [2, 3, 4] },
             Alpha: [
                 {
-                    Group: [
-                        "HairFront",
-                        "HairBack",
-                        "Bracelet",
-                        "Cloth",
-                        "ClothAccessory",
-                        "ClothLower",
-                        "Corset",
-                        "Fluids",
-                        "Garters",
-                        "Gloves",
-                        "HairAccessory1",
-                        "HairAccessory2",
-                        "HairAccessory3",
-                        "Hat",
-                        "ItemArms",
-                        "ItemBreast",
-                        "ItemButt",
-                        "ItemHandheld",
-                        "ItemHead",
-                        "ItemHood",
-                        "ItemLegs",
-                        "ItemMisc",
-                        "ItemNeck",
-                        "ItemNose",
-                        "ItemPelvis",
-                        "ItemTorso",
-                        "LeftAnklet",
-                        "LeftHand",
-                        "Mask",
-                        "Mouth",
-                        "Nipples",
-                        "Panties",
-                        "RightAnklet",
-                        "RightHand",
-                        "Shoes",
-                        "Socks",
-                        "SocksLeft",
-                        "SocksRight",
-                        "Suit",
-                        "SuitLower",
-                        "TailStraps",
-                        "Wings",
-                        "Bra",
-                        "HairAccessory1",
-                        "HairAccessory2",
-                        "HairAccessory3",
-                        "Cloth_笨笨笨蛋Luzi2",
-                        "Cloth_笨笨蛋Luzi",
-                        "ClothLower_笨笨笨蛋Luzi2",
-                        "ClothLower_笨笨蛋Luzi",
-                        "额外头发_Luzi",
-                        "新后发_Luzi",
-                        "新前发_Luzi",
-                    ],
                     Masks: [
-                        [0, -100, 500, 150], //上
-                        [0, 695, 500, 120], //下
-                        [0, 0, 160, 1000], //左
-                        [340, 0, 135, 1000], //右
+                        [0, 0, 500, 43], //上
+                        [0, 957, 500, 43], //下
+                        [0, 0, 155, 1000], //左
+                        [345, 0, 155, 1000], //右
+                        AssetUpperOverflowAlpha,
+                        AssetLowerOverflowAlpha,
                     ],
                 },
             ],
@@ -137,18 +107,22 @@ const asset = {
         {
             Name: "内衬",
             Priority: 24,
+            AllowTypes: { l: 0 },
         },
         {
             Name: "圆环",
             Priority: 25,
+            AllowTypes: { l: 0 },
         },
         {
             Name: "绳子",
             Priority: 25,
+            AllowTypes: { l: 0 },
         },
         {
             Name: "拉链",
             Priority: 24,
+            AllowTypes: { l: 0 },
         },
         {
             Name: "拘束带上",
@@ -163,31 +137,37 @@ const asset = {
         {
             Name: "乳胶上底色",
             Priority: 23,
+            AllowTypes: { l: 0 },
             ParentGroup: "BodyUpper",
         },
         {
             Name: "乳胶上阴影",
             Priority: 23,
+            AllowTypes: { l: 0 },
             ParentGroup: "BodyUpper",
         },
         {
             Name: "乳胶上高光",
             Priority: 23,
+            AllowTypes: { l: 0 },
             ParentGroup: "BodyUpper",
         },
         {
             Name: "乳胶下底色",
             Priority: 23,
+            AllowTypes: { l: 0 },
             ParentGroup: "BodyLower",
         },
         {
             Name: "乳胶下阴影",
             Priority: 23,
+            AllowTypes: { l: 0 },
             ParentGroup: "BodyLower",
         },
         {
             Name: "乳胶下高光",
             Priority: 23,
+            AllowTypes: { l: 0 },
             ParentGroup: "BodyLower",
         },
     ],
@@ -197,12 +177,52 @@ const asset = {
 const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
+    DrawImages: true,
     Modules: [
         {
             Name: "盖子",
-            DrawImages: false,
             Key: "g",
-            Options: [{}, {}, {}],
+            Options: [
+                {},
+                {},
+                { Property: { Effect: [E.BlindHeavy, E.GagLight, E.BlockWardrobe, E.Freeze, E.Enclose] } },
+                {
+                    Property: {
+                        Block: AssetTools.AllItemGroups([
+                            "ItemDevices",
+                            "ItemPelvis",
+                            "ItemVulva",
+                            "ItemVulvaPiercings",
+                            "ItemButt",
+                            "ItemLegs",
+                        ]),
+                        Effect: [E.BlindHeavy, E.GagLight, E.BlockWardrobe, E.Freeze],
+                    },
+                },
+                {
+                    Property: {
+                        Block: AssetTools.AllItemGroups([
+                            "ItemDevices",
+                            "ItemHead",
+                            "ItemHood",
+                            "ItemEars",
+                            "ItemMouth",
+                            "ItemMouth2",
+                            "ItemMouth3",
+                            "ItemNeck",
+                            "ItemNose",
+                            "ItemNeckAccessories",
+                            "ItemNeckRestraints",
+                        ]),
+                        Effect: [E.BlockWardrobe, E.Freeze],
+                    },
+                },
+            ],
+        },
+        {
+            Name: "乳胶睡袋",
+            Key: "l",
+            Options: [{}, {}],
         },
     ],
 };
@@ -217,10 +237,20 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong0: "无",
         ItemDevices乳胶带床_LuziOptiong1: "添加盖子",
         ItemDevices乳胶带床_LuziOptiong2: "盖上盖子",
+        ItemDevices乳胶带床_LuziOptiong3: "露出腹部",
+        ItemDevices乳胶带床_LuziOptiong4: "露出头部",
 
         ItemDevices乳胶带床_LuziSetg0: "SourceCharacter去掉了DestinationCharacter盖子",
         ItemDevices乳胶带床_LuziSetg1: "SourceCharacter加上了DestinationCharacter盖子",
         ItemDevices乳胶带床_LuziSetg2: "SourceCharacter盖上了DestinationCharacter盖子",
+
+        ItemDevices乳胶带床_LuziSelect乳胶衣: "选择使用默认乳胶衣",
+        ItemDevices乳胶带床_LuziModule乳胶衣: "默认乳胶衣",
+        ItemDevices乳胶带床_LuziOptionl0: "使用",
+        ItemDevices乳胶带床_LuziOptionl1: "不使用",
+
+        ItemDevices乳胶带床_LuziSetl0: "SourceCharacter给TargetCharacter穿上了乳胶衣",
+        ItemDevices乳胶带床_LuziSetl1: "SourceCharacter脱掉了TargetCharacter的乳胶衣",
     },
     EN: {
         ItemDevices乳胶带床_LuziSelect: "Select Latex Bed Configuration",
@@ -235,6 +265,14 @@ const dialog = {
         ItemDevices乳胶带床_LuziSetg0: "SourceCharacter removed DestinationCharacter cover",
         ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added DestinationCharacter cover",
         ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter cover",
+
+        ItemDevices乳胶带床_LuziSelect乳胶睡袋: "Select Default Latex Sleep Bag",
+        ItemDevices乳胶带床_LuziModule乳胶睡袋: "Latex Sleep Bag",
+        ItemDevices乳胶带床_LuziOptionl0: "Use",
+        ItemDevices乳胶带床_LuziOptionl1: "Don't Use",
+
+        ItemDevices乳胶带床_LuziSetl0: "SourceCharacter put TargetCharacter in Latex Sleep Bag",
+        ItemDevices乳胶带床_LuziSetl1: "SourceCharacter removed Latex Sleep Bag from TargetCharacter ",
     },
     UA: {
         ItemDevices乳胶带床_LuziSelect: "Виберіть Конфігурацію Латексного Ліжка",
