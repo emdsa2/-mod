@@ -9,17 +9,15 @@ const asset = {
     Top: -220,
     Left: 0,
     Extended: true,
-    DefaultColor: ["#111111","#111111","#111111","#111111","#5e5c5c","#828282","#f1c4c4","#A9AFAF",],
+    DefaultColor: ["#111111", "#111111", "#111111", "#111111", "#5e5c5c", "#828282", "#f1c4c4", "#A9AFAF"],
     Layer: [
         {
             Name: "帽尖",
-            Priority: 60,
+            Priority: 55,
             AllowTypes: { z: 1 },
             Alpha: [
                 {
-                    Group: [
-                        "HairBack",
-                    ],
+                    Group: ["HairBack"],
                     Masks: [
                         [300, 0, 200, 100],
                         [300, 100, 200, 40],
@@ -36,33 +34,44 @@ const asset = {
         },
         {
             Name: "帽尖2",
-            Priority: 60,
+            Priority: 55,
             AllowTypes: { z: 0 },
             CopyLayerColor: "帽尖",
         },
         {
             Name: "帽檐",
-            Priority: 62,
+            Priority: 56,
+            Alpha: [
+                {
+                    Group: ["HairAccessory1", "HairAccessory2", "HairAccessory3"],
+                    Masks: [
+                        [161, 0, 254, 59],
+                        [173, 59, 242, 7],
+                        [186, 65, 229, 10],
+                        [265, 74, 150, 69],
+                    ],
+                },
+            ],
         },
         {
             Name: "帽里",
-            Priority: 1,
+            Priority: 3,
         },
         {
             Name: "帽里装饰",
-            Priority: 2,
+            Priority: 3,
         },
         {
             Name: "蝴蝶结",
-            Priority: 63,
+            Priority: 57,
         },
         {
             Name: "绑带",
-            Priority: 61,
+            Priority: 55,
         },
         {
             Name: "吊坠",
-            Priority: 59,
+            Priority: 55,
         },
     ],
 };

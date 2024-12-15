@@ -13,7 +13,7 @@ const assets = {
             Layer: [
                 {
                     Name: "Band",
-                    Priority: 26,
+                    Priority: 34,
                     PoseMapping: {
                         TapedHands: PoseType.DEFAULT,
                         Yoked: PoseType.DEFAULT,
@@ -27,7 +27,7 @@ const assets = {
                 },
                 {
                     Name: "Shawl",
-                    Priority: 26,
+                    Priority: 34,
                     PoseMapping: {
                         TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
@@ -51,67 +51,38 @@ const assets = {
             Left: 0,
             Prerequisite: ["HasBreasts"],
             ParentGroup: "BodyUpper",
-            DefaultColor: [
-                "#490707",
-                "#490707",
-                "#FFFFFF",
-                "#FFFFFF",
-            ],
+            DefaultColor: ["#490707", "#490707", "#FFFFFF", "#FFFFFF"],
             Layer: [
                 {
                     Name: "衣左",
-                    Priority: 26,
+                    Priority: 34,
                     PoseMapping: {
-                        TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
                         OverTheHead: "OverTheHead",
-                        BackBoxTie: PoseType.DEFAULT,
-                        BackElbowTouch: PoseType.DEFAULT,
-                        BackCuffs: PoseType.DEFAULT,
-                        AllFours: PoseType.DEFAULT,
-                        Hogtied: PoseType.DEFAULT,
                     },
                 },
                 {
                     Name: "衣右",
-                    Priority: 26,
+                    Priority: 34,
                     PoseMapping: {
-                        TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
                         OverTheHead: "OverTheHead",
-                        BackBoxTie: PoseType.DEFAULT,
-                        BackElbowTouch: PoseType.DEFAULT,
-                        BackCuffs: PoseType.DEFAULT,
-                        AllFours: PoseType.DEFAULT,
-                        Hogtied: PoseType.DEFAULT,
                     },
                 },
                 {
                     Name: "绒左",
-                    Priority: 26,
+                    Priority: 34,
                     PoseMapping: {
-                        TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
                         OverTheHead: "OverTheHead",
-                        BackBoxTie: PoseType.DEFAULT,
-                        BackElbowTouch: PoseType.DEFAULT,
-                        BackCuffs: PoseType.DEFAULT,
-                        AllFours: PoseType.DEFAULT,
-                        Hogtied: PoseType.DEFAULT,
                     },
                 },
                 {
                     Name: "绒右",
-                    Priority: 26,
+                    Priority: 34,
                     PoseMapping: {
-                        TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
                         OverTheHead: "OverTheHead",
-                        BackBoxTie: PoseType.DEFAULT,
-                        BackElbowTouch: PoseType.DEFAULT,
-                        BackCuffs: PoseType.DEFAULT,
-                        AllFours: PoseType.DEFAULT,
-                        Hogtied: PoseType.DEFAULT,
                     },
                 },
             ],
@@ -124,16 +95,11 @@ const assets = {
             Left: 0,
             Prerequisite: ["HasBreasts"],
             ParentGroup: "BodyUpper",
-            DefaultColor: [
-                "#490707",
-                "#490707",
-                "#FFFFFF",
-                "#FFFFFF",
-            ],
+            DefaultColor: ["#490707", "#490707", "#FFFFFF", "#FFFFFF"],
             Layer: [
                 {
                     Name: "衣左",
-                    Priority: 26,
+                    Priority: 32,
                     PoseMapping: {
                         TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
@@ -147,7 +113,7 @@ const assets = {
                 },
                 {
                     Name: "衣右",
-                    Priority: 26,
+                    Priority: 32,
                     PoseMapping: {
                         TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
@@ -161,7 +127,7 @@ const assets = {
                 },
                 {
                     Name: "绒左",
-                    Priority: 26,
+                    Priority: 32,
                     PoseMapping: {
                         TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
@@ -175,7 +141,7 @@ const assets = {
                 },
                 {
                     Name: "绒右",
-                    Priority: 26,
+                    Priority: 32,
                     PoseMapping: {
                         TapedHands: PoseType.DEFAULT,
                         Yoked: "Yoked",
