@@ -1,7 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
-const asset =         {
+const asset = {
     Name: "拖鞋_Luzi",
     Random: false,
     Top: 0,
@@ -14,7 +14,7 @@ const asset =         {
         Hogtied: "Hide",
         AllFours: "Hide",
     },
-    Priority: 18,
+    Priority: 23,
 };
 
 const translations = {
