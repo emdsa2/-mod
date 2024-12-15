@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { AssetTools } from "@mod-utils/AssetTools";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -46,48 +47,40 @@ const translations = {
     },
     EN: {
         ItemHandheld: {
-            大号拉珠: "大号拉珠",
+            大号拉珠: "Large beads",
         },
         ItemMouth: {
-            大号拉珠: "大号拉珠",
+            大号拉珠: "Large beads",
         },
     },
     RU: {
         ItemHandheld: {
-            大号拉珠: "大号拉珠",
+            大号拉珠: "Большие бусины",
         },
         ItemMouth: {
-            大号拉珠: "大号拉珠",
+            大号拉珠: "Большие бусины",
         },
     },
 };
 
-
-
 /** @type { CustomAssetDefinition } */
 const assetButt = {
     Name: "大号拉珠",
-	Time: 14,
-	Prerequisite: ["AccessButt"],
-	Effect: [E.IsPlugged],
-	ExpressionTrigger: [{ Name: "Low", Group: "Blush", Timer: 10 }],
-	Extended: true,
-	Activity: "MasturbateItem",
-	CreateLayerTypes: ["typed"], 
-    Layer: [
-    ]
+    Time: 14,
+    Prerequisite: ["AccessButt"],
+    Effect: [E.IsPlugged],
+    ExpressionTrigger: [{ Name: "Low", Group: "Blush", Timer: 10 }],
+    Extended: true,
+    Activity: "MasturbateItem",
+    CreateLayerTypes: ["typed"],
+    Layer: [],
 };
 
 /** @type {AssetArchetypeConfig} */
 const extendedButt = {
     Archetype: ExtendedArchetype.TYPED,
-    ChatTags: [
-        CommonChatTags.SOURCE_CHAR,
-        CommonChatTags.DEST_CHAR,
-        CommonChatTags.ASSET_NAME,
-    ],
-    Options: [
-    ],
+    ChatTags: AssetTools.CommonChatTags(),
+    Options: [],
     DrawImages: false,
     ChatSetting: TypedItemChatSetting.SILENT,
     ScriptHooks: {
@@ -98,11 +91,11 @@ const extendedButt = {
 /** @type {Translation.Dialog} */
 const dialogButt = {
     CN: {
-        ItemButt大号拉珠SelectBase: "选择塞入珠子的数量",
+        ItemButt大号拉珠Select: "选择塞入珠子的数量",
     },
     EN: {
-        ItemButt大号拉珠SelectBase: "Select the number",
-    }
+        ItemButt大号拉珠Select: "Select number of beads inserted",
+    },
 };
 
 const translationsButt = {
@@ -112,87 +105,85 @@ const translationsButt = {
 
 /** @type {ExtendedItemScriptHookCallbacks.PublishAction<TypedItemData, TypedItemOption>} */
 function InventoryItemButtLongAnalBeadsPublishActionHook(data, originalFunction, C, item, newOption, previousOption) {
-	const beadsOld = previousOption.Property.InsertedBeads || 1;
-	const beadsNew = newOption.Property.InsertedBeads || 1;
-	const beadsChange = beadsNew - beadsOld;
-	if (beadsChange === 0 || data === null) {
-		return;
-	}
+    const beadsOld = previousOption.Property.InsertedBeads || 1;
+    const beadsNew = newOption.Property.InsertedBeads || 1;
+    const beadsChange = beadsNew - beadsOld;
+    if (beadsChange === 0 || data === null) {
+        return;
+    }
 
-	/** @type {ExtendedItemChatData<TypedItemOption>} */
-	const chatData = {
-		C,
-		previousOption,
-		newOption,
-		previousIndex: data.options.indexOf(previousOption),
-		newIndex: data.options.indexOf(newOption),
-	};
+    /** @type {ExtendedItemChatData<TypedItemOption>} */
+    const chatData = {
+        C,
+        previousOption,
+        newOption,
+        previousIndex: data.options.indexOf(previousOption),
+        newIndex: data.options.indexOf(newOption),
+    };
 
-    /*@ts-ignore*/
-	const dictionary = ExtendedItemBuildChatMessageDictionary(chatData, data, item).focusGroup(item.Asset.Group.Name)
-		.build();
-	dictionary.push(
-		{ ActivityName: "MasturbateItem" },
-		{ ActivityCounter: Math.abs(beadsChange) },
-	);
+    const dictionary = ExtendedItemBuildChatMessageDictionary(chatData, data, item)
+        .focusGroup(/** @type {AssetGroupItemName}*/ (item.Asset.Group.Name))
+        .build();
+    dictionary.push({ ActivityName: "MasturbateItem" }, { ActivityCounter: Math.abs(beadsChange) });
 
-	const Prefix = (typeof data.dialogPrefix.chat === "function") ? data.dialogPrefix.chat(chatData) : data.dialogPrefix.chat;
-	const Suffix = beadsChange > 0 ? "Increase" : "Decrease";
-	ChatRoomPublishCustomAction(`${Prefix}${Math.abs(beadsChange)}${Suffix}`, true, dictionary);
+    const Prefix =
+        typeof data.dialogPrefix.chat === "function" ? data.dialogPrefix.chat(chatData) : data.dialogPrefix.chat;
+    const Suffix = beadsChange > 0 ? "Increase" : "Decrease";
+    ChatRoomPublishCustomAction(`${Prefix}${Math.abs(beadsChange)}${Suffix}`, true, dictionary);
 
-	if (C.IsPlayer()) {
-		// The Player pulls beads from her own butt
-		for (let i = beadsChange; i < 0; i++) {
-			ActivityArousalItem(C, C, item.Asset);
-		}
-	}
+    if (C.IsPlayer()) {
+        // The Player pulls beads from her own butt
+        for (let i = beadsChange; i < 0; i++) {
+            ActivityArousalItem(C, C, item.Asset);
+        }
+    }
 }
 
-function AddAssetButt()
-{
+function AddAssetButt() {
     extendedButt["Options"] = [];
-    for(var i = 0; i < 9 ; i++)
-    {
-        assetButt["Layer"][i]  = {
-            Name: (i+1) + "", 
-            Top : i * (-44),
+
+    /**  @type {CustomImageMapping} */
+    const imageMappings = {};
+
+    for (let i = 0; i < 9; i++) {
+        const bcount = i + 1;
+
+        assetButt["Layer"][i] = {
+            Name: `${bcount}`,
+            Top: i * -44,
             AllowTypes: { typed: i },
-            Alpha : [{ Group: ["ItemButt",],
-                Masks: [
-                    [220, 0, 60, 532], 
-                ],
-            }]
+            Alpha: [{ Group: ["ItemButt"], Masks: [[220, 0, 60, 532]] }],
         };
 
-        extendedButt["Options"][i]  = {
-            Name: (i+1) + "", 
-            Property: { InsertedBeads: i + 1 },
-            
+        extendedButt["Options"][i] = {
+            Name: `${bcount}`,
+            Property: { InsertedBeads: bcount },
         };
 
-        var key = "Assets/Female3DCG/ItemButt/大号拉珠_typed" + i + "_" + (i+1) + ".png";
+        imageMappings[`Assets/Female3DCG/ItemButt/大号拉珠_typed${i}_${bcount}.png`] =
+            "Assets/Female3DCG/ItemButt/大号拉珠.png";
 
-        /**  @type {CustomImageMapping} */
-        var pair = {};
-        pair[key] = "Assets/Female3DCG/ItemButt/大号拉珠.png";
-        AssetManager.addImageMapping(pair);
+        dialogButt["CN"][`ItemButt大号拉珠${bcount}`] = `${bcount}个珠子`;
+        dialogButt["CN"][
+            `ItemButt大号拉珠Set${bcount}Increase`
+        ] = `SourceCharacter抓住AssetName，将${bcount}个珠子塞入TargetCharacter的肛门.`;
+        dialogButt["CN"][
+            `ItemButt大号拉珠Set${bcount}Decrease`
+        ] = `SourceCharacter抓住AssetName，将${bcount}个珠子拉出TargetCharacter的肛门.`;
 
-        dialogButt["CN"]["ItemButt大号拉珠" + (i + 1)] = (i + 1)+ "个珠子";
-        dialogButt["CN"]["ItemButt大号拉珠Set" + (i + 1) + "Increase"] = "SourceCharacter将" + (i + 1) + "个珠子塞入TargetCharacter的肛门.";
-        dialogButt["CN"]["ItemButt大号拉珠Set" + (i + 1) + "Decrease"] = "SourceCharacter将" + (i + 1) + "个珠子拉出TargetCharacter的肛门.";
+        const bead = i === 0 ? "Bead" : "Beads";
+        const lower_bead = bead.toLowerCase();
 
-        if ( i == 0)
-        {
-            dialogButt["EN"]["ItemButt大号拉珠" + (i + 1)] = (i + 1)+ " Bead";
-            dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Increase"] = "SourceCharacter inserts " + (i + 1) + " bead in DestinationCharacter butt.";
-            dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Decrease"] = "SourceCharacter pulls " + (i + 1) + " bead from DestinationCharacter butt.";
-        }else{            
-            dialogButt["EN"]["ItemButt大号拉珠" + (i + 1)] = (i + 1)+ " Beads";            
-            dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Increase"] = "SourceCharacter inserts " + (i + 1) + " beads in DestinationCharacter butt.";
-            dialogButt["EN"]["ItemButt大号拉珠Set" + (i + 1) + "Decrease"] = "SourceCharacter pulls " + (i + 1) + " beads from DestinationCharacter butt.";
-        }
-
+        dialogButt["EN"][`ItemButt大号拉珠${bcount}`] = `${bcount} ${bead}`;
+        dialogButt["EN"][
+            `ItemButt大号拉珠Set${bcount}Increase`
+        ] = `SourceCharacter grabs AssetName, and inserts ${bcount} ${lower_bead} in DestinationCharacter butt.`;
+        dialogButt["EN"][
+            `ItemButt大号拉珠Set${bcount}Decrease`
+        ] = `SourceCharacter grabs AssetName, and pulls ${bcount} ${lower_bead} from DestinationCharacter butt.`;
     }
+
+    AssetManager.addImageMapping(imageMappings);
     AssetManager.addAsset("ItemButt", assetButt, extendedButt, translationsButt);
     AssetManager.addCustomDialog(dialogButt);
 }

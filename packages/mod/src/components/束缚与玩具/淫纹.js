@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { AssetTools } from "@mod-utils/AssetTools";
 import ModManager from "@mod-utils/ModManager";
 
 /**
@@ -277,7 +278,7 @@ const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
     DrawImages: false,
-    ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.DEST_CHAR, CommonChatTags.ASSET_NAME],
+    ChatTags: AssetTools.CommonChatTags(),
     Modules: [
         { Name: "样式", Key: "t", Options: [{}, {}, {}, {}], DrawImages: true },
         {

@@ -30,8 +30,7 @@ export function addCustomDialog(dialog) {
  * @returns { string | undefined } 对话翻译
  */
 function getCustomDialog(language, dialog) {
-    const lang_repo = customDialog[language] || customDialog["CN"] || {};
-    return lang_repo[dialog];
+    return customDialog[language]?.[dialog] || customDialog["CN"]?.[dialog];
 }
 
 export function setupCustomDialog() {

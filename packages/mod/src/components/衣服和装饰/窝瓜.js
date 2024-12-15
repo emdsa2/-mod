@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { AssetTools } from "@mod-utils/AssetTools";
 import { Path } from "@mod-utils/path";
 
 /** @type {CustomAssetDefinition} */
@@ -39,7 +40,7 @@ const asset = {
 /** @type {AssetArchetypeConfig} */
 const extended = {
     Archetype: ExtendedArchetype.TYPED,
-    ChatTags: [CommonChatTags.SOURCE_CHAR, CommonChatTags.TARGET_CHAR],
+    ChatTags: AssetTools.CommonChatTags(),
     DrawImages: false,
     Options: [
         {
@@ -86,22 +87,22 @@ const dialog = {
         ItemDevices窝瓜_LuziSelect: "选择窝配置",
         ItemDevices窝瓜_Luzi没盖子: "推开盖子",
         ItemDevices窝瓜_Luzi有盖子: "盖上盖子",
-        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter推开了TargetCharacter的盖子",
-        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter为TargetCharacter盖上了盖子",
+        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter推开了DestinationCharacterAssetName的盖子",
+        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter为DestinationCharacterAssetName盖上了盖子",
     },
     EN: {
         ItemDevices窝瓜_LuziSelect: "Select Configuration",
         ItemDevices窝瓜_Luzi没盖子: "Push open the lid",
         ItemDevices窝瓜_Luzi有盖子: "Close the lid",
-        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter pushes open the lid of TargetCharacter.",
-        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter covers TargetCharacter with a lid.",
+        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter pushed open the lid of DestinationCharacter AssetName.",
+        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter closed the lid of DestinationCharacter AssetName.",
     },
     RU: {
         ItemDevices窝瓜_LuziSelect: "Выбрать конфигурацию",
         ItemDevices窝瓜_Luzi没盖子: "Открыть крышку",
         ItemDevices窝瓜_Luzi有盖子: "Закрыть крышку",
-        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter открыл крышку у DestinationCharacter.",
-        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter закрыл крышку у DestinationCharacter.",
+        ItemDevices窝瓜_LuziSet没盖子: "SourceCharacter открыл крышку DestinationCharacter AssetName.",
+        ItemDevices窝瓜_LuziSet有盖子: "SourceCharacter закрыл крышку DestinationCharacter AssetName.",
     },
 };
 

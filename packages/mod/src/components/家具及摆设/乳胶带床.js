@@ -178,6 +178,7 @@ const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
     DrawImages: true,
+    ChatTags: AssetTools.CommonChatTags(),
     Modules: [
         {
             Name: "盖子",
@@ -240,9 +241,11 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong3: "露出腹部",
         ItemDevices乳胶带床_LuziOptiong4: "露出头部",
 
-        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter去掉了DestinationCharacter盖子",
-        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter加上了DestinationCharacter盖子",
-        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter盖上了DestinationCharacter盖子",
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter去掉了DestinationCharacterAssetName盖子",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter为DestinationCharacterAssetName添加了盖子",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter关上了DestinationCharacterAssetName的盖子",
+        ItemDevices乳胶带床_LuziSetg3: "SourceCharacter关上了DestinationCharacterAssetName的盖子，但是打开了腹部的盖子",
+        ItemDevices乳胶带床_LuziSetg4: "SourceCharacter关上了DestinationCharacterAssetName的盖子，但是打开了头部的盖子",
 
         ItemDevices乳胶带床_LuziSelect乳胶衣: "选择使用默认乳胶衣",
         ItemDevices乳胶带床_LuziModule乳胶衣: "默认乳胶衣",
@@ -261,10 +264,16 @@ const dialog = {
         ItemDevices乳胶带床_LuziOptiong0: "None",
         ItemDevices乳胶带床_LuziOptiong1: "Add Cover",
         ItemDevices乳胶带床_LuziOptiong2: "Close Cover",
+        ItemDevices乳胶带床_LuziOptiong3: "Expose Belly",
+        ItemDevices乳胶带床_LuziOptiong4: "Expose Head",
 
-        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter removed DestinationCharacter cover",
-        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added DestinationCharacter cover",
-        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter cover",
+        ItemDevices乳胶带床_LuziSetg0: "SourceCharacter removed DestinationCharacter AssetName Cover",
+        ItemDevices乳胶带床_LuziSetg1: "SourceCharacter added Cover to DestinationCharacter AssetName",
+        ItemDevices乳胶带床_LuziSetg2: "SourceCharacter closed DestinationCharacter AssetName Cover",
+        ItemDevices乳胶带床_LuziSetg3:
+            "SourceCharacter closed DestinationCharacter AssetName Cover, but opened Belly Cover",
+        ItemDevices乳胶带床_LuziSetg4:
+            "SourceCharacter closed DestinationCharacter AssetName Cover, but opened Head Cover",
 
         ItemDevices乳胶带床_LuziSelect乳胶睡袋: "Select Default Latex Sleep Bag",
         ItemDevices乳胶带床_LuziModule乳胶睡袋: "Latex Sleep Bag",
