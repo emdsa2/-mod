@@ -247,8 +247,8 @@ const dialog = {
         ItemDevices乳胶带床_LuziSetg3: "SourceCharacter关上了DestinationCharacterAssetName的盖子，但是打开了腹部的盖子",
         ItemDevices乳胶带床_LuziSetg4: "SourceCharacter关上了DestinationCharacterAssetName的盖子，但是打开了头部的盖子",
 
-        ItemDevices乳胶带床_LuziSelect乳胶衣: "选择使用默认乳胶衣",
-        ItemDevices乳胶带床_LuziModule乳胶衣: "默认乳胶衣",
+        ItemDevices乳胶带床_LuziSelect乳胶睡袋: "选择使用默认乳胶衣",
+        ItemDevices乳胶带床_LuziModule乳胶睡袋: "默认乳胶衣",
         ItemDevices乳胶带床_LuziOptionl0: "使用",
         ItemDevices乳胶带床_LuziOptionl1: "不使用",
 
