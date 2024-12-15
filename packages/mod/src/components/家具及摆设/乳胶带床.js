@@ -10,6 +10,7 @@ const asset = {
     Effect: [E.Tethered, E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed],
     SetPose: ["BackElbowTouch", "LegsClosed"],
     LayerVisibility: true,
+    Difficulty: 25,
     DefaultColor: [
         "Default",
         "Default",
@@ -38,25 +39,25 @@ const asset = {
     Layer: [
         {
             Name: "外壳盖子关闭",
-            Priority: 60,
+            Priority: 63,
             AllowTypes: { g: 2 },
             Visibility: "Others",
         },
         {
             Name: "外壳盖子打开下",
-            Priority: 60,
+            Priority: 63,
             AllowTypes: { g: 3 },
             Visibility: "AllExceptPlayerDialog",
         },
         {
             Name: "外壳盖子打开上",
-            Priority: 60,
+            Priority: 63,
             AllowTypes: { g: 4 },
             Visibility: "AllExceptPlayerDialog",
         },
         {
             Name: "盖子关闭边缘",
-            Priority: 59,
+            Priority: 62,
             AllowTypes: { g: [2, 3, 4] },
             Alpha: [
                 {
