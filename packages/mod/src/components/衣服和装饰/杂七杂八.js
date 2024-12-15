@@ -69,6 +69,10 @@ const assets = {
             ParentGroup: null,
             DefaultColor: ["#E975A0"],
             Extended: true,
+            PoseMapping: {
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            },
             Layer: clothLCSetting.map((layer, index) => ({
                 Name: layer.Name,
                 AllowColorize: layer.AllowColorize ?? true,

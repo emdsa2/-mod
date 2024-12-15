@@ -230,6 +230,10 @@ const asset = {
     DynamicBeforeDraw: true,
     ParentGroup: null,
     DefaultColor: ["#EA3E74"],
+    PoseMapping: {
+        Hogtied: "Hide",
+        AllFours: "Hide",
+    },
     Layer: [
         {
             Name: "淫纹",
