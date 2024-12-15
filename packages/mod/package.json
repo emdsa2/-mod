@@ -1,47 +1,47 @@
 {
-  "name": "mod",
-  "version": "0.2.8",
-  "scripts": {
-    "type-check": "tsc --noEmit --allowJs --checkJs -p jsconfig.json",
-    "build": "rollup -c rollup.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/emdsa2/-mod"
-  },
-  "rollupSetting": {
-    "output": "mod.js",
-    "input": "src/main.js",
-    "assets": {
-      "location": "../../resources",
-      "assets": [
-        "Assets",
-        "Audio",
-        "Screens"
-      ]
+    "name": "mod",
+    "version": "0.2.9",
+    "scripts": {
+        "type-check": "tsc --noEmit --allowJs --checkJs -p jsconfig.json",
+        "build": "rollup -c rollup.config.js"
     },
-    "componentDir": "src/components",
-    "loaderName": "BC_Cloth2.user.js",
-    "beta": {
-      "output": "mod-beta.js",
-      "loaderName": "BC_Cloth2-beta.user.js"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/emdsa2/-mod"
+    },
+    "rollupSetting": {
+        "output": "mod.js",
+        "input": "src/main.js",
+        "assets": {
+            "location": "../../resources",
+            "assets": [
+                "Assets",
+                "Audio",
+                "Screens"
+            ]
+        },
+        "componentDir": "src/components",
+        "loaderName": "BC_Cloth2.user.js",
+        "beta": {
+            "output": "mod-beta.js",
+            "loaderName": "BC_Cloth2-beta.user.js"
+        }
+    },
+    "displayName": "服装拓展",
+    "modFullName": "服装拓展完整名",
+    "author": "Echo",
+    "description": "服装拓展加载脚本描述",
+    "devDependencies": {
+        "@rollup/plugin-alias": "^5.1.1",
+        "@rollup/plugin-commonjs": "^25.0.8",
+        "@rollup/plugin-node-resolve": "^15.2.4",
+        "@rollup/plugin-replace": "^5.0.7",
+        "@rollup/plugin-terser": "^0.4.4",
+        "bc-stubs": "^109.0.0",
+        "bondage-club-mod-sdk": "^1.2.0",
+        "rollup": "^4.22.4",
+        "rollup-plugin-cleanup": "^3.2.1",
+        "rollup-plugin-copy": "^3.5.0",
+        "rollup-plugin-import-css": "^3.5.7"
     }
-  },
-  "displayName": "服装拓展",
-  "modFullName": "服装拓展完整名",
-  "author": "Echo",
-  "description": "服装拓展加载脚本描述",
-  "devDependencies": {
-    "@rollup/plugin-alias": "^5.1.1",
-    "@rollup/plugin-commonjs": "^25.0.8",
-    "@rollup/plugin-node-resolve": "^15.2.4",
-    "@rollup/plugin-replace": "^5.0.7",
-    "@rollup/plugin-terser": "^0.4.4",
-    "bc-stubs": "^109.0.0",
-    "bondage-club-mod-sdk": "^1.2.0",
-    "rollup": "^4.22.4",
-    "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-import-css": "^3.5.7"
-  }
 }
