@@ -1,4 +1,4 @@
-import { loadAsset, loadExtendedConfig, modifyAsset } from "./assetUtils";
+import { loadAsset, loadExtendedConfig, modifyAsset, modifyGroup } from "./assetUtils";
 import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
@@ -41,13 +41,22 @@ export default class AssetManager {
     }
 
     /**
-     *
+     * 调整物品属性（谨慎使用）
      * @param { CustomGroupName } group 身体组名字
      * @param {string} asset 物品名字
      * @param { FuncWork<[Mutable<AssetGroup>, Mutable<Asset>]> } work
      */
     static modifyAsset(group, asset, work) {
         modifyAsset(group, asset, work);
+    }
+
+    /**
+     * 调整身体组属性（谨慎使用）
+     * @param {CustomGroupName} group
+     * @param {FuncWork<[Mutable<AssetGroup>]>} work
+     */
+    static modifyGroup(group, work) {
+        modifyGroup(group, work);
     }
 
     /**

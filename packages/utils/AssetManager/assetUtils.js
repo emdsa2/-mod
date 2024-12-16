@@ -92,3 +92,12 @@ export function modifyAsset(groupName, assetName, work) {
 
     pushAssetLoadEvent(groupName, wk);
 }
+
+/**
+ * 修改物品组
+ * @param { CustomGroupName } groupName 身体组名字
+ * @param { FuncWork<[Mutable<AssetGroup>]> } work
+ */
+export function modifyGroup(groupName, work) {
+    pushAssetLoadEvent(groupName, (groupObj) => work(groupObj));
+}
