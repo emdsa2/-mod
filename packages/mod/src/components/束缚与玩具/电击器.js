@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-import { AssetTools } from "@mod-utils/AssetTools";
+import { Tools } from "@mod-utils/Tools";
 
 /**
  * @typedef { { LastBlink:number, ShockTime:number, ShockOnOff: boolean, ShockIsRunning:boolean } } ShockDeviceData
@@ -218,7 +218,7 @@ const extended = {
         Draw: dialogDraw,
         Click: dialogClick,
     },
-    ChatTags: AssetTools.CommonChatTags(),
+    ChatTags: Tools.CommonChatTags(),
     Modules: [
         {
             Name: "电击肛塞",

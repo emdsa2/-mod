@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-import { AssetTools } from "@mod-utils/AssetTools";
+import { Tools } from "@mod-utils/Tools";
 import ModManager from "@mod-utils/ModManager";
 
 /**
@@ -48,17 +48,20 @@ function updateRuns(player, data, property) {
         const LSCG = /** @type {any} */ (player).LSCG;
         if (LSCG && LSCG.InjectorModule) {
             const { drugLevelMultiplier, hornyLevelMax, hornyLevel } = LSCG.InjectorModule;
-            LSCG.InjectorModule.hornyLevel = Math.min(hornyLevel + 0.05 * delta / 1000, hornyLevelMax * drugLevelMultiplier);
+            LSCG.InjectorModule.hornyLevel = Math.min(
+                hornyLevel + (0.05 * delta) / 1000,
+                hornyLevelMax * drugLevelMultiplier
+            );
         }
     }
 
-    const nextTime = () => 
+    const nextTime = () =>
         now + (Math.random() * 10 + (15 * (100 - (Player.ArousalSettings?.Progress ?? 0))) / 100 + 10) * 1000;
 
-    if(!data.NextMasturbateTime) data.NextMasturbateTime = nextTime();
+    if (!data.NextMasturbateTime) data.NextMasturbateTime = nextTime();
 
-    if(property.Masturbate && CurrentScreen == "ChatRoom") {
-        if(now > data.NextMasturbateTime)  {
+    if (property.Masturbate && CurrentScreen == "ChatRoom") {
+        if (now > data.NextMasturbateTime) {
             data.NextMasturbateTime = nextTime();
             AssetsItemPelvis随机自慰();
         }
@@ -186,7 +189,7 @@ function scriptDraw(data, originalFunction, { C, Item, PersistentData }) {
 
     if (C.IsPlayer()) updateRuns(C, Data, /**@type {XItemProperties}*/ (Item.Property));
 
-    AssetTools.drawUpdate(C, Data);
+    Tools.drawUpdate(C, Data);
 }
 
 /** @type {ExtendedItemScriptHookCallbacks.BeforeDraw<ModularItemData, 淫纹DataType>} */
@@ -270,7 +273,7 @@ const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
     DrawImages: false,
-    ChatTags: AssetTools.CommonChatTags(),
+    ChatTags: Tools.CommonChatTags(),
     Modules: [
         { Name: "样式", Key: "t", Options: [{}, {}, {}, {}], DrawImages: true },
         {

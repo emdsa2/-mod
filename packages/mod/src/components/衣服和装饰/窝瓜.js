@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-import { AssetTools } from "@mod-utils/AssetTools";
+import { Tools } from "@mod-utils/Tools";
 import { Path } from "@mod-utils/path";
 
 /** @type {CustomAssetDefinition} */
@@ -40,7 +40,7 @@ const asset = {
 /** @type {AssetArchetypeConfig} */
 const extended = {
     Archetype: ExtendedArchetype.TYPED,
-    ChatTags: AssetTools.CommonChatTags(),
+    ChatTags: Tools.CommonChatTags(),
     DrawImages: false,
     Options: [
         {

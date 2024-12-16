@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-import { AssetTools } from "@mod-utils/AssetTools";
+import { Tools } from "@mod-utils/Tools";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -79,7 +79,7 @@ const assetButt = {
 /** @type {AssetArchetypeConfig} */
 const extendedButt = {
     Archetype: ExtendedArchetype.TYPED,
-    ChatTags: AssetTools.CommonChatTags(),
+    ChatTags: Tools.CommonChatTags(),
     Options: [],
     DrawImages: false,
     ChatSetting: TypedItemChatSetting.SILENT,

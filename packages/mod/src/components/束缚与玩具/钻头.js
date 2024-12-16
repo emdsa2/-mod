@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-import { AssetTools } from "@mod-utils/AssetTools";
+import { Tools } from "@mod-utils/Tools";
 import ModManager from "@mod-utils/ModManager";
 
 /** @type {CustomGroupName} */
@@ -69,7 +69,7 @@ function scriptDraw({ C, Item, PersistentData }) {
     const Data = PersistentData();
     Data.Draws = subType === 1;
 
-    AssetTools.drawUpdate(C, Data);
+    Tools.drawUpdate(C, Data);
 }
 
 const dialogs = {

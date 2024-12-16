@@ -30,7 +30,7 @@ const ItemGroups = [
     "ItemBoots",
 ];
 
-export class AssetTools {
+export class Tools {
     /**
      * 所有物品身体组
      * @param {AssetGroupItemName[]} excepts

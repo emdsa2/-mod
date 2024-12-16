@@ -1,5 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
-import { AssetTools } from "@mod-utils/AssetTools";
+import { Tools } from "@mod-utils/Tools";
 
 /** @type { CustomAssetDefinition} */
 const asset = {
@@ -179,7 +179,7 @@ const extended = {
     Archetype: ExtendedArchetype.MODULAR,
     ChangeWhenLocked: false,
     DrawImages: true,
-    ChatTags: AssetTools.CommonChatTags(),
+    ChatTags: Tools.CommonChatTags(),
     Modules: [
         {
             Name: "盖子",
@@ -190,7 +190,7 @@ const extended = {
                 { Property: { Effect: [E.BlindHeavy, E.GagLight, E.BlockWardrobe, E.Freeze, E.Enclose] } },
                 {
                     Property: {
-                        Block: AssetTools.AllItemGroups([
+                        Block: Tools.AllItemGroups([
                             "ItemDevices",
                             "ItemPelvis",
                             "ItemVulva",
@@ -203,7 +203,7 @@ const extended = {
                 },
                 {
                     Property: {
-                        Block: AssetTools.AllItemGroups([
+                        Block: Tools.AllItemGroups([
                             "ItemDevices",
                             "ItemHead",
                             "ItemHood",
@@ -304,7 +304,7 @@ const translations = {
     CN: "乳胶带床",
     EN: "Latex-belt Bed",
     RU: "Кровать с латексным ремнем",
-    UA: "Латексне ліжко із ремнями"
+    UA: "Латексне ліжко із ремнями",
 };
 
 export default function () {
