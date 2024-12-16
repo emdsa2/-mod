@@ -73,6 +73,10 @@ const assetButt = {
     Extended: true,
     Activity: "MasturbateItem",
     CreateLayerTypes: ["typed"],
+    PoseMapping: {
+        Hogtied: "Hide",
+        AllFours: "Hide",
+    },
     Layer: [],
 };
 
