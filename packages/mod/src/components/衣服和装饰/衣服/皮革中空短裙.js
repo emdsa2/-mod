@@ -6,7 +6,6 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    DefaultColor: ["#Default", "Default"],
     Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
