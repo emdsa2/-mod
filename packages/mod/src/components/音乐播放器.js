@@ -56,26 +56,25 @@ function getContainer() {
  * @returns {string | undefined}
  */
 function parseSource(src) {
+    /** @type {[RegExp,string,string][]} */
     let rules = [
-        ["music.163.com.*song.*id=(\\d+)", "netease", "song"],
-        ["music.163.com.*album.*id=(\\d+)", "netease", "album"],
-        ["music.163.com.*artist.*id=(\\d+)", "netease", "artist"],
-        ["music.163.com.*playlist.*id=(\\d+)", "netease", "playlist"],
-        ["music.163.com.*discover/toplist.*id=(\\d+)", "netease", "playlist"],
-        ["y.qq.com.*song/(\\w+).html", "tencent", "song"],
-        ["y.qq.com.*album/(\\w+).html", "tencent", "album"],
-        ["y.qq.com.*singer/(\\w+).html", "tencent", "artist"],
-        ["y.qq.com.*playsquare/(\\w+).html", "tencent", "playlist"],
-        ["y.qq.com.*playlist/(\\w+).html", "tencent", "playlist"],
-        ["xiami.com.*song/(\\w+)", "xiami", "song"],
-        ["xiami.com.*album/(\\w+)", "xiami", "album"],
-        ["xiami.com.*artist/(\\w+)", "xiami", "artist"],
-        ["xiami.com.*collect/(\\w+)", "xiami", "playlist"],
+        [/music\.163\.com.*song.*id=(\d+)/, "netease", "song"],
+        [/music\.163\.com.*album.*id=(\d+)/, "netease", "album"],
+        [/music\.163\.com.*artist.*id=(\d+)/, "netease", "artist"],
+        [/music\.163\.com.*playlist.*id=(\d+)/, "netease", "playlist"],
+        [/music\.163\.com.*discover\/toplist.*id=(\\d+)/, "netease", "playlist"],
+        [/y\.qq\.com.*songDetail\/(\w+)/, "tencent", "song"],
+        [/y\.qq\.com.*albumDetail\/(\w+)/, "tencent", "album"],
+        [/y\.qq\.com.*singer\/(\w+)/, "tencent", "artist"],
+        [/y\.qq\.com.*playlist\/(\d+)/, "tencent", "playlist"],
+        [/xiami.com.*song\/(\w+)/, "xiami", "song"],
+        [/xiami.com.*album\/(\w+)/, "xiami", "album"],
+        [/xiami.com.*artist\/(\w+)/, "xiami", "artist"],
+        [/xiami.com.*collect\/(\w+)/, "xiami", "playlist"],
     ];
 
     for (let rule of rules) {
-        let patt = new RegExp(rule[0]);
-        let res = patt.exec(src);
+        let res = rule[0].exec(src);
         if (res !== null) {
             return `https://api.i-meto.com/meting/api?server=${rule[1]}&type=${rule[2]}&id=${
                 res[1]
@@ -112,8 +111,16 @@ class PlayerManager {
         if (this.src === source) return;
         this.src = source;
 
-        fetch(parseSource(source))
-            .then((res) => res.json())
+        const requestUrl = parseSource(source);
+        if (!requestUrl) return;
+        fetch(requestUrl)
+            .then(
+                (res) =>
+                    new Promise((resolve) => {
+                        if (!res.ok) console.error(res.statusText);
+                        else resolve(res.json());
+                    })
+            )
             .then((data) => {
                 if (!this.player) this.createPlayer(data);
                 else {
