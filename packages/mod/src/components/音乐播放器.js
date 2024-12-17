@@ -128,6 +128,8 @@ class PlayerManager {
                 return new Promise((resolve) => {
                     if (!this.player) this.createPlayer(data, req.type).then(resolve);
                     else {
+                        getContainer().style.display = "block";
+
                         this.player.list.clear();
                         this.player.list.add(data);
                         resolve();
@@ -150,11 +152,21 @@ class PlayerManager {
         if (this.player) this.player.volume(volume);
     }
 
-    destroy() {
+    hide() {
         if (this.player) {
             this.player.pause();
-            this.player.destroy();
-            this.player = null;
+            getContainer().style.display = "none";
+        }
+    }
+
+    isHided() {
+        return this.player && getContainer().style.display === "none";
+    }
+
+    resume() {
+        if (this.player) {
+            this.player.play();
+            getContainer().style.display = "block";
         }
     }
 }
@@ -166,9 +178,11 @@ export default function () {
         while (true) {
             await sleepFor(1000);
             if (!ChatRoomCustomized) {
-                player.destroy();
+                player.hide();
                 continue;
             }
+
+            if (player.isHided()) player.resume();
 
             const volume = Player?.AudioSettings?.MusicVolume;
             if (volume != undefined) player.setVolume(volume);
