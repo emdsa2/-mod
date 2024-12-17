@@ -53,7 +53,7 @@ function getContainer() {
 /**
  * https://github.com/metowolf/MetingJS/blob/fd5394054c3b28c82a95b799e6c468da0f6f704f/source/Meting.js#L44C1-L72C4
  * @param {string} src
- * @returns {string | undefined}
+ * @returns {{url:string,type:string} | undefined}
  */
 function parseSource(src) {
     /** @type {[RegExp,string,string][]} */
@@ -76,9 +76,12 @@ function parseSource(src) {
     for (let rule of rules) {
         let res = rule[0].exec(src);
         if (res !== null) {
-            return `https://api.i-meto.com/meting/api?server=${rule[1]}&type=${rule[2]}&id=${
-                res[1]
-            }&r=${Math.random()}`;
+            return {
+                url: `https://api.i-meto.com/meting/api?server=${rule[1]}&type=${rule[2]}&id=${
+                    res[1]
+                }&r=${Math.random()}`,
+                type: rule[2],
+            };
         }
     }
     return undefined;
@@ -91,8 +94,8 @@ class PlayerManager {
         this.volume = 0;
     }
 
-    createPlayer(data) {
-        loadScript().then(() => {
+    createPlayer(data, type) {
+        return loadScript().then(() => {
             // @ts-ignore
             this.player = new APlayer({
                 container: getContainer(),
@@ -111,9 +114,9 @@ class PlayerManager {
         if (this.src === source) return;
         this.src = source;
 
-        const requestUrl = parseSource(source);
-        if (!requestUrl) return;
-        fetch(requestUrl)
+        const req = parseSource(source);
+        if (!req) return;
+        return fetch(req.url)
             .then(
                 (res) =>
                     new Promise((resolve) => {
@@ -122,11 +125,22 @@ class PlayerManager {
                     })
             )
             .then((data) => {
-                if (!this.player) this.createPlayer(data);
-                else {
-                    this.player.list.clear();
-                    this.player.list.add(data);
+                return new Promise((resolve) => {
+                    if (!this.player) this.createPlayer(data, req.type).then(resolve);
+                    else {
+                        this.player.list.clear();
+                        this.player.list.add(data);
+                        resolve();
+                    }
+                });
+            })
+            .then(() => {
+                const list = this.player.list;
+                if (req.type === "playlist" && list && list.audios.length > 1) {
+                    this.player.list.switch(Math.floor(Date.now() / 5 / 60 / 1000) % list.audios.length);
                 }
+
+                this.player.play();
             });
     }
 
@@ -134,6 +148,14 @@ class PlayerManager {
         if (this.volume === volume) return;
         this.volume = volume;
         if (this.player) this.player.volume(volume);
+    }
+
+    destroy() {
+        if (this.player) {
+            this.player.pause();
+            this.player.destroy();
+            this.player = null;
+        }
     }
 }
 
@@ -143,16 +165,17 @@ export default function () {
     (async () => {
         while (true) {
             await sleepFor(1000);
-            if (!ChatRoomCustomized) continue;
+            if (!ChatRoomCustomized) {
+                player.destroy();
+                continue;
+            }
 
             const volume = Player?.AudioSettings?.MusicVolume;
             if (volume != undefined) player.setVolume(volume);
 
             const url = ChatRoomData?.Custom?.MusicURL;
-            if (url) {
-                player.setUrl(url);
-                player.player?.play();
-            } else player.player?.pause();
+            if (url) player.setUrl(url);
+            else player.player?.pause();
         }
     })();
 }
