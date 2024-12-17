@@ -58,10 +58,10 @@ function getContainer() {
 function parseSource(src) {
     /** @type {[RegExp,string,string][]} */
     let rules = [
-        [/music\.163\.com.*song.*id=(\d+)/, "netease", "song"],
-        [/music\.163\.com.*album.*id=(\d+)/, "netease", "album"],
-        [/music\.163\.com.*artist.*id=(\d+)/, "netease", "artist"],
-        [/music\.163\.com.*playlist.*id=(\d+)/, "netease", "playlist"],
+        [/music\.163\.com.*song.*[\?&]id=(\d+)/, "netease", "song"],
+        [/music\.163\.com.*album.*[\?&]id=(\d+)/, "netease", "album"],
+        [/music\.163\.com.*artist.*[\?&]id=(\d+)/, "netease", "artist"],
+        [/music\.163\.com.*playlist.*[\?&]id=(\d+)/, "netease", "playlist"],
         [/music\.163\.com.*discover\/toplist.*id=(\\d+)/, "netease", "playlist"],
         [/y\.qq\.com.*songDetail\/(\w+)/, "tencent", "song"],
         [/y\.qq\.com.*albumDetail\/(\w+)/, "tencent", "album"],
