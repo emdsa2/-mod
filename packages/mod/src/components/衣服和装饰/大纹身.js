@@ -202,6 +202,41 @@ const LayerSettings = [
     },
 ];
 
+/** @type { (AssetLayerDefinition & {DefaultColor: string, ConfigKey: string}) [] } */
+const attrLayer = [
+    {
+        Name: "右腿花_花",
+        Left: 100,
+        Top: 470,
+        Priority: 13,
+        BlendingMode: "source-atop",
+        DefaultColor: "#FE3636",
+        ConfigKey: "Fa",
+        ParentGroup: "BodyLower",
+        PoseMapping: {
+            AllFours: PoseType.HIDE,
+            Hogtied: PoseType.HIDE,
+            Kneel: "LegsClosed",
+            LegsClosed: "LegsClosed",
+            KneelingSpread: "KneelingSpread",
+        },
+    },
+];
+
+/** @param {AssetLayerDefinition & {DefaultColor: string, ConfigKey: string}} layer */
+function layerMapping(layer) {
+    return {
+        Name: layer.Name,
+        Priority: layer.Priority,
+        BlendingMode: /** @type {GlobalCompositeOperation}*/ (layer.BlendingMode),
+        Left: layer.Left || 0,
+        Top: layer.Top || 0,
+        AllowTypes: { [layer.ConfigKey]: 1 },
+        ParentGroup: layer.ParentGroup,
+        PoseMapping: layer.PoseMapping,
+    };
+}
+
 /** @type {CustomAssetDefinition} */
 const asset = {
     Name: "大纹身_Luzi",
@@ -212,16 +247,7 @@ const asset = {
     DefaultColor: LayerSettings.map((layer) => layer.DefaultColor),
     Extended: true,
     BodyCosplay: true,
-    Layer: LayerSettings.map((layer) => ({
-        Name: layer.Name,
-        Priority: layer.Priority,
-        BlendingMode: /** @type {GlobalCompositeOperation}*/ (layer.BlendingMode),
-        Left: layer.Left || 0,
-        Top: layer.Top || 0,
-        AllowTypes: { [layer.ConfigKey]: 1 },
-        ParentGroup: layer.ParentGroup,
-        PoseMapping: layer.PoseMapping,
-    })),
+    Layer: LayerSettings.map(layerMapping).concat(attrLayer.map(layerMapping)),
 };
 
 /** @type {ModularItemConfig} */
