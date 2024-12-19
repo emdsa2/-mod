@@ -37,9 +37,6 @@ jobs:
 
           echo "PAGE_URL=$PAGE_URL" >> $GITHUB_ENV
 
-      - name: Copy Resources
-        run: pnpm resources:rel
-
       - name: Build Pages
         run: pnpm page:all
 
@@ -60,6 +57,9 @@ jobs:
 
       - name: Build
         run: pnpm build --configBaseURL $PAGE_URL
+
+      - name: Copy Resources
+        run: pnpm resources:rel
 
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v4
