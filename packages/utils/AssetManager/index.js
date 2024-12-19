@@ -1,4 +1,4 @@
-import { loadAsset, loadExtendedConfig, modifyAsset, modifyGroup } from "./assetUtils";
+import { loadAsset, loadExtendedConfig, modifyAsset, modifyAssetLayers, modifyGroup } from "./assetUtils";
 import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
 import { runSetupLoad } from "./loadSchedule";
@@ -48,6 +48,15 @@ export default class AssetManager {
      */
     static modifyAsset(group, asset, work) {
         modifyAsset(group, asset, work);
+    }
+
+    /**
+     * 调整物品图层（谨慎使用）
+     * @param {(Asset)=>boolean} filter 物品筛选器
+     * @param { FuncWork<[Mutable<Asset>, Mutable<AssetLayer>]> } work
+     */
+    static modifyAssetLayers(filter, work) {
+        modifyAssetLayers(filter, work);
     }
 
     /**

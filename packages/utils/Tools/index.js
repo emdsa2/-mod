@@ -70,4 +70,16 @@ export class Tools {
             CommonChatTags.ASSET_NAME,
         ];
     }
+
+    /**
+     * 调整TopLeft数据工具函数
+     * @param {TopLeft.Data} data
+     * @param {number} diff
+     * @returns {TopLeft.Data}
+     */
+    static topLeftAdjust(data, diff) {
+        return /** @type {TopLeft.Data}*/ (
+            Object.fromEntries(Object.entries(data).map(([key, value]) => [key, value + diff]))
+        );
+    }
 }

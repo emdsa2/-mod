@@ -3,7 +3,7 @@ import { AssetConfig, ParsedAsset, resolveStringAsset } from "./assetConfigs";
 import { CustomAssetAdd, getCustomAssets } from "./customStash";
 import { Entries, resolveEntry, solidfyEntry } from "./entries";
 import { addLayerNames } from "./layerNames";
-import { pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
+import { pushAfterLoad, pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
 
 /**
  * 添加物品
@@ -91,6 +91,18 @@ export function modifyAsset(groupName, assetName, work) {
     };
 
     pushAssetLoadEvent(groupName, wk);
+}
+/**
+ * 调整物品属性
+ * @param {(Asset)=>boolean} filter 物品筛选器
+ * @param { FuncWork<[Mutable<Asset>, Mutable<AssetLayer>]> } work
+ */
+export function modifyAssetLayers(filter, work) {
+    pushAfterLoad(() => {
+        Asset.filter(filter).forEach((asset) => {
+            asset.Layer.forEach((layer) => work(asset, layer));
+        });
+    });
 }
 
 /**

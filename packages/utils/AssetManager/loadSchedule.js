@@ -63,6 +63,16 @@ function runAssetLoad(group) {
     }
 }
 
+let isAfterLoaded = false;
+/** @type { (()=>void)[] } */
+const afterLoadWorks = [];
+
+/** @param {()=>void} work */
+export function pushAfterLoad(work) {
+    if (isAfterLoaded) work();
+    else afterLoadWorks.push(work);
+}
+
 const missingGroups = new Set();
 
 /**
@@ -109,6 +119,9 @@ export function runSetupLoad() {
         AssetGroup.forEach((group) => runAssetLoad(group));
         // 重新加载制作物品
         CraftingAssets = CraftingAssetsPopulate();
+
+        isAfterLoaded = true;
+        while (afterLoadWorks.length > 0) afterLoadWorks.shift()();
 
         log.info(`加载完成，耗时 ${Date.now() - time}ms`);
     };
