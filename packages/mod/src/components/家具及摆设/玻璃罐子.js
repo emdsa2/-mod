@@ -13,6 +13,7 @@ const asset = {
     Hide: ["Mouth", "Glasses", "TailStraps"],
     AllowActivePose: ["BackBoxTie", "BackCuffs", "BackElbowTouch", "LegsClosed"],
     Extended: true,
+    LayerVisibility: true,
     DefaultColor: [
         "#151515",
         "#151515",
@@ -47,7 +48,7 @@ const asset = {
         { Name: "玻璃罐液体后", Priority: 4, AllowTypes: { yt: 1 } },
         { Name: "玻璃外层", Priority: 57, AllowTypes: { c: 0 } },
         { Name: "发光", Priority: 31 },
-        { Name: "玻璃关闭", Priority: 57, AllowTypes: { c: 1 } },
+        { Name: "玻璃关闭", Priority: 57, AllowTypes: { c: 1 }, Visibility: "Others" },
         { Name: "手臂拘束", Priority: 35, AllowTypes: { s: 1 } },
         { Name: "腿部拘束", Priority: 35, AllowTypes: { t: 1 } },
         { Name: "吊顶链", Priority: 5, AllowTypes: { s: 1 } },
@@ -62,13 +63,13 @@ const extended = {
             Name: "窗户",
             Key: "c",
             DrawImages: false,
-            Options: [{}, { Property: { Difficulty: 52, Effect: ["BlindHeavy", "GagLight", "Freeze", "Enclose"] } }],
+            Options: [{}, { Property: { Difficulty: 52, Effect: [E.BlindHeavy, E.GagLight, E.Freeze, E.Enclose] } }],
         },
         {
             Name: "腿部拘束",
             Key: "t",
             DrawImages: false,
-            Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: ["Freeze", "Mounted"] } }],
+            Options: [{}, { Property: { Difficulty: 22, SetPose: ["LegsClosed"], Effect: [E.Freeze, E.Mounted] } }],
         },
         {
             Name: "手臂拘束",
@@ -96,7 +97,7 @@ const extended = {
             Name: "液体",
             Key: "yt",
             DrawImages: false,
-            Options: [{}, {}],
+            Options: [{}, { Effect: [E.GagLight] }],
         },
         {
             Name: "快感模块",
