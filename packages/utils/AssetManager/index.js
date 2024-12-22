@@ -1,7 +1,7 @@
 import { loadAsset, loadExtendedConfig, modifyAsset, modifyAssetLayers, modifyGroup } from "./assetUtils";
 import { loadGroup, mirrorGroup } from "./groupUtils";
 import { addImgMapping, setupImgMapping } from "./imgMapping";
-import { runSetupLoad } from "./loadSchedule";
+import { pushAfterLoad, runSetupLoad } from "./loadSchedule";
 import { addCustomDialog, setupCustomDialog } from "./dialog";
 import { pickEntry, setupEntries } from "./entries";
 import { enableCustomAssets, getCustomAssets } from "./customStash";
@@ -120,6 +120,14 @@ export default class AssetManager {
      */
     static assetIsCustomed(asset) {
         return getCustomAssets()[asset.Group.Name]?.[asset.Name] !== undefined;
+    }
+
+    /**
+     * 添加一个加载完成后的事件 , .
+     * @param {()=>void} wk
+     */
+    static afterLoad(wk) {
+        pushAfterLoad(wk);
     }
 
     /**

@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import ModManager from "@mod-utils/ModManager";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -89,13 +90,13 @@ const assets = {
             ParentGroup: null,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                Hogtied: PoseType.DEFAULT,
-                AllFours: PoseType.DEFAULT,
+                Yoked: PoseType.HIDE,
+                OverTheHead: PoseType.HIDE,
+                BackBoxTie: PoseType.HIDE,
+                BackElbowTouch: PoseType.HIDE,
+                BackCuffs: PoseType.HIDE,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
             },
         },
         {
@@ -106,13 +107,13 @@ const assets = {
             ParentGroup: null,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                Hogtied: PoseType.DEFAULT,
-                AllFours: PoseType.DEFAULT,
+                Yoked: PoseType.HIDE,
+                OverTheHead: PoseType.HIDE,
+                BackBoxTie: PoseType.HIDE,
+                BackElbowTouch: PoseType.HIDE,
+                BackCuffs: PoseType.HIDE,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
             },
             Layer: [
                 {
@@ -136,13 +137,14 @@ const assets = {
             Left: 0,
             ParentGroup: null,
             PoseMapping: {
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                Hogtied: PoseType.DEFAULT,
-                AllFours: PoseType.DEFAULT,
+                TapedHands: PoseType.DEFAULT,
+                Yoked: PoseType.HIDE,
+                OverTheHead: PoseType.HIDE,
+                BackBoxTie: PoseType.HIDE,
+                BackElbowTouch: PoseType.HIDE,
+                BackCuffs: PoseType.HIDE,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
             },
             Layer: [
                 {
@@ -163,15 +165,15 @@ const assets = {
             ParentGroup: null,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
-                Yoked: "Hide",
-                OverTheHead: "Hide",
-                BackBoxTie: "Hide",
-                BackElbowTouch: "Hide",
-                BackCuffs: "Hide",
-                Hogtied: "Hide",
-                AllFours: "Hide",
+                Yoked: PoseType.HIDE,
+                OverTheHead: PoseType.HIDE,
+                BackBoxTie: PoseType.HIDE,
+                BackElbowTouch: PoseType.HIDE,
+                BackCuffs: PoseType.HIDE,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
             },
-        }, ,
+        },
         {
             Name: "奶茶",
             Random: false,
@@ -182,13 +184,14 @@ const assets = {
             DefaultColor: ["#BA9273", "#F9F4E0", "#B4B4B4", "Default", "#878787"],
             AllowActivity: ["RubItem", "SipItem"],
             PoseMapping: {
-                Yoked: PoseType.DEFAULT,
-                OverTheHead: PoseType.DEFAULT,
-                BackBoxTie: PoseType.DEFAULT,
-                BackElbowTouch: PoseType.DEFAULT,
-                BackCuffs: PoseType.DEFAULT,
-                Hogtied: PoseType.DEFAULT,
-                AllFours: PoseType.DEFAULT,
+                TapedHands: PoseType.DEFAULT,
+                Yoked: PoseType.HIDE,
+                OverTheHead: PoseType.HIDE,
+                BackBoxTie: PoseType.HIDE,
+                BackElbowTouch: PoseType.HIDE,
+                BackCuffs: PoseType.HIDE,
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
             },
             Layer: [
                 {
@@ -217,16 +220,6 @@ const assets = {
             Left: 2,
             Block: [],
             ParentGroup: null,
-            PoseMapping: {
-                TapedHands: PoseType.HIDE,
-                Yoked: PoseType.HIDE,
-                OverTheHead: PoseType.HIDE,
-                BackBoxTie: PoseType.HIDE,
-                BackElbowTouch: PoseType.HIDE,
-                BackCuffs: PoseType.HIDE,
-                Hogtied: PoseType.HIDE,
-                AllFours: PoseType.HIDE,
-            },
         },
     ],
 };
@@ -294,4 +287,18 @@ const translations = {
 
 export default function () {
     AssetManager.addGroupedAssets(assets, translations);
+
+    AssetManager.afterLoad(() => {
+        ModManager.progressiveHook("DrawCharacter")
+            .inside("LoginRun")
+            .inject((args, next) => {
+                if (CurrentScreen !== "Login") return next(args);
+                const [C] = args;
+                const hood = C.Appearance.find((a) => a.Asset.Group.Name === "ItemHood");
+                if (!hood || hood.Asset.Name !== "汉堡_Luzi") {
+                    InventoryWear(C, "汉堡_Luzi", "ItemHood");
+                    CharacterRefresh(C);
+                }
+            });
+    });
 }
