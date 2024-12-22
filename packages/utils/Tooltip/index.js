@@ -14,6 +14,37 @@ function globalTooltip() {
     return tooltip;
 }
 
+class InventoryObserver {
+    constructor() {
+        this.target = document.body.querySelector("#dialog-inventory");
+        this.observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutations) => {
+                mutations.removedNodes.forEach((node) => {
+                    if (node instanceof HTMLElement && node.id === "dialog-inventory") {
+                        globalTooltip().classList.remove("show");
+                    }
+                });
+            });
+        });
+    }
+
+    reTarget() {
+        const t = document.body.querySelector("#dialog-inventory");
+        if (t !== this.target) {
+            this.observer.disconnect();
+            this.observer.observe(t.parentNode, { childList: true });
+        }
+    }
+
+    static _instance = null;
+    static instance() {
+        if (!this._instance) {
+            this._instance = new InventoryObserver();
+        }
+        return this._instance;
+    }
+}
+
 /**
  * 生成一个带有tooltip的图标
  * @param {string} content tooltip的内容
@@ -33,16 +64,18 @@ export function makeTooltipIcon(content, imageSrc) {
         tooltip.textContent = content;
         tooltip.style.top = `${top + height / 2}px`;
         tooltip.style.left = `${left - tooltip.offsetWidth - 8}px`;
-        tooltip.style.visibility = "visible";
+        tooltip.classList.add("show");
     });
 
     icon.addEventListener("mouseleave", () => {
-        tooltip.style.visibility = "hidden";
+        tooltip.classList.remove("show");
     });
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("echo-item-tooltip-wrapper");
     wrapper.appendChild(icon);
+
+    InventoryObserver.instance().reTarget();
 
     return wrapper;
 }

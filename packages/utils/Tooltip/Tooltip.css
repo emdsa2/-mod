@@ -29,4 +29,15 @@
 
 	transform: translateY(-50%);
 	right: calc(100% + min(1dvh, 0.5dvw));
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+
+.echo-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
