@@ -10,7 +10,7 @@ const asset = {
     AllowLock: true,
     DrawLocks: false,
     Difficulty: 25,
-    Hide: ["Hands", "BodyUpper"],
+    Hide: ["HandsLeft", "HandsRight", "BodyUpper"],
     Prerequisite: ["HasBreasts"],
     SetPose: ["BackElbowTouch"],
     AllowActivePose: ["BackElbowTouch"],

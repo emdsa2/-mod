@@ -17,9 +17,10 @@ const asset = {
     Layer: [
         { Name: "透明", Priority: 62, AllowTypes: { typed: 0 } },
         { Name: "麻袋", Priority: 62, AllowTypes: { typed: 1 } },
-        { Name: "绳子", Priority: 62, },
-        { 
-            Name: "背面", Priority: 1, 
+        { Name: "绳子", Priority: 62 },
+        {
+            Name: "背面",
+            Priority: 1,
             Alpha: [
                 {
                     Group: [
@@ -49,14 +50,14 @@ const asset = {
                         "ItemNose",
                         "ItemPelvis",
                         "ItemTorso",
-                        "LeftAnklet",
-                        "LeftHand",
+                        "AnkletLeft",
+                        "HandsLeft",
                         "Mask",
                         "Mouth",
                         "Nipples",
                         "Panties",
-                        "RightAnklet",
-                        "RightHand",
+                        "AnkletRight",
+                        "HandsRight",
                         "Shoes",
                         "Socks",
                         "SocksLeft",
@@ -79,17 +80,17 @@ const asset = {
 
                         "BodyLower",
                         "Socks",
-                        "SocksLeft",  
+                        "SocksLeft",
                         "SocksRight",
                         "SuitLower",
                     ],
                     Masks: [
                         [100, 0, 300, 64],
-        
+
                         [0, 0, 164, 800],
                         [100, 54, 102, 19],
                         [100, 73, 87, 15],
-        
+
                         [336, 0, 164, 800],
                         [297, 54, 102, 19],
                         [312, 73, 87, 15],

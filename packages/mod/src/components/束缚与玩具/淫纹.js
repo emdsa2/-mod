@@ -14,7 +14,7 @@ import ModManager from "@mod-utils/ModManager";
  * @typedef { { ArousalCheckTimer:number, NextMasturbateTime:number, Frame: number, FrameTimer:number }} 淫纹DataType
  */
 
-/** @type {CustomGroupName} */
+/** @type { AssetGroupItemName } */
 const itemTGroup = "ItemPelvis";
 
 function AssetsItemPelvis随机自慰() {
@@ -31,7 +31,16 @@ function AssetsItemPelvis随机自慰() {
         "Female3DCG",
         /** @type {AssetGroupItemName[]} */ (["ItemVulvaPiercings", "ItemVulva"])[Math.floor(Math.random() * 2)]
     );
-    ActivityRun(Player, Player, group, { Activity: AssetGetActivity("Female3DCG", "MasturbateHand") }, true);
+    ActivityRun(
+        Player,
+        Player,
+        group,
+        {
+            Activity: AssetGetActivity("Female3DCG", "MasturbateHand"),
+            Group: itemTGroup,
+        },
+        true
+    );
 }
 
 /**
