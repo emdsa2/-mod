@@ -10,10 +10,12 @@ export default function () {
             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
         }
     );
-    
-    // TODO Saki救救！
-    // AssetManager.modifyAsset("Panties", "LatexCrotchlessPanties", (group, asset) => {
-    //     asset.Left: 150;
-    //     asset.Top: 395;
-    // });
-}
+    AssetManager.modifyAssetLayers(
+        (asset) => asset.Group.Name == "Pussy",
+        (asset,layer)=>{
+            if(layer.Name == "Penis")
+                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+        }
+    );
+
+};
