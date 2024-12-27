@@ -1,7 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
-const asset =         {
+const asset = {
     Name: "丝袜3_Luzi",
     Random: false,
     Top: 0,

@@ -123,71 +123,6 @@ const assets = {
             ],
         },
     ],
-    Bra: [
-        {
-            Name: "绷带全身_Luzi",
-            Random: false,
-            Gender: "F",
-            Top: 0,
-            Left: 0,
-            // DefaultColor: ["#9E9E9E", "#9E9E9E"],
-            Layer: [
-                {
-                    Name: "手部",
-                    ParentGroup: "BodyUpper",
-                    Priority: 27,
-                    PoseMapping: {
-                        TapedHands: "TapedHands",
-                        Yoked: "Yoked",
-                        OverTheHead: "OverTheHead",
-                        BackBoxTie: "BackBoxTie",
-                        BackElbowTouch: "Hide",
-                        BackCuffs: "BackCuffs",
-                        Hogtied: "Hide",
-                        AllFours: "Hide",
-                    },
-                },
-                {
-                    Name: "腿部",
-                    ParentGroup: "BodyLower",
-                    PoseMapping: {
-                        Kneel: "Kneel",
-                        KneelingSpread: "KneelingSpread",
-                        LegsClosed: "LegsClosed",
-                        Spread: "Spread",
-                        Hogtied: "Hide",
-                        AllFours: "Hide",
-                    },
-                },
-                {
-                    Name: "上身",
-                    ParentGroup: "BodyUpper",
-                    PoseMapping: {
-                        TapedHands: "TapedHands",
-                        Yoked: "Yoked",
-                        OverTheHead: "OverTheHead",
-                        BackBoxTie: "BackElbowTouch",
-                        BackElbowTouch: "BackElbowTouch",
-                        BackCuffs: "BackElbowTouch",
-                        Hogtied: "Hide",
-                        AllFours: "Hide",
-                    },
-                },
-                {
-                    Name: "下身",
-                    ParentGroup: "BodyLower",
-                    PoseMapping: {
-                        Kneel: "Kneel",
-                        KneelingSpread: "KneelingSpread",
-                        LegsClosed: "LegsClosed",
-                        Spread: "Spread",
-                        Hogtied: "Hide",
-                        AllFours: "Hide",
-                    },
-                },
-            ],
-        },
-    ],
 };
 
 const translations = {
@@ -198,9 +133,6 @@ const translations = {
         SuitLower: {
             乳胶衣_Luzi: "乳胶衣",
         },
-        Bra: {
-            绷带全身_Luzi: "绷带全身",
-        },
     },
     EN: {
         Suit: {
@@ -209,9 +141,6 @@ const translations = {
         SuitLower: {
             乳胶衣_Luzi: "Latex Bottom",
         },
-        Bra: {
-            绷带全身_Luzi: "Full Body Bandage",
-        },
     },
     RU: {
         Suit: {
@@ -219,9 +148,6 @@ const translations = {
         },
         SuitLower: {
             乳胶衣_Luzi: "Латексный низ",
-        },
-        Bra: {
-            绷带全身_Luzi: "Полный бинт",
         },
     },
 };
