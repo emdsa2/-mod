@@ -21,7 +21,6 @@ export default function () {
     AssetManager.modifyAssetLayers(
         (asset) => asset.Group.Name == "ItemVulva",
         (asset, layer) => {
-            // 可以根据 asset.Name layer.Name 来判断是哪个图层
             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
         }
     );
@@ -32,6 +31,13 @@ export default function () {
                 layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
             if(layer.Name == "PlasticChastityCage")
                 layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+        }
+    );
+    
+    AssetManager.modifyAssetLayers(
+        (asset) => asset.Group.Name == "ItemVulvaPiercings",
+        (asset, layer) => {
+            layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
         }
     );
 };
