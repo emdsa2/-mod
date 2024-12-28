@@ -10,7 +10,7 @@ const asset = {
     AllowLock: true,
     DrawLocks: false,
     Difficulty: 25,
-    Hide: ["HandsLeft", "HandsRight", "BodyLower", "BodyUpper"],
+    Hide: ["HandsLeft", "HandsRight", "BodyLower", "BodyUpper", "ArmsLeft", "ArmsRight",],
     Layer: [
         {
             Name: "下半身",

@@ -33,11 +33,19 @@ export default function () {
                 layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
         }
     );
-    
+
     AssetManager.modifyAssetLayers(
         (asset) => asset.Group.Name == "ItemVulvaPiercings",
         (asset, layer) => {
             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
         }
     );
+
+    AssetManager.modifyAssetLayers(
+        (asset) => asset.Group.Name == "ItemButt",
+        (asset, layer) => {
+            layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
+        }
+    );
+    
 };

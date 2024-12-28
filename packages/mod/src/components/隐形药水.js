@@ -16,7 +16,7 @@ const asset = {
     Time: 10,
     Effect: [E.Slow, E.Block],
     DynamicBeforeDraw: true,
-    Hide: ["ItemHandheld", "Bracelet", "HandsLeft", "HandsRight", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper"],
+    Hide: ["ItemHandheld", "Bracelet", "HandsLeft", "HandsRight", "SocksRight", "SocksLeft", "BodyLower", "BodyUpper","AnkletLeft","AnkletRight","ArmsLeft","ArmsRight",],
     HideItem: [
         "ItemArmsCeilingShackles",
         "ItemArmsBolero",
