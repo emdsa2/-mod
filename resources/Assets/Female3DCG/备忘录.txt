@@ -8,12 +8,8 @@ ItemBoots 所有
 
 ItemPelvis 所有
 
-ItemTorso 所有
-
 Shoes 所有
 
 Suit 所有
 
 动物身体_Luzi 所有
-
-预估 4500 张图
