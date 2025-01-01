@@ -1,6 +1,6 @@
 ClothLower  长乳胶裤子  蕾丝裤  裙
 
-ItemAddon 隐身药水
+ItemAddon 隐身药水没弄完
 
 ItemArms 单手套服 闪亮拘束衣 闪亮宠物拘束服
 
@@ -10,6 +10,4 @@ ItemPelvis 所有
 
 Shoes 所有
 
-Suit 所有
-
-动物身体_Luzi 所有
+Suit 乳胶衣
