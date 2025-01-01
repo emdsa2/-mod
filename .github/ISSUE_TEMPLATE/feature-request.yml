@@ -61,7 +61,6 @@ body:
         - label: Held Item
         - label: Ears
         - label: Other / Please specify
-      required: true
 
   - type: textarea
     id: other-slot-description
@@ -69,7 +68,6 @@ body:
       label: Other Slot Description
       description: If you selected "Other", please specify the slot here
       placeholder: Specific slot description
-      required: false
 
   - type: checkboxes
     id: shape-dependence
@@ -80,7 +78,6 @@ body:
         - label: Does it change shape depending on posture?
         - label: Does it change shape depending on the upper body?
         - label: Does it change shape depending on the lower body?
-      required: true
 
   - type: textarea
     id: modular-components
