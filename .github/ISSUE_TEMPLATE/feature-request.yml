@@ -1,0 +1,120 @@
+name: Suggestion Template
+description: Submit a new suggestion
+title: "[Suggestion] Clear and Concise Title"
+labels: feature-request
+assignees: ["Mister-Hope"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 1. Restore Props
+
+        If you are the creator of a prop and do not want others to modify or use your created prop, please provide the prop name and proof of creation, and we will remove the modified version of the prop.
+
+  - type: textarea
+    id: prop-name
+    attributes:
+      label: Prop Name
+      description: Provide the English name of the prop
+      placeholder: Prop Name
+
+  - type: textarea
+    id: prop-proof
+    attributes:
+      label: Proof of Creation
+      description: Provide proof of creation
+      placeholder: Proof of Creation
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 2. Prop Suggestions
+
+        To help us better understand your prop suggestion, please provide the following information:
+
+  - type: textarea
+    id: item-name
+    attributes:
+      label: Prop Name
+      description: Provide the prop name (Chinese and English)
+      placeholder: Prop Name
+
+  - type: checkboxes
+    id: item-slot
+    attributes:
+      label: Prop Slot
+      description: Please select the slot where the prop is placed
+      options:
+        - label: Head
+        - label: Upper Body
+        - label: Lower Body
+        - label: Shoes
+        - label: Accessories
+        - label: Bra
+        - label: Underwear
+        - label: Glasses
+        - label: Gloves
+        - label: Hat
+        - label: Wings
+        - label: Tail
+        - label: Held Item
+        - label: Ears
+        - label: Other / Please specify
+      required: true
+
+  - type: textarea
+    id: other-slot-description
+    attributes:
+      label: Other Slot Description
+      description: If you selected "Other", please specify the slot here
+      placeholder: Specific slot description
+      required: false
+
+  - type: checkboxes
+    id: shape-dependence
+    attributes:
+      label: Shape Dependence
+      description: Does the prop change shape based on certain conditions?
+      options:
+        - label: Does it change shape depending on posture?
+        - label: Does it change shape depending on the upper body?
+        - label: Does it change shape depending on the lower body?
+      required: true
+
+  - type: textarea
+    id: modular-components
+    attributes:
+      label: Which components require modular switches?
+      placeholder: List components that need modular switching.
+
+  - type: textarea
+    id: reference-image
+    attributes:
+      label: Prop Reference Image
+      description: Provide at least one front-facing reference image URL or description
+
+  - type: textarea
+    id: special-interactions
+    attributes:
+      label: Special Interactions
+      placeholder: Describe any special animations or interactive functions the prop may have.
+
+  - type: textarea
+    id: content-restrictions
+    attributes:
+      label: Content Restrictions
+      description: |
+        To ensure the prop does not involve any infringement or inappropriate content, please note the following:
+
+        - **Infringing Symbols**: Do not propose props that contain unauthorized trademarks, copyrights, logos, etc.
+        - **Cult Symbols**: Props containing any cult symbols, patterns, or related content will not be accepted.
+        - **Violence and Gore**: Props with excessive violence, gore, or disturbing content will not be accepted.
+        - **Discrimination based on Race, Gender, or Religion**: Do not submit props with racist, sexist, religious, ethnic, sexual orientation, or any other form of discriminatory content.
+        - **Political Sensitive Content**: Do not submit props with political propaganda, party logos, or politically sensitive topics. Any prop suggestions containing such inappropriate content will not be accepted or drawn.
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Thank you for your feedback and suggestions!
