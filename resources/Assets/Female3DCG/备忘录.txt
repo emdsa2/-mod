@@ -1,4 +1,4 @@
-ClothLower  长乳胶裤子  蕾丝裤  裙
+
 
 
 
@@ -11,6 +11,7 @@ ItemPelvis 所有
 
 
 还剩一点
+ClothLower  Spread
 Shoes 脚趾戒指
-Suit 乳胶衣
-ItemAddon 隐身药水没弄完
+Suit 乳胶衣 
+ItemAddon 隐身药水剩一点
