@@ -10,7 +10,7 @@ const asset =         {
         Kneel: "Hide",
         KneelingSpread: "Hide",
         LegsClosed: "LegsClosed",
-        Spread: "Hide",
+        Spread: "Spread",
         Hogtied: "Hide",
         AllFours: "Hide",
     },

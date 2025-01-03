@@ -8,8 +8,9 @@ ItemBoots 所有
 
 ItemPelvis 所有
 
-Shoes 所有
+
 
 还剩一点
+Shoes 脚趾戒指
 Suit 乳胶衣
 ItemAddon 隐身药水没弄完
