@@ -32,6 +32,35 @@ const ItemGroups = [
 
 export class Tools {
     /**
+     * 发送自定义动作对话
+     * @param {Translation.Entry} Entry
+     * @param {{TargetCharacter?:Character, SourceCharacter?:Character, Asset?:Asset}} arg1
+     */
+    static sendCustomDialog(Entry, { TargetCharacter, SourceCharacter, Asset }) {
+        if (CurrentScreen !== "ChatRoom") return;
+
+        const DialogKey = "EchoModCustomDialog";
+        const rEntry = Entry[TranslationLanguage] || Entry["CN"];
+
+        if (!rEntry) {
+            console.warn(`Entry missing required language: ${TranslationLanguage}`, Entry);
+            return;
+        }
+
+        const builder = new DictionaryBuilder();
+
+        if (SourceCharacter) builder.sourceCharacter(SourceCharacter);
+        if (TargetCharacter) builder.targetCharacter(TargetCharacter);
+        if (Asset) builder.asset(Asset);
+        builder.text(`MISSING ACTIVITY DESCRIPTION FOR KEYWORD ${DialogKey}`, rEntry);
+
+        ServerSend("ChatRoomChat", {
+            Content: DialogKey,
+            Type: "Activity",
+            Dictionary: builder.build(),
+        });
+    }
+    /**
      * 所有物品身体组
      * @param {AssetGroupItemName[]} excepts
      * @returns {AssetGroupItemName[]}

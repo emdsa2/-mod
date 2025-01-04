@@ -1,56 +1,87 @@
-import ChatRoomOrder from "@mod-utils/ChatRoomOrder";
 import ActivityManager from "@mod-utils/ActivityManager";
+import { Prereqs } from "../Prereqs";
 
-/** @type { ActivityManagerInterface.ICustomActivity []} */
-const activities = [
-    {
+/**
+ *
+ * @param {string} assetName
+ * @param {Translation.Entry} label
+ * @param {Translation.Entry} dialog
+ * @returns {ActivityManagerInterface.ICustomActivity}
+ */
+function activityBuilder(assetName, label, dialog) {
+    return {
         activity: {
-            Name: "塞棒棒糖",
+            Name: `塞食物_${assetName}`,
             Prerequisite: [
-                (prereq, acting, acted, group) => {
-                    return InventoryIsItemInList(acting, "ItemHandheld", ["棒棒糖_Luzi"]);
-                },
+                Prereqs.Acted.GroupEmpty(["ItemMouth"]),
+                Prereqs.Acting.GroupIs("ItemHandheld", [assetName]),
             ],
             MaxProgress: 50,
             Target: ["ItemMouth"],
-            TargetSelf: ["ItemMouth"],
+            TargetSelf: true,
         },
-        useImage: ["ItemMouth", "棒棒糖_Luzi"],
+        useImage: ["ItemMouth", assetName],
         run: (player, sender, info) => {
             if (info.SourceCharacter === player.MemberNumber) {
-                const asset = AssetGet("Female3DCG", "ItemHandheld", "棒棒糖_Luzi");
+                const asset = AssetGet("Female3DCG", "ItemMouth", assetName);
                 if (!asset) return;
+
                 // 获取 TargetCharacter 玩家信息
-                let infoTargetCharacter = ChatRoomCharacterDrawlist.filter(
-                    (obj) => obj.MemberNumber === info.TargetCharacter
-                )[0];
+                const target = ChatRoomCharacter.find((obj) => obj.MemberNumber === info.TargetCharacter);
+                if (!target) return;
+
                 // 给棒棒糖
-                InventoryWear(infoTargetCharacter, "棒棒糖_Luzi", "ItemMouth");
-                InventoryRemove(player, "ItemHandheld", true);
-                ChatRoomCharacterUpdate(infoTargetCharacter); // 更新外观
+                InventoryWear(target, assetName, info.ActivityGroup);
+                InventoryRemove(player, "ItemHandheld");
+
+                // 更新外观
+                ChatRoomCharacterItemUpdate(target, info.ActivityGroup);
+                ChatRoomCharacterItemUpdate(player, "ItemHandheld");
+                CharacterRefresh(player, true);
             }
         },
-        label: {
+        label,
+        dialog,
+    };
+}
+
+/** @type { ActivityManagerInterface.ICustomActivity []} */
+const activities = [
+    activityBuilder(
+        "棒棒糖_Luzi",
+        {
             CN: "塞棒棒糖",
             EN: "Stuff with Lollipop",
             UA: "Наповнити рот льодяником",
         },
-        dialog: {
+        {
             CN: "SourceCharacter将手里的棒棒糖塞进TargetCharacter的嘴里.",
             EN: "SourceCharacter stuffs TargetCharacter's mouth with lollipop.",
             UA: "SourceCharacter наповнює рот TargetCharacter льодяником.",
+        }
+    ),
+    activityBuilder(
+        "烤鱼_Luzi",
+        {
+            CN: "塞烤鱼",
+            EN: "Stuff with Grilled Fish",
         },
-        labelSelf: {
-            CN: "塞棒棒糖",
-            EN: "Stuff with Lollipop",
-            UA: "Наповнити рот льодяником",
+        {
+            CN: "SourceCharacter将手里的烤鱼塞进TargetCharacter的嘴里.",
+            EN: "SourceCharacter stuffs TargetCharacter's mouth with Grilled Fish.",
+        }
+    ),
+    activityBuilder(
+        "鸡腿_Luzi",
+        {
+            CN: "塞鸡腿",
+            EN: "Stuff with Roasted Chicken Leg",
         },
-        dialogSelf: {
-            CN: "SourceCharacter将手里的棒棒糖塞进PronounPossessive自己的嘴里.",
-            EN: "SourceCharacter stuffs PronounPossessive own mouth with lollipop.",
-            UA: "SourceCharacter наповнює свій рот льодяником.",
-        },
-    },
+        {
+            CN: "SourceCharacter将手里的鸡腿塞进TargetCharacter的嘴里.",
+            EN: "SourceCharacter stuffs TargetCharacter's mouth with Roasted Chicken Leg.",
+        }
+    ),
 ];
 
 export default function () {
