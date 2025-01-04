@@ -6,9 +6,25 @@ const asset = {
     Random: false,
     Gender: "F",
     Top: 462,
-    Left: 0,
+    DefaultColor : [
+        "Default",
+        "#E3E3E3",
+        "#181818",
+        "#3F3F3F",
+        "Default",
+        "#E3E3E3",
+        "#181818",
+        "#3F3F3F"
+    ],
+    Left: {
+        BaseLower: 0,
+        Kneel: 0,
+        KneelingSpread: 0,
+        LegsClosed: 0,
+        LegsOpen: 0,
+        Spread: 0,
+    },
     Priority: 22,
-    Extended: true,
     PoseMapping: {
         Kneel: "Kneel",
         LegsClosed: "LegsClosed",
@@ -17,45 +33,17 @@ const asset = {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
     },
-    DefaultColor: [
-        "#FFFFFF",
-        "#FFFFFF",
-        "#181818",
-        "#3F3F3F",
-    ],
     Layer: [
-        { Name: "阴影", },
-        { Name: "花边" },
-        { Name: "环", },
-        { Name: "蝴蝶结", },
-        {
-            Name: "左腿",
-            HasImage: false,
-            HideColoring: true,
-            AllowTypes: { typed: [1] },
-            Alpha: [
-                {
-                    Group: ["Garters",],
-                    Masks: [
-                        [251, 0, 250, 1000],
-                    ],
-                },
-            ],
-        },
-        {
-            Name: "右腿",
-            HasImage: false,
-            HideColoring: true,
-            AllowTypes: { typed: [2] },
-            Alpha: [
-                {
-                    Group: ["Garters",],
-                    Masks: [
-                        [0, 0, 250, 1000],
-                    ],
-                },
-            ],
-        },
+        
+        { Name: "左腿阴影",  AllowTypes: { typed: [0, 2] }},
+        { Name: "左腿花边",  AllowTypes: { typed: [0, 2] }},
+        { Name: "左腿环",  AllowTypes: { typed: [0, 2] }},
+        { Name: "左腿蝴蝶结",  AllowTypes: { typed: [0, 2] }},
+        
+        { Name: "右腿阴影",  AllowTypes: { typed: [1, 2] }},
+        { Name: "右腿花边",  AllowTypes: { typed: [1, 2] }},
+        { Name: "右腿环",  AllowTypes: { typed: [1, 2] }},
+        { Name: "右腿蝴蝶结",  AllowTypes: { typed: [1, 2] }},
     ],
 };
 
@@ -63,10 +51,16 @@ const extended = {
     Archetype: ExtendedArchetype.TYPED,
     DrawImages: false,
     Options: [
+        { Name: "左腿" },
+        { Name: "右腿" },
         { Name: "双腿" },
-        { Name: "左腿", },
-        { Name: "右腿", },
     ],
+};
+
+
+const translations = {
+    CN: "花边腿环",
+    EN: "Lace leg ring",
 };
 
 /** @type {Translation.Dialog} */
@@ -85,13 +79,8 @@ const dialog = {
     }
 };
 
-/** @type {Translation.Entry} */
-const translation = {
-    CN: "花边腿环",
-    EN: "Lace leg ring",
-};
 
 export default function () {
-    AssetManager.addAsset("Garters", asset, extended, translation);
+    AssetManager.addAsset("Garters", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
-};
+}
