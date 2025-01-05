@@ -1,0 +1,41 @@
+name: Report a bug
+description: Bug report template
+title: '[Bug] Some bug report'
+labels: bug
+assignees: ['dynilath']
+
+body:
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction Steps
+      description: Provide a detailed description of the steps to reproduce the bug
+      placeholder: 
+        1. Go to '...'  
+        2. Click on '....'  
+        3. Scroll down to '....'  
+        4. See error  
+    validations:
+      required: true
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of the mod are you using?
+      options:
+        - stable
+        - beta
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error Message
+      description: Provide the error message or stack trace
+      placeholder:
+        Note that the error window of bcx does not calculate the source map (the error location is shown as "at i (.../mod.js:1:13905)", which is basicly useless), please provide the error message in the console.
+    validations:
+      required: true

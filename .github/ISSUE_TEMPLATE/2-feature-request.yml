@@ -1,15 +1,16 @@
 name: Suggest new prop
 description: Submit a item suggestion
 title: '[Suggestion] Some new prop idea'
-labels: feature-request
+labels: enhancement
 assignees: ['emdsa2', 'dynilath']
 
 body:
   - type: markdown
     id: content-restrictions
     attributes:
-      label: Content Restrictions
-      description: |
+      value: |
+        ## Content Restrictions
+
         To ensure the prop does not involve any infringement or inappropriate content, please note the following:
 
         - **Infringing Symbols**: Do not propose props that contain unauthorized trademarks, copyrights, logos, etc.
@@ -24,6 +25,9 @@ body:
       label: Prop Name
       description: Provide the prop name (Chinese and English)
       placeholder: A Great Prop
+    validations:
+      required: true
+
 
   - type: checkboxes
     id: item-slot
