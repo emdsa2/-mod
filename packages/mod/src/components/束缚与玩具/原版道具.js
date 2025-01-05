@@ -5,4 +5,9 @@ export default function () {
         asset.Block = [];
         asset.Prerequisite = [];
     });
+
+    // AssetManager.modifyAsset("ItemBoots", "LeatherToeCuffs", (group, asset) => {
+    //     asset.ParentGroup: null;
+    // });
+
 }

@@ -10,13 +10,6 @@ export default function () {
             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
         }
     );
-    AssetManager.modifyAssetLayers(
-        (asset) => asset.Group.Name == "Pussy",
-        (asset,layer)=>{
-            if(layer.Name == "Penis")
-                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
-        }
-    );
 
     AssetManager.modifyAssetLayers(
         (asset) => asset.Group.Name == "ItemVulva",
@@ -47,5 +40,16 @@ export default function () {
             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -16);
         }
     );
+    
+    AssetManager.modifyAssetLayers(
+        (asset) => asset.Group.Name == "ItemPelvis",
+        (asset,layer)=>{
+            if(layer.Name == "FuturisticTrainingBelt")
+                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+            if(layer.Name == "HarnessPanties1")
+                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+        }
+    );
+
     
 };
