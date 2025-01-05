@@ -149,8 +149,9 @@ function readAssetsMapping(startDir, assetDirs) {
  * @param { string } baseURL
  * @param { ReturnType<typeof buildModInfo> } modInfo
  * @param { ReturnType<typeof buildRollupSetting> } rollupSetting
+ * @param { boolean } [betaFlag]
  */
-function createRollupConfig(curDir, baseURL, modInfo, rollupSetting) {
+function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaFlag = false) {
     const buildDestDir = `${process.env.INIT_CWD}/public/`;
     const curDirRelative = relativePath(".", curDir);
 
@@ -173,6 +174,8 @@ function createRollupConfig(curDir, baseURL, modInfo, rollupSetting) {
         ? JSON.stringify(readAssetsMapping(rollupSetting.assets.location, rollupSetting.assets.assets))
         : "{}";
 
+    const baseURL_ = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
+
     const loader_replaces = {
         __base_url__: `${baseURL.endsWith("/") ? baseURL.substring(0, baseURL.length - 1) : baseURL}`,
         __description__: rollupSetting.description,
@@ -186,7 +189,7 @@ function createRollupConfig(curDir, baseURL, modInfo, rollupSetting) {
         __mod_repo__: modInfo.repo ? `"${modInfo.repo}"` : "undefined",
         __mod_asset_overrides__: assetMapping,
         __mod_base_url__: `"${baseURL}"`,
-
+        __mod_resource_base_url__: `"${baseURL_}${betaFlag ? "beta/" : ""}"`,
         __mod_rollup_imports__: componentsImports.imports,
         __mod_rollup_setup__: componentsImports.setups,
     };
@@ -245,5 +248,5 @@ module.exports = (cliArgs) => {
     log(`Deploying to ${baseURL_}`);
     log(`Build time: ${new Date().toLocaleString("zh-CN", { hour12: false })}`);
 
-    return createRollupConfig(__dirname, baseURL, modInfo, setting);
+    return createRollupConfig(__dirname, baseURL, modInfo, setting, beta);
 };

@@ -1,6 +1,6 @@
 import { sleepUntil } from "@mod-utils/sleep";
 import ModManager from "../ModManager";
-import { assetOverrides, baseURL } from "../rollupHelper";
+import { assetOverrides, resourceBaseURL } from "../rollupHelper";
 import { Path } from "@mod-utils/path";
 import { Mapping } from "../ImageMapping";
 
@@ -27,7 +27,7 @@ export function setupImgMapping() {
             Object.entries(current.container).forEach(([key, value]) => {
                 const assetPath = `${current.path}${key}`;
                 if (typeof value === "number") {
-                    basicImgMapping[assetPath] = `${baseURL}${assetPath}`;
+                    basicImgMapping[assetPath] = `${resourceBaseURL}${assetPath}`;
                 } else {
                     processList.push({ container: value, path: `${assetPath}/` });
                 }

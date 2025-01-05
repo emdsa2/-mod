@@ -46,6 +46,9 @@ jobs:
           ref: main
           clean: false
 
+      - name: Copy Beta Resources
+        run: pnpm resources:rel --type beta
+
       - name: Build Beta
         run: pnpm build --configBaseURL $PAGE_URL --configBeta
 

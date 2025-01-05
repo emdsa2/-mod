@@ -14,12 +14,39 @@ const getProjectDir = () => {
     return dir;
 };
 
+// args: --dev, --rel, --type <stable|beta>
+
 const args = process.argv.slice(2);
 const isDev = args.includes("--dev");
 const isRel = args.includes("--rel");
+
+/** @type {"stable" | "beta"} */
+const buildType = (() => {
+    const typeIndex = args.indexOf("--type");
+    
+    const type = typeIndex === -1 ? "stable" : args[typeIndex + 1];
+    if (!["stable", "beta"].includes(type)) {
+        throw new Error(`Invalid build type: ${type}`);
+    }
+    console.log(`Build type: ${type}`);
+    return type;
+})();
+
 const projectDir = getProjectDir();
 const resourcesDir = path.join(projectDir, "resources");
-const publicDir = path.join(projectDir, "public");
+
+const publicDir = (()=>{
+    if(buildType === "stable") {
+        return path.join(projectDir, "public");
+    } else {
+        const pDir = path.join(projectDir, "public");
+        if (!fs.existsSync(pDir)) {
+            fs.mkdirSync(pDir);
+        }
+
+        return path.join(projectDir, "public", "beta");
+    }
+})()
 
 function createSymlink(src, dest) {
     try {

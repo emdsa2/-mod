@@ -3,6 +3,7 @@ declare const __mod_full_name__: string;
 declare const __mod_name__: string;
 declare const __mod_repo__: string | undefined;
 declare const __mod_base_url__: string;
+declare const __mod_resource_base_url__: string;
 declare const __mod_asset_overrides__: AssetOverrideContainer;
 
 declare const __mod_rollup_imports__: string[];

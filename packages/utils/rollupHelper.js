@@ -10,3 +10,5 @@ export const ModInfo = {
 export const assetOverrides = __mod_asset_overrides__;
 
 export const baseURL = __mod_base_url__;
+
+export const resourceBaseURL = __mod_resource_base_url__;
