@@ -52,8 +52,8 @@ function removingCheck(pool, { SourceCharacter, TargetCharacter }, { time, posi 
     if (pool.length === 0) {
         Tools.sendCustomDialog(
             {
-                CN: "TargetCharacter没有找到可以脱掉的物品.",
-                EN: "TargetCharacter did not find any items that can be taken off.",
+                CN: "SourceCharacter没有找到可以脱掉的物品.",
+                EN: "SourceCharacter did not find any items that can be taken off.",
             },
             { TargetCharacter, SourceCharacter }
         );
@@ -65,8 +65,8 @@ function removingCheck(pool, { SourceCharacter, TargetCharacter }, { time, posi 
         if (Math.random() < posi) {
             Tools.sendCustomDialog(
                 {
-                    CN: "SourceCharacter成功用嘴脱掉了TargetCharacter的AssetName.",
-                    EN: "SourceCharacter successfully took off TargetCharacter's AssetName with mouth.",
+                    CN: "SourceCharacter成功用嘴脱掉了DestinationCharacterNameAssetName.",
+                    EN: "SourceCharacter successfully took off DestinationCharacterName AssetName with mouth.",
                 },
                 { TargetCharacter, SourceCharacter, Asset: rdItem.Asset }
             );
@@ -75,8 +75,8 @@ function removingCheck(pool, { SourceCharacter, TargetCharacter }, { time, posi 
         } else {
             Tools.sendCustomDialog(
                 {
-                    CN: "SourceCharacter尝试用嘴脱掉TargetCharacter的AssetName，但失败了.",
-                    EN: "SourceCharacter tries to take off TargetCharacter's AssetName with mouth, but failed.",
+                    CN: "SourceCharacter尝试用嘴脱掉DestinationCharacterNameAssetName，但失败了.",
+                    EN: "SourceCharacter tries to take off DestinationCharacterName AssetName with mouth, but failed.",
                 },
                 { TargetCharacter, SourceCharacter, Asset: rdItem.Asset }
             );
