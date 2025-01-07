@@ -62,7 +62,7 @@ export default function () {
             if (AssetManager.assetIsCustomed(asset)) {
                 ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
             }
-            return /**@type {never}*/ (ret);
+            return ret;
         });
     }
 }

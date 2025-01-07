@@ -54,7 +54,7 @@ export default function () {
             if (ActivityManager.activityIsCustom(_args[1].Activity.Name)) {
                 ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
             }
-            return next(args);
+            return ret;
         });
     }
 }
