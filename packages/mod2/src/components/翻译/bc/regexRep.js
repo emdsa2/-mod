@@ -1537,6 +1537,90 @@ const translationsDTF2 = [
         regex: /Fetishes\: (.+)\% \｜ Activities \(You \→ 她\)\: (.+)\% \｜ Activities \(她 → You\)\: (.+)\%/,
         replacement: "癖好相似度: $1% ｜ %动作 (你 → 她): $2% ｜ 动作 (她 → 你): $3%"
     },
+
+    // MPA Authority 相关
+    { 
+       regex: /Maya\'s Petplay Additions - (.+)\'s Authority/, 
+       replacement: "Maya的宠物玩法扩展 - $1 的权限" 
+   },
+   { 
+       regex: /Notify when others are accessing (.+)\'s settings/, 
+       replacement: "当他人访问 $1 的设置时通知" 
+   },
+   { 
+       regex: /Allow (.+) changing her own settings while bound/, 
+       replacement: "允许 $1 在被束缚时更改自己的设置" 
+   },
+   { 
+       regex: /Allow (.+) changing the settings of others while bound/, 
+       replacement: "允许 $1 在被束缚时更改他人的设置" 
+   },
+   { 
+       regex: /Allow (.+) to change her Authority settings/, 
+       replacement: "允许 $1 更改她的权限设置" 
+   },
+   { 
+       regex: /Allow others to change (.+)\'s Authority settings/, 
+       replacement: "允许他人更改 $1 的权限设置" 
+   },
+   { 
+       regex: /Allow (.+) to change her Profile settings/, 
+       replacement: "允许 $1 更改她的个人资料设置" 
+   },
+   { 
+       regex: /Allow others to change (.+)\'s Profile settings/, 
+       replacement: "允许他人更改 $1 的个人资料设置" 
+   },
+   { 
+       regex: /Allow (.+) to change her Clicker settings/, 
+       replacement: "允许 $1 更改她的训练器设置" 
+   },
+   { 
+       regex: /Allow others to change (.+)\'s Clicker settings/, 
+       replacement: "允许他人更改 $1 的训练器设置" 
+   },
+   { 
+       regex: /Allow (.+) to change her Virtual Pet settings/, 
+       replacement: "允许 $1 更改她的虚拟宠物设置" 
+   },
+   { 
+       regex: /Allow others to change (.+)\'s Virtual Pet settings/, 
+       replacement: "允许他人更改 $1 的虚拟宠物设置" 
+   },
+   { 
+       regex: /Allow (.+) to change her Virtual Pet Conditions settings/, 
+       replacement: "允许 $1 更改她的虚拟宠物状态效果设置" 
+   },
+   { 
+       regex: /Allow others to change (.+)\'s Virtual Pet Conditions settings/, 
+       replacement: "允许他人更改 $1 的虚拟宠物状态效果设置" 
+   },
+
+   // Profile 相关
+   { 
+       regex: /Maya\'s Petplay Additions - (.+)\'s Profile/, 
+       replacement: "Maya的宠物玩法扩展 - $1 的个人资料" 
+   },
+
+   // Clicker 相关
+   { 
+       regex: /Maya\'s Petplay Additions - (.+)\'s Clicker/, 
+       replacement: "Maya的宠物玩法扩展 - $1 的训练器" 
+   },
+
+   // Virtual Pet 相关
+   { 
+       regex: /Maya\'s Petplay Additions - (.+)\'s Virtual Pet/, 
+       replacement: "Maya的宠物玩法扩展 - $1 的虚拟宠物" 
+   },
+   { 
+       regex: /Maya\'s Petplay Additions - (.+)\'s Virtual Pet Hud/, 
+       replacement: "Maya的宠物玩法扩展 - $1 的虚拟宠物状态显示" 
+   },
+   { 
+       regex: /Maya\'s Petplay Additions - (.+)\'s Virtual Pet Conditions/, 
+       replacement: "Maya的宠物玩法扩展 - $1 的虚拟宠物状态效果" 
+   }
 ];
 
 export { translationsDTF, translationsDTF2, act_dialogs, pronouns };

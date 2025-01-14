@@ -5,9 +5,12 @@ import { translation as FBC } from "./FBC";
 import { activities, translation as LSCG } from "./LSCG";
 import { translation as MBS } from "./MBS";
 import { translation as WCE } from "./WCE";
+import { translation as MPA } from "./MPA";
+import { translation as DOGS } from "./DOGS";
+import { translation as BCTweaks } from "./BCTweaks";
 import { translationsDTF, translationsDTF2, act_dialogs, pronouns } from "./regexRep";
 
-const translations = [BCAR, BCX, FBC, LSCG, MBS, WCE].reduce((pv, cv) => Object.assign(pv, cv), {});
+const translations = [BCAR, BCX, FBC, LSCG, MBS, WCE, MPA, DOGS, BCTweaks].reduce((pv, cv) => Object.assign(pv, cv), {});
 
 function tryReplaceWithNames(key) {
     const PName = Player?.Name;
