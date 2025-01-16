@@ -49,7 +49,7 @@ const asset = {
         },
         {
             Name: "手",
-            Priority: 26,
+            Priority: 28,
             Top: 0,
             Left: 0,
             ParentGroup: "BodyUpper",
