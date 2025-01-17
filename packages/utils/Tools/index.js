@@ -103,12 +103,34 @@ export class Tools {
     /**
      * 调整TopLeft数据工具函数
      * @param {TopLeft.Data} data
-     * @param {number} diff
+     * @param {number | Partial<Record<AssetPoseName | PoseTypeDefault, number>>} diff
      * @returns {TopLeft.Data}
      */
     static topLeftAdjust(data, diff) {
-        return /** @type {TopLeft.Data}*/ (
-            Object.fromEntries(Object.entries(data).map(([key, value]) => [key, value + diff]))
-        );
+        if (typeof diff === "number") {
+            return /** @type {TopLeft.Data}*/ (
+                Object.fromEntries(Object.entries(data).map(([key, value]) => [key, value + diff]))
+            );
+        } else {
+            return /** @type {TopLeft.Data}*/ (
+                Object.fromEntries(Object.entries(data).map(([key, value]) => [key, value + (diff[key] ?? 0)]))
+            );
+        }
+    }
+
+    /**
+     * 覆写TopLeft数据工具函数
+     * @param {TopLeft.Data} data
+     * @param {number | Partial<Record<AssetPoseName | PoseTypeDefault, number>>} over
+     * @returns {TopLeft.Data}
+     */
+    static topLeftOverride(data, over) {
+        if (typeof over === "number") {
+            return /** @type {TopLeft.Data}*/ (Object.fromEntries(Object.entries(data).map(([key, _]) => [key, over])));
+        } else {
+            return /** @type {TopLeft.Data}*/ (
+                Object.fromEntries(Object.entries(data).map(([key, value]) => [key, over[key] ?? value]))
+            );
+        }
     }
 }
