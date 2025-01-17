@@ -19,7 +19,7 @@ export default function () {
     );
 
     AssetManager.modifyAssetLayers(
-        (asset) => asset.Name == "StrictPonyBoots" && asset.Group.Name == "ItemBoots",
+        (asset) => asset.Name == "StrictPonyBoots",
         (asset, layer) => {
             // 第二个参数可以指定姿势
             // layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, { BaseLower: -10 });
