@@ -1,5 +1,6 @@
 const translation = {
     // MPA Settings
+    "MPA Settings": "MPA 设置",
     "Maya's Petplay Additions": "Maya的宠物玩法扩展",
     "Wiki": "百科",
     "RESET": "重置",
