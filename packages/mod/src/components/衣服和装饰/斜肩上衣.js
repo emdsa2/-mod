@@ -34,19 +34,19 @@ const extended = {
 /** @type {Translation.Dialog} */
 const dialog = {
     CN: {
-        Cloth斜肩上衣_Luzi_LuziSelect: "设置",
-        Cloth斜肩上衣_Luzi_左: "左",
-        Cloth斜肩上衣_Luzi_右: "右",
+        Cloth斜肩上衣_LuziSelect: "设置",
+        Cloth斜肩上衣_Luzi左: "左",
+        Cloth斜肩上衣_Luzi右: "右",
     },
     EN: {
-        Cloth斜肩上衣_Luzi_LuziSelect: "Select",
-        Cloth斜肩上衣_Luzi_左: "Left",
-        Cloth斜肩上衣_Luzi_右: "Right",
+        Cloth斜肩上衣_LuziSelect: "Select",
+        Cloth斜肩上衣_Luzi左: "Left",
+        Cloth斜肩上衣_Luzi右: "Right",
     },
     RU: {
-        Cloth斜肩上衣_Luzi_LuziSelect: "Выбрать",
-        Cloth斜肩上衣_Luzi_左: "Лево",
-        Cloth斜肩上衣_Luzi_右: "Право",
+        Cloth斜肩上衣_LuziSelect: "Выбрать",
+        Cloth斜肩上衣_Luzi左: "Лево",
+        Cloth斜肩上衣_Luzi右: "Право",
     },
 };
 
