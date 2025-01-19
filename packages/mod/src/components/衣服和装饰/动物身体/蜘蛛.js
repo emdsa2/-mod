@@ -65,7 +65,7 @@ const asset = {
                         "ClothAccessory",
                         "ClothAccessory_笨笨蛋Luzi",
                     ],
-                    Masks: [[100, 470, 300, 430]],
+                    Masks: [[100, 470, 300, 630]],
                     Pose: ["BaseLower", "LegsClosed", "Kneel", "KneelingSpread", "Spread", "LegsOpen"],
                 },
             ],
