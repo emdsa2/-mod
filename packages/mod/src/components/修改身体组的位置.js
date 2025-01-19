@@ -63,5 +63,30 @@ export default function () {
         }
     );
 
-    
+    AssetManager.modifyAssetLayers(
+        (asset) => asset.Group.Name == "Panties",
+        (asset,layer)=>{
+            if(layer.Name == "CockSock")
+                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+            if(layer.Name == "Jockstrap")
+                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+            if(layer.Name == "Jockstrap")
+                layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -20);
+        }
+    );
+    // TODO Saki救救
+    // AssetManager.modifyAssetLayers(
+    //     (asset) => asset.Group.Name == "ItemPelvis",
+    //     (asset,layer)=>{
+    //         if(layer.Name == "HarnessPanties1")
+    //             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -40);
+    //     }
+    // );
+    // AssetManager.modifyAssetLayers(
+    //     (asset) => asset.Group.Name == "Panties",
+    //     (asset,layer)=>{
+    //         if(layer.Name == "HarnessPanties1")
+    //             layer.DrawingTop = Tools.topLeftAdjust(layer.DrawingTop, -40);
+    //     }
+    // );
 };
