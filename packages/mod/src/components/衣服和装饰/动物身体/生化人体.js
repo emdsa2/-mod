@@ -7,19 +7,28 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    Priority: 21,
+    Priority: 9,
     Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
     DefaultColor: ["Default"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
     },
+    ParentGroup: null,
+    AllowColorize: false,
     Layer: [
         {
+            Name: "骨架",
+        },
+        {
+            Name: "阴道",
+        },
+        {
             Name: "擦除身体",
-            AllowColorize: false,
-            ParentGroup: null,
             BlendingMode: "destination-out",
+        },
+        {
+            Name: "网格",
         },
     ],
 };
@@ -65,5 +74,5 @@ export default function () {
         [`gl.bindBuffer(gl.ARRAY_BUFFER, program.position_buffer);`]: `${func}(gl,blendingMode); gl.bindBuffer(gl.ARRAY_BUFFER, program.position_buffer);`,
     });
 
-    // AssetManager.addAsset("Bra", asset);
+    AssetManager.addAsset("Bra", asset);
 }

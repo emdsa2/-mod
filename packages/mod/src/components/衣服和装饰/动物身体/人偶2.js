@@ -35,5 +35,5 @@ const translations = {
 };
 
 export default function () {
-    AssetManager.addAsset("Cloth", asset, undefined, translations);
+    // AssetManager.addAsset("Cloth", asset, undefined, translations);
 }
