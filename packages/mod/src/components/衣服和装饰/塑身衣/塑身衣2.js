@@ -106,5 +106,5 @@ export default function () {
         translation
     );
 
-    AssetManager.addAsset("SuitLower", asset, null, translation);
+    AssetManager.addAsset("ClothLower", asset, null, translation);
 }
