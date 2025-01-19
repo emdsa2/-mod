@@ -74,5 +74,5 @@ export default function () {
         [`gl.bindBuffer(gl.ARRAY_BUFFER, program.position_buffer);`]: `${func}(gl,blendingMode); gl.bindBuffer(gl.ARRAY_BUFFER, program.position_buffer);`,
     });
 
-    AssetManager.addAsset("Bra", asset);
+    AssetManager.addAsset("动物身体_Luzi", asset);
 }
