@@ -61,7 +61,7 @@ const asset2 = {
                 BackElbowTouch: "BackElbowTouch",
                 BackCuffs: "BackCuffs",
                 AllFours: "Hide",
-                Hogtied: "Hide",
+                Hogtied: "Hogtied",
             },
         },
         {
@@ -75,7 +75,7 @@ const asset2 = {
                 BackElbowTouch: "BackElbowTouch",
                 BackCuffs: "BackElbowTouch",
                 AllFours: "Hide",
-                Hogtied: "Hide",
+                Hogtied: "Hogtied",
             },
         },
     ],
