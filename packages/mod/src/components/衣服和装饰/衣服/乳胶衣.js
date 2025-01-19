@@ -16,14 +16,13 @@ const assets = {
                 {
                     Name: "手套底色",
                     Priority: 27,
-                    ParentGroup: null,
                     PoseMapping: {
-                        TapedHands: "Hide",
-                        Yoked: "Hide",
-                        OverTheHead: "Hide",
+                        TapedHands: "TapedHands",
+                        Yoked: "Yoked",
+                        OverTheHead: "OverTheHead",
                         BackBoxTie: "Hide",
                         BackElbowTouch: "Hide",
-                        BackCuffs: "Hide",
+                        BackCuffs: "BackCuffs",
                         Hogtied: "Hide",
                         AllFours: "Hide",
                     },
@@ -31,7 +30,6 @@ const assets = {
                 {
                     Name: "手套阴影",
                     Priority: 27,
-                    ParentGroup: null,
                     PoseMapping: {
                         TapedHands: "Hide",
                         Yoked: "Hide",
@@ -46,7 +44,6 @@ const assets = {
                 {
                     Name: "手套高光",
                     Priority: 27,
-                    ParentGroup: null,
                     PoseMapping: {
                         TapedHands: "Hide",
                         Yoked: "Hide",
@@ -59,7 +56,8 @@ const assets = {
                     },
                 },
                 {
-                    Name: "上底色", Priority: 14,
+                    Name: "上底色", 
+                    Priority: 14,
                     PoseMapping: {
                         TapedHands: "TapedHands",
                         Yoked: "Yoked",
@@ -72,7 +70,8 @@ const assets = {
                     },
                 },
                 {
-                    Name: "上阴影", Priority: 14,
+                    Name: "上阴影", 
+                    Priority: 14,
                     PoseMapping: {
                         TapedHands: "TapedHands",
                         Yoked: "Yoked",
@@ -85,7 +84,8 @@ const assets = {
                     },
                 },
                 {
-                    Name: "上高光", Priority: 14,
+                    Name: "上高光", 
+                    Priority: 14,
                     PoseMapping: {
                         TapedHands: "TapedHands",
                         Yoked: "Yoked",
