@@ -118,16 +118,28 @@ const dialog = {
         动物身体_Luzi蜘蛛_LuziSelect: "设置",
         动物身体_Luzi蜘蛛_Luzi1: "左",
         动物身体_Luzi蜘蛛_Luzi2: "右",
+
+        Wings蜘蛛_LuziSelect: "设置",
+        Wings蜘蛛_Luzi1: "左",
+        Wings蜘蛛_Luzi2: "右",
     },
     EN: {
         动物身体_Luzi蜘蛛_LuziSelect: "Select",
         动物身体_Luzi蜘蛛_Luzi1: "Left",
         动物身体_Luzi蜘蛛_Luzi2: "Right",
+
+        Wings蜘蛛_LuziSelect: "Select",
+        Wings蜘蛛_Luzi1: "Left",
+        Wings蜘蛛_Luzi2: "Right",
     },
     RU: {
         动物身体_Luzi蜘蛛_LuziSelect: "Выбрать",
         动物身体_Luzi蜘蛛_Luzi1: "Лево",
         动物身体_Luzi蜘蛛_Luzi2: "Право",
+
+        Wings蜘蛛_LuziSelect: "Выбрать",
+        Wings蜘蛛_Luzi1: "Лево",
+        Wings蜘蛛_Luzi2: "Право",
     },
 };
 
@@ -140,5 +152,7 @@ const translations = {
 export default function () {
     // @ts-ignore
     AssetManager.addAsset("动物身体_Luzi", asset, extended, translations);
+    // @ts-ignore
+    AssetManager.addAsset("Wings", asset, extended, translations);
     AssetManager.addCustomDialog(dialog);
 }
