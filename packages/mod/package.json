@@ -1,6 +1,6 @@
 {
     "name": "mod",
-    "version": "0.2.9",
+    "version": "1.0.1",
     "scripts": {
         "type-check": "tsc --noEmit --allowJs --checkJs -p jsconfig.json",
         "build": "rollup -c rollup.config.js"
@@ -28,9 +28,9 @@
         }
     },
     "displayName": "服装拓展",
-    "modFullName": "服装拓展完整名",
+    "modFullName": "Echo的服装拓展",
     "author": "Echo",
-    "description": "服装拓展加载脚本描述",
+    "description": "BC视觉表现的美学修正与拓展",
     "devDependencies": {
         "@rollup/plugin-alias": "^5.1.1",
         "@rollup/plugin-commonjs": "^25.0.8",

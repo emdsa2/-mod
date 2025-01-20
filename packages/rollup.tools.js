@@ -185,7 +185,7 @@ function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaFlag = 
 
         __mod_name__: `"${modInfo.name}"`,
         __mod_full_name__: `"${modInfo.fullName}"`,
-        __mod_version__: `"${modInfo.version}"`,
+        __mod_version__: `"${modInfo.version}-${betaFlag ? "beta" : ""}"`,
         __mod_repo__: modInfo.repo ? `"${modInfo.repo}"` : "undefined",
         __mod_asset_overrides__: assetMapping,
         __mod_base_url__: `"${baseURL}"`,
