@@ -4,9 +4,11 @@ import { ModInfo } from "@mod-utils/rollupHelper";
 import ChatRoomOrder from "@mod-utils/ChatRoomOrder";
 
 import { setup } from "./components";
-import AssetManager from "@mod-utils/AssetManager";
+import { once } from "@mod-utils/loadFlag";
 
-ModManager.init(ModInfo);
-ChatRoomOrder.setup();
-ActivityManager.init();
-setup();
+once(ModInfo.name, () => {
+    ModManager.init(ModInfo);
+    ChatRoomOrder.setup();
+    ActivityManager.init();
+    setup();
+});

@@ -1,38 +1,38 @@
 {
-  "name": "mod2",
-  "version": "0.2.5",
-  "scripts": {
-    "build": "rollup -c rollup.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/emdsa2/-mod"
-  },
-  "rollupSetting": {
-    "output": "mod2.js",
-    "input": "src/main.js",
-    "componentDir": "src/components",
-    "loaderName": "BC_Activity2.user.js",
-    "beta": {
-      "output": "mod2-beta.js",
-      "loaderName": "BC_Activity2-beta.user.js"
+    "name": "mod2",
+    "version": "0.2.5",
+    "scripts": {
+        "build": "rollup -c rollup.config.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/emdsa2/-mod"
+    },
+    "rollupSetting": {
+        "output": "mod2.js",
+        "input": "src/main.js",
+        "componentDir": "src/components",
+        "loaderName": "BC_Activity2.user.js",
+        "beta": {
+            "output": "mod2-beta.js",
+            "loaderName": "BC_Activity2-beta.user.js"
+        }
+    },
+    "displayName": "动作拓展",
+    "modFullName": "Echo的动作拓展",
+    "author": "Echo",
+    "description": "更多可爱有趣的互动",
+    "devDependencies": {
+        "@rollup/plugin-alias": "^5.1.1",
+        "@rollup/plugin-commonjs": "^25.0.8",
+        "@rollup/plugin-node-resolve": "^15.2.4",
+        "@rollup/plugin-replace": "^5.0.7",
+        "@rollup/plugin-terser": "^0.4.4",
+        "bc-stubs": "^111.0.0",
+        "bondage-club-mod-sdk": "^1.2.0",
+        "rollup": "^4.22.4",
+        "rollup-plugin-cleanup": "^3.2.1",
+        "rollup-plugin-copy": "^3.5.0",
+        "rollup-plugin-import-css": "^3.5.7"
     }
-  },
-  "displayName": "动作拓展",
-  "modFullName": "动作拓展完整名",
-  "author": "Echo",
-  "description": "动作拓展加载脚本描述",
-  "devDependencies": {
-    "@rollup/plugin-alias": "^5.1.1",
-    "@rollup/plugin-commonjs": "^25.0.8",
-    "@rollup/plugin-node-resolve": "^15.2.4",
-    "@rollup/plugin-replace": "^5.0.7",
-    "@rollup/plugin-terser": "^0.4.4",
-    "bc-stubs": "^111.0.0",
-    "bondage-club-mod-sdk": "^1.2.0",
-    "rollup": "^4.22.4",
-    "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-import-css": "^3.5.7"
-  }
 }
