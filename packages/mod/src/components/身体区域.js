@@ -10,6 +10,7 @@ const groups = [
             Priority: 53,
             Left: 0,
             Top: 0,
+            BodyCosplay: true,
             Asset: [
                 {
                     Name: "少_Luzi",
@@ -35,7 +36,7 @@ const groups = [
         groupDef: {
             Group: "身体痕迹_Luzi",
             Priority: 10,
-            Clothing: true,
+            BodyCosplay: true,
             Default: false,
             Random: false,
             Asset: [
@@ -56,23 +57,21 @@ const groups = [
         groupDef: {
             Group: "动物身体_Luzi",
             Priority: 10,
-            Clothing: true,
             Default: false,
             Random: false,
             Asset: [],
             Color: ["Default"],
         },
         description: {
-            CN: "🍔动物身体",
-            EN: "🍔Animal Bodies",
-            RU: "🍔Тела животных",
+            CN: "🍔替用身体",
+            EN: "🍔Alter Body",
+            RU: "🍔Замена тела",
         },
     },
     {
         groupDef: {
             Group: "额外身高_Luzi",
             Priority: 10,
-            Clothing: true,
             Default: false,
             Random: false,
             BodyCosplay: true,
@@ -113,7 +112,6 @@ const groups = [
         groupDef: {
             Group: "新前发_Luzi",
             Priority: 52,
-            Clothing: false,
             Default: false,
             Random: false,
             PreviewZone: [140, 40, 220, 220],
@@ -138,7 +136,6 @@ const groups = [
         groupDef: {
             Group: "新后发_Luzi",
             Priority: 5,
-            Clothing: false,
             Default: false,
             Random: false,
             PreviewZone: [55, 0, 390, 390],
@@ -163,7 +160,6 @@ const groups = [
         groupDef: {
             Group: "额外头发_Luzi",
             Priority: 53,
-            Clothing: false,
             Default: false,
             Random: false,
             EditOpacity: true,
