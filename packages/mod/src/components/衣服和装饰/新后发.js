@@ -125,6 +125,17 @@ const assets = [
         Priority: 5
     },
     {
+        Name: "低双马尾6",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 5
+    },
+    {
         Name: "双马尾1",
         Random: false,
         Left: 0,
@@ -202,6 +213,17 @@ const assets = [
         Priority: 5
     },
     {
+        Name: "卷发后3",
+        Random: false,
+        Left: 0,
+        Top: 0,
+        ParentGroup: null,
+        Extended: false,
+        InheritColor: "HairFront",
+        Hide: ["HairBack"],
+        Priority: 5
+    },
+    {
         Name: "后发髻1",
         Random: false,
         Left: 0,
@@ -236,7 +258,8 @@ const translations = {
             低双马尾2: "低双马尾 2",
             低双马尾3: "低双马尾 3",
             低双马尾4: "低双马尾 4",
-            低双马尾5: "低双马尾 5",            
+            低双马尾5: "低双马尾 5",    
+            低双马尾6: "低双马尾 6",            
             双马尾1: "双马尾 1",           
             双马尾2: "双马尾 2",           
             双马尾3: "双马尾 3",     
@@ -244,6 +267,7 @@ const translations = {
             双马尾5: "双马尾 5",
             卷发后1: "卷发后1",
             卷发后2: "卷发后2",
+            卷发后3: "卷发后3",
             后发髻1: "后发髻1",
             后发髻2: "后发髻2",
         },
@@ -258,6 +282,7 @@ const translations = {
             低双马尾3: "Low double ponytail 3",
             低双马尾4: "Low double ponytail 4",
             低双马尾5: "Low double ponytail 5",
+            低双马尾6: "Low double ponytail 6",
             双马尾1: "Low double ponytail 1",
             双马尾2: "Low double ponytail 2",
             双马尾3: "Low double ponytail 3",
@@ -265,6 +290,7 @@ const translations = {
             双马尾5: "Low double ponytail 5",
             卷发后1: "Curly Hair Back 1",
             卷发后2: "Curly Hair Back 2",
+            卷发后3: "Curly Hair Back 3",
             后发髻1: "Back Bun 1",
             后发髻2: "Back Bun 2",
         },
