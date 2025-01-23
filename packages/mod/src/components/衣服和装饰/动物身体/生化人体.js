@@ -111,7 +111,7 @@ const asset = {
     Priority: 7,
     Gender: "F",
     Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
-    DefaultColor: ["Default", "Default", "#696776", "#988686", "Default"],
+    DefaultColor: ["Default", "Default", "#696776", "#7E5F69", "#E3BFBF"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
@@ -153,7 +153,6 @@ const asset = {
             Name: "腹中脑",
             Top: 400,
             Left: 180,
-            Opacity: 0.7,
         },
         {
             Name: "上身遮罩",
@@ -185,6 +184,7 @@ const asset = {
         },
         {
             Name: "网格",
+            ParentGroup: "BodyUpper",
         },
     ],
 };
