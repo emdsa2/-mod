@@ -79,16 +79,23 @@ function getMaskURL(C, Asset, LayerName, Pose, ParentAssetName, OverrideName) {
 /** @type {ExtendedItemCallbacks.AfterDraw<{}>} */
 function androidDraw({ C, A, X, Y, Pose, drawCanvas, drawCanvasBlink, AlphaMasks, L, G }) {
     if (L === "上身遮罩" || L === "下身遮罩") {
-        const { Canvas, CanvasBlink } = partialDraw(
-            C,
-            A,
-            L === "上身遮罩" ? ["BodyUpper", "ArmsLeft", "ArmsRight"] : ["BodyLower"]
-        );
+        const { Canvas, CanvasBlink } = partialDraw(C, A, L === "上身遮罩" ? ["BodyUpper"] : ["BodyLower"]);
 
         const maskURL = getMaskURL(C, A, L, Pose, G, "身体遮罩");
 
         DrawImageEx(maskURL, Canvas.getContext("2d"), X, Y, { BlendingMode: "destination-out" });
         DrawImageEx(maskURL, CanvasBlink.getContext("2d"), X, Y, { BlendingMode: "destination-out" });
+
+        drawCanvas(Canvas, 0, 0, AlphaMasks);
+        drawCanvasBlink(CanvasBlink, 0, 0, AlphaMasks);
+    }
+    if (L === "底部") {
+        const { Canvas, CanvasBlink } = partialDraw(C, A, ["BodyUpper", "BodyLower"]);
+
+        const maskURL = getMaskURL(C, A, L, Pose, G, "底部遮罩");
+
+        DrawImageEx(maskURL, Canvas.getContext("2d"), X, Y, { BlendingMode: "destination-in" });
+        DrawImageEx(maskURL, CanvasBlink.getContext("2d"), X, Y, { BlendingMode: "destination-in" });
 
         drawCanvas(Canvas, 0, 0, AlphaMasks);
         drawCanvasBlink(CanvasBlink, 0, 0, AlphaMasks);
@@ -101,10 +108,10 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    Priority: 9,
+    Priority: 7,
     Gender: "F",
     Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
-    DefaultColor: ["Default", "Default", "Default"],
+    DefaultColor: ["Default", "Default", "#696776", "#988686", "Default"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
@@ -112,8 +119,15 @@ const asset = {
     DynamicAfterDraw: true,
     ParentGroup: null,
     AllowColorize: true,
-    Hide: ["BodyUpper", "BodyLower", "ArmsLeft", "ArmsRight", "Nipples"],
+    EditOpacity: true,
+    Hide: ["BodyUpper", "BodyLower", "Nipples"],
     Layer: [
+        {
+            Name: "底部",
+            ParentGroup: "BodyUpper",
+            AllowColorize: false,
+            HasImage: false,
+        },
         {
             Name: "骨架",
             PoseMapping: {
@@ -124,29 +138,53 @@ const asset = {
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,
             },
-            Priority: 5,
         },
         {
             Name: "阴道",
-            Priority: 6,
+            Top: 400,
+            Left: 180,
+        },
+        {
+            Name: "腹中脑容器",
+            Top: 400,
+            Left: 180,
+        },
+        {
+            Name: "腹中脑",
+            Top: 400,
+            Left: 180,
+            Opacity: 0.7,
         },
         {
             Name: "上身遮罩",
             ParentGroup: "BodyUpper",
-            Priority: 7,
+            PoseMapping: {
+                Kneel: "LegsClosed",
+                LegsClosed: "LegsClosed",
+                Spread: "Spread",
+                KneelingSpread: "KneelingSpread",
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
             AllowColorize: false,
             HasImage: false,
         },
         {
             Name: "下身遮罩",
             ParentGroup: "BodyLower",
-            Priority: 7,
+            PoseMapping: {
+                Kneel: "LegsClosed",
+                LegsClosed: "LegsClosed",
+                Spread: "Spread",
+                KneelingSpread: "KneelingSpread",
+                Hogtied: PoseType.HIDE,
+                AllFours: PoseType.HIDE,
+            },
             AllowColorize: false,
             HasImage: false,
         },
         {
             Name: "网格",
-            Priority: 9,
         },
     ],
 };
@@ -156,5 +194,8 @@ export default function () {
 
     ModManager.globalFunction(`Assets${assetGroup}${asset.Name}AfterDraw`, androidDraw);
 
-    AssetManager.addAsset(assetGroup, asset);
+    AssetManager.addAsset(assetGroup, asset, undefined, {
+        CN: "生化人体",
+        EN: "Android Body",
+    });
 }
