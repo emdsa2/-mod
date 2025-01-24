@@ -5,13 +5,12 @@ const asset = {
     Name: "裙子_Luzi",
     Random: false,
     Top: 0,
-    Left: 0,
+    Left: {
+        [PoseType.DEFAULT]: 0,
+        KneelingSpread: 90,
+    },
     Priority: 26,
-    DefaultColor: [
-        "#560E0E",
-        "#560E0E",
-        "#1F1F1F",
-    ],
+    DefaultColor: ["#560E0E", "#560E0E", "#1F1F1F"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
@@ -42,7 +41,7 @@ const asset = {
                 AllFours: PoseType.HIDE,
                 Hogtied: PoseType.HIDE,
             },
-        }
+        },
     ],
 };
 
@@ -53,20 +52,5 @@ const translation = {
 };
 
 export default function () {
-
-    AssetManager.addAsset(
-        "ClothLower",
-        {
-            ...asset,
-            Left: {
-                [PoseType.DEFAULT]: 0,
-                KneelingSpread: 90,
-            },
-        },
-        undefined,
-        translation
-    );
-
     AssetManager.addAsset("ClothLower", asset, undefined, translation);
-
 }

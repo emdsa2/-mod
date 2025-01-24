@@ -5,7 +5,10 @@ const asset = {
     Name: "塑身衣2_Luzi",
     Random: false,
     Top: 0,
-    Left: 0,
+    Left: {
+        [PoseType.DEFAULT]: 0,
+        KneelingSpread: 90,
+    },
     Priority: 14,
     SetPose: ["LegsClosed", "Kneel"],
     AllowActivePose: ["LegsClosed", "Kneel"],
@@ -92,19 +95,5 @@ const translation = {
 };
 
 export default function () {
-
-    AssetManager.addAsset(
-        "ClothLower",
-        {
-            ...asset,
-            Left: {
-                [PoseType.DEFAULT]: 0,
-                KneelingSpread: 90,
-            },
-        },
-        undefined,
-        translation
-    );
-
     AssetManager.addAsset("ClothLower", asset, null, translation);
 }
