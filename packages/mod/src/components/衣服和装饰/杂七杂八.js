@@ -165,6 +165,24 @@ const assets = {
             ],
         },
         {
+            Name: "红包",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,
+            Priority: 46,
+            PoseMapping: {
+                TapedHands: "BaseUpper",
+                Yoked: "Hide",
+                OverTheHead: "Hide",
+                BackBoxTie: "Hide",
+                BackElbowTouch: "Hide",
+                BackCuffs: "Hide",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            }
+        },
+        {
             Name: "伊偶_Luzi",
             Random: false,
             Gender: "F",
