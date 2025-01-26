@@ -131,7 +131,7 @@ const asset = {
         { Name: "Eleanor", AllowTypes: { l: 16 } },
         { Name: "小铃铛", AllowTypes: { l: 17 } },
         { Name: "莉莉丝", AllowTypes: { l: 18 } },
-        { Name: "空", AllowTypes: { l: 19 } },
+        { Name: "LaBi", AllowTypes: { l: 19 } },
         { Name: "空", AllowTypes: { l: 20 } },
         { Name: "空", AllowTypes: { l: 21 } },
         { Name: "空", AllowTypes: { l: 22 } },
