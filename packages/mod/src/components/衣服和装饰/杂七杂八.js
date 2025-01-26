@@ -165,6 +165,35 @@ const assets = {
             ],
         },
         {
+            Name: "奶瓶",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            ParentGroup: null,
+            Priority: 46,
+            PoseMapping: {
+                TapedHands: "BaseUpper",
+                Yoked: "Hide",
+                OverTheHead: "Hide",
+                BackBoxTie: "Hide",
+                BackElbowTouch: "Hide",
+                BackCuffs: "Hide",
+                Hogtied: "Hide",
+                AllFours: "Hide",
+            },
+            Layer: [
+                {
+                    Name: "奶",
+                },
+                {
+                    Name: "玻璃",
+                },
+                {
+                    Name: "盖子",
+                },
+            ],
+        },
+        {
             Name: "红包",
             Random: false,
             Top: 0,
@@ -250,6 +279,9 @@ const translations = {
         ItemHandheld: {
             电蚊拍_Luzi: "电蚊拍",
             伊偶_Luzi: "伊偶",
+            书: "书",
+            奶瓶: "奶瓶",
+            红包: "红包",
         },
         ItemDevices: {
             树_Luzi: "树",
@@ -278,6 +310,9 @@ const translations = {
         },
         ItemHandheld: {
             电蚊拍_Luzi: "Electric Fly Swatter",
+            书: "Book",
+            奶瓶: "Milk Bottle",
+            红包: "Red Packet",
         },
         ItemDevices: {
             树_Luzi: "Tree",
