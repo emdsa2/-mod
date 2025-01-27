@@ -16,7 +16,6 @@ function globalTooltip() {
 
 class InventoryObserver {
     constructor() {
-        this.target = document.body.querySelector("#dialog-inventory");
         this.observer = new MutationObserver((mutations) => {
             mutations.forEach((mutations) => {
                 mutations.removedNodes.forEach((node) => {
@@ -30,7 +29,7 @@ class InventoryObserver {
 
     reTarget() {
         const t = document.body.querySelector("#dialog-inventory");
-        if (t !== this.target) {
+        if (t) {
             this.observer.disconnect();
             this.observer.observe(t.parentNode, { childList: true });
         }
