@@ -202,16 +202,18 @@ async function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaF
 
     const baseURL_ = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
 
+    const betaString = betaFlag ? "-beta" : "";
+
     const loader_replaces = {
         __base_url__: `${baseURL.endsWith("/") ? baseURL.substring(0, baseURL.length - 1) : baseURL}`,
         __description__: rollupSetting.description,
-        __name__: modInfo.name,
+        __name__: `${modInfo.name}${betaString}`,
         __author__: rollupSetting.author,
         __script_file__: rollupSetting.output,
 
-        __mod_name__: `"${modInfo.name}"`,
-        __mod_full_name__: `"${modInfo.fullName}"`,
-        __mod_version__: `"${modInfo.version}-${betaFlag ? "beta" : ""}"`,
+        __mod_name__: `"${modInfo.name}${betaString}"`,
+        __mod_full_name__: `"${modInfo.fullName}${betaString}"`,
+        __mod_version__: `"${modInfo.version}${betaString}"`,
         __mod_repo__: modInfo.repo ? `"${modInfo.repo}"` : "undefined",
         __mod_asset_overrides__: assetMapping,
         __mod_base_url__: `"${baseURL}"`,
