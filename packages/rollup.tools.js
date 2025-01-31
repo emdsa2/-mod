@@ -8,6 +8,7 @@ const copy = require("rollup-plugin-copy");
 const terser = require("@rollup/plugin-terser");
 const alias = require("@rollup/plugin-alias");
 const css = require("rollup-plugin-import-css");
+const { execSync, spawn } = require("child_process");
 
 /**
  * 分析相对路径，与path.relative()不同的是，返回的路径会保持"./"开头
@@ -111,37 +112,62 @@ function buildRollupSetting(packageObj, debugFlag, betaFlag) {
  * 读取assets映射
  * @param {string} startDir 基础目录
  * @param {string[]} assetDirs 资源目录
- * @returns { AssetOverrideContainer } 资源映射表
+ * @returns { Promise<AssetOverrideContainer> } 资源映射表
  */
-function readAssetsMapping(startDir, assetDirs) {
-    let workingDir = [...assetDirs];
+async function readAssetsMapping(startDir, assetDirs) {
+    const git_root = execSync("git rev-parse --show-toplevel").toString().trim();
     let assets = {};
 
-    function makeLeaf(fpath) {
-        let curDir = assets;
-        let dirs = path.dirname(fpath).split(/\\|\//);
-        let file = path.basename(fpath);
+    execSync("git config core.quotepath false");
 
-        while (dirs.length > 0) {
+    function process_line(line) {
+        const [sha, fpath] = line.split(/\t/, 2);
+        const relpath = path.relative(startDir, fpath);
+        const dirs = relpath.split(/\\|\//);
+        let curDir = assets;
+
+        while (dirs.length > 1) {
             const cur = dirs.shift();
             if (cur === ".") continue;
             if (!curDir[cur]) curDir[cur] = {};
             curDir = curDir[cur];
         }
 
-        if (typeof curDir[file] === "number") curDir += 1;
-        else curDir[file] = 1;
+        const file = dirs[0];
+        if (typeof curDir[file] !== "string") curDir[file] = sha.substring(0, 7);
     }
 
-    while (workingDir.length > 0) {
-        const dir = workingDir.pop();
+    const promises = assetDirs
+        .map((dir) => path.join(startDir, dir))
+        .map((dir) => {
+            const ls_tree = spawn("git", ["ls-tree", "--format=%(objectname)%x09%(path)", "-r", "HEAD", dir], {
+                cwd: git_root,
+            });
 
-        fs.readdirSync(path.join(startDir, dir), { withFileTypes: true }).forEach((file) => {
-            if (file.isDirectory()) workingDir.push(`${dir}/${file.name}`);
-            else if (file.isFile()) makeLeaf(`${dir}/${file.name}`);
+            let prev_unfinished = Buffer.alloc(0);
+
+            ls_tree.stdout.on("data", (data) => {
+                const linedData = Buffer.concat([prev_unfinished, data]);
+                let start = 0;
+                for (let i = 0; i < linedData.length; i++) {
+                    if (linedData[i] === 0x0a) {
+                        process_line(linedData.subarray(start, i).toString());
+                        start = i + 1;
+                    }
+                }
+                prev_unfinished = linedData.subarray(start);
+            });
+
+            return new Promise((resolve, reject) => {
+                ls_tree.on("exit", (code) => {
+                    if (prev_unfinished && prev_unfinished.length > 0) process_line(prev_unfinished.toString());
+                    resolve();
+                });
+                ls_tree.on("error", reject);
+            });
         });
-    }
-    return assets;
+
+    return Promise.all(promises).then(() => assets);
 }
 
 /**
@@ -151,7 +177,7 @@ function readAssetsMapping(startDir, assetDirs) {
  * @param { ReturnType<typeof buildRollupSetting> } rollupSetting
  * @param { boolean } [betaFlag]
  */
-function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaFlag = false) {
+async function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaFlag = false) {
     const buildDestDir = `${process.env.INIT_CWD}/public/`;
     const curDirRelative = relativePath(".", curDir);
 
@@ -171,7 +197,7 @@ function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaFlag = 
         : { imports: "", setups: "" };
 
     const assetMapping = rollupSetting.assets
-        ? JSON.stringify(readAssetsMapping(rollupSetting.assets.location, rollupSetting.assets.assets))
+        ? JSON.stringify(await readAssetsMapping(rollupSetting.assets.location, rollupSetting.assets.assets))
         : "{}";
 
     const baseURL_ = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;

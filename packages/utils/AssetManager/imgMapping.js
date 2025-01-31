@@ -26,8 +26,8 @@ export function setupImgMapping() {
             let current = processList.pop();
             Object.entries(current.container).forEach(([key, value]) => {
                 const assetPath = `${current.path}${key}`;
-                if (typeof value === "number") {
-                    basicImgMapping[assetPath] = `${resourceBaseURL}${assetPath}`;
+                if (typeof value !== "object") {
+                    basicImgMapping[assetPath] = `${resourceBaseURL}${assetPath}?v=${value}`;
                 } else {
                     processList.push({ container: value, path: `${assetPath}/` });
                 }
