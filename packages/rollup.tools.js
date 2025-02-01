@@ -211,7 +211,7 @@ async function createRollupConfig(curDir, baseURL, modInfo, rollupSetting, betaF
         __author__: rollupSetting.author,
         __script_file__: rollupSetting.output,
 
-        __mod_name__: `"${modInfo.name}${betaString}"`,
+        __mod_name__: `"${modInfo.name}"`,
         __mod_full_name__: `"${modInfo.fullName}${betaString}"`,
         __mod_version__: `"${modInfo.version}${betaString}"`,
         __mod_repo__: modInfo.repo ? `"${modInfo.repo}"` : "undefined",
