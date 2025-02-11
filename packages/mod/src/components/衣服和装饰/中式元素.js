@@ -65,7 +65,7 @@ const assets = {
             ],
         },
     ],
-    HairAccessory2: [
+    HairAccessory3: [
         {
             Name: "茉莉花钿1",
             Random: false,
@@ -101,7 +101,7 @@ const translations = {
             茉莉花钿1: "茉莉花钿 1",
             茉莉花钿2: "茉莉花钿 2",
         },
-        HairAccessory2: {
+        HairAccessory3: {
             茉莉花钿1: "茉莉花钿 1",
             茉莉花钿2: "茉莉花钿 2",
         },
@@ -114,7 +114,7 @@ const translations = {
             茉莉花钿1: "Jasmine Hairpin 1",
             茉莉花钿2: "Jasmine Hairpin 2",
         },
-        HairAccessory2: {
+        HairAccessory3: {
             茉莉花钿1: "Jasmine Hairpin 1",
             茉莉花钿2: "Jasmine Hairpin 2",
         },
