@@ -41,6 +41,38 @@ const assets = {
             ],
         },
     ],
+    HairAccessory1: [
+        {
+            Name: "茉莉花钿1",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 55,
+            Layer: [
+                {
+                    Name: "左",
+                },
+                {
+                    Name: "右",
+                },
+            ],
+        },
+        {
+            Name: "茉莉花钿2",
+            Random: false,
+            Top: 0,
+            Left: 0,
+            Priority: 40,
+            Layer: [
+                {
+                    Name: "左",
+                },
+                {
+                    Name: "右",
+                },
+            ],
+        },
+    ],
 };
 
 /** @type { Translation.GroupedEntries } */
@@ -48,16 +80,22 @@ const translations = {
     CN: {
         Cloth: {
             假领子_Luzi: "假领子",
+            茉莉花钿1: "茉莉花钿 1",
+            茉莉花钿2: "茉莉花钿 2",
         },
     },
     EN: {
         Cloth: {
             假领子_Luzi: "Fake Collar",
+            茉莉花钿1: "Jasmine Hairpin 1",
+            茉莉花钿2: "Jasmine Hairpin 2",
         },
     },
     RU: {
         Cloth: {
             假领子_Luzi: "Поддельный воротник",
+            茉莉花钿1: "Жасминовая шпилька 1",
+            茉莉花钿2: "Жасминовая шпилька 2",
         },
     },
 };
