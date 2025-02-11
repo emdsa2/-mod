@@ -45,6 +45,10 @@ const assets = [
         Left: 0,
     },
     {
+        Name: "穿戴式浣熊尾镜像_Luzi",
+        Random: false,
+    },
+    {
         Name: "穿戴式猫尾镜像_Luzi",
         Random: false,
         Top: -100,
@@ -98,6 +102,7 @@ const translations = {
             小型穿戴式狼尾镜像_Luzi: "小型穿戴式狼尾镜像",
             小型穿戴式软猫尾镜像_Luzi: "小型穿戴式软猫尾镜像",
             穿戴式猫尾镜像_Luzi: "穿戴式猫尾镜像",
+            穿戴式浣熊尾镜像_Luzi: "穿戴式猫尾镜像",
             尾巴1_Luzi: "尾巴 1",
         },
     },
@@ -111,6 +116,7 @@ const translations = {
             小型穿戴式狼尾镜像_Luzi: "Small Wearable Wolf Tail",
             小型穿戴式软猫尾镜像_Luzi: "Small Soft Wearable Cat Tail",
             穿戴式猫尾镜像_Luzi: "Wearable Cat Tail",
+            穿戴式浣熊尾镜像_Luzi: "RaccoonTailStrap Tail",
             尾巴1_Luzi: "Tail 1",
         },
     },
