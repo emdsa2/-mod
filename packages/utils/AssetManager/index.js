@@ -24,13 +24,18 @@ export default class AssetManager {
      * 添加很多区域的很多物品
      * @param { CustomGroupedAssetDefinitions } groupedAssets 很多很多物品！
      * @param { Translation.GroupedEntries } [descriptions] 很多很多物品的名字翻译！
+     * @param { ExtendedItemMainConfig } [extended] 可选设置物品扩展属性
      */
-    static addGroupedAssets(groupedAssets, descriptions = undefined) {
+    static addGroupedAssets(groupedAssets, descriptions = undefined, extended = undefined) {
         Object.entries(groupedAssets).forEach(([group, assets]) => {
             assets.forEach((asset) => {
                 const groupName = /** @type {CustomGroupName} */ (group);
                 const description = descriptions && pickEntry(groupName, asset.Name, descriptions);
-                loadAsset(groupName, asset, { description });
+                const extendedConfig = extended &&
+                    extended[groupName]?.[asset.Name] && {
+                        [groupName]: { [asset.Name]: extended[groupName][asset.Name] },
+                    };
+                loadAsset(groupName, asset, { extendedConfig, description });
             });
         });
     }

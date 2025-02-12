@@ -160,4 +160,26 @@ export class Tools {
 
         return `Assets/${Asset.Group.Family}/${Asset.Group.Name}/${poseSegment}${urlParts.join("_")}.png`;
     }
+
+    /**
+     * 有的物品基本上是复制的，但是有一些细微的差别，这个函数可以复制对应的物品对话
+     * @param {CustomGroupName[]} groupNames 物品组名
+     * @param {string[]} assetNames 物品名
+     * @param {Translation.Dialog} simpleDesc
+     * @return {Translation.Dialog}
+     */
+    static replicateTypedItemDialog(groupNames, assetNames, simpleDesc) {
+        return groupNames.reduce((pv, group) => {
+            for (const asset of assetNames) {
+                for (const [lang, entry] of Object.entries(simpleDesc)) {
+                    for (const [key, value] of Object.entries(entry)) {
+                        const dialogKey = `${group}${asset}${key}`;
+                        if (!pv[lang]) pv[lang] = {};
+                        pv[lang][dialogKey] = value;
+                    }
+                }
+            }
+            return pv;
+        }, /** @type {Translation.Dialog} */ ({}));
+    }
 }
