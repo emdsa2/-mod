@@ -133,4 +133,31 @@ export class Tools {
             );
         }
     }
+
+    /**
+     * @param {Asset} Asset
+     * @param {string} LayerName
+     * @param {AssetPoseName} Pose
+     * @param {string} ParentAssetName
+     * @param {string} [OverrideName]
+     */
+    static getAssetURL(Asset, LayerName, Pose, ParentAssetName, OverrideName) {
+        const layer = Asset.Layer.find((l) => l.Name === LayerName);
+
+        let poseSegment = layer.PoseMapping[Pose];
+        switch (poseSegment) {
+            case PoseType.HIDE:
+            case PoseType.DEFAULT:
+            case undefined:
+                poseSegment = "";
+                break;
+            default:
+                poseSegment += "/";
+                break;
+        }
+
+        const urlParts = [Asset.Name, ParentAssetName, OverrideName ?? LayerName].filter((c) => c);
+
+        return `Assets/${Asset.Group.Family}/${Asset.Group.Name}/${poseSegment}${urlParts.join("_")}.png`;
+    }
 }
