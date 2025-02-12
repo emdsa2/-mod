@@ -135,14 +135,14 @@ export class Tools {
     }
 
     /**
-     * @param {Asset} Asset
-     * @param {string} LayerName
-     * @param {AssetPoseName} Pose
-     * @param {string} ParentAssetName
+     * 获取物品图片资源URL
+     * @param {DynamicDrawingData<Record<string, unknown>>} drawData
      * @param {string} [OverrideName]
      */
-    static getAssetURL(Asset, LayerName, Pose, ParentAssetName, OverrideName) {
-        const layer = Asset.Layer.find((l) => l.Name === LayerName);
+    static getAssetURL(drawData, OverrideName) {
+        const { A, L, Pose, G } = drawData;
+
+        const layer = A.Layer.find((l) => l.Name === L);
 
         let poseSegment = layer.PoseMapping[Pose];
         switch (poseSegment) {
@@ -156,9 +156,9 @@ export class Tools {
                 break;
         }
 
-        const urlParts = [Asset.Name, ParentAssetName, OverrideName ?? LayerName].filter((c) => c);
+        const urlParts = [A.Name, G, OverrideName ?? L].filter((c) => c);
 
-        return `Assets/${Asset.Group.Family}/${Asset.Group.Name}/${poseSegment}${urlParts.join("_")}.png`;
+        return `Assets/${A.Group.Family}/${A.Group.Name}/${poseSegment}${urlParts.join("_")}.png`;
     }
 
     /**

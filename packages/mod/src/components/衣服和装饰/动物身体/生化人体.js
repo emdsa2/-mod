@@ -1,5 +1,6 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
+import { Tools } from "@mod-utils/Tools";
 
 const NamePrefix = ((prefix) => prefix + Math.random().toString(16).substring(2))("生化人体");
 
@@ -48,40 +49,14 @@ function partialDraw(C, TempCanvasAsset, DrawGroupNames) {
     return { Canvas: copyC.Canvas, CanvasBlink: copyC.CanvasBlink };
 }
 
-/**
- * @param {Character} C
- * @param {Asset} Asset
- * @param {string} LayerName
- * @param {AssetPoseName} Pose
- * @param {string} ParentAssetName
- * @param {string} [OverrideName]
- */
-function getMaskURL(C, Asset, LayerName, Pose, ParentAssetName, OverrideName) {
-    const layer = Asset.Layer.find((l) => l.Name === LayerName);
-
-    let poseSegment = layer.PoseMapping[Pose];
-    switch (poseSegment) {
-        case PoseType.HIDE:
-        case PoseType.DEFAULT:
-        case undefined:
-            poseSegment = "";
-            break;
-        default:
-            poseSegment += "/";
-            break;
-    }
-
-    const urlParts = [asset.Name, ParentAssetName, OverrideName ?? LayerName].filter((c) => c);
-
-    return `Assets/${Asset.Group.Family}/${Asset.Group.Name}/${poseSegment}${urlParts.join("_")}.png`;
-}
-
 /** @type {ExtendedItemCallbacks.AfterDraw<{}>} */
-function androidDraw({ C, A, X, Y, Pose, drawCanvas, drawCanvasBlink, AlphaMasks, L, G }) {
+function androidDraw(drawData) {
+    const { C, A, X, Y, Pose, drawCanvas, drawCanvasBlink, AlphaMasks, L, G } = drawData;
+
     if (L === "上身遮罩" || L === "下身遮罩") {
         const { Canvas, CanvasBlink } = partialDraw(C, A, L === "上身遮罩" ? ["BodyUpper"] : ["BodyLower"]);
 
-        const maskURL = getMaskURL(C, A, L, Pose, G, "身体遮罩");
+        const maskURL = Tools.getAssetURL(drawData, "身体遮罩");
 
         DrawImageEx(maskURL, Canvas.getContext("2d"), X, Y, { BlendingMode: "destination-out" });
         DrawImageEx(maskURL, CanvasBlink.getContext("2d"), X, Y, { BlendingMode: "destination-out" });
@@ -92,7 +67,7 @@ function androidDraw({ C, A, X, Y, Pose, drawCanvas, drawCanvasBlink, AlphaMasks
     if (L === "底部") {
         const { Canvas, CanvasBlink } = partialDraw(C, A, ["BodyUpper", "BodyLower"]);
 
-        const maskURL = getMaskURL(C, A, L, Pose, G, "底部遮罩");
+        const maskURL = Tools.getAssetURL(drawData, "底部遮罩");
 
         DrawImageEx(maskURL, Canvas.getContext("2d"), X, Y, { BlendingMode: "destination-in" });
         DrawImageEx(maskURL, CanvasBlink.getContext("2d"), X, Y, { BlendingMode: "destination-in" });

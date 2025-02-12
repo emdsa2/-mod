@@ -150,16 +150,13 @@ function dialogClickHook(Data, originalFunction) {
 }
 
 /** @type {ExtendedItemScriptHookCallbacks.AfterDraw<NoArchItemData>} */
-function afterDraw(
-    data,
-    originalFunction,
-    { C, A, X, Y, Pose, Property, drawCanvas, drawCanvasBlink, AlphaMasks, L, G }
-) {
+function afterDraw(data, originalFunction, drawData) {
+    const { C, A, X, Y, Pose, Property, drawCanvas, drawCanvasBlink, AlphaMasks, L, G } = drawData;
     if (L === "尿") {
         const canvas = AnimationGenerateTempCanvas(C, A, 500, 1000);
 
-        const imgURL = Tools.getAssetURL(A, L, Pose, G);
-        const maskURL = Tools.getAssetURL(A, L, Pose, G, "遮罩");
+        const imgURL = Tools.getAssetURL(drawData);
+        const maskURL = Tools.getAssetURL(drawData, "遮罩");
 
         const clampedLiquid = Math.max(0, Math.min(1, /** @type { ExtendItemProperties } */ (Property).Liquid ?? 0));
 
