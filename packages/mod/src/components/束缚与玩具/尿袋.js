@@ -11,7 +11,7 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    Priority: 10,
+    Priority: 30,
     ParentGroup: null,
     PoseMapping: {
         LegsClosed: "LegsClosed",
