@@ -7,7 +7,7 @@ import ModManager from "@mod-utils/ModManager";
  */
 
 /**
- * @typedef { globalThis.ItemProperties & LewdCrestData } XItemProperties
+ * @typedef { globalThis.ItemProperties & LewdCrestData } ExtendItemProperties
  */
 
 /**
@@ -46,16 +46,18 @@ function AssetsItemPelvis随机自慰() {
 /**
  * @param {Character} player
  * @param {淫纹DataType} data
- * @param {XItemProperties} property
+ * @param {ExtendItemProperties} property
  */
 function updateRuns(player, data, property) {
     const now = CommonTime();
+    if (!data.ArousalCheckTimer) data.ArousalCheckTimer = now;
+
     const delta = now - data.ArousalCheckTimer;
     data.ArousalCheckTimer += delta;
 
     if (property.TypeRecord.a === 1) {
         const LSCG = /** @type {any} */ (player).LSCG;
-        if (LSCG && LSCG.InjectorModule) {
+        if (LSCG && LSCG.InjectorModule && LSCG.InjectorModule.enabled) {
             const { drugLevelMultiplier, hornyLevelMax, hornyLevel } = LSCG.InjectorModule;
             LSCG.InjectorModule.hornyLevel = Math.min(
                 hornyLevel + (0.05 * delta) / 1000,
@@ -127,7 +129,7 @@ function dialogDrawHook(Data, originalFunction) {
         ExtendedItemCustomDraw("ItemPelvis淫纹_Luzi淫纹强制高潮按钮", buttons.高潮按钮.X, buttons.高潮按钮.Y);
 
         MainCanvas.textAlign = "left";
-        const property = /** @type {XItemProperties} */ (DialogFocusItem.Property);
+        const property = /** @type {ExtendItemProperties} */ (DialogFocusItem.Property);
         const 强制自慰ON = property.Masturbate;
         const 发光ON = property.Glow;
         ExtendedItemDrawCheckbox("GlowSwitch", buttons.发光开关.X, buttons.发光开关.Y, 发光ON, {
@@ -156,7 +158,7 @@ function dialogClickHook(Data, originalFunction) {
     if (!DialogFocusItem) return;
     if (Data.currentModule === "样式" || Data.currentModule === "性刺激") {
     } else {
-        const property = /** @type {XItemProperties} */ (DialogFocusItem.Property);
+        const property = /** @type {ExtendItemProperties} */ (DialogFocusItem.Property);
 
         const clickPush = (key, func) =>
             ExtendedItemCustomClickAndPush(CharacterGetCurrent(), DialogFocusItem, key, () => func(), false, false);
@@ -196,7 +198,7 @@ function dialogClickHook(Data, originalFunction) {
 function scriptDraw(data, originalFunction, { C, Item, PersistentData }) {
     const Data = PersistentData();
 
-    if (C.IsPlayer()) updateRuns(C, Data, /**@type {XItemProperties}*/ (Item.Property));
+    if (C.IsPlayer()) updateRuns(C, Data, /**@type {ExtendItemProperties}*/ (Item.Property));
 
     Tools.drawUpdate(C, Data);
 }
@@ -204,7 +206,7 @@ function scriptDraw(data, originalFunction, { C, Item, PersistentData }) {
 /** @type {ExtendedItemScriptHookCallbacks.BeforeDraw<ModularItemData, 淫纹DataType>} */
 function beforeDraw(data, originalFunction, { PersistentData, L, Property, C }) {
     if (L === "发光") {
-        const property = /** @type {XItemProperties} */ (Property);
+        const property = /** @type {ExtendItemProperties} */ (Property);
 
         if (!property.Glow) return { Opacity: 0 };
 
@@ -297,7 +299,7 @@ const extended = {
         BeforeDraw: beforeDraw,
         ScriptDraw: scriptDraw,
     },
-    BaselineProperty: /** @type {XItemProperties}*/ ({
+    BaselineProperty: /** @type {ExtendItemProperties}*/ ({
         Masturbate: false,
         Glow: false,
     }),
@@ -571,4 +573,7 @@ export default function () {
     AssetManager.addAsset(itemTGroup, asset, extended, translations);
     AssetManager.addAsset("ItemMisc", asset2, extended2, translations2);
     AssetManager.addCustomDialog(dialog);
+    AssetManager.addImageMapping({
+        "Icons/Preview/淫纹锁_Luzi.png": "Assets/Female3DCG/ItemMisc/Preview/淫纹锁_Luzi.png",
+    });
 }
