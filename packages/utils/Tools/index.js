@@ -140,7 +140,7 @@ export class Tools {
      * @param {string} [OverrideName]
      */
     static getAssetURL(drawData, OverrideName) {
-        const { A, L, Pose, G } = drawData;
+        const { A, L, Pose, G, GroupName } = drawData;
 
         const layer = A.Layer.find((l) => l.Name === L);
 
@@ -158,7 +158,7 @@ export class Tools {
 
         const urlParts = [A.Name, G, OverrideName ?? L].filter((c) => c);
 
-        return `Assets/${A.Group.Family}/${A.Group.Name}/${poseSegment}${urlParts.join("_")}.png`;
+        return `Assets/${A.Group.Family}/${GroupName}/${poseSegment}${urlParts.join("_")}.png`;
     }
 
     /**
