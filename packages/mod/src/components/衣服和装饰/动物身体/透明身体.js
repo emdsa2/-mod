@@ -14,6 +14,7 @@ const asset = {
         "ArmsLeft", 
         "ArmsRight", 
         "Pussy", 
+        "Mouth", 
         "Head", 
         "Eyes", 
         "Eyes2", 
