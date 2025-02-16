@@ -61,6 +61,12 @@ const assets = {
             InheritColor: "BodyUpper",
             ColorSuffix: { HEX_COLOR: "White" },
         },
+        {
+            Name: "小马耳2_Luzi",
+            Random: false,
+            Top: 20,
+            Left: 90,
+        },
     ],
     HairAccessory2: [
         {
@@ -125,6 +131,12 @@ const assets = {
             InheritColor: "BodyUpper",
             ColorSuffix: { HEX_COLOR: "White" },
         },
+        {
+            Name: "小马耳2_Luzi",
+            Random: false,
+            Top: 20,
+            Left: 90,
+        },
     ],
 };
 
@@ -135,11 +147,13 @@ const translations = {
             耳朵1_Luzi: "耳朵 1",
             耳朵2_Luzi: "耳朵 2",
             角7_Luzi: "角 7",
+            小马耳2_Luzi: "小马耳 2",
         },
         HairAccessory2: {
             耳朵1_Luzi: "耳朵 1",
             耳朵2_Luzi: "耳朵 2",
             角7_Luzi: "角 7",
+            小马耳2_Luzi: "小马耳 2",
         },
     },
     EN: {
@@ -147,11 +161,13 @@ const translations = {
             耳朵1_Luzi: "Ears 1",
             耳朵2_Luzi: "Ears 2",
             角7_Luzi: "Horn 7",
+            小马耳2_Luzi: "Pony Ears 2",
         },
         HairAccessory2: {
             耳朵1_Luzi: "Ears 1",
             耳朵2_Luzi: "Ears 2",
             角7_Luzi: "Horn 7",
+            小马耳2_Luzi: "Pony Ears 2",
         },
     },
     RU: {
