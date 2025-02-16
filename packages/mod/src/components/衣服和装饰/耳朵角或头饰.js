@@ -64,7 +64,7 @@ const assets = {
         {
             Name: "小马耳2_Luzi",
             Random: false,
-            Top: 40,
+            Top: 0,
             Left: 90,
         },
     ],
@@ -134,7 +134,7 @@ const assets = {
         {
             Name: "小马耳2_Luzi",
             Random: false,
-            Top: 40,
+            Top: 0,
             Left: 90,
         },
     ],
