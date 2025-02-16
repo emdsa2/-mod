@@ -6,7 +6,20 @@ const asset = {
     Random: false,
     Gender: "F",
     ParentGroup: null,
-    Hide: ["HandsLeft", "HandsRight", "BodyUpper", "BodyLower", "ArmsLeft", "ArmsRight", "Pussy"],
+    Hide: [
+        "HandsLeft", 
+        "HandsRight", 
+        "BodyUpper", 
+        "BodyLower", 
+        "ArmsLeft", 
+        "ArmsRight", 
+        "Pussy", 
+        "Head", 
+        "Eyes", 
+        "Eyes2", 
+        "眼睛右_Luzi", 
+        "眼睛左_Luzi", 
+    ],
 };
 
 const translations = {
