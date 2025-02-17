@@ -118,12 +118,12 @@ async function readAssetsMapping(startDir, assetDirs) {
     const git_root = execSync("git rev-parse --show-toplevel").toString().trim();
     let assets = {};
 
+    let git_asset = new Set();
+
     execSync("git config core.quotepath false");
 
-    function process_line(line) {
-        const [sha, fpath] = line.split(/\t/, 2);
-        const relpath = path.relative(startDir, fpath);
-        const dirs = relpath.split(/\\|\//);
+    const addAsset = (path, version, override = false) => {
+        const dirs = path.split(/\\|\//);
         let curDir = assets;
 
         while (dirs.length > 1) {
@@ -134,8 +134,17 @@ async function readAssetsMapping(startDir, assetDirs) {
         }
 
         const file = dirs[0];
-        if (typeof curDir[file] !== "string") curDir[file] = sha.substring(0, 7);
-    }
+        if (typeof curDir[file] !== "string" || override) curDir[file] = version;
+    };
+
+    const process_line = (line) => {
+        const [sha, fpath] = line.split(/\t/, 2);
+        const relpath = path.relative(startDir, fpath);
+
+        git_asset.add(relpath);
+
+        addAsset(relpath, sha.substring(0, 7));
+    };
 
     const promises = assetDirs
         .map((dir) => path.join(startDir, dir))
@@ -167,7 +176,38 @@ async function readAssetsMapping(startDir, assetDirs) {
             });
         });
 
-    return Promise.all(promises).then(() => assets);
+    await Promise.all(promises);
+
+    const timeStr = `${Date.now()}`;
+
+    // 发生修改的文件使用时间戳作为版本号
+    await new Promise((resolve, reject) => {
+        const status = spawn("git", ["status", "--porcelain", startDir], { cwd: git_root });
+
+        status.stdout.on("data", (data) => {
+            data.toString()
+                .split("\n")
+                .forEach((line) => {
+                    if (line.length < 4) return;
+                    const status = line.substring(0, 2);
+                    if (status !== " M" && status !== "??") return;
+
+                    const fpath = path.relative(
+                        startDir,
+                        ((src) => (src.startsWith('"') ? src.substring(1, src.length - 1) : src))(line.substring(3))
+                    );
+
+                    if (!fpath.endsWith(".png")) return;
+                    console.warn(`[WARN] [${fpath}] is not in version control, using timestamp as version`);
+                    addAsset(fpath, timeStr, true);
+                });
+        });
+
+        status.on("exit", resolve);
+        status.on("error", reject);
+    });
+
+    return assets;
 }
 
 /**
