@@ -1,7 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 
 /** @type {CustomAssetDefinition} */
-const asset =         {
+const asset = {
     Name: "鱼嘴高跟鞋_Luzi",
     Random: false,
     Top: 0,
@@ -18,19 +18,19 @@ const asset =         {
     Layer: [
         {
             Name: "高光",
-            Priority: 18,
+            Priority: 24,
         },
         {
             Name: "卡扣",
-            Priority: 19,
+            Priority: 24,
         },
         {
             Name: "绑带",
-            Priority: 18,
+            Priority: 23,
         },
         {
             Name: "鞋面",
-            Priority: 17,
+            Priority: 23,
         },
         {
             Name: "鞋垫",
