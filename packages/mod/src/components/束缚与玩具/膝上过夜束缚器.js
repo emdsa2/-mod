@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -49,7 +50,7 @@ const asset = {
     // ],
     Layer: [
         { Name: "Straps", AllowColorize: true },
-        { Name: "Details", ParentGroup: null, AllowColorize: true },
+        { Name: "Details", ParentGroup: VersionSupport.NoParentGroup, AllowColorize: true },
     ],
 };
 

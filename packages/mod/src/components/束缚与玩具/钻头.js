@@ -1,6 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 import { Tools } from "@mod-utils/Tools";
 import ModManager from "@mod-utils/ModManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomGroupName} */
 const group = "ItemHandheld";
@@ -13,7 +14,7 @@ const asset = {
     Left: 10,
     Priority: 34,
     Difficulty: -10,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     IsRestraint: false,
     PoseMapping: {
         ...AssetPoseMapping.ItemHandheld,

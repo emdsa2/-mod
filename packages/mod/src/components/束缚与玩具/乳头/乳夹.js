@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -25,7 +26,7 @@ const asset = {
         },
         {
             Name: "链子",
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
     ],
 };

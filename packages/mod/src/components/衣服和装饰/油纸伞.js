@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type { CustomAssetDefinition } */
 const asset = {
@@ -6,7 +7,7 @@ const asset = {
     Random: false,
     Top: -100,
     Left: -150,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     PoseMapping: {
         TapedHands: PoseType.HIDE,
         Yoked: PoseType.HIDE,
@@ -60,7 +61,7 @@ const asset = {
             Name: "伞面卡通",
             Priority: 1,
             AllowTypes: { typed: 5 },
-        }
+        },
     ],
 };
 

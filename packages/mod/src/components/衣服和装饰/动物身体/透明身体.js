@@ -1,25 +1,26 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
     Name: "透明身体",
     Random: false,
     Gender: "F",
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Hide: [
-        "HandsLeft", 
-        "HandsRight", 
-        "BodyUpper", 
-        "BodyLower", 
-        "ArmsLeft", 
-        "ArmsRight", 
-        "Pussy", 
-        "Mouth", 
-        "Head", 
-        "Eyes", 
-        "Eyes2", 
-        "眼睛右_Luzi", 
-        "眼睛左_Luzi", 
+        "HandsLeft",
+        "HandsRight",
+        "BodyUpper",
+        "BodyLower",
+        "ArmsLeft",
+        "ArmsRight",
+        "Pussy",
+        "Mouth",
+        "Head",
+        "Eyes",
+        "Eyes2",
+        "眼睛右_Luzi",
+        "眼睛左_Luzi",
     ],
 };
 

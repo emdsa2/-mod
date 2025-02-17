@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -7,15 +8,15 @@ const asset = {
     Top: 0,
     Left: 0,
     Priority: 26,
-    Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt",],
-    SetPose: ["LegsClosed",],
-    AllowActivePose: ["Kneel", "LegsClosed",],
-    DefaultColor: ["#7F1739", "Default", "Default",],
+    Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
+    SetPose: ["LegsClosed"],
+    AllowActivePose: ["Kneel", "LegsClosed"],
+    DefaultColor: ["#7F1739", "Default", "Default"],
     Layer: [
         {
             Name: "底面",
             Priority: 1,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 Kneel: "Kneel",
                 LegsClosed: PoseType.DEFAULT,

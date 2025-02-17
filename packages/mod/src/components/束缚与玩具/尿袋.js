@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 import { Tools } from "@mod-utils/Tools";
 
 /**
@@ -12,7 +13,7 @@ const asset = {
     Top: 0,
     Left: 0,
     Priority: 30,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     PoseMapping: {
         LegsClosed: "LegsClosed",
         KneelingSpread: "KneelingSpread",

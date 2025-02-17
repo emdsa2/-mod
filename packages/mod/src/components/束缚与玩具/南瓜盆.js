@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -9,7 +10,7 @@ const asset = {
     Gender: "F",
     Fetish: ["Sadism"],
     Priority: 48,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Layer: [
         {
             Name: "南瓜",
@@ -23,7 +24,7 @@ const asset = {
         {
             Name: "链子",
             AllowTypes: { typed: 1 },
-        }
+        },
     ],
 };
 

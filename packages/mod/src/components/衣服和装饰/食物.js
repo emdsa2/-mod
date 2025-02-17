@@ -1,5 +1,6 @@
 import AssetManager from "@mod-utils/AssetManager";
 import ModManager from "@mod-utils/ModManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -9,7 +10,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Effect: [],
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -30,7 +31,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 55,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Effect: [],
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -49,7 +50,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 55,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Effect: [],
         },
         {
@@ -58,7 +59,7 @@ const assets = {
             Top: 160,
             Left: 160,
             Priority: 55,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Effect: [],
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
@@ -77,7 +78,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 55,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Effect: [],
         },
     ],
@@ -87,7 +88,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 2,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.HIDE,
@@ -104,7 +105,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.HIDE,
@@ -135,7 +136,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.HIDE,
@@ -162,7 +163,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: PoseType.HIDE,
@@ -179,7 +180,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Priority: 55,
             DefaultColor: ["#BA9273", "#F9F4E0", "#B4B4B4", "Default", "#878787"],
             AllowActivity: ["RubItem", "SipItem"],
@@ -219,7 +220,7 @@ const assets = {
             Top: 0,
             Left: 2,
             Block: [],
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
     ],
 };

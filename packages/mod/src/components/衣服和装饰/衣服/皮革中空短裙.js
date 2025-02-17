@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -11,7 +12,7 @@ const asset = {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
     },
-    ParentGroup : null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Layer: [
         {
             Name: "底",
@@ -20,7 +21,7 @@ const asset = {
         {
             Name: "反光",
             Priority: 26,
-        }
+        },
     ],
 };
 

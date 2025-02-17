@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type { CustomAssetDefinition } */
 const asset = {
@@ -6,7 +7,7 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     PoseMapping: {
         TapedHands: PoseType.DEFAULT,
         Yoked: PoseType.DEFAULT,
@@ -17,22 +18,22 @@ const asset = {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
     },
-    DefaultColor: ["#000000", "#000000", "Default",],
+    DefaultColor: ["#000000", "#000000", "Default"],
     Layer: [
         {
             Name: "扇柄展开",
             Priority: 55,
-            AllowTypes: { n: [1,] },
+            AllowTypes: { n: [1] },
         },
         {
             Name: "扇柄",
             Priority: 55,
-            AllowTypes: { n: [0,] },
+            AllowTypes: { n: [0] },
         },
         {
             Name: "扇页展开",
             Priority: 55,
-            AllowTypes: { n: [1,] },
+            AllowTypes: { n: [1] },
         },
     ],
 };

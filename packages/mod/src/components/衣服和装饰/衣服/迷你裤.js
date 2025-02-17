@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const assetdef = {
@@ -35,7 +36,7 @@ const assetdef = {
         {
             Name: "扣子",
             Priority: 36,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 Hogtied: PoseType.HIDE,
                 AllFours: PoseType.HIDE,

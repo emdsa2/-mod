@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -15,17 +16,19 @@ const asset = {
     DrawLocks: false,
     Extended: true,
     Prerequisite: [],
-    ParentGroup: null,
-    PoseMapping: {BaseUpper: "BaseUpper"},
+    ParentGroup: VersionSupport.NoParentGroup,
+    PoseMapping: { BaseUpper: "BaseUpper" },
     Block: [],
     Layer: [
         {
-             Name: "抱枕", Priority: 46
-            },
+            Name: "抱枕",
+            Priority: 46,
+        },
         {
-             Name: "绑带", Priority: 46,
+            Name: "绑带",
+            Priority: 46,
             AllowTypes: { s: 1 },
-         }
+        },
     ],
 };
 /** @type {ModularItemConfig} */

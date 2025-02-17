@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -8,7 +9,7 @@ const asset = {
     Left: 150,
     Priority: 54,
     Extended: true,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     InheritColor: "HairFront",
     Layer: [
         { Name: "1", AllowTypes: { typed: 0 } },

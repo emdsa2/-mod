@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -7,7 +8,7 @@ const asset = {
     Top: 0,
     Left: 0,
     Priority: 36,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Fetish: ["Leather"],
     Difficulty: 6,
     Time: 20,
@@ -30,7 +31,7 @@ const asset = {
         },
         {
             Name: "眼睛",
-        }
+        },
     ],
     PoseMapping: {
         TapedHands: PoseType.DEFAULT,

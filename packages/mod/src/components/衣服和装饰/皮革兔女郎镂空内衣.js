@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -8,7 +9,7 @@ const asset = {
     Left: 0,
     Priority: 21,
     Expose: ["ItemVulva", "ItemVulvaPiercings", "ItemButt"],
-    DefaultColor : [
+    DefaultColor: [
         "Default",
         "#111111",
         "Default",
@@ -18,16 +19,16 @@ const asset = {
         "Default",
         "#111111",
         "Default",
-        "Default"
+        "Default",
     ],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
     },
-    Layer: [ 
+    Layer: [
         {
             Name: "圆环",
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
         {
             Name: "连接",
@@ -55,8 +56,8 @@ const asset = {
         },
         {
             Name: "拉链",
-            ParentGroup: null,
-        }
+            ParentGroup: VersionSupport.NoParentGroup,
+        },
     ],
 };
 

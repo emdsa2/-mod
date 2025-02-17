@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 const clothLCSetting = [
     { Name: "样式0", EN: "Style 0", Src: "淫纹" },
@@ -50,7 +51,7 @@ const assets = {
             Fetish: ["Lingerie"],
             DefaultColor: ["#E975A0"],
             Extended: true,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Layer: clothLCSetting.map((layer, index) => ({
                 Name: layer.Name,
                 AllowColorize: layer.AllowColorize ?? true,
@@ -66,7 +67,7 @@ const assets = {
             Top: 308,
             Left: 54,
             Priority: 9,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             DefaultColor: ["#E975A0"],
             Extended: true,
             PoseMapping: {
@@ -86,7 +87,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 9,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             DefaultColor: ["#000000"],
         },
         {
@@ -95,7 +96,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 9,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
     ],
     ItemHands: [
@@ -103,7 +104,7 @@ const assets = {
             Name: "拳击手套_Luzi",
             Random: false,
             Gender: "F",
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 Yoked: "Yoked",
                 OverTheHead: "OverTheHead",
@@ -123,7 +124,7 @@ const assets = {
             Random: false,
             Top: -110,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Fetish: ["Sadism"],
             AllowActivity: ["ShockItem"],
             ActivityAudio: ["Shocks"],
@@ -143,7 +144,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Priority: 26,
             PoseMapping: {
                 TapedHands: "BaseUpper",
@@ -169,7 +170,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Priority: 46,
             PoseMapping: {
                 TapedHands: "BaseUpper",
@@ -198,7 +199,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Priority: 46,
             PoseMapping: {
                 TapedHands: "BaseUpper",
@@ -209,7 +210,7 @@ const assets = {
                 BackCuffs: "Hide",
                 Hogtied: "Hide",
                 AllFours: "Hide",
-            }
+            },
         },
         {
             Name: "伊偶_Luzi",
@@ -218,7 +219,7 @@ const assets = {
             Top: {
                 OverTheHead: -100,
             },
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 Yoked: "Yoked",
                 OverTheHead: "OverTheHead",

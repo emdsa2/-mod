@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -7,13 +8,7 @@ const asset = {
     Top: 0,
     Left: 0,
     Priority: 31,
-    DefaultColor :[
-        "Default",
-        "Default",
-        "Default",
-        "Default",
-        "#000000",
-    ],
+    DefaultColor: ["Default", "Default", "Default", "Default", "#000000"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
@@ -21,11 +16,11 @@ const asset = {
     Layer: [
         {
             Name: "肩带内",
-            ParentGroup : null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
         {
             Name: "肩带外",
-            ParentGroup : null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 Yoked: "Yoked",
                 OverTheHead: "OverTheHead",
@@ -62,7 +57,7 @@ const asset = {
         },
         {
             Name: "线下",
-            ParentGroup : null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 AllFours: PoseType.HIDE,
                 Hogtied: PoseType.HIDE,

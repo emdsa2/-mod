@@ -1,5 +1,6 @@
 import AssetManager from "@mod-utils/AssetManager";
 import { pickEntry, setupEntries } from "@mod-utils/AssetManager/entries";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {Array<CustomAssetDefinition>}} */
 const assets = [
@@ -8,7 +9,7 @@ const assets = [
         Random: false,
         Left: 50,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: true,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
@@ -22,7 +23,7 @@ const assets = [
                 Name: "右侧",
                 Priority: 32,
                 AllowTypes: { typed: [1, 2] },
-            }
+            },
         ],
     },
     {
@@ -30,7 +31,7 @@ const assets = [
         Random: false,
         Left: 50,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: true,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
@@ -44,7 +45,7 @@ const assets = [
                 Name: "右侧",
                 Priority: 32,
                 AllowTypes: { typed: [1, 2] },
-            }
+            },
         ],
     },
     {
@@ -52,7 +53,7 @@ const assets = [
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: true,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
@@ -66,7 +67,7 @@ const assets = [
                 Name: "右侧",
                 Priority: 32,
                 AllowTypes: { typed: [1, 2] },
-            }
+            },
         ],
     },
     {
@@ -74,177 +75,177 @@ const assets = [
         Random: false,
         Left: 50,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 32
+        Priority: 32,
     },
     {
         Name: "低双马尾2",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 32
+        Priority: 32,
     },
     {
         Name: "低双马尾3",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "低双马尾4",
         Random: false,
         Left: 50,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "低双马尾5",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "低双马尾6",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "双马尾1",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "双马尾2",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "双马尾3",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "双马尾4",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "双马尾5",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "卷发后1",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 32
+        Priority: 32,
     },
     {
         Name: "卷发后2",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "卷发后3",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "后发髻1",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
+        Priority: 5,
     },
     {
         Name: "后发髻2",
         Random: false,
         Left: 0,
         Top: 0,
-        ParentGroup: null,
+        ParentGroup: VersionSupport.NoParentGroup,
         Extended: false,
         InheritColor: "HairFront",
         Hide: ["HairBack"],
-        Priority: 5
-    }
+        Priority: 5,
+    },
 ];
 
 /** @type { Translation.GroupedEntries } */

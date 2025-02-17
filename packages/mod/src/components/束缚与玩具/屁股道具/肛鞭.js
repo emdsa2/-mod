@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomGroupedAssetDefinitions} */
 const assets = {
@@ -9,7 +10,7 @@ const assets = {
             Top: 0,
             Left: 0,
             Priority: 55,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Effect: [],
         },
     ],
@@ -19,7 +20,7 @@ const assets = {
             Random: false,
             Top: 0,
             Left: 0,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             PoseMapping: {
                 TapedHands: PoseType.DEFAULT,
                 Yoked: "Hide",

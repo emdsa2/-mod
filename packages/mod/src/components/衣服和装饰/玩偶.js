@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -6,7 +7,7 @@ const asset = {
     Random: false,
     Top: 0,
     Left: 0,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Priority: 50,
     PoseMapping: {
         TapedHands: "TapedHands",

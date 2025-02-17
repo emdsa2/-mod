@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type { CustomGroupedAssetDefinitions }} */
 const assets = {
@@ -9,10 +10,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发2",
@@ -20,10 +21,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发3",
@@ -31,10 +32,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发4",
@@ -42,10 +43,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发5",
@@ -53,10 +54,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发6",
@@ -64,10 +65,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发7",
@@ -75,10 +76,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发8",
@@ -86,7 +87,7 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
             Hide: ["HairFront"],
@@ -98,7 +99,7 @@ const assets = {
                 {
                     Name: "高光",
                     Priority: 52,
-                }
+                },
             ],
         },
         {
@@ -107,10 +108,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发10",
@@ -118,10 +119,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发11",
@@ -129,7 +130,7 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
             Hide: ["HairFront"],
@@ -141,7 +142,7 @@ const assets = {
                 {
                     Name: "高光",
                     Priority: 52,
-                }
+                },
             ],
         },
         {
@@ -150,7 +151,7 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
             Hide: ["HairFront"],
@@ -162,7 +163,7 @@ const assets = {
                 {
                     Name: "后",
                     Priority: 5,
-                }
+                },
             ],
         },
         {
@@ -171,10 +172,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发14",
@@ -182,10 +183,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发15",
@@ -193,10 +194,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发16",
@@ -204,10 +205,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发17",
@@ -215,10 +216,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发18",
@@ -226,10 +227,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发19",
@@ -237,10 +238,10 @@ const assets = {
             Left: 50,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发20",
@@ -248,10 +249,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发21",
@@ -259,10 +260,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发22",
@@ -270,10 +271,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发23",
@@ -281,10 +282,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "前发24",
@@ -292,10 +293,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "卷发1",
@@ -303,10 +304,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "卷发2",
@@ -314,10 +315,10 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
+            Hide: ["HairFront"],
         },
         {
             Name: "卷发3",
@@ -325,11 +326,11 @@ const assets = {
             Left: 0,
             Top: 0,
             Priority: 52,
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
             Extended: false,
             InheritColor: "HairFront",
-            Hide: ["HairFront"]
-        }
+            Hide: ["HairFront"],
+        },
     ],
 };
 

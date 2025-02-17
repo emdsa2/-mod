@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -8,7 +9,7 @@ const asset = {
     Top: 0,
     Left: -155,
     Difficulty: 25,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Extended: true,
     Layer: [
         {
@@ -71,7 +72,6 @@ const asset = {
             ],
         },
 
-
         {
             Name: "B3_爪",
             Priority: 2,
@@ -88,7 +88,6 @@ const asset = {
             AllowTypes: { typed: 0 },
         },
     ],
-
 };
 
 const extended = {

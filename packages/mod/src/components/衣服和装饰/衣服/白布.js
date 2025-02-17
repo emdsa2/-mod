@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -7,9 +8,9 @@ const asset = {
     Gender: "F",
     Top: 0,
     Left: 0,
-    ParentGroup : null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Hide: ["HairFront"],
-    AllowActivePose: ["BaseUpper", "BackBoxTie", "BackCuffs", "BackElbowTouch","Yoked", "Hogtied", "AllFours"],
+    AllowActivePose: ["BaseUpper", "BackBoxTie", "BackCuffs", "BackElbowTouch", "Yoked", "Hogtied", "AllFours"],
     PoseMapping: {
         Yoked: "Yoked",
     },

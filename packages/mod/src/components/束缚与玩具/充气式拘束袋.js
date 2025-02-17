@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -14,7 +15,7 @@ const asset = {
     RemoveTime: 5,
     Time: 10,
     Extended: true,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     Effect: [E.Freeze, E.BlockWardrobe, E.Block, E.Mounted, E.MapImmobile, E.OnBed, E.OneWayEnclose],
     SetPose: ["BackElbowTouch", "LegsClosed"],
     Hide: [],
@@ -22,25 +23,25 @@ const asset = {
     MinOpacity: 0,
     MaxOpacity: 1,
     DefaultColor: [
-        "#000000", 
-        "Default", 
-        "Default", 
-        "Default", 
-        "#000000", 
-        "Default", 
-        "Default", 
-        "Default", 
-        "#000000", 
-        "Default", 
-        "Default",         
-        "Default", 
-        "Default", 
-        "Default", 
-        "Default", 
-        "#444444", 
-        "#000000", 
-        "Default", 
-        "Default"
+        "#000000",
+        "Default",
+        "Default",
+        "Default",
+        "#000000",
+        "Default",
+        "Default",
+        "Default",
+        "#000000",
+        "Default",
+        "Default",
+        "Default",
+        "Default",
+        "Default",
+        "Default",
+        "#444444",
+        "#000000",
+        "Default",
+        "Default",
     ],
     Layer: [
         {
@@ -138,7 +139,6 @@ const asset = {
             AllowTypes: { g: 1 },
             MinOpacity: 1,
         },
-
     ],
 };
 

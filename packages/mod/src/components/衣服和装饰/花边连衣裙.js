@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -20,7 +21,7 @@ const asset = {
         "#3F3F3F",
         "#3F3F3F",
         "#323232",
-        "#3F3F3F"
+        "#3F3F3F",
     ],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
@@ -35,7 +36,8 @@ const asset = {
                 AllFours: PoseType.HIDE,
                 Hogtied: PoseType.HIDE,
             },
-        }, {
+        },
+        {
             Name: "袖右",
             PoseMapping: {
                 Yoked: "Yoked",
@@ -46,11 +48,11 @@ const asset = {
         },
         {
             Name: "裙边2",
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
         {
             Name: "裙边",
-            ParentGroup: null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
         {
             Name: "裙",
@@ -78,8 +80,8 @@ const asset = {
         },
         {
             Name: "蝴蝶结",
-            ParentGroup: null,
-        }
+            ParentGroup: VersionSupport.NoParentGroup,
+        },
     ],
 };
 

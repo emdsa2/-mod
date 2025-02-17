@@ -1,6 +1,7 @@
 import AssetManager from "@mod-utils/AssetManager";
 import { Tools } from "@mod-utils/Tools";
 import ModManager from "@mod-utils/ModManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /**
  * @typedef { { Masturbate:boolean, Glow: boolean } } LewdCrestData
@@ -235,7 +236,7 @@ const asset = {
     Time: 10,
     DynamicScriptDraw: true,
     DynamicBeforeDraw: true,
-    ParentGroup: null,
+    ParentGroup: VersionSupport.NoParentGroup,
     DefaultColor: ["#EA3E74"],
     PoseMapping: {
         Hogtied: "Hide",

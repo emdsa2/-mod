@@ -1,4 +1,5 @@
 import AssetManager from "@mod-utils/AssetManager";
+import { VersionSupport } from "@mod-utils/VersionSupport";
 
 /** @type {CustomAssetDefinition} */
 const asset = {
@@ -7,13 +8,7 @@ const asset = {
     Top: 0,
     Left: 0,
     Priority: 26,
-    DefaultColor :[
-        "#1F1F1F",
-        "#1F1F1F",
-        "#1F1F1F",
-        "#1F1F1F",
-        "#FFFFFF",
-    ],
+    DefaultColor: ["#1F1F1F", "#1F1F1F", "#1F1F1F", "#1F1F1F", "#FFFFFF"],
     PoseMapping: {
         Hogtied: PoseType.HIDE,
         AllFours: PoseType.HIDE,
@@ -21,7 +16,7 @@ const asset = {
     Layer: [
         {
             Name: "绳子",
-            ParentGroup : null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
         {
             Name: "裙",
@@ -45,13 +40,13 @@ const asset = {
         },
         {
             Name: "蝴蝶结大",
-            ParentGroup : null,
+            ParentGroup: VersionSupport.NoParentGroup,
         },
 
         {
             Name: "珠",
-            ParentGroup : null,
-        }
+            ParentGroup: VersionSupport.NoParentGroup,
+        },
     ],
 };
 
