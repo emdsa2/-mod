@@ -26,35 +26,12 @@ FhZ6IIeuA4OENTMzowCWlpaMrVpt8gL6EJROpwGYmpoyJfHc3Fxrfyv0QP4D/SuQTlQPpN30FwcY
 PMrnpTehAAAAAElFTkSuQmCC`;
 
 export default function () {
-    if (GameVersion === "R110") {
-        const iconSize = 50;
-        const margin = 5;
-        const hoverText = ModInfo.name;
-
-        const gfunc = ModManager.randomGlobalFunction("DrawAct", (x, y, w, h, act) => {
-            if (ActivityManager.activityIsCustom(act)) {
-                const iconX = x + (w || DrawAssetPreviewDefaultWidth) - iconSize - margin;
-                const iconY = y + (h || DrawAssetPreviewDefaultHeight) - iconSize - margin - 40;
-
-                DrawImageResize(hanburgerIcon, iconX, iconY, iconSize, iconSize);
-                if (MouseIn(iconX, iconY, iconSize * 0.9, iconSize * 0.9)) {
-                    DrawHoverElements.push(() => DrawButtonHover(iconX, iconY, 100, 65, hoverText));
-                }
-            }
-        });
-
-        ModManager.patchFunction("DialogDrawActivityMenu", {
-            "return false;": `${gfunc}(x,y,width,height,Act.Name); return false;`,
-        });
-    } else {
-        // R111
-        ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
-            const _args = /** @type {any[]} */ (args);
-            const ret = /** @type {HTMLButtonElement} */ (next(args));
-            if (ActivityManager.activityIsCustom(_args[1].Activity.Name)) {
-                ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
-            }
-            return ret;
-        });
-    }
+    ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
+        const _args = /** @type {any[]} */ (args);
+        const ret = /** @type {HTMLButtonElement} */ (next(args));
+        if (ActivityManager.activityIsCustom(_args[1].Activity.Name)) {
+            ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
+        }
+        return ret;
+    });
 }

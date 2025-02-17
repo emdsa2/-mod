@@ -37,23 +37,15 @@ export function addActivityImageMapping(mappings, category = "Activity") {
 }
 
 export function setupImgMapping() {
-    if (GameVersion === "R110") {
-        ["DrawImageEx", "GLDrawImage", "DrawGetImage"].forEach(
-            (/** @type {"DrawImageEx" |"GLDrawImage"| "DrawGetImage"}*/ fn) =>
-                ModManager.progressiveHook(fn, 9).inject((args, next) => (args[0] = mapping.mapImgSrc(args[0])))
-        );
-    } else {
-        // R111
-        (async () => {
-            await sleepUntil(() => window["ElementButton"] !== undefined);
+    (async () => {
+        await sleepUntil(() => window["ElementButton"] !== undefined);
 
-            ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
-                const _args = /** @type {any[]} */ (args);
-                mapping.mapImg(Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1])), (image) => {
-                    _args[4] = { ..._args[4], image };
-                });
-                return next(args);
+        ModManager.hookFunction("ElementButton.CreateForActivity", 0, (args, next) => {
+            const _args = /** @type {any[]} */ (args);
+            mapping.mapImg(Path.ActivityPreviewIconPath(/** @type {ItemActivity} */ (args[1])), (image) => {
+                _args[4] = { ..._args[4], image };
             });
-        })();
-    }
+            return next(args);
+        });
+    })();
 }

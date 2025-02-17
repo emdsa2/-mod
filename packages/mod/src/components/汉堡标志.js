@@ -49,20 +49,15 @@ export default function () {
         .when(() => CharacterAppearanceMode == "Cloth")
         .inject(func);
 
-    if (GameVersion === "R110") {
-        ModManager.progressiveHook("DrawAssetPreview", 1).inside("DialogDrawItemMenu").next().inject(func);
-    } else {
-        // R111
-        ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
-            const _args = /** @type {any[]} */ (args);
-            const asset = "Asset" in _args[1] ? _args[1].Asset : _args[1];
+    ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
+        const _args = /** @type {any[]} */ (args);
+        const asset = "Asset" in _args[1] ? _args[1].Asset : _args[1];
 
-            const ret = /** @type {HTMLButtonElement} */ (next(args));
+        const ret = /** @type {HTMLButtonElement} */ (next(args));
 
-            if (AssetManager.assetIsCustomed(asset)) {
-                ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
-            }
-            return ret;
-        });
-    }
+        if (AssetManager.assetIsCustomed(asset)) {
+            ret.appendChild(makeTooltipIcon(ModInfo.name, hanburgerIcon));
+        }
+        return ret;
+    });
 }
