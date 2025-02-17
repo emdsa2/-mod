@@ -291,7 +291,12 @@ const extended = {
         {
             Name: "性刺激",
             Key: "a",
-            Options: [{}, {}, { Effect: [E.DenialMode] }, { Effect: [E.DenialMode, E.RuinOrgasms] }],
+            Options: [
+                {},
+                {},
+                { Property: { Effect: [E.DenialMode] } },
+                { Property: { Effect: [E.DenialMode, E.RuinOrgasms] } },
+            ],
         },
     ],
     ScriptHooks: {
