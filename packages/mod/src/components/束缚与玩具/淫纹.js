@@ -93,7 +93,7 @@ ModManager.hookFunction("ChatRoomMessage", 10, (args, next) => {
             if (Dictionary.find((x) => "AssetName" in x)?.AssetName === asset.Name) {
                 const sourceChara = Dictionary.find((x) => "SourceCharacter" in x)?.SourceCharacter;
                 const item = InventoryGet(Player, itemTGroup);
-                const lock = { Asset: AssetGet(Player.AssetFamily, "ItemMisc", "淫纹锁_Luzi") };
+                const lock = { Asset: AssetGet(Player.AssetFamily, "ItemMisc", "淫纹锁_Luzi_Padlock") };
                 InventoryLock(Player, item, lock, sourceChara);
                 item.Property.MemberNumberListKeys = CommonConvertArrayToString([sourceChara]);
 
@@ -269,7 +269,7 @@ const asset = {
 };
 /** @type { CustomAssetDefinition} */
 const asset2 = {
-    Name: "淫纹锁_Luzi",
+    Name: "淫纹锁_Luzi_Padlock",
     Random: false,
     Wear: false,
     Enable: false,
@@ -574,7 +574,4 @@ export default function () {
     AssetManager.addAsset(itemTGroup, asset, extended, translations);
     AssetManager.addAsset("ItemMisc", asset2, extended2, translations2);
     AssetManager.addCustomDialog(dialog);
-    AssetManager.addImageMapping({
-        "Icons/Preview/淫纹锁_Luzi.png": "Assets/Female3DCG/ItemMisc/Preview/淫纹锁_Luzi.png",
-    });
 }

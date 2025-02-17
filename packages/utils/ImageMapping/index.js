@@ -39,13 +39,18 @@ class ImageMapping {
         if (typeof src !== "string") return src;
         if (!src.endsWith(".png")) return src;
 
-        if (this.custom[src]) src = this.custom[src];
-        if (this.basic[src]) src = this.basic[src];
+        if (src.startsWith("data:image")) return src;
+        if (src.startsWith("http")) return src;
+
+        let test = src.startsWith("./") ? src.slice(2) : src;
+        let test_return = test;
+        if (this.custom[test_return]) test_return = this.custom[test_return];
+        if (this.basic[test_return]) test_return = this.basic[test_return];
+        if (test_return !== test) return test_return;
         return src;
     }
 
     /**
-     * 使用 Promise like 的方式映射图片路径
      * @param {string} src
      * @param {(src: string) => void} accept
      */

@@ -48,31 +48,20 @@ export function setupImgMapping() {
     );
 
     (async () => {
-        if (GameVersion === "R110") {
-            await sleepUntil(() => window["CraftingElements"] !== undefined);
+        await sleepUntil(() => window["ElementButton"] !== undefined);
 
-            ModManager.hookFunction("CraftingElements._RadioButton", 5, (args, next) => {
-                const ret = next(args);
-                const img = ret.querySelector("img");
-                if (img?.src) {
-                    const idx = img.src.indexOf("Assets/");
-                    if (idx !== -1) {
-                        img.src = mapping.mapImgSrc(decodeURI(img.src.slice(idx)));
-                    }
-                }
-                return ret;
+        ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
+            const _args = /** @type {any[]} */ (args);
+            mapping.mapImg(Path.AssetPreviewIconPath(/** @type {Asset|Item} */ (_args[1])), (image) => {
+                _args[4] = { ..._args[4], image };
             });
-        } else {
-            // R111
-            await sleepUntil(() => window["ElementButton"] !== undefined);
+            return next(args);
+        });
 
-            ModManager.hookFunction("ElementButton.CreateForAsset", 0, (args, next) => {
-                const _args = /** @type {any[]} */ (args);
-                mapping.mapImg(Path.AssetPreviewIconPath(/** @type {Asset|Item} */ (_args[1])), (image) => {
-                    _args[4] = { ..._args[4], image };
-                });
-                return next(args);
-            });
-        }
+        const func = ModManager.randomGlobalFunction("ECHOMapping", (src) => mapping.mapImgSrc(src));
+
+        ModManager.patchFunction("ElementButton._ParseIcons", {
+            "src = `./Assets/Female3DCG/ItemMisc/Preview/${icon}.png`": `src = ${func}(\`./Assets/Female3DCG/ItemMisc/Preview/\${icon}.png\`)`,
+        });
     })();
 }
