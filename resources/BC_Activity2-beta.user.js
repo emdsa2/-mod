@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         服装拓展-beta
+// @name         动作拓展-beta
 // @namespace    https://www.bondageprojects.com/
 // @version      0.4
-// @description  BC视觉表现的美学修正与拓展
+// @description  更多可爱有趣的互动
 // @author       Echo
 // @include      /^https:\/\/(www\.)?bondageprojects\.elementfx\.com\/R\d+\/(BondageClub|\d+)(\/((index|\d+)\.html)?)?$/
 // @include      /^https:\/\/(www\.)?bondage-europe\.com\/R\d+\/(BondageClub|\d+)(\/((index|\d+)\.html)?)?$/
@@ -12,7 +12,7 @@
 (function () {
     "use strict";
     const script = document.createElement("script");
-    script.src = `https://sugarchain-studio.github.io/echo-clothing-ext/bc-cloth-beta.js?timestamp=${Date.now()}`;
+    script.src = `https://sugarchain-studio.github.io/echo-activity-ext/bc-activity-beta.js?timestamp=${Date.now()}`;
     script.type = "text/javascript";
     script.crossOrigin = "anonymous";
     document.head.appendChild(script);

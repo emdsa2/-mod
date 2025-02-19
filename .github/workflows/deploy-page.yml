@@ -40,18 +40,6 @@ jobs:
       - name: Build Pages
         run: pnpm page:all
 
-      - name: Checkout main
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          clean: false
-
-      - name: Copy Beta Resources
-        run: pnpm resources:rel --type beta
-
-      - name: Build Beta
-        run: pnpm build --configBaseURL $PAGE_URL --configBeta
-
       - name: Checkout release
         uses: actions/checkout@v3
         with:
