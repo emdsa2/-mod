@@ -6,6 +6,21 @@ import { addLayerNames } from "./layerNames";
 import { pushAfterLoad, pushAssetLoadEvent, pushDefsLoad, requireGroup } from "./loadSchedule";
 
 /**
+ *
+ * @param {CustomGroupName} Group
+ * @param {CustomGroupName} preimageGroup
+ * @param {{Name:string}} asset
+ * @param { string } category
+ */
+function globalFunctionMirror(Group, preimageGroup, asset, category) {
+    const preimageFunction = `Assets${preimageGroup}${asset.Name}${category}`;
+    const newFunction = `Assets${Group}${asset.Name}${category}`;
+    if (window[preimageFunction]) {
+        window[newFunction] = window[preimageFunction];
+    }
+}
+
+/**
  * 添加物品
  * @param {CustomGroupName} groupName
  * @param {CustomAssetDefinition} asset
@@ -48,6 +63,10 @@ export function loadAsset(groupName, asset, { extendedConfig, description, dynam
                 const preimageAsset = AssetGet("Female3DCG", preimage.Name, assetDefRes.Name);
                 asset.Description = preimageAsset.Description;
                 asset.DynamicGroupName = preimageAsset.DynamicGroupName;
+
+                ["ScriptDraw", "BeforeDraw", "AfterDraw"]
+                    .filter((prop) => preimageAsset[`Dynamic${prop}`])
+                    .forEach((prop) => globalFunctionMirror(groupName, preimage.Name, assetDefRes, prop));
             } else {
                 asset.Description = resolveEntry(solidDesc);
                 addLayerNames(asset.DynamicGroupName, /** @type {CustomAssetDefinition}*/ (assetDefRes), {
