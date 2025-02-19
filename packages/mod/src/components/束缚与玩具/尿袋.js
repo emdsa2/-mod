@@ -182,7 +182,7 @@ function scriptDraw(data, originalFunction, { C, Item, PersistentData }) {
 
     const delta = now - mData.lastUpdate;
 
-    if (C.ID === 0) {
+    if (C.IsPlayer()) {
         // update every 5 seconds
         if (delta > 5000) {
             const property = /** @type {ExtendItemProperties} */ (Item.Property);
