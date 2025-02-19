@@ -58,10 +58,10 @@ function updateRuns(player, data, property) {
 
     if (property.TypeRecord.a === 1) {
         const LSCG = /** @type {any} */ (player).LSCG;
-        if (LSCG && LSCG.InjectorModule && LSCG.InjectorModule.enabled) {
+        if (LSCG && LSCG.InjectorModule && LSCG.InjectorModule.enabled && LSCG.InjectorModule.enableHorny) {
             const { drugLevelMultiplier, hornyLevelMax, hornyLevel } = LSCG.InjectorModule;
             LSCG.InjectorModule.hornyLevel = Math.min(
-                hornyLevel + (0.05 * delta) / 1000,
+                hornyLevel + 0.05 * drugLevelMultiplier * (delta / 1000),
                 hornyLevelMax * drugLevelMultiplier
             );
         }
