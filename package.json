@@ -5,6 +5,7 @@
         "type-check": "pnpm -r type-check",
         "dev": "pnpm type-check && pnpm resources:dev && pnpm -r build --configDebug --configBaseURL \"http://localhost:8080/\"",
         "build:dev": "pnpm dev",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "build": "pnpm -r build",
         "resources:rel": "node ./scripts/.resource.js --rel",
         "resources:dev": "node ./scripts/.resource.js --dev",
@@ -16,6 +17,7 @@
     },
     "author": "Echo",
     "devDependencies": {
+        "conventional-changelog-cli": "^5.0.0",
         "copyfiles": "^2.4.1",
         "fs-extra": "^11.2.0",
         "github-markdown-css": "^5.7.0",
