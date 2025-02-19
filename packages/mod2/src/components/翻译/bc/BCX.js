@@ -825,8 +825,15 @@ const translation = {
     "Export everything onscreen": "导出界面上的所有内容",
     "Hierachy of roles": "角色权限结构",
     "[Log message deleted]": "[日志消息已删除]",
+    "删除 all log entries": "删除所有日志条目",
 
-  
+
+
+
+
+
+
+
     // EBCH
     "EBCH: Turn on Ungarble (Hearing Whitelist)": "EBCH: 打开去噪(听觉白名单)",
     "EBCH: Turn off custom notifications": "EBCH: 关闭自定义通知",

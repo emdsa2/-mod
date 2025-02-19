@@ -1256,6 +1256,178 @@ const act_dialogs = [
         replacement: "$1喝下了$2的$3.",
     },
 
+    {
+        regex: /This rule forbids (.+) to use OOC \(messages between round brackets\) in chat or OOC whisper messages while she is gagged\./,
+        replacement: "此规则禁止 $1 在被堵嘴时在聊天或 OOC 私聊消息中使用 OOC（圆括号内的消息）。",
+    },
+    {
+        regex: /This rule forbids (.+) to use the action command\. Action is a BCX feature that enables to format a message to look like a BC chat action\. If (.+) should be forbidden to use the command to communicate, this rule should be used\./,
+        replacement: "此规则禁止 $1 使用动作命令。动作是 BCX 的一项功能，可以将消息格式化为类似 BC 聊天动作的样式。如果应禁止 $2 使用该命令进行交流，则应使用此规则。",
+    },
+    {
+        regex: /This rule forbids (.+) to send any beeps with message, except to the defined list of member numbers\. Sending beeps without a message is not affected\. Optionally, it can be set that (.+) is only forbidden to send beeps while she is unable to use her hands \(e\.g\. fixed to a cross\)\./,
+        replacement: "此规则禁止 $1 发送带有消息的哔哔声，除非发送给定义的成员编号列表。发送不带消息的哔哔声不受影响。可选地，可以设置为仅当 $2 无法使用双手（例如固定在十字架上）时禁止发送哔哔声。",
+    },
+    {
+        regex: /This rule forbids (.+) to whisper anything to most people inside a chat room, except to the defined roles\. Also affects whispered OOC messages\./,
+        replacement: "此规则禁止 $1 在聊天室内向大多数人私聊任何内容，除非是向定义的角色私聊。此规则也影响私聊的 OOC 消息。",
+    },
+    {
+        regex: /This rule prevents (.+) from receiving any beep \(regardless if the beep carries a message or not\), except for beeps from the defined list of member numbers\. If someone tries to send (.+) a beep message while this rule blocks them from doing so, they get an auto reply beep, if the rule has an auto reply set\. (.+) won't get any indication that she would have received a beep unless the rule is not enforced, in which case she will see both the beep and the auto reply\. Optionally, the rule can be set to only activate while (.+) is unable to use her hands \(e\.g\. fixed to a cross\)\./,
+        replacement: "此规则阻止 $1 接收任何哔哔声（无论是否带有消息），除非来自定义的成员编号列表。如果有人尝试向 $2 发送哔哔消息但被此规则阻止，且规则设置了自动回复，则他们会收到自动回复的哔哔声。$3 不会收到任何提示表明她本应收到哔哔声，除非规则未生效，此时她会同时看到哔哔声和自动回复。可选地，可以设置为仅当 $4 无法使用双手（例如固定在十字架上）时激活此规则。",
+    },
+    {
+        regex: /This rule prevents (.+) from receiving any whispers, except from the defined roles\. If someone tries to send (.+) a whisper message while this rule blocks them from doing so, they get an auto reply whisper, if the rule has an auto reply set \(text field is not empty\)\. (.+) won't get any indication that she would have received a whisper unless the rule is not enforced, in which case she will see both the whisper and the auto reply\. This rule can also be used \(by dommes\) to prevent getting unwanted whispers from strangers in public\./,
+        replacement: "此规则阻止 $1 接收任何私聊消息，除非来自定义的角色。如果有人尝试向 $2 发送私聊消息但被此规则阻止，且规则设置了自动回复（文本字段不为空），则他们会收到自动回复的私聊消息。$3 不会收到任何提示表明她本应收到私聊消息，除非规则未生效，此时她会同时看到私聊消息和自动回复。此规则也可用于（由主导者）防止在公共场合收到陌生人的 unwanted 私聊消息。",
+    },
+    {
+        regex: /This rule forbids (.+) to use any \(sexual\) activities in chat rooms\. Other players can still use activities on her, as this rules does not block the arousal & sexual activities system itself, as forcing the according BC setting would\./,
+        replacement: "此规则禁止 $1 在聊天室中使用任何（性）活动。其他玩家仍然可以对她使用活动，因为此规则不会阻止 arousal 和性活动系统本身，这与强制更改相应的 BC 设置不同。",
+    },
+    {
+        regex: /This rule prevents (.+) from showing, removing or changing an emoticon \(afk, zZZ, etc\.\) over her head\. It also blocks her from using the emoticon command on herself\./,
+        replacement: "此规则阻止 $1 显示、移除或更改头顶的表情符号（如 afk、zZZ 等）。同时禁止她对自己使用表情符号命令。",
+    },
+    {
+        regex: /This rule gives (.+) a list of words from which at least one has to always be used in any chat message\. The list of mandatory words can be configured\. Checks are not case sensitive \(adding 'miss' also works for 'MISS' and 'Miss' - Note: 'Miiiiissss' would also match\)\. Doesn't affect whispers, emotes and OOC text\. There is a toggle for affecting whispers, too\./,
+        replacement: "此规则为 $1 提供一个单词列表，任何聊天消息中必须至少使用其中一个单词。必选单词列表可配置。检查不区分大小写（添加 'miss' 也会匹配 'MISS' 和 'Miss'——注意：'Miiiiissss' 也会匹配）。不影响私聊、表情和 OOC 文本。也可选择是否影响私聊。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game setting 'Item permission' to configurable value and prevents her from changing it\./,
+        replacement: "此规则强制将 $1 的基础游戏设置 '物品权限' 设为可配置的值，并阻止她更改该设置。",
+    },
+    {
+        regex: /This rule forbids (.+) to do any room admin actions \(except for kick\/ban\), when she is restrained\. Note: This rule does not affect an admin's ability to bypass locked rooms, if restraints allow it\. Tip: This rule can be combined with the rule 'Force ´Return to chatrooms on relog´' to trap (.+) in it\./,
+        replacement: "此规则禁止 $1 在被束缚时执行任何房间管理操作（踢出/封禁除外）。注意：如果束缚允许，此规则不会影响管理员绕过锁定房间的能力。提示：此规则可与规则 '强制重新登录后返回聊天室' 结合使用，以将 $2 困在其中。",
+    },
+    {
+        regex: /This rule limits (.+)'s ability to send a message to all people inside a chat room to only the set number per minute\. Does not affect whispers or emotes, but does affect OOC\. Note: Setting '0' will have no effect, as there is another rule to forbid open talking completely\./,
+        replacement: "此规则限制 $1 在聊天室内向所有人发送消息的频率为每分钟仅可发送设定的次数。不影响私聊或表情，但会影响 OOC。注意：设置为 '0' 将无效，因为另有规则完全禁止公开发言。",
+    },
+    {
+        regex: /This rule forbids (.+) to send an emote \(with \* or \/me\) to all people inside a chat room to only the set number per minute\. Note: Setting '0' will have no effect, as there is another rule to forbid using emotes completely\./,
+        replacement: "此规则禁止 $1 在聊天室内向所有人发送表情（使用 * 或 /me）的频率为每分钟仅可发送设定的次数。注意：设置为 '0' 将无效，因为另有规则完全禁止使用表情。",
+    },
+    {
+        regex: /This rule gives (.+) a list of words from which at least one has to always be used in any emote message\. The list of mandatory words can be configured\. Checks are not case sensitive \(adding 'miss' also works for 'MISS' and 'Miss' - Note: 'Miiiiissss' would also match\)\./,
+        replacement: "此规则为 $1 提供一个单词列表，任何表情消息中必须至少使用其中一个单词。必选单词列表可配置。检查不区分大小写（添加 'miss' 也会匹配 'MISS' 和 'Miss'——注意：'Miiiiissss' 也会匹配）。",
+    },
+    {
+        regex: /This rule enforces full blindness when the eyes are closed\. \(Light sensory deprivation setting is still respected and doesn't blind fully\)/,
+        replacement: "此规则在闭眼时强制完全失明。（轻度感官剥夺设置仍会生效，不会完全失明）",
+    },
+    {
+        regex: /This rule forces (.+)'s base game setting 'Arousal meter' to configurable value and prevents her from changing it\./,
+        replacement: "此规则强制将 $1 的基础游戏设置 '兴奋度计量条' 设为可配置的值，并阻止她更改该设置。",
+    },
+    {
+        regex: /This rule lets you define a minimum role which (.+) will automatically give room admin rights to \(if she has admin rights in the room\)\. Also has the option to remove admin rights from (.+) afterwards\./,
+        replacement: "此规则允许您定义一个最低角色，$1 会自动将房间管理员权限授予该角色（如果她在房间中拥有管理员权限）。还可选择在此后移除 $2 的管理员权限。",
+    },
+    {
+        regex: /This rule enforces full blindness when wearing any item that limits sight in any way\. \(This rules does NOT respect Light sensory deprivation setting and always forces player to be fully blind\. The crafting property 'thin' is not factored in either due to technical limitations\. \)/,
+        replacement: "此规则在佩戴任何限制视力的物品时强制完全失明。（此规则不遵循轻度感官剥夺设置，并始终强制玩家完全失明。由于技术限制，制作属性 '薄' 也不会被考虑在内。）",
+    },
+    {
+        regex: /This rule forces (.+)'s base game setting 'Arousal speech stuttering' to configurable value and prevents her from changing it\./,
+        replacement: "此规则强制将 $1 的基础游戏设置 '兴奋时口吃' 设为可配置的值，并阻止她更改该设置。",
+    },
+    {
+        regex: /Thus rule converts (.+)'s messages, so she is only able to speak studdering and with random filler sounds, for some \[RP\] reason \(anxiousness, arousal, fear, etc\.\)\. Converts the typed chat text automatically\. Affects chat messages and whispers, but not OOC\./,
+        replacement: "此规则转换 $1 的消息，使她只能以口吃和随机填充音的方式说话，出于某些 [RP] 原因（焦虑、兴奋、恐惧等）。自动转换输入的聊天文本。影响聊天消息和私聊，但不影响 OOC。",
+    },
+    {
+        regex: /(.+) will automatically send all defined member numbers \(if they are currently online and friends with (.+)\) a beep the moment (.+) joins the club or the moment she start BCX to make her presence known\. Disconnects don't count as coming into the club again, as far as detectable\. NOTE: Trigger conditions should not be selected when using this rule, as if you for instance select 'when in public room' the rule will only greet when you load BCX in a public room\./,
+        replacement: "$1 将在加入俱乐部或启动 BCX 时自动向所有定义的成员编号（如果他们当前在线且是 $2 的好友）发送哔哔声，以告知她的存在。只要可检测到，断开连接不会被视为再次进入俱乐部。注意：使用此规则时不应选择触发条件，例如，如果选择 '在公共房间时'，则规则仅在您在公共房间加载 BCX 时才会触发问候。",
+    },
+    {
+        regex: /This rule forbids (.+) to use any words longer than set limit and limits number of words too\. Both limits are configurable independently\. Doesn't affect OOC text, but does affect whispers\. Note: Setting '0' means this part is not limited \(∞\), as there is another rule to forbid open talking completely\./,
+        replacement: "此规则禁止 $1 使用超过设定长度的单词，并限制单词数量。两个限制可独立配置。不影响 OOC 文本，但会影响私聊。注意：设置为 '0' 表示该部分不受限制（∞），因为另有规则完全禁止公开发言。",
+    },
+    {
+        regex: /Forces (.+) to greet people newly entering the current chat room with the set sentence\. NOTE: Only (.+) and the new guest can see the message not to make it spammy\. After a new person has been greeted, she will not be greeted for 10 minutes after she left \(including disconnect\) the room (.+) is in\. Setting an emote as a greeting is also supported by starting the set message with one or two '\*' characters\./,
+        replacement: "强制 $1 使用设定的句子问候新进入当前聊天室的人。注意：只有 $2 和新客人可以看到该消息，以避免刷屏。新客人被问候后，在她离开（包括断开连接）$3 所在的房间后 10 分钟内不会再次被问候。支持将表情设置为问候语，只需在设定消息的开头添加一个或两个 '*' 字符。",
+    },
+    {
+        regex: /This rule forbids (.+) to revieve training by the base club's GGTS feature\. If the rule is enforced while (.+) has remaining GGTS training time, it is removed the moment (.+) enters the GGTS room\./,
+        replacement: "此规则禁止 $1 通过俱乐部基础的 GGTS 功能接受训练。如果规则在 $2 仍有剩余 GGTS 训练时间时生效，则在她进入 GGTS 房间时，剩余时间将被移除。",
+    },
+    {
+        regex: /This rule prevents (.+) to work as a club slave by picking up a club slave collar from the club management room\./,
+        replacement: "此规则阻止 $1 通过从俱乐部管理室领取俱乐部奴隶项圈来担任俱乐部奴隶。",
+    },
+    {
+        regex: /This rule prevents (.+) to use items she does not own herself, but can use on someone because this person owns them\./,
+        replacement: "此规则阻止 $1 使用她自己不拥有但可以因他人拥有而使用的物品。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Block advanced vibrator modes' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '阻止高级振动模式' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Show AFK bubble' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '显示 AFK 气泡' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Allow others to alter your whole appearance' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '允许他人完全更改你的外观' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forbids (.+) to go afk and logs when the allowed inactivity threshold is overstepped\./,
+        replacement: "此规则禁止 $1 进入 AFK 状态，并在超过允许的不活动阈值时记录日志。",
+    },
+    {
+        regex: /Sets a specific sentence that (.+) must say loud after entering a room that is not empty\. The sentence is autopopulating the chat window text input\. When to say it is left to (.+), but when the rule is enforced, it is the only thing that can be said in this room after joining it\. Emotes can still be used, though, unless toggled to be forbidden\. Disconnects don't count as coming into a new room again, as far as detectable\./,
+        replacement: "设置一个特定的句子，$1 必须在进入非空房间后大声说出。该句子会自动填充到聊天窗口的文本输入框中。何时说出由 $2 决定，但当规则生效时，这是加入房间后唯一可以说的内容。不过，表情仍然可以使用，除非设置为禁止。只要可检测到，断开连接不会被视为再次进入新房间。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Allow item blur effects' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '允许物品模糊效果' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Flip room vertically when upside-down' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '倒置时垂直翻转房间' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Prevent random NPC events' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '阻止随机 NPC 事件' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forbids (.+) to leave any of their lovers, independent of lovership stage \(leaving dating, engaged and married characters is forbidden\)\. Doesn't prevent her lovers from breaking up with her\./,
+        replacement: "此规则禁止 $1 离开任何恋人，无论恋爱阶段如何（禁止离开约会、订婚和已婚的角色）。但不阻止她的恋人与其分手。",
+    },
+    {
+        regex: /This rule forbids (.+) to let go of any of their subs\. \(affects both trial and full ownerships\)\. Doesn't prevent her submissives from breaking the bond\./,
+        replacement: "此规则禁止 $1 放弃任何他们的 sub（影响试用和完全所有权）。但不阻止她的 submissives 解除关系。",
+    },
+    {
+        regex: /This rule forbids (.+) to use certain words as part of any emote messages\. The list of banned words can be configured\. Checks are not case sensitive \(forbidding 'no' also forbids 'NO' and 'No'\)\./,
+        replacement: "此规则禁止 $1 在任何表情消息中使用某些单词。被禁单词列表可配置。检查不区分大小写（禁止 'no' 也会禁止 'NO' 和 'No'）。",
+    },
+    {
+        regex: /This rule forces (.+) to retype any chat\/whisper\/emote\/OOC message as a punishment when they try to send it and another enforced BCX speech rule determines that there is any rule violation in that message\./,
+        replacement: "此规则强制 $1 作为惩罚重新输入任何聊天/私聊/表情/OOC 消息，当她们尝试发送消息且其他已生效的 BCX 语言规则判定该消息存在违规时。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Players can drag you to rooms when leashed' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '玩家在被牵绳时可以拖拽你到房间' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Events while plugged or vibed' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '插入或振动时的事件' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forces (.+)'s base game or BCX setting 'Allow item tint effects' to the configured value and prevents her from changing it\. There is also an option to restore the setting to the state it was in before the rule changed it\. The restoration happens either when the rule becomes inactive \(for instance through toggle or unfulfilled trigger conditions\) or when it is removed\./,
+        replacement: "此规则强制将 $1 的基础游戏或 BCX 设置 '允许物品染色效果' 设为配置的值，并阻止她更改该设置。还可选择将设置恢复为规则更改前的状态。恢复会在规则变为非活动状态时（例如通过切换或未满足触发条件）或规则被移除时生效。",
+    },
+    {
+        regex: /This rule forbids (.+) to start a trial with new submissive\. Advancing ownership from trial to full ownership is unaffected\./,
+        replacement: "此规则禁止 $1 与新 submissive 开始试用关系。从试用升级为完全所有权不受影响。",
+    },
+    {
+        regex: /Rule violations will not be logged/,
+        replacement: "规则违规将不会被记录",
+    },
 
     // {
     //     regex: /(.+)\./,
@@ -1537,7 +1709,40 @@ const translationsDTF2 = [
         regex: /Fetishes\: (.+)\% \｜ Activities \(You \→ 她\)\: (.+)\% \｜ Activities \(她 → You\)\: (.+)\%/,
         replacement: "癖好相似度: $1% ｜ %动作 (你 → 她): $2% ｜ 动作 (她 → 你): $3%"
     },
+    {
+        regex: /\(\((.+)'s test punishes (.+) meddling with a sharp jolt\.\)/,
+        replacement: "(($1 的测试装置以强烈的电击惩罚她的干扰。)",
+    },
+    {
+        regex: /\(\((.+)'s (.+) tightens around (.+), countering (.+) tampering\.\)/,
+        replacement: "(($1 的 $2 紧紧束缚住她，阻止她的干扰。)",
+    },
+    {
+        regex: /\(\((.+)'s test tightens around (.+), countering (.+) tampering\.\)/,
+        replacement: "(($1 的测试装置紧紧束缚住她，阻止她的干扰。)",
+    },
+    {
+        regex: /\(\((.+)'s test releases a sedating spray, resisting (.+) meddling, and weakening (.+) muscles\.\)/,
+        replacement: "(($1 的测试装置释放出镇静喷雾，抵抗她的干扰，并削弱她的肌肉力量。)",
+    },
+    {
+        regex: /\(\((.+) intones with magical power, using nothing but (.+) voice to cast (.+) on (.+)\.\)/,
+        replacement: "(($1 以魔法力量吟唱，仅用她的声音对自己施放了 $3。)",
+    },
+    {
+        regex: /\(\((.+) flinches as the item in (.+) hand is flung into the air\.\)/,
+        replacement: "(($1 退缩了一下，手中的物品被抛到了空中。)",
+    },
+    {
+        regex: /\(\((.+)'s (.+) clicks menacingly as it resists (.+) tampering\.\)/,
+        replacement: "(($1 的 $2 发出威胁性的咔嗒声，抵抗她的干扰。)",
+    },
+    {
+        regex: /\(\((.+)'s (.+) releases a sedating spray, resisting (.+) meddling, and weakening (.+) muscles\.\)/,
+        replacement: "(($1 的 $2 释放出镇静喷雾，抵抗她的干扰，并削弱她的肌肉力量。)",
+    },
 
+    
     // MPA Authority 相关
     { 
        regex: /Maya\'s Petplay Additions - (.+)\'s Authority/, 

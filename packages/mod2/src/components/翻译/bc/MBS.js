@@ -87,6 +87,14 @@ const translation = {
     "Show compatibility percentage in chat rooms": "在聊天室中显示癖好相似度",
     "(Not recommended) Opt-out of others seeing your fetishes & activities through this plugin.": "(不推荐) 选择不让其他人通过此插件看到您的癖好&动作.",
     "Fetishes: N/A ｜ Activities: N/A": "癖好: N/A ｜ 动作: N/A",
+
+    "BC Fetish & Activity Settings": "BC 癖好与活动设置",
+    "This mod is new and will get more features. It shows the base game's basic Fetishes & Activities settings. In the future, you'll see more if both players use this mod. Find problems or have ideas? Check the buttons below. Love, Maple ❤️":
+        "本模组是新开发的，未来会添加更多功能。它展示了游戏基础的癖好与活动设置。如果双方玩家都使用此模组，未来您将看到更多内容。发现问题或有想法？请查看下方按钮。爱你的，Maple ❤️",
+    "Site": "网站",
+    "Source Code": "源代码",
+    "Bugs & Ideas": "问题与建议",
+
 };
 
 export { translation };

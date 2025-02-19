@@ -775,6 +775,16 @@ const translation = {
     "Name:": "名称:",
     "Name": "名称:",
 
+    "Enable Chaotic/Evolving Items:": "启用混沌/进化物品：",
+    "Purchase - $500": "购买 - $500",
+    "- Andrew co.® makes no guarantees as to the behavior of the wearer -": "- 安德鲁公司®对佩戴者的行为不作任何保证 -",
+    "Unlock Andrew's Collar Module": "解锁安德鲁的项圈模块",
+    "Block": "格挡",
+    "Magic Barrier": "魔法屏障",
+    "Create a magic barrier that protect and reflect incoming spell": "创造一个魔法屏障，保护并反射来袭的法术",
+    "Disarming": "移除手持物品",
+    "Disarm the target": "移除目标的手持物品",
+
 };
 
 export { activities, translation };
