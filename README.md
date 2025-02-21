@@ -4,7 +4,10 @@ This mod introduces various enhancements to the game, including additional cloth
 
 ## New Repository
 
-Development of this project has been moved to a new repository: [SugarChain-Studio/echo-clothing-ext](https://github.com/SugarChain-Studio/echo-clothing-ext)
+The management difficulties caused by putting two mods together gradually became difficult to control.
+Therefore, development of this project has been moved two new repositories: 
+- [SugarChain-Studio/echo-clothing-ext](https://github.com/SugarChain-Studio/echo-clothing-ext)
+- [SugarChain-Studio/echo-activity-ext](https://github.com/SugarChain-Studio/echo-activity-ext)
 
 This repository will be preserved for wiki and documentation purposes.
 
