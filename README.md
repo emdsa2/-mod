@@ -2,14 +2,20 @@
 
 This mod introduces various enhancements to the game, including additional clothing and activities.
 
+## New Repository
+
+Development of this project has been moved to a new repository: [SugarChain-Studio/echo-clothing-ext](https://github.com/SugarChain-Studio/echo-clothing-ext)
+
+This repository will be preserved for wiki and documentation purposes.
+
 ## Links
 
-| Description             | Link                                                                             |
-| ----------------------- | -------------------------------------------------------------------------------- |
-| Clothing Expansion      | [Clothing Expansion](https://emdsa2.github.io/-mod/BC_Cloth2.user.js)            |
-| Action Expansion        | [Action Expansion](https://emdsa2.github.io/-mod/BC_Activity2.user.js)           |
-| Clothing Expansion Beta | [Clothing Expansion Beta](https://emdsa2.github.io/-mod/BC_Cloth2-beta.user.js)  |
-| Action Expansion Beta   | [Action Expansion Beta](https://emdsa2.github.io/-mod/BC_Activity2-beta.user.js) |
+| Description             | Link                                                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| Clothing Expansion      | [Clothing Expansion](https://sugarchain-studio.github.io/echo-clothing-ext/bc-cloth.user.js)            |
+| Action Expansion        | [Action Expansion](https://sugarchain-studio.github.io/echo-activity-ext/bc-activity.user.js)           |
+| Clothing Expansion Beta | [Clothing Expansion Beta](https://sugarchain-studio.github.io/echo-clothing-ext/bc-cloth-beta.user.js)  |
+| Action Expansion Beta   | [Action Expansion Beta](https://sugarchain-studio.github.io/echo-activity-ext/bc-activity-beta.user.js) |
 
 ## Installation Script
 
@@ -17,14 +23,13 @@ This mod introduces various enhancements to the game, including additional cloth
 (function() {
   const n = document.createElement('script');
   n.setAttribute('type', 'text/javascript');
-  n.setAttribute('src', 'https://emdsa2.github.io/-mod/BC_Cloth2.user.js?t=' + Date.now());
+  n.setAttribute('src', 'https://sugarchain-studio.github.io/echo-clothing-ext/bc-cloth.user.js?t=' + Date.now());
   n.onload = function() { n.remove(); };
   document.head.appendChild(n);
 })();
 ```
 
 wiki: https://github.com/emdsa2/-mod/wiki
-
 
 ## Add-on Menu Overview
 

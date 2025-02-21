@@ -6,8 +6,16 @@ on:
       - release
       - main
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,38 +32,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Set page url
-        run: |
-          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)
-          USER_NAME=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 1)
-
-          if [ $REPO_NAME = "$USER_NAME.github.io" ]; then
-            PAGE_URL="https://$USER_NAME.github.io/"
-          else
-            PAGE_URL="https://$USER_NAME.github.io/$REPO_NAME/"
-          fi
-
-          echo "PAGE_URL=$PAGE_URL" >> $GITHUB_ENV
-
-      - name: Build Pages
-        run: pnpm page:all
-
-      - name: Checkout release
-        uses: actions/checkout@v3
-        with:
-          ref: release
-          clean: false
-
-      - name: Build
-        run: pnpm build --configBaseURL $PAGE_URL
-
       - name: Copy Resources
         run: pnpm resources:rel
 
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          target_branch: gh-pages
-          build_dir: ./public
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: 'public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
