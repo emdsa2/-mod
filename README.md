@@ -2,9 +2,13 @@
 
 This mod introduces various enhancements to the game, including additional clothing and activities.
 
-## New Repository
+## Other Language of README
 
-The management difficulties caused by putting two mods together gradually became difficult to control.
+- [中文](README.zh.md)
+
+## New Source Repository
+
+The management difficulties caused by putting two mods together gradually became out of control.
 Therefore, development of this project has been moved two new repositories: 
 - [SugarChain-Studio/echo-clothing-ext](https://github.com/SugarChain-Studio/echo-clothing-ext)
 - [SugarChain-Studio/echo-activity-ext](https://github.com/SugarChain-Studio/echo-activity-ext)
@@ -70,6 +74,6 @@ It adds extra clothes categories in the wardrobe after the original body zones, 
 
 All the new clothing, binding, and wardrobe slots are invisible to those who don't use the script.
 
-## 额外的服装槽位 和 一些bug😶
+## Getting Help And Bug Reports
 
 Discord：https://discord.gg/K9YnNqsNKx
