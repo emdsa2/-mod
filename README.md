@@ -15,6 +15,11 @@ Therefore, development of this project has been moved two new repositories:
 
 This repository will be preserved for wiki and documentation purposes.
 
+## Change Logs
+
+- **Clothing-Ext** : [changelog.html](https://sugarchain-studio.github.io/echo-clothing-ext/changelog.html)
+- **Activity-Ext** : [changelog.html](https://sugarchain-studio.github.io/echo-activity-ext/changelog.html)
+
 ## Links
 
 | Description             | Link                                                                                                    |

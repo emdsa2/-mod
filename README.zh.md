@@ -10,6 +10,11 @@
 
 此仓库将保留用于维基和文档目的。
 
+## 更新日志
+
+- **服装扩展** : [更新日志](https://sugarchain-studio.github.io/echo-clothing-ext/changelog.html)
+- **动作扩展** : [更新日志](https://sugarchain-studio.github.io/echo-activity-ext/changelog.html)
+
 ## 链接
 
 | 描述                   | 链接                                                                                                    |
