@@ -1,0 +1,37 @@
+name: Restore Props
+description: Prop restoration request template
+title: '[Restore] Some prop restoration request'
+labels: restore
+assignees: ['emdsa2', 'dynilath']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 1. Restore Props
+
+        If you are the creator of a prop and do not want others to modify or use your created prop, please provide the prop name and proof of creation, and we will remove the modified version of the prop.
+
+  - type: input
+    id: prop-name
+    attributes:
+      label: Prop Name
+      description: Provide the English name of the prop
+      placeholder: Prop Name
+    validations:
+      required: true
+
+  - type: textarea
+    id: prop-proof
+    attributes:
+      label: Proof of Creation
+      description: Provide proof of creation
+      placeholder: Proof of Creation
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Other information
+      description: If you would like to provide additional information, please do so here
+      placeholder: Additional information

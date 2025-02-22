@@ -1,0 +1,94 @@
+name: Suggest new prop
+description: Submit a item suggestion
+title: '[Suggestion] Some new prop idea'
+labels: enhancement
+assignees: ['emdsa2', 'dynilath']
+
+body:
+  - type: markdown
+    id: content-restrictions
+    attributes:
+      value: |
+        ## Content Restrictions
+
+        To ensure the prop does not involve any infringement or inappropriate content, please note the following:
+
+        - **Infringing Symbols**: Do not propose props that contain unauthorized trademarks, copyrights, logos, etc.
+        - **Cult Symbols**: Props containing any cult symbols, patterns, or related content will not be accepted.
+        - **Violence and Gore**: Props with excessive violence, gore, or disturbing content will not be accepted.
+        - **Discrimination based on Race, Gender, or Religion**: Do not submit props with racist, sexist, religious, ethnic, sexual orientation, or any other form of discriminatory content.
+        - **Political Sensitive Content**: Do not submit props with political propaganda, party logos, or politically sensitive topics. Any prop suggestions containing such inappropriate content will not be accepted or drawn.
+
+  - type: input
+    id: item-name
+    attributes:
+      label: Prop Name
+      description: Provide the prop name (Chinese and English)
+      placeholder: A Great Prop
+    validations:
+      required: true
+
+
+  - type: checkboxes
+    id: item-slot
+    attributes:
+      label: Prop Slot
+      description: Please select the slot where the prop is placed
+      options:
+        - label: Cloth
+        - label: Bottom
+        - label: Shoes
+        - label: Socks
+        - label: Bra
+        - label: Underwear
+        - label: Upper Body
+        - label: Lower Body
+        - label: Accessories
+        - label: Glasses
+        - label: Gloves
+        - label: Hat
+        - label: Wings
+        - label: Tail
+        - label: Ears
+        - label: Held Item
+        - label: Other / Please specify
+
+  - type: textarea
+    id: other-slot-description
+    attributes:
+      label: Other Slot Description
+      description: If you selected "Other", please specify the slot here
+      placeholder: ItemHands, ItemNeck, ItemNeckAccessories, etc.
+
+  - type: checkboxes
+    id: shape-dependence
+    attributes:
+      label: Shape Dependence
+      description: Does the prop change shape based on certain conditions?
+      options:
+        - label: Does it change shape depending on posture?
+        - label: Does it change shape depending on the upper body?
+        - label: Does it change shape depending on the lower body?
+
+  - type: textarea
+    id: modular-components
+    attributes:
+      label: Do components require modular switches?
+      placeholder: Describe the modular components and their functions
+
+  - type: textarea
+    id: reference-image
+    attributes:
+      label: Prop Reference Image
+      description: Help us know how the props should look like. Provide at least one front-facing reference image or description.
+
+  - type: textarea
+    id: special-interactions
+    attributes:
+      label: Special Interactions
+      placeholder: Describe any special animations or interactions the prop may have.
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your feedback and suggestions!

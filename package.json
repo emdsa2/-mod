@@ -1,0 +1,20 @@
+{
+    "name": "echo-bc-mod-collection",
+    "version": "1.0.0",
+    "scripts": {
+        "resources:rel": "node ./scripts/.resource.js --rel",
+        "resources:dev": "node ./scripts/.resource.js --dev",
+        "page:readme": "node build_readme.js",
+        "page:images": "copyfiles -u 1 \"image/*.png\" public",
+        "page:all": "pnpm page:readme && pnpm page:images",
+        "serve": "http-server -p 8080 --cors public",
+        "git:release": "git checkout release && git merge origin/main && git push && git checkout main"
+    },
+    "author": "Echo",
+    "devDependencies": {
+        "copyfiles": "^2.4.1",
+        "github-markdown-css": "^5.7.0",
+        "marked": "^14.1.2"
+    },
+    "packageManager": "pnpm@9.7.0"
+}
